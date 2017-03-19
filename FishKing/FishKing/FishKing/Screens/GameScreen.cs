@@ -50,6 +50,7 @@ namespace FishKing.Screens
             LoadLevel(levelToLoad);
 
             InitializeCharacter();
+           
         }
 
         private void AddCollisions()
@@ -121,11 +122,19 @@ namespace FishKing.Screens
         void CustomActivity(bool firstTimeCalled)
 		{
             DialogActivity();
-
             if (CanMoveCharacter)
             {
                 this.CharacterInstance.PerformMovementActivity(this.SolidCollisions, NpcCharacterList);
+                this.CharacterInstance.UpdateFishingStatus();
             }
+            //this.FramedCatchingBackgroundInstance.UnknownFishInstanceY += 1;
+            //this.FramedCatchingBackgroundInstance.UnknownFishInstanceX += 1;
+            //this.FramedCatchingBackgroundInstance.AlignmentBarInstanceY -= 1;
+            //this.FramedCatchingBackgroundInstance.AlignmentBarInstanceHeight += 1;
+            //this.CatchingFrameInstance.CurrentAlignmentState = GumRuntimes.CatchingFrameRuntime.Alignment.NotAligned;
+            //if (!this.CatchingFrameInstance.UnknownFishAnimationAnimation.IsPlaying())
+            //    this.CatchingFrameInstance.UnknownFishAnimationAnimation.Play();
+            //this.CatchingFrameInstance.AlignmentBarY += 1;
 
             CollisionActivity();
 		}

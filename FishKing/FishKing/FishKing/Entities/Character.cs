@@ -126,6 +126,11 @@ namespace FishKing.Entities
         private void CustomActivity()
 		{
             IsAttemptingAction = ActionInput != null && ActionInput.WasJustPressed && isMovingToTile == false;
+            if (IsAttemptingAction)
+            {
+                IsFishing = false;
+                IsCastingRod = false;
+            }
 		}
 
         public void PerformMovementActivity(TileShapeCollection collision, PositionedObjectList<Character> characters)
@@ -174,7 +179,11 @@ namespace FishKing.Entities
                 }
                 this.SpriteInstance.Animate = isMovingToTile;
             }
-            if (IsCastingRod)
+        }
+
+        public void UpdateFishingStatus()
+        {
+            if (IsCastingRod && !IsFishing)
             {
                 var shouldStartCastingAnimation = !WoodRodSpriteInstance.Animate;
                 if (shouldStartCastingAnimation)
@@ -191,12 +200,16 @@ namespace FishKing.Entities
                     WoodRodSpriteInstance.CurrentChainName = chainName;
                     SpriteInstance.Animate = true;
                     WoodRodSpriteInstance.Animate = true;
+                    SpriteInstance.CurrentFrameIndex = 0;
+                    WoodRodSpriteInstance.CurrentFrameIndex = 0;
                 }
-                else
+                else if (!IsFishing)
                 {
                     var lastFrameIndex = SpriteInstance.CurrentChain.Count - 1;
                     if (WoodRodSpriteInstance.CurrentFrameIndex == lastFrameIndex)
                     {
+                        //SpriteInstance.CurrentFrameIndex = 0;
+                        //WoodRodSpriteInstance.CurrentFrameIndex = 0;
                         WoodRodSpriteInstance.Animate = false;
                         IsCastingRod = false;
                         IsFishing = true;
@@ -206,6 +219,9 @@ namespace FishKing.Entities
             SpriteInstance.Animate = (isMovingToTile || IsCastingRod);
             WoodRodSpriteInstance.Visible = (IsCastingRod || IsFishing);
             WoodRodSpriteInstance.Animate = IsCastingRod;
+
+            SpriteInstance.RelativeY = SpriteInstance.Height / 8;
+            WoodRodSpriteInstance.RelativeY = WoodRodSpriteInstance.Height / 8;
         }
 
         private bool ApplyDesiredDirectionToMovement(Direction desiredDirection, TileShapeCollection collision, 

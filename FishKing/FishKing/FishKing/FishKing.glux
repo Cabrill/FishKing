@@ -30,30 +30,9 @@
       <Name>Screens\GameScreen</Name>
       <ReferencedFiles>
         <ReferencedFileSave>
-          <Name>Screens/GameScreen/Levels/Level1.tmx</Name>
-          <IsSharedStatic>true</IsSharedStatic>
-          <LoadedOnlyWhenReferenced>true</LoadedOnlyWhenReferenced>
-          <RuntimeType>FlatRedBall.TileGraphics.LayeredTileMap</RuntimeType>
-          <ProjectsToExcludeFrom />
-        </ReferencedFileSave>
-        <ReferencedFileSave>
           <Name>Screens/GameScreen/Tilesets/basictiles.png</Name>
           <IsSharedStatic>true</IsSharedStatic>
           <RuntimeType>Microsoft.Xna.Framework.Graphics.Texture2D</RuntimeType>
-          <ProjectsToExcludeFrom />
-        </ReferencedFileSave>
-        <ReferencedFileSave>
-          <Name>Screens/GameScreen/Levels/Level2.tmx</Name>
-          <IsSharedStatic>true</IsSharedStatic>
-          <LoadedOnlyWhenReferenced>true</LoadedOnlyWhenReferenced>
-          <RuntimeType>FlatRedBall.TileGraphics.LayeredTileMap</RuntimeType>
-          <ProjectsToExcludeFrom />
-        </ReferencedFileSave>
-        <ReferencedFileSave>
-          <Name>Screens/GameScreen/Levels/TestLevel.tmx</Name>
-          <IsSharedStatic>true</IsSharedStatic>
-          <LoadedOnlyWhenReferenced>true</LoadedOnlyWhenReferenced>
-          <RuntimeType>FlatRedBall.TileGraphics.LayeredTileMap</RuntimeType>
           <ProjectsToExcludeFrom />
         </ReferencedFileSave>
         <ReferencedFileSave>
@@ -73,6 +52,12 @@
           <Name>Screens/GameScreen/Tilesets/RPGTilesCobbleStonePathsAndTownObjects.png</Name>
           <IsSharedStatic>true</IsSharedStatic>
           <RuntimeType>Microsoft.Xna.Framework.Graphics.Texture2D</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Name>GumProject/Screens/GameScreenGum.gusx</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>FlatRedBall.Gum.GumIdb</RuntimeType>
           <ProjectsToExcludeFrom />
         </ReferencedFileSave>
       </ReferencedFiles>
@@ -162,6 +147,15 @@
           <SourceClassType>PositionedObjectList&lt;T&gt;</SourceClassType>
           <SourceClassGenericType>Entities\StartPoint</SourceClassGenericType>
           <InstanceName>StartPointList</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/GameScreenGum.gusx</SourceFile>
+          <SourceName>FramedCatchingBackgroundInstance (FishKing.GumRuntimes.FramedCatchingBackgroundRuntime)</SourceName>
+          <InstanceName>FramedCatchingBackgroundInstance</InstanceName>
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
@@ -265,14 +259,14 @@
             <ValueAsFloat>1</ValueAsFloat>
           </CustomProperty>
           <CustomProperty>
-            <Type>string</Type>
-            <Member>CurrentChainName</Member>
-            <ValueAsString>WalkDown</ValueAsString>
-          </CustomProperty>
-          <CustomProperty>
             <Type>AnimationChainList</Type>
             <Member>AnimationChains</Member>
             <ValueAsString>PlayerAnimations</ValueAsString>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>string</Type>
+            <Member>CurrentChainName</Member>
+            <ValueAsString>WalkDown</ValueAsString>
           </CustomProperty>
           <SourceType>FlatRedBallType</SourceType>
           <SourceFile />
@@ -405,7 +399,7 @@
           </Properties>
           <Name>ShowShapes</Name>
           <Type>bool</Type>
-          <DefaultValue xsi:type="xsd:boolean">true</DefaultValue>
+          <DefaultValue xsi:type="xsd:boolean">false</DefaultValue>
           <IsShared>true</IsShared>
         </CustomVariable>
       </CustomVariables>
@@ -753,6 +747,12 @@
       <CreatesDictionary>true</CreatesDictionary>
       <ProjectsToExcludeFrom />
     </ReferencedFileSave>
+    <ReferencedFileSave>
+      <Name>GumProject/GumProject.gumx</Name>
+      <IsSharedStatic>true</IsSharedStatic>
+      <HasPublicProperty>true</HasPublicProperty>
+      <ProjectsToExcludeFrom />
+    </ReferencedFileSave>
   </GlobalFiles>
   <GlobalContentSettingsSave>
     <LoadAsynchronously>false</LoadAsynchronously>
@@ -827,6 +827,14 @@
     </TranslatedFileSave>
     <TranslatedFileSave>
       <FileName>Entities/Character.Generated.cs</FileName>
+      <TranslationStyle>PerformTranslate</TranslationStyle>
+    </TranslatedFileSave>
+    <TranslatedFileSave>
+      <FileName>Screens/GameScreen.cs</FileName>
+      <TranslationStyle>PerformTranslate</TranslationStyle>
+    </TranslatedFileSave>
+    <TranslatedFileSave>
+      <FileName>Screens/GameScreen.Generated.cs</FileName>
       <TranslationStyle>PerformTranslate</TranslationStyle>
     </TranslatedFileSave>
   </TranslatedFiles>
