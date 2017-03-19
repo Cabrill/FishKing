@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="52" height="40" tilewidth="8" tileheight="8" nextobjectid="6">
+ <tileset firstgid="1" source="../Tilesets/basictiles.tsx"/>
+ <tileset firstgid="481" name="characters" tilewidth="16" tileheight="16" tilecount="96" columns="12">
+  <image source="../Tilesets/characters.png" width="192" height="128"/>
+ </tileset>
+ <layer name="Ground" width="52" height="40">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC8VYWYoUQRDN/h5H/XUFhZkuUHCBmSpwQPECihdwuYHeUW+g5zGK7sDoN+/lVmXPxyO6OrMyM+LFVrlNKQ2G7V624oXh5RGln1PJ0TCFZ//N4OMRbw3vjij9vEqifq34YPhYIX8afjXMV7KHnxZ8NnypkL8NfxrmK1niZ0yH/oQ6M4zitz/nxtEXxnRo2xHWYL9xfbUf6qNiie2F66OtLgyXYf2pUZ8JxhgnQ+LnGsJ+a+wz48xwTvjZhvnoE2rNXPyjfeJe00r7ID9x7TFpH0cb5/x6gLEJ5gywN3LEdGD2Qn6ijaLvsTO0xCf6mjpf3DuX51T+dLTy05oHBvitdEK/Q+Rqb3x2flDPtfInxmKOJ8UP2i5nR+cH9VHvLuXH5zwzPM9IZccSML8xDnHd2nrA+gOXbwxXGcnsyPZDYP2J+69Vd5h9WvhhOvTww3Jxb3+HNqnlJ+cPjKccP6we9PZ3eI5aflhsMh/0/0v8LKkHMf/i3v+Dn8vAz4XgZ2k9yNUulrOdH1XDFZ8zvm5Sep92+LbZjZX8oFfiuVQv5vzEvBJzjuJzxnfT4VPa4cdmN1byg1651vcixlf08TluzoJ0O8xjJ4a7hjsL5K1g47W+F90+qg7E/iDigeGh4ZHhcYf091ksKX+L8aF6YdU/YH7D/HGyt+8Tw9MO6e+r2qqk21/1wqp/qOXnleF1h0R+1s4vN83P2vnlpvjxPFzT3y29G4n8xLru+W0NflRPqHLCkruR2L+hPmvGT23/vfRuZMrwM5/ndI/bRDoPavw0/Ysf1geU+Om5G4n3B9hH3jPcz0jnoTSP9Til8/XejQzpsL9maym/iHmR9bo5P8Gel3HU0wvn8lvu25K9p3KOPyu/r/G72ruRmN9cnqfrfV1O1vKjckGN37G8XeLH5WW6/l2kZE1NqImZHEfMTjX1J/6H+XNJTcDvGFYvS7qq+srsyOIn993cWhNi7KPeWPfV+8x+ygdb+OmpCSxWVA9T4kfFZXx2fuJcVq97awLLzeyMx+InxmZPTfCx0hlr8rmyg+In+sIAa/fUg7j3X2wRQa6AIAAA
+  </data>
+ </layer>
+ <layer name="GroundDecoration" width="52" height="40">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+1YsVIUQRCdEX5gD/5AEkg1kVROrYIMSq2SBFGTMxHMMLmE/BJyqIIcEP9I/0Bje4rpuq6+6Z6ZndllrfJVverjunevZ990D9vGtMdpwbVtMc2IXbLGLNv0+LPsbMox89aSPNeBG4HYFYhZzVjPQ+rTkDyfATdJTI4uNPah9DmKxGi68LXSWKrPT+Av5TfGwBexZM39PnqkPNuS+sG/pbVSfX4D/yT+jrZ2t49GynpmsmsBXKdYPbWtn5S1SzXO9bEZ9R5Dl/XDaxzB9am5npr9LVY3iKmPdXXg6qGx+eeMFF9LH1yLVjcIp0/j62CF2Vi+CKmOaukT6gEHwPfAQ+AHYi3RwzIbyvcW+F2xFF3Wzxdzf84cA78S2xA9GmY53POeAD8rdsriu8I58KLwHu55nwC/KXbG4rvCNfDGxPeLtn+GpE8NDEmfGhiqPrnnC6JEH21fvyVxbyKxpZaD93tnP5lFfS6BV95KuuJnjokQn2o1X8qaf5i5Ptf++zv/vYOkK37mOBHiU63mS8U2cEfwUX34uf4R+IrEvvQ+9NdC7v3eAfcFH9UHz/Uhw9UJPv9z5rtk/pz3xy7Qtn7Qf8f8Oe+PXaCkz8TOpxI8B64BH3vruJVwXUmfiZ1PJdgFPgU+8dZxL+G60HlTYv+jX0hzltyYoYDOWWje9H9EaRYzdNC8U+cx/woaK69JW2vKzBcxbpXZHLwOcE9J7x+huUzO7KkGtNrldcDnW6Hnzu8Xmz+3wWvFl1u7dJYVyjX3flpuEkLPp3ZP7asfjIS9XtpT+9hXHKPALLcW+j5jsAehPks99pguQHtRlzoNHX8Bv3yehYAgAAA=
+  </data>
+ </layer>
+ <layer name="Obstacles" width="52" height="40">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+1WS07DMBS0V/QGcAV6g3IhoBJsoUhwAzhPEewp4tPuqMR3BzeAJVMhC8t6sR1ixxOUkUZPdhx5nHnPL0rJ2AP3rfExeFLxjBE+/S58z1jQBY1NwZpXf9XF5Jl9hlS6SvrlO4OrK6TTPGfyy4arS9KZw9+SqDoDyx0Ro8O3hi3nYr43cw+NzYvSOn2QvnXdu6w0QvkSc5cxgV1fXTTNH7bca+oPq7fsdV4X/62OevTokQ9zcFFaREK8gm+lRfSoxAV4KcxPtVLn+jeeYu5M/cShbk/fHXgPboM7EetvwFthfgbNR+BEiFstnucZfAEPwMOI9Y/gkzC/Cc1jcFeIbfqTCiMSf1JhWtifd/DDGq9hz4FnX1NfJrrvS7606c8n+GWN17HnhmdfU18muu9Lvow7lGsx/nTlLCvE+DPU+ftPqr7HUj+p+h5L/YT63hXWzFQ4stRPqO89YM1ShWPd+nFjU5h6yfVf4qufHL6t6uZa5/sv+QZ+j0xggCAAAA==
+  </data>
+ </layer>
+ <objectgroup name="NPCs">
+  <object id="5" gid="487" x="320" y="208" width="16" height="16">
+   <properties>
+    <property name="Animation" value="GirlAnimations"/>
+    <property name="Dialog" value="T_Girl1"/>
+    <property name="EntityToCreate" value="Character"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

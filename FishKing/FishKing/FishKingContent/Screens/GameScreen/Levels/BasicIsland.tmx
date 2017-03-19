@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="23" tilewidth="32" tileheight="32" nextobjectid="8">
+ <tileset firstgid="1" name="TilesCobbleStonePathsAndTownObjects" tilewidth="32" tileheight="32" tilecount="256" columns="16">
+  <image source="../Tilesets/RPGTilesCobbleStonePathsAndTownObjects.png" width="512" height="512"/>
+  <tile id="163">
+   <properties>
+    <property name="Name" value="Water"/>
+   </properties>
+  </tile>
+  <tile id="208">
+   <properties>
+    <property name="Name" value="CliffsideLeft"/>
+   </properties>
+  </tile>
+  <tile id="209">
+   <properties>
+    <property name="Name" value="Cliffside"/>
+   </properties>
+  </tile>
+  <tile id="210">
+   <properties>
+    <property name="Name" value="CliffsideRight"/>
+   </properties>
+  </tile>
+ </tileset>
+ <tileset firstgid="257" name="characters" tilewidth="16" tileheight="16" tilecount="192" columns="12">
+  <image source="../Tilesets/characters.png" width="192" height="256"/>
+ </tileset>
+ <layer name="Water" width="40" height="23">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3OMQ0AMAzAsPLHUaADkaeTHMl/dmaW7Fr+Wv5a/lr+Wv5av/0BcMsDevmVdmAOAAA=
+  </data>
+ </layer>
+ <layer name="Ground" width="40" height="23">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2TMQ1AIRDF8O8CUAAoABQAhv4JODaG95M26d6lIcALoplEzE5fMauITbyv0kcffVfV//1jXzeHiNPpW+YW8Th9AACgxQdSaSASYA4AAA==
+  </data>
+ </layer>
+ <objectgroup name="Objects" offsetx="-31" offsety="-104">
+  <object id="7" gid="353" x="640" y="368" width="16" height="16">
+   <properties>
+    <property name="EntityToCreate" value="StartPoint"/>
+    <property name="Name" value="FirstSpawn"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

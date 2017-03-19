@@ -1,0 +1,8 @@
+*.suo
+*.tmp
+*.Generated.cs
+*.cachefile
+TileAdventure/TileAdventure/bin/x86/Debug/
+TileAdventure/TileAdventure/obj/
+TileAdventure/TileAdventureContent/obj/
+TileAdventure/TileAdventure/Settings/PluginSettings.xml

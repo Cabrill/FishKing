@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="14" tilewidth="8" tileheight="8" nextobjectid="1">
+ <tileset firstgid="1" source="../../Screens/GameScreen/Tilesets/basictiles.tsx"/>
+ <layer name="Tile Layer 1" width="40" height="14">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3QWwqAIBAFUN13jw2kbSCnDWRtsQkUTEZ7ScyHH4eBEZzLbaQQLTOd06MBKYY0GqN8mkEmP32+CZlgbwqgbqfeDXEfMv2l/n/iKnNqT+Wr/dX+an/3+lOZ///oz79R/ZX0pr8QOHOUDwrNL0Ce8y3IOiujedjQDkNufjTACAAA
+  </data>
+ </layer>
+</map>

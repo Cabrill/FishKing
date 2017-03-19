@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="52" height="38" tilewidth="8" tileheight="8" nextobjectid="4">
+ <tileset firstgid="1" source="../Tilesets/basictiles.tsx"/>
+ <tileset firstgid="481" name="characters" tilewidth="16" tileheight="16" tilecount="192" columns="12">
+  <image source="../Tilesets/characters.png" width="192" height="256"/>
+ </tileset>
+ <layer name="Ground" width="52" height="38">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC92Yy07EMAxFkwX8AfwAjx0PiceO18C2SMBsZ/7/MzASEdblOnWbZtLOwrpK6tSxT5pkpgshdGLvlWwjtv2NoS09n7q9UTFrWAdxMF5p28qPxZuSz5XYdQW1+Oi1MCWzFOtJ7LmCWvlo0z4lqutyIXZJ9FXsVOxE6VvGH9VabxafEtWxHsQeid6I3RK1/FEZn9x6KVnXHj6ai9axfPryGbuucW/ZFZ++s8dbJ6tuXc97ds3HWydUL58vwme9YD6lOjc+pdqKz0EM4TByfYl/41YZP6at+BxJ7OPI9SefNG6V8WPais+ZxD6PXJGP5ce0FZ87iX0fuSIfy48p1t+6/1j3IeSG/dZ7avLRcb2/N7AfOSBX7K/FB/PZBz74/SydT46H9/6c6un1b8XHe39O9fT65+r8ofh8Tsyn1j1rqG7D//819FxZH+NT6541VFM+aa64J1n5zJ2Pnv8+8cHaL50Prrl94INn4ZL44Lx0fkvkg/NkfPq+sbnzYXlY+/jc+eg1hvdKdk7NnY+1zqw858wnN+8+PqVtq75sTrk6s37POPQrbaf6esexPYvV3zPes99NzYed9UO4WXubtb+15DP2mfb5Bpt9LwbgHgAA
+  </data>
+ </layer>
+ <layer name="GroundDecoration" width="52" height="38">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2Zy4oCMRBF86uOOqA7hRFmdqK4F8W9A7qf5x/pH+jaykIs2s6rUmVKyIFLaEzSJjdV3Z0YU6HwA/oVKEuwEOx7Kti3C8nxLAX7dqHJH451vcn4vyFS/MmZVzxvWvzJmVc8b1rip/pzA89bjR/afUJwxo8vHzZJyaPVH2MOoGPifXLiZ0y8T4jrvJ5A54R2Fs3+UND4/LF0QT1U9kGv6PcO6KWlHkaLP228gSboemTC613L86eNHWiPrregz4T63IT8CeX7P9A/qv8F+k6oz43PH8l17mKX2d7nj+R4fP41SdkXkPBnABoS27pw5U1fHm1CzUPvoA9iWxcxeTNEifhxwbFvo2k8HPs2msbD4U8zfijv1VxI+EN5r+aixs89jxhP7Bp+Fn9i1/Cz+BOLRH4rCde5Qeh9yVXGfrfGlqWhfLdqx8bfDDQ3Zc7NuLHjWYHWpsy5meUCqsIjleAeAAA=
+  </data>
+ </layer>
+ <layer name="Obstacles" width="52" height="38">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3OsQ2AMBAEQXcLHUAL0AF0CB1AxIdEjixeWDPSBpddKUBvlmjNPtHQFu3ZJ+jOEZ2V/TdXdFc2AAC8DdGYfaKhKZqzTwAAAJ94AE/avwjgHgAA
+  </data>
+ </layer>
+ <objectgroup name="Objects">
+  <object id="1" gid="577" x="160" y="288" width="16" height="16">
+   <properties>
+    <property name="EntityToCreate" value="StartPoint"/>
+    <property name="Name" value="Entrance"/>
+   </properties>
+  </object>
+  <object id="2" gid="578" x="160" y="304" width="16" height="16">
+   <properties>
+    <property name="EntityToCreate" value="MapNavigationTrigger"/>
+    <property name="StartPointName" value="Mine"/>
+    <property name="TargetMap" value="Level1"/>
+   </properties>
+  </object>
+  <object id="3" gid="535" x="272" y="64" width="16" height="16">
+   <properties>
+    <property name="Animation" value="GhostAnimations"/>
+    <property name="Dialog" value="T_Ghost1"/>
+    <property name="EntityToCreate" value="Character"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>

@@ -1,0 +1,4 @@
+"ID (string, required)",Text (string)
+T_Dialog1,"Hello, I am some dialog!"
+T_Girl1,Welcome to Tile Adventure!
+T_Ghost1,Boo! Did I scare you?
