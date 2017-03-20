@@ -33,26 +33,32 @@
     <Variable>
       <Type>float</Type>
       <Name>AlignmentBarInstance.Width</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>AlignmentBarInstance.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>AlignmentBarInstance.X Units</Name>
       <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>AlignmentBarInstance.Y</Name>
-      <Value xsi:type="xsd:float">100</Value>
+      <Value xsi:type="xsd:float">90</Value>
       <ExposedAsName>AlignmentBarInstanceY</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
       <Name>AlignmentBarInstance.Y Origin</Name>
-      <Value xsi:type="xsd:int">2</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -64,19 +70,19 @@
     <Variable>
       <Type>float</Type>
       <Name>CatchingBackgroundInstance.Height</Name>
-      <Value xsi:type="xsd:float">-41</Value>
+      <Value xsi:type="xsd:float">96</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>CatchingBackgroundInstance.Height Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
       <Name>CatchingBackgroundInstance.Parent</Name>
-      <Value xsi:type="xsd:string">FrameInstance</Value>
+      <Value xsi:type="xsd:string">DoubleBarFrameInstance</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -89,37 +95,37 @@
     <Variable>
       <Type>float</Type>
       <Name>CatchingBackgroundInstance.Width</Name>
-      <Value xsi:type="xsd:float">-38</Value>
+      <Value xsi:type="xsd:float">90</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>CatchingBackgroundInstance.Width Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>CatchingBackgroundInstance.X</Name>
-      <Value xsi:type="xsd:float">17</Value>
+      <Value xsi:type="xsd:float">5</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>CatchingBackgroundInstance.X Units</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>CatchingBackgroundInstance.Y</Name>
-      <Value xsi:type="xsd:float">19</Value>
+      <Value xsi:type="xsd:float">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>CatchingBackgroundInstance.Y Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -135,82 +141,64 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>bool</Type>
-      <Name>ExposeChildrenEvents</Name>
-      <Value xsi:type="xsd:boolean">true</Value>
-      <Category>Behavior</Category>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>float</Type>
-      <Name>FrameInstance.Height</Name>
-      <Value xsi:type="xsd:float">550</Value>
+      <Name>DoubleBarFrameInstance.Height</Name>
+      <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
-      <Name>FrameInstance.Height Units</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>FrameInstance.Parent</Name>
-      <Value xsi:type="xsd:string">&lt;SCREEN BOUNDS&gt;</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>bool</Type>
-      <Name>FrameInstance.Visible</Name>
-      <Value xsi:type="xsd:boolean">true</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FrameInstance.Width</Name>
-      <Value xsi:type="xsd:float">250</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>FrameInstance.Width Units</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FrameInstance.X</Name>
-      <Value xsi:type="xsd:float">70</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>HorizontalAlignment</Type>
-      <Name>FrameInstance.X Origin</Name>
+      <Name>DoubleBarFrameInstance.Height Units</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>string</Type>
+      <Name>DoubleBarFrameInstance.Parent</Name>
+      <Value xsi:type="xsd:string">&lt;SCREEN BOUNDS&gt;</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>DoubleBarFrameInstance.Width</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>DoubleBarFrameInstance.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>DoubleBarFrameInstance.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>PositionUnitType</Type>
-      <Name>FrameInstance.X Units</Name>
+      <Name>DoubleBarFrameInstance.X Units</Name>
       <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>FrameInstance.Y</Name>
-      <Value xsi:type="xsd:float">50</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>VerticalAlignment</Type>
-      <Name>FrameInstance.Y Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Name>DoubleBarFrameInstance.Y</Name>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
-      <Name>FrameInstance.Y Units</Name>
+      <Name>DoubleBarFrameInstance.Y Units</Name>
       <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <Category>Behavior</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -229,7 +217,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Height</Name>
-      <Value xsi:type="xsd:float">100</Value>
+      <Value xsi:type="xsd:float">80</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -266,7 +254,13 @@
     <Variable>
       <Type>float</Type>
       <Name>UnknownFishInstance.Height</Name>
-      <Value xsi:type="xsd:float">60</Value>
+      <Value xsi:type="xsd:float">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>UnknownFishInstance.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -278,20 +272,26 @@
     <Variable>
       <Type>float</Type>
       <Name>UnknownFishInstance.Width</Name>
-      <Value xsi:type="xsd:float">100</Value>
+      <Value xsi:type="xsd:float">35</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>UnknownFishInstance.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>UnknownFishInstance.X</Name>
-      <Value xsi:type="xsd:float">50</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <ExposedAsName>UnknownFishInstanceX</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>HorizontalAlignment</Type>
       <Name>UnknownFishInstance.X Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -303,14 +303,14 @@
     <Variable>
       <Type>float</Type>
       <Name>UnknownFishInstance.Y</Name>
-      <Value xsi:type="xsd:float">50</Value>
+      <Value xsi:type="xsd:float">90</Value>
       <ExposedAsName>UnknownFishInstanceY</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
       <Name>UnknownFishInstance.Y Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -328,7 +328,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Width</Name>
-      <Value xsi:type="xsd:float">20</Value>
+      <Value xsi:type="xsd:float">25</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -361,15 +361,16 @@
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>X Units</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">2</Value>
       <Category>Position</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>Y</Name>
+      <Value xsi:type="xsd:float">0</Value>
       <Category>Position</Category>
-      <SetsValue>false</SetsValue>
+      <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
@@ -381,7 +382,7 @@
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>Y Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">3</Value>
       <Category>Position</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -394,10 +395,6 @@
     </VariableList>
   </State>
   <Instance>
-    <Name>FrameInstance</Name>
-    <BaseType>Frame</BaseType>
-  </Instance>
-  <Instance>
     <Name>CatchingBackgroundInstance</Name>
     <BaseType>Sprite</BaseType>
   </Instance>
@@ -408,6 +405,10 @@
   <Instance>
     <Name>AlignmentBarInstance</Name>
     <BaseType>AlignmentBar</BaseType>
+  </Instance>
+  <Instance>
+    <Name>DoubleBarFrameInstance</Name>
+    <BaseType>DoubleBarFrame</BaseType>
   </Instance>
   <Behaviors />
 </ComponentSave>

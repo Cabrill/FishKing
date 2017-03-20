@@ -24,10 +24,6 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
-    <Name>Frame</Name>
-    <ElementType>Component</ElementType>
-  </ComponentReference>
-  <ComponentReference>
     <Name>FramedCatchingBackground</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>

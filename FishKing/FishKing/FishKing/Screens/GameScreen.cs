@@ -50,7 +50,6 @@ namespace FishKing.Screens
             LoadLevel(levelToLoad);
 
             InitializeCharacter();
-           
         }
 
         private void AddCollisions()
@@ -117,6 +116,7 @@ namespace FishKing.Screens
                 Keys.A, Keys.D, Keys.W, Keys.S);
 
             this.CharacterInstance.ActionInput = InputManager.Keyboard.GetKey(Keys.Space);
+            this.CharacterInstance.FishingAlignmentInput = InputManager.Mouse.GetButton(Mouse.MouseButtons.LeftButton);
         }
 
         void CustomActivity(bool firstTimeCalled)
@@ -164,39 +164,51 @@ namespace FishKing.Screens
 
         private void FishingActivity()
         {
-            if (CharacterInstance.IsAttemptingAction && !CharacterInstance.IsInDialog)
+            if (CharacterInstance.IsAttemptingAction && !CharacterInstance.IsInDialog && 
+                !CharacterInstance.IsFishing && !CharacterInstance.IsCastingRod)
             {
                 CharacterInstance.IsCastingRod = true;
+
+                ProgressBarInstance.ResetProgress();
+                ProgressBarInstance.PositionProgressBarOver(CharacterInstance.Position);
             }
-
-            FishCatchingInterfaceInstance.Visible = CharacterInstance.IsFishing;
-            FishingLineStatusInstance.Visible = CharacterInstance.IsFishing;
-            ProgressBarInstance.Visible = (CharacterInstance.IsOnWindUp || CharacterInstance.IsBeforeWindUp);
-
-            if (CharacterInstance.IsBeforeWindUp || CharacterInstance.IsOnWindUp)
+            else if (CharacterInstance.IsBeforeWindUp || CharacterInstance.IsOnWindUp)
             {
-                var bar = ProgressBarInstance;
-                if (bar.BarFillWidth < 150)
+                if (ProgressBarInstance.Progress < 100)
                 {
-                    bar.BarFillTextureWidth += 1;
-                    bar.BarFillWidth += 1;
+                    ProgressBarInstance.Progress += 2;
                 }
 
             }
-
-            if (CharacterInstance.IsFishing)
+            else if (CharacterInstance.IsFishing)
             {
-                //if (CharacterInstance.HasFishOnTheLine)
-                //{
+                if (CharacterInstance.HasFishOnTheLine)
+                {
+                    if (CharacterInstance.IsHoldingAlignButton)
+                    {
+                        FishCatchingInterfaceInstance.RaiseAlignmentBar();
+                    }
+                    FishCatchingInterfaceInstance.Update();
+                }
+                else
+                {
+                    var rnd = new Random();
+                    var catchChance = 0.2;
+                    var catchRoll = rnd.NextDouble();
 
-                //}
+                    if (catchRoll <= catchChance)
+                    {
+                        var fish = Factories.FishFactory.CreateNew();
+                        fish.FishType = GlobalContent.Fish_Types[Fish_Types.Coho_Salmon];
+                        CharacterInstance.FishOnTheLine = fish;
+
+                    }
+                }
             }
-            else
-            {
 
-            }
-
-
+            FishCatchingInterfaceInstance.Visible = CharacterInstance.HasFishOnTheLine;
+            FishingLineStatusInstance.Visible = CharacterInstance.HasFishOnTheLine;
+            ProgressBarInstance.Visible = (CharacterInstance.IsOnWindUp || CharacterInstance.IsBeforeWindUp);
         }
 
         private void ShowDialog(string stringId)

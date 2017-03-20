@@ -57,7 +57,7 @@ namespace FishKing.Entities
         }
 
         public I2DInput MovementInput { get; set; }
-
+        public IPressableInput FishingAlignmentInput { get; set; }
         public IPressableInput ActionInput { get; set; }
 
         public bool isMovingToTile = false;
@@ -68,7 +68,19 @@ namespace FishKing.Entities
             private set;
         }
 
+        public bool IsAttemptingReelIn
+        {
+            get;
+            private set;
+        }
+
         public bool IsHoldingAction
+        {
+            get;
+            private set;
+        }
+
+        public bool IsHoldingAlignButton
         {
             get;
             private set;
@@ -118,6 +130,11 @@ namespace FishKing.Entities
         }
 
         public bool HasFishOnTheLine
+        {
+            get { return FishOnTheLine != null; }
+        }
+
+        public Fish FishOnTheLine
         {
             get;
             set;
@@ -177,11 +194,13 @@ namespace FishKing.Entities
             IsAttemptingAction = ActionInput != null && ActionInput.WasJustPressed && isMovingToTile == false;
             IsHoldingAction = ActionInput != null && ActionInput.IsDown;
 
-            if (IsAttemptingAction)
+            if (IsAttemptingAction && !HasFishOnTheLine)
             {
                 IsFishing = false;
                 IsCastingRod = false;
             }
+            IsHoldingAlignButton = FishingAlignmentInput != null && FishingAlignmentInput.IsDown;
+
         }
 
         public void SetSpriteOffset()
@@ -199,6 +218,7 @@ namespace FishKing.Entities
                 directionFacing = desiredDirection;
                 IsCastingRod = false;
                 IsFishing = false;
+                FishOnTheLine = null;
             }
 
             bool startedMoving = ApplyDesiredDirectionToMovement(desiredDirection, collision, characters);
