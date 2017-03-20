@@ -80,7 +80,44 @@ namespace FishKing.Entities
             set;
         }
 
+        public bool IsOnWindUp
+        {
+            get
+            {
+                return (IsHoldingAction && SpriteInstance.CurrentFrameIndex == WindUpAnimationFrame);
+            }
+        }
+
+        public bool IsBeforeWindUp
+        {
+            get
+            {
+                return IsCastingRod && (SpriteInstance.CurrentFrameIndex < WindUpAnimationFrame);
+            }
+        }
+
+        private int WindUpAnimationFrame
+        {
+            get
+            {
+                if (directionFacing == Direction.Left || directionFacing == Direction.Right)
+                {
+                    return 2;
+                }
+                else
+                {
+                    return 3;
+                }
+            }
+        }
+
         public bool IsFishing
+        {
+            get;
+            set;
+        }
+
+        public bool HasFishOnTheLine
         {
             get;
             set;
@@ -226,20 +263,9 @@ namespace FishKing.Entities
                 }
                 else if (!IsFishing)
                 {
-                    int windupFrame;
-                    if (directionFacing == Direction.Left || directionFacing == Direction.Right)
-                    {
-                        windupFrame = 2;
-                    }
-                    else
-                    {
-                        windupFrame = 3;
-                    }
-
                     var lastFrameIndex = SpriteInstance.CurrentChain.Count - 1;
                     var isOnLastFrame = (WoodRodSpriteInstance.CurrentFrameIndex == lastFrameIndex);
-                    var isOnWindUp = (IsHoldingAction && SpriteInstance.CurrentFrameIndex == windupFrame);
-                    var shouldHoldFrame = isOnLastFrame || isOnWindUp;
+                    var shouldHoldFrame = isOnLastFrame || IsOnWindUp;
 
                     SpriteInstance.Animate = !shouldHoldFrame;
                     WoodRodSpriteInstance.Animate = !shouldHoldFrame;

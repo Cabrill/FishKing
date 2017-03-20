@@ -56,14 +56,15 @@
     <Variable>
       <Type>int</Type>
       <Name>BarFill.Texture Width</Name>
-      <Value xsi:type="xsd:int">457</Value>
-      <ExposedAsName>BarFillWidth</ExposedAsName>
+      <Value xsi:type="xsd:int">20</Value>
+      <ExposedAsName>BarFillTextureWidth</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>BarFill.Width</Name>
-      <Value xsi:type="xsd:float">145</Value>
+      <Value xsi:type="xsd:float">20</Value>
+      <ExposedAsName>BarFillWidth</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -143,6 +144,13 @@
       <Type>float</Type>
       <Name>EmptyBar.Y</Name>
       <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <Category>Behavior</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -289,6 +297,12 @@
         <Value xsi:type="xsd:float">1</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>BarFill.Width</Name>
+        <Value xsi:type="xsd:float">1</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
     </State>
     <State>
       <Name>Full</Name>
@@ -296,6 +310,18 @@
         <Type>TextureAddress</Type>
         <Name>BarFill.Texture Address</Name>
         <Value xsi:type="xsd:int">1</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>BarFill.Texture Width</Name>
+        <Value xsi:type="xsd:int">145</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>BarFill.Width</Name>
+        <Value xsi:type="xsd:float">145</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

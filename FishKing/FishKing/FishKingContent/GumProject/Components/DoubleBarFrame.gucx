@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ComponentSave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Name>CatchingBackground</Name>
-  <BaseType>Sprite</BaseType>
+  <Name>DoubleBarFrame</Name>
+  <BaseType>NineSlice</BaseType>
   <State>
     <Name>Default</Name>
     <Variable>
@@ -9,13 +9,6 @@
       <Name>Alpha</Name>
       <Value xsi:type="xsd:int">255</Value>
       <Category>Rendering</Category>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>bool</Type>
-      <Name>Animate</Name>
-      <Value xsi:type="xsd:boolean">false</Value>
-      <Category>Animation</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -46,23 +39,9 @@
     </Variable>
     <Variable>
       <Type>bool</Type>
-      <Name>Custom Texture Coordinates</Name>
-      <Value xsi:type="xsd:boolean">false</Value>
-      <Category>Source</Category>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>bool</Type>
-      <Name>FlipHorizontal</Name>
-      <Value xsi:type="xsd:boolean">false</Value>
-      <Category>Flip</Category>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>bool</Type>
-      <Name>FlipVertical</Name>
-      <Value xsi:type="xsd:boolean">false</Value>
-      <Category>Flip</Category>
+      <Name>ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <Category>Behavior</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -88,14 +67,14 @@
     <Variable>
       <Type>float</Type>
       <Name>Height</Name>
-      <Value xsi:type="xsd:float">100</Value>
+      <Value xsi:type="xsd:float">147</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -112,17 +91,10 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>float</Type>
-      <Name>Rotation</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <Category>Flip and Rotation</Category>
-      <SetsValue>false</SetsValue>
-    </Variable>
-    <Variable>
       <IsFile>true</IsFile>
       <Type>string</Type>
       <Name>SourceFile</Name>
-      <Value xsi:type="xsd:string">Assets\waterstrip.png</Value>
+      <Value xsi:type="xsd:string">Assets\DoubleBar\DoubleBar_Center.png</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -141,13 +113,6 @@
       <Type>int</Type>
       <Name>Texture Height</Name>
       <Value xsi:type="xsd:int">0</Value>
-      <Category>Source</Category>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Texture Height Scale</Name>
-      <Value xsi:type="xsd:float">0</Value>
       <Category>Source</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -173,13 +138,6 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>float</Type>
-      <Name>Texture Width Scale</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <Category>Source</Category>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>bool</Type>
       <Name>Visible</Name>
       <Value xsi:type="xsd:boolean">true</Value>
@@ -188,22 +146,15 @@
     <Variable>
       <Type>float</Type>
       <Name>Width</Name>
-      <Value xsi:type="xsd:float">20</Value>
+      <Value xsi:type="xsd:float">142</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <Category>Dimensions</Category>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>bool</Type>
-      <Name>Wrap</Name>
-      <Value xsi:type="xsd:boolean">false</Value>
-      <Category>Source</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -215,9 +166,8 @@
     <Variable>
       <Type>float</Type>
       <Name>X</Name>
-      <Value xsi:type="xsd:float">50</Value>
       <Category>Position</Category>
-      <SetsValue>true</SetsValue>
+      <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
       <Type>HorizontalAlignment</Type>
@@ -229,16 +179,15 @@
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>X Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <Category>Position</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>Y</Name>
-      <Value xsi:type="xsd:float">0</Value>
       <Category>Position</Category>
-      <SetsValue>true</SetsValue>
+      <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
@@ -250,14 +199,13 @@
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <Category>Position</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <VariableList xsi:type="VariableListSaveOfString">
       <Type>string</Type>
       <Name>AnimationFrames</Name>
-      <Category>Animation</Category>
       <IsFile>false</IsFile>
       <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
       <Value />

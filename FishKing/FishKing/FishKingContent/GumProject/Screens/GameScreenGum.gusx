@@ -4,27 +4,81 @@
   <State>
     <Name>Default</Name>
     <Variable>
-      <Type>float</Type>
-      <Name>FramedCatchingBackgroundInstance.X</Name>
-      <Value xsi:type="xsd:float">50</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>FramedCatchingBackgroundInstance.X Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
+      <Type>AlignmentState</Type>
+      <Name>FishCatchingInterfaceInstance.AlignmentBarInstanceAlignmentState</Name>
+      <Value xsi:type="xsd:string">NotAligned</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>FramedCatchingBackgroundInstance.Y</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Name>FishCatchingInterfaceInstance.AlignmentBarInstanceHeight</Name>
+      <Value xsi:type="xsd:float">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FishCatchingInterfaceInstance.Parent</Name>
+      <Value xsi:type="xsd:string">&lt;SCREEN BOUNDS&gt;</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>AnimationState</Type>
+      <Name>FishCatchingInterfaceInstance.UnknownFishInstanceAnimationState</Name>
+      <Value xsi:type="xsd:string">FishFrame1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishCatchingInterfaceInstance.X</Name>
+      <Value xsi:type="xsd:float">566</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
-      <Name>FramedCatchingBackgroundInstance.Y Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
+      <Name>FishCatchingInterfaceInstance.X Units</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishCatchingInterfaceInstance.Y</Name>
+      <Value xsi:type="xsd:float">-11</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>FishCatchingInterfaceInstance.Y Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishingLineStatusInstance.X</Name>
+      <Value xsi:type="xsd:float">389</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>FishingLineStatusInstance.X Units</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishingLineStatusInstance.Y</Name>
+      <Value xsi:type="xsd:float">-9</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>FishingLineStatusInstance.Y Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ProgressBarInstance.BarFillWidth</Name>
+      <Value xsi:type="xsd:int">150</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -54,7 +108,7 @@
     <Variable>
       <Type>float</Type>
       <Name>ProgressBarInstance.X</Name>
-      <Value xsi:type="xsd:float">200</Value>
+      <Value xsi:type="xsd:float">112</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -72,7 +126,7 @@
     <Variable>
       <Type>float</Type>
       <Name>ProgressBarInstance.Y</Name>
-      <Value xsi:type="xsd:float">100</Value>
+      <Value xsi:type="xsd:float">93</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -89,11 +143,15 @@
     </Variable>
   </State>
   <Instance>
-    <Name>FramedCatchingBackgroundInstance</Name>
+    <Name>FishCatchingInterfaceInstance</Name>
     <BaseType>FramedCatchingBackground</BaseType>
   </Instance>
   <Instance>
     <Name>ProgressBarInstance</Name>
     <BaseType>ProgressBar</BaseType>
+  </Instance>
+  <Instance>
+    <Name>FishingLineStatusInstance</Name>
+    <BaseType>FishingLineStatus</BaseType>
   </Instance>
 </ScreenSave>

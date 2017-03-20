@@ -6,3 +6,10 @@ TileAdventure/TileAdventure/bin/x86/Debug/
 TileAdventure/TileAdventure/obj/
 TileAdventure/TileAdventureContent/obj/
 TileAdventure/TileAdventure/Settings/PluginSettings.xml
+*.user
+*.aeproperties
+.vs/
+*.csvSettings
+FishKing/FishKing/bin/
+FishKing/FishKing/obj/
+FishKing/FishKingContent/obj/

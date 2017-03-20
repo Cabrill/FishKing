@@ -122,7 +122,7 @@ namespace FishKing.Screens
         void CustomActivity(bool firstTimeCalled)
 		{
             DialogActivity();
-            CastingActivity();
+            FishingActivity();
             if (CanMoveCharacter)
             {
                 this.CharacterInstance.PerformMovementActivity(this.SolidCollisions, NpcCharacterList);
@@ -162,16 +162,41 @@ namespace FishKing.Screens
             CharacterInstance.IsInDialog = DialogDisplayInstance.Visible;
         }
 
-        private void CastingActivity()
+        private void FishingActivity()
         {
-            
             if (CharacterInstance.IsAttemptingAction && !CharacterInstance.IsInDialog)
             {
-                if (!CharacterInstance.IsCastingRod)
-                {
-                    CharacterInstance.IsCastingRod = true;
-                }
+                CharacterInstance.IsCastingRod = true;
             }
+
+            FishCatchingInterfaceInstance.Visible = CharacterInstance.IsFishing;
+            FishingLineStatusInstance.Visible = CharacterInstance.IsFishing;
+            ProgressBarInstance.Visible = (CharacterInstance.IsOnWindUp || CharacterInstance.IsBeforeWindUp);
+
+            if (CharacterInstance.IsBeforeWindUp || CharacterInstance.IsOnWindUp)
+            {
+                var bar = ProgressBarInstance;
+                if (bar.BarFillWidth < 150)
+                {
+                    bar.BarFillTextureWidth += 1;
+                    bar.BarFillWidth += 1;
+                }
+
+            }
+
+            if (CharacterInstance.IsFishing)
+            {
+                //if (CharacterInstance.HasFishOnTheLine)
+                //{
+
+                //}
+            }
+            else
+            {
+
+            }
+
+
         }
 
         private void ShowDialog(string stringId)

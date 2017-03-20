@@ -1,4 +1,4 @@
-using FlatRedBall;
+﻿using FlatRedBall;
 using FlatRedBall.Glue.StateInterpolation;
 using FlatRedBall.Instructions;
 using FlatRedBall.Instructions.Reflection;

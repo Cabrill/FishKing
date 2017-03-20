@@ -16,7 +16,11 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
-    <Name>CatchingBackground</Name>
+    <Name>DoubleBarFrame</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>FishingLineStatus</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>

@@ -1,127 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ComponentSave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Name>FramedCatchingBackground</Name>
+  <Name>FishingLineStatus</Name>
   <BaseType>Container</BaseType>
   <State>
     <Name>Default</Name>
-    <Variable>
-      <Type>AlignmentState</Type>
-      <Name>AlignmentBarInstance.AlignmentState</Name>
-      <Value xsi:type="xsd:string">NotAligned</Value>
-      <ExposedAsName>AlignmentBarInstanceAlignmentState</ExposedAsName>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>AlignmentBarInstance.Height</Name>
-      <Value xsi:type="xsd:float">10</Value>
-      <ExposedAsName>AlignmentBarInstanceHeight</ExposedAsName>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>AlignmentBarInstance.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>AlignmentBarInstance.Parent</Name>
-      <Value xsi:type="xsd:string">CatchingBackgroundInstance</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>AlignmentBarInstance.Width</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>AlignmentBarInstance.Width Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>AlignmentBarInstance.Y</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <ExposedAsName>AlignmentBarInstanceY</ExposedAsName>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>VerticalAlignment</Type>
-      <Name>AlignmentBarInstance.Y Origin</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>AlignmentBarInstance.Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>CatchingBackgroundInstance.Height</Name>
-      <Value xsi:type="xsd:float">-41</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>CatchingBackgroundInstance.Height Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>CatchingBackgroundInstance.Parent</Name>
-      <Value xsi:type="xsd:string">FrameInstance</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <IsFile>true</IsFile>
-      <Type>string</Type>
-      <Name>CatchingBackgroundInstance.SourceFile</Name>
-      <Value xsi:type="xsd:string">Assets\waterstrip.png</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>CatchingBackgroundInstance.Width</Name>
-      <Value xsi:type="xsd:float">-38</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>CatchingBackgroundInstance.Width Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>CatchingBackgroundInstance.X</Name>
-      <Value xsi:type="xsd:float">17</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>CatchingBackgroundInstance.X Units</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>CatchingBackgroundInstance.Y</Name>
-      <Value xsi:type="xsd:float">19</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>CatchingBackgroundInstance.Y Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
     <Variable>
       <Type>ChildrenLayout</Type>
       <Name>Children Layout</Name>
@@ -143,6 +25,147 @@
     </Variable>
     <Variable>
       <Type>float</Type>
+      <Name>FishingLine.Height</Name>
+      <Value xsi:type="xsd:float">92.5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>FishingLine.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FishingLine.Parent</Name>
+      <Value xsi:type="xsd:string">FrameInstance</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>FishingLine.SourceFile</Name>
+      <Value xsi:type="xsd:string">Assets\fishingline.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishingLine.Width</Name>
+      <Value xsi:type="xsd:float">8</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>FishingLine.Width Units</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>FishingLine.X Origin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>FishingLine.X Units</Name>
+      <Value xsi:type="xsd:int">6</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishingLine.Y</Name>
+      <Value xsi:type="xsd:float">19</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>FishingLine.Y Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishingLineStress.Height</Name>
+      <Value xsi:type="xsd:float">5</Value>
+      <ExposedAsName>FishingLineStressHeightPct</ExposedAsName>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>FishingLineStress.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FishingLineStress.Parent</Name>
+      <Value xsi:type="xsd:string">FishingLine</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>FishingLineStress.SourceFile</Name>
+      <Value xsi:type="xsd:string">Assets\linestress.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishingLineStress.Width</Name>
+      <Value xsi:type="xsd:float">50</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>FishingLineStress.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishingLineStress.X</Name>
+      <Value xsi:type="xsd:float">25</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>FishingLineStress.X Origin</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>FishingLineStress.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishingLineStress.Y</Name>
+      <Value xsi:type="xsd:float">50</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>FishingLineStress.Y Origin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>FishingLineStress.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>CutEdgesState</Type>
+      <Name>FrameInstance.CutEdgesState</Name>
+      <Value xsi:type="xsd:string">CutRight</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
       <Name>FrameInstance.Height</Name>
       <Value xsi:type="xsd:float">550</Value>
       <SetsValue>true</SetsValue>
@@ -160,6 +183,24 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>TextureAddress</Type>
+      <Name>FrameInstance.Texture Address</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>FrameInstance.Texture Height</Name>
+      <Value xsi:type="xsd:int">800</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>FrameInstance.Texture Width</Name>
+      <Value xsi:type="xsd:int">200</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>bool</Type>
       <Name>FrameInstance.Visible</Name>
       <Value xsi:type="xsd:boolean">true</Value>
@@ -168,7 +209,7 @@
     <Variable>
       <Type>float</Type>
       <Name>FrameInstance.Width</Name>
-      <Value xsi:type="xsd:float">250</Value>
+      <Value xsi:type="xsd:float">150</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -246,77 +287,57 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>State</Type>
-      <Name>State</Name>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>bool</Type>
-      <Name>UnknownFishInstance.Animate</Name>
-      <Value xsi:type="xsd:boolean">true</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>AnimationState</Type>
-      <Name>UnknownFishInstance.AnimationState</Name>
-      <Value xsi:type="xsd:string">FishFrame4</Value>
-      <ExposedAsName>UnknownFishInstanceAnimationState</ExposedAsName>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>float</Type>
-      <Name>UnknownFishInstance.Height</Name>
-      <Value xsi:type="xsd:float">60</Value>
+      <Name>SkyBackground.Height</Name>
+      <Value xsi:type="xsd:float">-41</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>SkyBackground.Height Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>UnknownFishInstance.Parent</Name>
-      <Value xsi:type="xsd:string">CatchingBackgroundInstance</Value>
+      <Name>SkyBackground.Parent</Name>
+      <Value xsi:type="xsd:string">FrameInstance</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>SkyBackground.SourceFile</Name>
+      <Value xsi:type="xsd:string">Assets\skyline.png</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>UnknownFishInstance.Width</Name>
-      <Value xsi:type="xsd:float">100</Value>
+      <Name>SkyBackground.Width</Name>
+      <Value xsi:type="xsd:float">-38</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>float</Type>
-      <Name>UnknownFishInstance.X</Name>
-      <Value xsi:type="xsd:float">50</Value>
-      <ExposedAsName>UnknownFishInstanceX</ExposedAsName>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>HorizontalAlignment</Type>
-      <Name>UnknownFishInstance.X Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>UnknownFishInstance.X Units</Name>
+      <Type>DimensionUnitType</Type>
+      <Name>SkyBackground.Width Units</Name>
       <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>UnknownFishInstance.Y</Name>
-      <Value xsi:type="xsd:float">50</Value>
-      <ExposedAsName>UnknownFishInstanceY</ExposedAsName>
+      <Name>SkyBackground.X</Name>
+      <Value xsi:type="xsd:float">17</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>VerticalAlignment</Type>
-      <Name>UnknownFishInstance.Y Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Type>float</Type>
+      <Name>SkyBackground.Y</Name>
+      <Value xsi:type="xsd:float">19</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>UnknownFishInstance.Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
+      <Type>State</Type>
+      <Name>State</Name>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -394,20 +415,20 @@
     </VariableList>
   </State>
   <Instance>
+    <Name>FishingLineStress</Name>
+    <BaseType>Sprite</BaseType>
+  </Instance>
+  <Instance>
     <Name>FrameInstance</Name>
     <BaseType>Frame</BaseType>
   </Instance>
   <Instance>
-    <Name>CatchingBackgroundInstance</Name>
+    <Name>SkyBackground</Name>
     <BaseType>Sprite</BaseType>
   </Instance>
   <Instance>
-    <Name>UnknownFishInstance</Name>
-    <BaseType>UnknownFish</BaseType>
-  </Instance>
-  <Instance>
-    <Name>AlignmentBarInstance</Name>
-    <BaseType>AlignmentBar</BaseType>
+    <Name>FishingLine</Name>
+    <BaseType>Sprite</BaseType>
   </Instance>
   <Behaviors />
 </ComponentSave>

@@ -154,8 +154,26 @@
         <NamedObjectSave>
           <SourceType>File</SourceType>
           <SourceFile>GumProject/Screens/GameScreenGum.gusx</SourceFile>
-          <SourceName>FramedCatchingBackgroundInstance (FishKing.GumRuntimes.FramedCatchingBackgroundRuntime)</SourceName>
-          <InstanceName>FramedCatchingBackgroundInstance</InstanceName>
+          <SourceName>FishCatchingInterfaceInstance (FishKing.GumRuntimes.FramedCatchingBackgroundRuntime)</SourceName>
+          <InstanceName>FishCatchingInterfaceInstance</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/GameScreenGum.gusx</SourceFile>
+          <SourceName>ProgressBarInstance (FishKing.GumRuntimes.ProgressBarRuntime)</SourceName>
+          <InstanceName>ProgressBarInstance</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/GameScreenGum.gusx</SourceFile>
+          <SourceName>FishingLineStatusInstance (FishKing.GumRuntimes.FishingLineStatusRuntime)</SourceName>
+          <InstanceName>FishingLineStatusInstance</InstanceName>
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
