@@ -28,6 +28,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>ProgressBar</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>UnknownFish</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
