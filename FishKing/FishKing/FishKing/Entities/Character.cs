@@ -68,6 +68,12 @@ namespace FishKing.Entities
             private set;
         }
 
+        public bool IsHoldingAction
+        {
+            get;
+            private set;
+        }
+
         public bool IsCastingRod
         {
             get;
@@ -75,6 +81,12 @@ namespace FishKing.Entities
         }
 
         public bool IsFishing
+        {
+            get;
+            set;
+        }
+
+        public bool IsInDialog
         {
             get;
             set;
@@ -126,12 +138,20 @@ namespace FishKing.Entities
         private void CustomActivity()
 		{
             IsAttemptingAction = ActionInput != null && ActionInput.WasJustPressed && isMovingToTile == false;
+            IsHoldingAction = ActionInput != null && ActionInput.IsDown;
+
             if (IsAttemptingAction)
             {
                 IsFishing = false;
                 IsCastingRod = false;
             }
-		}
+        }
+
+        public void SetSpriteOffset()
+        {
+            SpriteInstance.RelativeY = SpriteInstance.Height / 8;
+            WoodRodSpriteInstance.RelativeY = WoodRodSpriteInstance.Height / 8;
+        }
 
         public void PerformMovementActivity(TileShapeCollection collision, PositionedObjectList<Character> characters)
         {
@@ -179,13 +199,17 @@ namespace FishKing.Entities
                 }
                 this.SpriteInstance.Animate = isMovingToTile;
             }
+            else if (!IsCastingRod && !IsFishing)
+            {
+                this.SpriteInstance.Animate = isMovingToTile;
+            }
         }
 
         public void UpdateFishingStatus()
         {
             if (IsCastingRod && !IsFishing)
             {
-                var shouldStartCastingAnimation = !WoodRodSpriteInstance.Animate;
+                var shouldStartCastingAnimation = ActionInput.WasJustPressed;
                 if (shouldStartCastingAnimation)
                 {
                     var chainName = "";
@@ -196,32 +220,38 @@ namespace FishKing.Entities
                         case Direction.Up: chainName = "CastUp"; break;
                         case Direction.Down: chainName = "CastDown"; break;
                     }
-                    SpriteInstance.CurrentChainName = chainName;
-                    WoodRodSpriteInstance.CurrentChainName = chainName;
-                    SpriteInstance.Animate = true;
-                    WoodRodSpriteInstance.Animate = true;
-                    SpriteInstance.CurrentFrameIndex = 0;
-                    WoodRodSpriteInstance.CurrentFrameIndex = 0;
+                    SpriteInstance.CurrentChainName =  WoodRodSpriteInstance.CurrentChainName = chainName;
+                    SpriteInstance.Animate = WoodRodSpriteInstance.Animate = true;
+                    SpriteInstance.CurrentFrameIndex = WoodRodSpriteInstance.CurrentFrameIndex = 0;
                 }
                 else if (!IsFishing)
                 {
-                    var lastFrameIndex = SpriteInstance.CurrentChain.Count - 1;
-                    if (WoodRodSpriteInstance.CurrentFrameIndex == lastFrameIndex)
+                    int windupFrame;
+                    if (directionFacing == Direction.Left || directionFacing == Direction.Right)
                     {
-                        //SpriteInstance.CurrentFrameIndex = 0;
-                        //WoodRodSpriteInstance.CurrentFrameIndex = 0;
-                        WoodRodSpriteInstance.Animate = false;
+                        windupFrame = 2;
+                    }
+                    else
+                    {
+                        windupFrame = 3;
+                    }
+
+                    var lastFrameIndex = SpriteInstance.CurrentChain.Count - 1;
+                    var isOnLastFrame = (WoodRodSpriteInstance.CurrentFrameIndex == lastFrameIndex);
+                    var isOnWindUp = (IsHoldingAction && SpriteInstance.CurrentFrameIndex == windupFrame);
+                    var shouldHoldFrame = isOnLastFrame || isOnWindUp;
+
+                    SpriteInstance.Animate = !shouldHoldFrame;
+                    WoodRodSpriteInstance.Animate = !shouldHoldFrame;
+
+                    if (isOnLastFrame)
+                    {
                         IsCastingRod = false;
                         IsFishing = true;
                     }
                 }
             }
-            SpriteInstance.Animate = (isMovingToTile || IsCastingRod);
             WoodRodSpriteInstance.Visible = (IsCastingRod || IsFishing);
-            WoodRodSpriteInstance.Animate = IsCastingRod;
-
-            SpriteInstance.RelativeY = SpriteInstance.Height / 8;
-            WoodRodSpriteInstance.RelativeY = WoodRodSpriteInstance.Height / 8;
         }
 
         private bool ApplyDesiredDirectionToMovement(Direction desiredDirection, TileShapeCollection collision, 
