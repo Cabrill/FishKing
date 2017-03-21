@@ -1,3 +1,3 @@
 "Name (string, required)",MaxGrams (int),MaxMM (int),AvgMM (int),RarityRanking (int),Speed (int),Fight (int),InRiver (bool),InOcean (bool),InDeepOcean (bool),InWaterfall (bool),InPond (bool),InLake (bool)
-Coho Salmon,1600,710,227,50,10,50,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
-Paradise Fish,500,100,55,3,30,1,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE
+Coho Salmon,1600,710,227,50,5,50,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
+Paradise Fish,500,100,55,3,10,1,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE

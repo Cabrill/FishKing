@@ -15,10 +15,21 @@ namespace FishKing.GumRuntimes
         private const int MinFishWidth = 15;
         private bool fishIsMoving = false;
         private Tweener fishTweener;
+        private static Random randomSeed = new Random();
 
-        private int MaxY
+        private float MaxAlignmentY
         {
-            get { return 100 - (int)AlignmentBarInstance.Height; }
+            get { return 100 - AlignmentBarInstance.Height; }
+        }
+
+        private float MaxFishY
+        {
+            get { return 100 - UnknownFishInstance.Height; }
+        }
+
+        private float MaxFishX
+        {
+            get { return 100 - UnknownFishInstance.Width; }
         }
 
         private int AlignmentTop
@@ -97,20 +108,47 @@ namespace FishKing.GumRuntimes
 
         public void MoveFish()
         {
-            if (!fishIsMoving)
+            fishIsMoving = true;
+
+            var tweenHolder = new TweenerHolder();
+            tweenHolder.Caller = UnknownFishInstance;
+
+            double tweenDuration = (double)FishSpeed / 4;
+            double chanceOfFight = (double)FishFight / 200;
+            double chanceOfLuck = .9 - chanceOfFight;
+
+            float destX = 0f;
+            float destY = 0f;
+
+            if (UnknownFishInstance.X > (MaxFishX / 2))
             {
-                fishIsMoving = true;
-
-                var mockY = UnknownFishInstance.Y - 25;
-                var mockX = UnknownFishInstance.X + 10;
-
-                var tweenHolder = new TweenerHolder();
-                tweenHolder.Caller = UnknownFishInstance;
-
-                fishTweener = tweenHolder.Tween("Y").To(mockY).During(3).Using(FlatRedBall.Glue.StateInterpolation.InterpolationType.Cubic, FlatRedBall.Glue.StateInterpolation.Easing.InOut);
-                tweenHolder.Tween("X").To(mockX).During(2).Using(FlatRedBall.Glue.StateInterpolation.InterpolationType.Cubic, FlatRedBall.Glue.StateInterpolation.Easing.InOut);
-                fishTweener.Ended += () => { fishIsMoving = false; };
+                destX = randomSeed.Next(0, (int)UnknownFishInstance.X);
+                UnknownFishInstance.FlipHorizontal = false;
             }
+            else
+            {
+                destX = randomSeed.Next((int)UnknownFishInstance.X + 1, (int)MaxFishX);
+                UnknownFishInstance.FlipHorizontal = true;
+            }
+
+            fishTweener = tweenHolder.Tween("X").To(destX).During(tweenDuration).Using(FlatRedBall.Glue.StateInterpolation.InterpolationType.Cubic, FlatRedBall.Glue.StateInterpolation.Easing.InOut);
+
+            var fightOrLuck = randomSeed.NextDouble();
+
+            if (chanceOfFight > fightOrLuck)
+            {
+                destY = UnknownFishInstance.Y + (float)(randomSeed.Next(5, 15));
+                destY = Math.Min(destY, MaxFishY);
+                tweenHolder.Tween("Y").To(destY).During(tweenDuration).Using(FlatRedBall.Glue.StateInterpolation.InterpolationType.Cubic, FlatRedBall.Glue.StateInterpolation.Easing.InOut);
+            }
+            else if (chanceOfLuck > fightOrLuck)
+            {
+                destY = UnknownFishInstance.Y - (float)(randomSeed.Next(5, 15));
+                destY = Math.Max(destY, 0);
+                tweenHolder.Tween("Y").To(destY).During(tweenDuration).Using(FlatRedBall.Glue.StateInterpolation.InterpolationType.Cubic, FlatRedBall.Glue.StateInterpolation.Easing.InOut);
+            }
+
+            fishTweener.Ended += () => { fishIsMoving = false; };
         }
 
         public void AnimateUnknownFish()
@@ -126,13 +164,13 @@ namespace FishKing.GumRuntimes
 
         public void LowerAlignmentBar()
         {
-            if (AlignmentBarInstance.Y < MaxY)
+            if (AlignmentBarInstance.Y < MaxAlignmentY)
             {
                 AlignmentBarInstance.Y += 1;
             }
-            if (AlignmentBarInstance.Y > MaxY)
+            if (AlignmentBarInstance.Y > MaxAlignmentY)
             {
-                AlignmentBarInstance.Y = MaxY;
+                AlignmentBarInstance.Y = MaxAlignmentY;
             }
         }
 

@@ -37,6 +37,18 @@
     </Variable>
     <Variable>
       <Type>float</Type>
+      <Name>FramedCatchingBackgroundInstance.UnknownFishInstanceX</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FramedCatchingBackgroundInstance.UnknownFishInstanceY</Name>
+      <Value xsi:type="xsd:float">90</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
       <Name>FramedCatchingBackgroundInstance.X</Name>
       <Value xsi:type="xsd:float">66.75</Value>
       <SetsValue>true</SetsValue>
