@@ -38,7 +38,6 @@ namespace FishKing.Entities
         Right
     }
 
-
 	public partial class Character
 	{
         Direction directionFacing = Direction.Down;

@@ -64,7 +64,6 @@ namespace FishKing
 
             GameSpecificInitialization();
 
-
 			FlatRedBall.Screens.ScreenManager.Start(typeof(FishKing.Screens.GameScreen));
 
             base.Initialize();
