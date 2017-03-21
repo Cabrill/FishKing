@@ -9,9 +9,12 @@ using System.Threading.Tasks;
 
 namespace FishKing.GumRuntimes
 {
-    public partial class FramedCatchingBackgroundRuntime
+    partial class FramedCatchingBackgroundRuntime
     {
-        private int MaxFishWidth = 70;
+        private const int MaxFishWidth = 70;
+        private const int MinFishWidth = 15;
+        private bool fishIsMoving = false;
+        private Tweener fishTweener;
 
         private int MaxY
         {
@@ -53,31 +56,6 @@ namespace FishKing.GumRuntimes
             get; set;
         }
 
-        private int FishSize
-        {
-            get; set;
-        }
-
-            
-        partial void CustomInitialize()
-        {
-            
-            
-        }
-
-        private bool fishIsMoving = false;
-        private Tweener fishTweener;
-
-        public void AttachFish(Fish fish)
-        {
-            FishFight = GlobalContent.Fish_Types[fish.FishType.ToString()].Fight;
-            FishSpeed = GlobalContent.Fish_Types[fish.FishType.ToString()].Speed;
-            FishSize = GlobalContent.Fish_Types[fish.FishType.ToString()].Size;
-
-            UnknownFishInstance.Width = MaxFishWidth * (FishSize / 100);
-            UnknownFishInstance.Height = UnknownFishInstance.Width / 3.5f;
-        }
-
         public void Update()
         {
             AnimateUnknownFish();
@@ -90,7 +68,34 @@ namespace FishKing.GumRuntimes
             }
         }
 
-        private void MoveFish()
+        public void Reset()
+        {
+            AlignmentBarInstance.Y = 90;
+        }
+
+        public void AttachFish(Fish fish)
+        {
+            FishFight = GlobalContent.Fish_Types[fish.FishType.Name].Fight;
+            FishSpeed = GlobalContent.Fish_Types[fish.FishType.Name].Speed;
+
+
+            UnknownFishInstance.Width = DetermineFishWidth(fish.LengthMM);
+            UnknownFishInstance.Height = UnknownFishInstance.Width / 3.5f;
+        }
+
+        private float DetermineFishWidth(int fishLengthMM)
+        {
+            var minLength = FishGenerator.MinimumLengthMM;
+            var fishLengthRange = FishGenerator.MaximumLengthMM - minLength;
+            var normalizedLength = Decimal.Divide((fishLengthMM - minLength), fishLengthRange);
+
+            var fishWidth = (float)(normalizedLength * MaxFishWidth);
+            fishWidth = Math.Max(MinFishWidth, fishWidth);
+
+            return fishWidth;
+        }
+
+        public void MoveFish()
         {
             if (!fishIsMoving)
             {
@@ -101,15 +106,14 @@ namespace FishKing.GumRuntimes
 
                 var tweenHolder = new TweenerHolder();
                 tweenHolder.Caller = UnknownFishInstance;
-                
+
                 fishTweener = tweenHolder.Tween("Y").To(mockY).During(3).Using(FlatRedBall.Glue.StateInterpolation.InterpolationType.Cubic, FlatRedBall.Glue.StateInterpolation.Easing.InOut);
                 tweenHolder.Tween("X").To(mockX).During(2).Using(FlatRedBall.Glue.StateInterpolation.InterpolationType.Cubic, FlatRedBall.Glue.StateInterpolation.Easing.InOut);
                 fishTweener.Ended += () => { fishIsMoving = false; };
-                
             }
         }
 
-        private void AnimateUnknownFish()
+        public void AnimateUnknownFish()
         {
             if (Visible)
             {
@@ -120,7 +124,7 @@ namespace FishKing.GumRuntimes
             }
         }
 
-        private void LowerAlignmentBar()
+        public void LowerAlignmentBar()
         {
             if (AlignmentBarInstance.Y < MaxY)
             {
@@ -156,6 +160,5 @@ namespace FishKing.GumRuntimes
                 AlignmentBarInstance.CurrentAlignmentState = AlignmentBarRuntime.Alignment.NotAligned;
             }
         }
-
     }
 }

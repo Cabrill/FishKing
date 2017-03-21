@@ -152,10 +152,12 @@
           <IndependentOfCamera>true</IndependentOfCamera>
         </NamedObjectSave>
         <NamedObjectSave>
-          <SourceType>File</SourceType>
-          <SourceFile>GumProject/Screens/GameScreenGum.gusx</SourceFile>
-          <SourceName>FramedCatchingBackgroundInstance (FishKing.GumRuntimes.FramedCatchingBackgroundRuntime)</SourceName>
-          <InstanceName>FishCatchingInterfaceInstance</InstanceName>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceFile />
+          <SourceName />
+          <SourceClassType>PositionedObjectList&lt;T&gt;</SourceClassType>
+          <SourceClassGenericType>Entities\Fish</SourceClassGenericType>
+          <InstanceName>FishList</InstanceName>
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
@@ -163,8 +165,8 @@
         <NamedObjectSave>
           <SourceType>File</SourceType>
           <SourceFile>GumProject/Screens/GameScreenGum.gusx</SourceFile>
-          <SourceName>FishingLineStatusInstance (FishKing.GumRuntimes.FishingLineStatusRuntime)</SourceName>
-          <InstanceName>FishingLineStatusInstance</InstanceName>
+          <SourceName>FishCatchingInterfaceInstance (FishKing.GumRuntimes.FishCatchingInterfaceRuntime)</SourceName>
+          <InstanceName>FishCatchingInterfaceInstance</InstanceName>
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
@@ -174,17 +176,6 @@
           <SourceFile>GumProject/Screens/GameScreenGum.gusx</SourceFile>
           <SourceName>ProgressBarInstance (FishKing.GumRuntimes.ProgressBarRuntime)</SourceName>
           <InstanceName>ProgressBarInstance</InstanceName>
-          <AttachToContainer>true</AttachToContainer>
-          <GenerateTimedEmit>true</GenerateTimedEmit>
-          <IndependentOfCamera>true</IndependentOfCamera>
-        </NamedObjectSave>
-        <NamedObjectSave>
-          <SourceType>FlatRedBallType</SourceType>
-          <SourceFile />
-          <SourceName />
-          <SourceClassType>PositionedObjectList&lt;T&gt;</SourceClassType>
-          <SourceClassGenericType>Entities\Fish</SourceClassGenericType>
-          <InstanceName>FishList</InstanceName>
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
@@ -397,14 +388,14 @@
         </NamedObjectSave>
         <NamedObjectSave>
           <CustomProperty>
-            <Type>float</Type>
-            <Member>TextureScale</Member>
-            <ValueAsFloat>1</ValueAsFloat>
-          </CustomProperty>
-          <CustomProperty>
             <Type>Texture2D</Type>
             <Member>Texture</Member>
             <ValueAsString>bobber</ValueAsString>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>TextureScale</Member>
+            <ValueAsFloat>1</ValueAsFloat>
           </CustomProperty>
           <CustomProperty>
             <Type>bool</Type>
@@ -435,12 +426,24 @@
           <ProjectsToExcludeFrom />
         </ReferencedFileSave>
         <ReferencedFileSave>
+          <Properties>
+            <PropertySave>
+              <Name>UseContentPipeline</Name>
+              <ValueAsBool>true</ValueAsBool>
+            </PropertySave>
+          </Properties>
           <Name>Entities/Character/BobberDrop.wav</Name>
           <IsSharedStatic>true</IsSharedStatic>
           <RuntimeType>Microsoft.Xna.Framework.Audio.SoundEffect</RuntimeType>
           <ProjectsToExcludeFrom />
         </ReferencedFileSave>
         <ReferencedFileSave>
+          <Properties>
+            <PropertySave>
+              <Name>UseContentPipeline</Name>
+              <ValueAsBool>true</ValueAsBool>
+            </PropertySave>
+          </Properties>
           <Name>Entities/Character/WhooshRod.wav</Name>
           <IsSharedStatic>true</IsSharedStatic>
           <RuntimeType>Microsoft.Xna.Framework.Audio.SoundEffect</RuntimeType>
@@ -682,9 +685,46 @@
           <Name>FishType</Name>
           <Type>FishKing.DataTypes.Fish_Types</Type>
         </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>int</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>Grams</Name>
+          <Type>int</Type>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>int</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>LengthMM</Name>
+          <Type>int</Type>
+        </CustomVariable>
       </CustomVariables>
       <ImplementsIDrawableBatch>false</ImplementsIDrawableBatch>
       <Name>Entities\Fish</Name>
+      <NamedObjects>
+        <NamedObjectSave>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>TextureScale</Member>
+            <ValueAsFloat>1</ValueAsFloat>
+          </CustomProperty>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceFile />
+          <SourceName />
+          <SourceClassType>Sprite</SourceClassType>
+          <InstanceName>SpriteInstance</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+      </NamedObjects>
       <CreatedByOtherEntities>true</CreatedByOtherEntities>
       <Is2D>true</Is2D>
     </EntitySave>

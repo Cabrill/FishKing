@@ -20,6 +20,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>FishCatchingInterface</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>FishingLineStatus</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>

@@ -202,16 +202,14 @@ namespace FishKing.Screens
 
                     if (catchRoll <= catchChance)
                     {
-                        var fish = Factories.FishFactory.CreateNew();
-                        fish.FishType = GlobalContent.Fish_Types[Fish_Types.Coho_Salmon];
+                        var fish = FishGenerator.CreateFish();
                         CharacterInstance.FishOnTheLine = fish;
-
+                        FishCatchingInterfaceInstance.AttachFish(fish);
                     }
                 }
             }
 
             FishCatchingInterfaceInstance.Visible = CharacterInstance.HasFishOnTheLine;
-            FishingLineStatusInstance.Visible = CharacterInstance.HasFishOnTheLine;
             ProgressBarInstance.Visible = (CharacterInstance.IsOnWindUp || CharacterInstance.IsBeforeWindUp);
         }
 
