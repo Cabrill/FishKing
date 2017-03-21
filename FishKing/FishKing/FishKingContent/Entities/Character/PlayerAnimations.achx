@@ -388,7 +388,7 @@
     </Frame>
     <Frame>
       <TextureName>../../Screens/GameScreen/Tilesets/AllCharacterAnimations128.png</TextureName>
-      <FrameLength>0.2</FrameLength>
+      <FrameLength>0.1</FrameLength>
       <LeftCoordinate>384</LeftCoordinate>
       <RightCoordinate>512</RightCoordinate>
       <TopCoordinate>512</TopCoordinate>
@@ -460,7 +460,7 @@
     <Frame>
       <FlipHorizontal>true</FlipHorizontal>
       <TextureName>../../Screens/GameScreen/Tilesets/AllCharacterAnimations128.png</TextureName>
-      <FrameLength>0.2</FrameLength>
+      <FrameLength>0.1</FrameLength>
       <LeftCoordinate>384</LeftCoordinate>
       <RightCoordinate>512</RightCoordinate>
       <TopCoordinate>512</TopCoordinate>

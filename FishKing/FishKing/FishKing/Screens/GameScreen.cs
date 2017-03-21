@@ -164,8 +164,12 @@ namespace FishKing.Screens
 
         private void FishingActivity()
         {
-            if (CharacterInstance.IsAttemptingAction && !CharacterInstance.IsInDialog && 
-                !CharacterInstance.IsFishing && !CharacterInstance.IsCastingRod)
+            var characterJustReleased = CharacterInstance.IsCastingRod && CharacterInstance.ActionInput.WasJustReleased;
+
+            var characterJustStartedfishing = CharacterInstance.IsAttemptingAction && !CharacterInstance.IsInDialog &&
+                !CharacterInstance.IsFishing && !CharacterInstance.IsCastingRod;
+
+            if (characterJustStartedfishing)
             {
                 CharacterInstance.IsCastingRod = true;
 

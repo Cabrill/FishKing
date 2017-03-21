@@ -283,17 +283,22 @@ namespace FishKing.Entities
                 }
                 else if (!IsFishing)
                 {
-                    var lastFrameIndex = SpriteInstance.CurrentChain.Count - 1;
-                    var isOnLastFrame = (WoodRodSpriteInstance.CurrentFrameIndex == lastFrameIndex);
-                    var shouldHoldFrame = isOnLastFrame || IsOnWindUp;
+                    var finalFrameIndex = SpriteInstance.CurrentChain.Count - 1;
+                    var isOnFinalFrame = (WoodRodSpriteInstance.CurrentFrameIndex == finalFrameIndex);
+                    var shouldHoldFrame = isOnFinalFrame || IsOnWindUp;
+                    var justCastRod = WoodRodSpriteInstance.CurrentFrameIndex == WindUpAnimationFrame + 1 && WoodRodSpriteInstance.JustChangedFrame;
 
                     SpriteInstance.Animate = !shouldHoldFrame;
                     WoodRodSpriteInstance.Animate = !shouldHoldFrame;
 
-                    if (isOnLastFrame)
+                    if (isOnFinalFrame)
                     {
                         IsCastingRod = false;
                         IsFishing = true;
+                    }
+                    else if (justCastRod)
+                    {
+                        WhooshRod.Play();
                     }
                 }
             }

@@ -3,6 +3,7 @@
   <OffsetMultiplier>1</OffsetMultiplier>
   <ExpandedNode>CastUp</ExpandedNode>
   <ExpandedNode>CastRight</ExpandedNode>
+  <ExpandedNode>CastLeft</ExpandedNode>
   <ExpandedNode>CastDown</ExpandedNode>
   <ExpandedNode>TugUp</ExpandedNode>
   <ExpandedNode>TugRight</ExpandedNode>

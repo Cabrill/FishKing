@@ -1,4 +1,6 @@
-﻿using Microsoft.Xna.Framework;
+﻿using FlatRedBall;
+using Microsoft.Xna.Framework;
+using RenderingLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -36,8 +38,29 @@ namespace FishKing.GumRuntimes
 
         public void PositionProgressBarOver(Vector3 position)
         {
-            this.X = position.X - 150;
-            this.Y = position.Y - 90;
+            IPositionedSizedObject barAsPositionedObject = this as IPositionedSizedObject;
+            var trueHeight = barAsPositionedObject.Height;
+            var trueWidth = barAsPositionedObject.Width;
+            var screenWidth = FlatRedBallServices.GraphicsOptions.ResolutionWidth;
+
+            var proposedY = -(position.Y + trueHeight * 3);
+            if (proposedY < 0)
+            {
+                proposedY = -(position.Y - trueHeight);
+            }
+
+            var proposedX = position.X - (trueWidth / 2);
+            if (proposedX < 0)
+            {
+                proposedX = 0;
+            }
+            if (proposedX + trueWidth > screenWidth)
+            {
+                proposedX = screenWidth - trueWidth;
+            }
+            
+            barAsPositionedObject.X = proposedX;
+            barAsPositionedObject.Y = proposedY;
         }
     }
 }
