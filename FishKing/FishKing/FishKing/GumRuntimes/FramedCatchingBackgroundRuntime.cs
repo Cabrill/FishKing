@@ -17,55 +17,27 @@ namespace FishKing.GumRuntimes
         private Tweener fishTweener;
         private static Random randomSeed = new Random();
 
-        private float MaxAlignmentY
-        {
-            get { return 100 - AlignmentBarInstance.Height; }
-        }
+        private float MaxAlignmentY { get; set; }
 
-        private float MaxFishY
-        {
-            get { return 100 - UnknownFishInstance.Height; }
-        }
+        private float MaxFishY { get; set; }
 
-        private float MaxFishX
-        {
-            get { return 100 - UnknownFishInstance.Width; }
-        }
+        private float MaxFishX { get; set; }
 
-        private int AlignmentTop
-        {
-            get { return (int)AlignmentBarInstance.Y; }
-        }
+        private Fish AttachedFish { get; set;  }
 
-        private int AlignmentBottom
-        {
-            get { return AlignmentTop + (int)AlignmentBarInstance.Height; }
-        }
+        private int FishTop { get; set; }
 
-        private int FishTop
-        {
-            get { return (int)UnknownFishInstance.Y; }
-        }
+        private int FishBottom { get; set; }
 
-        private int FishBottom
-        {
-            get { return FishTop + (int)UnknownFishInstance.Height; }
-        }
+        private int FishMiddle { get; set; }
 
-        private int FishMiddle
-        {
-            get { return (int)((FishTop + FishBottom) / 2); }
-        }
+        private int FishFight { get; set; }
 
-        private int FishFight
-        {
-            get; set;
-        }
+        private int AlignmentTop { get; set; }
 
-        private int FishSpeed
-        {
-            get; set;
-        }
+        private int AlignmentBottom { get; set; }
+
+        private int FishSpeed { get; set; }
 
         public void Update()
         {
@@ -86,15 +58,40 @@ namespace FishKing.GumRuntimes
 
         public void AttachFish(Fish fish)
         {
-            FishFight = GlobalContent.Fish_Types[fish.FishType.Name].Fight;
-            FishSpeed = GlobalContent.Fish_Types[fish.FishType.Name].Speed;
+            this.AttachedFish = fish;
 
-
-            UnknownFishInstance.Width = DetermineFishWidth(fish.LengthMM);
-            UnknownFishInstance.Height = UnknownFishInstance.Width / 3.5f;
+            SetLocalVariables();
         }
 
-        private float DetermineFishWidth(int fishLengthMM)
+        private void SetLocalVariables()
+        {
+            FishFight = GlobalContent.Fish_Types[AttachedFish.FishType.Name].Fight;
+            FishSpeed = GlobalContent.Fish_Types[AttachedFish.FishType.Name].Speed;
+
+            AlignmentTop = (int)AlignmentBarInstance.Y;
+
+            AlignmentBottom = AlignmentTop + (int)AlignmentBarInstance.Height;
+
+            FishTop = (int)UnknownFishInstance.Y; 
+
+            FishBottom = FishTop + (int)UnknownFishInstance.Height; 
+            
+            FishMiddle =  (int)((FishTop + FishBottom) / 2);
+            
+            MaxAlignmentY = 100 - AlignmentBarInstance.Height; 
+
+            MaxFishY = UnknownFishInstance.Height; 
+
+            MaxFishX = 100 - UnknownFishInstance.Width;
+
+            UnknownFishInstance.Width = DetermineUnknownFishWidth(AttachedFish.LengthMM);
+            UnknownFishInstance.Height = UnknownFishInstance.Width / 3.5f;
+
+            UnknownFishInstance.X = MaxFishX / 2;
+            UnknownFishInstance.Y = MaxFishY / 2;
+        }
+
+        private float DetermineUnknownFishWidth(int fishLengthMM)
         {
             var minLength = FishGenerator.MinimumLengthMM;
             var fishLengthRange = FishGenerator.MaximumLengthMM - minLength;
