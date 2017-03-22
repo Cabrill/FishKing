@@ -48,6 +48,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>WaterTypeState</Type>
+      <Name>FramedCatchingBackgroundInstance.WaterTypeState</Name>
+      <Value xsi:type="xsd:string">Ocean</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>FramedCatchingBackgroundInstance.X</Name>
       <Value xsi:type="xsd:float">66.75</Value>

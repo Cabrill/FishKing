@@ -197,7 +197,7 @@
       <Type>float</Type>
       <Name>FishingLineStress.Height</Name>
       <Value xsi:type="xsd:float">5</Value>
-      <ExposedAsName>FishingLineStressHeightPct</ExposedAsName>
+      <ExposedAsName>FishingLineStressHeight</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

@@ -59,7 +59,7 @@
     <Variable>
       <Type>bool</Type>
       <Name>ExposeChildrenEvents</Name>
-      <Value xsi:type="xsd:boolean">false</Value>
+      <Value xsi:type="xsd:boolean">true</Value>
       <Category>Behavior</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -100,7 +100,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Height</Name>
-      <Value xsi:type="xsd:float">13.1313019</Value>
+      <Value xsi:type="xsd:float">10</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -200,7 +200,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Width</Name>
-      <Value xsi:type="xsd:float">39.0151634</Value>
+      <Value xsi:type="xsd:float">25</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -240,7 +240,7 @@
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>X Units</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">2</Value>
       <Category>Position</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -260,7 +260,7 @@
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>Y Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">3</Value>
       <Category>Position</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -278,29 +278,32 @@
     <State>
       <Name>Aligned</Name>
       <Variable>
-        <IsFile>true</IsFile>
-        <Type>string</Type>
-        <Name>SourceFile</Name>
-        <Value xsi:type="xsd:string">Assets\aligned.png</Value>
+        <Type>int</Type>
+        <Name>Texture Height</Name>
+        <Value xsi:type="xsd:int">1</Value>
         <SetsValue>true</SetsValue>
       </Variable>
-      <VariableList xsi:type="VariableListSaveOfString">
-        <Type>string</Type>
-        <Name>AnimationFrames</Name>
-        <IsFile>false</IsFile>
-        <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
-        <Value />
-      </VariableList>
+      <Variable>
+        <Type>int</Type>
+        <Name>Texture Left</Name>
+        <Value xsi:type="xsd:int">6</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>Texture Top</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>Texture Width</Name>
+        <Value xsi:type="xsd:int">1</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
     </State>
     <State>
       <Name>NotAligned</Name>
-      <Variable>
-        <IsFile>true</IsFile>
-        <Type>string</Type>
-        <Name>SourceFile</Name>
-        <Value xsi:type="xsd:string">GumUI.png</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
       <Variable>
         <Type>int</Type>
         <Name>Texture Height</Name>
@@ -325,13 +328,6 @@
         <Value xsi:type="xsd:int">274</Value>
         <SetsValue>true</SetsValue>
       </Variable>
-      <VariableList xsi:type="VariableListSaveOfString">
-        <Type>string</Type>
-        <Name>AnimationFrames</Name>
-        <IsFile>false</IsFile>
-        <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
-        <Value />
-      </VariableList>
     </State>
   </Category>
   <Behaviors />

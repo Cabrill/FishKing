@@ -192,6 +192,10 @@ namespace FishKing.Screens
                     {
                         FishCatchingInterfaceInstance.RaiseAlignmentBar();
                     }
+                    if (CharacterInstance.IsHoldingAction)
+                    {
+                        FishCatchingInterfaceInstance.ReelIn();
+                    }
                     FishCatchingInterfaceInstance.Update();
                 }
                 else

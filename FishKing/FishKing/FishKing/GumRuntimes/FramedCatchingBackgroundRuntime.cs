@@ -25,21 +25,21 @@ namespace FishKing.GumRuntimes
 
         private Fish AttachedFish { get; set;  }
 
-        private int FishTop { get; set; }
+        private int FishTop { get { return (int)UnknownFishInstance.Y; } }
 
-        private int FishBottom { get; set; }
+        private int FishBottom { get { return FishTop + (int)UnknownFishInstance.Height; } }
 
-        private int FishMiddle { get; set; }
+        private int FishMiddle { get { return (int)((FishTop + FishBottom) / 2); } }
 
         private int FishFight { get; set; }
 
-        private int AlignmentTop { get; set; }
+        private int AlignmentTop { get { return (int)AlignmentBarInstance.Y; } }
 
-        private int AlignmentBottom { get; set; }
+        private int AlignmentBottom { get { return AlignmentTop + (int)AlignmentBarInstance.Height; } }
 
         private int FishSpeed { get; set; }
 
-        public bool IsAligned { get { return this.AlignmentBarInstanceAlignmentState == AlignmentBarRuntime.Alignment.Aligned;  } }
+        public bool IsAligned { get { return this.AlignmentBarInstance.CurrentAlignmentState == AlignmentBarRuntime.Alignment.Aligned;  } }
 
         public void Update()
         {
@@ -69,16 +69,6 @@ namespace FishKing.GumRuntimes
         {
             FishFight = GlobalContent.Fish_Types[AttachedFish.FishType.Name].Fight;
             FishSpeed = GlobalContent.Fish_Types[AttachedFish.FishType.Name].Speed;
-
-            AlignmentTop = (int)AlignmentBarInstance.Y;
-
-            AlignmentBottom = AlignmentTop + (int)AlignmentBarInstance.Height;
-
-            FishTop = (int)UnknownFishInstance.Y; 
-
-            FishBottom = FishTop + (int)UnknownFishInstance.Height; 
-            
-            FishMiddle =  (int)((FishTop + FishBottom) / 2);
             
             MaxAlignmentY = 100 - AlignmentBarInstance.Height; 
 
@@ -190,11 +180,11 @@ namespace FishKing.GumRuntimes
         {
             if (AlignmentTop < FishMiddle && AlignmentBottom > FishMiddle)
             {
-                AlignmentBarInstance.CurrentAlignmentState = AlignmentBarRuntime.Alignment.Aligned;
+                this.AlignmentBarInstance.CurrentAlignmentState = AlignmentBarRuntime.Alignment.Aligned;
             }
             else
             {
-                AlignmentBarInstance.CurrentAlignmentState = AlignmentBarRuntime.Alignment.NotAligned;
+                this.AlignmentBarInstance.CurrentAlignmentState = AlignmentBarRuntime.Alignment.NotAligned;
             }
         }
     }

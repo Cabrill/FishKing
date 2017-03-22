@@ -8,10 +8,14 @@ namespace FishKing.GumRuntimes
 {
     partial class FishingLineStatusRuntime
     {
+        public int LineStress
+        {
+            get; set;
+        }
 
         public void Update()
         {
-
+            FishingLineStressHeight = LineStress;
         }
     }
 }

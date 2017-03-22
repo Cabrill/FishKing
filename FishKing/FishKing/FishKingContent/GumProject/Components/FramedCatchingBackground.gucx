@@ -7,7 +7,7 @@
     <Variable>
       <Type>AlignmentState</Type>
       <Name>AlignmentBarInstance.AlignmentState</Name>
-      <Value xsi:type="xsd:string">NotAligned</Value>
+      <Value xsi:type="xsd:string">Aligned</Value>
       <ExposedAsName>AlignmentBarInstanceAlignmentState</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -210,7 +210,7 @@
     <Variable>
       <Type>AnimationState</Type>
       <Name>UnknownFishInstance.AnimationState</Name>
-      <Value xsi:type="xsd:string">FishFrame4</Value>
+      <Value xsi:type="xsd:string">FishFrame1</Value>
       <ExposedAsName>UnknownFishInstanceAnimationState</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -362,6 +362,11 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>WaterTypeState</Type>
+      <Name>WaterTypeState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>Width</Name>
       <Value xsi:type="xsd:float">25</Value>
@@ -430,6 +435,72 @@
       <Value />
     </VariableList>
   </State>
+  <Category>
+    <Name>WaterType</Name>
+    <State>
+      <Name>River</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>WaterBox.Texture Left</Name>
+        <Value xsi:type="xsd:int">1512</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>WaterBox.Texture Width</Name>
+        <Value xsi:type="xsd:int">249</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Ocean</Name>
+    </State>
+    <State>
+      <Name>Pond</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>WaterBox.Texture Left</Name>
+        <Value xsi:type="xsd:int">738</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>WaterBox.Texture Width</Name>
+        <Value xsi:type="xsd:int">259</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>DeepOcean</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>WaterBox.Texture Left</Name>
+        <Value xsi:type="xsd:int">998</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>WaterBox.Texture Width</Name>
+        <Value xsi:type="xsd:int">263</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Lake</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>WaterBox.Texture Left</Name>
+        <Value xsi:type="xsd:int">1262</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>WaterBox.Texture Width</Name>
+        <Value xsi:type="xsd:int">249</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
   <Instance>
     <Name>WaterBox</Name>
     <BaseType>Sprite</BaseType>

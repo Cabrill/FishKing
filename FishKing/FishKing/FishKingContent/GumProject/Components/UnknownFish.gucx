@@ -281,7 +281,7 @@
         <IsFile>true</IsFile>
         <Type>string</Type>
         <Name>SourceFile</Name>
-        <Value xsi:type="xsd:string">Assets\UnknownFish1.png</Value>
+        <Value xsi:type="xsd:string">GumUI.png</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -304,7 +304,7 @@
         <IsFile>true</IsFile>
         <Type>string</Type>
         <Name>SourceFile</Name>
-        <Value xsi:type="xsd:string">Assets\UnknownFish2.png</Value>
+        <Value xsi:type="xsd:string">GumUI.png</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -327,7 +327,7 @@
         <IsFile>true</IsFile>
         <Type>string</Type>
         <Name>SourceFile</Name>
-        <Value xsi:type="xsd:string">Assets\UnknownFish3.png</Value>
+        <Value xsi:type="xsd:string">GumUI.png</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -350,7 +350,7 @@
         <IsFile>true</IsFile>
         <Type>string</Type>
         <Name>SourceFile</Name>
-        <Value xsi:type="xsd:string">Assets\UnknownFish4.png</Value>
+        <Value xsi:type="xsd:string">GumUI.png</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
