@@ -40,7 +40,9 @@ namespace FishKing.Entities
 
 	public partial class Character
 	{
-        Direction directionFacing = Direction.Down;
+        public Direction DirectionFacing { get; private set;  }
+
+        public int MaxDistanceTileCast { get; set;  }
 
         const int tileSize = 16;
 
@@ -111,7 +113,7 @@ namespace FishKing.Entities
         {
             get
             {
-                if (directionFacing == Direction.Left || directionFacing == Direction.Right)
+                if (DirectionFacing == Direction.Left || DirectionFacing == Direction.Right)
                 {
                     return 2;
                 }
@@ -154,6 +156,8 @@ namespace FishKing.Entities
         private void CustomInitialize()
         {
             InitializeCollision();
+            DirectionFacing = Direction.Down;
+            MaxDistanceTileCast = 3;
         }
 
         private void InitializeCollision()
@@ -182,7 +186,7 @@ namespace FishKing.Entities
             float desiredX = this.X;
             float desiredY = this.Y;
 
-            MoveInDirection(directionFacing, ref desiredX, ref desiredY);
+            MoveInDirection(DirectionFacing, ref desiredX, ref desiredY);
 
             ActionCollision.X = desiredX;
             ActionCollision.Y = desiredY;
@@ -214,7 +218,7 @@ namespace FishKing.Entities
 
             if(desiredDirection != Direction.None)
             {
-                directionFacing = desiredDirection;
+                DirectionFacing = desiredDirection;
                 IsCastingRod = false;
                 IsFishing = false;
                 FishOnTheLine = null;
@@ -265,11 +269,11 @@ namespace FishKing.Entities
         {
             if (IsCastingRod && !IsFishing)
             {
-                var shouldStartCastingAnimation = ActionInput.WasJustPressed;
-                if (shouldStartCastingAnimation)
+                var justStartedCasting = ActionInput.WasJustPressed;
+                if (justStartedCasting)
                 {
                     var chainName = "";
-                    switch (directionFacing)
+                    switch (DirectionFacing)
                     {
                         case Direction.Left: chainName = "CastLeft"; break;
                         case Direction.Right: chainName = "CastRight"; break;
@@ -280,7 +284,7 @@ namespace FishKing.Entities
                     SpriteInstance.Animate = WoodRodSpriteInstance.Animate = true;
                     SpriteInstance.CurrentFrameIndex = WoodRodSpriteInstance.CurrentFrameIndex = 0;
                 }
-                else if (!IsFishing)
+                else
                 {
                     var finalFrameIndex = SpriteInstance.CurrentChain.Count - 1;
                     var isOnFinalFrame = (WoodRodSpriteInstance.CurrentFrameIndex == finalFrameIndex);
@@ -299,6 +303,7 @@ namespace FishKing.Entities
                     {
                         WhooshRod.Play();
                     }
+
                 }
             }
             WoodRodSpriteInstance.Visible = (IsCastingRod || IsFishing);

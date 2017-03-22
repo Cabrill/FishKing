@@ -117,6 +117,7 @@ namespace FishKing.Screens
 
             this.CharacterInstance.ActionInput = InputManager.Keyboard.GetKey(Keys.Space);
             this.CharacterInstance.FishingAlignmentInput = InputManager.Mouse.GetButton(Mouse.MouseButtons.LeftButton);
+
         }
 
         void CustomActivity(bool firstTimeCalled)
@@ -169,20 +170,53 @@ namespace FishKing.Screens
             var characterJustStartedfishing = CharacterInstance.IsAttemptingAction && !CharacterInstance.IsInDialog &&
                 !CharacterInstance.IsFishing && !CharacterInstance.IsCastingRod;
 
+            var tileSize = (float)BasicIsland.WidthPerTile;
+
             if (characterJustStartedfishing)
             {
                 CharacterInstance.IsCastingRod = true;
 
                 ProgressBarInstance.ResetProgress();
                 ProgressBarInstance.PositionProgressBarOver(CharacterInstance.Position);
-            }
-            else if (CharacterInstance.IsBeforeWindUp || CharacterInstance.IsOnWindUp)
-            {
-                if (ProgressBarInstance.Progress < 100)
+
+                var targetStartX = CharacterInstance.Position.X;
+                var targetStartY = CharacterInstance.Position.Y;
+                switch (CharacterInstance.DirectionFacing)
                 {
-                    ProgressBarInstance.Progress += 2;
+                    case Direction.Left:
+                        targetStartX -= tileSize;
+                        break;
+                    case Direction.Right:
+                        targetStartX += tileSize;
+                        break;
+                    case Direction.Up:
+                        targetStartY += tileSize;
+                        break;
+                    case Direction.Down: targetStartY -= tileSize; break;
                 }
 
+                TargetingSpriteInstance.Position = new Vector3(targetStartX, targetStartY, 1);
+            }
+            else if (CharacterInstance.IsOnWindUp)
+            {
+                ProgressBarInstance.Update();
+
+                var percentPower = (float)Decimal.Divide(ProgressBarInstance.Progress, 100);
+                var maxDistance = CharacterInstance.MaxDistanceTileCast * tileSize;
+                var effectiveDistance = tileSize + (maxDistance * percentPower);
+
+                var targetNewX = CharacterInstance.Position.X;
+                var targetNewY = CharacterInstance.Position.Y;
+
+                switch (CharacterInstance.DirectionFacing)
+                {
+                    case Direction.Left: targetNewX += -effectiveDistance; break;
+                    case Direction.Right: targetNewX += effectiveDistance; break;
+                    case Direction.Up: targetNewY += effectiveDistance; break;
+                    case Direction.Down: targetNewY += -effectiveDistance; break;
+                }
+                TargetingSpriteInstance.Position = new Vector3(targetNewX, targetNewY, 1);
+                
             }
             else if (CharacterInstance.IsFishing)
             {
@@ -214,7 +248,8 @@ namespace FishKing.Screens
             }
 
             FishCatchingInterfaceInstance.Visible = CharacterInstance.HasFishOnTheLine;
-            ProgressBarInstance.Visible = (CharacterInstance.IsOnWindUp || CharacterInstance.IsBeforeWindUp);
+            ProgressBarInstance.Visible = CharacterInstance.IsOnWindUp;
+            TargetingSpriteInstance.Visible = CharacterInstance.IsOnWindUp;
         }
 
         private void ShowDialog(string stringId)

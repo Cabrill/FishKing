@@ -11,7 +11,11 @@ namespace FishKing.GumRuntimes
 {
     partial class ProgressBarRuntime
     {
+        private int maxProgress = 100;
+        private int minProgress = 1;
         private int maxTextureWidth = 457;
+        private int directionModifier = 1;
+        private int progressIncrement = 2;
 
         public int Progress
         {
@@ -24,16 +28,29 @@ namespace FishKing.GumRuntimes
             ResetProgress();
         }
 
+        public void Update()
+        {
+            var newProgress = Progress + (progressIncrement * directionModifier);
+
+            if (newProgress >= maxProgress || newProgress <= minProgress)
+            {
+                directionModifier *= -1;
+                newProgress = Math.Min(maxProgress, newProgress);
+                newProgress = Math.Max(minProgress, newProgress);
+            }
+            Progress = newProgress;
+        }
+
         public void ResetProgress()
         {
-            this.BarFillWidth = 1;
-            this.BarFillTextureWidth = 1;
+            Progress = 1;
+            directionModifier = 1;
         }
 
         public void UpdateProgressBar(int percent)
         {
             this.BarFillWidth = percent;
-            this.BarFillTextureWidth =  (int)((percent *.01) * maxTextureWidth);
+            this.BarFillTextureWidth =  5 + (int)((percent *.01) * (maxTextureWidth-5));
         }
 
         public void PositionProgressBarOver(Vector3 position)
