@@ -81,7 +81,7 @@
       <IsFile>true</IsFile>
       <Type>string</Type>
       <Name>SourceFile</Name>
-      <Value xsi:type="xsd:string">Assets\doubleframe.png</Value>
+      <Value xsi:type="xsd:string">Standards\StandardGraphics\Red_TopLeft.png</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

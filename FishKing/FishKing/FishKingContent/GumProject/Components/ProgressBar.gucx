@@ -26,7 +26,7 @@
       <IsFile>true</IsFile>
       <Type>string</Type>
       <Name>BarFill.SourceFile</Name>
-      <Value xsi:type="xsd:string">Assets\BarFill.png</Value>
+      <Value xsi:type="xsd:string">GumUI.png</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -44,19 +44,19 @@
     <Variable>
       <Type>int</Type>
       <Name>BarFill.Texture Left</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">6</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>BarFill.Texture Top</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">668</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>BarFill.Texture Width</Name>
-      <Value xsi:type="xsd:int">457</Value>
+      <Value xsi:type="xsd:int">456</Value>
       <ExposedAsName>BarFillTextureWidth</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -112,7 +112,7 @@
     <Variable>
       <Type>float</Type>
       <Name>ContainerInstance.Height</Name>
-      <Value xsi:type="xsd:float">74.2</Value>
+      <Value xsi:type="xsd:float">75.5</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -130,7 +130,7 @@
     <Variable>
       <Type>float</Type>
       <Name>ContainerInstance.Width</Name>
-      <Value xsi:type="xsd:float">96.9</Value>
+      <Value xsi:type="xsd:float">97.2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -142,7 +142,7 @@
     <Variable>
       <Type>float</Type>
       <Name>ContainerInstance.X</Name>
-      <Value xsi:type="xsd:float">1.9</Value>
+      <Value xsi:type="xsd:float">1.7</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -185,7 +185,37 @@
       <IsFile>true</IsFile>
       <Type>string</Type>
       <Name>EmptyBar.SourceFile</Name>
-      <Value xsi:type="xsd:string">Assets\EmptyBar.png</Value>
+      <Value xsi:type="xsd:string">GumUI.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TextureAddress</Type>
+      <Name>EmptyBar.Texture Address</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>EmptyBar.Texture Height</Name>
+      <Value xsi:type="xsd:int">80</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>EmptyBar.Texture Left</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>EmptyBar.Texture Top</Name>
+      <Value xsi:type="xsd:int">586</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>EmptyBar.Texture Width</Name>
+      <Value xsi:type="xsd:int">470</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -352,6 +382,13 @@
     <State>
       <Name>Empty</Name>
       <Variable>
+        <IsFile>true</IsFile>
+        <Type>string</Type>
+        <Name>BarFill.SourceFile</Name>
+        <Value xsi:type="xsd:string">GumUI.png</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
         <Type>TextureAddress</Type>
         <Name>BarFill.Texture Address</Name>
         <Value xsi:type="xsd:int">1</Value>
@@ -366,7 +403,7 @@
       <Variable>
         <Type>int</Type>
         <Name>BarFill.Texture Width</Name>
-        <Value xsi:type="xsd:int">1</Value>
+        <Value xsi:type="xsd:int">5</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -381,6 +418,44 @@
         <Value xsi:type="xsd:float">1</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+      <Variable>
+        <IsFile>true</IsFile>
+        <Type>string</Type>
+        <Name>EmptyBar.SourceFile</Name>
+        <Value xsi:type="xsd:string">GumUI.png</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>TextureAddress</Type>
+        <Name>EmptyBar.Texture Address</Name>
+        <Value xsi:type="xsd:int">1</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>EmptyBar.Texture Height</Name>
+        <Value xsi:type="xsd:int">80</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>EmptyBar.Texture Top</Name>
+        <Value xsi:type="xsd:int">586</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>EmptyBar.Texture Width</Name>
+        <Value xsi:type="xsd:int">470</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <VariableList xsi:type="VariableListSaveOfString">
+        <Type>string</Type>
+        <Name>AnimationFrames</Name>
+        <IsFile>false</IsFile>
+        <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
+        <Value />
+      </VariableList>
     </State>
     <State>
       <Name>Full</Name>
@@ -400,6 +475,12 @@
         <Type>float</Type>
         <Name>BarFill.Width</Name>
         <Value xsi:type="xsd:float">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>TextureAddress</Type>
+        <Name>EmptyBar.Texture Address</Name>
+        <Value xsi:type="xsd:int">1</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

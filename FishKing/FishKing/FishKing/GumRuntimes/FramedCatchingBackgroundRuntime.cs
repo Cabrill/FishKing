@@ -39,6 +39,8 @@ namespace FishKing.GumRuntimes
 
         private int FishSpeed { get; set; }
 
+        public bool IsAligned { get { return this.AlignmentBarInstanceAlignmentState == AlignmentBarRuntime.Alignment.Aligned;  } }
+
         public void Update()
         {
             AnimateUnknownFish();

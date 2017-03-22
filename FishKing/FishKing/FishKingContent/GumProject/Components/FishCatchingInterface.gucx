@@ -26,13 +26,13 @@
     <Variable>
       <Type>float</Type>
       <Name>FishingLineStatusInstance.X</Name>
-      <Value xsi:type="xsd:float">52.7500038</Value>
+      <Value xsi:type="xsd:float">51.75001</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>FishingLineStatusInstance.Y</Name>
-      <Value xsi:type="xsd:float">9.033334</Value>
+      <Value xsi:type="xsd:float">9.033333</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -56,7 +56,7 @@
     <Variable>
       <Type>float</Type>
       <Name>FramedCatchingBackgroundInstance.Y</Name>
-      <Value xsi:type="xsd:float">9.000002</Value>
+      <Value xsi:type="xsd:float">9.033335</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

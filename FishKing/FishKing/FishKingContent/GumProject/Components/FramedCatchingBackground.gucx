@@ -27,7 +27,7 @@
     <Variable>
       <Type>string</Type>
       <Name>AlignmentBarInstance.Parent</Name>
-      <Value xsi:type="xsd:string">CatchingBackgroundInstance</Value>
+      <Value xsi:type="xsd:string">WaterBox</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -68,67 +68,6 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>float</Type>
-      <Name>CatchingBackgroundInstance.Height</Name>
-      <Value xsi:type="xsd:float">96</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>CatchingBackgroundInstance.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>CatchingBackgroundInstance.Parent</Name>
-      <Value xsi:type="xsd:string">DoubleBarFrameInstance</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <IsFile>true</IsFile>
-      <Type>string</Type>
-      <Name>CatchingBackgroundInstance.SourceFile</Name>
-      <Value xsi:type="xsd:string">Assets\waterstrip.png</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>CatchingBackgroundInstance.Width</Name>
-      <Value xsi:type="xsd:float">90</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>CatchingBackgroundInstance.Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>CatchingBackgroundInstance.X</Name>
-      <Value xsi:type="xsd:float">5</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>CatchingBackgroundInstance.X Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>CatchingBackgroundInstance.Y</Name>
-      <Value xsi:type="xsd:float">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>CatchingBackgroundInstance.Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>ChildrenLayout</Type>
       <Name>Children Layout</Name>
       <Value xsi:type="xsd:int">0</Value>
@@ -141,6 +80,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>ConnectionsState</Type>
+      <Name>DoubleBarFrameInstance.ConnectionsState</Name>
+      <Value xsi:type="xsd:string">LeftConnect</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>DoubleBarFrameInstance.Height</Name>
       <Value xsi:type="xsd:float">100</Value>
@@ -150,6 +95,24 @@
       <Type>DimensionUnitType</Type>
       <Name>DoubleBarFrameInstance.Height Units</Name>
       <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>DoubleBarFrameInstance.MiddleTextureHeight</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>DoubleBarFrameInstance.MiddleTextureLeft</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>DoubleBarFrameInstance.MiddleTextureTop</Name>
+      <Value xsi:type="xsd:int">4</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -266,7 +229,7 @@
     <Variable>
       <Type>string</Type>
       <Name>UnknownFishInstance.Parent</Name>
-      <Value xsi:type="xsd:string">CatchingBackgroundInstance</Value>
+      <Value xsi:type="xsd:string">WaterBox</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -323,6 +286,79 @@
       <Type>bool</Type>
       <Name>Visible</Name>
       <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>WaterBox.Height</Name>
+      <Value xsi:type="xsd:float">-23</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>WaterBox.Height Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>WaterBox.SourceFile</Name>
+      <Value xsi:type="xsd:string">GumUI.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TextureAddress</Type>
+      <Name>WaterBox.Texture Address</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>WaterBox.Texture Height</Name>
+      <Value xsi:type="xsd:int">1024</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>WaterBox.Texture Left</Name>
+      <Value xsi:type="xsd:int">476</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>WaterBox.Texture Top</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>WaterBox.Texture Width</Name>
+      <Value xsi:type="xsd:int">261</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>WaterBox.Width</Name>
+      <Value xsi:type="xsd:float">-16</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>WaterBox.Width Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>WaterBox.X</Name>
+      <Value xsi:type="xsd:float">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>WaterBox.Y</Name>
+      <Value xsi:type="xsd:float">11</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -395,8 +431,12 @@
     </VariableList>
   </State>
   <Instance>
-    <Name>CatchingBackgroundInstance</Name>
+    <Name>WaterBox</Name>
     <BaseType>Sprite</BaseType>
+  </Instance>
+  <Instance>
+    <Name>DoubleBarFrameInstance</Name>
+    <BaseType>DoubleBarFrame</BaseType>
   </Instance>
   <Instance>
     <Name>UnknownFishInstance</Name>
@@ -405,10 +445,6 @@
   <Instance>
     <Name>AlignmentBarInstance</Name>
     <BaseType>AlignmentBar</BaseType>
-  </Instance>
-  <Instance>
-    <Name>DoubleBarFrameInstance</Name>
-    <BaseType>DoubleBarFrame</BaseType>
   </Instance>
   <Behaviors />
 </ComponentSave>

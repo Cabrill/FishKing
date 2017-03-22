@@ -100,14 +100,14 @@
     <Variable>
       <Type>float</Type>
       <Name>Height</Name>
-      <Value xsi:type="xsd:float">150</Value>
+      <Value xsi:type="xsd:float">13.1313019</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>Height Units</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -134,7 +134,7 @@
       <IsFile>true</IsFile>
       <Type>string</Type>
       <Name>SourceFile</Name>
-      <Value xsi:type="xsd:string">Assets\aligned.png</Value>
+      <Value xsi:type="xsd:string">GumUI.png</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -145,14 +145,14 @@
     <Variable>
       <Type>TextureAddress</Type>
       <Name>Texture Address</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <Category>Source</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>Texture Height</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <Category>Source</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -166,7 +166,7 @@
     <Variable>
       <Type>int</Type>
       <Name>Texture Left</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">6</Value>
       <Category>Source</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -180,7 +180,7 @@
     <Variable>
       <Type>int</Type>
       <Name>Texture Width</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <Category>Source</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -200,14 +200,14 @@
     <Variable>
       <Type>float</Type>
       <Name>Width</Name>
-      <Value xsi:type="xsd:float">150</Value>
+      <Value xsi:type="xsd:float">39.0151634</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>Width Units</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -298,7 +298,31 @@
         <IsFile>true</IsFile>
         <Type>string</Type>
         <Name>SourceFile</Name>
-        <Value xsi:type="xsd:string">Assets\notaligned.png</Value>
+        <Value xsi:type="xsd:string">GumUI.png</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>Texture Height</Name>
+        <Value xsi:type="xsd:int">19</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>Texture Left</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>Texture Top</Name>
+        <Value xsi:type="xsd:int">730</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>Texture Width</Name>
+        <Value xsi:type="xsd:int">274</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <VariableList xsi:type="VariableListSaveOfString">

@@ -11,6 +11,11 @@ namespace FishKing.GumRuntimes
 {
     public partial class FishCatchingInterfaceRuntime
     {
+        private int LineStress
+        {
+            get; set;
+        }
+
         partial void CustomInitialize()
         {
             
@@ -19,18 +24,37 @@ namespace FishKing.GumRuntimes
 
         public void AttachFish(Fish fish)
         {
-            FramedCatchingBackgroundInstance.Reset();
+            ResetStatus();
             FramedCatchingBackgroundInstance.AttachFish(fish);
         }
 
         public void Update()
         {
             FramedCatchingBackgroundInstance.Update();
+            FishingLineStatusInstance.Update();
         }
 
         public void RaiseAlignmentBar()
         {
             FramedCatchingBackgroundInstance.RaiseAlignmentBar();
+        }
+
+        public void ReelIn()
+        {
+            if (FramedCatchingBackgroundInstance.IsAligned)
+            {
+
+            }
+            else
+            {
+                LineStress += 1;
+            }
+        }
+
+        private void ResetStatus()
+        {
+            LineStress = 0;
+            FramedCatchingBackgroundInstance.Reset();
         }
     }
 }

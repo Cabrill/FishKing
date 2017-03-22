@@ -134,7 +134,7 @@
       <IsFile>true</IsFile>
       <Type>string</Type>
       <Name>SourceFile</Name>
-      <Value xsi:type="xsd:string">Assets\UnknownFish1.png</Value>
+      <Value xsi:type="xsd:string">GumUI.png</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -145,21 +145,21 @@
     <Variable>
       <Type>TextureAddress</Type>
       <Name>Texture Address</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <Category>Source</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>Texture Height</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">250</Value>
       <Category>Source</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>Texture Height Scale</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Value xsi:type="xsd:float">1</Value>
       <Category>Source</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -173,21 +173,21 @@
     <Variable>
       <Type>int</Type>
       <Name>Texture Top</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">1047</Value>
       <Category>Source</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>Texture Width</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">454</Value>
       <Category>Source</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>Texture Width Scale</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Value xsi:type="xsd:float">1</Value>
       <Category>Source</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -284,6 +284,12 @@
         <Value xsi:type="xsd:string">Assets\UnknownFish1.png</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>Texture Top</Name>
+        <Value xsi:type="xsd:int">1047</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
       <VariableList xsi:type="VariableListSaveOfString">
         <Type>string</Type>
         <Name>AnimationFrames</Name>
@@ -299,6 +305,12 @@
         <Type>string</Type>
         <Name>SourceFile</Name>
         <Value xsi:type="xsd:string">Assets\UnknownFish2.png</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>Texture Top</Name>
+        <Value xsi:type="xsd:int">1297</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <VariableList xsi:type="VariableListSaveOfString">
@@ -318,6 +330,12 @@
         <Value xsi:type="xsd:string">Assets\UnknownFish3.png</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>Texture Top</Name>
+        <Value xsi:type="xsd:int">1547</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
       <VariableList xsi:type="VariableListSaveOfString">
         <Type>string</Type>
         <Name>AnimationFrames</Name>
@@ -333,6 +351,12 @@
         <Type>string</Type>
         <Name>SourceFile</Name>
         <Value xsi:type="xsd:string">Assets\UnknownFish4.png</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>Texture Top</Name>
+        <Value xsi:type="xsd:int">1797</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <VariableList xsi:type="VariableListSaveOfString">
