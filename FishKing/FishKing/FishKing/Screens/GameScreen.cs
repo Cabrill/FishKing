@@ -183,15 +183,9 @@ namespace FishKing.Screens
                 var targetStartY = CharacterInstance.Position.Y;
                 switch (CharacterInstance.DirectionFacing)
                 {
-                    case Direction.Left:
-                        targetStartX -= tileSize;
-                        break;
-                    case Direction.Right:
-                        targetStartX += tileSize;
-                        break;
-                    case Direction.Up:
-                        targetStartY += tileSize;
-                        break;
+                    case Direction.Left: targetStartX -= tileSize; break;
+                    case Direction.Right: targetStartX += tileSize; break;
+                    case Direction.Up: targetStartY += tileSize; break;
                     case Direction.Down: targetStartY -= tileSize; break;
                 }
 
@@ -217,6 +211,10 @@ namespace FishKing.Screens
                 }
                 TargetingSpriteInstance.Position = new Vector3(targetNewX, targetNewY, 1);
                 
+            }
+            else if (CharacterInstance.JustReleasedCast)
+            {
+                CharacterInstance.PlaceBobberAt(TargetingSpriteInstance.Position);
             }
             else if (CharacterInstance.IsFishing)
             {

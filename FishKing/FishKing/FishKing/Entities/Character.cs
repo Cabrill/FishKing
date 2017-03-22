@@ -93,6 +93,12 @@ namespace FishKing.Entities
             set;
         }
 
+        public bool JustReleasedCast
+        {
+            get;
+            set;
+        }
+
         public bool IsOnWindUp
         {
             get
@@ -269,6 +275,8 @@ namespace FishKing.Entities
         {
             if (IsCastingRod && !IsFishing)
             {
+                JustReleasedCast = WoodRodSpriteInstance.CurrentFrameIndex == WindUpAnimationFrame + 1 && WoodRodSpriteInstance.JustChangedFrame;
+
                 var justStartedCasting = ActionInput.WasJustPressed;
                 if (justStartedCasting)
                 {
@@ -289,7 +297,6 @@ namespace FishKing.Entities
                     var finalFrameIndex = SpriteInstance.CurrentChain.Count - 1;
                     var isOnFinalFrame = (WoodRodSpriteInstance.CurrentFrameIndex == finalFrameIndex);
                     var shouldHoldFrame = isOnFinalFrame || IsOnWindUp;
-                    var justCastRod = WoodRodSpriteInstance.CurrentFrameIndex == WindUpAnimationFrame + 1 && WoodRodSpriteInstance.JustChangedFrame;
 
                     SpriteInstance.Animate = !shouldHoldFrame;
                     WoodRodSpriteInstance.Animate = !shouldHoldFrame;
@@ -299,7 +306,7 @@ namespace FishKing.Entities
                         IsCastingRod = false;
                         IsFishing = true;
                     }
-                    else if (justCastRod)
+                    else if (JustReleasedCast)
                     {
                         WhooshRod.Play();
                     }
@@ -307,6 +314,14 @@ namespace FishKing.Entities
                 }
             }
             WoodRodSpriteInstance.Visible = (IsCastingRod || IsFishing);
+            BobberSpriteInstance.Visible = IsFishing;
+        }
+
+        public void PlaceBobberAt(Vector3 bobberPosition)
+        {
+            var relativePosition = new Vector3(bobberPosition.X - Position.X, bobberPosition.Y - Position.Y, 1);
+
+            BobberSpriteInstance.RelativePosition = relativePosition;
         }
 
         private bool ApplyDesiredDirectionToMovement(Direction desiredDirection, TileShapeCollection collision, 
