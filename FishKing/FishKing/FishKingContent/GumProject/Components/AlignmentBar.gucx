@@ -305,6 +305,25 @@
     <State>
       <Name>NotAligned</Name>
       <Variable>
+        <Type>bool</Type>
+        <Name>Custom Texture Coordinates</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <IsFile>true</IsFile>
+        <Type>string</Type>
+        <Name>SourceFile</Name>
+        <Value xsi:type="xsd:string">GumUI.png</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>TextureAddress</Type>
+        <Name>Texture Address</Name>
+        <Value xsi:type="xsd:int">1</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
         <Type>int</Type>
         <Name>Texture Height</Name>
         <Value xsi:type="xsd:int">19</Value>
@@ -328,6 +347,19 @@
         <Value xsi:type="xsd:int">274</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>Wrap</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <VariableList xsi:type="VariableListSaveOfString">
+        <Type>string</Type>
+        <Name>AnimationFrames</Name>
+        <IsFile>false</IsFile>
+        <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
+        <Value />
+      </VariableList>
     </State>
   </Category>
   <Behaviors />
