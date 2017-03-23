@@ -296,6 +296,53 @@
         <string>GLUE</string>
       </Tags>
       <Source>GLUE</Source>
+      <States>
+        <StateSave>
+          <InstructionSaves>
+            <InstructionSave>
+              <Type>Boolean</Type>
+              <Member>BobberSpriteInstanceAnimate</Member>
+              <ValueAsBool>true</ValueAsBool>
+            </InstructionSave>
+            <InstructionSave>
+              <Type>String</Type>
+              <Member>BobberSpriteInstanceCurrentChainName</Member>
+              <ValueAsString>BobInWater</ValueAsString>
+            </InstructionSave>
+          </InstructionSaves>
+          <Name>BobInWater</Name>
+        </StateSave>
+        <StateSave>
+          <InstructionSaves>
+            <InstructionSave>
+              <Type>Boolean</Type>
+              <Member>BobberSpriteInstanceAnimate</Member>
+              <ValueAsBool>true</ValueAsBool>
+            </InstructionSave>
+            <InstructionSave>
+              <Type>String</Type>
+              <Member>BobberSpriteInstanceCurrentChainName</Member>
+              <ValueAsString>OutOfWater</ValueAsString>
+            </InstructionSave>
+          </InstructionSaves>
+          <Name>OutOfWater</Name>
+        </StateSave>
+        <StateSave>
+          <InstructionSaves>
+            <InstructionSave>
+              <Type>Boolean</Type>
+              <Member>BobberSpriteInstanceAnimate</Member>
+              <ValueAsBool>true</ValueAsBool>
+            </InstructionSave>
+            <InstructionSave>
+              <Type>String</Type>
+              <Member>BobberSpriteInstanceCurrentChainName</Member>
+              <ValueAsString>Sink</ValueAsString>
+            </InstructionSave>
+          </InstructionSaves>
+          <Name>Sink</Name>
+        </StateSave>
+      </States>
       <CustomVariables>
         <CustomVariable>
           <Properties>
@@ -348,6 +395,48 @@
           <SourceObject>BobberSpriteInstance</SourceObject>
           <SourceObjectProperty>Visible</SourceObjectProperty>
         </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>bool</ValueAsString>
+            </PropertySave>
+            <PropertySave>
+              <Name>OverridingPropertyType</Name>
+              <ValueAsString>bool</ValueAsString>
+            </PropertySave>
+            <PropertySave>
+              <Name>TypeConverter</Name>
+              <ValueAsString>&lt;default&gt;</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>BobberSpriteInstanceAnimate</Name>
+          <Type>bool</Type>
+          <DefaultValue xsi:type="xsd:boolean">false</DefaultValue>
+          <SourceObject>BobberSpriteInstance</SourceObject>
+          <SourceObjectProperty>Animate</SourceObjectProperty>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>string</ValueAsString>
+            </PropertySave>
+            <PropertySave>
+              <Name>OverridingPropertyType</Name>
+              <ValueAsString>string</ValueAsString>
+            </PropertySave>
+            <PropertySave>
+              <Name>TypeConverter</Name>
+              <ValueAsString>&lt;default&gt;</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>BobberSpriteInstanceCurrentChainName</Name>
+          <Type>string</Type>
+          <DefaultValue xsi:type="xsd:string">OutOfWater</DefaultValue>
+          <SourceObject>BobberSpriteInstance</SourceObject>
+          <SourceObjectProperty>CurrentChainName</SourceObjectProperty>
+        </CustomVariable>
       </CustomVariables>
       <ImplementsIDrawableBatch>false</ImplementsIDrawableBatch>
       <Name>Entities\Bobber</Name>
@@ -361,12 +450,12 @@
           <CustomProperty>
             <Type>float</Type>
             <Member>LeftTexturePixel</Member>
-            <ValueAsFloat>0</ValueAsFloat>
+            <ValueAsFloat>5</ValueAsFloat>
           </CustomProperty>
           <CustomProperty>
             <Type>float</Type>
             <Member>RightTexturePixel</Member>
-            <ValueAsFloat>54</ValueAsFloat>
+            <ValueAsFloat>59</ValueAsFloat>
           </CustomProperty>
           <CustomProperty>
             <Type>float</Type>
@@ -391,12 +480,22 @@
           <CustomProperty>
             <Type>bool</Type>
             <Member>Animate</Member>
-            <ValueAsBool>false</ValueAsBool>
+            <ValueAsBool>true</ValueAsBool>
           </CustomProperty>
           <CustomProperty>
             <Type>bool</Type>
             <Member>Visible</Member>
             <ValueAsBool>false</ValueAsBool>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>AnimationChainList</Type>
+            <Member>AnimationChains</Member>
+            <ValueAsString>BobberAnimationChainList</ValueAsString>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>string</Type>
+            <Member>CurrentChainName</Member>
+            <ValueAsString>OutOfWater</ValueAsString>
           </CustomProperty>
           <SourceType>FlatRedBallType</SourceType>
           <SourceFile />
@@ -426,9 +525,21 @@
           <ProjectsToExcludeFrom />
         </ReferencedFileSave>
         <ReferencedFileSave>
+          <Properties>
+            <PropertySave>
+              <Name>UseContentPipeline</Name>
+              <ValueAsBool>true</ValueAsBool>
+            </PropertySave>
+          </Properties>
           <Name>Entities/Bobber/BobberDrop.wav</Name>
           <IsSharedStatic>true</IsSharedStatic>
           <RuntimeType>Microsoft.Xna.Framework.Audio.SoundEffect</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Name>Entities/Bobber/BobberAnimationChainList.achx</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>FlatRedBall.Graphics.Animation.AnimationChainList</RuntimeType>
           <ProjectsToExcludeFrom />
         </ReferencedFileSave>
       </ReferencedFiles>
@@ -606,6 +717,11 @@
           <IndependentOfCamera>true</IndependentOfCamera>
         </NamedObjectSave>
         <NamedObjectSave>
+          <CustomProperty>
+            <Type>bool</Type>
+            <Member>BobberSpriteInstanceAnimate</Member>
+            <ValueAsBool>true</ValueAsBool>
+          </CustomProperty>
           <SourceType>Entity</SourceType>
           <SourceClassType>Entities\Bobber</SourceClassType>
           <InstanceName>BobberInstance</InstanceName>

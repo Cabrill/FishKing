@@ -323,7 +323,7 @@ namespace FishKing.Entities
                     else if (JustReleasedCast)
                     {
                         var relativeTargetPosition = new Vector3(TargetPosition.X - Position.X, TargetPosition.Y - Position.Y, 1);
-                        BobberInstance.AnimateTo(relativeTargetPosition, tileSize);
+                        BobberInstance.TraverseTo(relativeTargetPosition, tileSize);
 
                         WhooshRod.Play();
                     }

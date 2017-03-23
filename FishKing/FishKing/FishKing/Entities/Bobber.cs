@@ -71,9 +71,10 @@ namespace FishKing.Entities
 
         }
 
-        public void AnimateTo(Vector3 relativeDestination, int tileSize)
+        public void TraverseTo(Vector3 relativeDestination, int tileSize)
         {
             IsMoving = true;
+            CurrentState = VariableState.OutOfWater;
             this.RelativePosition = Vector3.Zero;
             this.Visible = true;
             FishingLineSpline.Clear();
@@ -138,6 +139,7 @@ namespace FishKing.Entities
             distanceTweener.Ended += () => {
                 bobberSoundInstance.Play();
                 IsMoving = false;
+                CurrentState = VariableState.BobInWater;
             };
             distanceTweener.Start();
             verticalTweener.Start();
