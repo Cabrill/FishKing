@@ -58,26 +58,31 @@ namespace FishKing.Entities
             this.RelativePosition = Vector3.Zero;
             this.Visible = true;
 
-            Tweener tweener;
-            double tweenDuration = 1;
-            var isMovingHorizontal = relativeDestination.X != this.RelativeX;
+            Tweener distanceTweener;
+            Tweener verticalTweener;
+            double tweenDuration = 0.75;
 
-            if (relativeDestination.X != this.RelativeX)
+            var isMovingHorizontal = relativeDestination.X != this.RelativeX;
+            if (isMovingHorizontal)
             {
-                tweener = this.Tween("RelativeX").To(relativeDestination.X).During(tweenDuration).Using(FlatRedBall.Glue.StateInterpolation.InterpolationType.Cubic, FlatRedBall.Glue.StateInterpolation.Easing.Out);
-                var verticalTweener = this.Tween("RelativeY").To(30).During(tweenDuration/4).Using(InterpolationType.Cubic, Easing.Out);
-                verticalTweener.Ended += () => { this.Tween("RelativeY").To(0).During(tweenDuration / 3).Using(InterpolationType.Cubic, Easing.In).Start(); };
-                verticalTweener.Start();
+                distanceTweener = this.Tween("RelativeX").To(relativeDestination.X).During(tweenDuration).Using(FlatRedBall.Glue.StateInterpolation.InterpolationType.Sinusoidal, FlatRedBall.Glue.StateInterpolation.Easing.Out);
+
+                verticalTweener = this.Tween("RelativeY").To(30).During(tweenDuration/2).Using(InterpolationType.Sinusoidal, Easing.Out);
+                verticalTweener.Ended += () => {
+                    this.Tween("RelativeY").To(0).During(tweenDuration / 2).Using(InterpolationType.Quadratic, Easing.In).Start();
+                };
             }
             else
             {
+                distanceTweener = this.Tween("RelativeY").To(relativeDestination.Y).During(tweenDuration).Using(FlatRedBall.Glue.StateInterpolation.InterpolationType.Sinusoidal, FlatRedBall.Glue.StateInterpolation.Easing.Out);
+
                 var currentScale = this.BobberSpriteInstance.TextureScale;
                 var newScale = currentScale * 1.5f;
 
-                tweener = this.Tween("RelativeY").To(relativeDestination.Y).During(tweenDuration).Using(FlatRedBall.Glue.StateInterpolation.InterpolationType.Cubic, FlatRedBall.Glue.StateInterpolation.Easing.Out);
-                var verticalTweener = this.BobberSpriteInstance.Tween("TextureScale").To(newScale).During(tweenDuration / 4).Using(InterpolationType.Cubic, Easing.Out);
-                verticalTweener.Ended += () => { this.BobberSpriteInstance.Tween("TextureScale").To(currentScale).During(tweenDuration / 3).Using(InterpolationType.Cubic, Easing.In).Start(); };
-                verticalTweener.Start();
+                verticalTweener = this.BobberSpriteInstance.Tween("TextureScale").To(newScale).During(tweenDuration / 2).Using(InterpolationType.Sinusoidal, Easing.Out);
+                verticalTweener.Ended += () => {
+                    this.BobberSpriteInstance.Tween("TextureScale").To(currentScale).During(tweenDuration / 2).Using(InterpolationType.Quadratic, Easing.In).Start();
+                };
             }
 
             //Determine sound of bobber when it hits
@@ -85,8 +90,9 @@ namespace FishKing.Entities
             bobberSoundInstance.Apply3D(listener, emitter);
 
             //Start movement
-            tweener.Ended += () => { bobberSoundInstance.Play(); };
-            tweener.Start();
+            distanceTweener.Ended += () => { bobberSoundInstance.Play(); };
+            distanceTweener.Start();
+            verticalTweener.Start();
         }
 
         public void Hide()
