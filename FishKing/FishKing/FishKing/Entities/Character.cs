@@ -120,6 +120,14 @@ namespace FishKing.Entities
             }
         }
 
+        public bool IsAfterWindUp
+        {
+            get
+            {
+                return (IsCastingRod && SpriteInstance.CurrentFrameIndex > WindUpAnimationFrame);
+            }
+        }
+
         private int WindUpAnimationFrame
         {
             get
@@ -302,6 +310,7 @@ namespace FishKing.Entities
                     var finalFrameIndex = SpriteInstance.CurrentChain.Count - 1;
                     var isOnFinalFrame = (WoodRodSpriteInstance.CurrentFrameIndex == finalFrameIndex);
                     var shouldHoldFrame = isOnFinalFrame || IsOnWindUp;
+                    var isPastWindup = 
 
                     SpriteInstance.Animate = !shouldHoldFrame;
                     WoodRodSpriteInstance.Animate = !shouldHoldFrame;
@@ -321,6 +330,7 @@ namespace FishKing.Entities
                 }
             }
             WoodRodSpriteInstance.Visible = (IsCastingRod || IsFishing);
+            BobberInstance.Visible = (IsAfterWindUp || IsFishing);
         }
 
 

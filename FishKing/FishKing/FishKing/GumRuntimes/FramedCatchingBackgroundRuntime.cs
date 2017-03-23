@@ -72,12 +72,11 @@ namespace FishKing.GumRuntimes
             
             MaxAlignmentY = 100 - AlignmentBarInstance.Height; 
 
-            MaxFishY = UnknownFishInstance.Height; 
-
-            MaxFishX = 100 - UnknownFishInstance.Width;
-
             UnknownFishInstance.Width = DetermineUnknownFishWidth(AttachedFish.LengthMM);
             UnknownFishInstance.Height = UnknownFishInstance.Width / 3.5f;
+
+            MaxFishY = UnknownFishInstance.Height;
+            MaxFishX = 100 - UnknownFishInstance.Width;
 
             UnknownFishInstance.X = MaxFishX / 2;
             UnknownFishInstance.Y = MaxFishY / 2;
@@ -109,7 +108,9 @@ namespace FishKing.GumRuntimes
             float destX = 0f;
             float destY = 0f;
 
-            if (UnknownFishInstance.X > (MaxFishX / 2))
+            var fishIsOnRightHalf = UnknownFishInstance.X + (UnknownFishInstance.Width/2) > 50;
+
+            if (fishIsOnRightHalf)
             {
                 destX = randomSeed.Next(0, (int)UnknownFishInstance.X);
                 UnknownFishInstance.FlipHorizontal = false;

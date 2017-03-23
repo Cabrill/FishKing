@@ -183,13 +183,14 @@ namespace FishKing.Screens
                 var targetStartY = CharacterInstance.Position.Y;
                 switch (CharacterInstance.DirectionFacing)
                 {
-                    case Direction.Left: targetStartX -= tileSize; break;
-                    case Direction.Right: targetStartX += tileSize; break;
-                    case Direction.Up: targetStartY += tileSize; break;
-                    case Direction.Down: targetStartY -= tileSize; break;
+                    case Direction.Left: targetStartX -= tileSize*2.5f; break;
+                    case Direction.Right: targetStartX += tileSize * 2.5f; break;
+                    case Direction.Up: targetStartY += tileSize * 2.5f; break;
+                    case Direction.Down: targetStartY -= tileSize * 2.5f; break;
                 }
 
                 TargetingSpriteInstance.Position = new Vector3(targetStartX, targetStartY, 1);
+                CharacterInstance.TargetPosition = TargetingSpriteInstance.Position;
             }
             else if (CharacterInstance.IsOnWindUp)
             {
@@ -197,7 +198,7 @@ namespace FishKing.Screens
 
                 var percentPower = (float)Decimal.Divide(ProgressBarInstance.Progress, 100);
                 var maxDistance = CharacterInstance.MaxDistanceTileCast * tileSize;
-                var effectiveDistance = tileSize + (maxDistance * percentPower);
+                var effectiveDistance = (tileSize*2.5f) + (maxDistance * percentPower);
 
                 var targetNewX = CharacterInstance.Position.X;
                 var targetNewY = CharacterInstance.Position.Y;
