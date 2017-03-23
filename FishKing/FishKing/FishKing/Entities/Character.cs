@@ -63,6 +63,11 @@ namespace FishKing.Entities
 
         public bool isMovingToTile = false;
 
+        public Vector3 TargetPosition
+        {
+            get; set;
+        }
+
         public bool IsAttemptingAction
         {
             get;
@@ -308,21 +313,16 @@ namespace FishKing.Entities
                     }
                     else if (JustReleasedCast)
                     {
+                        var relativeTargetPosition = new Vector3(TargetPosition.X - Position.X, TargetPosition.Y - Position.Y, 1);
+                        BobberInstance.AnimateTo(relativeTargetPosition, tileSize);
+
                         WhooshRod.Play();
                     }
-
                 }
             }
             WoodRodSpriteInstance.Visible = (IsCastingRod || IsFishing);
-            BobberSpriteInstance.Visible = IsFishing;
         }
 
-        public void PlaceBobberAt(Vector3 bobberPosition)
-        {
-            var relativePosition = new Vector3(bobberPosition.X - Position.X, bobberPosition.Y - Position.Y, 1);
-
-            BobberSpriteInstance.RelativePosition = relativePosition;
-        }
 
         private bool ApplyDesiredDirectionToMovement(Direction desiredDirection, TileShapeCollection collision, 
             PositionedObjectList<Character> characters)

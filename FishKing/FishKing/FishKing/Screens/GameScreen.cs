@@ -210,11 +210,7 @@ namespace FishKing.Screens
                     case Direction.Down: targetNewY += -effectiveDistance; break;
                 }
                 TargetingSpriteInstance.Position = new Vector3(targetNewX, targetNewY, 1);
-                
-            }
-            else if (CharacterInstance.JustReleasedCast)
-            {
-                CharacterInstance.PlaceBobberAt(TargetingSpriteInstance.Position);
+                CharacterInstance.TargetPosition = TargetingSpriteInstance.Position;
             }
             else if (CharacterInstance.IsFishing)
             {
