@@ -154,6 +154,11 @@ namespace FishKing.Entities
             get { return FishOnTheLine != null; }
         }
 
+        public bool HasInitiatedCatching
+        {
+            get; set;
+        }
+
         public Fish FishOnTheLine
         {
             get;
@@ -238,9 +243,7 @@ namespace FishKing.Entities
             if(desiredDirection != Direction.None)
             {
                 DirectionFacing = desiredDirection;
-                IsCastingRod = false;
-                IsFishing = false;
-                FishOnTheLine = null;
+                StopFishing();
             }
 
             bool startedMoving = ApplyDesiredDirectionToMovement(desiredDirection, collision, characters);
@@ -248,6 +251,14 @@ namespace FishKing.Entities
             ApplyDesiredDirectionToAnimation(desiredDirection, startedMoving);
 
             TryUpdateActionCollision(desiredDirection, startedMoving);
+        }
+
+        private void StopFishing()
+        {
+            HasInitiatedCatching = false;
+            IsCastingRod = false;
+            IsFishing = false;
+            FishOnTheLine = null;
         }
 
         private void TryUpdateActionCollision(Direction desiredDirection, bool startedMoving)
@@ -326,6 +337,21 @@ namespace FishKing.Entities
                         BobberInstance.TraverseTo(relativeTargetPosition, tileSize);
 
                         WhooshRod.Play();
+                    }
+                }
+            }
+            else if (IsFishing)
+            {
+                if (HasFishOnTheLine)
+                {
+                    if (HasInitiatedCatching)
+                    {
+                        BobberInstance.BobberSpriteInstanceAnimate = false;
+                    }
+                    else
+                    {
+                        BobberInstance.CurrentState = Bobber.VariableState.Sink;
+                        HasInitiatedCatching = ActionInput.IsDown;
                     }
                 }
             }

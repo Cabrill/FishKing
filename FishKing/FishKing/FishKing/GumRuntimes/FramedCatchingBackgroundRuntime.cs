@@ -23,7 +23,7 @@ namespace FishKing.GumRuntimes
 
         private float MaxFishX { get; set; }
 
-        private Fish AttachedFish { get; set;  }
+        public Fish AttachedFish { get; set;  }
 
         private int FishTop { get { return (int)UnknownFishInstance.Y; } }
 
@@ -55,6 +55,7 @@ namespace FishKing.GumRuntimes
 
         public void Reset()
         {
+            AttachedFish = null;
             AlignmentBarInstance.Y = 90;
         }
 

@@ -174,6 +174,7 @@ namespace FishKing.Screens
 
             if (characterJustStartedfishing)
             {
+                CharacterInstance.HasInitiatedCatching = false;
                 CharacterInstance.IsCastingRod = true;
 
                 ProgressBarInstance.ResetProgress();
@@ -225,24 +226,30 @@ namespace FishKing.Screens
                     {
                         FishCatchingInterfaceInstance.ReelIn();
                     }
-                    FishCatchingInterfaceInstance.Update();
+                    if (CharacterInstance.HasInitiatedCatching)
+                    {
+                        if (!FishCatchingInterfaceInstance.HasAttachedFish)
+                        {
+                            FishCatchingInterfaceInstance.AttachFish(CharacterInstance.FishOnTheLine);
+                        }
+                        FishCatchingInterfaceInstance.Update();
+                    }
                 }
                 else
                 {
                     var rnd = new Random();
-                    var catchChance = 0.2;
+                    var catchChance = 0.003;
                     var catchRoll = rnd.NextDouble();
 
                     if (catchRoll <= catchChance)
                     {
                         var fish = FishGenerator.CreateFish();
                         CharacterInstance.FishOnTheLine = fish;
-                        FishCatchingInterfaceInstance.AttachFish(fish);
                     }
                 }
             }
 
-            FishCatchingInterfaceInstance.Visible = CharacterInstance.HasFishOnTheLine;
+            FishCatchingInterfaceInstance.Visible = CharacterInstance.HasInitiatedCatching;
             ProgressBarInstance.Visible = CharacterInstance.IsOnWindUp;
             TargetingSpriteInstance.Visible = CharacterInstance.IsOnWindUp;
         }

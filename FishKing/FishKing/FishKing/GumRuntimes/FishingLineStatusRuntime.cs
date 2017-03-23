@@ -17,5 +17,10 @@ namespace FishKing.GumRuntimes
         {
             FishingLineStressHeight = LineStress;
         }
+
+        public void Reset()
+        {
+            LineStress = 0;
+        }
     }
 }
