@@ -44,7 +44,7 @@ namespace FishKing.Entities
 
         public int MaxDistanceTileCast { get; set;  }
 
-        const int tileSize = 16;
+        const int tileSize = 32;
 
         public string Dialog { get; set; }
         public string Animation
@@ -62,6 +62,11 @@ namespace FishKing.Entities
         public IPressableInput ActionInput { get; set; }
 
         public bool isMovingToTile = false;
+
+        public bool IsAttemptingMovement
+        {
+            get { return MovementInput != null && (MovementInput.X != 0 || MovementInput.Y != 0 || MovementInput.XVelocity != 0 || MovementInput.YVelocity != 0);  }
+        }
 
         public Vector3 TargetPosition
         {

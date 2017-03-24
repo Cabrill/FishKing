@@ -122,6 +122,11 @@ namespace FishKing.Screens
 
         void CustomActivity(bool firstTimeCalled)
 		{
+            if (CharacterInstance.IsHoldingAlignButton)
+            {
+                SpinningReelInstance.Spin();
+            }
+
             DialogActivity();
             FishingActivity();
             if (CanMoveCharacter)
@@ -168,7 +173,8 @@ namespace FishKing.Screens
             var characterJustReleased = CharacterInstance.IsCastingRod && CharacterInstance.ActionInput.WasJustReleased;
 
             var characterJustStartedfishing = CharacterInstance.IsAttemptingAction && !CharacterInstance.IsInDialog &&
-                !CharacterInstance.IsFishing && !CharacterInstance.IsCastingRod;
+                !CharacterInstance.IsFishing && !CharacterInstance.IsCastingRod && !CharacterInstance.isMovingToTile && 
+                !CharacterInstance.IsAttemptingMovement;
 
             var tileSize = (float)BasicIsland.WidthPerTile;
 

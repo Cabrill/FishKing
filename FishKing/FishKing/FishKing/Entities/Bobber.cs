@@ -21,11 +21,14 @@ namespace FishKing.Entities
         SoundEffectInstance bobberSoundInstance;
         AudioListener listener;
         AudioEmitter emitter;
+        int fishLinePointRate = 4;
+        int fishLinePointCounter = 0;
 
         public bool IsMoving
         {
             get; private set;
         }
+        private bool wasMovingLastUpdate = false;
 
         private double splineTime = 0.1;
 
@@ -42,27 +45,35 @@ namespace FishKing.Entities
             listener.Position = Vector3.Zero;
             emitter = new AudioEmitter();
 
-            FishingLineSpline.PathColor = Color.White;
-            FishingLineSpline.SplinePointRadiusInPixels = 1;
-            
             IsMoving = false;
         }
 
+        /// <summary>
+        /// Update the fishing line as the bobber moves through the air, and hide the splash after it has played
+        /// </summary>
 		private void CustomActivity()
 		{
-            if (IsMoving)
+            UpdateFishingLine();
+
+            if (WaterSplashSprite.Visible)
             {
-                splineTime += 0.1;
-                var splinePoint = new SplinePoint(this.X, this.Y, 2, splineTime);
-                FishingLineSpline.Add(splinePoint);
-                FishingLineSpline.UpdateShapes();
+                if (WaterSplashSprite.JustCycled)
+                {
+                    WaterSplashSprite.Visible = false;
+                    WaterSplashSprite.IgnoreParentPosition = false;
+                }
             }
-            FishingLineSpline.Visible = this.Visible;
+            if (!Visible)
+            {
+                ResetFishingLine();
+            }
+
+            wasMovingLastUpdate = IsMoving;
         }
 
 		private void CustomDestroy()
 		{
-
+            ResetFishingLine();
 		}
 
         private static void CustomLoadStaticContent(string contentManagerName)
@@ -71,14 +82,56 @@ namespace FishKing.Entities
 
         }
 
+        private void UpdateFishingLine()
+        {
+            if (IsMoving)
+            {
+                if (fishLinePointCounter++ == 0)
+                {
+                    var newLine = ShapeManager.AddLine();
+                    newLine.Color = Color.White;
+                    newLine.Position = this.Position;
+                    newLine.RelativePoint1 = new Point3D(0, 0, 0);
+                    newLine.RelativePoint2 = new Point3D(0, 0, 0);
+
+                    var linesSoFar = FishingLineLinesList.Count;
+                    if (linesSoFar > 0)
+                    {
+                        var lastLine = FishingLineLinesList.Last;
+                        lastLine.SetFromAbsoluteEndpoints(lastLine.Position, this.Position);
+                    }
+
+                    this.FishingLineLinesList.Add(newLine);
+                }
+                else if (fishLinePointCounter == fishLinePointRate)
+                {
+                    fishLinePointCounter = 0;
+                }
+            }
+            else if (wasMovingLastUpdate)
+            {
+                //Update the final line's point
+                var linesSoFar = FishingLineLinesList.Count;
+                if (linesSoFar > 0)
+                {
+                    var lastLine = FishingLineLinesList.Last;
+                    lastLine.SetFromAbsoluteEndpoints(lastLine.Position, this.Position);
+                }
+            }
+        }
+
+        /// <summary>
+        /// Move the bobber to the designated location, relative to the character
+        /// </summary>
+        /// <param name="relativeDestination">Designated location, relative to the caller</param>
+        /// <param name="tileSize">Number of pixels per tile to determine tile distance traveled</param>
         public void TraverseTo(Vector3 relativeDestination, int tileSize)
         {
             IsMoving = true;
             CurrentState = VariableState.OutOfWater;
             this.RelativePosition = Vector3.Zero;
             this.Visible = true;
-            FishingLineSpline.Clear();
-            FishingLineSpline.Visible = true;
+            ResetFishingLine();
             splineTime = 0.1;
 
             Tweener distanceTweener;
@@ -88,21 +141,21 @@ namespace FishKing.Entities
             var isMovingHorizontal = relativeDestination.X != this.RelativeX;
             if (isMovingHorizontal)
             {
-                this.RelativeY += tileSize * 2;
+                this.RelativeY += tileSize;
                 if (relativeDestination.X > this.RelativeX)
                 {
-                    this.RelativeX += tileSize*2.5f;
+                    this.RelativeX += tileSize*1.3f;
                     
                 }
                 else
                 {
-                    this.RelativeX -= tileSize*2.5f;
+                    this.RelativeX -= tileSize*1.3f;
                 }
                 distanceTweener = this.Tween("RelativeX").To(relativeDestination.X).During(tweenDuration).Using(InterpolationType.Sinusoidal, Easing.Out);
 
                 verticalTweener = this.Tween("RelativeY").To(RelativeY*1.5f).During(tweenDuration/2).Using(InterpolationType.Sinusoidal, Easing.Out);
                 verticalTweener.Ended += () => {
-                    this.Tween("RelativeY").To(0).During(tweenDuration / 2).Using(InterpolationType.Quadratic, Easing.In).Start();
+                    this.Tween("RelativeY").To(-5).During(tweenDuration / 2).Using(InterpolationType.Quadratic, Easing.In).Start();
                 };
             }
             else
@@ -111,15 +164,15 @@ namespace FishKing.Entities
 
                 if (castingUp)
                 {
-                    this.RelativeY += tileSize*2.4f;
-                    this.RelativeX += tileSize*0.4f;
+                    this.RelativeY += tileSize*1.1f;
+                    this.RelativeX += tileSize*0.2f;
                 }
 
                 distanceTweener = this.Tween("RelativeY").To(relativeDestination.Y).During(tweenDuration).Using(InterpolationType.Sinusoidal, Easing.Out);
 
                 if (castingUp)
                 {
-                    this.Tween("RelativeX").To(relativeDestination.X - tileSize*0.5f).During(tweenDuration).Using(InterpolationType.Linear, Easing.InOut).Start();
+                    this.Tween("RelativeX").To(relativeDestination.X - tileSize*0.25f).During(tweenDuration).Using(InterpolationType.Linear, Easing.InOut).Start();
                 }
 
                 var currentScale = this.BobberSpriteInstance.TextureScale;
@@ -136,13 +189,36 @@ namespace FishKing.Entities
             bobberSoundInstance.Apply3D(listener, emitter);
 
             //Start movement
-            distanceTweener.Ended += () => {
+            distanceTweener.Ended += WaterTouchDown;
+            distanceTweener.Start();
+            verticalTweener.Start();
+        }
+
+        /// <summary>
+        /// Occurs when the bobber hits the water
+        /// </summary>
+        private void WaterTouchDown()
+        {
+            if (Visible)
+            {
                 bobberSoundInstance.Play();
                 IsMoving = false;
                 CurrentState = VariableState.BobInWater;
-            };
-            distanceTweener.Start();
-            verticalTweener.Start();
+                WaterSplashSprite.IgnoreParentPosition = true;
+                WaterSplashSprite.Visible = true;
+                WaterSplashSprite.CurrentFrameIndex = 0;
+            }
+        }
+
+        private void ResetFishingLine()
+        {
+            if (FishingLineLinesList.Count > 0)
+            {
+                for (int i = FishingLineLinesList.Count; i > 0; i--)
+                {
+                    ShapeManager.Remove(FishingLineLinesList.Last);
+                }
+            }
         }
 	}
 }
