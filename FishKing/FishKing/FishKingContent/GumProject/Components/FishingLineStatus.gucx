@@ -17,6 +17,18 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>int</Type>
+      <Name>Cloud1Sprite.Alpha</Name>
+      <Value xsi:type="xsd:int">150</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>Blend</Type>
+      <Name>Cloud1Sprite.Blend</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>Cloud1Sprite.Parent</Name>
       <Value xsi:type="xsd:string">CloudContainer</Value>
@@ -62,7 +74,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Cloud1Sprite.X</Name>
-      <Value xsi:type="xsd:float">-149.038452</Value>
+      <Value xsi:type="xsd:float">-17.30767</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -74,7 +86,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Cloud1Sprite.Y</Name>
-      <Value xsi:type="xsd:float">84.64912</Value>
+      <Value xsi:type="xsd:float">66.4473648</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -87,6 +99,12 @@
       <Type>Cloud1State</Type>
       <Name>Cloud1State</Name>
       <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>Cloud2Sprite.Alpha</Name>
+      <Value xsi:type="xsd:int">180</Value>
+      <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
@@ -159,6 +177,12 @@
       <Type>Cloud2State</Type>
       <Name>Cloud2State</Name>
       <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>Cloud3Sprite.Alpha</Name>
+      <Value xsi:type="xsd:int">180</Value>
+      <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>

@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ElementAnimationsSave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Animations>
+    <AnimationSave>
+      <Loops>false</Loops>
+      <Name>Cloud1LeftToRight</Name>
+      <States>
+        <AnimatedStateSave>
+          <StateName>Cloud1/Cloud1Left</StateName>
+          <Time>0</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>Cloud1/Cloud1Right</StateName>
+          <Time>40</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>InOut</Easing>
+        </AnimatedStateSave>
+      </States>
+      <Animations />
+      <Events />
+    </AnimationSave>
+    <AnimationSave>
+      <Loops>false</Loops>
+      <Name>Cloud2LeftRight</Name>
+      <States>
+        <AnimatedStateSave>
+          <StateName>Cloud2/Cloud2Left</StateName>
+          <Time>0</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>Cloud2/Cloud2Right</StateName>
+          <Time>15</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>InOut</Easing>
+        </AnimatedStateSave>
+      </States>
+      <Animations />
+      <Events />
+    </AnimationSave>
+    <AnimationSave>
+      <Loops>false</Loops>
+      <Name>Cloud3LeftRight</Name>
+      <States>
+        <AnimatedStateSave>
+          <StateName>Cloud3/Cloud3Left</StateName>
+          <Time>0</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>Cloud3/Cloud3Right</StateName>
+          <Time>25</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>InOut</Easing>
+        </AnimatedStateSave>
+      </States>
+      <Animations />
+      <Events />
+    </AnimationSave>
+    <AnimationSave>
+      <Loops>false</Loops>
+      <Name>AllCloudsLeftRight</Name>
+      <States />
+      <Animations>
+        <AnimationReferenceSave>
+          <Name>Cloud1LeftToRight</Name>
+          <Time>0</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>Cloud2LeftRight</Name>
+          <Time>5</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>Cloud3LeftRight</Name>
+          <Time>10</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>Cloud2LeftRight</Name>
+          <Time>30</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>Cloud3LeftRight</Name>
+          <Time>36</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>Cloud1LeftToRight</Name>
+          <Time>45</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>Cloud2LeftRight</Name>
+          <Time>55</Time>
+        </AnimationReferenceSave>
+      </Animations>
+      <Events />
+    </AnimationSave>
+  </Animations>
+</ElementAnimationsSave>
