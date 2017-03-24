@@ -13,6 +13,7 @@ using Microsoft.Xna.Framework;
 using StateInterpolationPlugin;
 using FlatRedBall.Glue.StateInterpolation;
 using FlatRedBall.Math.Splines;
+using FlatRedBall.Math;
 
 namespace FishKing.Entities
 {
@@ -116,6 +117,7 @@ namespace FishKing.Entities
                 {
                     var lastLine = FishingLineLinesList.Last;
                     lastLine.SetFromAbsoluteEndpoints(lastLine.Position, this.Position);
+                    SinkFishingLine();
                 }
             }
         }
@@ -219,6 +221,87 @@ namespace FishKing.Entities
                     ShapeManager.Remove(FishingLineLinesList.Last);
                 }
             }
+        }
+
+        private void SinkFishingLine()
+        {
+            var totalX = FishingLineLinesList[0].AbsolutePoint1.X - FishingLineLinesList.Last.AbsolutePoint2.X;
+            var totalY = FishingLineLinesList[0].AbsolutePoint1.Y - FishingLineLinesList.Last.AbsolutePoint2.Y;
+
+            double pointX, relativeX, pointY, newY;
+            Point3D point1, point2;
+
+            PositionedObjectList<Line> sunkenLines = new PositionedObjectList<Line>();
+            Line clonedLine;
+            
+            for (int i = 0; i < FishingLineLinesList.Count; i++)
+            {
+                clonedLine = FishingLineLinesList[i].Clone();
+
+                if (i == 0)
+                {
+                    point1 = clonedLine.AbsolutePoint1;
+                }
+                else
+                {
+                    pointX = FishingLineLinesList[0].AbsolutePoint1.X - clonedLine.AbsolutePoint1.X;
+                    relativeX = (pointX / totalX) - 1;
+                    pointY = CalculateCatenaryHeight(relativeX);
+                    newY = pointY * totalY;
+
+                    point1 = new Point3D(clonedLine.AbsolutePoint1.X, FishingLineLinesList.Last.AbsolutePoint2.Y + newY);
+                }
+
+                if (i > 0)
+                {
+                    var previousLine = sunkenLines[i - 1];
+                    previousLine.SetFromAbsoluteEndpoints(previousLine.AbsolutePoint1, point1);
+                }
+
+                pointX = FishingLineLinesList[0].AbsolutePoint1.X - clonedLine.AbsolutePoint1.X;
+                relativeX = (pointX / totalX) - 1;
+                pointY = CalculateCatenaryHeight(relativeX);
+                newY = pointY * totalY;
+
+                point2 = new Point3D(clonedLine.AbsolutePoint2.X, FishingLineLinesList.Last.AbsolutePoint2.Y + newY);
+
+                clonedLine.SetFromAbsoluteEndpoints(point1, point2);
+                ShapeManager.AddLine(clonedLine);
+                sunkenLines.Add(clonedLine);
+            }
+
+            //Tween from original line to new line
+            Tweener point1Tween;
+            Tweener point2Tween;
+            for (int i=0; i < sunkenLines.Count; i++)
+            {
+                var lineToChange = FishingLineLinesList[i];
+                var newLine = sunkenLines[i];
+
+                if (i != 0)
+                {
+                    point1Tween = new Tweener((float)lineToChange.RelativePoint1.Y, (float)newLine.RelativePoint1.Y, 1f, InterpolationType.Back, Easing.Out);
+                    point1Tween.PositionChanged += (a) => { lineToChange.RelativePoint1.Y = a; };
+                    point1Tween.Start();
+                    TweenerManager.Self.Add(point1Tween);
+                }
+
+                if (i != sunkenLines.Count - 1)
+                {
+                    point2Tween = new Tweener((float)lineToChange.RelativePoint2.Y, (float)newLine.RelativePoint2.Y, 1f, InterpolationType.Back, Easing.Out);
+                    point2Tween.PositionChanged += (a) => { lineToChange.RelativePoint2.Y = a; };
+                    point2Tween.Start();
+                    TweenerManager.Self.Add(point2Tween);
+                }            
+            }
+            //this.Call(() => FishingLineLinesList = sunkenLines ).After(1);
+        }
+
+        private double CalculateCatenaryHeight(double x, double a = 0.5)
+        {
+            var maxY = 1.881;
+            var minY = 0.5;
+            return ((a * Math.Cosh(x / a))-minY)/maxY;
         }
 	}
 }

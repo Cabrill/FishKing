@@ -158,6 +158,20 @@ namespace StateInterpolationPlugin
                 tweener.Start();
                 return tweener;
             }
+            else if (currentValueAsObject is double)
+            {
+                float currentValue = (float)(double)currentValueAsObject;
+                Tweener tweener = new Tweener((float)currentValue, ValueToSet, (float)TimeToTake,
+                    interpolation, easing);
+
+                tweener.PositionChanged = HandlePositionSet;
+
+                tweener.Owner = Caller;
+
+                TweenerManager.Self.Add(tweener);
+                tweener.Start();
+                return tweener;
+            }
             else
             {
                 throw new NotImplementedException();
