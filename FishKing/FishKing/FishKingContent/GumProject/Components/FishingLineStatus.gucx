@@ -17,6 +17,276 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>string</Type>
+      <Name>Cloud1Sprite.Parent</Name>
+      <Value xsi:type="xsd:string">CloudContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>Cloud1Sprite.SourceFile</Name>
+      <Value xsi:type="xsd:string">GumUI.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TextureAddress</Type>
+      <Name>Cloud1Sprite.Texture Address</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>Cloud1Sprite.Texture Height</Name>
+      <Value xsi:type="xsd:int">93</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>Cloud1Sprite.Texture Left</Name>
+      <Value xsi:type="xsd:int">328</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>Cloud1Sprite.Texture Top</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>Cloud1Sprite.Texture Width</Name>
+      <Value xsi:type="xsd:int">146</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Cloud1Sprite.X</Name>
+      <Value xsi:type="xsd:float">-149.038452</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>Cloud1Sprite.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Cloud1Sprite.Y</Name>
+      <Value xsi:type="xsd:float">84.64912</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>Cloud1Sprite.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>Cloud1State</Type>
+      <Name>Cloud1State</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>Cloud2Sprite.Parent</Name>
+      <Value xsi:type="xsd:string">CloudContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>Cloud2Sprite.SourceFile</Name>
+      <Value xsi:type="xsd:string">GumUI.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TextureAddress</Type>
+      <Name>Cloud2Sprite.Texture Address</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>Cloud2Sprite.Texture Height</Name>
+      <Value xsi:type="xsd:int">78</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>Cloud2Sprite.Texture Left</Name>
+      <Value xsi:type="xsd:int">328</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>Cloud2Sprite.Texture Top</Name>
+      <Value xsi:type="xsd:int">94</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>Cloud2Sprite.Texture Width</Name>
+      <Value xsi:type="xsd:int">146</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Cloud2Sprite.X</Name>
+      <Value xsi:type="xsd:float">-140.615372</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>Cloud2Sprite.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Cloud2Sprite.Y</Name>
+      <Value xsi:type="xsd:float">28.3245583</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>Cloud2Sprite.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>Cloud2State</Type>
+      <Name>Cloud2State</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>Cloud3Sprite.Parent</Name>
+      <Value xsi:type="xsd:string">CloudContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>Cloud3Sprite.SourceFile</Name>
+      <Value xsi:type="xsd:string">GumUI.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TextureAddress</Type>
+      <Name>Cloud3Sprite.Texture Address</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>Cloud3Sprite.Texture Height</Name>
+      <Value xsi:type="xsd:int">63</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>Cloud3Sprite.Texture Left</Name>
+      <Value xsi:type="xsd:int">328</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>Cloud3Sprite.Texture Top</Name>
+      <Value xsi:type="xsd:int">172</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>Cloud3Sprite.Texture Width</Name>
+      <Value xsi:type="xsd:int">146</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Cloud3Sprite.X</Name>
+      <Value xsi:type="xsd:float">-148.153854</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>Cloud3Sprite.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Cloud3Sprite.Y</Name>
+      <Value xsi:type="xsd:float">6.85087633</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>Cloud3Sprite.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>Cloud3State</Type>
+      <Name>Cloud3State</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>CloudContainer.Clips Children</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>CloudContainer.Height</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>CloudContainer.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>CloudContainer.Parent</Name>
+      <Value xsi:type="xsd:string">SkyBox</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>CloudContainer.Width</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>CloudContainer.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>CloudContainer.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>CloudContainer.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>CloudContainer.Y</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>ConnectionsState</Type>
       <Name>DoubleBarFrameInstance.ConnectionsState</Name>
       <Value xsi:type="xsd:string">RightConnect</Value>
@@ -481,12 +751,119 @@
       <Value />
     </VariableList>
   </State>
+  <Category>
+    <Name>Cloud1</Name>
+    <State>
+      <Name>Cloud1Left</Name>
+      <Variable>
+        <Type>float</Type>
+        <Name>Cloud1Sprite.X</Name>
+        <Value xsi:type="xsd:float">-154.3077</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Cloud1Sprite.Y</Name>
+        <Value xsi:type="xsd:float">79.707634</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Cloud1Right</Name>
+      <Variable>
+        <Type>float</Type>
+        <Name>Cloud1Sprite.X</Name>
+        <Value xsi:type="xsd:float">99.7691956</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Cloud1Sprite.Y</Name>
+        <Value xsi:type="xsd:float">78.52633</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
+  <Category>
+    <Name>Cloud2</Name>
+    <State>
+      <Name>Cloud2Left</Name>
+      <Variable>
+        <Type>Blend</Type>
+        <Name>Cloud2Sprite.Blend</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Cloud2Sprite.X</Name>
+        <Value xsi:type="xsd:float">-151.07692</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Cloud2Sprite.Y</Name>
+        <Value xsi:type="xsd:float">46.8245621</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Cloud2Right</Name>
+      <Variable>
+        <Type>Blend</Type>
+        <Name>Cloud2Sprite.Blend</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Cloud2Sprite.X</Name>
+        <Value xsi:type="xsd:float">109.000008</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Cloud2Sprite.Y</Name>
+        <Value xsi:type="xsd:float">36.82456</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
+  <Category>
+    <Name>Cloud3</Name>
+    <State>
+      <Name>Cloud3Left</Name>
+      <Variable>
+        <Type>float</Type>
+        <Name>Cloud3Sprite.X</Name>
+        <Value xsi:type="xsd:float">-146.769226</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Cloud3Sprite.Y</Name>
+        <Value xsi:type="xsd:float">7.87718964</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Cloud3Right</Name>
+      <Variable>
+        <Type>float</Type>
+        <Name>Cloud3Sprite.X</Name>
+        <Value xsi:type="xsd:float">103.538467</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Cloud3Sprite.Y</Name>
+        <Value xsi:type="xsd:float">0.175440028</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
   <Instance>
     <Name>FishingLineStress</Name>
-    <BaseType>Sprite</BaseType>
-  </Instance>
-  <Instance>
-    <Name>FishingLine</Name>
     <BaseType>Sprite</BaseType>
   </Instance>
   <Instance>
@@ -496,6 +873,26 @@
   <Instance>
     <Name>DoubleBarFrameInstance</Name>
     <BaseType>DoubleBarFrame</BaseType>
+  </Instance>
+  <Instance>
+    <Name>Cloud1Sprite</Name>
+    <BaseType>Sprite</BaseType>
+  </Instance>
+  <Instance>
+    <Name>CloudContainer</Name>
+    <BaseType>Container</BaseType>
+  </Instance>
+  <Instance>
+    <Name>FishingLine</Name>
+    <BaseType>Sprite</BaseType>
+  </Instance>
+  <Instance>
+    <Name>Cloud2Sprite</Name>
+    <BaseType>Sprite</BaseType>
+  </Instance>
+  <Instance>
+    <Name>Cloud3Sprite</Name>
+    <BaseType>Sprite</BaseType>
   </Instance>
   <Behaviors />
 </ComponentSave>

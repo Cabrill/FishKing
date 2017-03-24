@@ -30,8 +30,7 @@ namespace FishKing.Entities
             get; private set;
         }
         private bool wasMovingLastUpdate = false;
-
-        private double splineTime = 0.1;
+        private bool wasCastHorizontally = false;
 
         /// <summary>
         /// Initialization logic which is execute only one time for this Entity (unless the Entity is pooled).
@@ -54,8 +53,6 @@ namespace FishKing.Entities
         /// </summary>
 		private void CustomActivity()
 		{
-            UpdateFishingLine();
-
             if (WaterSplashSprite.Visible)
             {
                 if (WaterSplashSprite.JustCycled)
@@ -64,12 +61,15 @@ namespace FishKing.Entities
                     WaterSplashSprite.IgnoreParentPosition = false;
                 }
             }
-            if (!Visible)
+            if (Visible)
+            {
+                UpdateFishingLine();
+                wasMovingLastUpdate = IsMoving;
+            }
+            else
             {
                 ResetFishingLine();
             }
-
-            wasMovingLastUpdate = IsMoving;
         }
 
 		private void CustomDestroy()
@@ -90,7 +90,7 @@ namespace FishKing.Entities
                 if (fishLinePointCounter++ == 0)
                 {
                     var newLine = ShapeManager.AddLine();
-                    newLine.Color = Color.White;
+                    newLine.Color = Color.GhostWhite;
                     newLine.Position = this.Position;
                     newLine.RelativePoint1 = new Point3D(0, 0, 0);
                     newLine.RelativePoint2 = new Point3D(0, 0, 0);
@@ -117,7 +117,10 @@ namespace FishKing.Entities
                 {
                     var lastLine = FishingLineLinesList.Last;
                     lastLine.SetFromAbsoluteEndpoints(lastLine.Position, this.Position);
-                    SinkFishingLine();
+                    if (wasCastHorizontally)
+                    {
+                        SettleFishingLine();
+                    }
                 }
             }
         }
@@ -134,14 +137,13 @@ namespace FishKing.Entities
             this.RelativePosition = Vector3.Zero;
             this.Visible = true;
             ResetFishingLine();
-            splineTime = 0.1;
 
             Tweener distanceTweener;
             Tweener verticalTweener;
             double tweenDuration = 0.75;
 
-            var isMovingHorizontal = relativeDestination.X != this.RelativeX;
-            if (isMovingHorizontal)
+            wasCastHorizontally = relativeDestination.X != this.RelativeX;
+            if (wasCastHorizontally)
             {
                 this.RelativeY += tileSize;
                 if (relativeDestination.X > this.RelativeX)
@@ -223,7 +225,7 @@ namespace FishKing.Entities
             }
         }
 
-        private void SinkFishingLine()
+        private void SettleFishingLine()
         {
             var totalX = FishingLineLinesList[0].AbsolutePoint1.X - FishingLineLinesList.Last.AbsolutePoint2.X;
             var totalY = FishingLineLinesList[0].AbsolutePoint1.Y - FishingLineLinesList.Last.AbsolutePoint2.Y;
@@ -231,7 +233,7 @@ namespace FishKing.Entities
             double pointX, relativeX, pointY, newY;
             Point3D point1, point2;
 
-            PositionedObjectList<Line> sunkenLines = new PositionedObjectList<Line>();
+            PositionedObjectList<Line> settledFishingLineLines = new PositionedObjectList<Line>();
             Line clonedLine;
             
             for (int i = 0; i < FishingLineLinesList.Count; i++)
@@ -254,7 +256,7 @@ namespace FishKing.Entities
 
                 if (i > 0)
                 {
-                    var previousLine = sunkenLines[i - 1];
+                    var previousLine = settledFishingLineLines[i - 1];
                     previousLine.SetFromAbsoluteEndpoints(previousLine.AbsolutePoint1, point1);
                 }
 
@@ -266,42 +268,61 @@ namespace FishKing.Entities
                 point2 = new Point3D(clonedLine.AbsolutePoint2.X, FishingLineLinesList.Last.AbsolutePoint2.Y + newY);
 
                 clonedLine.SetFromAbsoluteEndpoints(point1, point2);
-                ShapeManager.AddLine(clonedLine);
-                sunkenLines.Add(clonedLine);
+
+#if DEBUG
+                if (DebuggingVariables.ShowSettledFishingLine)
+                {
+                    ShapeManager.AddLine(clonedLine);
+                }
+#endif
+
+                settledFishingLineLines.Add(clonedLine);
             }
 
             //Tween from original line to new line
             Tweener point1Tween;
             Tweener point2Tween;
-            for (int i=0; i < sunkenLines.Count; i++)
+            for (int i=0; i < settledFishingLineLines.Count; i++)
             {
                 var lineToChange = FishingLineLinesList[i];
-                var newLine = sunkenLines[i];
+                var newLine = settledFishingLineLines[i];
 
                 if (i != 0)
                 {
                     point1Tween = new Tweener((float)lineToChange.RelativePoint1.Y, (float)newLine.RelativePoint1.Y, 1f, InterpolationType.Back, Easing.Out);
-                    point1Tween.PositionChanged += (a) => { lineToChange.RelativePoint1.Y = a; };
+                    point1Tween.PositionChanged += (a) => { lineToChange.RelativePoint1.Y = (double)a; };
                     point1Tween.Start();
                     TweenerManager.Self.Add(point1Tween);
                 }
 
-                if (i != sunkenLines.Count - 1)
+                if (i != settledFishingLineLines.Count - 1)
                 {
                     point2Tween = new Tweener((float)lineToChange.RelativePoint2.Y, (float)newLine.RelativePoint2.Y, 1f, InterpolationType.Back, Easing.Out);
-                    point2Tween.PositionChanged += (a) => { lineToChange.RelativePoint2.Y = a; };
+                    point2Tween.PositionChanged += (a) => { lineToChange.RelativePoint2.Y = (double)a; };
                     point2Tween.Start();
                     TweenerManager.Self.Add(point2Tween);
                 }            
             }
-            //this.Call(() => FishingLineLinesList = sunkenLines ).After(1);
+            this.Call(() => SwapFishingLineLines(settledFishingLineLines) ).After(1);
+            var test = CalculateCatenaryHeight(-1);
+            var test2 = CalculateCatenaryHeight(0);
         }
 
         private double CalculateCatenaryHeight(double x, double a = 0.5)
         {
-            var maxY = 1.881;
+            var maxY = 1.38109;
             var minY = 0.5;
             return ((a * Math.Cosh(x / a))-minY)/maxY;
+        }
+
+        private void SwapFishingLineLines(PositionedObjectList<Line> newLines)
+        {
+            ResetFishingLine();
+            foreach (Line l in newLines)
+            {
+                ShapeManager.AddLine(l);
+                FishingLineLinesList.Add(l);
+            }
         }
 	}
 }

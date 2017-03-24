@@ -16,11 +16,16 @@ namespace FishKing.GumRuntimes
         public void Update()
         {
             FishingLineStressHeight = LineStress;
+            if (Visible && !AllCloudsLeftRightAnimation.IsPlaying())
+            {
+                AllCloudsLeftRightAnimation.Play();
+            }
         }
 
         public void Reset()
         {
             LineStress = 0;
+            AllCloudsLeftRightAnimation.Play();
         }
     }
 }
