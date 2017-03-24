@@ -48,7 +48,7 @@ namespace FishKing.GumRuntimes
             FishingLineStatusInstance.Update();
         }
 
-        public void ResetStatus()
+        public void Reset()
         {
             FishingLineStatusInstance.Reset();
             FramedCatchingBackgroundInstance.Reset();

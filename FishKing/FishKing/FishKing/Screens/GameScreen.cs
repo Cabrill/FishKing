@@ -178,6 +178,7 @@ namespace FishKing.Screens
                 CharacterInstance.IsCastingRod = true;
 
                 ProgressBarInstance.ResetProgress();
+                FishCatchingInterfaceInstance.Reset();
                 ProgressBarInstance.PositionProgressBarOver(CharacterInstance.Position);
 
                 var targetStartX = CharacterInstance.Position.X;
