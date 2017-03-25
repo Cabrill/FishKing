@@ -11,8 +11,9 @@ namespace FishKing.GumRuntimes
 {
     partial class FramedCatchingBackgroundRuntime
     {
-        private const int MaxFishWidth = 70;
-        private const int MinFishWidth = 15;
+        private const int MaxUnknownFishSpriteWidth = 70;
+        private const int MinUnknownFishSpriteWidth = 15;
+        private const float UnknownFishWidthHeightRatio = 1f / 3.5f;
         private bool fishIsMoving = false;
         private Tweener fishTweener;
         private static Random randomSeed = new Random();
@@ -74,23 +75,20 @@ namespace FishKing.GumRuntimes
             MaxAlignmentY = 100 - AlignmentBarInstance.Height; 
 
             UnknownFishInstance.Width = DetermineUnknownFishWidth(AttachedFish.LengthMM);
-            UnknownFishInstance.Height = UnknownFishInstance.Width / 3.5f;
+            UnknownFishInstance.Height = UnknownFishInstance.Width * UnknownFishWidthHeightRatio;
 
             MaxFishY = UnknownFishInstance.Height;
             MaxFishX = 100 - UnknownFishInstance.Width;
 
             UnknownFishInstance.X = MaxFishX / 2;
-            UnknownFishInstance.Y = MaxFishY / 2;
+            UnknownFishInstance.Y = MaxFishY;
         }
 
         private float DetermineUnknownFishWidth(int fishLengthMM)
         {
-            var minLength = FishGenerator.MinimumLengthMM;
-            var fishLengthRange = FishGenerator.MaximumLengthMM - minLength;
-            var normalizedLength = Decimal.Divide((fishLengthMM - minLength), fishLengthRange);
-
-            var fishWidth = (float)(normalizedLength * MaxFishWidth);
-            fishWidth = Math.Max(MinFishWidth, fishWidth);
+            var normalizedLength = Decimal.Divide(fishLengthMM, FishGenerator.MaximumLengthMM);
+            var fishWidth = Math.Max(MinUnknownFishSpriteWidth, 
+                (float)(normalizedLength * MaxUnknownFishSpriteWidth));
 
             return fishWidth;
         }
