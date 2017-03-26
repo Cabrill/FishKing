@@ -11,7 +11,7 @@ namespace FishKing.GumRuntimes
     {
         private int maxAlpha = 255;
         private float riseRate = 2f;
-        private float fallRate = 0.5f;
+        private float fallRate = 0.1f;
 
         public float LineStress
         {

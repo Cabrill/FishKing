@@ -295,6 +295,7 @@ namespace FishKing.Entities
                 case Direction.Up: chainName = "TugUp"; break;
                 case Direction.Down: chainName = "TugDown"; break;
             }
+            BobberInstance.Visible = false;
             SpriteInstance.CurrentChainName = RodSpriteInstance.CurrentChainName = chainName;
             SpriteInstance.Animate = RodSpriteInstance.Animate = true;
             SpriteInstance.CurrentFrameIndex = RodSpriteInstance.CurrentFrameIndex = 0;

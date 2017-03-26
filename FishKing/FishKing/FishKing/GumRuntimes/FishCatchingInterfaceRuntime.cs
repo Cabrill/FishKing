@@ -35,8 +35,16 @@ namespace FishKing.GumRuntimes
 
         public void Update()
         {
-            FramedCatchingBackgroundInstance.Update();
-            FishingLineStatusInstance.Update();
+            if (Visible)
+            {
+                SpinningReelInstance.Update();
+                FishingLineStatusInstance.Update();
+                if (!FishingLineStatusInstance.LineHasSnapped)
+                {
+                    FramedCatchingBackgroundInstance.CurrentReelSpeed = SpinningReelInstance.ReelSpeed;
+                    FramedCatchingBackgroundInstance.Update();
+                }
+            }
         }
 
         public void RaiseAlignmentBar()
@@ -44,23 +52,23 @@ namespace FishKing.GumRuntimes
             FramedCatchingBackgroundInstance.RaiseAlignmentBar();
         }
 
-        public void ReelIn()
+        public void SpinReel()
         {
             if (FramedCatchingBackgroundInstance.IsAligned)
             {
-                FramedCatchingBackgroundInstance.ReelInFish();
+                SpinningReelInstance.Spin();
             }
             else
             {
                 FishingLineStatusInstance.IncreaseStress();
             }
-            FishingLineStatusInstance.Update();
         }
 
-        private void Reset()
+        public void Reset()
         {
             FishingLineStatusInstance.Reset();
             FramedCatchingBackgroundInstance.Reset();
+            SpinningReelInstance.Reset();
         }
     }
 }

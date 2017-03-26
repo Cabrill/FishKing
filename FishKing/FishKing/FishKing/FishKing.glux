@@ -251,25 +251,6 @@
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
         </NamedObjectSave>
-        <NamedObjectSave>
-          <CustomProperty>
-            <Type>float</Type>
-            <Member>ReelForegroundRotation</Member>
-            <ValueAsFloat>0</ValueAsFloat>
-          </CustomProperty>
-          <CustomProperty>
-            <Type>float</Type>
-            <Member>ReelHandleRotation</Member>
-            <ValueAsFloat>0</ValueAsFloat>
-          </CustomProperty>
-          <SourceType>File</SourceType>
-          <SourceFile>GumProject/Screens/GameScreenGum.gusx</SourceFile>
-          <SourceName>SpinningReelInstance (FishKing.GumRuntimes.SpinningReelRuntime)</SourceName>
-          <InstanceName>SpinningReelInstance</InstanceName>
-          <AttachToContainer>true</AttachToContainer>
-          <GenerateTimedEmit>true</GenerateTimedEmit>
-          <IndependentOfCamera>true</IndependentOfCamera>
-        </NamedObjectSave>
       </NamedObjects>
     </ScreenSave>
     <ScreenSave>

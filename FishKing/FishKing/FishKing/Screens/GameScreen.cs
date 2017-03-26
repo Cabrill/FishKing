@@ -124,11 +124,6 @@ namespace FishKing.Screens
 
         void CustomActivity(bool firstTimeCalled)
 		{
-            if (CharacterInstance.IsHoldingAlignButton)
-            {
-                SpinningReelInstance.Spin();
-            }
-
             DialogActivity();
             FishingActivity();
 
@@ -176,20 +171,23 @@ namespace FishKing.Screens
         private void FishingActivity()
         {
 #if DEBUG
-            if (DebuggingVariables.ImmediatelyStartFishing)
+            if (DebuggingVariables.ImmediatelyStartFishing && !CharacterInstance.IsFishing)
             {
+                FishCatchingInterfaceInstance.Reset();
+                CharacterInstance.ResetFishingStatus();
                 CharacterInstance.IsFishing = true;
                 var fish = FishGenerator.CreateFish();
                 CharacterInstance.FishOnTheLine = fish;
                 CharacterInstance.HasInitiatedCatching = true;
             }
 #endif
-
-            if (CharacterInstance.IsAttemptingAction && CharacterInstance.HasFinishedDisplayingCatch)
+            if ((CharacterInstance.IsMoving && FishCatchingInterfaceInstance.HasAttachedFish) || 
+                (CharacterInstance.IsAttemptingAction && CharacterInstance.HasFinishedDisplayingCatch))
             {
+                FishCatchingInterfaceInstance.Reset();
                 CharacterInstance.ResetFishingStatus();
             }
-
+            
             var characterJustReleased = CharacterInstance.IsCastingRod && CharacterInstance.ActionInput.WasJustReleased;
 
             var characterJustStartedfishing = CharacterInstance.IsAttemptingAction && !CharacterInstance.IsInDialog &&
@@ -250,7 +248,7 @@ namespace FishKing.Screens
                     }
                     if (CharacterInstance.IsHoldingAction)
                     {
-                        FishCatchingInterfaceInstance.ReelIn();
+                        FishCatchingInterfaceInstance.SpinReel();
                     }
                     if (CharacterInstance.HasInitiatedCatching)
                     {

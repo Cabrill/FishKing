@@ -542,6 +542,11 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>TestAnimationState</Type>
+      <Name>TestAnimationState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>bool</Type>
       <Name>Visible</Name>
       <Value xsi:type="xsd:boolean">true</Value>
@@ -617,6 +622,54 @@
       <Value />
     </VariableList>
   </State>
+  <Category>
+    <Name>TestAnimation</Name>
+    <State>
+      <Name>Start</Name>
+    </State>
+    <State>
+      <Name>End</Name>
+      <Variable>
+        <Type>float</Type>
+        <Name>ReelBackground.Rotation</Name>
+        <Value xsi:type="xsd:float">359</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>ReelForeground.Rotation</Name>
+        <Value xsi:type="xsd:float">-180</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>ReelHandle.Rotation</Name>
+        <Value xsi:type="xsd:float">-90</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>End2</Name>
+      <Variable>
+        <Type>float</Type>
+        <Name>ReelBackground.Rotation</Name>
+        <Value xsi:type="xsd:float">720</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>ReelForeground.Rotation</Name>
+        <Value xsi:type="xsd:float">-360</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>ReelHandle.Rotation</Name>
+        <Value xsi:type="xsd:float">-180</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
   <Instance>
     <Name>DoubleBarFrameInstance</Name>
     <BaseType>DoubleBarFrame</BaseType>
