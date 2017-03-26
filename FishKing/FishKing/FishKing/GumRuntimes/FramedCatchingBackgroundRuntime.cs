@@ -23,7 +23,14 @@ namespace FishKing.GumRuntimes
         private float alignmentVelocity = 0f;
         private float alignmentVelocityAttritionRate = 0.02f;
         private float alignmentVelocityIncrementRate = 0.05f;
-        private float maxAlignmentVelocy = 1.5f;
+        private float maxAlignmentVelocy = 1.3f;
+
+        private float fightOrLuckVelocity = 0f;
+        private float fightOrLuckMaxVelocity = 0.5f;
+        private float fightOrLuckMinVelocity = -0.5f;
+        private float fightVelocityIncrementRate = 0.08f;
+        private float luckVelocityIncrementRate = 0.1f;
+        private float fightOrLuckVelocityAttritionRate = 0.001f;
         
         private float reelInRate = 0.1f;
         public float CurrentReelSpeed { get; set; }
@@ -94,12 +101,13 @@ namespace FishKing.GumRuntimes
                 }
 
                 UpdateAlignmentBarStatus();
+                UpdateFishFightOrLuck();
                 ReelInFish();
                 UpdateFishingLine();                
             }
         }
 
-        public void ReelInFish()
+        private void ReelInFish()
         {
             if (CurrentReelSpeed > 0)
             {
@@ -113,8 +121,40 @@ namespace FishKing.GumRuntimes
                     FlipFishHorizontally();
                 }
             }
-            UnknownFishInstance.Y -= reelInRate * CurrentReelSpeed;
-            UnknownFishInstance.Rotation = -45 * (CurrentReelSpeed / 3);
+
+            var changeInY = (-reelInRate * CurrentReelSpeed) + fightOrLuckVelocity;
+            UnknownFishInstance.Y = Math.Min(MaxFishY, UnknownFishInstance.Y + changeInY);
+
+            var flipModifier = UnknownFishInstance.XOrigin == RenderingLibrary.Graphics.HorizontalAlignment.Left ? 1 : -1;
+            //UnknownFishInstance.Rotation = flipModifier * (-45 * (CurrentReelSpeed / 3)) + (-45 * fightOrLuckVelocity/fightOrLuckMaxVelocity);
+            UnknownFishInstance.Rotation = flipModifier * 45 * (changeInY/1.3f);
+        }
+
+        private void UpdateFishFightOrLuck()
+        {
+            double chanceOfFight = (double)FishFight / 5000;
+            double chanceOfLuck = 0.001;
+            var fightOrLuck = randomSeed.NextDouble();
+
+            if (chanceOfFight > fightOrLuck)
+            {
+                fightOrLuckVelocity = Math.Min(fightOrLuckMaxVelocity, fightOrLuckVelocity + fightVelocityIncrementRate);
+            }
+            else if (chanceOfLuck > fightOrLuck)
+            {
+                fightOrLuckVelocity = Math.Max(fightOrLuckMinVelocity, fightOrLuckVelocity - luckVelocityIncrementRate);
+            }
+            else 
+            {
+                if (fightOrLuckVelocity > 0)
+                {
+                    fightOrLuckVelocity = Math.Max(0,fightOrLuckVelocity - fightOrLuckVelocityAttritionRate);
+                }
+                else if (fightOrLuckVelocity < 0)
+                {
+                    fightOrLuckVelocity = Math.Min(0,fightOrLuckVelocity + fightOrLuckVelocityAttritionRate);
+                }
+            }
         }
 
         private void MoveFish()
@@ -125,11 +165,8 @@ namespace FishKing.GumRuntimes
             tweenHolder.Caller = UnknownFishInstance;
 
             double tweenDuration = (double)FishSpeed / 4;
-            double chanceOfFight = (double)FishFight / 200;
-            double chanceOfLuck = .9 - chanceOfFight;
 
             float destX = 0f;
-            float destY = 0f;
 
             var fishIsOnRightHalf = UnknownFishInstance.X > (MaxFishX/2);
 
@@ -151,21 +188,6 @@ namespace FishKing.GumRuntimes
             }
 
             fishTweener = tweenHolder.Tween("X").To(destX).During(tweenDuration).Using(FlatRedBall.Glue.StateInterpolation.InterpolationType.Cubic, FlatRedBall.Glue.StateInterpolation.Easing.InOut);
-
-            var fightOrLuck = randomSeed.NextDouble();
-
-            //if (chanceOfFight > fightOrLuck)
-            //{
-            //    destY = UnknownFishInstance.Y + (float)(randomSeed.Next(5, 15));
-            //    destY = Math.Min(destY, MaxFishY);
-            //    tweenHolder.Tween("Y").To(destY).During(tweenDuration).Using(FlatRedBall.Glue.StateInterpolation.InterpolationType.Cubic, FlatRedBall.Glue.StateInterpolation.Easing.InOut);
-            //}
-            //else if (chanceOfLuck > fightOrLuck)
-            //{
-            //    destY = UnknownFishInstance.Y - (float)(randomSeed.Next(5, 15));
-            //    destY = Math.Max(destY, 0);
-            //    tweenHolder.Tween("Y").To(destY).During(tweenDuration).Using(FlatRedBall.Glue.StateInterpolation.InterpolationType.Cubic, FlatRedBall.Glue.StateInterpolation.Easing.InOut);
-            //}
 
             fishTweener.Ended += () => { fishIsMoving = false; };
         }
@@ -265,6 +287,7 @@ namespace FishKing.GumRuntimes
             AttachedFish = null;
             AlignmentBarInstance.Y = 90;
             alignmentVelocity = 0;
+            fightOrLuckVelocity = 0;
         }
     }
 }
