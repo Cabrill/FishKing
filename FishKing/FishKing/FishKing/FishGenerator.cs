@@ -1,5 +1,6 @@
 ﻿using FishKing.DataTypes;
 using FishKing.Entities;
+using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -50,6 +51,7 @@ namespace FishKing
                     availableFish = GlobalContent.Fish_Types.Values.ToList(); break;
             }
             var fishType = availableFish.RandomElement();
+            var fishTypeName = fishType.Name.ToString().Replace(" ","");
 
             decimal gramsPerMM = (decimal)fishType.MaxGrams / (decimal)fishType.MaxMM;
 
@@ -60,7 +62,10 @@ namespace FishKing
             fish.FishType = fishType;
             fish.Grams = fishGrams;
             fish.LengthMM = fishLengthMM;
-            
+            fish.SpriteInstanceTexture = (Texture2D)GlobalContent.GetFile(fishTypeName);
+            fish.SpriteInstanceTextureScale = Math.Max(0.1f, (float)Decimal.Divide(fishLengthMM, 1000));
+            fish.IsSmall = fish.SpriteInstanceTextureScale < 0.2;
+
             return fish;
         }
 

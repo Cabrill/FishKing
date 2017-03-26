@@ -12,6 +12,14 @@ namespace FishKing.GumRuntimes
     public partial class FishCatchingInterfaceRuntime
     {
         public bool HasAttachedFish { get { return FramedCatchingBackgroundInstance.AttachedFish != null; } }
+        public bool IsFishCaught {  get {
+                return (
+#if DEBUG
+                    DebuggingVariables.ImmediatelyCatchFish ||
+#endif
+                FramedCatchingBackgroundInstance.IsFishCaught);
+            } }
+        
 
         partial void CustomInitialize()
         {

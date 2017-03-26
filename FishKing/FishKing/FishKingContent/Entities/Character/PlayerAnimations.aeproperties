@@ -3,7 +3,9 @@
   <OffsetMultiplier>1</OffsetMultiplier>
   <ExpandedNode>CastRight</ExpandedNode>
   <ExpandedNode>CastLeft</ExpandedNode>
+  <ExpandedNode>ShowCatch</ExpandedNode>
   <ExpandedNode>StandUp</ExpandedNode>
   <ExpandedNode>StandLeft</ExpandedNode>
   <ExpandedNode>StandDown</ExpandedNode>
+  <ExpandedNode>ShowSmallCatch</ExpandedNode>
 </AESettingsSave>

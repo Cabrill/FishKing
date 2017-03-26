@@ -66,9 +66,17 @@ namespace FishKing.Entities
                 UpdateFishingLine();
                 wasMovingLastUpdate = IsMoving;
             }
-            else
+            else 
             {
-                ResetFishingLine();
+                var tweenManager = TweenerManager.Self;
+                if (tweenManager.IsObjectReferencedByTweeners(this))
+                {
+                    tweenManager.StopAllTweenersOwnedBy(this);
+                }
+                if (FishingLineLinesList.Count > 0)
+                {
+                    ResetFishingLine();
+                }
             }
         }
 
@@ -216,12 +224,9 @@ namespace FishKing.Entities
 
         private void ResetFishingLine()
         {
-            if (FishingLineLinesList.Count > 0)
+            for (int i = FishingLineLinesList.Count; i > 0; i--)
             {
-                for (int i = FishingLineLinesList.Count; i > 0; i--)
-                {
-                    ShapeManager.Remove(FishingLineLinesList.Last);
-                }
+                ShapeManager.Remove(FishingLineLinesList.Last);
             }
         }
 

@@ -41,7 +41,9 @@ namespace FishKing.Screens
         {
             get
             {
-                return DialogDisplayInstance.Visible == false;
+                return DialogDisplayInstance.Visible == false && 
+                    !CharacterInstance.IsPullingInCatch && 
+                    (!CharacterInstance.IsDisplayingCatch || CharacterInstance.HasFinishedDisplayingCatch);
             }
         }
 
@@ -129,11 +131,14 @@ namespace FishKing.Screens
 
             DialogActivity();
             FishingActivity();
+
+            bool characterMoved = false;
             if (CanMoveCharacter)
             {
-                this.CharacterInstance.PerformMovementActivity(this.SolidCollisions, NpcCharacterList);
-                this.CharacterInstance.UpdateFishingStatus();
+                characterMoved = this.CharacterInstance.PerformMovementActivity(this.SolidCollisions, NpcCharacterList);
             }
+
+            CharacterInstance.UpdateFishingStatus(characterMoved);
             this.CharacterInstance.SetSpriteOffset();
 
             CollisionActivity();
@@ -170,10 +175,15 @@ namespace FishKing.Screens
 
         private void FishingActivity()
         {
+            if (CharacterInstance.IsAttemptingAction && CharacterInstance.HasFinishedDisplayingCatch)
+            {
+                CharacterInstance.ResetFishingStatus();
+            }
+
             var characterJustReleased = CharacterInstance.IsCastingRod && CharacterInstance.ActionInput.WasJustReleased;
 
             var characterJustStartedfishing = CharacterInstance.IsAttemptingAction && !CharacterInstance.IsInDialog &&
-                !CharacterInstance.IsFishing && !CharacterInstance.IsCastingRod && !CharacterInstance.isMovingToTile && 
+                !CharacterInstance.IsFishing && !CharacterInstance.IsCastingRod && !CharacterInstance.IsMoving && 
                 !CharacterInstance.IsAttemptingMovement;
 
             var tileSize = (float)BasicIsland.WidthPerTile;
@@ -239,7 +249,17 @@ namespace FishKing.Screens
                         {
                              FishCatchingInterfaceInstance.AttachFish(CharacterInstance.FishOnTheLine);
                         }
-                        FishCatchingInterfaceInstance.Update();
+                        if (FishCatchingInterfaceInstance.IsFishCaught)
+                        {
+                            if (!CharacterInstance.IsPullingInCatch && !CharacterInstance.IsDisplayingCatch)
+                            {
+                                CharacterInstance.HandleFishCaught();
+                            } 
+                        }
+                        else
+                        {
+                            FishCatchingInterfaceInstance.Update();
+                        }
                     }
                 }
                 else
@@ -248,7 +268,11 @@ namespace FishKing.Screens
                     var catchChance = 0.003;
                     var catchRoll = rnd.NextDouble();
 
-                    if (catchRoll <= catchChance)
+                    if (
+#if DEBUG
+                    DebuggingVariables.ImmediatelyCatchFish ||
+#endif
+                        catchRoll <= catchChance)
                     {
                         var fish = FishGenerator.CreateFish();
                         CharacterInstance.FishOnTheLine = fish;
@@ -256,7 +280,7 @@ namespace FishKing.Screens
                 }
             }
 
-            FishCatchingInterfaceInstance.Visible = CharacterInstance.HasInitiatedCatching;
+            FishCatchingInterfaceInstance.Visible = CharacterInstance.HasInitiatedCatching && !FishCatchingInterfaceInstance.IsFishCaught;
             ProgressBarInstance.Visible = CharacterInstance.IsOnWindUp;
             TargetingSpriteInstance.Visible = CharacterInstance.IsOnWindUp;
         }

@@ -38,144 +38,48 @@ namespace FishKing.Entities
         Right
     }
 
-	public partial class Character
-	{
-        public Direction DirectionFacing { get; private set;  }
-
-        public int MaxDistanceTileCast { get; set;  }
-
+    public partial class Character
+    {
         const int tileSize = 32;
-
+        public Direction DirectionFacing { get; private set; }
+        public int MaxDistanceTileCast { get; set; }
+        
         public string Dialog { get; set; }
-        public string Animation
-        {
-            set
-            {
-                var file = GetFile(value) as AnimationChainList;
-
-                this.SpriteInstance.AnimationChains = file;
-            }
-        }
+        public string Animation { set { this.SpriteInstance.AnimationChains = GetFile(value) as AnimationChainList;} }
 
         public I2DInput MovementInput { get; set; }
         public IPressableInput FishingAlignmentInput { get; set; }
         public IPressableInput ActionInput { get; set; }
 
-        public bool isMovingToTile = false;
+        private bool isMovingToTile = false;
+        public bool IsMoving { get { return SpriteInstance.CurrentChainName.Substring(0, 4) == "Walk"; } }
 
-        public bool IsAttemptingMovement
-        {
-            get { return MovementInput != null && (MovementInput.X != 0 || MovementInput.Y != 0 || MovementInput.XVelocity != 0 || MovementInput.YVelocity != 0);  }
-        }
+        public bool IsAttemptingMovement { get { return MovementInput != null && (MovementInput.X != 0 || MovementInput.Y != 0 || MovementInput.XVelocity != 0 || MovementInput.YVelocity != 0); } }
+        public bool IsAttemptingAction { get; private set; }
+        public bool IsAttemptingReelIn { get; private set; }
+        public bool IsInDialog { get; set; }
 
-        public Vector3 TargetPosition
-        {
-            get; set;
-        }
+        public Vector3 TargetPosition { get; set; } 
 
-        public bool IsAttemptingAction
-        {
-            get;
-            private set;
-        }
+        public bool IsHoldingAction { get; private set; }
+        public bool IsHoldingAlignButton { get; private set; }
 
-        public bool IsAttemptingReelIn
-        {
-            get;
-            private set;
-        }
+        private int WindUpAnimationFrame { get { return (DirectionFacing == Direction.Left || DirectionFacing == Direction.Right) ? 2 : 3; } }
+        public bool IsOnFinalFrameOfAnimationChain { get { return SpriteInstance.CurrentFrameIndex == SpriteInstance.CurrentChain.Count - 1; } }
 
-        public bool IsHoldingAction
-        {
-            get;
-            private set;
-        }
+        public bool IsFishing { get; set; } = false;
+        public bool HasFishOnTheLine { get { return FishOnTheLine != null; } }
 
-        public bool IsHoldingAlignButton
-        {
-            get;
-            private set;
-        }
-
-        public bool IsCastingRod
-        {
-            get;
-            set;
-        }
-
-        public bool JustReleasedCast
-        {
-            get;
-            set;
-        }
-
-        public bool IsOnWindUp
-        {
-            get
-            {
-                return (IsHoldingAction && SpriteInstance.CurrentFrameIndex == WindUpAnimationFrame);
-            }
-        }
-
-        public bool IsBeforeWindUp
-        {
-            get
-            {
-                return IsCastingRod && (SpriteInstance.CurrentFrameIndex < WindUpAnimationFrame);
-            }
-        }
-
-        public bool IsAfterWindUp
-        {
-            get
-            {
-                return (IsCastingRod && SpriteInstance.CurrentFrameIndex > WindUpAnimationFrame);
-            }
-        }
-
-        private int WindUpAnimationFrame
-        {
-            get
-            {
-                if (DirectionFacing == Direction.Left || DirectionFacing == Direction.Right)
-                {
-                    return 2;
-                }
-                else
-                {
-                    return 3;
-                }
-            }
-        }
-
-        public bool IsFishing
-        {
-            get;
-            set;
-        }
-
-        public bool HasFishOnTheLine
-        {
-            get { return FishOnTheLine != null; }
-        }
-
-        public bool HasInitiatedCatching
-        {
-            get; set;
-        }
-
-        public Fish FishOnTheLine
-        {
-            get;
-            set;
-        }
-
-        public bool IsInDialog
-        {
-            get;
-            set;
-        }
-
+        public bool IsCastingRod { get; set; } = false;
+        public bool JustReleasedCast { get; set; } = false;
+        public bool IsOnWindUp { get { return (IsCastingRod && IsHoldingAction && SpriteInstance.CurrentFrameIndex == WindUpAnimationFrame); } }
+        public bool IsBeforeWindUp { get { return IsCastingRod && (SpriteInstance.CurrentFrameIndex < WindUpAnimationFrame); } }
+        public bool IsAfterWindUp { get { return (IsCastingRod && SpriteInstance.CurrentFrameIndex > WindUpAnimationFrame); } }
+        
+        public bool HasInitiatedCatching { get; set; }
+        public bool IsPullingInCatch { get { return SpriteInstance.CurrentChainName.Substring(0, 3) == "Tug"; } }
+        public bool IsDisplayingCatch { get; set; } = false;
+        public bool HasFinishedDisplayingCatch { get; set; } = false;
 
         /// <summary>
         /// Initialization logic which is execute only one time for this Entity (unless the Entity is pooled).
@@ -186,6 +90,7 @@ namespace FishKing.Entities
         {
             InitializeCollision();
             DirectionFacing = Direction.Down;
+            SpriteInstance.CurrentChainName = "StandDown";
             MaxDistanceTileCast = 3;
         }
 
@@ -200,7 +105,6 @@ namespace FishKing.Entities
                 ActionCollision.Visible = DebuggingVariables.ShowShapes;
             ForwardCollision.Color = Color.Green;
             BackwardCollision.Color = Color.Red;
-
 #endif
         }
 
@@ -228,27 +132,24 @@ namespace FishKing.Entities
 
             if (IsAttemptingAction && !HasFishOnTheLine)
             {
-                IsFishing = false;
-                IsCastingRod = false;
+                ResetFishingStatus();
             }
             IsHoldingAlignButton = FishingAlignmentInput != null && FishingAlignmentInput.IsDown;
-
         }
 
-        public void SetSpriteOffset()
-        {
-            SpriteInstance.RelativeY = SpriteInstance.Height / 8;
-            WoodRodSpriteInstance.RelativeY = WoodRodSpriteInstance.Height / 8;
-        }
 
-        public void PerformMovementActivity(TileShapeCollection collision, PositionedObjectList<Character> characters)
+        public bool PerformMovementActivity(TileShapeCollection collision, PositionedObjectList<Character> characters)
         {
             var desiredDirection = GetDesiredDirection();
 
-            if(desiredDirection != Direction.None)
+            if(desiredDirection == Direction.None && !isMovingToTile && SpriteInstance.CurrentChainName.Contains("Walk"))
+            {
+                SpriteInstance.CurrentFrameIndex = 0;
+                SpriteInstance.CurrentChainName = SpriteInstance.CurrentChainName.Replace("Walk", "Stand");
+            }
+            else if (desiredDirection != Direction.None)
             {
                 DirectionFacing = desiredDirection;
-                StopFishing();
             }
 
             bool startedMoving = ApplyDesiredDirectionToMovement(desiredDirection, collision, characters);
@@ -256,14 +157,8 @@ namespace FishKing.Entities
             ApplyDesiredDirectionToAnimation(desiredDirection, startedMoving);
 
             TryUpdateActionCollision(desiredDirection, startedMoving);
-        }
 
-        private void StopFishing()
-        {
-            HasInitiatedCatching = false;
-            IsCastingRod = false;
-            IsFishing = false;
-            FishOnTheLine = null;
+            return startedMoving;
         }
 
         private void TryUpdateActionCollision(Direction desiredDirection, bool startedMoving)
@@ -300,11 +195,15 @@ namespace FishKing.Entities
             }
         }
 
-        public void UpdateFishingStatus()
+        public void UpdateFishingStatus(bool characterMoved)
         {
+            if (characterMoved)
+            {
+                ResetFishingStatus();
+            }
             if (IsCastingRod && !IsFishing)
             {
-                JustReleasedCast = WoodRodSpriteInstance.CurrentFrameIndex == WindUpAnimationFrame + 1 && WoodRodSpriteInstance.JustChangedFrame;
+                JustReleasedCast = RodSpriteInstance.CurrentFrameIndex == WindUpAnimationFrame + 1 && RodSpriteInstance.JustChangedFrame;
 
                 var justStartedCasting = ActionInput.WasJustPressed;
                 if (justStartedCasting)
@@ -317,21 +216,17 @@ namespace FishKing.Entities
                         case Direction.Up: chainName = "CastUp"; break;
                         case Direction.Down: chainName = "CastDown"; break;
                     }
-                    SpriteInstance.CurrentChainName =  WoodRodSpriteInstance.CurrentChainName = chainName;
-                    SpriteInstance.Animate = WoodRodSpriteInstance.Animate = true;
-                    SpriteInstance.CurrentFrameIndex = WoodRodSpriteInstance.CurrentFrameIndex = 0;
+                    SpriteInstance.CurrentChainName =  RodSpriteInstance.CurrentChainName = chainName;
+                    SpriteInstance.Animate = RodSpriteInstance.Animate = true;
+                    SpriteInstance.CurrentFrameIndex = RodSpriteInstance.CurrentFrameIndex = 0;
                 }
                 else
                 {
-                    var finalFrameIndex = SpriteInstance.CurrentChain.Count - 1;
-                    var isOnFinalFrame = (WoodRodSpriteInstance.CurrentFrameIndex == finalFrameIndex);
-                    var shouldHoldFrame = isOnFinalFrame || IsOnWindUp;
-                    var isPastWindup = 
-
+                    var shouldHoldFrame = IsOnFinalFrameOfAnimationChain || IsOnWindUp;
                     SpriteInstance.Animate = !shouldHoldFrame;
-                    WoodRodSpriteInstance.Animate = !shouldHoldFrame;
+                    RodSpriteInstance.Animate = !shouldHoldFrame;
 
-                    if (isOnFinalFrame)
+                    if (IsOnFinalFrameOfAnimationChain)
                     {
                         IsCastingRod = false;
                         IsFishing = true;
@@ -352,6 +247,15 @@ namespace FishKing.Entities
                     if (HasInitiatedCatching)
                     {
                         BobberInstance.BobberSpriteInstanceAnimate = false;
+
+                        if (IsPullingInCatch && IsOnFinalFrameOfAnimationChain)
+                        {
+                            BobberInstance.Visible = false;
+                        }
+                        if (IsPullingInCatch  && IsOnFinalFrameOfAnimationChain || (IsDisplayingCatch && !HasFinishedDisplayingCatch))
+                        {
+                            DisplayCaughtFish();
+                        }
                     }
                     else
                     {
@@ -360,8 +264,86 @@ namespace FishKing.Entities
                     }
                 }
             }
-            WoodRodSpriteInstance.Visible = (IsCastingRod || IsFishing);
-            BobberInstance.Visible = (IsAfterWindUp || IsFishing);
+            RodSpriteInstance.Visible = (IsCastingRod || IsFishing) && !IsDisplayingCatch;
+            BobberInstance.Visible = (IsAfterWindUp || IsFishing) && !IsDisplayingCatch;
+        }
+
+        public void ResetFishingStatus()
+        {
+            if (HasFishOnTheLine)
+            {
+                FishOnTheLine.Visible = false;
+                FishOnTheLine.RemoveFromManagers();
+                FishOnTheLine.Destroy();
+                FishOnTheLine = null;
+            }
+            IsFishing = false;
+            IsCastingRod = false;
+            JustReleasedCast = false;
+            HasInitiatedCatching = false;
+            IsDisplayingCatch = false;
+            HasFinishedDisplayingCatch = false;
+        }
+
+        public void HandleFishCaught()
+        {
+            var chainName = "";
+            switch (DirectionFacing)
+            {
+                case Direction.Left: chainName = "TugLeft"; break;
+                case Direction.Right: chainName = "TugRight"; break;
+                case Direction.Up: chainName = "TugUp"; break;
+                case Direction.Down: chainName = "TugDown"; break;
+            }
+            SpriteInstance.CurrentChainName = RodSpriteInstance.CurrentChainName = chainName;
+            SpriteInstance.Animate = RodSpriteInstance.Animate = true;
+            SpriteInstance.CurrentFrameIndex = RodSpriteInstance.CurrentFrameIndex = 0;
+        }
+
+        private void DisplayCaughtFish()
+        {
+            if (!IsDisplayingCatch)
+            {
+                IsDisplayingCatch = true;
+                RodSpriteInstance.Visible = false;
+                if (FishOnTheLine.IsSmall)
+                {
+                    SpriteInstance.CurrentChainName = "ShowSmallCatch";
+                }
+                else
+                {
+                    SpriteInstance.CurrentChainName = "ShowCatch";
+                }
+                SpriteInstance.CurrentFrameIndex = 0;
+                FishOnTheLine.Visible = true;
+                FishOnTheLine.AttachTo(this, false);
+                FishOnTheLine.RelativeZ = 1;
+                FishOnTheLine.RelativeY -= SpriteInstance.Height / 16;
+            }
+            else
+            {
+                float fishRelativeY;
+                switch (SpriteInstance.CurrentFrameIndex)
+                {
+                    case 5:
+                        fishRelativeY = 0; break;
+                    case 6:
+                        fishRelativeY = SpriteInstance.Height / 28; break;
+                    case 7:
+                        fishRelativeY = SpriteInstance.Height / 12; break;
+                    case 8:
+                        fishRelativeY = SpriteInstance.Height / 6;  break;
+                    default:
+                        fishRelativeY = -(SpriteInstance.Height / 16);break;
+                }
+                FishOnTheLine.RelativeY = fishRelativeY;
+
+                if (IsOnFinalFrameOfAnimationChain)
+                {
+                    SpriteInstance.Animate = false;
+                    HasFinishedDisplayingCatch = true;
+                }
+            }
         }
 
 
@@ -474,7 +456,6 @@ namespace FishKing.Entities
 		{
             ShapeManager.Remove(ForwardCollision);
             ShapeManager.Remove(BackwardCollision);
-
 		}
 
 
@@ -490,5 +471,11 @@ namespace FishKing.Entities
 
 
         }
-	}
+
+        public void SetSpriteOffset()
+        {
+            SpriteInstance.RelativeY = SpriteInstance.Height / 8;
+            RodSpriteInstance.RelativeY = RodSpriteInstance.Height / 8;
+        }
+    }
 }

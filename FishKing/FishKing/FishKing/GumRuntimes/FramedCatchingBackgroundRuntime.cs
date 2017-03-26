@@ -42,6 +42,8 @@ namespace FishKing.GumRuntimes
 
         public bool IsAligned { get { return this.AlignmentBarInstance.CurrentAlignmentState == AlignmentBarRuntime.Alignment.Aligned;  } }
 
+        public bool IsFishCaught { get { return FishTop <= 0; } }
+
         public void Update()
         {
             AnimateUnknownFish();
