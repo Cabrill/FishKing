@@ -29,6 +29,7 @@ namespace FishKing.GumRuntimes
 
         public void AttachFish(Fish fish)
         {
+            Reset();
             FramedCatchingBackgroundInstance.AttachFish(fish);
         }
 
@@ -47,7 +48,7 @@ namespace FishKing.GumRuntimes
         {
             if (FramedCatchingBackgroundInstance.IsAligned)
             {
-
+                FramedCatchingBackgroundInstance.ReelInFish();
             }
             else
             {
@@ -56,7 +57,7 @@ namespace FishKing.GumRuntimes
             FishingLineStatusInstance.Update();
         }
 
-        public void Reset()
+        private void Reset()
         {
             FishingLineStatusInstance.Reset();
             FramedCatchingBackgroundInstance.Reset();

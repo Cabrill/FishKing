@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RenderingLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -11,31 +12,43 @@ namespace FishKing.GumRuntimes
         private int maxAlpha = 255;
         private float riseRate = 2f;
         private float fallRate = 0.5f;
+
         public float LineStress
         {
             get; set;
-        }
+        } = 0;
         public int MaxStress
         {
             get; private set;
-        }
+        } = 1;
+
+        public bool LineHasSnapped { get { return LineStress >= MaxStress; } }
 
         public void Update()
         {
             if (Visible)
             {
-                if (!AllCloudsLeftRightAnimation.IsPlaying())
+                if (LineStress >= MaxStress)
                 {
-                    AllCloudsLeftRightAnimation.Play();
+                     HandleLineSnapped();
                 }
-                LineStress = Math.Max(0, LineStress - fallRate);
+                else
+                {
+                    if (!AllCloudsLeftRightAnimation.IsPlaying())
+                    {
+                        AllCloudsLeftRightAnimation.Play();
+                    }
+                    LineStress = Math.Max(0, LineStress - fallRate);
 
-                FishingLineStressHeight = LineStress;
-                var stressBracketAlpha = (int)(maxAlpha * (Decimal.Divide((decimal)LineStress, MaxStress)));
+                    FishingLineStressHeight = LineStress;
+                    var stressBracketAlpha = Math.Min(255, (int)(maxAlpha * (Decimal.Divide((decimal)LineStress, MaxStress))));
+                    var stressBracketRed = Math.Min(255, (int)(185 + (100 * (LineStress / MaxStress))));
 
-                LeftStressBracket.Alpha = stressBracketAlpha;
-                RightStressBracket.Alpha = stressBracketAlpha;
-
+                    LeftStressBracket.Alpha = RightStressBracket.Alpha = stressBracketAlpha;
+                    LeftStressBracket.Red = RightStressBracket.Red = stressBracketRed;
+                    LeftStressBracket.Green = RightStressBracket.Green = maxAlpha - stressBracketRed;
+                    LeftStressBracket.Blue = RightStressBracket.Blue = maxAlpha - stressBracketRed;
+                }
             }
             else if (AllCloudsLeftRightAnimation.IsPlaying())
             {
@@ -52,6 +65,11 @@ namespace FishKing.GumRuntimes
         {
             LineStress = 0;
             MaxStress = (int)LeftStressBracket.Height;
+        }
+
+        private void HandleLineSnapped()
+        {
+
         }
     }
 }

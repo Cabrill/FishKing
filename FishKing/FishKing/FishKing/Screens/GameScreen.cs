@@ -175,6 +175,16 @@ namespace FishKing.Screens
 
         private void FishingActivity()
         {
+#if DEBUG
+            if (DebuggingVariables.ImmediatelyStartFishing)
+            {
+                CharacterInstance.IsFishing = true;
+                var fish = FishGenerator.CreateFish();
+                CharacterInstance.FishOnTheLine = fish;
+                CharacterInstance.HasInitiatedCatching = true;
+            }
+#endif
+
             if (CharacterInstance.IsAttemptingAction && CharacterInstance.HasFinishedDisplayingCatch)
             {
                 CharacterInstance.ResetFishingStatus();
@@ -194,7 +204,6 @@ namespace FishKing.Screens
                 CharacterInstance.IsCastingRod = true;
 
                 ProgressBarInstance.ResetProgress();
-                FishCatchingInterfaceInstance.Reset();
                 ProgressBarInstance.PositionProgressBarOver(CharacterInstance.Position);
 
                 var targetStartX = CharacterInstance.Position.X;

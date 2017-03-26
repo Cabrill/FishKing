@@ -27,7 +27,7 @@
     <Variable>
       <Type>string</Type>
       <Name>AlignmentBarInstance.Parent</Name>
-      <Value xsi:type="xsd:string">WaterBox</Value>
+      <Value xsi:type="xsd:string">WaterBackgroundSprite</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -229,7 +229,7 @@
     <Variable>
       <Type>string</Type>
       <Name>UnknownFishInstance.Parent</Name>
-      <Value xsi:type="xsd:string">WaterBox</Value>
+      <Value xsi:type="xsd:string">WaterBackgroundSprite</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -290,74 +290,207 @@
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>WaterBox.Height</Name>
-      <Value xsi:type="xsd:float">-23</Value>
+      <Name>WaterBackgroundSprite.Height</Name>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
-      <Name>WaterBox.Height Units</Name>
+      <Name>WaterBackgroundSprite.Height Units</Name>
       <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>WaterBackgroundSprite.Parent</Name>
+      <Value xsi:type="xsd:string">WaterContainer</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <IsFile>true</IsFile>
       <Type>string</Type>
-      <Name>WaterBox.SourceFile</Name>
+      <Name>WaterBackgroundSprite.SourceFile</Name>
       <Value xsi:type="xsd:string">GumUI.png</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>TextureAddress</Type>
-      <Name>WaterBox.Texture Address</Name>
+      <Name>WaterBackgroundSprite.Texture Address</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
-      <Name>WaterBox.Texture Height</Name>
+      <Name>WaterBackgroundSprite.Texture Height</Name>
       <Value xsi:type="xsd:int">1024</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
-      <Name>WaterBox.Texture Left</Name>
+      <Name>WaterBackgroundSprite.Texture Left</Name>
       <Value xsi:type="xsd:int">476</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
-      <Name>WaterBox.Texture Top</Name>
+      <Name>WaterBackgroundSprite.Texture Top</Name>
       <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
-      <Name>WaterBox.Texture Width</Name>
+      <Name>WaterBackgroundSprite.Texture Width</Name>
       <Value xsi:type="xsd:int">261</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>WaterBox.Width</Name>
-      <Value xsi:type="xsd:float">-16</Value>
+      <Name>WaterBackgroundSprite.Width</Name>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
-      <Name>WaterBox.Width Units</Name>
+      <Name>WaterBackgroundSprite.Width Units</Name>
       <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>WaterBox.X</Name>
+      <Name>WaterBackgroundSprite.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>WaterBackgroundSprite.Y</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>WaterBoxFishingLine.Alpha</Name>
+      <Value xsi:type="xsd:int">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>WaterBoxFishingLine.Height Units</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>WaterBoxFishingLine.Parent</Name>
+      <Value xsi:type="xsd:string">WaterBackgroundSprite</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>WaterBoxFishingLine.Rotation</Name>
+      <Value xsi:type="xsd:float">45</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>WaterBoxFishingLine.SourceFile</Name>
+      <Value xsi:type="xsd:string">GumUI.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TextureAddress</Type>
+      <Name>WaterBoxFishingLine.Texture Address</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>WaterBoxFishingLine.Texture Height</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>WaterBoxFishingLine.Texture Left</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>WaterBoxFishingLine.Texture Width</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>WaterBoxFishingLine.Width</Name>
+      <Value xsi:type="xsd:float">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>WaterBoxFishingLine.Width Units</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>WaterBoxFishingLine.X</Name>
+      <Value xsi:type="xsd:float">15</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>WaterBoxFishingLine.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>WaterBoxFishingLine.Y</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>WaterBoxFishingLine.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>WaterContainer.Height</Name>
+      <Value xsi:type="xsd:float">-23</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>WaterContainer.Height Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>WaterContainer.Width</Name>
+      <Value xsi:type="xsd:float">-16</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>WaterContainer.Width Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>WaterContainer.X</Name>
       <Value xsi:type="xsd:float">4</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>WaterBox.Y</Name>
+      <Name>WaterContainer.Y</Name>
       <Value xsi:type="xsd:float">11</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -441,13 +574,13 @@
       <Name>River</Name>
       <Variable>
         <Type>int</Type>
-        <Name>WaterBox.Texture Left</Name>
+        <Name>WaterBackgroundSprite.Texture Left</Name>
         <Value xsi:type="xsd:int">1512</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>WaterBox.Texture Width</Name>
+        <Name>WaterBackgroundSprite.Texture Width</Name>
         <Value xsi:type="xsd:int">249</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -459,13 +592,13 @@
       <Name>Pond</Name>
       <Variable>
         <Type>int</Type>
-        <Name>WaterBox.Texture Left</Name>
+        <Name>WaterBackgroundSprite.Texture Left</Name>
         <Value xsi:type="xsd:int">738</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>WaterBox.Texture Width</Name>
+        <Name>WaterBackgroundSprite.Texture Width</Name>
         <Value xsi:type="xsd:int">259</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -474,13 +607,13 @@
       <Name>DeepOcean</Name>
       <Variable>
         <Type>int</Type>
-        <Name>WaterBox.Texture Left</Name>
+        <Name>WaterBackgroundSprite.Texture Left</Name>
         <Value xsi:type="xsd:int">998</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>WaterBox.Texture Width</Name>
+        <Name>WaterBackgroundSprite.Texture Width</Name>
         <Value xsi:type="xsd:int">263</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -489,20 +622,24 @@
       <Name>Lake</Name>
       <Variable>
         <Type>int</Type>
-        <Name>WaterBox.Texture Left</Name>
+        <Name>WaterBackgroundSprite.Texture Left</Name>
         <Value xsi:type="xsd:int">1262</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>WaterBox.Texture Width</Name>
+        <Name>WaterBackgroundSprite.Texture Width</Name>
         <Value xsi:type="xsd:int">249</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
   </Category>
   <Instance>
-    <Name>WaterBox</Name>
+    <Name>WaterContainer</Name>
+    <BaseType>Container</BaseType>
+  </Instance>
+  <Instance>
+    <Name>WaterBackgroundSprite</Name>
     <BaseType>Sprite</BaseType>
   </Instance>
   <Instance>
@@ -516,6 +653,10 @@
   <Instance>
     <Name>AlignmentBarInstance</Name>
     <BaseType>AlignmentBar</BaseType>
+  </Instance>
+  <Instance>
+    <Name>WaterBoxFishingLine</Name>
+    <BaseType>Sprite</BaseType>
   </Instance>
   <Behaviors />
 </ComponentSave>

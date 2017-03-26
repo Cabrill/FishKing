@@ -56,13 +56,13 @@
     <Variable>
       <Type>int</Type>
       <Name>Cloud1Sprite.Texture Left</Name>
-      <Value xsi:type="xsd:int">328</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>Cloud1Sprite.Texture Top</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">750</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -134,13 +134,13 @@
     <Variable>
       <Type>int</Type>
       <Name>Cloud2Sprite.Texture Left</Name>
-      <Value xsi:type="xsd:int">328</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>Cloud2Sprite.Texture Top</Name>
-      <Value xsi:type="xsd:int">94</Value>
+      <Value xsi:type="xsd:int">843</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -212,13 +212,13 @@
     <Variable>
       <Type>int</Type>
       <Name>Cloud3Sprite.Texture Left</Name>
-      <Value xsi:type="xsd:int">328</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>Cloud3Sprite.Texture Top</Name>
-      <Value xsi:type="xsd:int">172</Value>
+      <Value xsi:type="xsd:int">921</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -454,7 +454,7 @@
     <Variable>
       <Type>float</Type>
       <Name>FishingLine.X</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Value xsi:type="xsd:float">46</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -466,7 +466,7 @@
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>FishingLine.X Units</Name>
-      <Value xsi:type="xsd:int">6</Value>
+      <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -490,7 +490,7 @@
     <Variable>
       <Type>float</Type>
       <Name>FishingLineStress.Height</Name>
-      <Value xsi:type="xsd:float">1</Value>
+      <Value xsi:type="xsd:float">100</Value>
       <ExposedAsName>FishingLineStressHeight</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -503,7 +503,7 @@
     <Variable>
       <Type>string</Type>
       <Name>FishingLineStress.Parent</Name>
-      <Value xsi:type="xsd:string">FishingLine</Value>
+      <Value xsi:type="xsd:string">StressBrackets</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -546,7 +546,7 @@
     <Variable>
       <Type>float</Type>
       <Name>FishingLineStress.Width</Name>
-      <Value xsi:type="xsd:float">50</Value>
+      <Value xsi:type="xsd:float">8</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -558,19 +558,19 @@
     <Variable>
       <Type>float</Type>
       <Name>FishingLineStress.X</Name>
-      <Value xsi:type="xsd:float">25</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>HorizontalAlignment</Type>
       <Name>FishingLineStress.X Origin</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>FishingLineStress.X Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
+      <Value xsi:type="xsd:int">6</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -627,7 +627,13 @@
     <Variable>
       <Type>float</Type>
       <Name>LeftStressBracket.Height</Name>
-      <Value xsi:type="xsd:float">50</Value>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>LeftStressBracket.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -639,19 +645,25 @@
     <Variable>
       <Type>float</Type>
       <Name>LeftStressBracket.Width</Name>
-      <Value xsi:type="xsd:float">60</Value>
+      <Value xsi:type="xsd:float">50</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>LeftStressBracket.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>LeftStressBracket.X</Name>
-      <Value xsi:type="xsd:float">40</Value>
+      <Value xsi:type="xsd:float">47</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>HorizontalAlignment</Type>
       <Name>LeftStressBracket.X Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -663,7 +675,7 @@
     <Variable>
       <Type>float</Type>
       <Name>LeftStressBracket.Y</Name>
-      <Value xsi:type="xsd:float">50</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -675,7 +687,7 @@
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>LeftStressBracket.Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
+      <Value xsi:type="xsd:int">7</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -686,19 +698,25 @@
     <Variable>
       <Type>bool</Type>
       <Name>RightStressBracket.FlipHorizontal</Name>
-      <Value xsi:type="xsd:boolean">false</Value>
+      <Value xsi:type="xsd:boolean">true</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>bool</Type>
       <Name>RightStressBracket.FlipVertical</Name>
-      <Value xsi:type="xsd:boolean">true</Value>
+      <Value xsi:type="xsd:boolean">false</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>RightStressBracket.Height</Name>
-      <Value xsi:type="xsd:float">50</Value>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>RightStressBracket.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -710,19 +728,25 @@
     <Variable>
       <Type>float</Type>
       <Name>RightStressBracket.Width</Name>
-      <Value xsi:type="xsd:float">60</Value>
+      <Value xsi:type="xsd:float">50</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>RightStressBracket.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>RightStressBracket.X</Name>
-      <Value xsi:type="xsd:float">68</Value>
+      <Value xsi:type="xsd:float">53</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>HorizontalAlignment</Type>
       <Name>RightStressBracket.X Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -734,7 +758,7 @@
     <Variable>
       <Type>float</Type>
       <Name>RightStressBracket.Y</Name>
-      <Value xsi:type="xsd:float">50</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -746,13 +770,13 @@
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>RightStressBracket.Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
+      <Value xsi:type="xsd:int">7</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>SkyBox.Height</Name>
-      <Value xsi:type="xsd:float">-24</Value>
+      <Value xsi:type="xsd:float">-23</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -801,7 +825,7 @@
     <Variable>
       <Type>float</Type>
       <Name>SkyBox.Width</Name>
-      <Value xsi:type="xsd:float">-16</Value>
+      <Value xsi:type="xsd:float">-15</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -830,7 +854,7 @@
     <Variable>
       <Type>float</Type>
       <Name>StressBrackets.Height</Name>
-      <Value xsi:type="xsd:float">100</Value>
+      <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -848,7 +872,7 @@
     <Variable>
       <Type>float</Type>
       <Name>StressBrackets.Width</Name>
-      <Value xsi:type="xsd:float">100</Value>
+      <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -858,15 +882,39 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>float</Type>
+      <Name>StressBrackets.X</Name>
+      <Value xsi:type="xsd:float">50</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>StressBrackets.X Origin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>PositionUnitType</Type>
       <Name>StressBrackets.X Units</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>StressBrackets.Y</Name>
+      <Value xsi:type="xsd:float">50</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>StressBrackets.Y Origin</Name>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>StressBrackets.Y Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
