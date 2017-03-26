@@ -126,18 +126,18 @@ namespace FishKing.GumRuntimes
 
             var fightOrLuck = randomSeed.NextDouble();
 
-            if (chanceOfFight > fightOrLuck)
-            {
-                destY = UnknownFishInstance.Y + (float)(randomSeed.Next(5, 15));
-                destY = Math.Min(destY, MaxFishY);
-                tweenHolder.Tween("Y").To(destY).During(tweenDuration).Using(FlatRedBall.Glue.StateInterpolation.InterpolationType.Cubic, FlatRedBall.Glue.StateInterpolation.Easing.InOut);
-            }
-            else if (chanceOfLuck > fightOrLuck)
-            {
-                destY = UnknownFishInstance.Y - (float)(randomSeed.Next(5, 15));
-                destY = Math.Max(destY, 0);
-                tweenHolder.Tween("Y").To(destY).During(tweenDuration).Using(FlatRedBall.Glue.StateInterpolation.InterpolationType.Cubic, FlatRedBall.Glue.StateInterpolation.Easing.InOut);
-            }
+            //if (chanceOfFight > fightOrLuck)
+            //{
+            //    destY = UnknownFishInstance.Y + (float)(randomSeed.Next(5, 15));
+            //    destY = Math.Min(destY, MaxFishY);
+            //    tweenHolder.Tween("Y").To(destY).During(tweenDuration).Using(FlatRedBall.Glue.StateInterpolation.InterpolationType.Cubic, FlatRedBall.Glue.StateInterpolation.Easing.InOut);
+            //}
+            //else if (chanceOfLuck > fightOrLuck)
+            //{
+            //    destY = UnknownFishInstance.Y - (float)(randomSeed.Next(5, 15));
+            //    destY = Math.Max(destY, 0);
+            //    tweenHolder.Tween("Y").To(destY).During(tweenDuration).Using(FlatRedBall.Glue.StateInterpolation.InterpolationType.Cubic, FlatRedBall.Glue.StateInterpolation.Easing.InOut);
+            //}
 
             fishTweener.Ended += () => { fishIsMoving = false; };
         }

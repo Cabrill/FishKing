@@ -40,6 +40,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>StressAccentuator</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>UnknownFish</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>

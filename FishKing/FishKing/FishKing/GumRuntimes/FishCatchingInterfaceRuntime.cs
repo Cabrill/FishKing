@@ -51,7 +51,7 @@ namespace FishKing.GumRuntimes
             }
             else
             {
-                FishingLineStatusInstance.LineStress += 1;
+                FishingLineStatusInstance.IncreaseStress();
             }
             FishingLineStatusInstance.Update();
         }
