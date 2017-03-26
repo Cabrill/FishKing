@@ -20,6 +20,11 @@ namespace FishKing.GumRuntimes
         private Tweener fishTweener;
         private static Random randomSeed = new Random();
 
+        private float alignmentVelocity = 0f;
+        private float alignmentVelocityAttritionRate = 0.02f;
+        private float alignmentVelocityIncrementRate = 0.05f;
+        private float maxAlignmentVelocy = 1.5f;
+        
         private float reelInRate = 0.1f;
         public float CurrentReelSpeed { get; set; }
 
@@ -29,12 +34,13 @@ namespace FishKing.GumRuntimes
         public bool IsFishCaught { get { return FishTop <= 0; } }
 
         private float MaxAlignmentY { get; set; }
+        private float MinAlignmentY { get { return 0; } }
         private float MaxFishY { get; set; }
         private float MaxFishX { get { return 100 - (UnknownFishInstance.XOrigin == RenderingLibrary.Graphics.HorizontalAlignment.Left ? UnknownFishInstance.Width : 0); } }
         private float MinFishX { get { return 0 + (UnknownFishInstance.XOrigin == RenderingLibrary.Graphics.HorizontalAlignment.Left ? 0 : UnknownFishInstance.Width); } }
 
-        private float FishTop { get { return UnknownFishInstance.Y + (UnknownFishInstance.Height/2); } }
-        private float FishBottom { get { return UnknownFishInstance.Y - (UnknownFishInstance.Height / 2); } }
+        private float FishTop { get { return UnknownFishInstance.Y - (UnknownFishInstance.Height/2); } }
+        private float FishBottom { get { return UnknownFishInstance.Y + (UnknownFishInstance.Height / 2); } }
         private float FishMiddle { get { return UnknownFishInstance.Y; } }
 
         private int AlignmentTop { get { return (int)AlignmentBarInstance.Y; } }
@@ -87,7 +93,6 @@ namespace FishKing.GumRuntimes
                     MoveFish();
                 }
 
-                LowerAlignmentBar();
                 UpdateAlignmentBarStatus();
                 ReelInFish();
                 UpdateFishingLine();                
@@ -108,9 +113,8 @@ namespace FishKing.GumRuntimes
                     FlipFishHorizontally();
                 }
             }
-            var rotationFlip = UnknownFishInstance.FlipHorizontal ? 1 : -1;
             UnknownFishInstance.Y -= reelInRate * CurrentReelSpeed;
-            UnknownFishInstance.Rotation = 45 * rotationFlip * (CurrentReelSpeed / 3);
+            UnknownFishInstance.Rotation = -45 * (CurrentReelSpeed / 3);
         }
 
         private void MoveFish()
@@ -128,14 +132,21 @@ namespace FishKing.GumRuntimes
             float destY = 0f;
 
             var fishIsOnRightHalf = UnknownFishInstance.X > (MaxFishX/2);
-            FlipFishHorizontally();
 
             if (fishIsOnRightHalf)
             {   
+                if (UnknownFishInstance.FlipHorizontal)
+                {
+                    FlipFishHorizontally();
+                }
                 destX = randomSeed.Next((int)MinFishX, (int)UnknownFishInstance.X);
             }
             else
             {
+                if (!UnknownFishInstance.FlipHorizontal)
+                {
+                    FlipFishHorizontally();
+                }
                 destX = randomSeed.Next((int)UnknownFishInstance.X, (int)MaxFishX);
             }
 
@@ -203,41 +214,42 @@ namespace FishKing.GumRuntimes
                 x1 += fishAsPositionedSizedObject.Width * 0.15f;
             }
 
+            x1 -= (UnknownFishInstance.Width) * (-UnknownFishInstance.Rotation / 180);
+
             var fishingLineAngle = Math.PI - Math.Atan2(y2 - y1, x2 - x1);
             var fishingLineDegrees = MathHelper.ToDegrees((float)fishingLineAngle);
             WaterBoxFishingLine.Rotation = 90 + fishingLineDegrees;
 
             var fishingLineLength = (float)Math.Sqrt(((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2)));
+            fishingLineLength += (UnknownFishInstance.Height) * (-UnknownFishInstance.Rotation / 45);
             WaterBoxFishingLine.Height = fishingLineLength;
-        }
-
-        public void LowerAlignmentBar()
-        {
-            if (AlignmentBarInstance.Y < MaxAlignmentY)
-            {
-                AlignmentBarInstance.Y += 1;
-            }
-            if (AlignmentBarInstance.Y > MaxAlignmentY)
-            {
-                AlignmentBarInstance.Y = MaxAlignmentY;
-            }
         }
 
         public void RaiseAlignmentBar()
         {
-            if (AlignmentBarInstance.Y > 0)
-            {
-                this.AlignmentBarInstance.Y -= 2;
-            }
-
-            if (AlignmentBarInstance.Y < 0)
-            {
-                AlignmentBarInstance.Y = 0;
-            }
+            alignmentVelocity = Math.Min(maxAlignmentVelocy, alignmentVelocity + alignmentVelocityIncrementRate);
         }
 
         private void UpdateAlignmentBarStatus()
         {
+            var newAlignementY = AlignmentBarInstance.Y - alignmentVelocity;
+            newAlignementY = Math.Max(0, newAlignementY);
+            newAlignementY = Math.Min(MaxAlignmentY, newAlignementY);
+
+            AlignmentBarInstance.Y = newAlignementY;
+            if (AlignmentBarInstance.Y == MaxAlignmentY)
+            {
+                alignmentVelocity = 0;
+            }
+            else if (AlignmentBarInstance.Y == MinAlignmentY)
+            {
+                alignmentVelocity = -alignmentVelocityIncrementRate;
+            }
+            else
+            {
+                alignmentVelocity = Math.Max(-2, alignmentVelocity - alignmentVelocityAttritionRate);
+            }
+
             if (AlignmentTop < FishMiddle && AlignmentBottom > FishMiddle)
             {
                 this.AlignmentBarInstance.CurrentAlignmentState = AlignmentBarRuntime.Alignment.Aligned;
@@ -252,6 +264,7 @@ namespace FishKing.GumRuntimes
         {
             AttachedFish = null;
             AlignmentBarInstance.Y = 90;
+            alignmentVelocity = 0;
         }
     }
 }
