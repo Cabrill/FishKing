@@ -171,7 +171,7 @@ namespace FishKing.Screens
         private void FishingActivity()
         {
 #if DEBUG
-            if (DebuggingVariables.ImmediatelyStartFishing && !CharacterInstance.IsFishing)
+            if (DebuggingVariables.ImmediatelyStartFishing && !CharacterInstance.IsFishing && !CharacterInstance.IsMoving)
             {
                 FishCatchingInterfaceInstance.Reset();
                 CharacterInstance.ResetFishingStatus();

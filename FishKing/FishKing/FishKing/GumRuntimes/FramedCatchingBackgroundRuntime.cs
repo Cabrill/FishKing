@@ -31,7 +31,7 @@ namespace FishKing.GumRuntimes
         private float fightVelocityIncrementRate = 0.08f;
         private float luckVelocityIncrementRate = 0.1f;
         private float fightOrLuckVelocityAttritionRate = 0.001f;
-        
+
         private float reelInRate = 0.1f;
         public float CurrentReelSpeed { get; set; }
 
@@ -46,13 +46,13 @@ namespace FishKing.GumRuntimes
         private float MaxFishX { get { return 100 - (UnknownFishInstance.XOrigin == RenderingLibrary.Graphics.HorizontalAlignment.Left ? UnknownFishInstance.Width : 0); } }
         private float MinFishX { get { return 0 + (UnknownFishInstance.XOrigin == RenderingLibrary.Graphics.HorizontalAlignment.Left ? 0 : UnknownFishInstance.Width); } }
 
-        private float FishTop { get { return UnknownFishInstance.Y - (UnknownFishInstance.Height/2); } }
+        private float FishTop { get { return UnknownFishInstance.Y - (UnknownFishInstance.Height / 2); } }
         private float FishBottom { get { return UnknownFishInstance.Y + (UnknownFishInstance.Height / 2); } }
         private float FishMiddle { get { return UnknownFishInstance.Y; } }
 
         private int AlignmentTop { get { return (int)AlignmentBarInstance.Y; } }
         private int AlignmentBottom { get { return AlignmentTop + (int)AlignmentBarInstance.Height; } }
-        public bool IsAligned { get { return this.AlignmentBarInstance.CurrentAlignmentState == AlignmentBarRuntime.Alignment.Aligned;  } }
+        public bool IsAligned { get { return this.AlignmentBarInstance.CurrentAlignmentState == AlignmentBarRuntime.Alignment.Aligned; } }
 
         public void AttachFish(Fish fish)
         {
@@ -75,7 +75,7 @@ namespace FishKing.GumRuntimes
             UnknownFishInstance.Width = DetermineUnknownFishWidth(AttachedFish.LengthMM);
             UnknownFishInstance.Height = UnknownFishInstance.Width * UnknownFishWidthHeightRatio;
 
-            MaxFishY = 100 - UnknownFishInstance.Height;
+            MaxFishY = 100 - (UnknownFishInstance.Height/2);
 
             UnknownFishInstance.X = MaxFishX / 2;
             UnknownFishInstance.Y = MaxFishY;
@@ -103,7 +103,7 @@ namespace FishKing.GumRuntimes
                 UpdateAlignmentBarStatus();
                 UpdateFishFightOrLuck();
                 ReelInFish();
-                UpdateFishingLine();                
+                UpdateFishingLine();
             }
         }
 
@@ -126,11 +126,28 @@ namespace FishKing.GumRuntimes
             UnknownFishInstance.Y = Math.Min(MaxFishY, UnknownFishInstance.Y + changeInY);
 
             var flipModifier = UnknownFishInstance.XOrigin == RenderingLibrary.Graphics.HorizontalAlignment.Left ? 1 : -1;
-            //UnknownFishInstance.Rotation = flipModifier * (-45 * (CurrentReelSpeed / 3)) + (-45 * fightOrLuckVelocity/fightOrLuckMaxVelocity);
-            UnknownFishInstance.Rotation = flipModifier * 45 * (changeInY/1.3f);
+            
+            var newRotation = flipModifier * 45 * (changeInY / 1.3f);
+            UnknownFishInstance.Rotation = newRotation;
+
+#if DEBUG
+            if (DebuggingVariables.ShowFishDebugText) UpdateDebugText(changeInY, newRotation);
+#endif
         }
 
-        private void UpdateFishFightOrLuck()
+#if DEBUG
+        private void UpdateDebugText(float changeInY, float rotation)
+        {
+            DebugContainer.Visible = true;
+            textFishFight.Text = $"Fight: {FishFight}";
+            textFishSpeed.Text = $"Speed: {FishSpeed}";
+            textFishChangeInY.Text = $"ChangeY: {changeInY}";
+            textFishRotation.Text = $"Rotation: {rotation}";
+            textFightLuck.Text = $"FightLuck: {fightOrLuckVelocity}";
+        }
+#endif
+
+    private void UpdateFishFightOrLuck()
         {
             double chanceOfFight = (double)FishFight / 5000;
             double chanceOfLuck = 0.001;
@@ -284,6 +301,9 @@ namespace FishKing.GumRuntimes
 
         public void Reset()
         {
+            TweenerManager.Self.StopAllTweenersOwnedBy(UnknownFishInstance);
+            UnknownFishInstance.FlipHorizontal = false;
+            fishIsMoving = false;
             AttachedFish = null;
             AlignmentBarInstance.Y = 90;
             alignmentVelocity = 0;
