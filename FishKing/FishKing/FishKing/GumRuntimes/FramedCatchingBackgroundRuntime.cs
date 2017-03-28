@@ -294,7 +294,7 @@ namespace FishKing.GumRuntimes
             {
                 FlipFishHorizontally();
             }
-            
+            UnknownFishInstance.Rotation = 0;
             TweenerManager.Self.StopAllTweenersOwnedBy(UnknownFishInstance);
             float destX = 150 + UnknownFishInstance.Width;
             var tweenDuration = FishHorizontalMovementTweenDuration;

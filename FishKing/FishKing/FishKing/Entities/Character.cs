@@ -265,7 +265,7 @@ namespace FishKing.Entities
                 }
             }
             RodSpriteInstance.Visible = (IsCastingRod || IsFishing) && !IsDisplayingCatch;
-            BobberInstance.Visible = (IsAfterWindUp || IsFishing) && !IsDisplayingCatch;
+            BobberInstance.Visible = (IsAfterWindUp || IsFishing) && !IsDisplayingCatch && !IsPullingInCatch;
         }
 
         public void ResetFishingStatus()
@@ -285,6 +285,18 @@ namespace FishKing.Entities
             HasFinishedDisplayingCatch = false;
         }
 
+        public void StandStill()
+        {
+            switch (DirectionFacing)
+            {
+                case Direction.Left: SpriteInstance.CurrentChainName = "StandLeft"; break;
+                case Direction.Right: SpriteInstance.CurrentChainName = "StandRight"; break;
+                case Direction.Up: SpriteInstance.CurrentChainName = "StandUp"; break;
+                case Direction.Down: SpriteInstance.CurrentChainName = "StandDown"; break;
+            }
+            SpriteInstance.CurrentFrameIndex = 0;
+        }
+
         public void HandleFishCaught()
         {
             var chainName = "";
@@ -295,7 +307,6 @@ namespace FishKing.Entities
                 case Direction.Up: chainName = "TugUp"; break;
                 case Direction.Down: chainName = "TugDown"; break;
             }
-            BobberInstance.Visible = false;
             SpriteInstance.CurrentChainName = RodSpriteInstance.CurrentChainName = chainName;
             SpriteInstance.Animate = RodSpriteInstance.Animate = true;
             SpriteInstance.CurrentFrameIndex = RodSpriteInstance.CurrentFrameIndex = 0;

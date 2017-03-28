@@ -261,6 +261,7 @@ namespace FishKing.Screens
                             if (FishCatchingInterfaceInstance.LineHasSnapped && FishCatchingInterfaceInstance.FishHasEscaped)
                             {
                                 CharacterInstance.ResetFishingStatus();
+                                CharacterInstance.StandStill();
                                 FishCatchingInterfaceInstance.Reset();
                                 FishCatchingInterfaceInstance.Visible = false;
                             }

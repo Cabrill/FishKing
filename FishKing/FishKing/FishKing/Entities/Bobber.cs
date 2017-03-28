@@ -286,17 +286,17 @@ namespace FishKing.Entities
             {
                 var originalLine = FishingLineLinesList[i].Clone();
                 var lineToChange = FishingLineLinesList[i];
-                var sunkenLine = settledFishingLineLines[i];
+                var settledLine = settledFishingLineLines[i];
 
                 lineTweener = new Tweener(0, 1, 2f, InterpolationType.Back, Easing.Out);
                 lineTweener.PositionChanged += (a) => {
                     lineToChange.SetFromAbsoluteEndpoints(
                     new Point3D(
-                        (originalLine.AbsolutePoint1.X * (1 - a)) + (sunkenLine.AbsolutePoint1.X * a),
-                        (originalLine.AbsolutePoint1.Y * (1 - a)) + (sunkenLine.AbsolutePoint1.Y * a)),
+                        (originalLine.AbsolutePoint1.X * (1 - a)) + (settledLine.AbsolutePoint1.X * a),
+                        (originalLine.AbsolutePoint1.Y * (1 - a)) + (settledLine.AbsolutePoint1.Y * a)),
                     new Point3D(
-                        (originalLine.AbsolutePoint2.X * (1 - a)) + (sunkenLine.AbsolutePoint2.X * a),
-                        (originalLine.AbsolutePoint2.Y * (1 - a)) + (sunkenLine.AbsolutePoint2.Y * a))
+                        (originalLine.AbsolutePoint2.X * (1 - a)) + (settledLine.AbsolutePoint2.X * a),
+                        (originalLine.AbsolutePoint2.Y * (1 - a)) + (settledLine.AbsolutePoint2.Y * a))
                     );
                 };
                 lineTweener.Start();
