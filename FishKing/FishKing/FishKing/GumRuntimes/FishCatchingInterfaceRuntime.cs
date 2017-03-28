@@ -12,14 +12,14 @@ namespace FishKing.GumRuntimes
     public partial class FishCatchingInterfaceRuntime
     {
         public bool HasAttachedFish { get { return FramedCatchingBackgroundInstance.AttachedFish != null; } }
-        public bool IsFishCaught {  get {
-                return (
+        public bool FishHasEscaped { get { return FramedCatchingBackgroundInstance.FishHasEscaped; } }
+        public bool LineHasSnapped { get { return FishingLineStatusInstance.LineHasSnapped;  } }
+        public bool IsFishCaught { get { return (
 #if DEBUG
-                    DebuggingVariables.ImmediatelyCatchFish ||
+                DebuggingVariables.ImmediatelyCatchFish ||
 #endif
-                FramedCatchingBackgroundInstance.IsFishCaught);
-            } }
-        
+                FramedCatchingBackgroundInstance.IsFishCaught); } }
+
 
         partial void CustomInitialize()
         {
@@ -39,11 +39,19 @@ namespace FishKing.GumRuntimes
             {
                 SpinningReelInstance.Update();
                 FishingLineStatusInstance.Update();
-                if (!FishingLineStatusInstance.LineHasSnapped)
+
+                if (FishingLineStatusInstance.LineHasSnapped)
+                {
+                    FramedCatchingBackgroundInstance.LineHasSnapped = true;
+                }
+                else
                 {
                     FramedCatchingBackgroundInstance.CurrentReelSpeed = SpinningReelInstance.ReelSpeed;
-                    FramedCatchingBackgroundInstance.Update();
                 }
+                FramedCatchingBackgroundInstance.Update();
+#if DEBUG
+                if (DebuggingVariables.FishShouldImmediatelyEscape) FishingLineStatusInstance.LineStress = 200;
+#endif
             }
         }
 
@@ -56,10 +64,11 @@ namespace FishKing.GumRuntimes
         {
             if (FramedCatchingBackgroundInstance.IsAligned)
             {
-                SpinningReelInstance.Spin();
+                SpinningReelInstance.SpinReel();
             }
             else
             {
+                SpinningReelInstance.JamReel();
                 FishingLineStatusInstance.IncreaseStress();
             }
         }

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RenderingLibrary;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,7 +10,6 @@ namespace FishKing.GumRuntimes
     partial class SpinningReelRuntime
     {
         public float ReelSpeed { get { return spinVelocity; } }
-        public float ReelResistance { get; set; } = 0;
 
         int handleRotationRate = -3;
         int foregroundRotationRate = 4;
@@ -20,9 +20,22 @@ namespace FishKing.GumRuntimes
         float maxVelocity = 4;
         float velocityAttritionRate = 0.1f;
         
-        public void Spin()
+        public void SpinReel()
         {
             spinVelocity = Math.Min(maxVelocity, spinVelocity + velocityIncrementRate);
+            if (JammingAnimation.IsPlaying())
+            {
+                JammingAnimation.Stop();
+            }
+        }
+
+        public void JamReel()
+        {
+            spinVelocity = Math.Max(0, spinVelocity - (velocityAttritionRate * 3));
+            if (!JammingAnimation.IsPlaying())
+            {
+                JammingAnimation.Play();
+            }
         }
 
         public void Update()
@@ -36,7 +49,10 @@ namespace FishKing.GumRuntimes
 
         public void Reset()
         {
-            ReelResistance = 0;
+            //Maintaing dimension ratios of a square
+            IPositionedSizedObject spinningReel = this as IPositionedSizedObject;
+            this.Height = spinningReel.Width;
+
             spinVelocity = 0;
             ReelHandleRotation = ReelForegroundRotation = ReelBackgroundRotation = 0;
         }

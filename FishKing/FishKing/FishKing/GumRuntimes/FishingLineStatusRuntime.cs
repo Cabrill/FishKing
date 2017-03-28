@@ -1,4 +1,5 @@
-﻿using RenderingLibrary;
+﻿using FishKing.Entities;
+using RenderingLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;

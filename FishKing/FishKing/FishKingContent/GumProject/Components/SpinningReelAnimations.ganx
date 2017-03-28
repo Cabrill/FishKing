@@ -3,25 +3,61 @@
   <Animations>
     <AnimationSave>
       <Loops>false</Loops>
-      <Name>DemoSpin</Name>
+      <Name>Jamming</Name>
       <States>
         <AnimatedStateSave>
-          <StateName>TestAnimation/Start</StateName>
+          <StateName>JammedStates/UnJammed</StateName>
           <Time>0</Time>
-          <InterpolationType>Linear</InterpolationType>
+          <InterpolationType>Bounce</InterpolationType>
+          <Easing>InOut</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>JammedStates/JammedUpLeft</StateName>
+          <Time>0.02</Time>
+          <InterpolationType>Bounce</InterpolationType>
           <Easing>Out</Easing>
         </AnimatedStateSave>
         <AnimatedStateSave>
-          <StateName>TestAnimation/End</StateName>
-          <Time>0.5</Time>
-          <InterpolationType>Linear</InterpolationType>
+          <StateName>JammedStates/UnJammed</StateName>
+          <Time>0.04</Time>
+          <InterpolationType>Bounce</InterpolationType>
+          <Easing>InOut</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>JammedStates/JammedDownRight</StateName>
+          <Time>0.06</Time>
+          <InterpolationType>Bounce</InterpolationType>
           <Easing>Out</Easing>
         </AnimatedStateSave>
         <AnimatedStateSave>
-          <StateName>TestAnimation/End2</StateName>
-          <Time>1</Time>
-          <InterpolationType>Linear</InterpolationType>
+          <StateName>JammedStates/UnJammed</StateName>
+          <Time>0.08</Time>
+          <InterpolationType>Bounce</InterpolationType>
+          <Easing>InOut</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>JammedStates/JammedDownLeft</StateName>
+          <Time>0.1</Time>
+          <InterpolationType>Bounce</InterpolationType>
           <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>JammedStates/UnJammed</StateName>
+          <Time>0.12</Time>
+          <InterpolationType>Bounce</InterpolationType>
+          <Easing>InOut</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>JammedStates/JammedUpRight</StateName>
+          <Time>0.14</Time>
+          <InterpolationType>Bounce</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>JammedStates/UnJammed</StateName>
+          <Time>0.16</Time>
+          <InterpolationType>Bounce</InterpolationType>
+          <Easing>InOut</Easing>
         </AnimatedStateSave>
       </States>
       <Animations />

@@ -32,6 +32,9 @@ namespace FishKing.GumRuntimes
         private float luckVelocityIncrementRate = 0.1f;
         private float fightOrLuckVelocityAttritionRate = 0.001f;
 
+        private float DefaultFishingLineX;
+        private float DefaultFishingLineY;
+
         private float reelInRate = 0.15f;
         public float CurrentReelSpeed { get; set; }
 
@@ -46,14 +49,20 @@ namespace FishKing.GumRuntimes
         private float SpeedModifier { get; set; }
 
         private double FishHorizontalMovementTweenDuration { get; set; }
+        private TweenerHolder FishMovementTweenerHolder = new TweenerHolder();
 
         public bool IsFishCaught { get { return FishTop <= 0; } }
+        private bool FishIsEscaping { get; set; }
+        public bool FishHasEscaped { get; set; }
+        public bool LineHasSnapped { get; set; }
 
         private float MaxAlignmentY { get; set; }
         private float MinAlignmentY { get { return 0; } }
         private float MaxFishY { get; set; }
         private float MaxFishX { get { return 100 - (UnknownFishInstance.XOrigin == RenderingLibrary.Graphics.HorizontalAlignment.Left ? UnknownFishInstance.Width : 0); } }
         private float MinFishX { get { return 0 + (UnknownFishInstance.XOrigin == RenderingLibrary.Graphics.HorizontalAlignment.Left ? 0 : UnknownFishInstance.Width); } }
+
+        private IPositionedSizedObject FishAsPositionedSizedObject;
 
         private float FishTop { get { return UnknownFishInstance.Y - (UnknownFishInstance.Height / 2); } }
         private float FishBottom { get { return UnknownFishInstance.Y + (UnknownFishInstance.Height / 2); } }
@@ -62,6 +71,13 @@ namespace FishKing.GumRuntimes
         private int AlignmentTop { get { return (int)AlignmentBarInstance.Y; } }
         private int AlignmentBottom { get { return AlignmentTop + (int)AlignmentBarInstance.Height; } }
         public bool IsAligned { get { return this.AlignmentBarInstance.CurrentAlignmentState == AlignmentBarRuntime.Alignment.Aligned; } }
+
+        partial void CustomInitialize()
+        {
+            DefaultFishingLineX = WaterBoxFishingLine.X;
+            DefaultFishingLineY = WaterBoxFishingLine.Y;
+            FishAsPositionedSizedObject =  UnknownFishInstance as IPositionedSizedObject;
+        }
 
         public void AttachFish(Fish fish)
         {
@@ -96,6 +112,9 @@ namespace FishKing.GumRuntimes
 
             UnknownFishInstance.X = MaxFishX / 2;
             UnknownFishInstance.Y = MaxFishY;
+
+            FishMovementTweenerHolder = new TweenerHolder();
+            FishMovementTweenerHolder.Caller = UnknownFishInstance;
         }
 
         private float DetermineUnknownFishWidth(int fishLengthMM)
@@ -111,19 +130,29 @@ namespace FishKing.GumRuntimes
         {
             if (Visible)
             {
-                AnimateUnknownFish();
-                if (!TweenerManager.Self.IsObjectReferencedByTweeners(UnknownFishInstance))
+                if (LineHasSnapped)
                 {
-                    fishIsMoving = false;
+                    if (!FishIsEscaping)
+                    {
+                        ShowFishEscape();
+                    }
                 }
-                if (!fishIsMoving && CurrentReelSpeed == 0)
+                else
                 {
-                    MoveFish();
+                    AnimateUnknownFish();
+                    if (!TweenerManager.Self.IsObjectReferencedByTweeners(UnknownFishInstance))
+                    {
+                        fishIsMoving = false;
+                    }
+                    if (!fishIsMoving && CurrentReelSpeed == 0)
+                    {
+                        MoveFish();
+                    }
+                    UpdateAlignmentBarStatus();
+                    UpdateFishFightOrLuck();
+                    ReelInFish();
+                    UpdateFishingLine();
                 }
-                UpdateAlignmentBarStatus();
-                UpdateFishFightOrLuck();
-                ReelInFish();
-                UpdateFishingLine();
             }
         }
 
@@ -205,10 +234,8 @@ namespace FishKing.GumRuntimes
         {
             float destX = 0f;
             var fishIsOnRightHalf = UnknownFishInstance.X > (MaxFishX / 2);
-
             var tweenDuration = FishHorizontalMovementTweenDuration;
-            var tweenHolder = new TweenerHolder();
-            tweenHolder.Caller = UnknownFishInstance;
+            
 
             if (fishIsOnRightHalf)
             {   
@@ -229,7 +256,7 @@ namespace FishKing.GumRuntimes
                 tweenDuration *= Math.Abs((UnknownFishInstance.X - destX)/50);
             }
 
-            fishTweener = tweenHolder.Tween("X").To(destX).During(tweenDuration).Using(FlatRedBall.Glue.StateInterpolation.InterpolationType.Cubic, FlatRedBall.Glue.StateInterpolation.Easing.InOut);
+            fishTweener = FishMovementTweenerHolder.Tween("X").To(destX).During(tweenDuration).Using(FlatRedBall.Glue.StateInterpolation.InterpolationType.Cubic, FlatRedBall.Glue.StateInterpolation.Easing.InOut);
             fishIsMoving = true;
 
         }
@@ -261,9 +288,43 @@ namespace FishKing.GumRuntimes
             }
         }
 
+        private void ShowFishEscape()
+        {
+            if (!UnknownFishInstance.FlipHorizontal)
+            {
+                FlipFishHorizontally();
+            }
+            
+            TweenerManager.Self.StopAllTweenersOwnedBy(UnknownFishInstance);
+            float destX = 150 + UnknownFishInstance.Width;
+            var tweenDuration = FishHorizontalMovementTweenDuration;
+
+            var fishTweener = FishMovementTweenerHolder.Tween("X").To(destX).During(tweenDuration).Using(FlatRedBall.Glue.StateInterpolation.InterpolationType.Quintic, FlatRedBall.Glue.StateInterpolation.Easing.Out);
+            fishTweener.Ended += () => { FishHasEscaped = true; };
+
+            //Set line to follow fish
+            var lineTweenerHolder = new TweenerHolder();
+            lineTweenerHolder.Caller = WaterBoxFishingLine;
+
+            WaterBoxFishingLine.Height = WaterBoxFishingLine.Height / 4;
+            WaterBoxFishingLine.Rotation += 180;
+            WaterBoxFishingLine.X = UnknownFishInstance.X - (FishAsPositionedSizedObject.Width * 0.05f);
+            WaterBoxFishingLine.Y = UnknownFishInstance.Y;
+
+            tweenDuration = FishHorizontalMovementTweenDuration;
+
+            var lineTweener = lineTweenerHolder.Tween("X").To(destX).During(tweenDuration).Using(FlatRedBall.Glue.StateInterpolation.InterpolationType.Quintic, FlatRedBall.Glue.StateInterpolation.Easing.Out);
+            fishTweener.Start();
+            lineTweener.Start();
+
+            var lineRotationTweener = lineTweenerHolder.Tween("Rotation").To(260).During(tweenDuration).Using(FlatRedBall.Glue.StateInterpolation.InterpolationType.Circular, FlatRedBall.Glue.StateInterpolation.Easing.Out);
+            lineRotationTweener.Start();
+
+            FishIsEscaping = true;
+        }
+
         private void UpdateFishingLine()
         {
-            var fishAsPositionedSizedObject = UnknownFishInstance as IPositionedSizedObject;
             var x1 = UnknownFishInstance.AbsoluteX;
             var x2 = WaterBoxFishingLine.AbsoluteX;
             var y1 = UnknownFishInstance.AbsoluteY;
@@ -271,18 +332,18 @@ namespace FishKing.GumRuntimes
 
             if (UnknownFishInstance.FlipHorizontal)
             {
-                x1 -= fishAsPositionedSizedObject.Width * 0.15f;
+                x1 -= FishAsPositionedSizedObject.Width * 0.15f;
             }
             else
             {
-                x1 += fishAsPositionedSizedObject.Width * 0.15f;
+                x1 += FishAsPositionedSizedObject.Width * 0.15f;
             }
 
             x1 -= (UnknownFishInstance.Width) * (-UnknownFishInstance.Rotation / 180);
 
             var fishingLineAngle = Math.PI - Math.Atan2(y2 - y1, x2 - x1);
             var fishingLineDegrees = MathHelper.ToDegrees((float)fishingLineAngle);
-            WaterBoxFishingLine.Rotation = 90 + fishingLineDegrees;
+            WaterBoxFishingLine.Rotation = (90 + fishingLineDegrees) % 360;
 
             var fishingLineLength = (float)Math.Sqrt(((x1 - x2) * (x1 - x2) + (y1 - y2) * (y1 - y2)));
             fishingLineLength += (UnknownFishInstance.Height) * (-UnknownFishInstance.Rotation / 45);
@@ -327,12 +388,18 @@ namespace FishKing.GumRuntimes
         public void Reset()
         {
             TweenerManager.Self.StopAllTweenersOwnedBy(UnknownFishInstance);
-            UnknownFishInstance.FlipHorizontal = false;
+            TweenerManager.Self.StopAllTweenersOwnedBy(WaterBoxFishingLine);
+            FishHasEscaped = false;
+            FishIsEscaping = false;
+            LineHasSnapped = false;
             fishIsMoving = false;
+            UnknownFishInstance.FlipHorizontal = false;
             AttachedFish = null;
             AlignmentBarInstance.Y = 90;
             alignmentVelocity = 0;
             fightOrLuckVelocity = 0;
+            WaterBoxFishingLine.X = DefaultFishingLineX;
+            WaterBoxFishingLine.Y = DefaultFishingLineY;
         }
     }
 }

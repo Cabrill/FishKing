@@ -41,9 +41,10 @@ namespace FishKing.Screens
         {
             get
             {
-                return DialogDisplayInstance.Visible == false && 
-                    !CharacterInstance.IsPullingInCatch && 
-                    (!CharacterInstance.IsDisplayingCatch || CharacterInstance.HasFinishedDisplayingCatch);
+                return DialogDisplayInstance.Visible == false &&
+                    !CharacterInstance.IsPullingInCatch &&
+                    (!CharacterInstance.IsDisplayingCatch || CharacterInstance.HasFinishedDisplayingCatch) &&
+                    (!FishCatchingInterfaceInstance.LineHasSnapped || FishCatchingInterfaceInstance.FishHasEscaped);
             }
         }
 
@@ -242,14 +243,6 @@ namespace FishKing.Screens
             {
                 if (CharacterInstance.HasFishOnTheLine)
                 {
-                    if (CharacterInstance.IsHoldingAlignButton)
-                    {
-                        FishCatchingInterfaceInstance.RaiseAlignmentBar();
-                    }
-                    if (CharacterInstance.IsHoldingAction)
-                    {
-                        FishCatchingInterfaceInstance.SpinReel();
-                    }
                     if (CharacterInstance.HasInitiatedCatching)
                     {
                         if (!FishCatchingInterfaceInstance.HasAttachedFish)
@@ -265,6 +258,23 @@ namespace FishKing.Screens
                         }
                         else
                         {
+                            if (FishCatchingInterfaceInstance.LineHasSnapped && FishCatchingInterfaceInstance.FishHasEscaped)
+                            {
+                                CharacterInstance.ResetFishingStatus();
+                                FishCatchingInterfaceInstance.Reset();
+                                FishCatchingInterfaceInstance.Visible = false;
+                            }
+                            else
+                            {
+                                if (CharacterInstance.IsHoldingAlignButton)
+                                {
+                                    FishCatchingInterfaceInstance.RaiseAlignmentBar();
+                                }
+                                if (CharacterInstance.IsHoldingAction)
+                                {
+                                    FishCatchingInterfaceInstance.SpinReel();
+                                }
+                            }
                             FishCatchingInterfaceInstance.Update();
                         }
                     }

@@ -81,7 +81,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Height</Name>
-      <Value xsi:type="xsd:float">256</Value>
+      <Value xsi:type="xsd:float">200</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -93,6 +93,11 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>JammedStatesState</Type>
+      <Name>JammedStatesState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>Parent</Name>
       <SetsValue>true</SetsValue>
@@ -100,7 +105,7 @@
     <Variable>
       <Type>float</Type>
       <Name>ReelBackground.Height</Name>
-      <Value xsi:type="xsd:float">90</Value>
+      <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -112,7 +117,7 @@
     <Variable>
       <Type>string</Type>
       <Name>ReelBackground.Parent</Name>
-      <Value xsi:type="xsd:string">&lt;SCREEN BOUNDS&gt;</Value>
+      <Value xsi:type="xsd:string">ReelContainer</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -162,7 +167,7 @@
     <Variable>
       <Type>float</Type>
       <Name>ReelBackground.Width</Name>
-      <Value xsi:type="xsd:float">90</Value>
+      <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -209,8 +214,62 @@
     </Variable>
     <Variable>
       <Type>float</Type>
+      <Name>ReelContainer.Height</Name>
+      <Value xsi:type="xsd:float">80</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>ReelContainer.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>ReelContainer.Parent</Name>
+      <Value xsi:type="xsd:string">DoubleBarFrameInstance</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ReelContainer.Width</Name>
+      <Value xsi:type="xsd:float">80</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>ReelContainer.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ReelContainer.X</Name>
+      <Value xsi:type="xsd:float">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>ReelContainer.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ReelContainer.Y</Name>
+      <Value xsi:type="xsd:float">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>ReelContainer.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
       <Name>ReelForeground.Height</Name>
-      <Value xsi:type="xsd:float">90</Value>
+      <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -222,7 +281,7 @@
     <Variable>
       <Type>string</Type>
       <Name>ReelForeground.Parent</Name>
-      <Value xsi:type="xsd:string">&lt;SCREEN BOUNDS&gt;</Value>
+      <Value xsi:type="xsd:string">ReelContainer</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -272,7 +331,7 @@
     <Variable>
       <Type>float</Type>
       <Name>ReelForeground.Width</Name>
-      <Value xsi:type="xsd:float">90</Value>
+      <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -332,7 +391,7 @@
     <Variable>
       <Type>string</Type>
       <Name>ReelHandle.Parent</Name>
-      <Value xsi:type="xsd:string">&lt;SCREEN BOUNDS&gt;</Value>
+      <Value xsi:type="xsd:string">ReelContainer</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -442,7 +501,7 @@
     <Variable>
       <Type>string</Type>
       <Name>ReelScrew.Parent</Name>
-      <Value xsi:type="xsd:string">&lt;SCREEN BOUNDS&gt;</Value>
+      <Value xsi:type="xsd:string">ReelContainer</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -555,14 +614,14 @@
     <Variable>
       <Type>float</Type>
       <Name>Width</Name>
-      <Value xsi:type="xsd:float">256</Value>
+      <Value xsi:type="xsd:float">25</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>Width Units</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -575,7 +634,7 @@
     <Variable>
       <Type>float</Type>
       <Name>X</Name>
-      <Value xsi:type="xsd:float">0.400001</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <Category>Position</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -596,7 +655,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Y</Name>
-      <Value xsi:type="xsd:float">0.2666691</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <Category>Position</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -623,49 +682,67 @@
     </VariableList>
   </State>
   <Category>
-    <Name>TestAnimation</Name>
+    <Name>JammedStates</Name>
     <State>
-      <Name>Start</Name>
+      <Name>UnJammed</Name>
     </State>
     <State>
-      <Name>End</Name>
+      <Name>JammedUpLeft</Name>
       <Variable>
         <Type>float</Type>
-        <Name>ReelBackground.Rotation</Name>
-        <Value xsi:type="xsd:float">359</Value>
+        <Name>ReelContainer.X</Name>
+        <Value xsi:type="xsd:float">8.5</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>ReelForeground.Rotation</Name>
-        <Value xsi:type="xsd:float">-180</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>ReelHandle.Rotation</Name>
-        <Value xsi:type="xsd:float">-90</Value>
+        <Name>ReelContainer.Y</Name>
+        <Value xsi:type="xsd:float">8.5</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
     <State>
-      <Name>End2</Name>
+      <Name>JammedDownRight</Name>
       <Variable>
         <Type>float</Type>
-        <Name>ReelBackground.Rotation</Name>
-        <Value xsi:type="xsd:float">720</Value>
+        <Name>ReelContainer.X</Name>
+        <Value xsi:type="xsd:float">11.5</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>ReelForeground.Rotation</Name>
-        <Value xsi:type="xsd:float">-360</Value>
+        <Name>ReelContainer.Y</Name>
+        <Value xsi:type="xsd:float">11.5</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>JammedUpRight</Name>
+      <Variable>
+        <Type>float</Type>
+        <Name>ReelContainer.X</Name>
+        <Value xsi:type="xsd:float">11.5</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>ReelHandle.Rotation</Name>
-        <Value xsi:type="xsd:float">-180</Value>
+        <Name>ReelContainer.Y</Name>
+        <Value xsi:type="xsd:float">8.5</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>JammedDownLeft</Name>
+      <Variable>
+        <Type>float</Type>
+        <Name>ReelContainer.X</Name>
+        <Value xsi:type="xsd:float">8.5</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>ReelContainer.Y</Name>
+        <Value xsi:type="xsd:float">11.5</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -689,6 +766,10 @@
   <Instance>
     <Name>ReelScrew</Name>
     <BaseType>Sprite</BaseType>
+  </Instance>
+  <Instance>
+    <Name>ReelContainer</Name>
+    <BaseType>Container</BaseType>
   </Instance>
   <Behaviors />
 </ComponentSave>
