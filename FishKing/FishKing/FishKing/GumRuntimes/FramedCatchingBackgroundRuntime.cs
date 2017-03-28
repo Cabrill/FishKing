@@ -36,8 +36,17 @@ namespace FishKing.GumRuntimes
         public float CurrentReelSpeed { get; set; }
 
         public Fish AttachedFish { get; set; }
-        private int FishFight { get; set; }
-        private int FishSpeed { get; set; }
+        private float FishFight { get; set; }
+        private float FishSpeed { get; set; }
+        
+        private double ChanceOfFight { get; set; }
+        private double ChanceOfLuck { get; set; }
+
+        private float FightModifier { get; set; }
+        private float SpeedModifier { get; set; }
+
+        private double FishHorizontalMovementTweenDuration { get; set; }
+
         public bool IsFishCaught { get { return FishTop <= 0; } }
 
         private float MaxAlignmentY { get; set; }
@@ -66,6 +75,14 @@ namespace FishKing.GumRuntimes
         {
             FishFight = GlobalContent.Fish_Types[AttachedFish.FishType.Name].Fight;
             FishSpeed = GlobalContent.Fish_Types[AttachedFish.FishType.Name].Speed;
+
+            SpeedModifier = 0.25f + ((float)FishSpeed / 50);
+            FightModifier = 1f + ((float)FishFight / 50);
+
+            ChanceOfFight = (double)FishFight / 2000;
+            ChanceOfLuck = 0.001;
+
+            FishHorizontalMovementTweenDuration = (double)3 - (FishSpeed / 35);
 
             UnknownFishInstance.XOrigin = RenderingLibrary.Graphics.HorizontalAlignment.Left;
             UnknownFishInstance.YOrigin = RenderingLibrary.Graphics.VerticalAlignment.Center;
@@ -160,19 +177,16 @@ namespace FishKing.GumRuntimes
 
     private void UpdateFishFightOrLuck()
         {
-            double chanceOfFight = (double)FishFight / 2000;
-            double chanceOfLuck = 0.001;
             var fightOrLuck = randomSeed.NextDouble();
-            var speedModifier = 0.25f + ((float)FishSpeed/50);
-            var fightModifier = 1f + ((float)FishFight/50);
+            var totalModifier = SpeedModifier * FightModifier;
 
-            if (chanceOfFight > fightOrLuck)
+            if (ChanceOfFight > fightOrLuck)
             {
-                fightOrLuckVelocity = Math.Min(fightOrLuckMaxVelocity, fightOrLuckVelocity + (fightVelocityIncrementRate * speedModifier * fightModifier));
+                fightOrLuckVelocity = Math.Min(fightOrLuckMaxVelocity, fightOrLuckVelocity + (fightVelocityIncrementRate * totalModifier));
             }
-            else if (chanceOfLuck > fightOrLuck)
+            else if (ChanceOfLuck > fightOrLuck)
             {
-                fightOrLuckVelocity = Math.Max(fightOrLuckMinVelocity, fightOrLuckVelocity - (luckVelocityIncrementRate * speedModifier * fightModifier));
+                fightOrLuckVelocity = Math.Max(fightOrLuckMinVelocity, fightOrLuckVelocity - (luckVelocityIncrementRate * totalModifier));
             }
             else 
             {
@@ -189,16 +203,12 @@ namespace FishKing.GumRuntimes
 
         private void MoveFish()
         {
-            fishIsMoving = true;
+            float destX = 0f;
+            var fishIsOnRightHalf = UnknownFishInstance.X > (MaxFishX / 2);
 
+            var tweenDuration = FishHorizontalMovementTweenDuration;
             var tweenHolder = new TweenerHolder();
             tweenHolder.Caller = UnknownFishInstance;
-
-            double tweenDuration = (double)3 - (FishSpeed / 35);
-
-            float destX = 0f;
-
-            var fishIsOnRightHalf = UnknownFishInstance.X > (MaxFishX/2);
 
             if (fishIsOnRightHalf)
             {   
@@ -220,6 +230,8 @@ namespace FishKing.GumRuntimes
             }
 
             fishTweener = tweenHolder.Tween("X").To(destX).During(tweenDuration).Using(FlatRedBall.Glue.StateInterpolation.InterpolationType.Cubic, FlatRedBall.Glue.StateInterpolation.Easing.InOut);
+            fishIsMoving = true;
+
         }
 
         private void FlipFishHorizontally()

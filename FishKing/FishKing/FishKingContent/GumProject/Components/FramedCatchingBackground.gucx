@@ -100,7 +100,7 @@
     <Variable>
       <Type>bool</Type>
       <Name>DebugContainer.Visible</Name>
-      <Value xsi:type="xsd:boolean">true</Value>
+      <Value xsi:type="xsd:boolean">false</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
