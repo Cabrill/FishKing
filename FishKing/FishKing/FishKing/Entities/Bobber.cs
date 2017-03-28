@@ -238,7 +238,6 @@ namespace FishKing.Entities
             double pointX, relativeX, pointY, newY;
             Point3D point1, point2;
 
-
             PositionedObjectList<Line> settledFishingLineLines = new PositionedObjectList<Line>();
             Line clonedLine;
             for (int i = 0; i < FishingLineLinesList.Count; i++)
@@ -283,27 +282,21 @@ namespace FishKing.Entities
             }
 
             Tweener lineTweener;
-            Line sunkenLine;
             for (int i = 0; i < settledFishingLineLines.Count; i++)
             {
+                var originalLine = FishingLineLinesList[i].Clone();
                 var lineToChange = FishingLineLinesList[i];
-                sunkenLine = settledFishingLineLines[i];
-
-                var old1 = lineToChange.AbsolutePoint1;
-                var old2 = lineToChange.AbsolutePoint2;
-
-                var new1 = sunkenLine.AbsolutePoint1;
-                var new2 = sunkenLine.AbsolutePoint2;
+                var sunkenLine = settledFishingLineLines[i];
 
                 lineTweener = new Tweener(0, 1, 2f, InterpolationType.Back, Easing.Out);
                 lineTweener.PositionChanged += (a) => {
                     lineToChange.SetFromAbsoluteEndpoints(
                     new Point3D(
-                        (old1.X * (1 - a)) + (new1.X * a),
-                        (old1.Y * (1 - a)) + (new1.Y * a)),
+                        (originalLine.AbsolutePoint1.X * (1 - a)) + (sunkenLine.AbsolutePoint1.X * a),
+                        (originalLine.AbsolutePoint1.Y * (1 - a)) + (sunkenLine.AbsolutePoint1.Y * a)),
                     new Point3D(
-                        (old2.X * (1 - a)) + (new2.X * a),
-                        (old2.Y * (1 - a)) + (new2.Y * a))
+                        (originalLine.AbsolutePoint2.X * (1 - a)) + (sunkenLine.AbsolutePoint2.X * a),
+                        (originalLine.AbsolutePoint2.Y * (1 - a)) + (sunkenLine.AbsolutePoint2.Y * a))
                     );
                 };
                 lineTweener.Start();
