@@ -97,5 +97,25 @@
       </Animations>
       <Events />
     </AnimationSave>
+    <AnimationSave>
+      <Loops>false</Loops>
+      <Name>LineSnap</Name>
+      <States>
+        <AnimatedStateSave>
+          <StateName>LineStatus/LineWhole</StateName>
+          <Time>0</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>LineStatus/LineSnapped</StateName>
+          <Time>0.1</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+      </States>
+      <Animations />
+      <Events />
+    </AnimationSave>
   </Animations>
 </ElementAnimationsSave>

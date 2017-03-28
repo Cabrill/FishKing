@@ -66,11 +66,12 @@ namespace FishKing.GumRuntimes
         {
             LineStress = 0;
             MaxStress = (int)LeftStressBracket.Height;
+            CurrentLineStatusState = LineStatus.LineWhole;
         }
 
         private void HandleLineSnapped()
         {
-
+            LineSnapAnimation.Play();
         }
     }
 }

@@ -398,92 +398,86 @@
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>FishingLine.Height</Name>
-      <Value xsi:type="xsd:float">100</Value>
+      <Name>FishingLineBottom.Height</Name>
+      <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
-      <Name>FishingLine.Height Units</Name>
+      <Name>FishingLineBottom.Height Units</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>FishingLine.Parent</Name>
+      <Name>FishingLineBottom.Parent</Name>
       <Value xsi:type="xsd:string">SkyBox</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <IsFile>true</IsFile>
       <Type>string</Type>
-      <Name>FishingLine.SourceFile</Name>
+      <Name>FishingLineBottom.SourceFile</Name>
       <Value xsi:type="xsd:string">GumUI.png</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>TextureAddress</Type>
-      <Name>FishingLine.Texture Address</Name>
+      <Name>FishingLineBottom.Texture Address</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
-      <Name>FishingLine.Texture Height</Name>
+      <Name>FishingLineBottom.Texture Height</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
-      <Name>FishingLine.Texture Width</Name>
+      <Name>FishingLineBottom.Texture Width</Name>
       <Value xsi:type="xsd:int">4</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>FishingLine.Width</Name>
+      <Name>FishingLineBottom.Width</Name>
       <Value xsi:type="xsd:float">8</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
-      <Name>FishingLine.Width Units</Name>
+      <Name>FishingLineBottom.Width Units</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>FishingLine.X</Name>
+      <Name>FishingLineBottom.X</Name>
       <Value xsi:type="xsd:float">46</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>HorizontalAlignment</Type>
-      <Name>FishingLine.X Origin</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>PositionUnitType</Type>
-      <Name>FishingLine.X Units</Name>
+      <Name>FishingLineBottom.X Units</Name>
       <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>FishingLine.Y</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Name>FishingLineBottom.Y</Name>
+      <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
-      <Name>FishingLine.Y Origin</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Name>FishingLineBottom.Y Origin</Name>
+      <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
-      <Name>FishingLine.Y Units</Name>
+      <Name>FishingLineBottom.Y Units</Name>
       <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -592,6 +586,97 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>float</Type>
+      <Name>FishingLineTop.Height</Name>
+      <Value xsi:type="xsd:float">50</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>FishingLineTop.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FishingLineTop.Parent</Name>
+      <Value xsi:type="xsd:string">SkyBox</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>FishingLineTop.SourceFile</Name>
+      <Value xsi:type="xsd:string">GumUI.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TextureAddress</Type>
+      <Name>FishingLineTop.Texture Address</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>FishingLineTop.Texture Height</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>FishingLineTop.Texture Width</Name>
+      <Value xsi:type="xsd:int">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishingLineTop.Width</Name>
+      <Value xsi:type="xsd:float">8</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>FishingLineTop.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishingLineTop.X</Name>
+      <Value xsi:type="xsd:float">46</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>FishingLineTop.X Origin</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>FishingLineTop.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishingLineTop.Y</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>FishingLineTop.Y Origin</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>FishingLineTop.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>Guide</Name>
       <Category>Position</Category>
@@ -689,6 +774,11 @@
       <Name>LeftStressBracket.Y Units</Name>
       <Value xsi:type="xsd:int">7</Value>
       <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>LineStatusState</Type>
+      <Name>LineStatusState</Name>
+      <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
@@ -1102,6 +1192,69 @@
       </Variable>
     </State>
   </Category>
+  <Category>
+    <Name>LineStatus</Name>
+    <State>
+      <Name>LineSnapped</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>FishingLineBottom.Alpha</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>FishingLineBottom.Height</Name>
+        <Value xsi:type="xsd:float">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>FishingLineBottom.Y</Name>
+        <Value xsi:type="xsd:float">105</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>FishingLineTop.Height</Name>
+        <Value xsi:type="xsd:float">20</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>StressBrackets.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>LineWhole</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>FishingLineBottom.Alpha</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>FishingLineBottom.Height</Name>
+        <Value xsi:type="xsd:float">50</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>FishingLineBottom.Y</Name>
+        <Value xsi:type="xsd:float">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>FishingLineTop.Height</Name>
+        <Value xsi:type="xsd:float">50</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
   <Instance>
     <Name>FishingLineStress</Name>
     <BaseType>Sprite</BaseType>
@@ -1123,7 +1276,7 @@
     <BaseType>Container</BaseType>
   </Instance>
   <Instance>
-    <Name>FishingLine</Name>
+    <Name>FishingLineTop</Name>
     <BaseType>Sprite</BaseType>
   </Instance>
   <Instance>
@@ -1141,6 +1294,10 @@
   <Instance>
     <Name>RightStressBracket</Name>
     <BaseType>StressAccentuator</BaseType>
+  </Instance>
+  <Instance>
+    <Name>FishingLineBottom</Name>
+    <BaseType>Sprite</BaseType>
   </Instance>
   <Instance>
     <Name>StressBrackets</Name>

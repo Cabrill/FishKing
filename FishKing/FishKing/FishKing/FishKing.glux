@@ -1201,7 +1201,6 @@
             </PropertySave>
             <PropertySave>
               <Name>OverridingPropertyType</Name>
-              <ValueAsString>Microsoft.Xna.Framework.Graphics.Texture2D</ValueAsString>
             </PropertySave>
             <PropertySave>
               <Name>TypeConverter</Name>
