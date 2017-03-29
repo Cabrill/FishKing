@@ -125,6 +125,55 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>int</Type>
+      <Name>BackgroundRectangle.Alpha</Name>
+      <Value xsi:type="xsd:int">200</Value>
+      <ExposedAsName>ScaleBackgroundOpacity</ExposedAsName>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>BackgroundRectangle.Blue</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>BackgroundRectangle.Green</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>BackgroundRectangle.Height</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>BackgroundRectangle.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>BackgroundRectangle.Red</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>BackgroundRectangle.Width</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>BackgroundRectangle.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>ChildrenLayout</Type>
       <Name>Children Layout</Name>
       <Value xsi:type="xsd:int">0</Value>
@@ -264,13 +313,13 @@
     <Variable>
       <Type>int</Type>
       <Name>HorizontalLineRectangle.Blue</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">32</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>HorizontalLineRectangle.Green</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">165</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -294,7 +343,7 @@
     <Variable>
       <Type>int</Type>
       <Name>HorizontalLineRectangle.Red</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">218</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -342,13 +391,13 @@
     <Variable>
       <Type>int</Type>
       <Name>LeftEndRectangle.Blue</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">32</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>LeftEndRectangle.Green</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">165</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -372,7 +421,7 @@
     <Variable>
       <Type>int</Type>
       <Name>LeftEndRectangle.Red</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">218</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -408,13 +457,13 @@
     <Variable>
       <Type>int</Type>
       <Name>LeftMiddleEndRectangle.Blue</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">140</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>LeftMiddleEndRectangle.Green</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">230</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -438,7 +487,7 @@
     <Variable>
       <Type>int</Type>
       <Name>LeftMiddleEndRectangle.Red</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">240</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -486,13 +535,13 @@
     <Variable>
       <Type>int</Type>
       <Name>LeftMiddleMiddleRectangle.Blue</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">140</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>LeftMiddleMiddleRectangle.Green</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">230</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -516,7 +565,7 @@
     <Variable>
       <Type>int</Type>
       <Name>LeftMiddleMiddleRectangle.Red</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">240</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -570,7 +619,7 @@
     <Variable>
       <Type>int</Type>
       <Name>LeftMiddleRectangle.Green</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">215</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -594,7 +643,7 @@
     <Variable>
       <Type>int</Type>
       <Name>LeftMiddleRectangle.Red</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -642,7 +691,7 @@
     <Variable>
       <Type>float</Type>
       <Name>LinesContainer.Height</Name>
-      <Value xsi:type="xsd:float">80</Value>
+      <Value xsi:type="xsd:float">70</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -684,7 +733,7 @@
     <Variable>
       <Type>float</Type>
       <Name>LinesContainer.Y</Name>
-      <Value xsi:type="xsd:float">10</Value>
+      <Value xsi:type="xsd:float">15</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -696,13 +745,13 @@
     <Variable>
       <Type>int</Type>
       <Name>MiddleLineRectangle.Blue</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">32</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>MiddleLineRectangle.Green</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">165</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -726,7 +775,7 @@
     <Variable>
       <Type>int</Type>
       <Name>MiddleLineRectangle.Red</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">218</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -773,13 +822,13 @@
     <Variable>
       <Type>int</Type>
       <Name>RightEndRectangle.Blue</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">32</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>RightEndRectangle.Green</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">165</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -803,7 +852,7 @@
     <Variable>
       <Type>int</Type>
       <Name>RightEndRectangle.Red</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">218</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -845,13 +894,13 @@
     <Variable>
       <Type>int</Type>
       <Name>RightMiddleEndRectangle.Blue</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">140</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>RightMiddleEndRectangle.Green</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">230</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -875,7 +924,7 @@
     <Variable>
       <Type>int</Type>
       <Name>RightMiddleEndRectangle.Red</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">240</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -923,13 +972,13 @@
     <Variable>
       <Type>int</Type>
       <Name>RightMiddleMiddleRectangle.Blue</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">140</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>RightMiddleMiddleRectangle.Green</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">230</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -953,7 +1002,7 @@
     <Variable>
       <Type>int</Type>
       <Name>RightMiddleMiddleRectangle.Red</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">240</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1007,7 +1056,7 @@
     <Variable>
       <Type>int</Type>
       <Name>RightMiddleRectangle.Green</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">215</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1031,7 +1080,7 @@
     <Variable>
       <Type>int</Type>
       <Name>RightMiddleRectangle.Red</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1199,9 +1248,30 @@
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
+    <State>
+      <Name>GreenArrow</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredArrow.Blue</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredArrow.Green</Name>
+        <Value xsi:type="xsd:int">252</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ColoredArrow.Red</Name>
+        <Value xsi:type="xsd:int">124</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
   </Category>
   <Instance>
-    <Name>HorizontalLineRectangle</Name>
+    <Name>BackgroundRectangle</Name>
     <BaseType>ColoredRectangle</BaseType>
   </Instance>
   <Instance>
@@ -1255,6 +1325,10 @@
   <Instance>
     <Name>ArrowMovementContainer</Name>
     <BaseType>Container</BaseType>
+  </Instance>
+  <Instance>
+    <Name>HorizontalLineRectangle</Name>
+    <BaseType>ColoredRectangle</BaseType>
   </Instance>
   <Behaviors />
 </ComponentSave>

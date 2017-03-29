@@ -68,6 +68,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>subcomponent\CatchStatWithScale</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>UnknownFish</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
