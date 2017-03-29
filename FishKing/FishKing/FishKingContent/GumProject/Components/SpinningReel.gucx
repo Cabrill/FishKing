@@ -532,7 +532,7 @@
     <Variable>
       <Type>int</Type>
       <Name>ReelScrew.Texture Left</Name>
-      <Value xsi:type="xsd:int">234</Value>
+      <Value xsi:type="xsd:int">233</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
