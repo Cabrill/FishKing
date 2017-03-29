@@ -111,7 +111,7 @@
           <StateName>LineStatus/LineSnapped</StateName>
           <Time>0.1</Time>
           <InterpolationType>Linear</InterpolationType>
-          <Easing>Out</Easing>
+          <Easing>In</Easing>
         </AnimatedStateSave>
       </States>
       <Animations />

@@ -1203,6 +1203,12 @@
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
+        <Type>bool</Type>
+        <Name>FishingLineBottom.Animate</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
         <Type>float</Type>
         <Name>FishingLineBottom.Height</Name>
         <Value xsi:type="xsd:float">0</Value>
@@ -1233,6 +1239,12 @@
         <Type>int</Type>
         <Name>FishingLineBottom.Alpha</Name>
         <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>FishingLineBottom.Animate</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>

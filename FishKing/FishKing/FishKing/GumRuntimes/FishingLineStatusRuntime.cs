@@ -71,7 +71,10 @@ namespace FishKing.GumRuntimes
 
         private void HandleLineSnapped()
         {
-            LineSnapAnimation.Play();
+            if (!LineSnapAnimation.IsPlaying() && CurrentLineStatusState != LineStatus.LineSnapped)
+            {
+                LineSnapAnimation.Play();
+            }
         }
     }
 }
