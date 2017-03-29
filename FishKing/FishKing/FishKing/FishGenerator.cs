@@ -36,35 +36,26 @@ namespace FishKing
             switch (waterType.ToLower())
             {
                 case "river":
-                    availableFish = GlobalContent.Fish_Types.Values.Where(ftv => ftv.InRiver).ToList(); break;
+                    availableFish = GlobalContent.Fish_Types.Values.Where(ftv => ftv.InRiver > 0).ToList(); break;
                 case "ocean":
-                    availableFish = GlobalContent.Fish_Types.Values.Where(ftv => ftv.InOcean).ToList(); break;
+                    availableFish = GlobalContent.Fish_Types.Values.Where(ftv => ftv.InOcean > 0).ToList(); break;
                 case "deepocean":
-                    availableFish = GlobalContent.Fish_Types.Values.Where(ftv => ftv.InDeepOcean).ToList(); break;
+                    availableFish = GlobalContent.Fish_Types.Values.Where(ftv => ftv.InDeepOcean > 0).ToList(); break;
                 case "pond":
-                    availableFish = GlobalContent.Fish_Types.Values.Where(ftv => ftv.InPond).ToList(); break;
+                    availableFish = GlobalContent.Fish_Types.Values.Where(ftv => ftv.InPond > 0).ToList(); break;
                 case "lake":
-                    availableFish = GlobalContent.Fish_Types.Values.Where(ftv => ftv.InLake).ToList(); break;
+                    availableFish = GlobalContent.Fish_Types.Values.Where(ftv => ftv.InLake > 0).ToList(); break;
                 case "waterfall":
-                    availableFish = GlobalContent.Fish_Types.Values.Where(ftv => ftv.InWaterfall).ToList(); break;
+                    availableFish = GlobalContent.Fish_Types.Values.Where(ftv => ftv.InWaterfall > 0).ToList(); break;
                 default:
                     availableFish = GlobalContent.Fish_Types.Values.ToList(); break;
             }
             var fishType = availableFish.RandomElement();
             var fishTypeName = fishType.Name.ToString().Replace(" ","");
 
-            decimal gramsPerMM = (decimal)fishType.MaxGrams / (decimal)fishType.MaxMM;
 
-            var fishLengthMM = randomSeed.Next(fishType.AvgMM, fishType.MaxMM);
-            var fishGrams = (int)(fishLengthMM * gramsPerMM);
-            
             var fish = Factories.FishFactory.CreateNew();
             fish.FishType = fishType;
-            fish.Grams = fishGrams;
-            fish.LengthMM = fishLengthMM;
-            fish.SpriteInstanceTexture = (Texture2D)GlobalContent.GetFile(fishTypeName);
-            fish.SpriteInstanceTextureScale = Math.Max(0.1f, (float)Decimal.Divide(fishLengthMM, 1000));
-            fish.IsSmall = fish.SpriteInstanceTextureScale < 0.2;
 
             return fish;
         }
@@ -79,6 +70,5 @@ namespace FishKing
             int index = rand.Next(0, enumerable.Count());
             return enumerable.ElementAt(index);
         }
-
     }
 }

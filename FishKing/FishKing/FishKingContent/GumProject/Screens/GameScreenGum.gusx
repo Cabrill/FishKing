@@ -4,6 +4,18 @@
   <State>
     <Name>Default</Name>
     <Variable>
+      <Type>float</Type>
+      <Name>FishCatchDisplayInstance.X</Name>
+      <Value xsi:type="xsd:float">195</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishCatchDisplayInstance.Y</Name>
+      <Value xsi:type="xsd:float">30</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>int</Type>
       <Name>ProgressBarInstance.BarFillTextureWidth</Name>
       <Value xsi:type="xsd:int">457</Value>
@@ -59,5 +71,9 @@
   <Instance>
     <Name>FishCatchingInterfaceInstance</Name>
     <BaseType>FishCatchingInterface</BaseType>
+  </Instance>
+  <Instance>
+    <Name>FishCatchDisplayInstance</Name>
+    <BaseType>FishCatchDisplay</BaseType>
   </Instance>
 </ScreenSave>

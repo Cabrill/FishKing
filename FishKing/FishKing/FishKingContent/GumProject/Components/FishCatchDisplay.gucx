@@ -5,32 +5,8 @@
   <State>
     <Name>Default</Name>
     <Variable>
-      <Type>float</Type>
-      <Name>CatchIconsContainer.Height</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>CatchIconsContainer.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>CatchIconsContainer.Parent</Name>
-      <Value xsi:type="xsd:string">CatchStats</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>CatchIconsContainer.Width</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>CatchIconsContainer.Width Units</Name>
+      <Type>ChildrenLayout</Type>
+      <Name>CatchStats.Children Layout</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -49,19 +25,43 @@
     <Variable>
       <Type>string</Type>
       <Name>CatchStats.Parent</Name>
-      <Value xsi:type="xsd:string">InfoBarFrame</Value>
+      <Value xsi:type="xsd:string">SingleBarFrameInstance</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>CatchStats.Width</Name>
-      <Value xsi:type="xsd:float">100</Value>
+      <Value xsi:type="xsd:float">-8</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>CatchStats.Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>CatchStats.Wraps Children</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>CatchStats.X</Name>
+      <Value xsi:type="xsd:float">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>CatchStats.Y</Name>
+      <Value xsi:type="xsd:float">45</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>CatchStats.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -77,6 +77,11 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>DemoStateState</Type>
+      <Name>DemoStateState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>bool</Type>
       <Name>ExposeChildrenEvents</Name>
       <Value xsi:type="xsd:boolean">true</Value>
@@ -84,9 +89,27 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>int</Type>
+      <Name>FishFrameRectangle.Alpha</Name>
+      <Value xsi:type="xsd:int">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>FishFrameRectangle.Blue</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>FishFrameRectangle.Green</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>FishFrameRectangle.Height</Name>
-      <Value xsi:type="xsd:float">40</Value>
+      <Value xsi:type="xsd:float">42</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -99,6 +122,12 @@
       <Type>string</Type>
       <Name>FishFrameRectangle.Parent</Name>
       <Value xsi:type="xsd:string">SingleBarFrameInstance</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>FishFrameRectangle.Red</Name>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -164,187 +193,100 @@
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>GoldMeasureSpriteInstance.Height</Name>
-      <Value xsi:type="xsd:float">28</Value>
+      <Name>FishSprite.Height</Name>
+      <Value xsi:type="xsd:float">80</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
-      <Name>GoldMeasureSpriteInstance.Height Units</Name>
+      <Name>FishSprite.Height Units</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>GoldMeasureSpriteInstance.Parent</Name>
-      <Value xsi:type="xsd:string">CatchIconsContainer</Value>
+      <Name>FishSprite.Parent</Name>
+      <Value xsi:type="xsd:string">FishFrameRectangle</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>float</Type>
-      <Name>GoldMeasureSpriteInstance.Width</Name>
-      <Value xsi:type="xsd:float">19</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>GoldMeasureSpriteInstance.Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>GoldMeasureSpriteInstance.X</Name>
-      <Value xsi:type="xsd:float">5</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>GoldMeasureSpriteInstance.X Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>GoldMeasureSpriteInstance.Y</Name>
-      <Value xsi:type="xsd:float">9</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>GoldMeasureSpriteInstance.Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>GoldScaleSpriteInstance.Height</Name>
-      <Value xsi:type="xsd:float">28</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>GoldScaleSpriteInstance.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
+      <IsFile>true</IsFile>
       <Type>string</Type>
-      <Name>GoldScaleSpriteInstance.Parent</Name>
-      <Value xsi:type="xsd:string">CatchIconsContainer</Value>
+      <Name>FishSprite.SourceFile</Name>
+      <Value xsi:type="xsd:string">allfish.png</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>float</Type>
-      <Name>GoldScaleSpriteInstance.Width</Name>
-      <Value xsi:type="xsd:float">19</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>GoldScaleSpriteInstance.Width Units</Name>
+      <Type>TextureAddress</Type>
+      <Name>FishSprite.Texture Address</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>int</Type>
+      <Name>FishSprite.Texture Height</Name>
+      <Value xsi:type="xsd:int">64</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>FishSprite.Texture Left</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <ExposedAsName>FishSpriteTextureLeft</ExposedAsName>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>FishSprite.Texture Top</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <ExposedAsName>FishSpriteTextureTop</ExposedAsName>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>FishSprite.Texture Width</Name>
+      <Value xsi:type="xsd:int">128</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
-      <Name>GoldScaleSpriteInstance.X</Name>
-      <Value xsi:type="xsd:float">5</Value>
+      <Name>FishSprite.Width</Name>
+      <Value xsi:type="xsd:float">80</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>FishSprite.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>HorizontalAlignment</Type>
-      <Name>GoldScaleSpriteInstance.X Origin</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>GoldScaleSpriteInstance.X Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>GoldScaleSpriteInstance.Y</Name>
-      <Value xsi:type="xsd:float">37</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>VerticalAlignment</Type>
-      <Name>GoldScaleSpriteInstance.Y Origin</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>GoldScaleSpriteInstance.Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>GoldStarSpriteInstance.Height</Name>
-      <Value xsi:type="xsd:float">28</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>GoldStarSpriteInstance.Height Units</Name>
+      <Name>FishSprite.X Origin</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>string</Type>
-      <Name>GoldStarSpriteInstance.Parent</Name>
-      <Value xsi:type="xsd:string">CatchIconsContainer</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>GoldStarSpriteInstance.Width</Name>
-      <Value xsi:type="xsd:float">19</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>GoldStarSpriteInstance.Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>GoldStarSpriteInstance.X</Name>
-      <Value xsi:type="xsd:float">5</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>HorizontalAlignment</Type>
-      <Name>GoldStarSpriteInstance.X Origin</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>PositionUnitType</Type>
-      <Name>GoldStarSpriteInstance.X Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
+      <Name>FishSprite.X Units</Name>
+      <Value xsi:type="xsd:int">6</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>GoldStarSpriteInstance.Y</Name>
-      <Value xsi:type="xsd:float">65</Value>
+      <Name>FishSprite.Y</Name>
+      <Value xsi:type="xsd:float">40</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
-      <Name>GoldStarSpriteInstance.Y Origin</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Name>FishSprite.Y Origin</Name>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
-      <Name>GoldStarSpriteInstance.Y Units</Name>
+      <Name>FishSprite.Y Units</Name>
       <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -364,140 +306,44 @@
     <Variable>
       <Type>float</Type>
       <Name>Height</Name>
-      <Value xsi:type="xsd:float">30</Value>
+      <Value xsi:type="xsd:float">500</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>float</Type>
-      <Name>InfoBarFrame.Height</Name>
-      <Value xsi:type="xsd:float">53</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>InfoBarFrame.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>string</Type>
-      <Name>InfoBarFrame.Parent</Name>
-      <Value xsi:type="xsd:string">SingleBarFrameInstance</Value>
+      <Name>LengthWithScale.Parent</Name>
+      <Value xsi:type="xsd:string">CatchStats</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>StatTypeState</Type>
+      <Name>LengthWithScale.StatTypeState</Name>
+      <Value xsi:type="xsd:string">Measure</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>InfoBarFrame.Width</Name>
-      <Value xsi:type="xsd:float">-7</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>InfoBarFrame.Width Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>bool</Type>
-      <Name>InfoBarFrame.Wraps Children</Name>
-      <Value xsi:type="xsd:boolean">true</Value>
+      <Name>LengthWithScale.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>InfoBarFrame.X</Name>
-      <Value xsi:type="xsd:float">4</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>InfoBarFrame.Y</Name>
-      <Value xsi:type="xsd:float">45</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>InfoBarFrame.Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>LengthScale.Height</Name>
-      <Value xsi:type="xsd:float">15</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>LengthScale.Parent</Name>
-      <Value xsi:type="xsd:string">StatScalesContainer</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>LengthScale.Width</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>LengthScale.X Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>LengthScale.Y</Name>
-      <Value xsi:type="xsd:float">6</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>LengthScale.Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
+      <Name>LengthWithScale.Y</Name>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
       <Name>Parent</Name>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>PointScale.Height</Name>
-      <Value xsi:type="xsd:float">15</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>PointScale.Parent</Name>
-      <Value xsi:type="xsd:string">StatScalesContainer</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>PointScale.Width</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>PointScale.Y</Name>
-      <Value xsi:type="xsd:float">62</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>PointScale.Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -549,70 +395,33 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>float</Type>
-      <Name>SpriteInstance.Height</Name>
-      <Value xsi:type="xsd:float">80</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>SpriteInstance.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>string</Type>
-      <Name>SpriteInstance.Parent</Name>
-      <Value xsi:type="xsd:string">FishFrameRectangle</Value>
+      <Name>StarWithScale.Parent</Name>
+      <Value xsi:type="xsd:string">CatchStats</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <IsFile>true</IsFile>
-      <Type>string</Type>
-      <Name>SpriteInstance.SourceFile</Name>
-      <Value xsi:type="xsd:string">..\GlobalContent\FishImages\CohoSalmon.png</Value>
+      <Type>StatTypeState</Type>
+      <Name>StarWithScale.StatTypeState</Name>
+      <Value xsi:type="xsd:string">Star</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>SpriteInstance.Width</Name>
-      <Value xsi:type="xsd:float">80</Value>
+      <Name>StarWithScale.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>SpriteInstance.Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>HorizontalAlignment</Type>
-      <Name>SpriteInstance.X Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Type>float</Type>
+      <Name>StarWithScale.Y</Name>
+      <Value xsi:type="xsd:float">-7</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
-      <Name>SpriteInstance.X Units</Name>
-      <Value xsi:type="xsd:int">6</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>SpriteInstance.Y</Name>
-      <Value xsi:type="xsd:float">40</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>VerticalAlignment</Type>
-      <Name>SpriteInstance.Y Origin</Name>
+      <Name>StarWithScale.Y Units</Name>
       <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>SpriteInstance.Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -621,482 +430,122 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>float</Type>
-      <Name>StatScalesContainer.Height</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>StatScalesContainer.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>StatScalesContainer.Parent</Name>
-      <Value xsi:type="xsd:string">CatchStats</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>StatScalesContainer.Width</Name>
-      <Value xsi:type="xsd:float">45</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>StatScalesContainer.Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>StatScalesContainer.X</Name>
-      <Value xsi:type="xsd:float">50</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>StatScalesContainer.X Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>StatScalesContainer.Y</Name>
-      <Value xsi:type="xsd:float">10</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>StatScalesContainer.Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>TextContainer.Height</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>TextContainer.Parent</Name>
-      <Value xsi:type="xsd:string">CatchStats</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>TextContainer.Width</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>TextContainer.Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>int</Type>
-      <Name>textFishLength.Blue</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>textFishLength.Font Scale</Name>
-      <Value xsi:type="xsd:float">0.3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>textFishLength.FontSize</Name>
-      <Value xsi:type="xsd:int">36</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>textFishLength.Green</Name>
-      <Value xsi:type="xsd:int">255</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>textFishLength.Height</Name>
-      <Value xsi:type="xsd:float">15</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>textFishLength.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>HorizontalAlignment</Type>
-      <Name>textFishLength.HorizontalAlignment</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>textFishLength.Parent</Name>
-      <Value xsi:type="xsd:string">TextContainer</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>textFishLength.Red</Name>
+      <Name>TextFishName.Blue</Name>
       <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>textFishLength.Text</Name>
-      <Value xsi:type="xsd:string">20.5cm</Value>
+      <Name>TextFishName.Font</Name>
+      <Value xsi:type="xsd:string">Britannic Bold</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>textFishLength.Width</Name>
-      <Value xsi:type="xsd:float">42.5</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>textFishLength.Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>textFishLength.X</Name>
-      <Value xsi:type="xsd:float">8</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>HorizontalAlignment</Type>
-      <Name>textFishLength.X Origin</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>textFishLength.Y</Name>
-      <Value xsi:type="xsd:float">15</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>textFishLength.Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
+      <Name>TextFishName.Font Scale</Name>
+      <Value xsi:type="xsd:float">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
-      <Name>textFishWeight.Blue</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>textFishWeight.Font Scale</Name>
-      <Value xsi:type="xsd:float">0.3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>textFishWeight.FontSize</Name>
-      <Value xsi:type="xsd:int">36</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>textFishWeight.Green</Name>
-      <Value xsi:type="xsd:int">255</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>textFishWeight.Height</Name>
-      <Value xsi:type="xsd:float">15</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>textFishWeight.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>HorizontalAlignment</Type>
-      <Name>textFishWeight.HorizontalAlignment</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>textFishWeight.Parent</Name>
-      <Value xsi:type="xsd:string">TextContainer</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>textFishWeight.Red</Name>
-      <Value xsi:type="xsd:int">255</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>textFishWeight.Text</Name>
-      <Value xsi:type="xsd:string">5.1kg</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>textFishWeight.Width</Name>
-      <Value xsi:type="xsd:float">42.5</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>textFishWeight.Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>textFishWeight.X</Name>
-      <Value xsi:type="xsd:float">8</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>textFishWeight.X Units</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>textFishWeight.Y</Name>
-      <Value xsi:type="xsd:float">42</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>textFishWeight.Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>TextInstance.Blue</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>TextInstance.Font Scale</Name>
-      <Value xsi:type="xsd:float">0.5</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>TextInstance.FontSize</Name>
+      <Name>TextFishName.FontSize</Name>
       <Value xsi:type="xsd:int">24</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
-      <Name>TextInstance.Green</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Name>TextFishName.Green</Name>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>TextInstance.Height</Name>
-      <Value xsi:type="xsd:float">10</Value>
+      <Name>TextFishName.Height</Name>
+      <Value xsi:type="xsd:float">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
-      <Name>TextInstance.Height Units</Name>
+      <Name>TextFishName.Height Units</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>HorizontalAlignment</Type>
-      <Name>TextInstance.HorizontalAlignment</Name>
+      <Name>TextFishName.HorizontalAlignment</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>TextInstance.Parent</Name>
+      <Name>TextFishName.Parent</Name>
       <Value xsi:type="xsd:string">FishFrameRectangle</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
-      <Name>TextInstance.Red</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Name>TextFishName.Red</Name>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>TextInstance.Text</Name>
+      <Name>TextFishName.Text</Name>
       <Value xsi:type="xsd:string">Arctic Coho Salmon</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
-      <Name>TextInstance.VerticalAlignment</Name>
+      <Name>TextFishName.VerticalAlignment</Name>
       <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>TextInstance.Width</Name>
+      <Name>TextFishName.Width</Name>
       <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
-      <Name>TextInstance.Width Units</Name>
+      <Name>TextFishName.Width Units</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>TextInstance.X</Name>
+      <Name>TextFishName.X</Name>
       <Value xsi:type="xsd:float">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>HorizontalAlignment</Type>
-      <Name>TextInstance.X Origin</Name>
+      <Name>TextFishName.X Origin</Name>
       <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
-      <Name>TextInstance.X Units</Name>
+      <Name>TextFishName.X Units</Name>
       <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>TextInstance.Y</Name>
+      <Name>TextFishName.Y</Name>
       <Value xsi:type="xsd:float">85</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
-      <Name>TextInstance.Y Origin</Name>
+      <Name>TextFishName.Y Origin</Name>
       <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
-      <Name>TextInstance.Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>textPointValue.Blue</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>textPointValue.Font Scale</Name>
-      <Value xsi:type="xsd:float">0.3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>textPointValue.FontSize</Name>
-      <Value xsi:type="xsd:int">36</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>textPointValue.Green</Name>
-      <Value xsi:type="xsd:int">255</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>textPointValue.Height</Name>
-      <Value xsi:type="xsd:float">15</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>textPointValue.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>HorizontalAlignment</Type>
-      <Name>textPointValue.HorizontalAlignment</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>textPointValue.Parent</Name>
-      <Value xsi:type="xsd:string">TextContainer</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>textPointValue.Red</Name>
-      <Value xsi:type="xsd:int">255</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>textPointValue.Text</Name>
-      <Value xsi:type="xsd:string">8</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>textPointValue.Width</Name>
-      <Value xsi:type="xsd:float">35</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>textPointValue.Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>textPointValue.X</Name>
-      <Value xsi:type="xsd:float">8</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>textPointValue.X Units</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>textPointValue.Y</Name>
-      <Value xsi:type="xsd:float">70</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>textPointValue.Y Units</Name>
+      <Name>TextFishName.Y Units</Name>
       <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -1107,52 +556,40 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>float</Type>
-      <Name>WeightScale.Height</Name>
-      <Value xsi:type="xsd:float">15</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>string</Type>
-      <Name>WeightScale.Parent</Name>
-      <Value xsi:type="xsd:string">StatScalesContainer</Value>
+      <Name>WeightWithScale.Parent</Name>
+      <Value xsi:type="xsd:string">CatchStats</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>StatTypeState</Type>
+      <Name>WeightWithScale.StatTypeState</Name>
+      <Value xsi:type="xsd:string">Weight</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>WeightScale.Width</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>WeightScale.X Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
+      <Name>WeightWithScale.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>WeightScale.Y</Name>
-      <Value xsi:type="xsd:float">34</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>WeightScale.Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
+      <Name>WeightWithScale.Y</Name>
+      <Value xsi:type="xsd:float">-7</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>Width</Name>
-      <Value xsi:type="xsd:float">20</Value>
+      <Value xsi:type="xsd:float">400</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -1210,16 +647,65 @@
       <Value />
     </VariableList>
   </State>
+  <Category>
+    <Name>DemoState</Name>
+    <State>
+      <Name>PoorDemoState</Name>
+      <Variable>
+        <Type>StatQualityState</Type>
+        <Name>LengthWithScale.StatQualityState</Name>
+        <Value xsi:type="xsd:string">Poor</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>StatQualityState</Type>
+        <Name>StarWithScale.StatQualityState</Name>
+        <Value xsi:type="xsd:string">Poor</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>StatQualityState</Type>
+        <Name>WeightWithScale.StatQualityState</Name>
+        <Value xsi:type="xsd:string">Poor</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>BestDemoState</Name>
+      <Variable>
+        <Type>StatQualityState</Type>
+        <Name>LengthWithScale.StatQualityState</Name>
+        <Value xsi:type="xsd:string">Best</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>StatQualityState</Type>
+        <Name>StarWithScale.StatQualityState</Name>
+        <Value xsi:type="xsd:string">Best</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>StatQualityState</Type>
+        <Name>WeightWithScale.StatQualityState</Name>
+        <Value xsi:type="xsd:string">Best</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
+  <Instance>
+    <Name>LengthWithScale</Name>
+    <BaseType>subcomponent\CatchStatWithScale</BaseType>
+  </Instance>
   <Instance>
     <Name>SingleBarFrameInstance</Name>
     <BaseType>SingleBarFrame</BaseType>
   </Instance>
   <Instance>
-    <Name>SpriteInstance</Name>
+    <Name>FishSprite</Name>
     <BaseType>Sprite</BaseType>
   </Instance>
   <Instance>
-    <Name>TextInstance</Name>
+    <Name>TextFishName</Name>
     <BaseType>Text</BaseType>
   </Instance>
   <Instance>
@@ -1227,60 +713,16 @@
     <BaseType>Sprite</BaseType>
   </Instance>
   <Instance>
-    <Name>InfoBarFrame</Name>
-    <BaseType>SingleBarFrame</BaseType>
-  </Instance>
-  <Instance>
-    <Name>textFishLength</Name>
-    <BaseType>Text</BaseType>
-  </Instance>
-  <Instance>
-    <Name>textFishWeight</Name>
-    <BaseType>Text</BaseType>
-  </Instance>
-  <Instance>
-    <Name>textPointValue</Name>
-    <BaseType>Text</BaseType>
-  </Instance>
-  <Instance>
-    <Name>GoldMeasureSpriteInstance</Name>
-    <BaseType>icons\GoldMeasureSprite</BaseType>
-  </Instance>
-  <Instance>
-    <Name>GoldScaleSpriteInstance</Name>
-    <BaseType>icons\GoldScaleSprite</BaseType>
-  </Instance>
-  <Instance>
-    <Name>GoldStarSpriteInstance</Name>
-    <BaseType>icons\GoldStarSprite</BaseType>
-  </Instance>
-  <Instance>
     <Name>CatchStats</Name>
     <BaseType>Container</BaseType>
   </Instance>
   <Instance>
-    <Name>CatchIconsContainer</Name>
-    <BaseType>Container</BaseType>
+    <Name>WeightWithScale</Name>
+    <BaseType>subcomponent\CatchStatWithScale</BaseType>
   </Instance>
   <Instance>
-    <Name>LengthScale</Name>
-    <BaseType>LinearScaleContainer</BaseType>
-  </Instance>
-  <Instance>
-    <Name>StatScalesContainer</Name>
-    <BaseType>Container</BaseType>
-  </Instance>
-  <Instance>
-    <Name>TextContainer</Name>
-    <BaseType>Container</BaseType>
-  </Instance>
-  <Instance>
-    <Name>WeightScale</Name>
-    <BaseType>LinearScaleContainer</BaseType>
-  </Instance>
-  <Instance>
-    <Name>PointScale</Name>
-    <BaseType>LinearScaleContainer</BaseType>
+    <Name>StarWithScale</Name>
+    <BaseType>subcomponent\CatchStatWithScale</BaseType>
   </Instance>
   <Behaviors />
 </ComponentSave>

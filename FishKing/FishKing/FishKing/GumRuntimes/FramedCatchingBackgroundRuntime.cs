@@ -201,6 +201,7 @@ namespace FishKing.GumRuntimes
             textFishChangeInY.Text = $"ChangeY: {changeInY}";
             textFishRotation.Text = $"Rotation: {rotation}";
             textFightLuck.Text = $"FightLuck: {fightOrLuckVelocity}";
+            textFishName.Text = $"Name: {AttachedFish.Name}";
         }
 #endif
 

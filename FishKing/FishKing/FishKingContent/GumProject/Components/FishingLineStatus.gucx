@@ -1265,6 +1265,12 @@
         <Value xsi:type="xsd:float">50</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>StressBrackets.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
     </State>
   </Category>
   <Instance>

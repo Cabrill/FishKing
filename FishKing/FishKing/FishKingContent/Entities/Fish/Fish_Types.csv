@@ -1,3 +1,17 @@
-"Name (string, required)",MaxGrams (int),MaxMM (int),AvgMM (int),RarityRanking (int),Speed (int),Fight (int),InRiver (bool),InOcean (bool),InDeepOcean (bool),InWaterfall (bool),InPond (bool),InLake (bool)
-Coho Salmon,1600,710,227,50,5,50,TRUE,TRUE,FALSE,FALSE,FALSE,FALSE
-Paradise Fish,500,100,55,3,10,1,FALSE,FALSE,FALSE,TRUE,TRUE,FALSE
+"Name (string, required)",MaxPoints(int),MaxGrams (int),MaxMM (int),AvgMM (int),Speed (int),Fight (int),InRiver (int),InOcean (int),InDeepOcean (int),InWaterfall (int),InPond (int),InLake (int),Row (int),Col (int)
+Coho Salmon,10,16000,710,227,5,50,50,30,0,0,0,0,0,0
+Paradise Fish,20,500,100,55,10,1,0,0,0,30,10,0,1,0
+Clown Fish,20,700,180,10,20,30,0,5,0,0,0,0,2,0
+Conger Eel,60,110000,1800,1500,50,100,0,0,5,0,0,0,3,0
+Shark,75,110000,1800,1500,100,100,0,1,3,0,0,0,4,0
+Lake Trout,30,46300,1300,610,35,40,10,0,0,0,0,50,5,0
+Koi,50,10886,1500,610,15,30,0,0,0,30,20,0,6,0
+Smallmouth Bass,25,5443,300,406,30,60,10,0,0,0,0,30,7,0
+Largemouth Bass,30,11400,750,482,35,80,0,0,0,25,0,25,8,0
+Goldfish,5,210,300,76,60,5,0,0,0,10,30,0,9,0
+Sailfish,50,90000,3000,1500,100,60,0,0,30,0,0,0,10,0
+Swordfish,60,536000,4550,3000,70,100,0,0,10,0,0,0,11,0
+Bluefin Tuna,45,679000,3700,2000,100,50,0,10,40,0,0,0,12,0
+Minnow,3,75,90,60,100,1,20,0,0,5,30,0,13,0
+Carp,5,45000,1100,310,30,30,20,0,0,10,20,40,14,0
+Sturgeon,30,780000,4000,2500,25,75,10,10,0,0,0,15,15,0

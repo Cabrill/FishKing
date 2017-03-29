@@ -251,6 +251,15 @@
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
         </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/GameScreenGum.gusx</SourceFile>
+          <SourceName>FishCatchDisplayInstance (FishKing.GumRuntimes.FishCatchDisplayRuntime)</SourceName>
+          <InstanceName>FishCatchDisplayInstance</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
       </NamedObjects>
     </ScreenSave>
     <ScreenSave>
@@ -938,7 +947,7 @@
           </Properties>
           <Name>ImmediatelyStartFishing</Name>
           <Type>bool</Type>
-          <DefaultValue xsi:type="xsd:boolean">true</DefaultValue>
+          <DefaultValue xsi:type="xsd:boolean">false</DefaultValue>
           <IsShared>true</IsShared>
         </CustomVariable>
         <CustomVariable>
@@ -950,7 +959,7 @@
           </Properties>
           <Name>ShowFishDebugText</Name>
           <Type>bool</Type>
-          <DefaultValue xsi:type="xsd:boolean">false</DefaultValue>
+          <DefaultValue xsi:type="xsd:boolean">true</DefaultValue>
           <IsShared>true</IsShared>
         </CustomVariable>
         <CustomVariable>
@@ -962,7 +971,7 @@
           </Properties>
           <Name>FishShouldImmediatelyEscape</Name>
           <Type>bool</Type>
-          <DefaultValue xsi:type="xsd:boolean">true</DefaultValue>
+          <DefaultValue xsi:type="xsd:boolean">false</DefaultValue>
           <IsShared>true</IsShared>
         </CustomVariable>
       </CustomVariables>
@@ -1172,6 +1181,7 @@
           </Properties>
           <Name>FishType</Name>
           <Type>FishKing.DataTypes.Fish_Types</Type>
+          <CreatesEvent>true</CreatesEvent>
         </CustomVariable>
         <CustomVariable>
           <Properties>
@@ -1209,6 +1219,7 @@
           </Properties>
           <Name>SpriteInstanceTexture</Name>
           <Type>Texture2D</Type>
+          <DefaultValue xsi:type="xsd:string">allfish</DefaultValue>
           <SourceObject>SpriteInstance</SourceObject>
           <SourceObjectProperty>Texture</SourceObjectProperty>
         </CustomVariable>
@@ -1263,6 +1274,36 @@
           <Name>IsSmall</Name>
           <Type>bool</Type>
         </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>int</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>Points</Name>
+          <Type>int</Type>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>string</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>LengthDisplay</Name>
+          <Type>string</Type>
+        </CustomVariable>
+        <CustomVariable>
+          <Properties>
+            <PropertySave>
+              <Name>Type</Name>
+              <ValueAsString>string</ValueAsString>
+            </PropertySave>
+          </Properties>
+          <Name>WeightDisplay</Name>
+          <Type>string</Type>
+        </CustomVariable>
       </CustomVariables>
       <ImplementsIDrawableBatch>false</ImplementsIDrawableBatch>
       <Name>Entities\Fish</Name>
@@ -1285,13 +1326,7 @@
       </NamedObjects>
       <ReferencedFiles>
         <ReferencedFileSave>
-          <Name>GlobalContent/FishImages/ParadiseFish.png</Name>
-          <IsSharedStatic>true</IsSharedStatic>
-          <RuntimeType>Microsoft.Xna.Framework.Graphics.Texture2D</RuntimeType>
-          <ProjectsToExcludeFrom />
-        </ReferencedFileSave>
-        <ReferencedFileSave>
-          <Name>GlobalContent/FishImages/CohoSalmon.png</Name>
+          <Name>GumProject/allfish.png</Name>
           <IsSharedStatic>true</IsSharedStatic>
           <RuntimeType>Microsoft.Xna.Framework.Graphics.Texture2D</RuntimeType>
           <ProjectsToExcludeFrom />
@@ -1299,6 +1334,13 @@
       </ReferencedFiles>
       <CreatedByOtherEntities>true</CreatedByOtherEntities>
       <UseGlobalContent>true</UseGlobalContent>
+      <Events>
+        <EventResponseSave>
+          <EventName>AfterFishTypeSet</EventName>
+          <SourceVariable>FishType</SourceVariable>
+          <BeforeOrAfter>After</BeforeOrAfter>
+        </EventResponseSave>
+      </Events>
       <Is2D>true</Is2D>
     </EntitySave>
     <EntitySave>
@@ -1486,19 +1528,13 @@
       <ProjectsToExcludeFrom />
     </ReferencedFileSave>
     <ReferencedFileSave>
-      <Name>GlobalContent/FishImages/ParadiseFish.png</Name>
-      <IsSharedStatic>true</IsSharedStatic>
-      <HasPublicProperty>true</HasPublicProperty>
-      <ProjectsToExcludeFrom />
-    </ReferencedFileSave>
-    <ReferencedFileSave>
       <Name>FRBArt.png</Name>
       <IsSharedStatic>true</IsSharedStatic>
       <HasPublicProperty>true</HasPublicProperty>
       <ProjectsToExcludeFrom />
     </ReferencedFileSave>
     <ReferencedFileSave>
-      <Name>GlobalContent/FishImages/CohoSalmon.png</Name>
+      <Name>GumProject/allfish.png</Name>
       <IsSharedStatic>true</IsSharedStatic>
       <HasPublicProperty>true</HasPublicProperty>
       <ProjectsToExcludeFrom />

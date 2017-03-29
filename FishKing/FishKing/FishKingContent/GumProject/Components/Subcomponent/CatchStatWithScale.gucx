@@ -99,14 +99,14 @@
     <Variable>
       <Type>float</Type>
       <Name>Height</Name>
-      <Value xsi:type="xsd:float">43</Value>
+      <Value xsi:type="xsd:float">19</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>Height Units</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -125,13 +125,13 @@
     <Variable>
       <Type>float</Type>
       <Name>LinearScaleContainerInstance.Width</Name>
-      <Value xsi:type="xsd:float">54</Value>
+      <Value xsi:type="xsd:float">60</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>LinearScaleContainerInstance.X</Name>
-      <Value xsi:type="xsd:float">45</Value>
+      <Value xsi:type="xsd:float">40</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -196,7 +196,7 @@
     <Variable>
       <Type>float</Type>
       <Name>SpriteInstance.Height</Name>
-      <Value xsi:type="xsd:float">92</Value>
+      <Value xsi:type="xsd:float">80</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -251,7 +251,7 @@
     <Variable>
       <Type>float</Type>
       <Name>SpriteInstance.Width</Name>
-      <Value xsi:type="xsd:float">20</Value>
+      <Value xsi:type="xsd:float">15</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -267,9 +267,21 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>SpriteInstance.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>SpriteInstance.Y</Name>
-      <Value xsi:type="xsd:float">1</Value>
+      <Value xsi:type="xsd:float">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>SpriteInstance.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -296,13 +308,13 @@
     <Variable>
       <Type>float</Type>
       <Name>TextStatValue.Font Scale</Name>
-      <Value xsi:type="xsd:float">0.25</Value>
+      <Value xsi:type="xsd:float">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>TextStatValue.FontSize</Name>
-      <Value xsi:type="xsd:int">36</Value>
+      <Value xsi:type="xsd:int">24</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -324,6 +336,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>int</Type>
+      <Name>TextStatValue.OutlineThickness</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>TextStatValue.Parent</Name>
       <Value xsi:type="xsd:string">ColoredRectangleInstance</Value>
@@ -333,18 +351,19 @@
       <Type>string</Type>
       <Name>TextStatValue.Text</Name>
       <Value xsi:type="xsd:string">33.5cm</Value>
+      <ExposedAsName>StatValueText</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
       <Name>TextStatValue.VerticalAlignment</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>TextStatValue.Width</Name>
-      <Value xsi:type="xsd:float">44.5</Value>
+      <Value xsi:type="xsd:float">40</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -368,7 +387,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TextStatValue.Y</Name>
-      <Value xsi:type="xsd:float">50</Value>
+      <Value xsi:type="xsd:float">30</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -392,14 +411,14 @@
     <Variable>
       <Type>float</Type>
       <Name>Width</Name>
-      <Value xsi:type="xsd:float">150</Value>
+      <Value xsi:type="xsd:float">100</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>Width Units</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -412,8 +431,9 @@
     <Variable>
       <Type>float</Type>
       <Name>X</Name>
+      <Value xsi:type="xsd:float">-3</Value>
       <Category>Position</Category>
-      <SetsValue>false</SetsValue>
+      <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>HorizontalAlignment</Type>
@@ -432,8 +452,9 @@
     <Variable>
       <Type>float</Type>
       <Name>Y</Name>
+      <Value xsi:type="xsd:float">-4</Value>
       <Category>Position</Category>
-      <SetsValue>false</SetsValue>
+      <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
@@ -535,8 +556,8 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>TextStatValue.Red</Name>
-        <Value xsi:type="xsd:int">255</Value>
+        <Name>TextStatValue.Blue</Name>
+        <Value xsi:type="xsd:int">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -547,8 +568,8 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>TextStatValue.Blue</Name>
-        <Value xsi:type="xsd:int">0</Value>
+        <Name>TextStatValue.Red</Name>
+        <Value xsi:type="xsd:int">255</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -568,8 +589,8 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>TextStatValue.Red</Name>
-        <Value xsi:type="xsd:int">127</Value>
+        <Name>TextStatValue.Blue</Name>
+        <Value xsi:type="xsd:int">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -580,8 +601,8 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>TextStatValue.Blue</Name>
-        <Value xsi:type="xsd:int">0</Value>
+        <Name>TextStatValue.Red</Name>
+        <Value xsi:type="xsd:int">127</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

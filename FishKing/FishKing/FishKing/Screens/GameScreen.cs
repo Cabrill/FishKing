@@ -254,7 +254,10 @@ namespace FishKing.Screens
                             if (!CharacterInstance.IsPullingInCatch && !CharacterInstance.IsDisplayingCatch)
                             {
                                 CharacterInstance.HandleFishCaught();
-                            } 
+                            } else if(CharacterInstance.IsDisplayingCatch && CharacterInstance.IsOnFinalFrameOfAnimationChain && !FishCatchDisplayInstance.Visible)
+                            {
+                                FishCatchDisplayInstance.ShowFish(CharacterInstance.FishOnTheLine);
+                            }
                         }
                         else
                         {
@@ -301,6 +304,7 @@ namespace FishKing.Screens
             FishCatchingInterfaceInstance.Visible = CharacterInstance.HasInitiatedCatching && !FishCatchingInterfaceInstance.IsFishCaught;
             ProgressBarInstance.Visible = CharacterInstance.IsOnWindUp;
             TargetingSpriteInstance.Visible = CharacterInstance.IsOnWindUp;
+            FishCatchDisplayInstance.Visible = (CharacterInstance.IsDisplayingCatch && CharacterInstance.IsOnFinalFrameOfAnimationChain);
         }
 
         private void ShowDialog(string stringId)

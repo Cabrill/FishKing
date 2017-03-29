@@ -467,6 +467,66 @@
     </Variable>
     <Variable>
       <Type>int</Type>
+      <Name>textFishName.Blue</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>textFishName.Font Scale</Name>
+      <Value xsi:type="xsd:float">0.5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>textFishName.FontSize</Name>
+      <Value xsi:type="xsd:int">36</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>textFishName.Green</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>textFishName.Parent</Name>
+      <Value xsi:type="xsd:string">DebugContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>textFishName.Red</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>textFishName.Text</Name>
+      <Value xsi:type="xsd:string">Fish Name:</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>textFishName.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>textFishName.X</Name>
+      <Value xsi:type="xsd:float">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>textFishName.Y</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
       <Name>textFishRotation.Blue</Name>
       <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
@@ -1100,6 +1160,10 @@
   </Instance>
   <Instance>
     <Name>textFightLuck</Name>
+    <BaseType>Text</BaseType>
+  </Instance>
+  <Instance>
+    <Name>textFishName</Name>
     <BaseType>Text</BaseType>
   </Instance>
   <Behaviors />
