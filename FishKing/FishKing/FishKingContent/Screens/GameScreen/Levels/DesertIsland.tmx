@@ -733,6 +733,16 @@
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
   </tile>
+  <tile id="1394">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1397">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
   <tile id="1398">
    <properties>
     <property name="IsBridge" type="bool" value="true"/>
@@ -797,6 +807,16 @@
    </properties>
   </tile>
   <tile id="1457">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1458">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1461">
    <properties>
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
