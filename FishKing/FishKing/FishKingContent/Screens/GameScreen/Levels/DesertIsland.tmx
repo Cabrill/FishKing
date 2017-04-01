@@ -992,17 +992,17 @@
   </tile>
   <tile id="1646">
    <properties>
-    <property name="IsBridge" type="bool" value="true"/>
+    <property name="HasCollision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="1647">
    <properties>
-    <property name="IsBridge" type="bool" value="true"/>
+    <property name="HasCollision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="1648">
    <properties>
-    <property name="IsBridge" type="bool" value="true"/>
+    <property name="HasCollision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="1649">
@@ -1374,7 +1374,7 @@
  </layer>
  <layer name="Overlay" width="40" height="40">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2WTQqCUBRGnyCP1mCuoFpIOwjUcUENazXVuGb9uJJmQTVtWtYK+sQHZmhCUvdK98DBhwM5XN4FlfqcbiP/vQOb0K3w7W/iQR8G1CEFTOEMzqlDCjjAIzxRhxTgWLh/0LWoS/Lx0OXD4KWvZSvVhh2bposbQ63USFNXCJSca7AL0pilj50dMN7bBdqWjPuq0PvxXdzprGXsa7ArgiAIgiD8H2PzHzPR6VkoZ2VmtTHPUKdnDlxMS/TUFDHqe0c827WZ51Yns+VEPNurTuZ5g3dmfYKQxwP4fGWaABkAAA==
+   H4sIAAAAAAAAC+3WTwqCQBQG8BHk0RnME1QH6QaBui6oZZ2mWteuP56kXVBt25Z1gj5xwgxFSOqN9H7w4eBCP54zoFKf6zby7ztIE3ErPPubPMRHAu4iBabIDJlzFylwQI7IibtIAcfC/kNci7tJPg+9fCR469eylWojHZunl2mGpNSIuFsITucanAXpmNXHmR0YfG4X6LY0uF8VvR/vxR1lU2Zfg7MihBBCiP8z1v8xE0rXotxKz2qjryGl6yfOeV70u6OXDlFNvm8827We55aS2Zoknu2VknnekLth/YTI8wB2BKpnABkAAA==
   </data>
  </layer>
  <objectgroup name="Object Layer 1">

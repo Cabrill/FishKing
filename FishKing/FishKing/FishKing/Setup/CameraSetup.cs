@@ -35,7 +35,7 @@ namespace FishKing
 					graphicsDeviceManager.SupportedOrientations = DisplayOrientation.LandscapeLeft | DisplayOrientation.LandscapeRight;
 				}
 				#endif
-				cameraToSetUp.UsePixelCoordinates(false, 1280, 720);
+				cameraToSetUp.UsePixelCoordinates(false, 640, 360);
 			}
 			internal static void ResetCamera (Camera cameraToReset)
 			{
