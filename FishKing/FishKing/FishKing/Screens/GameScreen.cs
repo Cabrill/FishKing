@@ -34,7 +34,7 @@ namespace FishKing.Screens
 {
 	public partial class GameScreen
 	{
-        static string levelToLoad = "BasicIsland";
+        static string levelToLoad = "DesertIsland";
         static string startPointName = "FirstSpawn";
 
         bool CanMoveCharacter
