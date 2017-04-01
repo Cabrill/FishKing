@@ -137,7 +137,7 @@ namespace FishKing.Screens
 
             this.CharacterInstance.ActionInput = InputManager.Keyboard.GetKey(Keys.Space);
             this.CharacterInstance.FishingAlignmentInput = InputManager.Mouse.GetButton(Mouse.MouseButtons.LeftButton);
-            this.CharacterInstance.Position.Z = CurrentTileMap.MapLayers.Count + 1;
+            this.CharacterInstance.Position.Z = CurrentTileMap.MapLayers.Count - 3;
 
         }
 

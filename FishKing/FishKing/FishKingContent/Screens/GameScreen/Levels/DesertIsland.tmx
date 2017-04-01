@@ -608,21 +608,6 @@
     <frame tileid="1029" duration="250"/>
    </animation>
   </tile>
-  <tile id="1065">
-   <properties>
-    <property name="HasCollision" type="bool" value="true"/>
-   </properties>
-  </tile>
-  <tile id="1066">
-   <properties>
-    <property name="HasCollision" type="bool" value="true"/>
-   </properties>
-  </tile>
-  <tile id="1067">
-   <properties>
-    <property name="HasCollision" type="bool" value="true"/>
-   </properties>
-  </tile>
   <tile id="1093">
    <properties>
     <property name="IsOcean" type="bool" value="true"/>
@@ -986,16 +971,6 @@
    </properties>
   </tile>
   <tile id="1640">
-   <properties>
-    <property name="HasCollision" type="bool" value="true"/>
-   </properties>
-  </tile>
-  <tile id="1641">
-   <properties>
-    <property name="HasCollision" type="bool" value="true"/>
-   </properties>
-  </tile>
-  <tile id="1642">
    <properties>
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
@@ -1394,22 +1369,22 @@
    <property name="HasCollision" type="bool" value="true"/>
   </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2XSQrCMBSGn6ClXsNpoeLCQ3gWqVK1C6/gcAtdOOPChVdwuIXzzoUn8AcVJGpstbRR3gcfpJA0P6/pgxC9JhcgaulEbf3ybIQkk6/kbczpaUR97TLu4N1dmHu/7CkrrF3DDdy67A7u4UH/MNyVSJgoCmMOvCGbE4eJ8Ot9f5kazkcdNmBT8zvNIzNkmsMFXLqULxkkSsF00J33uY2BXAVY9CifgboWHNR2gFxDOPIo3wDZhgqeTYZhfpc99xSGYRRiLNzrJjbueV5yFPKcFMuXEXp6VrEez/X7DhXqZ2LPEizDCrTuxlMhjx/1E3uIDD/qJ35DGX7Uz8SeJViGFWjdjasKnD8Zqv+/z2rLMMx/cwZwlNZWABkAAA==
+   H4sIAAAAAAAAC+2XSQrCMBSGn1BLvYbT0oWH6FlExaELr+BwC104VHHhwis43MJ558IT+IMKEmucm6jvgw9SSJqfl/RBia5jB4jqFlHDOjyng5LJR1J3zGmbRB3zMG7i3S1o317myQxr53ABl292BddwYz0Z7kg4RBSB0Qc8IZsTg/HQ9X2/mTLuRwVWYc1UneaSETKN4QRONcz3CdIGUQZmDdVJvHGRqwt7PuVzce7dPzl7hmH8Yc09hWEYjegL/3WDO/7z/GQr5Nlpli8h9PSkZj2e6/caOtQvhz3zsACL0DkbD4U8Kuon9hAZKuonnqEMFfXLYc88LMAidM7GJQ3unwzdv1+v2jIM89vsAfeoVhcAGQAA
   </data>
  </layer>
  <layer name="Overlay" width="40" height="40">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3WTwqCQBgF8BHiozOYB+oGgbquA9RpqnXt+neZoNq6LesEPXHAgjEpqfmg94OHgwt9PFxozOf6Xff9EOkhUYtnf1OMJEjqu0iNKTJD5r6L1DggR+Tku0iNMMD3h0SB7yZuMXolSKq0H5EWWcd3g2bs+Gwoxozkd+971wLdlor7tTFQ/i3ulfcjIiKi/zS2/4YTqc7UbGW32tjrTqqzBmfbJX/olCvq90qx7druuZVyW02KbS9S7nlFbsr6EbncAWWJwMcAGQAA
+   H4sIAAAAAAAAC+2WTQqCUBRGnyCP1mCuoFpIOwjUcUENazXVuGb9uJJmQTVtWtYK+sQHZmhCUvdK98DBhwM5XN4FlfqcbiP/vQOb0K3w7W/iQR8G1CEFTOEMzqlDCjjAIzxRhxTgWLh/0LWoS/Lx0OXD4KWvZSvVhh2bposbQ63USFNXCJSca7AL0pilj50dMN7bBdqWjPuq0PvxXdzprGXsa7ArgiAIgiD8H2PzHzPR6VkoZ2VmtTHPUKdnDlxMS/TUFDHqe0c827WZ51Yns+VEPNurTuZ5g3dmfYKQxwP4fGWaABkAAA==
   </data>
  </layer>
  <objectgroup name="Object Layer 1">
-  <object id="1" gid="1799" x="735" y="450.5" width="32" height="32">
+  <object id="1" gid="1799" x="736" y="448" width="32" height="32">
    <properties>
     <property name="EntityToCreate" value="StartPoint"/>
     <property name="Name" value="FirstSpawn"/>
    </properties>
   </object>
-  <object id="2" gid="1800" x="730.333" y="89" width="32" height="32">
+  <object id="2" gid="1800" x="729.625" y="96.25" width="32" height="32">
    <properties>
     <property name="EntityToCreate" value="MapNavigationTrigger"/>
     <property name="StartPointName" value="CaveEntrance"/>
