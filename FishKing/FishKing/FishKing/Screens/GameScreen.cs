@@ -22,6 +22,7 @@ using FishKing.DataTypes;
 using System.Collections.Specialized;
 using System.Linq;
 using FlatRedBall.TileCollisions;
+using FishKing.TileCollisions;
 
 #if FRB_XNA || SILVERLIGHT
 using Keys = Microsoft.Xna.Framework.Input.Keys;
@@ -57,8 +58,23 @@ namespace FishKing.Screens
 
         private void AddCollisions()
         {
-            var collisions = new List<String>() { "Water", "Cliffside", "CliffsideLeft", "CliffsideRight" };
-            SolidCollisions.AddCollisionFrom(BasicIsland, collisions);
+            SolidCollisions.AddCollisionFrom(CurrentTileMap,
+                 (list => 
+                 list.Any(item => item.Name == "HasCollision") ));
+
+            var collisionLayers = new System.Collections.Generic.List<string>() { "Walls", "Water" };
+            SolidCollisions.AddCollisionsFromLayer(CurrentTileMap, collisionLayers);
+        }
+
+        private void RemoveCollisions()
+        {
+            var nonCollisionLayers = new System.Collections.Generic.List<string>() { "Bridge"};
+            SolidCollisions.RemoveCollisionsFromLayer(CurrentTileMap, nonCollisionLayers);
+
+            //SolidCollisions.RemoveCollisionFrom(CurrentTileMap,
+            //    (List => 
+            //    List.Any(item => item.Name == "IsBridge")
+            //    ));
         }
 
         private void HandleNewNpc(object sender, NotifyCollectionChangedEventArgs e)
@@ -73,6 +89,7 @@ namespace FishKing.Screens
         {
             InitializeLevel(levelToLoad);
             AddCollisions();
+            RemoveCollisions();
             AdjustCamera();
             AdjustNpcs();
 
@@ -120,11 +137,13 @@ namespace FishKing.Screens
 
             this.CharacterInstance.ActionInput = InputManager.Keyboard.GetKey(Keys.Space);
             this.CharacterInstance.FishingAlignmentInput = InputManager.Mouse.GetButton(Mouse.MouseButtons.LeftButton);
+            this.CharacterInstance.Position.Z = CurrentTileMap.MapLayers.Count + 1;
 
         }
 
         void CustomActivity(bool firstTimeCalled)
 		{
+            UpdateCamera();
             DialogActivity();
             FishingActivity();
 
@@ -139,6 +158,19 @@ namespace FishKing.Screens
 
             CollisionActivity();
 		}
+
+        private void UpdateCamera()
+        {
+            Camera camera = SpriteManager.Camera;
+            camera.X = this.CharacterInstance.X;
+            camera.Y = this.CharacterInstance.Y;
+            // assuming CameraMinX, CameraMaxX, CameraMinY, and CameraMaxY are all defined:
+            //camera.X = Math.Max(CameraMinX, camera.X);
+            //camera.X = Math.Min(CameraMaxX, camera.X);
+            //camera.Y = Math.Max(CameraMinY, camera.Y);
+            //camera.Y = Math.Min(CameraMaxY, camera.Y);
+
+        }
 
         private void DialogActivity()
         {
