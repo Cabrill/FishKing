@@ -92,13 +92,13 @@ namespace FishKing.GumRuntimes
             FishFight = GlobalContent.Fish_Types[AttachedFish.FishType.Name].Fight;
             FishSpeed = GlobalContent.Fish_Types[AttachedFish.FishType.Name].Speed;
 
-            SpeedModifier = 0.25f + ((float)FishSpeed / 50);
-            FightModifier = 1f + ((float)FishFight / 50);
+            SpeedModifier = 0.25f + ((float)FishSpeed / 100);
+            FightModifier = 1f + ((float)FishFight / 100);
 
-            ChanceOfFight = (double)FishFight / 2000;
+            ChanceOfFight = (double)FishFight / 3000;
             ChanceOfLuck = 0.001;
 
-            FishHorizontalMovementTweenDuration = (double)3 - (FishSpeed / 35);
+            FishHorizontalMovementTweenDuration = (double)3 - (FishSpeed / 50);
 
             UnknownFishInstance.XOrigin = RenderingLibrary.Graphics.HorizontalAlignment.Left;
             UnknownFishInstance.YOrigin = RenderingLibrary.Graphics.VerticalAlignment.Center;
@@ -119,7 +119,7 @@ namespace FishKing.GumRuntimes
 
         private float DetermineUnknownFishWidth(int fishLengthMM)
         {
-            var normalizedLength = Decimal.Divide(fishLengthMM, FishGenerator.MaximumLengthMM);
+            var normalizedLength = Decimal.Divide(Math.Min(fishLengthMM,1000), 1000);
             var fishWidth = Math.Max(MinUnknownFishSpriteWidth,
                 (float)(normalizedLength * MaxUnknownFishSpriteWidth));
 

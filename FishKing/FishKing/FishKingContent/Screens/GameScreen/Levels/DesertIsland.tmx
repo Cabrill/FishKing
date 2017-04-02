@@ -421,13 +421,13 @@
     <property name="IsLake" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="597" duration="200"/>
+    <frame tileid="597" duration="150"/>
     <frame tileid="596" duration="200"/>
-    <frame tileid="594" duration="200"/>
-    <frame tileid="595" duration="200"/>
-    <frame tileid="533" duration="200"/>
-    <frame tileid="531" duration="200"/>
-    <frame tileid="533" duration="200"/>
+    <frame tileid="594" duration="250"/>
+    <frame tileid="595" duration="150"/>
+    <frame tileid="533" duration="250"/>
+    <frame tileid="531" duration="150"/>
+    <frame tileid="533" duration="250"/>
     <frame tileid="534" duration="200"/>
    </animation>
   </tile>
@@ -455,14 +455,14 @@
     <property name="IsLake" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="598" duration="200"/>
-    <frame tileid="661" duration="200"/>
-    <frame tileid="660" duration="200"/>
-    <frame tileid="659" duration="200"/>
-    <frame tileid="658" duration="200"/>
-    <frame tileid="662" duration="200"/>
-    <frame tileid="660" duration="200"/>
-    <frame tileid="661" duration="200"/>
+    <frame tileid="598" duration="250"/>
+    <frame tileid="661" duration="100"/>
+    <frame tileid="660" duration="150"/>
+    <frame tileid="659" duration="225"/>
+    <frame tileid="658" duration="250"/>
+    <frame tileid="662" duration="150"/>
+    <frame tileid="660" duration="100"/>
+    <frame tileid="661" duration="150"/>
    </animation>
   </tile>
   <tile id="604">
@@ -489,14 +489,14 @@
     <property name="IsLake" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="597" duration="200"/>
-    <frame tileid="596" duration="200"/>
-    <frame tileid="594" duration="200"/>
-    <frame tileid="595" duration="200"/>
-    <frame tileid="531" duration="200"/>
-    <frame tileid="595" duration="200"/>
-    <frame tileid="594" duration="200"/>
-    <frame tileid="596" duration="200"/>
+    <frame tileid="597" duration="250"/>
+    <frame tileid="596" duration="150"/>
+    <frame tileid="594" duration="100"/>
+    <frame tileid="595" duration="250"/>
+    <frame tileid="531" duration="125"/>
+    <frame tileid="595" duration="275"/>
+    <frame tileid="594" duration="250"/>
+    <frame tileid="596" duration="100"/>
    </animation>
   </tile>
   <tile id="669">
@@ -695,12 +695,12 @@
     <property name="IsOcean" type="bool" value="true"/>
    </properties>
    <animation>
+    <frame tileid="1348" duration="250"/>
+    <frame tileid="1349" duration="250"/>
     <frame tileid="1344" duration="250"/>
     <frame tileid="1345" duration="250"/>
     <frame tileid="1346" duration="250"/>
     <frame tileid="1347" duration="250"/>
-    <frame tileid="1348" duration="250"/>
-    <frame tileid="1349" duration="250"/>
    </animation>
   </tile>
   <tile id="1383">
@@ -841,12 +841,12 @@
     <property name="IsOcean" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="1472" duration="250"/>
-    <frame tileid="1473" duration="250"/>
-    <frame tileid="1474" duration="250"/>
     <frame tileid="1475" duration="250"/>
     <frame tileid="1476" duration="250"/>
     <frame tileid="1477" duration="250"/>
+    <frame tileid="1472" duration="250"/>
+    <frame tileid="1473" duration="250"/>
+    <frame tileid="1474" duration="250"/>
    </animation>
   </tile>
   <tile id="1513">
@@ -1118,6 +1118,30 @@
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
   </tile>
+  <tile id="1709">
+   <animation>
+    <frame tileid="1709" duration="300"/>
+    <frame tileid="1837" duration="100"/>
+    <frame tileid="1965" duration="100"/>
+    <frame tileid="1709" duration="1000"/>
+   </animation>
+  </tile>
+  <tile id="1711">
+   <animation>
+    <frame tileid="1711" duration="300"/>
+    <frame tileid="1839" duration="100"/>
+    <frame tileid="1967" duration="100"/>
+    <frame tileid="1711" duration="1000"/>
+   </animation>
+  </tile>
+  <tile id="1713">
+   <animation>
+    <frame tileid="1713" duration="300"/>
+    <frame tileid="1841" duration="100"/>
+    <frame tileid="1969" duration="100"/>
+    <frame tileid="1713" duration="1000"/>
+   </animation>
+  </tile>
   <tile id="1733">
    <properties>
     <property name="IsOcean" type="bool" value="true"/>
@@ -1150,6 +1174,27 @@
    <properties>
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
+  </tile>
+  <tile id="1773">
+   <animation>
+    <frame tileid="1773" duration="250"/>
+    <frame tileid="1901" duration="250"/>
+    <frame tileid="2029" duration="250"/>
+   </animation>
+  </tile>
+  <tile id="1775">
+   <animation>
+    <frame tileid="1775" duration="250"/>
+    <frame tileid="1903" duration="250"/>
+    <frame tileid="2031" duration="250"/>
+   </animation>
+  </tile>
+  <tile id="1777">
+   <animation>
+    <frame tileid="1777" duration="250"/>
+    <frame tileid="1905" duration="250"/>
+    <frame tileid="2033" duration="250"/>
+   </animation>
   </tile>
   <tile id="1797">
    <properties>
@@ -1368,12 +1413,12 @@
    <property name="IsWater" type="bool" value="true"/>
   </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC83WUXKDIBAGYJJUkve89LXtXbxAXzyRZ8hTj+MZPE6xgbouu8ACRpj5x5mMbj4Bgf6qVE/lTWW3j06pT5OvTvbcaO7vbyg7+EqaZ6Rswvfe0ziiHG1bWn8xlusztcd1PvlpzfcwGew1x6e71TfhFI7vcNoapb7Fpm9ran+7sN+cMde2l28GxlQfZdvDN5/9xBr8HnAoX+4c1ObZb7XN3aamL6cPl7UU26AvZiT3tkr7G2dzrchY6IvZlvZzXvNu82DmJTZ6659wHYzZnMVdB3uF2bwvmousL9G4fBMwuA3ABVPFZ42TGWut83ywz6AL/hbysfMv8bw1Xbbh+o/KkNB/+HwlPW9Npn6vnxmZOc/5UvqvxOb2pEnbROYsHmdsk/hSbZ6PmIOSluKT2KCvxv7tage/j0B96pxRy4drS33cGQiPb875QnK+oupHbQVGrjblw+vy39qcaiOMrgaXkA36yL3D/p/Iho2R+0I252P3NqZG1AaNhb7g3kvUSLYJUsu3hy1mTPG9Kq37yLnemA8bW/RBY4s2aGzV9p+Wbdh3tCXkO9oR8h1tCOQXodNuSgAZAAA=
+   H4sIAAAAAAAAC83Wy3GDMBAGYBmC7LsvuSbphQZyUUXUwCnlUAPlRBoks6xWb2GkmX889sD6Qw+k8c7YSOWDZbevgbFvmZ8h7b5JXj8+UE7wlTTLSNkSn/tM44RytU21sZeW+5ba47re7LTmm2WE/szx8WH3LTiF4ytuR2OqT9n4Y0/ttQv7zRhzbWf5VmCM9VG2M3xrZyfU4HrAoXy5c5DLe3/ZMU+dmr6cPlTvUmyDvpCR3Nsq7W8um2lFxkJfyKbaX7fnU2d2zEtstN5/ie/BkM1YhHYJ/R3m8LxoLjp9kUa1JmBwE8AHU8WnjYsca87zfHN3NM6d/ZvP55x/keetpT/G1X9URET/4fNV6nlrkfVHvmVyzHmXL6b/Smy83/alheuoc4dn3eNxxrYUX6xN7ZEvX4XzT4wvxQZ9NfZvU9e7Pjz1sa2mD9dN9VE2a3wzxzjlfEXVD9oKjC4b5cPvZZMoG2GENaj4bNBH7h36/6j7nDZsDFznsxmfc29z1AjaoLHQ5917iRrRtoTU8p1hCxljfO9K6z5yrjfmw8YWfdDYog0aW7W90rIN+662+HxXO3y+qw2e/APAggHcABkAAA==
   </data>
  </layer>
  <layer name="Ground" width="40" height="40">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2WTVLbQBCFRTxymROkAmyoJFhUOIfPkIRsAokSLuIrxKwpDL4Ih0hlkx+MqeQQvK6Zxu12W0gzWc6reiXJnp9vWj09Kop2OhkUxdwVxSWuF4Pmq5T+T7oe2HO11WgrrX8XjWm+Z+3b99F2DL797bj5/iI2/1rGZ4g5fvTaMzLbd/SpSs94Cn/q4Dfw0RNtPm97NprjnfOMoxbroff6tud9gH5DuHKr94fhWf/2E/4l/Fu04escPHfwQR/PcAWf4/cPrjtfjT5f4K9uec/jL8olF/1/Bu+Xq2O9LJf96CqZNBtui5sW73eMNn0w7hhrXqh1MxdzWnw0BrWlNsPSv88anpbd2WQMd0TMJNMCz1P4Cr6GZ4GtKX7XvC6xllg2ySc5ZAypFt45z3of2GYb+KZhnTJXqP1eJBvzvUf/icxvEcN7xTsLnBbfPKxTx3yv5X6wZOVgJeaYGry0d/+45Rivwfaq9Ht47tZjnsJHkjn4uE/CHHoui+0U/igYdS0ivq7nhsXH+cO5Y9U8i60Klowy/7gmxzLKHLwSuSP5nmIjc5tbt1q3DxMZOQeJ8Th4ImuO2g+PbGFuyaZ1Kzi7nG0W403h3Vc1p1Z8tFfl+9P8lqgP52LKXiGNVCyP1Zj0/0TUD82/ie/sP/DxN81zvIcX8K7z1nzMPwlx5r3RxJdaCyXbLnzeC3XfaCvzoApnGzGeGJycrynx28jWsNess6cSnGxiSzlLYthI8uzRZ27t1s+5Lt9+qWws6/ti1sAW830Vy8b9+R1Xpe3U76tvkWwkq7Zrx7Lx+FyXY/qvjbHJkWNnZWVlZWVlZWXF6QHTtem7ABkAAA==
+   H4sIAAAAAAAAC+2WS1LbQBCGlXikMidIhbChSLCo5Bw+Q4BsAkQJF/EVIipLCoMv4kOksskDYyo5RP6umcbtphHSDEv9VX9JsufxTU/PI8va6WiYZQuXZRd4ng+bn1L6P+lqaPfVVuNnafW7aEL9PW9fvkDZCfi2N+L6+4vY/GsZnxH6+DFoz8hs31GnzD3jMXzSwW/hd4+U+bTh2aiPfecZxy3GQ/P6fuC9i3ojuHTr73vhW//2E/4l/FuU4ecCPDfwboFvuITP8PsH152vQp3P8Be3euf2l/mKi/4/hbfz9bZ28lU9ekomzYbXbN5ificoU4Bx0xjzUo2buZjT4qM2qCyVGeV+Pit4mndnkzHcFDGTTEt8T+FL+AqeBbam+F3xuMRYYtkkn+SQMaS98MZ51tvANnuAbxrGKXOFym9FsjHfAerXMr9FDG8V7yxwWnyLME4d862W68GSlYOl6GNq8NLa/eNWbbwB2+vcr+GFux/zFD6SzMG7dRL60H1ZbMfwR8Go9yLi63puWHycP5w71p5nsZXBklHmH+/JsYwyBy9F7ki+x9jIXObare/be4mMnIPEeBhcyz1HrYc7ttC3ZNO6FpxdzjaLcZ55F2rPqRQfrVU5f5rfEtXhXExZK6SxiuWhapP+r8X+ofkf4jt9Aj6+07zAPLyEXzlvzcf8dYgzr40mvtS9ULIdwPuBrzDKyjwow9lGjEcGJ+drSvw02zf4bNB8LllnTyk42cSWcpbEsJHk2aPP3MrdP+e63P1S2VjW/WLWwBZzv4pl4/o8x2VuO/V+9RVMdQQbydrbtWPZuH3el+dP1YblyLtBr169evXq1atXrzj9B+M5sfgAGQAA
   </data>
  </layer>
  <layer name="Bridge" width="40" height="40">
@@ -1381,7 +1426,7 @@
    <property name="IsBridge" type="bool" value="true"/>
   </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3TwQnCQBQE0H/ZLSfRShKxkpzUKpKQQhJPxi7sRO3ACQkEPuLFw444Dwb+bYeBNRMRERERFkU0K5Hdkunex9StVjW6NEi7ZLo7on6/4hbXiLDqg9mAnEPqJu/d0euBPEn75fjfG2RL+s+133fY9qtcj9T7ZXj3EOYckZO7Gfa7hDkjcnV36v28yvVg2O8Ttv1E5L+9AAM2pEwAGQAA
+   H4sIAAAAAAAAC+3TwQmDUBAE0L38346mkihW4smkiigWop7ULtJJkg4yoqB8gpccnJB5MLDHYWDNRERERITF2ZslSLpkujN/dKvVDV1KpFoy3TVRv19x92tEWDXOrEU6d3STzx7o9URepP0i/HeMnEj/XPt9h22/POjBsF/h5lyQa3Az7Ne7OQMyBjfDflt50INhvz1s+4nIf3sDeyWvzgAZAAA=
   </data>
  </layer>
  <layer name="Walls" width="40" height="40">
@@ -1389,12 +1434,12 @@
    <property name="HasCollision" type="bool" value="true"/>
   </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2XSQrCMBSGn1BLvYbT0oWH6FlExaELr+BwC104VHHhwis43MJ558IT+IMKEmucm6jvgw9SSJqfl/RBia5jB4jqFlHDOjyng5LJR1J3zGmbRB3zMG7i3S1o317myQxr53ABl292BddwYz0Z7kg4RBSB0Qc8IZsTg/HQ9X2/mTLuRwVWYc1UneaSETKN4QRONcz3CdIGUQZmDdVJvHGRqwt7PuVzce7dPzl7hmH8Yc09hWEYjegL/3WDO/7z/GQr5Nlpli8h9PSkZj2e6/caOtQvhz3zsACL0DkbD4U8Kuon9hAZKuonnqEMFfXLYc88LMAidM7GJQ3unwzdv1+v2jIM89vsAfeoVhcAGQAA
+   H4sIAAAAAAAAC+2XSQrCMBSGn6ClXsNp6cJDeBZRadWFV3C4hS4cqrhw4RUcbuFUdy48gT+oILGtdWqivg8+SCBpfl7SQIjcyYaIWjpRWz/18xGPwWdyPsb0NKK+dmp38O0uzN6f5sgSc1dwDTdvdgttuNOfDHcmFiWKw8QDXvAak4SpqPu630wN56MOG7CpyU5zyxSZZnAOFwrm+wT5MFEBFsOykzhjIdcADgPKZ2HfB3+y9wzDBIPNdwrDMAoxEt51Yx/vvCDZC3kOiuVLC3d6RrE7nuv3GirUz8CaJizBMqxctSdCHhn1E2vkhYz6PZJPRv0MrGnCEizDylW7qsD580L1/9eptgzD/DZHy1djKwAZAAA=
   </data>
  </layer>
  <layer name="Overlay" width="40" height="40">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3WTwqCQBQG8BHk0RnME1QH6QaBui6oZZ2mWteuP56kXVBt25Z1gj5xwgxFSOqN9H7w4eBCP54zoFKf6zby7ztIE3ErPPubPMRHAu4iBabIDJlzFylwQI7IibtIAcfC/kNci7tJPg+9fCR469eylWojHZunl2mGpNSIuFsITucanAXpmNXHmR0YfG4X6LY0uF8VvR/vxR1lU2Zfg7MihBBCiP8z1v8xE0rXotxKz2qjryGl6yfOeV70u6OXDlFNvm8827We55aS2Zoknu2VknnekLth/YTI8wB2BKpnABkAAA==
+   H4sIAAAAAAAAC+2WTwqCQBTGR5BHZzBPUB2kGwTquqCWQYuOUq1r17+TtAuqbduyTtAnTpihCEm9kd4PfszgQj++mQcq9TntWvZzB9ahW+Ld38SDPgy4g+QwgVM44w6SwwEe4Yk7SA6OhfsHXYs7STYecvkweMvXsJVqwpbNk8s0+qTUgLhTCJycKzALkjFNFzPbM3hu58i2MDhfGTo/vos7SlvEvgKzIgiCIAjC/zDS/y9DvY4p2QvFLHVXa71uKdk/4ezzor8dvmQIK3K+Ubcr3eeG4m5NIur2SnGfN3g3LJ8gZPEAwYfz0QAZAAA=
   </data>
  </layer>
  <objectgroup name="Object Layer 1">
