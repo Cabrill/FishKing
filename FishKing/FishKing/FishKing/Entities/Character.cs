@@ -18,6 +18,8 @@ using GuiManager = FlatRedBall.Gui.GuiManager;
 using FlatRedBall.TileCollisions;
 using Microsoft.Xna.Framework;
 using FlatRedBall.Math;
+using FlatRedBall.Glue.StateInterpolation;
+using StateInterpolationPlugin;
 
 #if FRB_XNA || SILVERLIGHT
 using Keys = Microsoft.Xna.Framework.Input.Keys;
@@ -247,12 +249,19 @@ namespace FishKing.Entities
                     if (HasInitiatedCatching)
                     {
                         BobberInstance.BobberSpriteInstanceAnimate = false;
-
-                        if (IsPullingInCatch && IsOnFinalFrameOfAnimationChain)
+                        if (IsPullingInCatch)
                         {
-                            BobberInstance.Visible = false;
+                            if (SpriteInstance.CurrentFrameIndex == 3 && FishOnTheLine.Visible == false) //Just tugged
+                            {
+                                PullInFish();
+                            }
+                            else if (IsOnFinalFrameOfAnimationChain)
+                            {
+                                SpriteInstance.Animate = false;
+                                RodSpriteInstance.Animate = false;
+                            }
                         }
-                        if (IsPullingInCatch  && IsOnFinalFrameOfAnimationChain || (IsDisplayingCatch && !HasFinishedDisplayingCatch))
+                        if (IsDisplayingCatch && !HasFinishedDisplayingCatch)
                         {
                             DisplayCaughtFish();
                         }
@@ -310,7 +319,47 @@ namespace FishKing.Entities
             }
             SpriteInstance.CurrentChainName = RodSpriteInstance.CurrentChainName = chainName;
             SpriteInstance.Animate = RodSpriteInstance.Animate = true;
-            SpriteInstance.CurrentFrameIndex = RodSpriteInstance.CurrentFrameIndex = 0;
+             SpriteInstance.CurrentFrameIndex = RodSpriteInstance.CurrentFrameIndex = 0;
+        }
+
+        private void PullInFish()
+        {
+            FishOnTheLine.Visible = true;
+            FishOnTheLine.Position = TargetPosition;
+            FishOnTheLine.AttachTo(this, true);
+
+            Tweener distanceTweener;
+            Tweener verticalTweener;
+            double tweenDuration = 0;
+            var currentScale = FishOnTheLine.SpriteInstanceTextureScale;
+
+            var wasCastHorizontally = DirectionFacing == Direction.Left || DirectionFacing == Direction.Right;
+            if (wasCastHorizontally)
+            {
+                FishOnTheLine.SpriteInstanceFlipHorizontal = (DirectionFacing == Direction.Left);
+                tweenDuration = Math.Abs(FishOnTheLine.RelativeX / 112);
+                distanceTweener = FishOnTheLine.Tween("RelativeX").To(0).During(tweenDuration).Using(InterpolationType.Sinusoidal, Easing.Out);
+                verticalTweener = FishOnTheLine.Tween("RelativeY").To(20).During(tweenDuration / 2).Using(InterpolationType.Quadratic, Easing.Out);
+                verticalTweener.Ended += () => {
+                    FishOnTheLine.Tween("RelativeY").To(-SpriteInstance.Height / 16).During(tweenDuration / 2).Using(InterpolationType.Bounce, Easing.Out).Start();
+                };
+            }
+            else
+            {
+                tweenDuration = Math.Abs(FishOnTheLine.RelativeY / 96);
+                distanceTweener = FishOnTheLine.Tween("RelativeY").To(-SpriteInstance.Height / 16).During(tweenDuration).Using(InterpolationType.Sinusoidal, Easing.Out);
+                FishOnTheLine.Tween("RelativeX").To(0).During(tweenDuration).Using(InterpolationType.Linear, Easing.InOut).Start();
+
+                var newScale = currentScale * 1.5f;
+
+                verticalTweener = FishOnTheLine.Tween("SpriteInstanceTextureScale").To(newScale).During(tweenDuration / 2).Using(InterpolationType.Sinusoidal, Easing.Out);
+                verticalTweener.Ended += () => {
+                    FishOnTheLine.Tween("SpriteInstanceTextureScale").To(currentScale).During(tweenDuration / 2).Using(InterpolationType.Quadratic, Easing.In).Start();
+                };
+            }
+            distanceTweener.Ended += DisplayCaughtFish;
+            distanceTweener.Start();
+            verticalTweener.Start();
         }
 
         private void DisplayCaughtFish()
@@ -328,9 +377,7 @@ namespace FishKing.Entities
                     SpriteInstance.CurrentChainName = "ShowCatch";
                 }
                 SpriteInstance.CurrentFrameIndex = 0;
-                FishOnTheLine.Visible = true;
-                FishOnTheLine.Position = Position;
-                FishOnTheLine.AttachTo(this, false);
+                SpriteInstance.Animate = true;
                 FishOnTheLine.RelativeZ = 1;
                 FishOnTheLine.RelativeY -= SpriteInstance.Height / 16;
             }
