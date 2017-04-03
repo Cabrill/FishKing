@@ -21,7 +21,6 @@ namespace FishKing.Entities
 		private void CustomInitialize()
 		{
 
-
 		}
 
 		private void CustomActivity()

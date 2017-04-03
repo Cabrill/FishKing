@@ -32,9 +32,21 @@ namespace FishKing.Entities
 
 		private void CustomActivity()
 		{
-
-
+            if (JustCycled)
+            {
+                Visible = false;
+                IgnoreParentPosition = false;
+            }
 		}
+
+        public void Play()
+        {
+            this.Position = Parent.Position;
+            var thisSplah = this;
+            IgnoreParentPosition = true;
+            Visible = true;
+            CurrentFrameIndex = 0;
+        }
 
 		private void CustomDestroy()
 		{

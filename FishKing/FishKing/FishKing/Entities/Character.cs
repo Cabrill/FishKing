@@ -319,7 +319,7 @@ namespace FishKing.Entities
             }
             SpriteInstance.CurrentChainName = RodSpriteInstance.CurrentChainName = chainName;
             SpriteInstance.Animate = RodSpriteInstance.Animate = true;
-             SpriteInstance.CurrentFrameIndex = RodSpriteInstance.CurrentFrameIndex = 0;
+            SpriteInstance.CurrentFrameIndex = RodSpriteInstance.CurrentFrameIndex = 0;
         }
 
         private void PullInFish()
@@ -327,6 +327,8 @@ namespace FishKing.Entities
             FishOnTheLine.Visible = true;
             FishOnTheLine.Position = TargetPosition;
             FishOnTheLine.AttachTo(this, true);
+            //FishOnTheLine.WaterSplashInstance.Position = TargetPosition;
+            FishOnTheLine.WaterSplashInstance.Play();
 
             Tweener distanceTweener;
             Tweener verticalTweener;
