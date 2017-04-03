@@ -53,12 +53,12 @@ namespace FishKing.Entities
         /// </summary>
 		private void CustomActivity()
 		{
-            if (WaterSplashSprite.Visible)
+            if (WaterSplashInstance.Visible)
             {
-                if (WaterSplashSprite.JustCycled)
+                if (WaterSplashInstance.JustCycled)
                 {
-                    WaterSplashSprite.Visible = false;
-                    WaterSplashSprite.IgnoreParentPosition = false;
+                    WaterSplashInstance.Visible = false;
+                    WaterSplashInstance.IgnoreParentPosition = false;
                 }
             }
             if (Visible)
@@ -216,9 +216,9 @@ namespace FishKing.Entities
                 bobberSoundInstance.Play();
                 IsMoving = false;
                 CurrentState = VariableState.BobInWater;
-                WaterSplashSprite.IgnoreParentPosition = true;
-                WaterSplashSprite.Visible = true;
-                WaterSplashSprite.CurrentFrameIndex = 0;
+                WaterSplashInstance.IgnoreParentPosition = true;
+                WaterSplashInstance.Visible = true;
+                WaterSplashInstance.CurrentFrameIndex = 0;
             }
         }
 
