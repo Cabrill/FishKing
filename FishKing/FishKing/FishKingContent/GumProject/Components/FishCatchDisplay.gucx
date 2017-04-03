@@ -13,7 +13,7 @@
     <Variable>
       <Type>float</Type>
       <Name>CatchStats.Height</Name>
-      <Value xsi:type="xsd:float">100</Value>
+      <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -55,7 +55,7 @@
     <Variable>
       <Type>float</Type>
       <Name>CatchStats.Y</Name>
-      <Value xsi:type="xsd:float">45</Value>
+      <Value xsi:type="xsd:float">48</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -306,7 +306,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Height</Name>
-      <Value xsi:type="xsd:float">500</Value>
+      <Value xsi:type="xsd:float">240</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -315,6 +315,12 @@
       <Name>Height Units</Name>
       <Value xsi:type="xsd:int">0</Value>
       <Category>Dimensions</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>LengthWithScale.Height</Name>
+      <Value xsi:type="xsd:float">38</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -331,6 +337,18 @@
     </Variable>
     <Variable>
       <Type>float</Type>
+      <Name>LengthWithScale.Width</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>LengthWithScale.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
       <Name>LengthWithScale.X</Name>
       <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
@@ -338,7 +356,7 @@
     <Variable>
       <Type>float</Type>
       <Name>LengthWithScale.Y</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Value xsi:type="xsd:float">-1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -395,6 +413,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>float</Type>
+      <Name>StarWithScale.Height</Name>
+      <Value xsi:type="xsd:float">37</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>StarWithScale.Parent</Name>
       <Value xsi:type="xsd:string">CatchStats</Value>
@@ -404,6 +428,36 @@
       <Type>StatTypeState</Type>
       <Name>StarWithScale.StatTypeState</Name>
       <Value xsi:type="xsd:string">Star</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>StarWithScale.StatValueText</Name>
+      <Value xsi:type="xsd:string">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>StarWithScale.TextStatValueFontSize</Name>
+      <Value xsi:type="xsd:int">12</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>StarWithScale.TextStatValueX</Name>
+      <Value xsi:type="xsd:float">-5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>StarWithScale.Width</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>StarWithScale.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -450,7 +504,8 @@
     <Variable>
       <Type>int</Type>
       <Name>TextFishName.FontSize</Name>
-      <Value xsi:type="xsd:int">24</Value>
+      <Value xsi:type="xsd:int">18</Value>
+      <ExposedAsName>TextFishNameFontSize</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -462,7 +517,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TextFishName.Height</Name>
-      <Value xsi:type="xsd:float">1</Value>
+      <Value xsi:type="xsd:float">15</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -498,7 +553,7 @@
     <Variable>
       <Type>VerticalAlignment</Type>
       <Name>TextFishName.VerticalAlignment</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -516,13 +571,13 @@
     <Variable>
       <Type>float</Type>
       <Name>TextFishName.X</Name>
-      <Value xsi:type="xsd:float">1</Value>
+      <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>HorizontalAlignment</Type>
       <Name>TextFishName.X Origin</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -534,7 +589,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TextFishName.Y</Name>
-      <Value xsi:type="xsd:float">85</Value>
+      <Value xsi:type="xsd:float">95</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -556,6 +611,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>float</Type>
+      <Name>WeightWithScale.Height</Name>
+      <Value xsi:type="xsd:float">37</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>WeightWithScale.Parent</Name>
       <Value xsi:type="xsd:string">CatchStats</Value>
@@ -565,6 +626,24 @@
       <Type>StatTypeState</Type>
       <Name>WeightWithScale.StatTypeState</Name>
       <Value xsi:type="xsd:string">Weight</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>WeightWithScale.StatValueText</Name>
+      <Value xsi:type="xsd:string">110kg</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>WeightWithScale.Width</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>WeightWithScale.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -582,14 +661,14 @@
     <Variable>
       <Type>float</Type>
       <Name>Width</Name>
-      <Value xsi:type="xsd:float">400</Value>
+      <Value xsi:type="xsd:float">30</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>Width Units</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>

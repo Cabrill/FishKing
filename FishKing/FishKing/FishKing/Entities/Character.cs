@@ -235,7 +235,7 @@ namespace FishKing.Entities
                     {
                         var relativeTargetPosition = new Vector3(TargetPosition.X - Position.X, TargetPosition.Y - Position.Y, 1);
                         BobberInstance.TraverseTo(relativeTargetPosition, tileSize);
-
+                        
                         WhooshRod.Play();
                     }
                 }
@@ -283,6 +283,7 @@ namespace FishKing.Entities
             HasInitiatedCatching = false;
             IsDisplayingCatch = false;
             HasFinishedDisplayingCatch = false;
+            SpriteInstance.CurrentChainName = SpriteInstance.CurrentChainName.Replace("Cast", "Stand");
         }
 
         public void StandStill()
@@ -328,6 +329,7 @@ namespace FishKing.Entities
                 }
                 SpriteInstance.CurrentFrameIndex = 0;
                 FishOnTheLine.Visible = true;
+                FishOnTheLine.Position = Position;
                 FishOnTheLine.AttachTo(this, false);
                 FishOnTheLine.RelativeZ = 1;
                 FishOnTheLine.RelativeY -= SpriteInstance.Height / 16;

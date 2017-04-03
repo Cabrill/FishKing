@@ -22,7 +22,8 @@ using FishKing.DataTypes;
 using System.Collections.Specialized;
 using System.Linq;
 using FlatRedBall.TileCollisions;
-using FishKing.TileCollisions;
+using FishKing.Enums;
+using static FishKing.Enums.WaterTypes;
 
 #if FRB_XNA || SILVERLIGHT
 using Keys = Microsoft.Xna.Framework.Input.Keys;
@@ -56,6 +57,34 @@ namespace FishKing.Screens
             InitializeCharacter();
         }
 
+        private WaterType GetWaterType()
+        {
+            var tile = WaterTiles.GetTileAt(TargetingSpriteInstance.X, TargetingSpriteInstance.Y);
+            if (tile == null)
+            {
+                return WaterType.None;
+            }
+            else
+            {
+                return WaterTypeNameToEnum(tile.Name);
+            }
+        }
+
+        private void AddWaterTiles()
+        {
+            var waterNames = new List<string>() { "IsOcean", "IsLake", "IsRiver", "IsPond", "IsDeepOcean", "InWaterfall" };
+            WaterTiles.AddWaterFrom(CurrentTileMap, (List =>
+                List.Any(item => waterNames.Contains(item.Name))
+                ));
+            WaterTiles.Visible = false;
+        }
+
+        private void RemoveBlockeddWaterTiles()
+        {
+            var nonWaterLayers = new System.Collections.Generic.List<string>() { "Bridge" };
+            WaterTiles.RemoveCollisionsFromLayer(CurrentTileMap, nonWaterLayers);
+        }
+
         private void AddCollisions()
         {
             SolidCollisions.AddCollisionFrom(CurrentTileMap,
@@ -63,14 +92,13 @@ namespace FishKing.Screens
                  list.Any(item => item.Name == "HasCollision") ));
 
             var collisionLayers = new System.Collections.Generic.List<string>() { "Walls", "Water" };
-            SolidCollisions.AddCollisionsFromLayer(CurrentTileMap, collisionLayers);
+            SolidCollisions.AddCollisionFromLayer(CurrentTileMap, collisionLayers);
         }
 
-        private void RemoveCollisions()
+        private void RemoveBridgedCollisions()
         {
-            var nonCollisionLayers = new System.Collections.Generic.List<string>() { "Bridge"};
+            var nonCollisionLayers = new System.Collections.Generic.List<string>() { "Bridge" };
             SolidCollisions.RemoveCollisionsFromLayer(CurrentTileMap, nonCollisionLayers);
-
             //SolidCollisions.RemoveCollisionFrom(CurrentTileMap,
             //    (List => 
             //    List.Any(item => item.Name == "IsBridge")
@@ -89,7 +117,9 @@ namespace FishKing.Screens
         {
             InitializeLevel(levelToLoad);
             AddCollisions();
-            RemoveCollisions();
+            RemoveBridgedCollisions();
+            AddWaterTiles();
+            RemoveBlockeddWaterTiles();
             AdjustCamera();
             AdjustNpcs();
 
@@ -247,7 +277,7 @@ namespace FishKing.Screens
                     case Direction.Down: targetStartY -= tileSize * 2.5f; break;
                 }
 
-                TargetingSpriteInstance.Position = new Vector3(targetStartX, targetStartY, 1);
+                TargetingSpriteInstance.Position = new Vector3(targetStartX, targetStartY, CharacterInstance.Position.Z + 1);
                 CharacterInstance.TargetPosition = TargetingSpriteInstance.Position;
             }
             else if (CharacterInstance.IsOnWindUp)
@@ -268,8 +298,16 @@ namespace FishKing.Screens
                     case Direction.Up: targetNewY += effectiveDistance; break;
                     case Direction.Down: targetNewY += -effectiveDistance; break;
                 }
-                TargetingSpriteInstance.Position = new Vector3(targetNewX, targetNewY, 1);
+                TargetingSpriteInstance.Position = new Vector3(targetNewX, targetNewY, CharacterInstance.Position.Z + 1);
                 CharacterInstance.TargetPosition = TargetingSpriteInstance.Position;
+            }
+            else if (CharacterInstance.JustReleasedCast)
+            {
+                var waterType = GetWaterType();
+                if (waterType == WaterType.None)
+                {
+                    CharacterInstance.ResetFishingStatus();
+                }
             }
             else if (CharacterInstance.IsFishing)
             {
@@ -293,12 +331,15 @@ namespace FishKing.Screens
                         }
                         else
                         {
-                            if (FishCatchingInterfaceInstance.LineHasSnapped && FishCatchingInterfaceInstance.FishHasEscaped)
+                            if (FishCatchingInterfaceInstance.LineHasSnapped)
                             {
-                                CharacterInstance.ResetFishingStatus();
-                                CharacterInstance.StandStill();
-                                FishCatchingInterfaceInstance.Reset();
-                                FishCatchingInterfaceInstance.Visible = false;
+                                if (FishCatchingInterfaceInstance.FishHasEscaped)
+                                {
+                                    CharacterInstance.ResetFishingStatus();
+                                    CharacterInstance.StandStill();
+                                    FishCatchingInterfaceInstance.Reset();
+                                    FishCatchingInterfaceInstance.Visible = false;
+                                }
                             }
                             else
                             {

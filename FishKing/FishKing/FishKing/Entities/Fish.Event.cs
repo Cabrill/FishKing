@@ -26,10 +26,10 @@ namespace FishKing.Entities
             var textureHeight = 64;
             var textureWidth = 128;
 
-            SpriteInstance.TopTextureCoordinate = textureRow * textureHeight;
-            SpriteInstance.BottomTextureCoordinate = (textureRow + 1) * textureHeight;
-            SpriteInstance.LeftTextureCoordinate = textureCol * textureWidth;
-            SpriteInstance.RightTextureCoordinate = (textureCol + 1) * textureWidth;
+            SpriteInstance.TopTexturePixel = textureRow * textureHeight;
+            SpriteInstance.BottomTexturePixel = (textureRow + 1) * textureHeight;
+            SpriteInstance.LeftTexturePixel = textureCol * textureWidth;
+            SpriteInstance.RightTexturePixel = (textureCol + 1) * textureWidth;
 
 
             double gramsPerMM = (double)decimal.Divide(fishType.MaxGrams, fishType.MaxMM);
@@ -52,8 +52,8 @@ namespace FishKing.Entities
             fish.LengthMM = fishLengthMM;
             fish.LengthDisplay = LengthToString(fishLengthMM);
             fish.Points = fishPoints;
-            fish.SpriteInstanceTextureScale = Math.Max(0.1f, (float)Decimal.Divide(fishLengthMM, 1000));
-            fish.IsSmall = fish.SpriteInstanceTextureScale < 0.2;
+            SpriteInstance.TextureScale = Math.Max(0.1f, (float)Decimal.Divide(fishLengthMM, 3000));
+            fish.IsSmall = SpriteInstance.TextureScale < 0.15;
         }
 
 

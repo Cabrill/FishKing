@@ -125,13 +125,13 @@
     <Variable>
       <Type>float</Type>
       <Name>LinearScaleContainerInstance.Width</Name>
-      <Value xsi:type="xsd:float">60</Value>
+      <Value xsi:type="xsd:float">53</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>LinearScaleContainerInstance.X</Name>
-      <Value xsi:type="xsd:float">40</Value>
+      <Value xsi:type="xsd:float">47</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -314,7 +314,8 @@
     <Variable>
       <Type>int</Type>
       <Name>TextStatValue.FontSize</Name>
-      <Value xsi:type="xsd:int">24</Value>
+      <Value xsi:type="xsd:int">12</Value>
+      <ExposedAsName>TextStatValueFontSize</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -357,7 +358,7 @@
     <Variable>
       <Type>VerticalAlignment</Type>
       <Name>TextStatValue.VerticalAlignment</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -370,6 +371,13 @@
       <Type>DimensionUnitType</Type>
       <Name>TextStatValue.Width Units</Name>
       <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TextStatValue.X</Name>
+      <Value xsi:type="xsd:float">7</Value>
+      <ExposedAsName>TextStatValueX</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -387,13 +395,13 @@
     <Variable>
       <Type>float</Type>
       <Name>TextStatValue.Y</Name>
-      <Value xsi:type="xsd:float">30</Value>
+      <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
       <Name>TextStatValue.Y Origin</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -411,14 +419,14 @@
     <Variable>
       <Type>float</Type>
       <Name>Width</Name>
-      <Value xsi:type="xsd:float">100</Value>
+      <Value xsi:type="xsd:float">-4</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">2</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
