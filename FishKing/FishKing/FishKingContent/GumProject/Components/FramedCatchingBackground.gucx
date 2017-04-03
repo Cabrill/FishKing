@@ -975,8 +975,8 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>WaterTypeState</Type>
-      <Name>WaterTypeState</Name>
+      <Type>WaterTypeBackground</Type>
+      <Name>WaterTypeBackgroundState</Name>
       <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
@@ -1049,7 +1049,7 @@
     </VariableList>
   </State>
   <Category>
-    <Name>WaterType</Name>
+    <Name>WaterTypeBackground</Name>
     <State>
       <Name>River</Name>
       <Variable>
@@ -1067,6 +1067,12 @@
     </State>
     <State>
       <Name>Ocean</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>WaterBackgroundSprite.Texture Left</Name>
+        <Value xsi:type="xsd:int">476</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
     </State>
     <State>
       <Name>Pond</Name>
@@ -1099,7 +1105,7 @@
       </Variable>
     </State>
     <State>
-      <Name>Lake</Name>
+      <Name>Waterfall</Name>
       <Variable>
         <Type>int</Type>
         <Name>WaterBackgroundSprite.Texture Left</Name>
@@ -1110,6 +1116,15 @@
         <Type>int</Type>
         <Name>WaterBackgroundSprite.Texture Width</Name>
         <Value xsi:type="xsd:int">249</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Lake</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>WaterBackgroundSprite.Texture Left</Name>
+        <Value xsi:type="xsd:int">1762</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

@@ -6,6 +6,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static FishKing.Enums.WaterTypes;
 
 namespace FishKing.GumRuntimes
 {
@@ -27,10 +28,11 @@ namespace FishKing.GumRuntimes
             
         }
 
-        public void AttachFish(Fish fish)
+        public void AttachFish(Fish fish, WaterType waterType)
         {
             Reset();
             FramedCatchingBackgroundInstance.AttachFish(fish);
+            FramedCatchingBackgroundInstance.SetBackgroundFrom(waterType);
         }
 
         public void Update()

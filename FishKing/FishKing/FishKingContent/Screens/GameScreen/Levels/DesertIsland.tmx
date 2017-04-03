@@ -25,6 +25,23 @@
     <frame tileid="2181" duration="100"/>
    </animation>
   </tile>
+  <tile id="24">
+   <properties>
+    <property name="IsWaterfall" type="bool" value="false"/>
+   </properties>
+   <animation>
+    <frame tileid="342" duration="100"/>
+    <frame tileid="341" duration="100"/>
+    <frame tileid="338" duration="100"/>
+    <frame tileid="339" duration="100"/>
+    <frame tileid="340" duration="100"/>
+    <frame tileid="466" duration="100"/>
+    <frame tileid="467" duration="100"/>
+    <frame tileid="468" duration="100"/>
+    <frame tileid="469" duration="100"/>
+    <frame tileid="405" duration="100"/>
+   </animation>
+  </tile>
   <tile id="25">
    <animation>
     <frame tileid="6" duration="200"/>
@@ -1413,7 +1430,7 @@
    <property name="IsWater" type="bool" value="true"/>
   </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC83Wy3GDMBAGYBmC7LsvuSbphQZyUUXUwCnlUAPlRBoks6xWb2GkmX889sD6Qw+k8c7YSOWDZbevgbFvmZ8h7b5JXj8+UE7wlTTLSNkSn/tM44RytU21sZeW+5ba47re7LTmm2WE/szx8WH3LTiF4ytuR2OqT9n4Y0/ttQv7zRhzbWf5VmCM9VG2M3xrZyfU4HrAoXy5c5DLe3/ZMU+dmr6cPlTvUmyDvpCR3Nsq7W8um2lFxkJfyKbaX7fnU2d2zEtstN5/ie/BkM1YhHYJ/R3m8LxoLjp9kUa1JmBwE8AHU8WnjYsca87zfHN3NM6d/ZvP55x/keetpT/G1X9URET/4fNV6nlrkfVHvmVyzHmXL6b/Smy83/alheuoc4dn3eNxxrYUX6xN7ZEvX4XzT4wvxQZ9NfZvU9e7Pjz1sa2mD9dN9VE2a3wzxzjlfEXVD9oKjC4b5cPvZZMoG2GENaj4bNBH7h36/6j7nDZsDFznsxmfc29z1AjaoLHQ5917iRrRtoTU8p1hCxljfO9K6z5yrjfmw8YWfdDYog0aW7W90rIN+662+HxXO3y+qw2e/APAggHcABkAAA==
+   H4sIAAAAAAAAC93Wy3GDMBAGYBmC7HsuyTFJLzSQiyqiBk4phxooJ9IgzLLs6k3QRDP/jO2B9Qd69ncheiovIrl9dEJ86nx1cfcN+vr+gXKCL6cdjJQt8rnPNA4oV9tM61ttuS8p3a/vRP6bT3abb8LJ7F91E2LWGW/b51ibfGwpPXeVtUFjqu0s3wyMoT7KdoZvbo7xNTgfcChf6hiU+t5vsc+rTUlfyjs0aym2QZ/PSO5thfY3zra2LGOmz2cz7afZ8mYzMuMSGw/rX+Q66LOtFmVdyn6H2T0vGousL9Bo5gQMbgr4YIr4rHHSfS1lmm9s9saxOf7m8rHjL/C8NbX7cO+Pigp4f/h8FXvemnT9Xi4ZmDHP+ULeX45Ntsu+NEkbc+5wzHvcz9gW4wu1mT3y6Stw/gnxxdigr8T+vdZ1zg9HfWwr6cN1Y32U7dC/iX0cc76i6nttGUbORvnwurwmyEYYYQ0qLhv0kXuH/T/qPtaGjZ7rXLbVx+5tTA2vDRozfc69l6gRbItIKd8ZNp8xxPdXqd1HjvXKfNhYow8aa7RBY622Z2q2Yd/VFpfvaofLd7XBkV8xw3p2ABkAAA==
   </data>
  </layer>
  <layer name="Ground" width="40" height="40">

@@ -8,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static FishKing.Enums.WaterTypes;
 
 namespace FishKing.GumRuntimes
 {
@@ -85,6 +86,19 @@ namespace FishKing.GumRuntimes
             this.AttachedFish = fish;
 
             SetLocalVariables();
+        }
+
+        public void SetBackgroundFrom(WaterType waterType)
+        {
+            switch (waterType)
+            {
+                case WaterType.DeepOcean: this.CurrentWaterTypeBackgroundState = WaterTypeBackground.DeepOcean; break;
+                case WaterType.River: this.CurrentWaterTypeBackgroundState = WaterTypeBackground.River; break;
+                case WaterType.Lake: this.CurrentWaterTypeBackgroundState = WaterTypeBackground.Lake; break;
+                case WaterType.Pond: this.CurrentWaterTypeBackgroundState = WaterTypeBackground.Pond; break;
+                case WaterType.Ocean: this.CurrentWaterTypeBackgroundState = WaterTypeBackground.Ocean; break;
+                case WaterType.Waterfall: this.CurrentWaterTypeBackgroundState = WaterTypeBackground.Waterfall; break;
+            }
         }
 
         private void SetLocalVariables()

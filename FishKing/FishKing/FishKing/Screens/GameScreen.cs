@@ -317,7 +317,7 @@ namespace FishKing.Screens
                     {
                         if (!FishCatchingInterfaceInstance.HasAttachedFish)
                         {
-                             FishCatchingInterfaceInstance.AttachFish(CharacterInstance.FishOnTheLine);
+                             FishCatchingInterfaceInstance.AttachFish(CharacterInstance.FishOnTheLine, GetWaterType());
                         }
                         if (FishCatchingInterfaceInstance.IsFishCaught)
                         {
