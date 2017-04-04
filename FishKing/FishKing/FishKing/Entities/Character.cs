@@ -328,6 +328,7 @@ namespace FishKing.Entities
             FishOnTheLine.Position = TargetPosition;
             FishOnTheLine.AttachTo(this, true);
             //FishOnTheLine.WaterSplashInstance.Position = TargetPosition;
+            GlobalContent.SplashOut.Play();
             FishOnTheLine.WaterSplashInstance.Play();
 
             Tweener distanceTweener;
@@ -338,12 +339,25 @@ namespace FishKing.Entities
             var wasCastHorizontally = DirectionFacing == Direction.Left || DirectionFacing == Direction.Right;
             if (wasCastHorizontally)
             {
+                var destY = -SpriteInstance.Height / 16;
                 FishOnTheLine.SpriteInstanceFlipHorizontal = (DirectionFacing == Direction.Left);
                 tweenDuration = Math.Abs(FishOnTheLine.RelativeX / 112);
                 distanceTweener = FishOnTheLine.Tween("RelativeX").To(0).During(tweenDuration).Using(InterpolationType.Sinusoidal, Easing.Out);
                 verticalTweener = FishOnTheLine.Tween("RelativeY").To(20).During(tweenDuration / 2).Using(InterpolationType.Quadratic, Easing.Out);
                 verticalTweener.Ended += () => {
-                    FishOnTheLine.Tween("RelativeY").To(-SpriteInstance.Height / 16).During(tweenDuration / 2).Using(InterpolationType.Bounce, Easing.Out).Start();
+                    var lastUpdate = FishOnTheLine.RelativeY;
+                    var updateBeforeLast = lastUpdate;
+                    var downTween = FishOnTheLine.Tween("RelativeY").To(destY).During(tweenDuration / 2).Using(InterpolationType.Bounce, Easing.Out);
+                    downTween.PositionChanged += (a) =>
+                    {
+                        if (a > lastUpdate && updateBeforeLast > lastUpdate)
+                        {
+                            GlobalContent.FishSplat.Play();
+                        }
+                        updateBeforeLast = lastUpdate;
+                        lastUpdate = a;
+                    };
+                    downTween.Start();
                 };
             }
             else
@@ -354,9 +368,22 @@ namespace FishKing.Entities
 
                 var newScale = currentScale * 1.5f;
 
-                verticalTweener = FishOnTheLine.Tween("SpriteInstanceTextureScale").To(newScale).During(tweenDuration / 2).Using(InterpolationType.Sinusoidal, Easing.Out);
+                verticalTweener = FishOnTheLine.Tween("SpriteInstanceTextureScale").To(newScale).During(tweenDuration / 2).Using(InterpolationType.Quadratic, Easing.Out);
                 verticalTweener.Ended += () => {
-                    FishOnTheLine.Tween("SpriteInstanceTextureScale").To(currentScale).During(tweenDuration / 2).Using(InterpolationType.Quadratic, Easing.In).Start();
+                    var lastUpdate = FishOnTheLine.SpriteInstanceTextureScale;
+                    var updateBeforeLast = lastUpdate;
+                    var downTween = FishOnTheLine.Tween("SpriteInstanceTextureScale").To(currentScale).During(tweenDuration / 2).Using(InterpolationType.Bounce, Easing.In);
+
+                    downTween.PositionChanged += (a) =>
+                    {
+                        if (a > lastUpdate && updateBeforeLast > lastUpdate)
+                        {
+                            GlobalContent.FishSplat.Play();
+                        }
+                        updateBeforeLast = lastUpdate;
+                        lastUpdate = a;
+                    };
+                    downTween.Start();
                 };
             }
             distanceTweener.Ended += DisplayCaughtFish;
@@ -405,6 +432,7 @@ namespace FishKing.Entities
                 {
                     SpriteInstance.Animate = false;
                     HasFinishedDisplayingCatch = true;
+                    GlobalContent.FishCaught.Play();
                 }
             }
         }

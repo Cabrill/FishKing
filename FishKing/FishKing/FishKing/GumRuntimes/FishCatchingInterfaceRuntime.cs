@@ -1,5 +1,6 @@
 ﻿using FishKing.Entities;
 using FlatRedBall.Glue.StateInterpolation;
+using Microsoft.Xna.Framework.Audio;
 using StateInterpolationPlugin;
 using System;
 using System.Collections.Generic;
@@ -12,6 +13,7 @@ namespace FishKing.GumRuntimes
 {
     public partial class FishCatchingInterfaceRuntime
     {
+        SoundEffectInstance underwaterSound;
         public bool HasAttachedFish { get { return FramedCatchingBackgroundInstance.AttachedFish != null; } }
         public bool FishHasEscaped { get { return FramedCatchingBackgroundInstance.FishHasEscaped; } }
         public bool LineHasSnapped { get { return FishingLineStatusInstance.LineHasSnapped;  } }
@@ -24,7 +26,9 @@ namespace FishKing.GumRuntimes
 
         partial void CustomInitialize()
         {
-            
+            underwaterSound = GlobalContent.UnderwaterSound.CreateInstance();
+            underwaterSound.IsLooped = true;
+            underwaterSound.Volume = 0.25f;
         }
 
         public void AttachFish(Fish fish, WaterType waterType)
@@ -38,6 +42,10 @@ namespace FishKing.GumRuntimes
         {
             if (Visible)
             {
+                if (underwaterSound.State != SoundState.Playing)
+                {
+                    underwaterSound.Play();
+                }
                 SpinningReelInstance.Update();
                 FishingLineStatusInstance.Update();
 
@@ -59,6 +67,10 @@ namespace FishKing.GumRuntimes
                 if (DebuggingVariables.FishShouldImmediatelyEscape) FishingLineStatusInstance.LineStress = 200;
 #endif
             }
+            else
+            {
+                Stop();
+            }
         }
 
         public void RaiseAlignmentBar()
@@ -68,14 +80,17 @@ namespace FishKing.GumRuntimes
 
         public void SpinReel()
         {
-            if (FramedCatchingBackgroundInstance.IsAligned)
+            if (!LineHasSnapped && !FishIsCaught)
             {
-                SpinningReelInstance.SpinReel();
-            }
-            else
-            {
-                SpinningReelInstance.JamReel();
-                FishingLineStatusInstance.IncreaseStress();
+                if (FramedCatchingBackgroundInstance.IsAligned)
+                {
+                    SpinningReelInstance.SpinReel();
+                }
+                else
+                {
+                    SpinningReelInstance.JamReel();
+                    FishingLineStatusInstance.IncreaseStress();
+                }
             }
         }
 
@@ -89,6 +104,7 @@ namespace FishKing.GumRuntimes
         public void Stop()
         {
             SpinningReelInstance.Stop();
+            underwaterSound.Stop();
         }
     }
 }

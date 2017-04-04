@@ -1,4 +1,5 @@
 ﻿using FishKing.Entities;
+using Microsoft.Xna.Framework.Audio;
 using RenderingLibrary;
 using System;
 using System.Collections.Generic;
@@ -10,6 +11,7 @@ namespace FishKing.GumRuntimes
 {
     partial class FishingLineStatusRuntime
     {
+        private SoundEffectInstance lineSnapSound;
         private int maxAlpha = 255;
         private float riseRate = 2f;
         private float fallRate = 0.1f;
@@ -24,6 +26,11 @@ namespace FishKing.GumRuntimes
         } = 1;
 
         public bool LineHasSnapped { get { return LineStress >= MaxStress; } }
+
+        partial void CustomInitialize()
+        {
+            lineSnapSound = GlobalContent.LineSnap.CreateInstance();
+        }
 
         public void Update()
         {
@@ -73,6 +80,7 @@ namespace FishKing.GumRuntimes
         {
             if (!LineSnapAnimation.IsPlaying() && CurrentLineStatusState != LineStatus.LineSnapped)
             {
+                lineSnapSound.Play();
                 LineSnapAnimation.Play();
             }
         }
