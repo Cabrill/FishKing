@@ -15,7 +15,7 @@ namespace FishKing.GumRuntimes
         public bool HasAttachedFish { get { return FramedCatchingBackgroundInstance.AttachedFish != null; } }
         public bool FishHasEscaped { get { return FramedCatchingBackgroundInstance.FishHasEscaped; } }
         public bool LineHasSnapped { get { return FishingLineStatusInstance.LineHasSnapped;  } }
-        public bool IsFishCaught { get { return (
+        public bool FishIsCaught { get { return (
 #if DEBUG
                 DebuggingVariables.ImmediatelyCatchFish ||
 #endif
@@ -24,7 +24,6 @@ namespace FishKing.GumRuntimes
 
         partial void CustomInitialize()
         {
-            
             
         }
 
@@ -51,6 +50,11 @@ namespace FishKing.GumRuntimes
                     FramedCatchingBackgroundInstance.CurrentReelSpeed = SpinningReelInstance.ReelSpeed;
                 }
                 FramedCatchingBackgroundInstance.Update();
+
+                if (LineHasSnapped || FishIsCaught)
+                {
+                    SpinningReelInstance.Stop();
+                }
 #if DEBUG
                 if (DebuggingVariables.FishShouldImmediatelyEscape) FishingLineStatusInstance.LineStress = 200;
 #endif
@@ -80,6 +84,11 @@ namespace FishKing.GumRuntimes
             FishingLineStatusInstance.Reset();
             FramedCatchingBackgroundInstance.Reset();
             SpinningReelInstance.Reset();
+        }
+
+        public void Stop()
+        {
+            SpinningReelInstance.Stop();
         }
     }
 }

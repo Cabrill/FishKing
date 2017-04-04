@@ -135,6 +135,7 @@ namespace FishKing.Entities
             IsMoving = true;
             CurrentState = VariableState.OutOfWater;
             this.RelativePosition = Vector3.Zero;
+            
             this.Visible = true;
             ResetFishingLine();
 

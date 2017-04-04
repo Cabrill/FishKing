@@ -191,7 +191,7 @@ namespace FishKing.Screens
 
         private void UpdateCamera()
         {
-            Camera camera = SpriteManager.Camera;
+            Camera camera = Camera.Main;
             var CameraMinX = (camera.OrthogonalWidth / 2);
             var CameraMaxX = (CurrentTileMap.Width ) - (camera.OrthogonalWidth / 2);
             var CameraMinY = -CurrentTileMap.Height + camera.OrthogonalHeight / 2;
@@ -320,8 +320,9 @@ namespace FishKing.Screens
                         {
                              FishCatchingInterfaceInstance.AttachFish(CharacterInstance.FishOnTheLine, GetWaterType());
                         }
-                        if (FishCatchingInterfaceInstance.IsFishCaught)
+                        if (FishCatchingInterfaceInstance.FishIsCaught)
                         {
+                            FishCatchingInterfaceInstance.Stop();
                             if (!CharacterInstance.IsPullingInCatch && !CharacterInstance.IsDisplayingCatch)
                             {
                                 CharacterInstance.HandleFishCaught();
@@ -375,7 +376,7 @@ namespace FishKing.Screens
                 }
             }
 
-            FishCatchingInterfaceInstance.Visible = CharacterInstance.HasInitiatedCatching && !FishCatchingInterfaceInstance.IsFishCaught;
+            FishCatchingInterfaceInstance.Visible = CharacterInstance.HasInitiatedCatching && !FishCatchingInterfaceInstance.FishIsCaught;
             ProgressBarInstance.Visible = CharacterInstance.IsOnWindUp;
             TargetingSpriteInstance.Visible = CharacterInstance.IsOnWindUp;
             FishCatchDisplayInstance.Visible = (CharacterInstance.IsDisplayingCatch && CharacterInstance.IsOnFinalFrameOfAnimationChain);
