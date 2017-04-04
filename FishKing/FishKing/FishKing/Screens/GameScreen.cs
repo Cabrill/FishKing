@@ -192,14 +192,15 @@ namespace FishKing.Screens
         private void UpdateCamera()
         {
             Camera camera = SpriteManager.Camera;
+            var CameraMinX = (camera.OrthogonalWidth / 2);
+            var CameraMaxX = (CurrentTileMap.Width ) - (camera.OrthogonalWidth / 2);
+            var CameraMinY = -CurrentTileMap.Height + camera.OrthogonalHeight / 2;
+            var CameraMaxY = -(camera.OrthogonalHeight / 2);
             camera.X = this.CharacterInstance.X;
             camera.Y = this.CharacterInstance.Y;
             // assuming CameraMinX, CameraMaxX, CameraMinY, and CameraMaxY are all defined:
-            //camera.X = Math.Max(CameraMinX, camera.X);
-            //camera.X = Math.Min(CameraMaxX, camera.X);
-            //camera.Y = Math.Max(CameraMinY, camera.Y);
-            //camera.Y = Math.Min(CameraMaxY, camera.Y);
-
+            camera.X = MathHelper.Clamp(camera.X, CameraMinX, CameraMaxX);
+            camera.Y = MathHelper.Clamp(camera.Y, CameraMinY, CameraMaxY);
         }
 
         private void DialogActivity()

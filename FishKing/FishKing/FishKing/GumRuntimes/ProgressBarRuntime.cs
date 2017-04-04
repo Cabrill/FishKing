@@ -53,14 +53,18 @@ namespace FishKing.GumRuntimes
             this.BarFillTextureWidth =  5 + (int)((percent *.01) * (maxTextureWidth-5));
         }
 
-        public void PositionProgressBarOver(Vector3 position)
+        public void PositionProgressBarOver(Vector3 objectPosition)
         {
+            var camera = FlatRedBall.Camera.Main;
+            var position = new Vector3(objectPosition.X - camera.X, objectPosition.Y - camera.Y, objectPosition.Z + 1);
+            position.X += camera.OrthogonalWidth / 2;
+            position.Y -= camera.OrthogonalHeight / 2;
             IPositionedSizedObject barAsPositionedObject = this as IPositionedSizedObject;
             var trueHeight = barAsPositionedObject.Height;
             var trueWidth = barAsPositionedObject.Width;
-            var screenWidth = FlatRedBallServices.GraphicsOptions.ResolutionWidth;
+            var screenWidth = camera.OrthogonalWidth;
 
-            var proposedY = -(position.Y + trueHeight * 3);
+            var proposedY = -(position.Y + (trueHeight * 3));
             if (proposedY < 0)
             {
                 proposedY = -(position.Y - trueHeight);
