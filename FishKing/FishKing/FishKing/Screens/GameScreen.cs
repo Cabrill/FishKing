@@ -24,6 +24,7 @@ using System.Linq;
 using FlatRedBall.TileCollisions;
 using FishKing.Enums;
 using static FishKing.Enums.WaterTypes;
+using Microsoft.Xna.Framework.Audio;
 
 #if FRB_XNA || SILVERLIGHT
 using Keys = Microsoft.Xna.Framework.Input.Keys;
@@ -39,6 +40,15 @@ namespace FishKing.Screens
         static string levelToLoad = "DesertIsland";
         static string startPointName = "FirstSpawn";
 
+        SoundEffectInstance waterFallAmbientSound;
+        SoundEffectInstance riverAmbientSound;
+        SoundEffectInstance beachAmbientSound;
+        SoundEffectInstance oceanAmbientSound;
+        SoundEffectInstance lakeAmbientSound;
+
+        AudioListener listener = new AudioListener();
+        AudioEmitter waterfallEmitter;
+
         bool CanMoveCharacter
         {
             get
@@ -52,9 +62,43 @@ namespace FishKing.Screens
 
 		void CustomInitialize()
         {
+            waterfallEmitter = new AudioEmitter();
+
+            waterFallAmbientSound = GlobalContent.WaterfallAmbient.CreateInstance();
+            waterFallAmbientSound.IsLooped = true;
+
             LoadLevel(levelToLoad);
+            FindNearestAmbientEmitters();
 
             InitializeCharacter();
+        }
+
+        private void FindNearestAmbientEmitters()
+        {
+            listener.Position = Vector3.Zero;
+            Point3D charPosition = new Point3D(CharacterInstance.Position);
+
+            if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "WaterfallLines") != null)
+            {
+                waterfallEmitter.Position = FindClosestPolygonPointOnLayer("WaterfallLines", charPosition);
+
+                waterFallAmbientSound.Apply3D(listener, waterfallEmitter);
+
+                if (waterFallAmbientSound.State != SoundState.Playing)
+                {
+                    waterFallAmbientSound.Play();
+                }
+            }
+        }
+
+        private Vector3 FindClosestPolygonPointOnLayer(string layerName, Point3D fromPoint)
+        {
+            var lines = CurrentTileMap.ShapeCollections.Find(s => s.Name == layerName).Polygons;
+
+            var closestLine = lines.Aggregate((x, y) => x.VectorFrom(fromPoint).Length() < y.VectorFrom(fromPoint).Length() ? x : y);
+            var closestPoint = closestLine.VectorFrom(fromPoint);
+
+            return new Vector3((float)(closestPoint.X / CurrentTileMap.WidthPerTile), (float)(closestPoint.Y / CurrentTileMap.HeightPerTile), listener.Position.Z);
         }
 
         private WaterType GetWaterType()
@@ -187,7 +231,9 @@ namespace FishKing.Screens
             this.CharacterInstance.SetSpriteOffset();
 
             CollisionActivity();
-		}
+            FindNearestAmbientEmitters();
+
+        }
 
         private void UpdateCamera()
         {
@@ -258,7 +304,7 @@ namespace FishKing.Screens
                 !CharacterInstance.IsFishing && !CharacterInstance.IsCastingRod && !CharacterInstance.IsMoving && 
                 !CharacterInstance.IsAttemptingMovement;
 
-            var tileSize = (float)BasicIsland.WidthPerTile;
+            var tileSize = (float)CurrentTileMap.WidthPerTile;
 
             if (characterJustStartedfishing)
             {

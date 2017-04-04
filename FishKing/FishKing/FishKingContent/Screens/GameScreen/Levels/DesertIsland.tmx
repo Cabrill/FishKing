@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" nextobjectid="4">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" nextobjectid="9">
  <tileset firstgid="1" name="alltiles" tilewidth="32" tileheight="32" tilecount="4096" columns="64">
   <image source="../Tilesets/alltiles.png" width="2048" height="2048"/>
   <tile id="5">
@@ -1459,7 +1459,7 @@
    H4sIAAAAAAAAC+2WTwqCQBTGR5BHZzBPUB2kGwTquqCWQYuOUq1r17+TtAuqbduyTtAnTpihCEm9kd4PfszgQj++mQcq9TntWvZzB9ahW+Ld38SDPgy4g+QwgVM44w6SwwEe4Yk7SA6OhfsHXYs7STYecvkweMvXsJVqwpbNk8s0+qTUgLhTCJycKzALkjFNFzPbM3hu58i2MDhfGTo/vos7SlvEvgKzIgiCIAjC/zDS/y9DvY4p2QvFLHVXa71uKdk/4ezzor8dvmQIK3K+Ubcr3eeG4m5NIur2SnGfN3g3LJ8gZPEAwYfz0QAZAAA=
   </data>
  </layer>
- <objectgroup name="Object Layer 1">
+ <objectgroup name="SpawnPoints">
   <object id="1" gid="1799" x="736" y="448" width="32" height="32">
    <properties>
     <property name="EntityToCreate" value="StartPoint"/>
@@ -1478,6 +1478,46 @@
     <property name="EntityToCreate" value="StartPoint"/>
     <property name="Name" value="Cave"/>
    </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="WaterfallLines">
+  <object id="4" x="689.455" y="157.636">
+   <properties>
+    <property name="name" value="Waterfall"/>
+   </properties>
+   <polyline points="0,0 63.0909,-0.909091"/>
+  </object>
+ </objectgroup>
+ <objectgroup name="BeachLines" visible="0">
+  <object id="5" x="243.5" y="13">
+   <properties>
+    <property name="name" value="Beach"/>
+   </properties>
+   <polyline points="0,0 -16,72.5 -66,114 -63.5,186.5 27,473 123,505 -49,738 53.5,800 290,560.5 395.5,564 527,767 781,769 899,648.5 899,427.5 802,335.5 807.5,258.5 928,134 860,-3.5"/>
+  </object>
+ </objectgroup>
+ <objectgroup name="LakeLines" visible="0">
+  <object id="7" x="885.5" y="427">
+   <properties>
+    <property name="name" value="Lake"/>
+   </properties>
+   <polyline points="0,0 146.5,34 144,166.5 74,198 -90.5,129.5 -90.5,41 -1,-1"/>
+  </object>
+ </objectgroup>
+ <objectgroup name="RiverLines" visible="0">
+  <object id="6" x="529" y="487.5">
+   <properties>
+    <property name="name" value="River"/>
+   </properties>
+   <polyline points="0,0 2.5,-51.5 125,-167.5 257.5,-170 342,-71.5 238.5,-151.5 95,-4.5 -0.5,-1"/>
+  </object>
+ </objectgroup>
+ <objectgroup name="PondLines" visible="0">
+  <object id="8" x="658" y="295.5">
+   <properties>
+    <property name="name" value="Pond"/>
+   </properties>
+   <polyline points="0,0 5,-147.5 125.5,-151.5 129.5,3.5 -0.5,0"/>
   </object>
  </objectgroup>
 </map>
