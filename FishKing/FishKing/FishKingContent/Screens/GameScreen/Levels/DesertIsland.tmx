@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" nextobjectid="9">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" nextobjectid="39">
  <tileset firstgid="1" name="alltiles" tilewidth="32" tileheight="32" tilecount="4096" columns="64">
   <image source="../Tilesets/alltiles.png" width="2048" height="2048"/>
   <tile id="5">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
    <animation>
     <frame tileid="0" duration="250"/>
     <frame tileid="1" duration="250"/>
@@ -79,6 +82,9 @@
    </animation>
   </tile>
   <tile id="69">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
    <animation>
     <frame tileid="64" duration="250"/>
     <frame tileid="65" duration="250"/>
@@ -138,6 +144,9 @@
    </animation>
   </tile>
   <tile id="133">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
    <animation>
     <frame tileid="128" duration="250"/>
     <frame tileid="129" duration="250"/>
@@ -184,6 +193,9 @@
    </animation>
   </tile>
   <tile id="197">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
    <animation>
     <frame tileid="192" duration="250"/>
     <frame tileid="193" duration="250"/>
@@ -230,6 +242,9 @@
    </animation>
   </tile>
   <tile id="261">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
    <animation>
     <frame tileid="256" duration="250"/>
     <frame tileid="257" duration="250"/>
@@ -285,6 +300,9 @@
    </animation>
   </tile>
   <tile id="325">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
    <animation>
     <frame tileid="320" duration="250"/>
     <frame tileid="321" duration="250"/>
@@ -356,6 +374,9 @@
    </animation>
   </tile>
   <tile id="389">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
    <animation>
     <frame tileid="384" duration="250"/>
     <frame tileid="385" duration="250"/>
@@ -390,6 +411,9 @@
    </animation>
   </tile>
   <tile id="453">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
    <animation>
     <frame tileid="448" duration="250"/>
     <frame tileid="449" duration="250"/>
@@ -424,6 +448,9 @@
    </animation>
   </tile>
   <tile id="517">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
    <animation>
     <frame tileid="512" duration="250"/>
     <frame tileid="513" duration="250"/>
@@ -458,6 +485,9 @@
    </animation>
   </tile>
   <tile id="581">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
    <animation>
     <frame tileid="576" duration="250"/>
     <frame tileid="577" duration="250"/>
@@ -492,6 +522,9 @@
    </animation>
   </tile>
   <tile id="645">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
    <animation>
     <frame tileid="640" duration="250"/>
     <frame tileid="641" duration="250"/>
@@ -530,6 +563,9 @@
    </animation>
   </tile>
   <tile id="709">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
    <animation>
     <frame tileid="704" duration="250"/>
     <frame tileid="705" duration="250"/>
@@ -1488,12 +1524,12 @@
    <polyline points="0,0 63.0909,-0.909091"/>
   </object>
  </objectgroup>
- <objectgroup name="BeachLines" visible="0">
-  <object id="5" x="243.5" y="13">
-   <properties>
-    <property name="name" value="Beach"/>
-   </properties>
-   <polyline points="0,0 -16,72.5 -66,114 -63.5,186.5 27,473 123,505 -49,738 53.5,800 290,560.5 395.5,564 527,767 781,769 899,648.5 899,427.5 802,335.5 807.5,258.5 928,134 860,-3.5"/>
+ <objectgroup name="OceanLines0">
+  <object id="35" x="210.667" y="2.66667">
+   <polyline points="0,0 -67.3333,132.667 23.3333,486.667 108.667,536.667 -50.6667,703.333 -16,812.667"/>
+  </object>
+  <object id="38" x="1111.33" y="749.333">
+   <polyline points="0,0 64.6667,-70.6667 66.6667,-300.667 -23.3333,-428 88,-583.333 98,-657.333 16.6667,-742.667"/>
   </object>
  </objectgroup>
  <objectgroup name="LakeLines" visible="0">
@@ -1504,7 +1540,7 @@
    <polyline points="0,0 146.5,34 144,166.5 74,198 -90.5,129.5 -90.5,41 -1,-1"/>
   </object>
  </objectgroup>
- <objectgroup name="RiverLines" visible="0">
+ <objectgroup name="RiverLines">
   <object id="6" x="529" y="487.5">
    <properties>
     <property name="name" value="River"/>
@@ -1518,6 +1554,11 @@
     <property name="name" value="Pond"/>
    </properties>
    <polyline points="0,0 5,-147.5 125.5,-151.5 129.5,3.5 -0.5,0"/>
+  </object>
+ </objectgroup>
+ <objectgroup name="OceanLines1">
+  <object id="37" x="196" y="818">
+   <polyline points="0,0 127.333,4 356.667,-206 423.333,-203.333 544.667,3.33333 835.333,2 908.667,-63.3333"/>
   </object>
  </objectgroup>
 </map>

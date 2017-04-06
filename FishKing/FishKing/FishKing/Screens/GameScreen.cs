@@ -42,12 +42,13 @@ namespace FishKing.Screens
 
         SoundEffectInstance waterFallAmbientSound;
         SoundEffectInstance riverAmbientSound;
-        SoundEffectInstance beachAmbientSound;
         SoundEffectInstance oceanAmbientSound;
+        SoundEffectInstance deepOceanAmbientSound;
         SoundEffectInstance lakeAmbientSound;
 
         AudioListener listener = new AudioListener();
         AudioEmitter waterfallEmitter;
+        AudioEmitter oceanEmitter;
 
         bool CanMoveCharacter
         {
@@ -63,9 +64,13 @@ namespace FishKing.Screens
 		void CustomInitialize()
         {
             waterfallEmitter = new AudioEmitter();
+            oceanEmitter = new AudioEmitter();
 
             waterFallAmbientSound = GlobalContent.WaterfallAmbient.CreateInstance();
             waterFallAmbientSound.IsLooped = true;
+
+            oceanAmbientSound = GlobalContent.OceanAmbient.CreateInstance();
+            oceanAmbientSound.IsLooped = true;
 
             LoadLevel(levelToLoad);
             FindNearestAmbientEmitters();
@@ -86,7 +91,34 @@ namespace FishKing.Screens
 
                 if (waterFallAmbientSound.State != SoundState.Playing)
                 {
-                    waterFallAmbientSound.Play();
+                    //waterFallAmbientSound.Play();
+                }
+            }
+
+            if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "OceanLines0") != null)
+            {
+                var allCloseOceanPoints = FindClosestPointsOnAllPolygonsOnLayer("OceanLines", charPosition);
+                var distSum = (float)allCloseOceanPoints.Sum(p => p.Length());
+                var xSum = (float)allCloseOceanPoints.Sum(p => 
+                p.X * Math.Min(1,Math.Pow((32/p.Length()),3))
+                ) / allCloseOceanPoints.Count();
+                var ySum = (float)allCloseOceanPoints.Sum(p => 
+                p.Y * Math.Min(1,Math.Pow((32/p.Length()),3))
+                ) / allCloseOceanPoints.Count();
+
+
+                //var combineDistance = 5;
+                float positionX = xSum;
+                float positionY = ySum;
+                float positionZ = CharacterInstance.Position.Z;
+
+                oceanEmitter.Position = new Vector3(positionX, positionY, positionZ);
+
+                oceanAmbientSound.Apply3D(listener, oceanEmitter);
+
+                if (oceanAmbientSound.State != SoundState.Playing)
+                {
+                    oceanAmbientSound.Play();
                 }
             }
         }
@@ -99,6 +131,25 @@ namespace FishKing.Screens
             var closestPoint = closestLine.VectorFrom(fromPoint);
 
             return new Vector3((float)(closestPoint.X / CurrentTileMap.WidthPerTile), (float)(closestPoint.Y / CurrentTileMap.HeightPerTile), listener.Position.Z);
+        }
+
+        private IEnumerable<Point3D> FindClosestPointsOnAllPolygonsOnLayer(string layerName, Point3D fromPoint)
+        {
+            var allClosestPoints = new List<Point3D>();
+            for (int i = 0; i < 10; i++)
+            {
+                var lines = CurrentTileMap.ShapeCollections.Find(s => s.Name == layerName+i.ToString())?.Polygons;
+
+                if (lines == null)
+                {
+                    break;
+                }
+                else
+                {
+                    allClosestPoints.AddRange(lines.Select(line => line.VectorFrom(fromPoint)));
+                }
+            }
+            return allClosestPoints;
         }
 
         private WaterType GetWaterType()
