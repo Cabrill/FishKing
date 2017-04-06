@@ -49,6 +49,7 @@ namespace FishKing.Screens
         AudioListener listener = new AudioListener();
         AudioEmitter waterfallEmitter;
         AudioEmitter oceanEmitter;
+        AudioEmitter riverEmitter;
 
         bool CanMoveCharacter
         {
@@ -65,12 +66,16 @@ namespace FishKing.Screens
         {
             waterfallEmitter = new AudioEmitter();
             oceanEmitter = new AudioEmitter();
+            riverEmitter = new AudioEmitter();
 
             waterFallAmbientSound = GlobalContent.WaterfallAmbient.CreateInstance();
             waterFallAmbientSound.IsLooped = true;
 
             oceanAmbientSound = GlobalContent.OceanAmbient.CreateInstance();
             oceanAmbientSound.IsLooped = true;
+
+            riverAmbientSound = GlobalContent.RiverAmbient.CreateInstance();
+            riverAmbientSound.IsLooped = true;
 
             LoadLevel(levelToLoad);
             FindNearestAmbientEmitters();
@@ -86,16 +91,21 @@ namespace FishKing.Screens
             if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "WaterfallLines") != null)
             {
                 waterfallEmitter.Position = FindClosestPolygonPointOnLayer("WaterfallLines", charPosition);
+                waterFallAmbientSound.Volume = Math.Max(0, 1 - (waterfallEmitter.Position.Length()/10));
 
                 waterFallAmbientSound.Apply3D(listener, waterfallEmitter);
 
                 if (waterFallAmbientSound.State != SoundState.Playing)
                 {
-                    //waterFallAmbientSound.Play();
+                    waterFallAmbientSound.Play();
                 }
             }
+            else if (waterFallAmbientSound.State == SoundState.Playing)
+            {
+                waterFallAmbientSound.Stop();
+            }
 
-            if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "OceanLines0") != null)
+            if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "OceanLines") != null)
             {
                 var allCloseOceanPoints = FindClosestPointsOnAllPolygonsOnLayer("OceanLines", charPosition);
                 var sumDist = (float)allCloseOceanPoints.Sum(p => p.Length());
@@ -114,7 +124,7 @@ namespace FishKing.Screens
                 float positionZ = CharacterInstance.Position.Z;
 
                 oceanEmitter.Position = new Vector3(positionX, positionY, positionZ);
-                oceanAmbientSound.Volume = 1f - (2.5f*minDist / sumDist);
+                oceanAmbientSound.Volume = MathHelper.Clamp(1f - (2.5f*minDist / sumDist),0,1);
 
                 oceanAmbientSound.Apply3D(listener, oceanEmitter);
 
@@ -122,6 +132,43 @@ namespace FishKing.Screens
                 {
                     oceanAmbientSound.Play();
                 }
+            }
+            else if (oceanAmbientSound.State == SoundState.Playing)
+            {
+                oceanAmbientSound.Stop();
+            }
+
+            if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "RiverLines") != null)
+            {
+                var allCloseRiverPoints = FindClosestPointsOnAllPolygonsOnLayer("RiverLines", charPosition);
+                var sumDist = (float)allCloseRiverPoints.Sum(p => p.Length());
+                var minDist = (float)allCloseRiverPoints.Min(p => p.Length());
+                var xSum = (float)allCloseRiverPoints.Sum(p =>
+                p.X * Math.Min(1, Math.Pow((1 / p.Length()), 3))
+                ) / allCloseRiverPoints.Count();
+                var ySum = (float)allCloseRiverPoints.Sum(p =>
+                p.Y * Math.Min(1, Math.Pow((1 / p.Length()), 3))
+                ) / allCloseRiverPoints.Count();
+
+
+                //var combineDistance = 5;
+                float positionX = xSum;
+                float positionY = ySum;
+                float positionZ = CharacterInstance.Position.Z;
+
+                riverEmitter.Position = new Vector3(positionX, positionY, positionZ);
+                riverAmbientSound.Volume = MathHelper.Clamp(1f - (2.5f * minDist / sumDist),0,1);
+                
+                riverAmbientSound.Apply3D(listener, riverEmitter);
+
+                if (riverAmbientSound.State != SoundState.Playing)
+                {
+                    riverAmbientSound.Play();
+                }
+            }
+            else if (riverAmbientSound.State == SoundState.Playing)
+            {
+                riverAmbientSound.Stop();
             }
         }
 
@@ -140,7 +187,8 @@ namespace FishKing.Screens
             var allClosestPoints = new List<Point3D>();
             for (int i = 0; i < 10; i++)
             {
-                var lines = CurrentTileMap.ShapeCollections.Find(s => s.Name == layerName+i.ToString())?.Polygons;
+                var layerNumName = layerName + (i == 0 ? "" : (i + 1).ToString());
+                var lines = CurrentTileMap.ShapeCollections.Find(s => s.Name == layerNumName)?.Polygons;
 
                 if (lines == null)
                 {

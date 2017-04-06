@@ -1808,7 +1808,7 @@
       <ProjectsToExcludeFrom />
     </ReferencedFileSave>
     <ReferencedFileSave>
-      <Name>Screens/GameScreen/Audio/RiverAmbient.wav</Name>
+      <Name>GlobalContent/SoundEffects/RiverAmbient.wav</Name>
       <IsSharedStatic>true</IsSharedStatic>
       <HasPublicProperty>true</HasPublicProperty>
       <ProjectsToExcludeFrom />

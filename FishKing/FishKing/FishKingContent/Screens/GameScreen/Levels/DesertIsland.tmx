@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" nextobjectid="39">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" nextobjectid="41">
  <tileset firstgid="1" name="alltiles" tilewidth="32" tileheight="32" tilecount="4096" columns="64">
   <image source="../Tilesets/alltiles.png" width="2048" height="2048"/>
   <tile id="5">
@@ -1524,14 +1524,6 @@
    <polyline points="0,0 63.0909,-0.909091"/>
   </object>
  </objectgroup>
- <objectgroup name="OceanLines0">
-  <object id="35" x="210.667" y="2.66667">
-   <polyline points="0,0 -67.3333,132.667 23.3333,486.667 108.667,536.667 -50.6667,703.333 -16,812.667"/>
-  </object>
-  <object id="38" x="1111.33" y="749.333">
-   <polyline points="0,0 64.6667,-70.6667 66.6667,-300.667 -23.3333,-428 88,-583.333 98,-657.333 16.6667,-742.667"/>
-  </object>
- </objectgroup>
  <objectgroup name="LakeLines" visible="0">
   <object id="7" x="885.5" y="427">
    <properties>
@@ -1541,11 +1533,13 @@
   </object>
  </objectgroup>
  <objectgroup name="RiverLines">
-  <object id="6" x="529" y="487.5">
-   <properties>
-    <property name="name" value="River"/>
-   </properties>
-   <polyline points="0,0 2.5,-51.5 125,-167.5 257.5,-170 342,-71.5 238.5,-151.5 95,-4.5 -0.5,-1"/>
+  <object id="39" x="670" y="314">
+   <polyline points="0,0 -130,126 -133.333,172.667 -46.6667,173.333 99.3333,16 -0.666667,0"/>
+  </object>
+ </objectgroup>
+ <objectgroup name="RiverLines2">
+  <object id="40" x="790" y="322">
+   <polyline points="0,0 98,99.3333 58.6667,99.3333 -22,14 -0.666667,-3.33333"/>
   </object>
  </objectgroup>
  <objectgroup name="PondLines" visible="0">
@@ -1556,7 +1550,15 @@
    <polyline points="0,0 5,-147.5 125.5,-151.5 129.5,3.5 -0.5,0"/>
   </object>
  </objectgroup>
- <objectgroup name="OceanLines1">
+ <objectgroup name="OceanLines">
+  <object id="35" x="210.667" y="2.66667">
+   <polyline points="0,0 -67.3333,132.667 23.3333,486.667 108.667,536.667 -50.6667,703.333 -16,812.667"/>
+  </object>
+  <object id="38" x="1111.33" y="749.333">
+   <polyline points="0,0 64.6667,-70.6667 66.6667,-300.667 -23.3333,-428 88,-583.333 98,-657.333 16.6667,-742.667"/>
+  </object>
+ </objectgroup>
+ <objectgroup name="OceanLines2">
   <object id="37" x="196" y="818">
    <polyline points="0,0 127.333,4 356.667,-206 423.333,-203.333 544.667,3.33333 835.333,2 908.667,-63.3333"/>
   </object>
