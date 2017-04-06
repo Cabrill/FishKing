@@ -7,12 +7,12 @@
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="0" duration="250"/>
-    <frame tileid="1" duration="250"/>
-    <frame tileid="2" duration="250"/>
-    <frame tileid="3" duration="250"/>
-    <frame tileid="4" duration="250"/>
-    <frame tileid="5" duration="250"/>
+    <frame tileid="0" duration="500"/>
+    <frame tileid="1" duration="200"/>
+    <frame tileid="2" duration="200"/>
+    <frame tileid="3" duration="200"/>
+    <frame tileid="4" duration="200"/>
+    <frame tileid="5" duration="200"/>
    </animation>
   </tile>
   <tile id="18">
@@ -86,12 +86,12 @@
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="64" duration="250"/>
-    <frame tileid="65" duration="250"/>
-    <frame tileid="66" duration="250"/>
-    <frame tileid="67" duration="250"/>
-    <frame tileid="68" duration="250"/>
-    <frame tileid="69" duration="250"/>
+    <frame tileid="64" duration="500"/>
+    <frame tileid="65" duration="200"/>
+    <frame tileid="66" duration="200"/>
+    <frame tileid="67" duration="200"/>
+    <frame tileid="68" duration="200"/>
+    <frame tileid="69" duration="200"/>
    </animation>
   </tile>
   <tile id="82">
@@ -148,12 +148,12 @@
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="128" duration="250"/>
-    <frame tileid="129" duration="250"/>
-    <frame tileid="130" duration="250"/>
-    <frame tileid="131" duration="250"/>
-    <frame tileid="132" duration="250"/>
-    <frame tileid="133" duration="250"/>
+    <frame tileid="128" duration="500"/>
+    <frame tileid="129" duration="200"/>
+    <frame tileid="130" duration="200"/>
+    <frame tileid="131" duration="200"/>
+    <frame tileid="132" duration="200"/>
+    <frame tileid="133" duration="200"/>
    </animation>
   </tile>
   <tile id="153">
@@ -197,12 +197,12 @@
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="192" duration="250"/>
-    <frame tileid="193" duration="250"/>
-    <frame tileid="194" duration="250"/>
-    <frame tileid="195" duration="250"/>
-    <frame tileid="196" duration="250"/>
-    <frame tileid="197" duration="250"/>
+    <frame tileid="192" duration="500"/>
+    <frame tileid="193" duration="200"/>
+    <frame tileid="194" duration="200"/>
+    <frame tileid="195" duration="200"/>
+    <frame tileid="196" duration="200"/>
+    <frame tileid="197" duration="200"/>
    </animation>
   </tile>
   <tile id="217">
@@ -246,12 +246,12 @@
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="256" duration="250"/>
-    <frame tileid="257" duration="250"/>
-    <frame tileid="258" duration="250"/>
-    <frame tileid="259" duration="250"/>
-    <frame tileid="260" duration="250"/>
-    <frame tileid="261" duration="250"/>
+    <frame tileid="256" duration="500"/>
+    <frame tileid="257" duration="200"/>
+    <frame tileid="258" duration="200"/>
+    <frame tileid="259" duration="200"/>
+    <frame tileid="260" duration="200"/>
+    <frame tileid="261" duration="200"/>
    </animation>
   </tile>
   <tile id="281">
@@ -304,12 +304,12 @@
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="320" duration="250"/>
-    <frame tileid="321" duration="250"/>
-    <frame tileid="322" duration="250"/>
-    <frame tileid="323" duration="250"/>
-    <frame tileid="324" duration="250"/>
-    <frame tileid="325" duration="250"/>
+    <frame tileid="320" duration="500"/>
+    <frame tileid="321" duration="200"/>
+    <frame tileid="322" duration="200"/>
+    <frame tileid="323" duration="200"/>
+    <frame tileid="324" duration="200"/>
+    <frame tileid="325" duration="200"/>
    </animation>
   </tile>
   <tile id="343">
@@ -378,12 +378,12 @@
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="384" duration="250"/>
-    <frame tileid="385" duration="250"/>
-    <frame tileid="386" duration="250"/>
-    <frame tileid="387" duration="250"/>
-    <frame tileid="388" duration="250"/>
-    <frame tileid="389" duration="250"/>
+    <frame tileid="384" duration="500"/>
+    <frame tileid="385" duration="200"/>
+    <frame tileid="386" duration="200"/>
+    <frame tileid="387" duration="200"/>
+    <frame tileid="388" duration="200"/>
+    <frame tileid="389" duration="200"/>
    </animation>
   </tile>
   <tile id="407">
@@ -415,12 +415,12 @@
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="448" duration="250"/>
-    <frame tileid="449" duration="250"/>
-    <frame tileid="450" duration="250"/>
-    <frame tileid="451" duration="250"/>
-    <frame tileid="452" duration="250"/>
-    <frame tileid="453" duration="250"/>
+    <frame tileid="448" duration="500"/>
+    <frame tileid="449" duration="200"/>
+    <frame tileid="450" duration="200"/>
+    <frame tileid="451" duration="200"/>
+    <frame tileid="452" duration="200"/>
+    <frame tileid="453" duration="200"/>
    </animation>
   </tile>
   <tile id="471">
@@ -452,12 +452,12 @@
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="512" duration="250"/>
-    <frame tileid="513" duration="250"/>
-    <frame tileid="514" duration="250"/>
-    <frame tileid="515" duration="250"/>
-    <frame tileid="516" duration="250"/>
-    <frame tileid="517" duration="250"/>
+    <frame tileid="512" duration="500"/>
+    <frame tileid="513" duration="200"/>
+    <frame tileid="514" duration="200"/>
+    <frame tileid="515" duration="200"/>
+    <frame tileid="516" duration="200"/>
+    <frame tileid="517" duration="200"/>
    </animation>
   </tile>
   <tile id="535">
@@ -489,12 +489,12 @@
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="576" duration="250"/>
-    <frame tileid="577" duration="250"/>
-    <frame tileid="578" duration="250"/>
-    <frame tileid="579" duration="250"/>
-    <frame tileid="580" duration="250"/>
-    <frame tileid="581" duration="250"/>
+    <frame tileid="576" duration="500"/>
+    <frame tileid="577" duration="200"/>
+    <frame tileid="578" duration="200"/>
+    <frame tileid="579" duration="200"/>
+    <frame tileid="580" duration="200"/>
+    <frame tileid="581" duration="200"/>
    </animation>
   </tile>
   <tile id="599">
@@ -526,12 +526,12 @@
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="640" duration="250"/>
-    <frame tileid="641" duration="250"/>
-    <frame tileid="642" duration="250"/>
-    <frame tileid="643" duration="250"/>
-    <frame tileid="644" duration="250"/>
-    <frame tileid="645" duration="250"/>
+    <frame tileid="640" duration="500"/>
+    <frame tileid="641" duration="200"/>
+    <frame tileid="642" duration="200"/>
+    <frame tileid="643" duration="200"/>
+    <frame tileid="644" duration="200"/>
+    <frame tileid="645" duration="200"/>
    </animation>
   </tile>
   <tile id="663">
@@ -567,12 +567,12 @@
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="704" duration="250"/>
-    <frame tileid="705" duration="250"/>
-    <frame tileid="706" duration="250"/>
-    <frame tileid="707" duration="250"/>
-    <frame tileid="708" duration="250"/>
-    <frame tileid="709" duration="250"/>
+    <frame tileid="704" duration="500"/>
+    <frame tileid="705" duration="200"/>
+    <frame tileid="706" duration="200"/>
+    <frame tileid="707" duration="200"/>
+    <frame tileid="708" duration="200"/>
+    <frame tileid="709" duration="200"/>
    </animation>
   </tile>
   <tile id="727">
@@ -601,12 +601,12 @@
     <property name="IsOcean" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="768" duration="250"/>
-    <frame tileid="769" duration="250"/>
-    <frame tileid="770" duration="250"/>
-    <frame tileid="771" duration="250"/>
-    <frame tileid="772" duration="250"/>
-    <frame tileid="773" duration="250"/>
+    <frame tileid="768" duration="500"/>
+    <frame tileid="769" duration="200"/>
+    <frame tileid="770" duration="200"/>
+    <frame tileid="771" duration="200"/>
+    <frame tileid="772" duration="200"/>
+    <frame tileid="773" duration="200"/>
    </animation>
   </tile>
   <tile id="837">
@@ -614,12 +614,12 @@
     <property name="IsOcean" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="832" duration="250"/>
-    <frame tileid="833" duration="250"/>
-    <frame tileid="834" duration="250"/>
-    <frame tileid="835" duration="250"/>
-    <frame tileid="836" duration="250"/>
-    <frame tileid="837" duration="250"/>
+    <frame tileid="832" duration="500"/>
+    <frame tileid="833" duration="200"/>
+    <frame tileid="834" duration="200"/>
+    <frame tileid="835" duration="200"/>
+    <frame tileid="836" duration="200"/>
+    <frame tileid="837" duration="200"/>
    </animation>
   </tile>
   <tile id="901">
@@ -627,12 +627,12 @@
     <property name="IsOcean" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="896" duration="250"/>
-    <frame tileid="897" duration="250"/>
-    <frame tileid="898" duration="250"/>
-    <frame tileid="899" duration="250"/>
-    <frame tileid="900" duration="250"/>
-    <frame tileid="901" duration="250"/>
+    <frame tileid="896" duration="500"/>
+    <frame tileid="897" duration="200"/>
+    <frame tileid="898" duration="200"/>
+    <frame tileid="899" duration="200"/>
+    <frame tileid="900" duration="200"/>
+    <frame tileid="901" duration="200"/>
    </animation>
   </tile>
   <tile id="965">
@@ -640,12 +640,12 @@
     <property name="IsOcean" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="960" duration="250"/>
-    <frame tileid="961" duration="250"/>
-    <frame tileid="962" duration="250"/>
-    <frame tileid="963" duration="250"/>
-    <frame tileid="964" duration="250"/>
-    <frame tileid="965" duration="250"/>
+    <frame tileid="960" duration="500"/>
+    <frame tileid="961" duration="200"/>
+    <frame tileid="962" duration="200"/>
+    <frame tileid="963" duration="200"/>
+    <frame tileid="964" duration="200"/>
+    <frame tileid="965" duration="200"/>
    </animation>
   </tile>
   <tile id="1029">
@@ -653,12 +653,12 @@
     <property name="IsOcean" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="1024" duration="250"/>
-    <frame tileid="1025" duration="250"/>
-    <frame tileid="1026" duration="250"/>
-    <frame tileid="1027" duration="250"/>
-    <frame tileid="1028" duration="250"/>
-    <frame tileid="1029" duration="250"/>
+    <frame tileid="1024" duration="500"/>
+    <frame tileid="1025" duration="200"/>
+    <frame tileid="1026" duration="200"/>
+    <frame tileid="1027" duration="200"/>
+    <frame tileid="1028" duration="200"/>
+    <frame tileid="1029" duration="200"/>
    </animation>
   </tile>
   <tile id="1093">
@@ -666,12 +666,12 @@
     <property name="IsOcean" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="1088" duration="250"/>
-    <frame tileid="1089" duration="250"/>
-    <frame tileid="1090" duration="250"/>
-    <frame tileid="1091" duration="250"/>
-    <frame tileid="1092" duration="250"/>
-    <frame tileid="1093" duration="250"/>
+    <frame tileid="1088" duration="500"/>
+    <frame tileid="1089" duration="200"/>
+    <frame tileid="1090" duration="200"/>
+    <frame tileid="1091" duration="200"/>
+    <frame tileid="1092" duration="200"/>
+    <frame tileid="1093" duration="200"/>
    </animation>
   </tile>
   <tile id="1129">
@@ -694,12 +694,12 @@
     <property name="IsOcean" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="1152" duration="250"/>
-    <frame tileid="1153" duration="250"/>
-    <frame tileid="1154" duration="250"/>
-    <frame tileid="1155" duration="250"/>
-    <frame tileid="1156" duration="250"/>
-    <frame tileid="1157" duration="250"/>
+    <frame tileid="1152" duration="500"/>
+    <frame tileid="1153" duration="200"/>
+    <frame tileid="1154" duration="200"/>
+    <frame tileid="1155" duration="200"/>
+    <frame tileid="1156" duration="200"/>
+    <frame tileid="1157" duration="200"/>
    </animation>
   </tile>
   <tile id="1193">
@@ -722,12 +722,12 @@
     <property name="IsOcean" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="1216" duration="250"/>
-    <frame tileid="1217" duration="250"/>
-    <frame tileid="1218" duration="250"/>
-    <frame tileid="1219" duration="250"/>
-    <frame tileid="1220" duration="250"/>
-    <frame tileid="1221" duration="250"/>
+    <frame tileid="1216" duration="500"/>
+    <frame tileid="1217" duration="200"/>
+    <frame tileid="1218" duration="200"/>
+    <frame tileid="1219" duration="200"/>
+    <frame tileid="1220" duration="200"/>
+    <frame tileid="1221" duration="200"/>
    </animation>
   </tile>
   <tile id="1285">
@@ -735,12 +735,12 @@
     <property name="IsOcean" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="1280" duration="250"/>
-    <frame tileid="1281" duration="250"/>
-    <frame tileid="1282" duration="250"/>
-    <frame tileid="1283" duration="250"/>
-    <frame tileid="1284" duration="250"/>
-    <frame tileid="1285" duration="250"/>
+    <frame tileid="1280" duration="500"/>
+    <frame tileid="1281" duration="200"/>
+    <frame tileid="1282" duration="200"/>
+    <frame tileid="1283" duration="200"/>
+    <frame tileid="1284" duration="200"/>
+    <frame tileid="1285" duration="200"/>
    </animation>
   </tile>
   <tile id="1349">
@@ -748,12 +748,12 @@
     <property name="IsOcean" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="1348" duration="250"/>
-    <frame tileid="1349" duration="250"/>
-    <frame tileid="1344" duration="250"/>
-    <frame tileid="1345" duration="250"/>
-    <frame tileid="1346" duration="250"/>
-    <frame tileid="1347" duration="250"/>
+    <frame tileid="1348" duration="500"/>
+    <frame tileid="1349" duration="200"/>
+    <frame tileid="1344" duration="200"/>
+    <frame tileid="1345" duration="200"/>
+    <frame tileid="1346" duration="200"/>
+    <frame tileid="1347" duration="200"/>
    </animation>
   </tile>
   <tile id="1383">
@@ -816,12 +816,12 @@
     <property name="IsOcean" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="1408" duration="250"/>
-    <frame tileid="1409" duration="250"/>
-    <frame tileid="1410" duration="250"/>
-    <frame tileid="1411" duration="250"/>
-    <frame tileid="1412" duration="250"/>
-    <frame tileid="1413" duration="250"/>
+    <frame tileid="1408" duration="500"/>
+    <frame tileid="1409" duration="200"/>
+    <frame tileid="1410" duration="200"/>
+    <frame tileid="1411" duration="200"/>
+    <frame tileid="1412" duration="200"/>
+    <frame tileid="1413" duration="200"/>
    </animation>
   </tile>
   <tile id="1449">
@@ -894,12 +894,12 @@
     <property name="IsOcean" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="1475" duration="250"/>
-    <frame tileid="1476" duration="250"/>
-    <frame tileid="1477" duration="250"/>
-    <frame tileid="1472" duration="250"/>
-    <frame tileid="1473" duration="250"/>
-    <frame tileid="1474" duration="250"/>
+    <frame tileid="1475" duration="500"/>
+    <frame tileid="1476" duration="200"/>
+    <frame tileid="1477" duration="200"/>
+    <frame tileid="1472" duration="200"/>
+    <frame tileid="1473" duration="200"/>
+    <frame tileid="1474" duration="200"/>
    </animation>
   </tile>
   <tile id="1513">
@@ -962,12 +962,12 @@
     <property name="IsOcean" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="1536" duration="250"/>
-    <frame tileid="1537" duration="250"/>
-    <frame tileid="1538" duration="250"/>
-    <frame tileid="1539" duration="250"/>
-    <frame tileid="1540" duration="250"/>
-    <frame tileid="1541" duration="250"/>
+    <frame tileid="1536" duration="500"/>
+    <frame tileid="1537" duration="200"/>
+    <frame tileid="1538" duration="200"/>
+    <frame tileid="1539" duration="200"/>
+    <frame tileid="1540" duration="200"/>
+    <frame tileid="1541" duration="200"/>
    </animation>
   </tile>
   <tile id="1577">
@@ -1015,12 +1015,12 @@
     <property name="IsOcean" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="1600" duration="250"/>
-    <frame tileid="1601" duration="250"/>
-    <frame tileid="1602" duration="250"/>
-    <frame tileid="1603" duration="250"/>
-    <frame tileid="1604" duration="250"/>
-    <frame tileid="1605" duration="250"/>
+    <frame tileid="1600" duration="500"/>
+    <frame tileid="1601" duration="200"/>
+    <frame tileid="1602" duration="200"/>
+    <frame tileid="1603" duration="200"/>
+    <frame tileid="1604" duration="200"/>
+    <frame tileid="1605" duration="200"/>
    </animation>
   </tile>
   <tile id="1615">
@@ -1088,12 +1088,12 @@
     <property name="IsOcean" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="1664" duration="250"/>
-    <frame tileid="1665" duration="250"/>
-    <frame tileid="1666" duration="250"/>
-    <frame tileid="1667" duration="250"/>
-    <frame tileid="1668" duration="250"/>
-    <frame tileid="1669" duration="250"/>
+    <frame tileid="1664" duration="500"/>
+    <frame tileid="1665" duration="200"/>
+    <frame tileid="1666" duration="200"/>
+    <frame tileid="1667" duration="200"/>
+    <frame tileid="1668" duration="200"/>
+    <frame tileid="1669" duration="200"/>
    </animation>
   </tile>
   <tile id="1670">
@@ -1502,17 +1502,17 @@
     <property name="Name" value="FirstSpawn"/>
    </properties>
   </object>
-  <object id="2" gid="1800" x="729.625" y="96.25" width="32" height="32">
+  <object id="2" gid="1800" x="728" y="96" width="32" height="32">
    <properties>
     <property name="EntityToCreate" value="MapNavigationTrigger"/>
     <property name="StartPointName" value="CaveEntrance"/>
     <property name="TargetMap" value="Cave1"/>
    </properties>
   </object>
-  <object id="3" gid="1799" x="727.333" y="128.667" width="32" height="32">
+  <object id="3" gid="1799" x="736" y="128" width="32" height="32">
    <properties>
     <property name="EntityToCreate" value="StartPoint"/>
-    <property name="Name" value="Cave"/>
+    <property name="Name" value="CaveExit"/>
    </properties>
   </object>
  </objectgroup>

@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="10" tilewidth="32" tileheight="32" nextobjectid="4">
+ <tileset firstgid="1" name="alltiles" tilewidth="32" tileheight="32" tilecount="4096" columns="64">
+  <image source="../Tilesets/alltiles.png" width="2048" height="2048"/>
+  <tile id="1079">
+   <animation>
+    <frame tileid="1080" duration="1000"/>
+    <frame tileid="1081" duration="200"/>
+    <frame tileid="1082" duration="200"/>
+   </animation>
+  </tile>
+ </tileset>
+ <layer name="Ground" width="20" height="10">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgoD8oYSRe7XZG/HgzEG8B4q0E1NEKW7BQF4+CwQUAV0ZFmiADAAA=
+  </data>
+ </layer>
+ <layer name="Walls" width="20" height="10">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC9vBwMBQB8S1OGhjRgYGEyA2ZcStphaKdwKxPVDdPiC9lwE7XQyUB4FSRtxq9kKxDVBNPVQ9NUAN0Kz9VDRvDxXNGgWDEwAAig6rxyADAAA=
+  </data>
+ </layer>
+ <layer name="Water" width="20" height="10">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgGAWDCVQzj+LBhAEUWVRGIAMAAA==
+  </data>
+ </layer>
+ <objectgroup name="SpawnPoints">
+  <object id="2" gid="1799" x="288" y="96" width="32" height="32">
+   <properties>
+    <property name="EntityToCreate" value="StartPoint"/>
+    <property name="Name" value="CaveEntrance"/>
+   </properties>
+  </object>
+  <object id="3" gid="1800" x="288" y="64" width="32" height="32">
+   <properties>
+    <property name="EntityToCreate" value="MapNavigationTrigger"/>
+    <property name="StartPointName" value="CaveExit"/>
+    <property name="TargetMap" value="DesertIsland"/>
+   </properties>
+  </object>
+ </objectgroup>
+</map>
