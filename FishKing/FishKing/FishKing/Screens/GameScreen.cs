@@ -98,12 +98,13 @@ namespace FishKing.Screens
             if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "OceanLines0") != null)
             {
                 var allCloseOceanPoints = FindClosestPointsOnAllPolygonsOnLayer("OceanLines", charPosition);
-                var distSum = (float)allCloseOceanPoints.Sum(p => p.Length());
+                var sumDist = (float)allCloseOceanPoints.Sum(p => p.Length());
+                var minDist = (float)allCloseOceanPoints.Min(p => p.Length());
                 var xSum = (float)allCloseOceanPoints.Sum(p => 
-                p.X * Math.Min(1,Math.Pow((32/p.Length()),3))
+                p.X * Math.Min(1,Math.Pow((1/p.Length()),3))
                 ) / allCloseOceanPoints.Count();
                 var ySum = (float)allCloseOceanPoints.Sum(p => 
-                p.Y * Math.Min(1,Math.Pow((32/p.Length()),3))
+                p.Y * Math.Min(1,Math.Pow((1/p.Length()),3))
                 ) / allCloseOceanPoints.Count();
 
 
@@ -113,6 +114,7 @@ namespace FishKing.Screens
                 float positionZ = CharacterInstance.Position.Z;
 
                 oceanEmitter.Position = new Vector3(positionX, positionY, positionZ);
+                oceanAmbientSound.Volume = 1f - (2.5f*minDist / sumDist);
 
                 oceanAmbientSound.Apply3D(listener, oceanEmitter);
 
