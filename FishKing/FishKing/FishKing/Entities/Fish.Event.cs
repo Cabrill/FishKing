@@ -54,6 +54,15 @@ namespace FishKing.Entities
             fish.Points = fishPoints;
             SpriteInstance.TextureScale = Math.Max(0.1f, (float)Decimal.Divide(fishLengthMM, 3000));
             fish.IsSmall = SpriteInstance.TextureScale < 0.15;
+
+            if (fishType.Name == "Swordfish")
+            {
+                ShadowInstance.SpriteInstanceWidth = this.SpriteInstance.Width * 0.8f;
+            }
+            else
+            {
+                ShadowInstance.SpriteInstanceWidth = this.SpriteInstance.Width;
+            }
         }
 
 

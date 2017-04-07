@@ -16,6 +16,10 @@ namespace FishKing.Entities
 {
 	public partial class Fish
 	{
+        private Direction directionTraveling;
+        private float originalTextureScale;
+
+        public event System.EventHandler AfterRelativeYSet;
         /// <summary>
         /// Initialization logic which is execute only one time for this Entity (unless the Entity is pooled).
         /// This method is called when the Entity is added to managers. Entities which are instantiated but not
@@ -23,13 +27,28 @@ namespace FishKing.Entities
         /// </summary>
 		private void CustomInitialize()
 		{
-
-		}
+            ShadowInstance.Visible = false;
+            ShadowInstance.SpriteInstanceAlpha = 0.5f;
+            ShadowInstance.RelativeZ = -0.5f;
+        }
 
 		private void CustomActivity()
 		{
-
-
+            if (Visible && ShadowInstance.Visible)
+            {
+                if (directionTraveling == Direction.Left || directionTraveling == Direction.Right)
+                {
+                    ShadowInstance.RelativeY = -8 + -RelativeY;
+                    ShadowInstance.SpriteInstanceWidth = this.SpriteInstance.Width * (1 - (RelativeY + 8) / 64);
+                    ShadowInstance.SpriteInstanceAlpha = 0.5f * (1 - (RelativeY + 8) / 50);
+                }
+                else
+                {
+                    ShadowInstance.RelativeY = (-20 * (1 - (originalTextureScale / SpriteInstanceTextureScale)));
+                    ShadowInstance.SpriteInstanceWidth = this.SpriteInstance.Width * (originalTextureScale / SpriteInstanceTextureScale);
+                    ShadowInstance.SpriteInstanceAlpha = 0.5f * (originalTextureScale / SpriteInstanceTextureScale);
+                }
+            }
 		}
 
 		private void CustomDestroy()
@@ -46,25 +65,27 @@ namespace FishKing.Entities
 
         public void PullInAndLand(Vector3 targetPosition, Direction direction, Action afterAction)
         {
+            directionTraveling = direction;
             Visible = true;
+            ShadowInstance.Visible = true;
             this.Position = targetPosition;
+            this.RelativeZ = -0.5f;
             SetRelativeFromAbsolute();
                         
-            //FishOnTheLine.WaterSplashInstance.Position = TargetPosition;
             GlobalContent.SplashOut.Play();
             WaterSplashInstance.Play();
 
             Tweener distanceTweener;
             Tweener verticalTweener;
             double tweenDuration = 0;
-            var currentScale = SpriteInstanceTextureScale;
-
+            originalTextureScale = SpriteInstanceTextureScale;
+            
             var wasCastHorizontally = direction == Direction.Left || direction == Direction.Right;
             if (wasCastHorizontally)
             {
-                var destY = -SpriteInstance.Height / 16;
+                var destY = -8;
                 SpriteInstanceFlipHorizontal = (direction == Direction.Left);
-                tweenDuration = Math.Abs(RelativeX / 112);
+                tweenDuration = Math.Abs(RelativeX / 96);
                 distanceTweener = this.Tween("RelativeX").To(0).During(tweenDuration).Using(InterpolationType.Sinusoidal, Easing.Out);
                 verticalTweener = this.Tween("RelativeY").To(20).During(tweenDuration / 2).Using(InterpolationType.Quadratic, Easing.Out);
                 verticalTweener.Ended += () => {
@@ -86,16 +107,16 @@ namespace FishKing.Entities
             else
             {
                 tweenDuration = Math.Abs(RelativeY / 96);
-                distanceTweener = this.Tween("RelativeY").To(-SpriteInstance.Height / 16).During(tweenDuration).Using(InterpolationType.Sinusoidal, Easing.Out);
+                distanceTweener = this.Tween("RelativeY").To(-8).During(tweenDuration).Using(InterpolationType.Sinusoidal, Easing.Out);
                 this.Tween("RelativeX").To(0).During(tweenDuration).Using(InterpolationType.Linear, Easing.InOut).Start();
 
-                var newScale = currentScale * 1.5f;
+                var newScale = originalTextureScale * 2f;
 
                 verticalTweener = this.Tween("SpriteInstanceTextureScale").To(newScale).During(tweenDuration / 2).Using(InterpolationType.Quadratic, Easing.Out);
                 verticalTweener.Ended += () => {
                     var lastUpdate = SpriteInstanceTextureScale;
                     var updateBeforeLast = lastUpdate;
-                    var downTween = this.Tween("SpriteInstanceTextureScale").To(currentScale).During(tweenDuration / 2).Using(InterpolationType.Bounce, Easing.In);
+                    var downTween = this.Tween("SpriteInstanceTextureScale").To(originalTextureScale).During(tweenDuration / 2).Using(InterpolationType.Bounce, Easing.Out);
 
                     downTween.PositionChanged += (a) =>
                     {
@@ -109,6 +130,7 @@ namespace FishKing.Entities
                     downTween.Start();
                 };
             }
+            distanceTweener.Ended += () => { ShadowInstance.Visible = false; };
             distanceTweener.Ended += afterAction;
             distanceTweener.Start();
             verticalTweener.Start();
