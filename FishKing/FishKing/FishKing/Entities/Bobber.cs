@@ -19,18 +19,21 @@ namespace FishKing.Entities
 {
     public partial class Bobber
 	{
-        SoundEffectInstance bobberSoundInstance;
-        AudioListener listener;
-        AudioEmitter emitter;
-        int fishLinePointRate = 4;
-        int fishLinePointCounter = 0;
+        private SoundEffectInstance bobberSoundInstance;
+        private AudioListener listener;
+        private AudioEmitter emitter;
+        private int fishLinePointRate = 4;
+        private int fishLinePointCounter = 0;
+        private float originalTextureScale;
+
+        private bool wasMovingLastUpdate = false;
+        private bool wasCastHorizontally = false;
 
         public bool IsMoving
         {
             get; private set;
         }
-        private bool wasMovingLastUpdate = false;
-        private bool wasCastHorizontally = false;
+        
 
         /// <summary>
         /// Initialization logic which is execute only one time for this Entity (unless the Entity is pooled).
@@ -46,6 +49,8 @@ namespace FishKing.Entities
             emitter = new AudioEmitter();
 
             IsMoving = false;
+            ShadowInstance.SpriteInstanceWidth = this.BobberSpriteInstance.Width * 0.9f;
+            ShadowInstance.SpriteInstanceAlpha = 0.5f;
         }
 
         /// <summary>
@@ -57,6 +62,27 @@ namespace FishKing.Entities
             {
                 UpdateFishingLine();
                 wasMovingLastUpdate = IsMoving;
+                if (IsMoving)
+                {
+                    ShadowInstance.Visible = true;
+                    ShadowInstance.RelativeY = -RelativeY;
+                    if (wasCastHorizontally)
+                    {
+                        ShadowInstance.RelativeY = -8 + -RelativeY;
+                        ShadowInstance.SpriteInstanceWidth = BobberSpriteInstance.Width * (1 - (RelativeY  / 128));
+                        ShadowInstance.SpriteInstanceAlpha = 0.5f * (1 - (RelativeY / 128));
+                    }
+                    else
+                    {
+                        ShadowInstance.RelativeY = (-128 * (1 - (originalTextureScale / BobberSpriteInstance.TextureScale)));
+                        ShadowInstance.SpriteInstanceWidth = BobberSpriteInstance.Width * (originalTextureScale / BobberSpriteInstance.TextureScale);
+                        ShadowInstance.SpriteInstanceAlpha = 0.5f * (originalTextureScale / BobberSpriteInstance.TextureScale);
+                    }
+                }
+                else
+                {
+                    ShadowInstance.Visible = false;
+                }
             }
             else 
             {
@@ -133,8 +159,10 @@ namespace FishKing.Entities
         public void TraverseTo(Vector3 relativeDestination, int tileSize)
         {
             IsMoving = true;
+            originalTextureScale = BobberSpriteInstance.TextureScale;
             CurrentState = VariableState.OutOfWater;
             this.RelativePosition = Vector3.Zero;
+            ShadowInstance.RelativeZ = -0.5f;
             
             this.Visible = true;
             ResetFishingLine();
