@@ -94,6 +94,10 @@ namespace FishKing.Entities
             DirectionFacing = Direction.Down;
             SpriteInstance.CurrentChainName = "StandDown";
             MaxDistanceTileCast = 3;
+            ShadowInstance.RelativeZ = -0.5f;
+            ShadowInstance.SpriteInstanceWidth = this.SpriteInstance.Width/4;
+            ShadowInstance.RelativeY = -(this.SpriteInstance.Height / 10);
+            ShadowInstance.SpriteInstanceAlpha = 0.5f;
         }
 
         private void InitializeCollision()
