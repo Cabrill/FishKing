@@ -39,6 +39,7 @@ namespace FishKing.Screens
 	{
         static string levelToLoad = "DesertIsland";
         static string startPointName = "FirstSpawn";
+        private bool wasFishing = false;
 
         SoundEffectInstance waterFallAmbientSound;
         SoundEffectInstance riverAmbientSound;
@@ -69,179 +70,6 @@ namespace FishKing.Screens
             InitializeCharacter();
         }
 
-        private void FindNearestAmbientEmitters()
-        {
-            listener.Position = Vector3.Zero;
-            Point3D charPosition = new Point3D(CharacterInstance.Position);
-
-            if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "WaterfallLines") != null)
-            {
-                if (waterFallAmbientSound == null)
-                {
-                    waterFallAmbientSound = GlobalContent.WaterfallAmbient.CreateInstance();
-                    waterFallAmbientSound.IsLooped = true;
-                    waterfallEmitter = new AudioEmitter();
-                }
-
-                waterfallEmitter.Position = FindClosestPolygonPointOnLayer("WaterfallLines", charPosition);
-                waterFallAmbientSound.Volume = Math.Max(0, 1 - (waterfallEmitter.Position.Length()/10));
-
-                waterFallAmbientSound.Apply3D(listener, waterfallEmitter);
-
-                if (waterFallAmbientSound.State != SoundState.Playing)
-                {
-                    waterFallAmbientSound.Play();
-                }
-            }
-
-            if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "OceanLines") != null)
-            {
-                if (oceanAmbientSound == null)
-                {
-                    oceanAmbientSound = GlobalContent.OceanAmbient.CreateInstance();
-                    oceanAmbientSound.IsLooped = true;
-                    oceanEmitter = new AudioEmitter();
-                }
-                var allCloseOceanPoints = FindClosestPointsOnAllPolygonsOnLayer("OceanLines", charPosition);
-                var sumDist = (float)allCloseOceanPoints.Sum(p => p.Length());
-                var minDist = (float)allCloseOceanPoints.Min(p => p.Length());
-                var xSum = (float)allCloseOceanPoints.Sum(p => 
-                p.X * Math.Min(1,Math.Pow((1/p.Length()),3))
-                ) / allCloseOceanPoints.Count();
-                var ySum = (float)allCloseOceanPoints.Sum(p => 
-                p.Y * Math.Min(1,Math.Pow((1/p.Length()),3))
-                ) / allCloseOceanPoints.Count();
-
-
-                //var combineDistance = 5;
-                float positionX = xSum;
-                float positionY = ySum;
-                float positionZ = CharacterInstance.Position.Z;
-
-                oceanEmitter.Position = new Vector3(positionX, positionY, positionZ);
-                oceanAmbientSound.Volume = MathHelper.Clamp(1f - (2.5f*minDist / sumDist),0,1);
-
-                oceanAmbientSound.Apply3D(listener, oceanEmitter);
-
-                if (oceanAmbientSound.State != SoundState.Playing)
-                {
-                    oceanAmbientSound.Play();
-                }
-            }
-
-            if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "RiverLines") != null)
-            {
-                if (riverAmbientSound == null)
-                {
-                    riverAmbientSound = GlobalContent.RiverAmbient.CreateInstance();
-                    riverAmbientSound.IsLooped = true;
-                    riverEmitter = new AudioEmitter();
-                }
-                var allCloseRiverPoints = FindClosestPointsOnAllPolygonsOnLayer("RiverLines", charPosition);
-                var sumDist = (float)allCloseRiverPoints.Sum(p => p.Length());
-                var minDist = (float)allCloseRiverPoints.Min(p => p.Length());
-                var xSum = (float)allCloseRiverPoints.Sum(p =>
-                p.X * Math.Min(1, Math.Pow((1 / p.Length()), 3))
-                ) / allCloseRiverPoints.Count();
-                var ySum = (float)allCloseRiverPoints.Sum(p =>
-                p.Y * Math.Min(1, Math.Pow((1 / p.Length()), 3))
-                ) / allCloseRiverPoints.Count();
-
-
-                //var combineDistance = 5;
-                float positionX = xSum;
-                float positionY = ySum;
-                float positionZ = CharacterInstance.Position.Z;
-
-                riverEmitter.Position = new Vector3(positionX, positionY, positionZ);
-                riverAmbientSound.Volume = MathHelper.Clamp(1f - (2.5f * minDist / sumDist),0,1);
-                
-                riverAmbientSound.Apply3D(listener, riverEmitter);
-
-                if (riverAmbientSound.State != SoundState.Playing)
-                {
-                    riverAmbientSound.Play();
-                }
-            }
-        }
-
-        private Vector3 FindClosestPolygonPointOnLayer(string layerName, Point3D fromPoint)
-        {
-            var lines = CurrentTileMap.ShapeCollections.Find(s => s.Name == layerName).Polygons;
-
-            var closestLine = lines.Aggregate((x, y) => x.VectorFrom(fromPoint).Length() < y.VectorFrom(fromPoint).Length() ? x : y);
-            var closestPoint = closestLine.VectorFrom(fromPoint);
-
-            return new Vector3((float)(closestPoint.X / CurrentTileMap.WidthPerTile), (float)(closestPoint.Y / CurrentTileMap.HeightPerTile), listener.Position.Z);
-        }
-
-        private IEnumerable<Point3D> FindClosestPointsOnAllPolygonsOnLayer(string layerName, Point3D fromPoint)
-        {
-            var allClosestPoints = new List<Point3D>();
-            for (int i = 0; i < 10; i++)
-            {
-                var layerNumName = layerName + (i == 0 ? "" : (i + 1).ToString());
-                var lines = CurrentTileMap.ShapeCollections.Find(s => s.Name == layerNumName)?.Polygons;
-
-                if (lines == null)
-                {
-                    break;
-                }
-                else
-                {
-                    allClosestPoints.AddRange(lines.Select(line => line.VectorFrom(fromPoint)));
-                }
-            }
-            return allClosestPoints;
-        }
-
-        private WaterType GetWaterType()
-        {
-            var tile = WaterTiles.GetTileAt(TargetingSpriteInstance.X, TargetingSpriteInstance.Y);
-            if (tile == null)
-            {
-                return WaterType.None;
-            }
-            else
-            {
-                return WaterTypeNameToEnum(tile.Name);
-            }
-        }
-
-        private void AddWaterTiles()
-        {
-            var waterNames = new List<string>() { "IsOcean", "IsLake", "IsRiver", "IsPond", "IsDeepOcean", "InWaterfall" };
-            WaterTiles.AddWaterFrom(CurrentTileMap, (List =>
-                List.Any(item => waterNames.Contains(item.Name))
-                ));
-            WaterTiles.Visible = false;
-        }
-
-        private void RemoveBlockeddWaterTiles()
-        {
-            var nonWaterLayers = new System.Collections.Generic.List<string>() { "Bridge" };
-            WaterTiles.RemoveCollisionsFromLayer(CurrentTileMap, nonWaterLayers);
-        }
-
-        private void AddCollisions()
-        {
-            SolidCollisions.AddCollisionFrom(CurrentTileMap,
-                 (list => 
-                 list.Any(item => item.Name == "HasCollision") ));
-
-            var collisionLayers = new System.Collections.Generic.List<string>() { "Walls", "Water" };
-            SolidCollisions.AddCollisionFromLayer(CurrentTileMap, collisionLayers);
-        }
-
-        private void RemoveBridgedCollisions()
-        {
-            var nonCollisionLayers = new System.Collections.Generic.List<string>() { "Bridge" };
-            SolidCollisions.RemoveCollisionsFromLayer(CurrentTileMap, nonCollisionLayers);
-            //SolidCollisions.RemoveCollisionFrom(CurrentTileMap,
-            //    (List => 
-            //    List.Any(item => item.Name == "IsBridge")
-            //    ));
-        }
 
         private void HandleNewNpc(object sender, NotifyCollectionChangedEventArgs e)
         {
@@ -520,6 +348,13 @@ namespace FishKing.Screens
             ProgressBarInstance.Visible = CharacterInstance.IsOnWindUp;
             TargetingSpriteInstance.Visible = CharacterInstance.IsOnWindUp;
             FishCatchDisplayInstance.Visible = (CharacterInstance.IsDisplayingCatch && CharacterInstance.IsOnFinalFrameOfAnimationChain);
+
+            if (wasFishing  && !CharacterInstance.IsFishing)
+            {
+                FishCatchingInterfaceInstance.Stop();
+            }
+
+            wasFishing = CharacterInstance.IsFishing;
         }
 
         private void ShowDialog(string stringId)
@@ -546,6 +381,180 @@ namespace FishKing.Screens
                 }
             }
 
+        }
+
+        private void FindNearestAmbientEmitters()
+        {
+            listener.Position = Vector3.Zero;
+            Point3D charPosition = new Point3D(CharacterInstance.Position);
+
+            if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "WaterfallLines") != null)
+            {
+                if (waterFallAmbientSound == null)
+                {
+                    waterFallAmbientSound = GlobalContent.WaterfallAmbient.CreateInstance();
+                    waterFallAmbientSound.IsLooped = true;
+                    waterfallEmitter = new AudioEmitter();
+                }
+
+                waterfallEmitter.Position = FindClosestPolygonPointOnLayer("WaterfallLines", charPosition);
+                waterFallAmbientSound.Volume = Math.Max(0, 1 - (waterfallEmitter.Position.Length() / 10));
+
+                waterFallAmbientSound.Apply3D(listener, waterfallEmitter);
+
+                if (waterFallAmbientSound.State != SoundState.Playing)
+                {
+                    waterFallAmbientSound.Play();
+                }
+            }
+
+            if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "OceanLines") != null)
+            {
+                if (oceanAmbientSound == null)
+                {
+                    oceanAmbientSound = GlobalContent.OceanAmbient.CreateInstance();
+                    oceanAmbientSound.IsLooped = true;
+                    oceanEmitter = new AudioEmitter();
+                }
+                var allCloseOceanPoints = FindClosestPointsOnAllPolygonsOnLayer("OceanLines", charPosition);
+                var sumDist = (float)allCloseOceanPoints.Sum(p => p.Length());
+                var minDist = (float)allCloseOceanPoints.Min(p => p.Length());
+                var xSum = (float)allCloseOceanPoints.Sum(p =>
+                p.X * Math.Min(1, Math.Pow((1 / p.Length()), 3))
+                ) / allCloseOceanPoints.Count();
+                var ySum = (float)allCloseOceanPoints.Sum(p =>
+                p.Y * Math.Min(1, Math.Pow((1 / p.Length()), 3))
+                ) / allCloseOceanPoints.Count();
+
+
+                //var combineDistance = 5;
+                float positionX = xSum;
+                float positionY = ySum;
+                float positionZ = CharacterInstance.Position.Z;
+
+                oceanEmitter.Position = new Vector3(positionX, positionY, positionZ);
+                oceanAmbientSound.Volume = MathHelper.Clamp(1f - (2.5f * minDist / sumDist), 0, 1);
+
+                oceanAmbientSound.Apply3D(listener, oceanEmitter);
+
+                if (oceanAmbientSound.State != SoundState.Playing)
+                {
+                    oceanAmbientSound.Play();
+                }
+            }
+
+            if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "RiverLines") != null)
+            {
+                if (riverAmbientSound == null)
+                {
+                    riverAmbientSound = GlobalContent.RiverAmbient.CreateInstance();
+                    riverAmbientSound.IsLooped = true;
+                    riverEmitter = new AudioEmitter();
+                }
+                var allCloseRiverPoints = FindClosestPointsOnAllPolygonsOnLayer("RiverLines", charPosition);
+                var sumDist = (float)allCloseRiverPoints.Sum(p => p.Length());
+                var minDist = (float)allCloseRiverPoints.Min(p => p.Length());
+                var xSum = (float)allCloseRiverPoints.Sum(p =>
+                p.X * Math.Min(1, Math.Pow((1 / p.Length()), 3))
+                ) / allCloseRiverPoints.Count();
+                var ySum = (float)allCloseRiverPoints.Sum(p =>
+                p.Y * Math.Min(1, Math.Pow((1 / p.Length()), 3))
+                ) / allCloseRiverPoints.Count();
+
+
+                //var combineDistance = 5;
+                float positionX = xSum;
+                float positionY = ySum;
+                float positionZ = CharacterInstance.Position.Z;
+
+                riverEmitter.Position = new Vector3(positionX, positionY, positionZ);
+                riverAmbientSound.Volume = MathHelper.Clamp(1f - (2.5f * minDist / sumDist), 0, 1);
+
+                riverAmbientSound.Apply3D(listener, riverEmitter);
+
+                if (riverAmbientSound.State != SoundState.Playing)
+                {
+                    riverAmbientSound.Play();
+                }
+            }
+        }
+
+        private Vector3 FindClosestPolygonPointOnLayer(string layerName, Point3D fromPoint)
+        {
+            var lines = CurrentTileMap.ShapeCollections.Find(s => s.Name == layerName).Polygons;
+
+            var closestLine = lines.Aggregate((x, y) => x.VectorFrom(fromPoint).Length() < y.VectorFrom(fromPoint).Length() ? x : y);
+            var closestPoint = closestLine.VectorFrom(fromPoint);
+
+            return new Vector3((float)(closestPoint.X / CurrentTileMap.WidthPerTile), (float)(closestPoint.Y / CurrentTileMap.HeightPerTile), listener.Position.Z);
+        }
+
+        private IEnumerable<Point3D> FindClosestPointsOnAllPolygonsOnLayer(string layerName, Point3D fromPoint)
+        {
+            var allClosestPoints = new List<Point3D>();
+            for (int i = 0; i < 10; i++)
+            {
+                var layerNumName = layerName + (i == 0 ? "" : (i + 1).ToString());
+                var lines = CurrentTileMap.ShapeCollections.Find(s => s.Name == layerNumName)?.Polygons;
+
+                if (lines == null)
+                {
+                    break;
+                }
+                else
+                {
+                    allClosestPoints.AddRange(lines.Select(line => line.VectorFrom(fromPoint)));
+                }
+            }
+            return allClosestPoints;
+        }
+
+        private WaterType GetWaterType()
+        {
+            var tile = WaterTiles.GetTileAt(TargetingSpriteInstance.X, TargetingSpriteInstance.Y);
+            if (tile == null)
+            {
+                return WaterType.None;
+            }
+            else
+            {
+                return WaterTypeNameToEnum(tile.Name);
+            }
+        }
+
+        private void AddWaterTiles()
+        {
+            var waterNames = new List<string>() { "IsOcean", "IsLake", "IsRiver", "IsPond", "IsDeepOcean", "InWaterfall" };
+            WaterTiles.AddWaterFrom(CurrentTileMap, (List =>
+                List.Any(item => waterNames.Contains(item.Name))
+                ));
+            WaterTiles.Visible = false;
+        }
+
+        private void RemoveBlockeddWaterTiles()
+        {
+            var nonWaterLayers = new System.Collections.Generic.List<string>() { "Bridge" };
+            WaterTiles.RemoveCollisionsFromLayer(CurrentTileMap, nonWaterLayers);
+        }
+
+        private void AddCollisions()
+        {
+            SolidCollisions.AddCollisionFrom(CurrentTileMap,
+                 (list =>
+                 list.Any(item => item.Name == "HasCollision")));
+
+            var collisionLayers = new System.Collections.Generic.List<string>() { "Walls", "Water" };
+            SolidCollisions.AddCollisionFromLayer(CurrentTileMap, collisionLayers);
+        }
+
+        private void RemoveBridgedCollisions()
+        {
+            var nonCollisionLayers = new System.Collections.Generic.List<string>() { "Bridge" };
+            SolidCollisions.RemoveCollisionsFromLayer(CurrentTileMap, nonCollisionLayers);
+            //SolidCollisions.RemoveCollisionFrom(CurrentTileMap,
+            //    (List => 
+            //    List.Any(item => item.Name == "IsBridge")
+            //    ));
         }
 
         void CustomDestroy()

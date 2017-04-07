@@ -203,7 +203,7 @@ namespace FishKing.Entities
 
         public void UpdateFishingStatus(bool characterMoved)
         {
-            if (characterMoved)
+            if (IsAttemptingMovement)
             {
                 ResetFishingStatus();
             }
