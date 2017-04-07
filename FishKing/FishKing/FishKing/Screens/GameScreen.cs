@@ -64,21 +64,7 @@ namespace FishKing.Screens
 
 		void CustomInitialize()
         {
-            waterfallEmitter = new AudioEmitter();
-            oceanEmitter = new AudioEmitter();
-            riverEmitter = new AudioEmitter();
-
-            waterFallAmbientSound = GlobalContent.WaterfallAmbient.CreateInstance();
-            waterFallAmbientSound.IsLooped = true;
-
-            oceanAmbientSound = GlobalContent.OceanAmbient.CreateInstance();
-            oceanAmbientSound.IsLooped = true;
-
-            riverAmbientSound = GlobalContent.RiverAmbient.CreateInstance();
-            riverAmbientSound.IsLooped = true;
-
             LoadLevel(levelToLoad);
-            FindNearestAmbientEmitters();
 
             InitializeCharacter();
         }
@@ -90,6 +76,13 @@ namespace FishKing.Screens
 
             if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "WaterfallLines") != null)
             {
+                if (waterFallAmbientSound == null)
+                {
+                    waterFallAmbientSound = GlobalContent.WaterfallAmbient.CreateInstance();
+                    waterFallAmbientSound.IsLooped = true;
+                    waterfallEmitter = new AudioEmitter();
+                }
+
                 waterfallEmitter.Position = FindClosestPolygonPointOnLayer("WaterfallLines", charPosition);
                 waterFallAmbientSound.Volume = Math.Max(0, 1 - (waterfallEmitter.Position.Length()/10));
 
@@ -100,13 +93,15 @@ namespace FishKing.Screens
                     waterFallAmbientSound.Play();
                 }
             }
-            else if (waterFallAmbientSound.State == SoundState.Playing)
-            {
-                waterFallAmbientSound.Stop();
-            }
 
             if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "OceanLines") != null)
             {
+                if (oceanAmbientSound == null)
+                {
+                    oceanAmbientSound = GlobalContent.OceanAmbient.CreateInstance();
+                    oceanAmbientSound.IsLooped = true;
+                    oceanEmitter = new AudioEmitter();
+                }
                 var allCloseOceanPoints = FindClosestPointsOnAllPolygonsOnLayer("OceanLines", charPosition);
                 var sumDist = (float)allCloseOceanPoints.Sum(p => p.Length());
                 var minDist = (float)allCloseOceanPoints.Min(p => p.Length());
@@ -133,13 +128,15 @@ namespace FishKing.Screens
                     oceanAmbientSound.Play();
                 }
             }
-            else if (oceanAmbientSound.State == SoundState.Playing)
-            {
-                oceanAmbientSound.Stop();
-            }
 
             if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "RiverLines") != null)
             {
+                if (riverAmbientSound == null)
+                {
+                    riverAmbientSound = GlobalContent.RiverAmbient.CreateInstance();
+                    riverAmbientSound.IsLooped = true;
+                    riverEmitter = new AudioEmitter();
+                }
                 var allCloseRiverPoints = FindClosestPointsOnAllPolygonsOnLayer("RiverLines", charPosition);
                 var sumDist = (float)allCloseRiverPoints.Sum(p => p.Length());
                 var minDist = (float)allCloseRiverPoints.Min(p => p.Length());
@@ -165,10 +162,6 @@ namespace FishKing.Screens
                 {
                     riverAmbientSound.Play();
                 }
-            }
-            else if (riverAmbientSound.State == SoundState.Playing)
-            {
-                riverAmbientSound.Stop();
             }
         }
 
@@ -265,7 +258,6 @@ namespace FishKing.Screens
             RemoveBridgedCollisions();
             AddWaterTiles();
             RemoveBlockeddWaterTiles();
-            //AdjustCamera();
             AdjustNpcs();
 
 #if DEBUG
@@ -281,20 +273,7 @@ namespace FishKing.Screens
                 character.ReactToReposition();
             }
         }
-
-        private void AdjustCamera()
-        {
-            Camera.Main.MinimumX -= .5f;
-            Camera.Main.MaximumX += .5f;
-            Camera.Main.MinimumY -= .5f;
-            Camera.Main.MaximumY += .5f;
-            
-
-
-            Camera.Main.X += .25f;
-            Camera.Main.Y += .25f;
-        }
-
+        
         private void InitializeCharacter()
         {
             var foundStartPoint = this.StartPointList.FirstOrDefault(item => item.Name == startPointName);
@@ -313,7 +292,7 @@ namespace FishKing.Screens
             this.CharacterInstance.ActionInput = InputManager.Keyboard.GetKey(Keys.Space);
             this.CharacterInstance.FishingAlignmentInput = InputManager.Mouse.GetButton(Mouse.MouseButtons.LeftButton);
             this.CharacterInstance.Position.Z = CurrentTileMap.MapLayers.Count - 2;
-
+            FindNearestAmbientEmitters();
         }
 
         void CustomActivity(bool firstTimeCalled)
@@ -332,7 +311,10 @@ namespace FishKing.Screens
             this.CharacterInstance.SetSpriteOffset();
 
             CollisionActivity();
-            FindNearestAmbientEmitters();
+            if (CharacterInstance.IsMoving)
+            {
+                FindNearestAmbientEmitters();
+            }
 
         }
 
@@ -354,8 +336,10 @@ namespace FishKing.Screens
             }
             else
             {
-                camera.X = -CurrentTileMap.Width;
-                camera.Y = -CurrentTileMap.Height;
+                camera.ClearBorders();
+                camera.ClearMinimumsAndMaximums();
+                camera.X = CurrentTileMap.Width/2;
+                camera.Y = -CurrentTileMap.Height/2;
             }
         }
 
@@ -565,9 +549,26 @@ namespace FishKing.Screens
         }
 
         void CustomDestroy()
-		{
-            
-		}
+        {
+            if (waterFallAmbientSound != null)
+            {
+                waterFallAmbientSound.Stop();
+                waterFallAmbientSound.Dispose();
+                waterFallAmbientSound = null;
+            }
+            if (oceanAmbientSound != null)
+            {
+                oceanAmbientSound.Stop();
+                oceanAmbientSound.Dispose();
+                oceanAmbientSound = null;
+            }
+            if (riverAmbientSound != null)
+            {
+                riverAmbientSound.Stop();
+                riverAmbientSound.Dispose();
+                riverAmbientSound = null;
+            }
+        }
 
         static void CustomLoadStaticContent(string contentManagerName)
         {
