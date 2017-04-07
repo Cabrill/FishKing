@@ -13,7 +13,7 @@
     <Variable>
       <Type>float</Type>
       <Name>CatchStats.Height</Name>
-      <Value xsi:type="xsd:float">50</Value>
+      <Value xsi:type="xsd:float">52.4</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -55,7 +55,7 @@
     <Variable>
       <Type>float</Type>
       <Name>CatchStats.Y</Name>
-      <Value xsi:type="xsd:float">48</Value>
+      <Value xsi:type="xsd:float">46</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -306,7 +306,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Height</Name>
-      <Value xsi:type="xsd:float">240</Value>
+      <Value xsi:type="xsd:float">253</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -356,7 +356,7 @@
     <Variable>
       <Type>float</Type>
       <Name>LengthWithScale.Y</Name>
-      <Value xsi:type="xsd:float">-1</Value>
+      <Value xsi:type="xsd:float">-2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -661,7 +661,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Width</Name>
-      <Value xsi:type="xsd:float">30</Value>
+      <Value xsi:type="xsd:float">21.66667</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>

@@ -265,7 +265,7 @@ namespace FishKing.Screens
             RemoveBridgedCollisions();
             AddWaterTiles();
             RemoveBlockeddWaterTiles();
-            AdjustCamera();
+            //AdjustCamera();
             AdjustNpcs();
 
 #if DEBUG
@@ -338,16 +338,25 @@ namespace FishKing.Screens
 
         private void UpdateCamera()
         {
+            
             Camera camera = Camera.Main;
-            var CameraMinX = (camera.OrthogonalWidth / 2);
-            var CameraMaxX = (CurrentTileMap.Width ) - (camera.OrthogonalWidth / 2);
-            var CameraMinY = -CurrentTileMap.Height + camera.OrthogonalHeight / 2;
-            var CameraMaxY = -(camera.OrthogonalHeight / 2);
-            camera.X = this.CharacterInstance.X;
-            camera.Y = this.CharacterInstance.Y;
-            // assuming CameraMinX, CameraMaxX, CameraMinY, and CameraMaxY are all defined:
-            camera.X = MathHelper.Clamp(camera.X, CameraMinX, CameraMaxX);
-            camera.Y = MathHelper.Clamp(camera.Y, CameraMinY, CameraMaxY);
+            if (CurrentTileMap.Width > camera.OrthogonalWidth && CurrentTileMap.Height > camera.OrthogonalHeight)
+            {
+                var CameraMinX = (camera.OrthogonalWidth / 2);
+                var CameraMaxX = (CurrentTileMap.Width) - (camera.OrthogonalWidth / 2);
+                var CameraMinY = -CurrentTileMap.Height + camera.OrthogonalHeight / 2;
+                var CameraMaxY = -(camera.OrthogonalHeight / 2);
+                camera.X = this.CharacterInstance.X;
+                camera.Y = this.CharacterInstance.Y;
+                // assuming CameraMinX, CameraMaxX, CameraMinY, and CameraMaxY are all defined:
+                camera.X = MathHelper.Clamp(camera.X, CameraMinX, CameraMaxX);
+                camera.Y = MathHelper.Clamp(camera.Y, CameraMinY, CameraMaxY);
+            }
+            else
+            {
+                camera.X = -CurrentTileMap.Width;
+                camera.Y = -CurrentTileMap.Height;
+            }
         }
 
         private void DialogActivity()

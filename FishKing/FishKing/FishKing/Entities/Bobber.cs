@@ -86,6 +86,7 @@ namespace FishKing.Entities
             }
             else 
             {
+                ShadowInstance.Visible = false;
                 var tweenManager = TweenerManager.Self;
                 if (tweenManager.IsObjectReferencedByTweeners(this))
                 {

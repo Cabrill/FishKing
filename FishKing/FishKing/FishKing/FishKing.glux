@@ -6,8 +6,8 @@
   <ResolutionWidth>1280</ResolutionWidth>
   <ResolutionHeight>720</ResolutionHeight>
   <SetOrthogonalResolution>true</SetOrthogonalResolution>
-  <OrthogonalWidth>640</OrthogonalWidth>
-  <OrthogonalHeight>360</OrthogonalHeight>
+  <OrthogonalWidth>960</OrthogonalWidth>
+  <OrthogonalHeight>540</OrthogonalHeight>
   <Screens>
     <ScreenSave>
       <Tags>
