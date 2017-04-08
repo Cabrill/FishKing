@@ -203,7 +203,7 @@ namespace FishKing.Entities
 
         public void UpdateFishingStatus(bool characterMoved)
         {
-            if (IsAttemptingMovement)
+            if (IsAttemptingMovement && !IsPullingInCatch && (!IsDisplayingCatch || HasFinishedDisplayingCatch))
             {
                 ResetFishingStatus();
             }
@@ -336,7 +336,6 @@ namespace FishKing.Entities
         {
             if (!IsDisplayingCatch)
             {
-                IsDisplayingCatch = true;
                 RodSpriteInstance.Visible = false;
                 if (FishOnTheLine.IsSmall)
                 {
@@ -350,6 +349,7 @@ namespace FishKing.Entities
                 SpriteInstance.Animate = true;
                 FishOnTheLine.RelativeZ = 1;
                 FishOnTheLine.RelativeY -= SpriteInstance.Height / 16;
+                IsDisplayingCatch = true;
             }
             else
             {

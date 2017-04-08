@@ -37,7 +37,7 @@
       <RotationZRange>0</RotationZRange>
       <RotationZVelocityRange>0</RotationZVelocityRange>
       <XAcceleration>0</XAcceleration>
-      <YAcceleration>-50</YAcceleration>
+      <YAcceleration>-200</YAcceleration>
       <ZAcceleration>0</ZAcceleration>
       <XAccelerationRange>0</XAccelerationRange>
       <YAccelerationRange>0</YAccelerationRange>

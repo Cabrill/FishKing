@@ -19,13 +19,18 @@ namespace FishKing.Entities
         private Random random = new Random();
         private float xAcceleration;
         private double outOfWaterTime;
-        private Direction directionTraveling;
+        private Direction directionFrom;
         private float originalTextureScale;
         SpriteList waterDropParticles = new SpriteList();
         float minWaterDropHitY;
         float maxWaterDropHitY;
         Tweener distanceTweener;
         Tweener verticalTweener;
+        private bool hasLanded = false;
+        private double timeToLive
+        {
+            get { return 0.5f * (1-(originalTextureScale/ SpriteInstanceTextureScale));  }
+        }
 
         /// <summary>
         /// Initialization logic which is execute only one time for this Entity (unless the Entity is pooled).
@@ -45,17 +50,24 @@ namespace FishKing.Entities
             {
                 if (Visible && ShadowInstance.Visible)
                 {
-                    if (directionTraveling == Direction.Left || directionTraveling == Direction.Right)
+                    if (hasLanded)
                     {
-                        ShadowInstance.RelativeY = -8 + -RelativeY;
-                        ShadowInstance.SpriteInstanceWidth = this.SpriteInstance.Width * (1 - (RelativeY + 8) / 64);
-                        ShadowInstance.SpriteInstanceAlpha = 0.5f * (1 - (RelativeY + 8) / 50);
+                        ShadowInstance.Detach();
                     }
                     else
                     {
-                        ShadowInstance.RelativeY = (-20 * (1 - (originalTextureScale / SpriteInstanceTextureScale)));
-                        ShadowInstance.SpriteInstanceWidth = this.SpriteInstance.Width * (originalTextureScale / SpriteInstanceTextureScale);
-                        ShadowInstance.SpriteInstanceAlpha = 0.5f * (originalTextureScale / SpriteInstanceTextureScale);
+                        if (directionFrom == Direction.Left || directionFrom == Direction.Right)
+                        {
+                            ShadowInstance.RelativeY = -8 + -RelativeY;
+                            ShadowInstance.SpriteInstanceWidth = this.SpriteInstance.Width * (1 - (RelativeY + 8) / 64);
+                            ShadowInstance.SpriteInstanceAlpha = 0.5f * (1 - (RelativeY + 8) / 50);
+                        }
+                        else
+                        {
+                            ShadowInstance.RelativeY = (-20 * (1 - (originalTextureScale / SpriteInstanceTextureScale)));
+                            ShadowInstance.SpriteInstanceWidth = this.SpriteInstance.Width * (originalTextureScale / SpriteInstanceTextureScale);
+                            ShadowInstance.SpriteInstanceAlpha = 0.5f * (originalTextureScale / SpriteInstanceTextureScale);
+                        }
                     }
                 }
                 this.WaterDropEmitter.TimedEmit(waterDropParticles);
@@ -83,29 +95,75 @@ namespace FishKing.Entities
             WaterDropEmitter.NumberPerEmission = Math.Max(0, 6 - (int)timeOutOfWater);
 
             Sprite sprite;
-            for (int i = waterDropParticles.Count - 1; i > -1; i--)
+            if (hasLanded || directionFrom == Direction.Left || directionFrom == Direction.Right)
             {
-                sprite = waterDropParticles[i];
-                sprite.Alpha = 1 - sprite.TextureScale;
-                if (sprite.Y <= minWaterDropHitY && sprite.YVelocity < 0 && sprite.Y > maxWaterDropHitY)
+                for (int i = waterDropParticles.Count - 1; i > -1; i--)
                 {
-                    if (random.NextDouble() > 0.9)
+                    sprite = waterDropParticles[i];
+                    if (sprite.Alpha == 1)
+                    {
+                        sprite.Alpha = 1 - sprite.TextureScale;
+                    }
+                    if (sprite.Y <= minWaterDropHitY && sprite.YVelocity < 0 && sprite.Y > maxWaterDropHitY)
+                    {
+                        if (random.NextDouble() > 0.9)
+                        {
+                            sprite.YVelocity = 0;
+                            sprite.CurrentChainName = "Splash";
+                            sprite.Alpha = 0.3f;
+                        }
+                    }
+                    else if (sprite.Y <= maxWaterDropHitY)
                     {
                         sprite.YVelocity = 0;
                         sprite.CurrentChainName = "Splash";
                         sprite.Alpha = 0.3f;
                     }
-                }
-                else if (sprite.Y <= maxWaterDropHitY)
-                {
-                    sprite.YVelocity = 0;
-                    sprite.CurrentChainName = "Splash";
-                    sprite.Alpha = 0.3f;
-                }
 
-                if (sprite.CurrentChainName == "Splash" && sprite.JustCycled)
+                    if (sprite.CurrentChainName == "Splash" && sprite.JustCycled)
+                    {
+                        SpriteManager.RemoveSprite(sprite);
+                    }
+                }
+            }
+            else
+            {
+                var currentTime = FlatRedBall.TimeManager.CurrentTime;
+                double timeAlive;
+                double maxTimeToLive = 1;
+                for (int i = waterDropParticles.Count - 1; i > -1; i--)
                 {
-                    SpriteManager.RemoveSprite(sprite);
+                    sprite = waterDropParticles[i];
+                    timeAlive = currentTime - sprite.TimeCreated;
+                    if (directionFrom == Direction.Up && sprite.Z % 1 != 0.5f)
+                    {
+                        sprite.Z -= 0.5f;
+                    }
+
+                    if (sprite.Alpha == 1)
+                    {
+                        sprite.Alpha = 1 - sprite.TextureScale;
+                    }
+                    if (timeAlive >= timeToLive && sprite.YVelocity < 0 && timeAlive < maxTimeToLive)
+                    {
+                        if (random.NextDouble() > 0.9)
+                        {
+                            sprite.YVelocity = 0;
+                            sprite.CurrentChainName = "Splash";
+                            sprite.Alpha = 0.3f;
+                        }
+                    }
+                    else if (timeAlive > maxTimeToLive)
+                    {
+                        sprite.YVelocity = 0;
+                        sprite.CurrentChainName = "Splash";
+                        sprite.Alpha = 0.3f;
+                    }
+
+                    if (sprite.CurrentChainName == "Splash" && sprite.JustCycled)
+                    {
+                        SpriteManager.RemoveSprite(sprite);
+                    }
                 }
             }
         }
@@ -128,15 +186,12 @@ namespace FishKing.Entities
         public void PullInAndLand(Vector3 targetPosition, Direction direction, Action afterAction)
         {
             outOfWaterTime = FlatRedBall.TimeManager.CurrentTime;
-            directionTraveling = direction;
+            directionFrom = direction;
             Visible = true;
             ShadowInstance.Visible = true;
             this.Position = targetPosition;
             this.RelativeZ = -0.5f;
             SetRelativeFromAbsolute();
-
-            
-
 
             GlobalContent.SplashOut.Play();
             WaterSplashInstance.Play();
@@ -194,15 +249,20 @@ namespace FishKing.Entities
                     downTween.Start();
                 };
             }
-            distanceTweener.Ended += () => { ShadowInstance.Visible = false; };
+            distanceTweener.Ended += () => { hasLanded = true; SetGroundLocation(); };
             distanceTweener.Ended += afterAction;
             distanceTweener.Start();
             verticalTweener.Start();
 
             //Set waterdrop variables
+            SetGroundLocation();
+            xAcceleration = -this.RelativeX / (float)tweenDuration;
+        }
+
+        private void SetGroundLocation()
+        {
             minWaterDropHitY = this.Y;
             maxWaterDropHitY = minWaterDropHitY - SpriteInstance.Height / 2;
-            xAcceleration = -this.RelativeX / (float)tweenDuration;
         }
 	}
 }

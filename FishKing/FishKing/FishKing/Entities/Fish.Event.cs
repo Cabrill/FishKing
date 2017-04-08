@@ -58,9 +58,10 @@ namespace FishKing.Entities
             SpriteInstance.TextureScale = Math.Max(0.1f, (float)Decimal.Divide(fishLengthMM, 3000));
             fish.IsSmall = SpriteInstance.TextureScale < 0.15;
 
-            if (fishType.Name == "Swordfish")
+            if (fishType.Name == "Swordfish" || fishType.Name == "Sailfish")
             {
-                ShadowInstance.SpriteInstanceWidth = this.SpriteInstance.Width * 0.8f;
+                ShadowInstance.SpriteInstanceWidth = this.SpriteInstance.Width * 0.6f;
+                ShadowInstance.SpriteInstanceHeight *= 0.5f;
             }
             else
             {
@@ -109,13 +110,6 @@ namespace FishKing.Entities
                 }
             }
         }
-
-        void OnAfterZSet (object sender, EventArgs e)
-        {
-            //WaterDropEmitter.Z = Z + 0.5f;
-            //WaterDropEmitter.EmissionSettings.ZVelocity = Z + 0.5f;
-        }
-
         
     }
 }

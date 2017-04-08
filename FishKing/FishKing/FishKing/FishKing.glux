@@ -1372,6 +1372,11 @@
             <ValueAsBool>true</ValueAsBool>
           </CustomProperty>
           <CustomProperty>
+            <Type>int</Type>
+            <Member>NumberPerEmission</Member>
+            <ValueAsInt>2</ValueAsInt>
+          </CustomProperty>
+          <CustomProperty>
             <Type>float</Type>
             <Member>SecondFrequency</Member>
             <ValueAsFloat>0.1</ValueAsFloat>
@@ -1389,12 +1394,7 @@
           <CustomProperty>
             <Type>float</Type>
             <Member>Z</Member>
-            <ValueAsFloat>10</ValueAsFloat>
-          </CustomProperty>
-          <CustomProperty>
-            <Type>int</Type>
-            <Member>NumberPerEmission</Member>
-            <ValueAsInt>2</ValueAsInt>
+            <ValueAsFloat>5</ValueAsFloat>
           </CustomProperty>
           <SourceType>File</SourceType>
           <SourceFile>Entities/Fish/WaterDropEmitterListFile.emix</SourceFile>
@@ -1434,11 +1434,6 @@
         <EventResponseSave>
           <EventName>AfterFishTypeSet</EventName>
           <SourceVariable>FishType</SourceVariable>
-          <BeforeOrAfter>After</BeforeOrAfter>
-        </EventResponseSave>
-        <EventResponseSave>
-          <EventName>AfterZSet</EventName>
-          <SourceVariable>Z</SourceVariable>
           <BeforeOrAfter>After</BeforeOrAfter>
         </EventResponseSave>
       </Events>
