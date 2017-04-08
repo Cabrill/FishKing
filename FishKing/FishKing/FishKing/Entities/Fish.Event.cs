@@ -8,6 +8,9 @@ using FlatRedBall.Audio;
 using FlatRedBall.Screens;
 using FishKing.Entities;
 using FishKing.Screens;
+using FlatRedBall.Math.Geometry;
+using System.Collections.Generic;
+
 namespace FishKing.Entities
 {
 	public partial class Fish
@@ -63,6 +66,10 @@ namespace FishKing.Entities
             {
                 ShadowInstance.SpriteInstanceWidth = this.SpriteInstance.Width;
             }
+
+            WaterDropEmitter.EmissionSettings.TextureScale = Math.Min(SpriteInstance.TextureScale, 0.8f);
+            WaterDropEmitter.ScaleX = SpriteInstance.Width / 3;
+            WaterDropEmitter.ScaleY = SpriteInstance.Height / 6;
         }
 
 
@@ -102,5 +109,13 @@ namespace FishKing.Entities
                 }
             }
         }
+
+        void OnAfterZSet (object sender, EventArgs e)
+        {
+            //WaterDropEmitter.Z = Z + 0.5f;
+            //WaterDropEmitter.EmissionSettings.ZVelocity = Z + 0.5f;
+        }
+
+        
     }
 }

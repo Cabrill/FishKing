@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<AnimationChainArraySave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <FileRelativeTextures>true</FileRelativeTextures>
+  <TimeMeasurementUnit>Undefined</TimeMeasurementUnit>
+  <CoordinateType>Pixel</CoordinateType>
+  <AnimationChain>
+    <Name>Fall</Name>
+    <ColorKey>0</ColorKey>
+    <Frame>
+      <TextureName>../../FRBArt.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>0</LeftCoordinate>
+      <RightCoordinate>8</RightCoordinate>
+      <TopCoordinate>258</TopCoordinate>
+      <BottomCoordinate>272</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
+  <AnimationChain>
+    <Name>Splash</Name>
+    <ColorKey>0</ColorKey>
+    <Frame>
+      <TextureName>../../FRBArt.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>20</LeftCoordinate>
+      <RightCoordinate>74</RightCoordinate>
+      <TopCoordinate>256</TopCoordinate>
+      <BottomCoordinate>268</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <TextureName>../../FRBArt.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>80</LeftCoordinate>
+      <RightCoordinate>134</RightCoordinate>
+      <TopCoordinate>256</TopCoordinate>
+      <BottomCoordinate>268</BottomCoordinate>
+    </Frame>
+    <Frame>
+      <TextureName>../../FRBArt.png</TextureName>
+      <FrameLength>0.1</FrameLength>
+      <LeftCoordinate>134</LeftCoordinate>
+      <RightCoordinate>192</RightCoordinate>
+      <TopCoordinate>256</TopCoordinate>
+      <BottomCoordinate>268</BottomCoordinate>
+    </Frame>
+  </AnimationChain>
+</AnimationChainArraySave>

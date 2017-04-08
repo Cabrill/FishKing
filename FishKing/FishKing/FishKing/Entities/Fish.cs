@@ -16,10 +16,17 @@ namespace FishKing.Entities
 {
 	public partial class Fish
 	{
+        private Random random = new Random();
+        private float xAcceleration;
+        private double outOfWaterTime;
         private Direction directionTraveling;
         private float originalTextureScale;
+        SpriteList waterDropParticles = new SpriteList();
+        float minWaterDropHitY;
+        float maxWaterDropHitY;
+        Tweener distanceTweener;
+        Tweener verticalTweener;
 
-        public event System.EventHandler AfterRelativeYSet;
         /// <summary>
         /// Initialization logic which is execute only one time for this Entity (unless the Entity is pooled).
         /// This method is called when the Entity is added to managers. Entities which are instantiated but not
@@ -34,28 +41,83 @@ namespace FishKing.Entities
 
 		private void CustomActivity()
 		{
-            if (Visible && ShadowInstance.Visible)
+            if (Visible)
             {
-                if (directionTraveling == Direction.Left || directionTraveling == Direction.Right)
+                if (Visible && ShadowInstance.Visible)
                 {
-                    ShadowInstance.RelativeY = -8 + -RelativeY;
-                    ShadowInstance.SpriteInstanceWidth = this.SpriteInstance.Width * (1 - (RelativeY + 8) / 64);
-                    ShadowInstance.SpriteInstanceAlpha = 0.5f * (1 - (RelativeY + 8) / 50);
+                    if (directionTraveling == Direction.Left || directionTraveling == Direction.Right)
+                    {
+                        ShadowInstance.RelativeY = -8 + -RelativeY;
+                        ShadowInstance.SpriteInstanceWidth = this.SpriteInstance.Width * (1 - (RelativeY + 8) / 64);
+                        ShadowInstance.SpriteInstanceAlpha = 0.5f * (1 - (RelativeY + 8) / 50);
+                    }
+                    else
+                    {
+                        ShadowInstance.RelativeY = (-20 * (1 - (originalTextureScale / SpriteInstanceTextureScale)));
+                        ShadowInstance.SpriteInstanceWidth = this.SpriteInstance.Width * (originalTextureScale / SpriteInstanceTextureScale);
+                        ShadowInstance.SpriteInstanceAlpha = 0.5f * (originalTextureScale / SpriteInstanceTextureScale);
+                    }
                 }
-                else
-                {
-                    ShadowInstance.RelativeY = (-20 * (1 - (originalTextureScale / SpriteInstanceTextureScale)));
-                    ShadowInstance.SpriteInstanceWidth = this.SpriteInstance.Width * (originalTextureScale / SpriteInstanceTextureScale);
-                    ShadowInstance.SpriteInstanceAlpha = 0.5f * (originalTextureScale / SpriteInstanceTextureScale);
-                }
+                this.WaterDropEmitter.TimedEmit(waterDropParticles);
+            }
+            if (waterDropParticles.Count > 0)
+            {
+                UpdateWaterParticles();
             }
 		}
 
-		private void CustomDestroy()
+        private void UpdateWaterParticles()
+        {
+            if (distanceTweener.Running)
+            {
+                WaterDropEmitter.XAcceleration = xAcceleration;
+            }
+            else
+            {
+                WaterDropEmitter.XAcceleration = 0;
+            }
+
+            var timeOutOfWater = FlatRedBall.TimeManager.CurrentTime - outOfWaterTime;
+
+            WaterDropEmitter.SecondFrequency = (float)(2 * Math.Min(1,(timeOutOfWater / 20)));
+            WaterDropEmitter.NumberPerEmission = Math.Max(0, 6 - (int)timeOutOfWater);
+
+            Sprite sprite;
+            for (int i = waterDropParticles.Count - 1; i > -1; i--)
+            {
+                sprite = waterDropParticles[i];
+                sprite.Alpha = 1 - sprite.TextureScale;
+                if (sprite.Y <= minWaterDropHitY && sprite.YVelocity < 0 && sprite.Y > maxWaterDropHitY)
+                {
+                    if (random.NextDouble() > 0.9)
+                    {
+                        sprite.YVelocity = 0;
+                        sprite.CurrentChainName = "Splash";
+                        sprite.Alpha = 0.3f;
+                    }
+                }
+                else if (sprite.Y <= maxWaterDropHitY)
+                {
+                    sprite.YVelocity = 0;
+                    sprite.CurrentChainName = "Splash";
+                    sprite.Alpha = 0.3f;
+                }
+
+                if (sprite.CurrentChainName == "Splash" && sprite.JustCycled)
+                {
+                    SpriteManager.RemoveSprite(sprite);
+                }
+            }
+        }
+
+
+        private void CustomDestroy()
 		{
-
-
-		}
+            for (int i = waterDropParticles.Count - 1; i > -1; i--)
+            {
+                SpriteManager.RemoveSprite(waterDropParticles[i]);
+            }
+        }
 
         private static void CustomLoadStaticContent(string contentManagerName)
         {
@@ -65,18 +127,20 @@ namespace FishKing.Entities
 
         public void PullInAndLand(Vector3 targetPosition, Direction direction, Action afterAction)
         {
+            outOfWaterTime = FlatRedBall.TimeManager.CurrentTime;
             directionTraveling = direction;
             Visible = true;
             ShadowInstance.Visible = true;
             this.Position = targetPosition;
             this.RelativeZ = -0.5f;
             SetRelativeFromAbsolute();
-                        
+
+            
+
+
             GlobalContent.SplashOut.Play();
             WaterSplashInstance.Play();
 
-            Tweener distanceTweener;
-            Tweener verticalTweener;
             double tweenDuration = 0;
             originalTextureScale = SpriteInstanceTextureScale;
             
@@ -134,6 +198,11 @@ namespace FishKing.Entities
             distanceTweener.Ended += afterAction;
             distanceTweener.Start();
             verticalTweener.Start();
+
+            //Set waterdrop variables
+            minWaterDropHitY = this.Y;
+            maxWaterDropHitY = minWaterDropHitY - SpriteInstance.Height / 2;
+            xAcceleration = this.RelativeX / (float)tweenDuration;
         }
 	}
 }
