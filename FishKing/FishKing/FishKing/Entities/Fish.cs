@@ -202,7 +202,7 @@ namespace FishKing.Entities
             //Set waterdrop variables
             minWaterDropHitY = this.Y;
             maxWaterDropHitY = minWaterDropHitY - SpriteInstance.Height / 2;
-            xAcceleration = this.RelativeX / (float)tweenDuration;
+            xAcceleration = -this.RelativeX / (float)tweenDuration;
         }
 	}
 }
