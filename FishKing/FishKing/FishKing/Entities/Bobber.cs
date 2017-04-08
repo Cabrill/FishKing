@@ -248,6 +248,7 @@ namespace FishKing.Entities
             {
                 ShapeManager.Remove(FishingLineLinesList.Last);
             }
+            fishLinePointCounter = 0;
         }
 
         private void SettleFishingLine()

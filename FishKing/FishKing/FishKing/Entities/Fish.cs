@@ -68,7 +68,7 @@ namespace FishKing.Entities
 
         private void UpdateWaterParticles()
         {
-            if (distanceTweener.Running)
+            if (distanceTweener != null && distanceTweener.Running)
             {
                 WaterDropEmitter.XAcceleration = xAcceleration;
             }
