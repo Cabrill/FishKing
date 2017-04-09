@@ -42,6 +42,8 @@ namespace FishKing.Entities
             ShadowInstance.Visible = false;
             ShadowInstance.SpriteInstanceAlpha = 0.5f;
             ShadowInstance.RelativeZ = -0.5f;
+
+            WaterDropEmitter.RelativeZ = -0.5f;
         }
 
 		private void CustomActivity()
@@ -135,10 +137,6 @@ namespace FishKing.Entities
                 {
                     sprite = waterDropParticles[i];
                     timeAlive = currentTime - sprite.TimeCreated;
-                    if (directionFrom == Direction.Up && sprite.Z % 1 != 0.5f)
-                    {
-                        sprite.Z -= 0.5f;
-                    }
 
                     if (sprite.Alpha == 1)
                     {

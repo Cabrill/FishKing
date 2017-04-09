@@ -1354,7 +1354,7 @@
           <CustomProperty>
             <Type>AreaEmissionType</Type>
             <Member>AreaEmission</Member>
-            <ValueAsInt>1</ValueAsInt>
+            <ValueAsInt>2</ValueAsInt>
           </CustomProperty>
           <CustomProperty>
             <Type>bool</Type>
@@ -1395,6 +1395,11 @@
             <Type>float</Type>
             <Member>Z</Member>
             <ValueAsFloat>5</ValueAsFloat>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>ScaleZ</Member>
+            <ValueAsFloat>1</ValueAsFloat>
           </CustomProperty>
           <SourceType>File</SourceType>
           <SourceFile>Entities/Fish/WaterDropEmitterListFile.emix</SourceFile>
