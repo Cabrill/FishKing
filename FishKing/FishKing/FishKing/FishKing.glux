@@ -1378,6 +1378,11 @@
           </CustomProperty>
           <CustomProperty>
             <Type>float</Type>
+            <Member>ScaleZ</Member>
+            <ValueAsFloat>1</ValueAsFloat>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>float</Type>
             <Member>SecondFrequency</Member>
             <ValueAsFloat>0.1</ValueAsFloat>
           </CustomProperty>
@@ -1395,11 +1400,6 @@
             <Type>float</Type>
             <Member>Z</Member>
             <ValueAsFloat>5</ValueAsFloat>
-          </CustomProperty>
-          <CustomProperty>
-            <Type>float</Type>
-            <Member>ScaleZ</Member>
-            <ValueAsFloat>1</ValueAsFloat>
           </CustomProperty>
           <SourceType>File</SourceType>
           <SourceFile>Entities/Fish/WaterDropEmitterListFile.emix</SourceFile>

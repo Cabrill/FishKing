@@ -19,6 +19,7 @@ namespace FishKing.Entities
 {
     public partial class Bobber
 	{
+        private Direction directionCast;
         private SoundEffectInstance bobberSoundInstance;
         private AudioListener listener;
         private AudioEmitter emitter;
@@ -179,11 +180,12 @@ namespace FishKing.Entities
                 if (relativeDestination.X > this.RelativeX)
                 {
                     this.RelativeX += tileSize*1.3f;
-                    
+                    directionCast = Direction.Right;
                 }
                 else
                 {
                     this.RelativeX -= tileSize*1.3f;
+                    directionCast = Direction.Left;
                 }
                 distanceTweener = this.Tween("RelativeX").To(relativeDestination.X).During(tweenDuration).Using(InterpolationType.Sinusoidal, Easing.Out);
 
@@ -200,6 +202,11 @@ namespace FishKing.Entities
                 {
                     this.RelativeY += tileSize*1.1f;
                     this.RelativeX += tileSize*0.2f;
+                    directionCast = Direction.Up;
+                }
+                else
+                {
+                    directionCast = Direction.Down;
                 }
 
                 distanceTweener = this.Tween("RelativeY").To(relativeDestination.Y).During(tweenDuration).Using(InterpolationType.Sinusoidal, Easing.Out);
@@ -330,6 +337,90 @@ namespace FishKing.Entities
             var maxY = 1.38109;
             var minY = 0.5;
             return ((a * Math.Cosh(x / a))-minY)/maxY;
+        }
+
+        public void ReactToCharacterTugging()
+        {
+            Tweener lineTweener;
+            var fishingLine = FishingLineLinesList[0];
+
+            lineTweener = new Tweener(0, 1.3f, 1.3f, InterpolationType.Back, Easing.Out);
+            lineTweener.PositionChanged += (timeElapse) => {
+                if (timeElapse < 0.3)
+                {
+                    fishingLine.RelativePoint1 = new Point3D(Parent.Position.X + (directionCast == Direction.Left ? -32 : 32), Parent.Position.Y + 22);
+                    UpdateLineSegments(timeElapse, 0.3f);
+                }
+                else if (timeElapse < 0.8)
+                {
+                    fishingLine.RelativePoint1 = new Point3D(Parent.Position.X + (directionCast == Direction.Left ? -36 : 36), Parent.Position.Y + 16);
+                    for (int i = 0; i < FishingLineLinesList.Count; i++)
+                    {
+                        UpdateLineSegments(timeElapse, 0.8f);
+                    }
+                }
+                else if (timeElapse < 1.0)
+                {
+                    fishingLine.RelativePoint1 = new Point3D(Parent.Position.X + (directionCast == Direction.Left ? -36 : 36), Parent.Position.Y + 10);
+                    for (int i = 0; i < FishingLineLinesList.Count; i++)
+                    {
+                        UpdateLineSegments(timeElapse, 1.2f);
+                    }
+                }
+                else if (timeElapse < 1.2)
+                {
+                    fishingLine.RelativePoint1 = new Point3D(Parent.Position.X + (directionCast == Direction.Left ? -36 : 36), Parent.Position.Y + 10);
+                    for (int i = 0; i < FishingLineLinesList.Count; i++)
+                    {
+                        UpdateLineSegments(timeElapse, 1.2f);
+                    }
+                }
+                else if (FishingLineLinesList.Count > 0)
+                {
+                    ResetFishingLine();
+                }
+            };
+            lineTweener.Start();
+            TweenerManager.Self.Add(lineTweener);
+        }
+
+        private void UpdateLineSegments(float timeElapse, float elapseTotal)
+        {
+            Point3D absolutePoint1;
+            Point3D absolutePoint2;
+            Line lineToAdjust;
+            Line prevLine = null;
+            Line nextLine = null;
+
+            for (int i = 0; i < FishingLineLinesList.Count; i++)
+            {
+                lineToAdjust = FishingLineLinesList[i];
+                if (i > 0)
+                {
+                    prevLine = FishingLineLinesList[i - 1];
+                    absolutePoint1 = prevLine.AbsolutePoint2;
+                }
+                else
+                {
+                    absolutePoint1 = lineToAdjust.AbsolutePoint1;
+                }
+
+
+                if (i < FishingLineLinesList.Count - 1)
+                {
+                    nextLine = FishingLineLinesList[i + 1];
+                    absolutePoint2 = new Point3D(
+                        lineToAdjust.AbsolutePoint2.X,
+                        (lineToAdjust.AbsolutePoint1.Y * (timeElapse / elapseTotal)) + (nextLine.AbsolutePoint1.Y * (1 - (timeElapse / elapseTotal)))
+                     );
+                }
+                else
+                {
+                    absolutePoint2 = lineToAdjust.AbsolutePoint2;
+                }
+
+                lineToAdjust.SetFromAbsoluteEndpoints(absolutePoint1, absolutePoint2);
+            }
         }
 	}
 }

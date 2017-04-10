@@ -77,6 +77,7 @@ namespace FishKing.Entities
         public bool IsOnWindUp { get { return (IsCastingRod && IsHoldingAction && SpriteInstance.CurrentFrameIndex == WindUpAnimationFrame); } }
         public bool IsBeforeWindUp { get { return IsCastingRod && (SpriteInstance.CurrentFrameIndex < WindUpAnimationFrame); } }
         public bool IsAfterWindUp { get { return (IsCastingRod && SpriteInstance.CurrentFrameIndex > WindUpAnimationFrame); } }
+        public bool IsTuggingLine { get { return SpriteInstance.CurrentChainName.Contains("Tug") && SpriteInstance.CurrentFrameIndex <= 3 && FishOnTheLine.Visible == false; } }
         
         public bool HasInitiatedCatching { get; set; }
         public bool IsPullingInCatch { get { return SpriteInstance.CurrentChainName.Substring(0, 3) == "Tug"; } }
@@ -278,7 +279,7 @@ namespace FishKing.Entities
                 }
             }
             RodSpriteInstance.Visible = (IsCastingRod || IsFishing) && !IsDisplayingCatch;
-            BobberInstance.Visible = (IsAfterWindUp || IsFishing) && !IsDisplayingCatch && !IsPullingInCatch;
+            BobberInstance.Visible = (IsAfterWindUp || IsFishing || (IsPullingInCatch && IsTuggingLine)) && !IsDisplayingCatch && (!IsPullingInCatch || IsTuggingLine);
         }
 
         public void ResetFishingStatus()
@@ -324,6 +325,7 @@ namespace FishKing.Entities
             SpriteInstance.CurrentChainName = RodSpriteInstance.CurrentChainName = chainName;
             SpriteInstance.Animate = RodSpriteInstance.Animate = true;
             SpriteInstance.CurrentFrameIndex = RodSpriteInstance.CurrentFrameIndex = 0;
+            BobberInstance.ReactToCharacterTugging();
         }
 
         private void PullInFish()

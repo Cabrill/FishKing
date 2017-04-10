@@ -27,6 +27,7 @@ namespace FishKing.Entities
         Tweener distanceTweener;
         Tweener verticalTweener;
         private bool hasLanded = false;
+        private Line fishingLine;
         private double timeToLive
         {
             get { return 0.5f * (1-(originalTextureScale/ SpriteInstanceTextureScale));  }
@@ -191,6 +192,17 @@ namespace FishKing.Entities
             this.RelativeZ = -0.5f;
             SetRelativeFromAbsolute();
 
+            //Create fishing line
+            fishingLine = ShapeManager.AddLine();
+            fishingLine.Color = Color.GhostWhite;
+            fishingLine.Position = this.Position;
+            fishingLine.AttachTo(this, true);
+            switch(directionFrom)
+            {
+                case Direction.Left: fishingLine.RelativePoint2 = new Point3D(-RelativeX - 36, -RelativeY + 4); break;
+                case Direction.Right: fishingLine.RelativePoint2 = new Point3D(RelativeX + 36, -RelativeY + 4); break;
+            }
+
             GlobalContent.SplashOut.Play();
             WaterSplashInstance.Play();
 
@@ -200,10 +212,50 @@ namespace FishKing.Entities
             var wasCastHorizontally = direction == Direction.Left || direction == Direction.Right;
             if (wasCastHorizontally)
             {
+                if (direction == Direction.Left)
+                {
+                    fishingLine.RelativePoint1 = new Point3D(SpriteInstance.Width/2, 0);
+                    fishingLine.RelativePoint2 = new Point3D(-RelativeX-36, -RelativeY+4);
+                }
+                else
+                {
+                    fishingLine.RelativePoint1 = new Point3D(-SpriteInstance.Width / 2, 0);
+                    fishingLine.RelativePoint2 = new Point3D(-RelativeX, -RelativeY);
+                }
+
                 var destY = -8;
                 SpriteInstanceFlipHorizontal = (direction == Direction.Left);
                 tweenDuration = Math.Abs(RelativeX / 96);
                 distanceTweener = this.Tween("RelativeX").To(0).During(tweenDuration).Using(InterpolationType.Sinusoidal, Easing.Out);
+                distanceTweener.PositionChanged += (a) => {
+                    var timeElapse = FlatRedBall.TimeManager.CurrentTime - outOfWaterTime;
+                    if (timeElapse <= 0.4)
+                    {
+                        switch (directionFrom)
+                        {
+                            case Direction.Left: fishingLine.RelativePoint2 = new Point3D(-RelativeX - 36, -RelativeY + 4); break;
+                            case Direction.Right: fishingLine.RelativePoint2 = new Point3D(-RelativeX + 36, -RelativeY + 4); break;
+                        }
+                    }
+                    else if (timeElapse <= 0.5)
+                    {
+                        switch (directionFrom)
+                        {
+                            case Direction.Left: fishingLine.RelativePoint2 = new Point3D(-RelativeX - 36, -RelativeY + 12); break;
+                            case Direction.Right: fishingLine.RelativePoint2 = new Point3D(-RelativeX + 36, -RelativeY + 12); break;
+                        }
+                        
+                    }
+                    else
+                    {
+                        switch (directionFrom)
+                        {
+                            case Direction.Left: fishingLine.RelativePoint2 = new Point3D(-RelativeX - 44, -RelativeY + 30); break;
+                            case Direction.Right: fishingLine.RelativePoint2 = new Point3D(-RelativeX + 44, -RelativeY + 30); break;
+                        }   
+                    }
+                };
+
                 verticalTweener = this.Tween("RelativeY").To(20).During(tweenDuration / 2).Using(InterpolationType.Quadratic, Easing.Out);
                 verticalTweener.Ended += () => {
                     var lastUpdate = RelativeY;
@@ -247,7 +299,7 @@ namespace FishKing.Entities
                     downTween.Start();
                 };
             }
-            distanceTweener.Ended += () => { hasLanded = true; SetGroundLocation(); };
+            distanceTweener.Ended += () => { ShapeManager.Remove(fishingLine); hasLanded = true; SetGroundLocation(); };
             distanceTweener.Ended += afterAction;
             distanceTweener.Start();
             verticalTweener.Start();
