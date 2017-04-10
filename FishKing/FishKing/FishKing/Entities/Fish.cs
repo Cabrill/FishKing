@@ -201,6 +201,8 @@ namespace FishKing.Entities
             {
                 case Direction.Left: fishingLine.RelativePoint2 = new Point3D(-RelativeX - 36, -RelativeY + 4); break;
                 case Direction.Right: fishingLine.RelativePoint2 = new Point3D(RelativeX + 36, -RelativeY + 4); break;
+                case Direction.Up: fishingLine.RelativePoint2 = new Point3D(-RelativeX, -RelativeY + 4); break;
+                case Direction.Down: fishingLine.RelativePoint2 = new Point3D(-RelativeX, -RelativeY + 4); break;
             }
 
             GlobalContent.SplashOut.Play();
@@ -275,13 +277,57 @@ namespace FishKing.Entities
             }
             else
             {
+                Position.X += SpriteInstance.Width / 2;
+                SetRelativeFromAbsolute();
+
+                fishingLine.RelativePoint1 = new Point3D(-SpriteInstance.Width / 2, SpriteInstance.Height / 2);
+                if (direction == Direction.Up)
+                {
+                    fishingLine.RelativePoint2 = new Point3D(-RelativeX - 8, -RelativeY + 36);
+                }
+                else
+                {
+                    fishingLine.RelativePoint2 = new Point3D(-RelativeX, -RelativeY);
+                }
+
                 tweenDuration = Math.Abs(RelativeY / 96);
                 distanceTweener = this.Tween("RelativeY").To(-8).During(tweenDuration).Using(InterpolationType.Sinusoidal, Easing.Out);
+                distanceTweener.PositionChanged += (a) => {
+                    var timeElapse = FlatRedBall.TimeManager.CurrentTime - outOfWaterTime;
+                    if (timeElapse <= 0.4)
+                    {
+                        switch (directionFrom)
+                        {
+                            case Direction.Up: fishingLine.RelativePoint2 = new Point3D(-RelativeX-8, -RelativeY+36); break;
+                            case Direction.Down: fishingLine.RelativePoint2 = new Point3D(-RelativeX, -RelativeY + 4); break;
+                        }
+                    }
+                    else if (timeElapse <= 0.5)
+                    {
+                        switch (directionFrom)
+                        {
+                            case Direction.Up: fishingLine.RelativePoint2 = new Point3D(-RelativeX-8, -RelativeY + 36); break;
+                            case Direction.Down: fishingLine.RelativePoint2 = new Point3D(-RelativeX, -RelativeY + 12); break;
+                        }
+
+                    }
+                    else
+                    {
+                        switch (directionFrom)
+                        {
+                            case Direction.Up: fishingLine.RelativePoint2 = new Point3D(-RelativeX-8, -RelativeY + 35); break;
+                            case Direction.Down: fishingLine.RelativePoint2 = new Point3D(-RelativeX, -RelativeY + 30); break;
+                        }
+                    }
+                };
                 this.Tween("RelativeX").To(0).During(tweenDuration).Using(InterpolationType.Linear, Easing.InOut).Start();
 
                 var newScale = originalTextureScale * 2f;
 
                 verticalTweener = this.Tween("SpriteInstanceTextureScale").To(newScale).During(tweenDuration / 2).Using(InterpolationType.Quadratic, Easing.Out);
+                verticalTweener.PositionChanged += (currentScale) => {
+                    fishingLine.RelativePoint1 = new Point3D(-SpriteInstance.Width / 2, 0);
+                };
                 verticalTweener.Ended += () => {
                     var lastUpdate = SpriteInstanceTextureScale;
                     var updateBeforeLast = lastUpdate;
@@ -289,6 +335,7 @@ namespace FishKing.Entities
 
                     downTween.PositionChanged += (a) =>
                     {
+                        fishingLine.RelativePoint1 = new Point3D(-SpriteInstance.Width / 2, 0);
                         if (a > lastUpdate && updateBeforeLast > lastUpdate)
                         {
                             GlobalContent.FishSplat.Play();

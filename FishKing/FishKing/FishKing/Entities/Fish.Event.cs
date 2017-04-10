@@ -71,6 +71,7 @@ namespace FishKing.Entities
             WaterDropEmitter.EmissionSettings.TextureScale = Math.Min(SpriteInstance.TextureScale, 0.8f);
             WaterDropEmitter.ScaleX = SpriteInstance.Width / 3;
             WaterDropEmitter.ScaleY = SpriteInstance.Height / 6;
+            
         }
 
 

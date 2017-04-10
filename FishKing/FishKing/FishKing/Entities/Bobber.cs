@@ -344,36 +344,54 @@ namespace FishKing.Entities
             Tweener lineTweener;
             var fishingLine = FishingLineLinesList[0];
 
-            lineTweener = new Tweener(0, 1.3f, 1.3f, InterpolationType.Back, Easing.Out);
+            lineTweener = new Tweener(0, 1.21f, 1.21f, InterpolationType.Back, Easing.Out);
             lineTweener.PositionChanged += (timeElapse) => {
                 if (timeElapse < 0.3)
                 {
-                    fishingLine.RelativePoint1 = new Point3D(Parent.Position.X + (directionCast == Direction.Left ? -32 : 32), Parent.Position.Y + 22);
+                    switch (directionCast)
+                    {
+                        case Direction.Left:
+                        case Direction.Right: fishingLine.RelativePoint1 = new Point3D(Parent.Position.X + (directionCast == Direction.Left ? -32 : 32), Parent.Position.Y + 22); break;
+                        case Direction.Up: fishingLine.RelativePoint1 = new Point3D(Parent.Position.X-5, Parent.Position.Y + 30); break;
+                        case Direction.Down: fishingLine.RelativePoint1 = new Point3D(Parent.Position.X-16, Parent.Position.Y+3); break;
+                    }
                     UpdateLineSegments(timeElapse, 0.3f);
                 }
                 else if (timeElapse < 0.8)
                 {
-                    fishingLine.RelativePoint1 = new Point3D(Parent.Position.X + (directionCast == Direction.Left ? -36 : 36), Parent.Position.Y + 16);
-                    for (int i = 0; i < FishingLineLinesList.Count; i++)
+                    switch (directionCast)
                     {
-                        UpdateLineSegments(timeElapse, 0.8f);
+                        case Direction.Left: 
+                        case Direction.Right: fishingLine.RelativePoint1 = new Point3D(Parent.Position.X + (directionCast == Direction.Left ? -36 : 36), Parent.Position.Y + 16); break;
+                        case Direction.Up: fishingLine.RelativePoint1 = new Point3D(Parent.Position.X-2, Parent.Position.Y +37 ); break;
+                        case Direction.Down: fishingLine.RelativePoint1 = new Point3D(Parent.Position.X-16, Parent.Position.Y-9); break;
                     }
+
+                    UpdateLineSegments(timeElapse, 0.8f);
                 }
                 else if (timeElapse < 1.0)
                 {
-                    fishingLine.RelativePoint1 = new Point3D(Parent.Position.X + (directionCast == Direction.Left ? -36 : 36), Parent.Position.Y + 10);
-                    for (int i = 0; i < FishingLineLinesList.Count; i++)
+                    switch (directionCast)
                     {
-                        UpdateLineSegments(timeElapse, 1.2f);
+                        case Direction.Left:
+                        case Direction.Right: fishingLine.RelativePoint1 = new Point3D(Parent.Position.X + (directionCast == Direction.Left ? -36 : 36), Parent.Position.Y + 10); break;
+                        case Direction.Up: fishingLine.RelativePoint1 = new Point3D(Parent.Position.X-2, Parent.Position.Y + 36); break;
+                        case Direction.Down: fishingLine.RelativePoint1 = new Point3D(Parent.Position.X - 16, Parent.Position.Y - 9); break;
                     }
+                    
+                    UpdateLineSegments(timeElapse, 1.2f);
                 }
                 else if (timeElapse < 1.2)
                 {
-                    fishingLine.RelativePoint1 = new Point3D(Parent.Position.X + (directionCast == Direction.Left ? -36 : 36), Parent.Position.Y + 10);
-                    for (int i = 0; i < FishingLineLinesList.Count; i++)
+                    switch (directionCast)
                     {
-                        UpdateLineSegments(timeElapse, 1.2f);
+                        case Direction.Left: 
+                        case Direction.Right: fishingLine.RelativePoint1 = new Point3D(Parent.Position.X + (directionCast == Direction.Left ? -36 : 36), Parent.Position.Y + 10); break;
+                        case Direction.Up: fishingLine.RelativePoint1 = new Point3D(Parent.Position.X - 8, Parent.Position.Y + 32); break;
+                        case Direction.Down: fishingLine.RelativePoint1 = new Point3D(Parent.Position.X - 8, Parent.Position.Y - 9); break;
                     }
+
+                    UpdateLineSegments(timeElapse, 1.2f);
                 }
                 else if (FishingLineLinesList.Count > 0)
                 {
@@ -409,10 +427,20 @@ namespace FishKing.Entities
                 if (i < FishingLineLinesList.Count - 1)
                 {
                     nextLine = FishingLineLinesList[i + 1];
-                    absolutePoint2 = new Point3D(
-                        lineToAdjust.AbsolutePoint2.X,
-                        (lineToAdjust.AbsolutePoint1.Y * (timeElapse / elapseTotal)) + (nextLine.AbsolutePoint1.Y * (1 - (timeElapse / elapseTotal)))
-                     );
+                    if (directionCast == Direction.Left || directionCast == Direction.Right)
+                    {
+                        absolutePoint2 = new Point3D(
+                            lineToAdjust.AbsolutePoint2.X,
+                            (lineToAdjust.AbsolutePoint1.Y * (timeElapse / elapseTotal)) + (nextLine.AbsolutePoint1.Y * (1 - (timeElapse / elapseTotal)))
+                         );
+                    }
+                    else
+                    {
+                        absolutePoint2 = new Point3D(
+                            (lineToAdjust.AbsolutePoint1.X * (timeElapse / elapseTotal)) + (nextLine.AbsolutePoint1.X * (1 - (timeElapse / elapseTotal))),
+                            lineToAdjust.AbsolutePoint2.Y
+                         );
+                    }
                 }
                 else
                 {
