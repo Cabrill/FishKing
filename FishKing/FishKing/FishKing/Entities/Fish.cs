@@ -287,7 +287,7 @@ namespace FishKing.Entities
                 }
                 else
                 {
-                    fishingLine.RelativePoint2 = new Point3D(-RelativeX, -RelativeY);
+                    fishingLine.RelativePoint2 = new Point3D(-RelativeX-12, -RelativeY-20);
                 }
 
                 tweenDuration = Math.Abs(RelativeY / 96);
@@ -299,7 +299,7 @@ namespace FishKing.Entities
                         switch (directionFrom)
                         {
                             case Direction.Up: fishingLine.RelativePoint2 = new Point3D(-RelativeX-8, -RelativeY+36); break;
-                            case Direction.Down: fishingLine.RelativePoint2 = new Point3D(-RelativeX, -RelativeY + 4); break;
+                            case Direction.Down: fishingLine.RelativePoint2 = new Point3D(-RelativeX-8, -RelativeY - 12); break;
                         }
                     }
                     else if (timeElapse <= 0.5)
@@ -307,7 +307,7 @@ namespace FishKing.Entities
                         switch (directionFrom)
                         {
                             case Direction.Up: fishingLine.RelativePoint2 = new Point3D(-RelativeX-8, -RelativeY + 36); break;
-                            case Direction.Down: fishingLine.RelativePoint2 = new Point3D(-RelativeX, -RelativeY + 12); break;
+                            case Direction.Down: fishingLine.RelativePoint2 = new Point3D(-RelativeX-12, -RelativeY -15); break;
                         }
 
                     }
@@ -316,7 +316,7 @@ namespace FishKing.Entities
                         switch (directionFrom)
                         {
                             case Direction.Up: fishingLine.RelativePoint2 = new Point3D(-RelativeX-8, -RelativeY + 35); break;
-                            case Direction.Down: fishingLine.RelativePoint2 = new Point3D(-RelativeX, -RelativeY + 30); break;
+                            case Direction.Down: fishingLine.RelativePoint2 = new Point3D(-RelativeX-8, -RelativeY -20); break;
                         }
                     }
                 };
