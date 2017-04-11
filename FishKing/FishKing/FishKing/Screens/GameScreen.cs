@@ -46,6 +46,7 @@ namespace FishKing.Screens
         SoundEffectInstance oceanAmbientSound;
         SoundEffectInstance deepOceanAmbientSound;
         SoundEffectInstance lakeAmbientSound;
+        SoundEffectInstance caveAmbientSound;
 
         AudioListener listener = new AudioListener();
         AudioEmitter waterfallEmitter;
@@ -87,11 +88,23 @@ namespace FishKing.Screens
             AddWaterTiles();
             RemoveBlockeddWaterTiles();
             AdjustNpcs();
+            UpdateCamera();
 
 #if DEBUG
             this.SolidCollisions.Visible =
                 DebuggingVariables.ShowShapes;
 #endif
+            
+            if (levelToLoad.Contains("Cave"))
+            {
+                CaveLightConeSprite.Position = Camera.Main.Position;
+                CaveLightConeSprite.Visible = true;
+                CaveLightConeSprite.Z = -1;
+            }
+            else
+            {
+                CaveLightConeSprite.Visible = false;
+            }
         }
 
         private void AdjustNpcs()
@@ -119,7 +132,16 @@ namespace FishKing.Screens
 
             this.CharacterInstance.ActionInput = InputManager.Keyboard.GetKey(Keys.Space);
             this.CharacterInstance.FishingAlignmentInput = InputManager.Mouse.GetButton(Mouse.MouseButtons.LeftButton);
-            this.CharacterInstance.Position.Z = CurrentTileMap.MapLayers.Count - 2;
+
+            var overlayLayer = CurrentTileMap.MapLayers.FindByName("Overlay");
+            if (overlayLayer != null)
+            {
+                this.CharacterInstance.Position.Z = overlayLayer.Z - 0.5f;
+            }
+            else
+            {
+                this.CharacterInstance.Position.Z = CurrentTileMap.MapLayers.Count - 2;
+            }
             FindNearestAmbientEmitters();
         }
 
@@ -477,6 +499,21 @@ namespace FishKing.Screens
                     riverAmbientSound.Play();
                 }
             }
+
+
+            if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "CaveAmbient") != null)
+            {
+                if (caveAmbientSound == null)
+                {
+                    caveAmbientSound = GlobalContent.CaveAmbient.CreateInstance();
+                    caveAmbientSound.IsLooped = true;
+                }
+
+                if (caveAmbientSound.State != SoundState.Playing)
+                {
+                    caveAmbientSound.Play();
+                }
+            }
         }
 
         private Vector3 FindClosestPolygonPointOnLayer(string layerName, Point3D fromPoint)
@@ -524,7 +561,7 @@ namespace FishKing.Screens
 
         private void AddWaterTiles()
         {
-            var waterNames = new List<string>() { "IsOcean", "IsLake", "IsRiver", "IsPond", "IsDeepOcean", "InWaterfall" };
+            var waterNames = new List<string>() { "IsOcean", "IsDeepOcean", "IsLake", "IsRiver", "IsPond", "IsDeepOcean", "InWaterfall" };
             WaterTiles.AddWaterFrom(CurrentTileMap, (List =>
                 List.Any(item => waterNames.Contains(item.Name))
                 ));
@@ -533,7 +570,7 @@ namespace FishKing.Screens
 
         private void RemoveBlockeddWaterTiles()
         {
-            var nonWaterLayers = new System.Collections.Generic.List<string>() { "Bridge" };
+            var nonWaterLayers = new System.Collections.Generic.List<string>() { "Bridge", "Boat" };
             WaterTiles.RemoveCollisionsFromLayer(CurrentTileMap, nonWaterLayers);
         }
 
@@ -549,7 +586,7 @@ namespace FishKing.Screens
 
         private void RemoveBridgedCollisions()
         {
-            var nonCollisionLayers = new System.Collections.Generic.List<string>() { "Bridge" };
+            var nonCollisionLayers = new System.Collections.Generic.List<string>() { "Bridge", "Boat" };
             SolidCollisions.RemoveCollisionsFromLayer(CurrentTileMap, nonCollisionLayers);
             //SolidCollisions.RemoveCollisionFrom(CurrentTileMap,
             //    (List => 

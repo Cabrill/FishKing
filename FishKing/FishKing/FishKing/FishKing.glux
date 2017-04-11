@@ -80,6 +80,19 @@
           <RuntimeType>FlatRedBall.TileGraphics.LayeredTileMap</RuntimeType>
           <ProjectsToExcludeFrom />
         </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Name>Screens/GameScreen/CaveLightCone.png</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>Microsoft.Xna.Framework.Graphics.Texture2D</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Name>Screens/GameScreen/Levels/DeepOcean1.tmx</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <LoadedOnlyWhenReferenced>true</LoadedOnlyWhenReferenced>
+          <RuntimeType>FlatRedBall.TileGraphics.LayeredTileMap</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
       </ReferencedFiles>
       <NamedObjects>
         <NamedObjectSave>
@@ -200,6 +213,7 @@
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
+          <LayerOn>HudLayer</LayerOn>
         </NamedObjectSave>
         <NamedObjectSave>
           <CustomProperty>
@@ -270,6 +284,7 @@
           <AttachToContainer>false</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
+          <LayerOn>HudLayer</LayerOn>
         </NamedObjectSave>
         <NamedObjectSave>
           <SourceType>File</SourceType>
@@ -279,6 +294,7 @@
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
+          <LayerOn>HudLayer</LayerOn>
         </NamedObjectSave>
         <NamedObjectSave>
           <SourceType>FlatRedBallType</SourceType>
@@ -289,6 +305,33 @@
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>TextureScale</Member>
+            <ValueAsFloat>1</ValueAsFloat>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>Texture2D</Type>
+            <Member>Texture</Member>
+            <ValueAsString>CaveLightCone</ValueAsString>
+          </CustomProperty>
+          <CustomProperty>
+            <Type>float</Type>
+            <Member>Alpha</Member>
+            <ValueAsFloat>0.8</ValueAsFloat>
+          </CustomProperty>
+          <SourceType>FlatRedBallType</SourceType>
+          <SourceFile />
+          <SourceName />
+          <SourceClassType>Sprite</SourceClassType>
+          <InstanceName>CaveLightConeSprite</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IncludeInICollidable>false</IncludeInICollidable>
+          <IndependentOfCamera>true</IndependentOfCamera>
+          <LayerOn>HudLayer</LayerOn>
         </NamedObjectSave>
       </NamedObjects>
       <UseGlobalContent>true</UseGlobalContent>
@@ -890,7 +933,7 @@
           </Properties>
           <Name>ImmediatelyCatchFish</Name>
           <Type>bool</Type>
-          <DefaultValue xsi:type="xsd:boolean">true</DefaultValue>
+          <DefaultValue xsi:type="xsd:boolean">false</DefaultValue>
           <IsShared>true</IsShared>
         </CustomVariable>
         <CustomVariable>
@@ -2094,6 +2137,12 @@
         </PropertySave>
       </Properties>
       <Name>GlobalContent/SoundEffects/RiverAmbient.wav</Name>
+      <IsSharedStatic>true</IsSharedStatic>
+      <HasPublicProperty>true</HasPublicProperty>
+      <ProjectsToExcludeFrom />
+    </ReferencedFileSave>
+    <ReferencedFileSave>
+      <Name>GlobalContent/SoundEffects/CaveAmbient.wav</Name>
       <IsSharedStatic>true</IsSharedStatic>
       <HasPublicProperty>true</HasPublicProperty>
       <ProjectsToExcludeFrom />

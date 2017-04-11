@@ -1,43 +1,269 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="10" tilewidth="32" tileheight="32" nextobjectid="4">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="20" height="12" tilewidth="32" tileheight="32" nextobjectid="7">
  <tileset firstgid="1" name="alltiles" tilewidth="32" tileheight="32" tilecount="4096" columns="64">
   <image source="../Tilesets/alltiles.png" width="2048" height="2048"/>
-  <tile id="1079">
+  <tile id="70">
    <animation>
-    <frame tileid="1080" duration="1000"/>
-    <frame tileid="1081" duration="200"/>
-    <frame tileid="1082" duration="200"/>
+    <frame tileid="70" duration="200"/>
+    <frame tileid="73" duration="200"/>
+    <frame tileid="76" duration="200"/>
+    <frame tileid="79" duration="200"/>
+    <frame tileid="518" duration="200"/>
+    <frame tileid="521" duration="200"/>
+    <frame tileid="524" duration="200"/>
+    <frame tileid="527" duration="200"/>
    </animation>
   </tile>
+  <tile id="71">
+   <animation>
+    <frame tileid="71" duration="200"/>
+    <frame tileid="74" duration="200"/>
+    <frame tileid="77" duration="200"/>
+    <frame tileid="80" duration="200"/>
+    <frame tileid="519" duration="200"/>
+    <frame tileid="522" duration="200"/>
+    <frame tileid="525" duration="200"/>
+    <frame tileid="528" duration="200"/>
+   </animation>
+  </tile>
+  <tile id="72">
+   <animation>
+    <frame tileid="72" duration="200"/>
+    <frame tileid="75" duration="200"/>
+    <frame tileid="78" duration="200"/>
+    <frame tileid="81" duration="200"/>
+    <frame tileid="520" duration="200"/>
+    <frame tileid="523" duration="200"/>
+    <frame tileid="526" duration="200"/>
+    <frame tileid="529" duration="200"/>
+   </animation>
+  </tile>
+  <tile id="123">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="126">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="134">
+   <animation>
+    <frame tileid="134" duration="200"/>
+    <frame tileid="137" duration="200"/>
+    <frame tileid="140" duration="200"/>
+    <frame tileid="143" duration="200"/>
+    <frame tileid="582" duration="200"/>
+    <frame tileid="585" duration="200"/>
+    <frame tileid="588" duration="200"/>
+    <frame tileid="591" duration="200"/>
+   </animation>
+  </tile>
+  <tile id="135">
+   <animation>
+    <frame tileid="135" duration="200"/>
+    <frame tileid="138" duration="200"/>
+    <frame tileid="141" duration="200"/>
+    <frame tileid="144" duration="200"/>
+    <frame tileid="519" duration="200"/>
+    <frame tileid="522" duration="200"/>
+    <frame tileid="525" duration="200"/>
+    <frame tileid="528" duration="200"/>
+   </animation>
+  </tile>
+  <tile id="136">
+   <animation>
+    <frame tileid="136" duration="200"/>
+    <frame tileid="139" duration="200"/>
+    <frame tileid="142" duration="200"/>
+    <frame tileid="145" duration="200"/>
+    <frame tileid="520" duration="200"/>
+    <frame tileid="523" duration="200"/>
+    <frame tileid="526" duration="200"/>
+    <frame tileid="529" duration="200"/>
+   </animation>
+  </tile>
+  <tile id="187">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="188">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="189">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="190">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="198">
+   <animation>
+    <frame tileid="198" duration="200"/>
+    <frame tileid="201" duration="200"/>
+    <frame tileid="204" duration="200"/>
+    <frame tileid="207" duration="200"/>
+    <frame tileid="582" duration="200"/>
+    <frame tileid="585" duration="200"/>
+    <frame tileid="588" duration="200"/>
+    <frame tileid="591" duration="200"/>
+   </animation>
+  </tile>
+  <tile id="199">
+   <animation>
+    <frame tileid="199" duration="200"/>
+    <frame tileid="202" duration="200"/>
+    <frame tileid="205" duration="200"/>
+    <frame tileid="208" duration="200"/>
+    <frame tileid="583" duration="200"/>
+    <frame tileid="586" duration="200"/>
+    <frame tileid="589" duration="200"/>
+    <frame tileid="592" duration="200"/>
+   </animation>
+  </tile>
+  <tile id="200">
+   <animation>
+    <frame tileid="200" duration="200"/>
+    <frame tileid="203" duration="200"/>
+    <frame tileid="206" duration="200"/>
+    <frame tileid="209" duration="200"/>
+    <frame tileid="584" duration="200"/>
+    <frame tileid="587" duration="200"/>
+    <frame tileid="590" duration="200"/>
+    <frame tileid="593" duration="200"/>
+   </animation>
+  </tile>
+  <tile id="243">
+   <properties>
+    <property name="IsWaterfall" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="370">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="372">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="379">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="380">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="381">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="382">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="443">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="444">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="445">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="446">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="890">
+   <properties>
+    <property name="IsLake" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1080">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1081">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1082">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
  </tileset>
- <layer name="Ground" width="20" height="10">
+ <layer name="Waterfall" width="20" height="12">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC2NgoD8oYSRe7XZG/HgzEG8B4q0E1NEKW7BQF4+CwQUAV0ZFmiADAAA=
+   H4sIAAAAAAAAC2NgoC9wB2IPIPakknntQNwBxJ1UMu84EJ8A4pNUMm8UjAJaAgAwt7Q3wAMAAA==
   </data>
  </layer>
- <layer name="Walls" width="20" height="10">
+ <layer name="Ground" width="20" height="12">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC9vBwMBQB8S1OGhjRgYGEyA2ZcStphaKdwKxPVDdPiC9lwE7XQyUB4FSRtxq9kKxDVBNPVQ9NUAN0Kz9VDRvDxXNGgWDEwAAig6rxyADAAA=
+   H4sIAAAAAAAAC2NgGPqghJF4tduBaguYGBgKobgAjd4MlN8CxFsZMeXQaZBZILwByN4IxRvQaJgaZHW4aJAaKxYGBmsgtmShDnsUDG8AACUd64XAAwAA
   </data>
  </layer>
- <layer name="Water" width="20" height="10">
+ <layer name="Walls" width="20" height="12">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC2NgGAWDCVQzj+LBhAEUWVRGIAMAAA==
+   H4sIAAAAAAAACzNjYGCoYmJgqGTCTn8Gyn8B4q8MuNXAaHOgmh1AXAfEtThoZIBLTS0U7wRieyDeB8R7cdDFjBCzShlxq9kLxTZAXM/IQDVQAzRrPxXN20NFs0bByAAA8camIsADAAA=
+  </data>
+ </layer>
+ <layer name="Water" width="20" height="12">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgGAXDGVQzj+LhjAFXfwTMwAMAAA==
+  </data>
+ </layer>
+ <layer name="Overlay" width="20" height="12">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgoC8wZmRgMAFiU0Y6WzwKRsEwBACSOrNEwAMAAA==
   </data>
  </layer>
  <objectgroup name="SpawnPoints">
-  <object id="2" gid="1799" x="288" y="96" width="32" height="32">
+  <object id="2" gid="1799" x="288" y="128" width="32" height="32">
    <properties>
     <property name="EntityToCreate" value="StartPoint"/>
     <property name="Name" value="CaveEntrance"/>
    </properties>
   </object>
-  <object id="3" gid="1800" x="288" y="64" width="32" height="32">
+  <object id="3" gid="1800" x="288" y="92" width="32" height="32">
    <properties>
     <property name="EntityToCreate" value="MapNavigationTrigger"/>
     <property name="StartPointName" value="CaveExit"/>
     <property name="TargetMap" value="DesertIsland"/>
    </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="WaterfallLines">
+  <object id="5" x="288" y="2.5">
+   <polyline points="0,0 44,0"/>
+  </object>
+ </objectgroup>
+ <objectgroup name="CaveAmbient">
+  <object id="6" x="44" y="123.5">
+   <polyline points="0,0 559,0.5"/>
   </object>
  </objectgroup>
 </map>

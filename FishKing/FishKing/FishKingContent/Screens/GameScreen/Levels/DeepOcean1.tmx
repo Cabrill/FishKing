@@ -1,0 +1,205 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="18" tilewidth="32" tileheight="32" nextobjectid="3">
+ <tileset firstgid="1" name="alltiles" tilewidth="32" tileheight="32" tilecount="4096" columns="64">
+  <image source="../Tilesets/alltiles.png" width="2048" height="2048"/>
+  <tile id="123">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="126">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="187">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="188">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="189">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="190">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="243">
+   <properties>
+    <property name="IsWaterfall" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="370">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="372">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="379">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="380">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="381">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="382">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="443">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="444">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="445">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="446">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="890">
+   <properties>
+    <property name="IsLake" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1080">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1081">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1082">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1622">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+    <property name="IsDeepOcean" type="bool" value="true"/>
+   </properties>
+   <animation>
+    <frame tileid="1622" duration="100"/>
+    <frame tileid="1623" duration="100"/>
+    <frame tileid="1624" duration="100"/>
+    <frame tileid="1625" duration="100"/>
+    <frame tileid="1626" duration="100"/>
+    <frame tileid="1627" duration="100"/>
+    <frame tileid="1628" duration="100"/>
+    <frame tileid="1629" duration="100"/>
+    <frame tileid="1686" duration="100"/>
+    <frame tileid="1687" duration="100"/>
+    <frame tileid="1688" duration="100"/>
+    <frame tileid="1689" duration="100"/>
+    <frame tileid="1690" duration="100"/>
+    <frame tileid="1691" duration="100"/>
+    <frame tileid="1692" duration="100"/>
+    <frame tileid="1693" duration="100"/>
+   </animation>
+  </tile>
+  <tile id="1670">
+   <properties>
+    <property name="IsBridge" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1671">
+   <properties>
+    <property name="IsBridge" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1672">
+   <properties>
+    <property name="IsBridge" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1673">
+   <properties>
+    <property name="IsBridge" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1734">
+   <properties>
+    <property name="IsBridge" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1735">
+   <properties>
+    <property name="IsBridge" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1736">
+   <properties>
+    <property name="IsBridge" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1737">
+   <properties>
+    <property name="IsBridge" type="bool" value="true"/>
+   </properties>
+  </tile>
+ </tileset>
+ <layer name="Water" width="30" height="18">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAACwtnY2AIH8WjeBSP4lE8ikfxKKYhBgA5styfcAgAAA==
+  </data>
+ </layer>
+ <layer name="Boat" width="30" height="18">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgGAWjYBSMFNDOxsDQAcSdQNzFRj97jwPtOgHEJ4H4FB3tHQWjYBQMHgAA/0upUnAIAAA=
+  </data>
+ </layer>
+ <objectgroup name="SpawnPoints">
+  <object id="1" gid="1800" x="478" y="294" width="32" height="32">
+   <properties>
+    <property name="EntityToCreate" value="MapNavigationTrigger"/>
+    <property name="StartPointName" value="BoatExit"/>
+    <property name="TargetMap" value="DesertIsland"/>
+   </properties>
+  </object>
+  <object id="2" gid="1799" x="415.25" y="288.75" width="32" height="32">
+   <properties>
+    <property name="EntityToCreate" value="StartPoint"/>
+    <property name="Name" value="BoatEntrance"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <layer name="Overlay" width="30" height="18">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgIA/MYSFT4ygYBaNgFIyCUTAKRhwAAG9+T0twCAAA
+  </data>
+ </layer>
+</map>
