@@ -189,8 +189,16 @@ namespace FishKing.Entities
             Visible = true;
             ShadowInstance.Visible = true;
             this.Position = targetPosition;
-            this.RelativeZ = -0.5f;
             SetRelativeFromAbsolute();
+            if (direction == Direction.Up)
+            {
+                this.Z += -1.5f;
+            }
+            else
+            {
+                this.Z += -0.5f;
+            }
+            
 
             //Create fishing line
             fishingLine = ShapeManager.AddLine();
