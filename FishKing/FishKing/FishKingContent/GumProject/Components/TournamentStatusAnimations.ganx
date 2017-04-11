@@ -1,0 +1,133 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ElementAnimationsSave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Animations>
+    <AnimationSave>
+      <Loops>false</Loops>
+      <Name>Wave1Animate</Name>
+      <States>
+        <AnimatedStateSave>
+          <StateName>Wave1State/Wave1Start</StateName>
+          <Time>0</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>Wave1State/Wave1Middle</StateName>
+          <Time>1</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>Wave1State/Wave1End</StateName>
+          <Time>2</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+      </States>
+      <Animations />
+      <Events />
+    </AnimationSave>
+    <AnimationSave>
+      <Loops>false</Loops>
+      <Name>Wave2Animate</Name>
+      <States>
+        <AnimatedStateSave>
+          <StateName>Wave2State/Wave2Start</StateName>
+          <Time>0</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>Wave2State/Wave2Middle</StateName>
+          <Time>1</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>Wave2State/Wave2End</StateName>
+          <Time>2</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+      </States>
+      <Animations />
+      <Events />
+    </AnimationSave>
+    <AnimationSave>
+      <Loops>false</Loops>
+      <Name>Wave3Animate</Name>
+      <States>
+        <AnimatedStateSave>
+          <StateName>Wave3State/Wave3Start</StateName>
+          <Time>0</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>Wave3State/Wave3Middle</StateName>
+          <Time>1</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>Wave3State/Wave3End</StateName>
+          <Time>2</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+      </States>
+      <Animations />
+      <Events />
+    </AnimationSave>
+    <AnimationSave>
+      <Loops>false</Loops>
+      <Name>Wave4Animate</Name>
+      <States>
+        <AnimatedStateSave>
+          <StateName>Wave4State/Wave4Start</StateName>
+          <Time>0</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>Wave4State/Wave4Middle</StateName>
+          <Time>1</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>Wave4State/Wave4End</StateName>
+          <Time>2</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+      </States>
+      <Animations />
+      <Events />
+    </AnimationSave>
+    <AnimationSave>
+      <Loops>true</Loops>
+      <Name>WavesAnimate</Name>
+      <States />
+      <Animations>
+        <AnimationReferenceSave>
+          <Name>Wave1Animate</Name>
+          <Time>0</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>Wave2Animate</Name>
+          <Time>0</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>Wave3Animate</Name>
+          <Time>0</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>Wave4Animate</Name>
+          <Time>0</Time>
+        </AnimationReferenceSave>
+      </Animations>
+      <Events />
+    </AnimationSave>
+  </Animations>
+</ElementAnimationsSave>

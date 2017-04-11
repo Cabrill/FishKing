@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="18" tilewidth="32" tileheight="32" nextobjectid="3">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="18" tilewidth="32" tileheight="32" nextobjectid="4">
  <tileset firstgid="1" name="alltiles" tilewidth="32" tileheight="32" tilecount="4096" columns="64">
   <image source="../Tilesets/alltiles.png" width="2048" height="2048"/>
   <tile id="123">
@@ -182,6 +182,11 @@
    H4sIAAAAAAAAC2NgGAWjYBSMFNDOxsDQAcSdQNzFRj97jwPtOgHEJ4H4FB3tHQWjYBQMHgAA/0upUnAIAAA=
   </data>
  </layer>
+ <layer name="Overlay" width="30" height="18">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgIA/MYSFT4ygYBaNgFIyCUTAKRhwAAG9+T0twCAAA
+  </data>
+ </layer>
  <objectgroup name="SpawnPoints">
   <object id="1" gid="1800" x="478" y="294" width="32" height="32">
    <properties>
@@ -197,9 +202,7 @@
    </properties>
   </object>
  </objectgroup>
- <layer name="Overlay" width="30" height="18">
-  <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC2NgIA/MYSFT4ygYBaNgFIyCUTAKRhwAAG9+T0twCAAA
-  </data>
- </layer>
+ <objectgroup name="DeepOceanAmbient">
+  <object id="3" x="14" y="7" width="928" height="548"/>
+ </objectgroup>
 </map>

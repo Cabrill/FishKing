@@ -514,6 +514,20 @@ namespace FishKing.Screens
                     caveAmbientSound.Play();
                 }
             }
+
+            if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "DeepOceanAmbient") != null)
+            {
+                if (deepOceanAmbientSound == null)
+                {
+                    deepOceanAmbientSound = GlobalContent.DeepOceanAmbient.CreateInstance();
+                    deepOceanAmbientSound.IsLooped = true;
+                }
+
+                if (deepOceanAmbientSound.State != SoundState.Playing)
+                {
+                    deepOceanAmbientSound.Play();
+                }
+            }
         }
 
         private Vector3 FindClosestPolygonPointOnLayer(string layerName, Point3D fromPoint)

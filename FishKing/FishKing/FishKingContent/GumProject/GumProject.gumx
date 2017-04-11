@@ -72,6 +72,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>TournamentStatus</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>UnknownFish</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>

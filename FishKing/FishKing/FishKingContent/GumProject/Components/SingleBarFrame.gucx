@@ -455,6 +455,7 @@
       <Type>string</Type>
       <Name>Middle.SourceFile</Name>
       <Value xsi:type="xsd:string">GumUI.png</Value>
+      <ExposedAsName>MiddleSourceFile</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
