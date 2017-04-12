@@ -8,7 +8,19 @@
   <RestrictToUnitValues>true</RestrictToUnitValues>
   <Guides />
   <ScreenReference>
+    <Name>FlatRedBallSplashGum</Name>
+    <ElementType>Screen</ElementType>
+  </ScreenReference>
+  <ScreenReference>
     <Name>GameScreenGum</Name>
+    <ElementType>Screen</ElementType>
+  </ScreenReference>
+  <ScreenReference>
+    <Name>LoadingScreenGum</Name>
+    <ElementType>Screen</ElementType>
+  </ScreenReference>
+  <ScreenReference>
+    <Name>MainMenu</Name>
     <ElementType>Screen</ElementType>
   </ScreenReference>
   <ComponentReference>
@@ -52,6 +64,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>LoadingScreen</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>ProgressBar</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
@@ -69,6 +85,10 @@
   </ComponentReference>
   <ComponentReference>
     <Name>subcomponent\CatchStatWithScale</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>subcomponent\TextEntryBox</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>

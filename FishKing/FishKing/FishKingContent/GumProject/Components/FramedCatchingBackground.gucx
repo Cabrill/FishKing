@@ -1123,13 +1123,7 @@
       <Name>Lake</Name>
       <Variable>
         <Type>int</Type>
-        <Name>WaterBackgroundSprite.Texture Left</Name>
-        <Value xsi:type="xsd:int">1762</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>WaterBackgroundSprite.Red</Name>
+        <Name>WaterBackgroundSprite.Blue</Name>
         <Value xsi:type="xsd:int">255</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -1141,8 +1135,14 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>WaterBackgroundSprite.Blue</Name>
+        <Name>WaterBackgroundSprite.Red</Name>
         <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>WaterBackgroundSprite.Texture Left</Name>
+        <Value xsi:type="xsd:int">1762</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -1150,13 +1150,7 @@
       <Name>CaveLake</Name>
       <Variable>
         <Type>int</Type>
-        <Name>WaterBackgroundSprite.Texture Left</Name>
-        <Value xsi:type="xsd:int">1762</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>WaterBackgroundSprite.Red</Name>
+        <Name>WaterBackgroundSprite.Blue</Name>
         <Value xsi:type="xsd:int">255</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -1168,8 +1162,14 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>WaterBackgroundSprite.Blue</Name>
+        <Name>WaterBackgroundSprite.Red</Name>
         <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>WaterBackgroundSprite.Texture Left</Name>
+        <Value xsi:type="xsd:int">1762</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

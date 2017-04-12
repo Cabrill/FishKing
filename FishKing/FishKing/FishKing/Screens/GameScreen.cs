@@ -614,19 +614,27 @@ namespace FishKing.Screens
             {
                 waterFallAmbientSound.Stop();
                 waterFallAmbientSound.Dispose();
-                waterFallAmbientSound = null;
             }
             if (oceanAmbientSound != null)
             {
                 oceanAmbientSound.Stop();
                 oceanAmbientSound.Dispose();
-                oceanAmbientSound = null;
             }
             if (riverAmbientSound != null)
             {
                 riverAmbientSound.Stop();
                 riverAmbientSound.Dispose();
-                riverAmbientSound = null;
+            }
+            if (oceanAmbientSound != null)
+            {
+                oceanAmbientSound.Stop();
+                oceanAmbientSound.Dispose();
+            }
+
+            if (caveAmbientSound != null)
+            {
+                caveAmbientSound.Stop();
+                caveAmbientSound.Dispose();
             }
         }
 

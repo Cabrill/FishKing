@@ -1,0 +1,11 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ScreenSave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>LoadingScreenGum</Name>
+  <State>
+    <Name>Default</Name>
+  </State>
+  <Instance>
+    <Name>LoadingScreenInstance</Name>
+    <BaseType>LoadingScreen</BaseType>
+  </Instance>
+</ScreenSave>
