@@ -261,60 +261,7 @@
     </AnimationSave>
     <AnimationSave>
       <Loops>true</Loops>
-      <Name>DemoFishMovement</Name>
-      <States>
-        <AnimatedStateSave>
-          <StateName>DemoMovement/DemoStart</StateName>
-          <Time>0</Time>
-          <InterpolationType>Linear</InterpolationType>
-          <Easing>Out</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>DemoMovement/DemoEnd</StateName>
-          <Time>5</Time>
-          <InterpolationType>Linear</InterpolationType>
-          <Easing>Out</Easing>
-        </AnimatedStateSave>
-      </States>
-      <Animations>
-        <AnimationReferenceSave>
-          <Name>FishDemoAnimation</Name>
-          <Time>0</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>WavesAnimate</Name>
-          <Time>0</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>FishDemoAnimation</Name>
-          <Time>1</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>FishDemoAnimation</Name>
-          <Time>2</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>WavesAnimate</Name>
-          <Time>2</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>FishDemoAnimation</Name>
-          <Time>3</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>WavesAnimate</Name>
-          <Time>4</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>FishDemoAnimation</Name>
-          <Time>4</Time>
-        </AnimationReferenceSave>
-      </Animations>
-      <Events />
-    </AnimationSave>
-    <AnimationSave>
-      <Loops>false</Loops>
-      <Name>FishDemoAnimation</Name>
+      <Name>FishAnimate</Name>
       <States />
       <Animations>
         <AnimationReferenceSave>
@@ -328,6 +275,26 @@
         <AnimationReferenceSave>
           <Name>Fish3Animate</Name>
           <Time>0</Time>
+        </AnimationReferenceSave>
+      </Animations>
+      <Events />
+    </AnimationSave>
+    <AnimationSave>
+      <Loops>true</Loops>
+      <Name>FishAndWavesAnimate</Name>
+      <States />
+      <Animations>
+        <AnimationReferenceSave>
+          <Name>FishAnimate</Name>
+          <Time>0</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>WavesAnimate</Name>
+          <Time>0</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>FishAnimate</Name>
+          <Time>1</Time>
         </AnimationReferenceSave>
       </Animations>
       <Events />
