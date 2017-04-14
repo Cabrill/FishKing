@@ -50,7 +50,19 @@ namespace FishKing
                 default:
                     availableFish = GlobalContent.Fish_Types.Values.ToList(); break;
             }
-            var fishType = availableFish.RandomElement();
+            Fish_Types fishType;
+#if DEBUG
+            if (DebuggingVariables.ForceAFishType && DebuggingVariables.ForcedFishType != null)
+            {
+                fishType = DebuggingVariables.ForcedFishType;
+            }
+            else
+            {
+                fishType = availableFish.RandomElement();
+            }
+#else
+            fishType = availableFish.RandomElement();
+#endif
             var fishTypeName = fishType.Name.ToString().Replace(" ","");
 
 

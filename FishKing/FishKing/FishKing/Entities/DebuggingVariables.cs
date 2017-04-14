@@ -35,8 +35,7 @@ namespace FishKing.Entities
         /// </summary>
 		private void CustomInitialize()
 		{
-
-
+            LoadStaticContent(ContentManagerName);
 		}
 
 		private void CustomActivity()

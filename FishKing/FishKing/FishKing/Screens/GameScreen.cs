@@ -395,10 +395,6 @@ namespace FishKing.Screens
 
         }
 
-        
-
-        
-
         private WaterType GetWaterType()
         {
             var tile = WaterTiles.GetTileAt(TargetingSpriteInstance.X, TargetingSpriteInstance.Y);

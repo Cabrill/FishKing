@@ -1,5 +1,6 @@
 ﻿using FishKing.Entities;
 using FlatRedBall.Glue.StateInterpolation;
+using FlatRedBall.Instructions;
 using Microsoft.Xna.Framework;
 using RenderingLibrary;
 using StateInterpolationPlugin;
@@ -12,7 +13,7 @@ using static FishKing.Enums.WaterTypes;
 
 namespace FishKing.GumRuntimes
 {
-    partial class FramedCatchingBackgroundRuntime
+    partial class FramedCatchingBackgroundRuntime : IInstructable
     {
         private const int MaxUnknownFishSpriteWidth = 70;
         private const int MinUnknownFishSpriteWidth = 15;
@@ -24,27 +25,35 @@ namespace FishKing.GumRuntimes
         private float alignmentVelocity = 0f;
         private float alignmentVelocityAttritionRate = 0.02f;
         private float alignmentVelocityIncrementRate = 0.05f;
-        private float maxAlignmentVelocy = 1.3f;
+        private float maxAlignmentVelocity = 1.3f;
+
+        private float ChanceOfFightBoost;
+        private bool fightBoosted = false;
+        private float fightBoostMaxVelocity;
+        private float effectiveFightMaxVelocity
+        {
+            get { return (fightBoosted ? fightBoostMaxVelocity : fightOrLuckMaxVelocity); }
+        }
 
         private float fightOrLuckVelocity = 0f;
-        private float fightOrLuckMaxVelocity = 0.5f;
+        private float fightOrLuckMaxVelocity = 0.25f;
         private float fightOrLuckMinVelocity = -0.5f;
         private float fightVelocityIncrementRate = 0.08f;
-        private float luckVelocityIncrementRate = 0.1f;
-        private float fightOrLuckVelocityAttritionRate = 0.001f;
+        private float luckVelocityIncrementRate = 0.08f;
+        private float fightOrLuckVelocityAttritionRate = 0.005f;
 
         private float DefaultFishingLineX;
         private float DefaultFishingLineY;
 
-        private float reelInRate = 0.15f;
+        private float reelInRate = 0.05f;
         public float CurrentReelSpeed { get; set; }
 
         public Fish AttachedFish { get; set; }
         private float FishFight { get; set; }
         private float FishSpeed { get; set; }
         
-        private double ChanceOfFight { get; set; }
-        private double ChanceOfLuck { get; set; }
+        private float ChanceOfFight { get; set; }
+        private float ChanceOfLuck { get; set; }
 
         private float FightModifier { get; set; }
         private float SpeedModifier { get; set; }
@@ -72,6 +81,14 @@ namespace FishKing.GumRuntimes
         private int AlignmentTop { get { return (int)AlignmentBarInstance.Y; } }
         private int AlignmentBottom { get { return AlignmentTop + (int)AlignmentBarInstance.Height; } }
         public bool IsAligned { get { return this.AlignmentBarInstance.CurrentAlignmentState == AlignmentBarRuntime.Alignment.Aligned; } }
+
+        public InstructionList Instructions
+        {
+            get
+            {
+                return ((IInstructable)AttachedFish).Instructions;
+            }
+        }
 
         partial void CustomInitialize()
         {
@@ -109,8 +126,11 @@ namespace FishKing.GumRuntimes
             SpeedModifier = 0.25f + ((float)FishSpeed / 100);
             FightModifier = 1f + ((float)FishFight / 100);
 
-            ChanceOfFight = (double)FishFight / 3000;
-            ChanceOfLuck = 0.001;
+            
+            fightBoostMaxVelocity = fightOrLuckMaxVelocity + ((FishSpeed + FishFight) / 500);
+            ChanceOfFight = FishFight / 3000;
+            ChanceOfLuck = 0.001f;
+            ChanceOfFightBoost = 0.001f + (ChanceOfFight/10);
 
             FishHorizontalMovementTweenDuration = (double)3 - (FishSpeed / 50);
 
@@ -187,7 +207,7 @@ namespace FishKing.GumRuntimes
             float changeInY;
             if (UnknownFishInstance.Y == MaxFishY && CurrentReelSpeed == 0 && fightOrLuckVelocity > 0)
             {
-                fightOrLuckVelocity = 0;
+                fightOrLuckVelocity *= 0.9f;
                 changeInY = 0;
             }
             else
@@ -200,13 +220,12 @@ namespace FishKing.GumRuntimes
             
             var newRotation = flipModifier * 45 * (changeInY / 1.3f);
             UnknownFishInstance.Rotation = newRotation;
-
-#if DEBUG
+#if !DEBUG
+        }    
+#else
             if (DebuggingVariables.ShowFishDebugText) UpdateDebugText(changeInY, newRotation);
-#endif
         }
 
-#if DEBUG
         private void UpdateDebugText(float changeInY, float rotation)
         {
             DebugContainer.Visible = true;
@@ -216,6 +235,7 @@ namespace FishKing.GumRuntimes
             textFishRotation.Text = $"Rotation: {rotation}";
             textFightLuck.Text = $"FightLuck: {fightOrLuckVelocity}";
             textFishName.Text = $"Name: {AttachedFish.Name}";
+            textBoost.Visible = fightBoosted;
         }
 #endif
 
@@ -224,9 +244,19 @@ namespace FishKing.GumRuntimes
             var fightOrLuck = randomSeed.NextDouble();
             var totalModifier = SpeedModifier * FightModifier;
 
+            if (ChanceOfFightBoost > fightOrLuck)
+            {
+                fightBoosted = true;
+                fightOrLuckVelocity = effectiveFightMaxVelocity;
+
+                this.Call(() =>
+                {
+                    fightBoosted = false;
+                }).After(0.5);
+            }
             if (ChanceOfFight > fightOrLuck)
             {
-                fightOrLuckVelocity = Math.Min(fightOrLuckMaxVelocity, fightOrLuckVelocity + (fightVelocityIncrementRate * totalModifier));
+                fightOrLuckVelocity = Math.Min(effectiveFightMaxVelocity, fightOrLuckVelocity + (fightVelocityIncrementRate * totalModifier));
             }
             else if (ChanceOfLuck > fightOrLuck)
             {
@@ -250,7 +280,6 @@ namespace FishKing.GumRuntimes
             float destX = 0f;
             var fishIsOnRightHalf = UnknownFishInstance.X > (MaxFishX / 2);
             var tweenDuration = FishHorizontalMovementTweenDuration;
-            
 
             if (fishIsOnRightHalf)
             {   
@@ -367,7 +396,7 @@ namespace FishKing.GumRuntimes
 
         public void RaiseAlignmentBar()
         {
-            alignmentVelocity = Math.Min(maxAlignmentVelocy, alignmentVelocity + alignmentVelocityIncrementRate);
+            alignmentVelocity = Math.Min(maxAlignmentVelocity, alignmentVelocity + alignmentVelocityIncrementRate);
         }
 
         private void UpdateAlignmentBarStatus()
@@ -415,6 +444,7 @@ namespace FishKing.GumRuntimes
             fightOrLuckVelocity = 0;
             WaterBoxFishingLine.X = DefaultFishingLineX;
             WaterBoxFishingLine.Y = DefaultFishingLineY;
+            fightBoosted = false;
         }
     }
 }

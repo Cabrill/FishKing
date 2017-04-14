@@ -30,7 +30,7 @@
   </tile>
   <tile id="24">
    <properties>
-    <property name="IsWaterfall" type="bool" value="false"/>
+    <property name="IsWaterfall" type="bool" value="true"/>
    </properties>
    <animation>
     <frame tileid="342" duration="100"/>

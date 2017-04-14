@@ -251,6 +251,54 @@
     </Variable>
     <Variable>
       <Type>int</Type>
+      <Name>textBoost.Blue</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>textBoost.Green</Name>
+      <Value xsi:type="xsd:int">255</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>textBoost.Parent</Name>
+      <Value xsi:type="xsd:string">DebugContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>textBoost.Red</Name>
+      <Value xsi:type="xsd:int">255</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>textBoost.Text</Name>
+      <Value xsi:type="xsd:string">BOOST!</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>textBoost.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>textBoost.X</Name>
+      <Value xsi:type="xsd:float">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>textBoost.Y</Name>
+      <Value xsi:type="xsd:float">120</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
       <Name>textFightLuck.Blue</Name>
       <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
@@ -1224,6 +1272,10 @@
   </Instance>
   <Instance>
     <Name>textFishName</Name>
+    <BaseType>Text</BaseType>
+  </Instance>
+  <Instance>
+    <Name>textBoost</Name>
     <BaseType>Text</BaseType>
   </Instance>
   <Behaviors />
