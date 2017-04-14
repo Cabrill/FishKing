@@ -59,7 +59,12 @@ namespace FishKing.Entities
                     if (FishingLineLinesList.Count > 0)
                     {
                         FishingLineLinesList[0].SetFromAbsoluteEndpoints(new Point3D(originationVector), FishingLineLinesList[0].AbsolutePoint2);
+                        if (!LineIsSettling)
+                        {
+                            //ReactToNewOrigination(priorOrigination);
+                        }
                     }
+                    
                 }
             }
         }
@@ -87,10 +92,10 @@ namespace FishKing.Entities
                     if (FishingLineLinesList.Count > 0)
                     {
                         FishingLineLinesList.Last.SetFromAbsoluteEndpoints(FishingLineLinesList.Last.AbsolutePoint1, new Point3D(destinationVector));
-                    }
-                    if (!lineIsSettling && !isReelingIn)
-                    {
-                        ReactToNewDestination(priorDestination);
+                        if (LineHasSettled && !isReelingIn)
+                        {
+                            ReactToNewDestination(priorDestination);
+                        }
                     }
                 }
             }
@@ -360,7 +365,52 @@ namespace FishKing.Entities
             TweenAllLines(originalLines, settledFishingLineLines, 2f, () => { lineIsSettling = false; lineHasSettled = true; });
         }
 
-        public void ReactToNewDestination(Vector3 priorDestination)
+        private void ReactToNewOrigination(Vector3 priorOrigination)
+        {
+            TweenerManager.Self.StopAllTweenersOwnedBy(this);
+
+            var changeVector = (OriginationVector - priorOrigination);
+            Vector3 incrementVector;
+            float aprior = 0f;
+            float modValue;
+            Point3D point1, point2;
+            int iterations;
+
+            lineTweener = new Tweener(0, 1f, 0.2f, InterpolationType.Back, Easing.Out);
+            lineTweener.Owner = this;
+            lineTweener.PositionChanged += (a) =>
+            {
+                iterations = FishingLineLinesList.Count - 1;
+                modValue = (a - aprior);
+                incrementVector = changeVector * modValue / (iterations);
+                aprior = a;
+                for (int i = 0; i < iterations; i++)
+                {
+                    if (i == 0)
+                    {
+                        point1 = FishingLineLinesList[0].AbsolutePoint1;
+                    }
+                    else
+                    {
+                        point1 = FishingLineLinesList[i-1].AbsolutePoint2;
+                    }
+                    if (i == iterations)
+                    {
+                        point2 = FishingLineLinesList.Last.AbsolutePoint2;
+                    }
+                    else
+                    {
+                        point2 = FishingLineLinesList[i].AbsolutePoint2 + (incrementVector * (iterations-i));
+                    }
+
+                    FishingLineLinesList[i].SetFromAbsoluteEndpoints(point1, point2);
+                }
+            };
+            lineTweener.Start();
+            TweenerManager.Self.Add(lineTweener);
+        }
+
+        private void ReactToNewDestination(Vector3 priorDestination)
         {
             TweenerManager.Self.StopAllTweenersOwnedBy(this);
 
@@ -402,18 +452,25 @@ namespace FishKing.Entities
             TweenerManager.Self.Add(lineTweener);
         }
 
+        public void StartCasting(Direction directionFacing, Vector3 castOrigination)
+        {
+            DirectionCast = directionFacing;
+            originationVector = castOrigination;
+            destinationVector = castOrigination;
+        }
+
         public void Reset()
         {
             TweenerManager.Self.StopAllTweenersOwnedBy(this);
-            for (int i = FishingLineLinesList.Count; i > 0; i--)
+            while (FishingLineLinesList.Count > 0)
             {
                 ShapeManager.Remove(FishingLineLinesList.Last);
             }
             DirectionCast = Direction.None;
-            //originationVector = Vector3.Zero;
             lineHasSettled = false;
             lineIsSettling = false;
             isReelingIn = false;
+            lastLineTime = 0;
         }
 
         private double CalculateCatenaryHeight(double x, double a = 0.5)

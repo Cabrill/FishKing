@@ -255,7 +255,7 @@ namespace FishKing.Entities
                         var relativeTargetPosition = new Vector3(TargetPosition.X - Position.X, TargetPosition.Y - Position.Y, 1);
                         BobberInstance.TraverseTo(relativeTargetPosition, tileSize);
 
-                        FishingLineInstance.DirectionCast = DirectionFacing;
+                        FishingLineInstance.StartCasting(DirectionFacing, RodLineOriginationPosition);
                         WhooshRod.Play();
                     }
                 }

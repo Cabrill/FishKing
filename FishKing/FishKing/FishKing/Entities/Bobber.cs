@@ -40,7 +40,7 @@ namespace FishKing.Entities
         public Vector3 LineOriginationPosition
         {
             get {
-                UpdateDependencies(FlatRedBall.TimeManager.CurrentTime);
+                BobberSpriteInstance.UpdateDependencies(FlatRedBall.TimeManager.CurrentTime);
                 return BobberSpriteInstance.GetKeyPixelPosition();
             }
         }
