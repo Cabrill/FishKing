@@ -169,22 +169,6 @@
     </AnimationSave>
     <AnimationSave>
       <Loops>true</Loops>
-      <Name>DemoAnimation</Name>
-      <States />
-      <Animations>
-        <AnimationReferenceSave>
-          <Name>WavesAnimate</Name>
-          <Time>0</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>DemoFishMovement</Name>
-          <Time>0</Time>
-        </AnimationReferenceSave>
-      </Animations>
-      <Events />
-    </AnimationSave>
-    <AnimationSave>
-      <Loops>true</Loops>
       <Name>Fish2Animate</Name>
       <States>
         <AnimatedStateSave>

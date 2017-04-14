@@ -20,6 +20,8 @@ using Microsoft.Xna.Framework;
 using FlatRedBall.Math;
 using FlatRedBall.Glue.StateInterpolation;
 using StateInterpolationPlugin;
+using FlatRedBall.Graphics.Texture;
+using FishKing.Extensions;
 
 #if FRB_XNA || SILVERLIGHT
 using Keys = Microsoft.Xna.Framework.Input.Keys;
@@ -83,6 +85,15 @@ namespace FishKing.Entities
         public bool IsPullingInCatch { get { return SpriteInstance.CurrentChainName.Substring(0, 3) == "Tug"; } }
         public bool IsDisplayingCatch { get; set; } = false;
         public bool HasFinishedDisplayingCatch { get; set; } = false;
+
+        public Vector3 RodLineOriginationPosition
+        {
+            get
+            {
+                UpdateDependencies(FlatRedBall.TimeManager.CurrentTime);
+                return RodSpriteInstance.GetKeyPixelPosition();
+            }
+        }
 
         /// <summary>
         /// Initialization logic which is execute only one time for this Entity (unless the Entity is pooled).
@@ -240,9 +251,11 @@ namespace FishKing.Entities
                     }
                     else if (JustReleasedCast)
                     {
+                        BobberInstance.Position = RodLineOriginationPosition;
                         var relativeTargetPosition = new Vector3(TargetPosition.X - Position.X, TargetPosition.Y - Position.Y, 1);
                         BobberInstance.TraverseTo(relativeTargetPosition, tileSize);
-                        
+
+                        FishingLineInstance.DirectionCast = DirectionFacing;
                         WhooshRod.Play();
                     }
                 }
@@ -277,7 +290,38 @@ namespace FishKing.Entities
                         HasInitiatedCatching = ActionInput.IsDown;
                     }
                 }
+                if (!HasInitiatedCatching && BobberInstance.FrameJustChanged)
+                {
+                    FishingLineInstance.DestinationVector = BobberInstance.LineOriginationPosition;
+                }
             }
+
+            if (BobberInstance.IsMoving)
+            {
+                if (RodSpriteInstance.JustChangedFrame)
+                {
+                    FishingLineInstance.OriginationVector = RodLineOriginationPosition;
+                }
+                FishingLineInstance.UpdateLineFromBobberCast(BobberInstance.LineOriginationPosition);
+            }
+            else if (BobberInstance.Visible && !FishingLineInstance.LineIsSettling && !FishingLineInstance.LineHasSettled)
+            {
+                FishingLineInstance.UpdateLineFromBobberCast(BobberInstance.LineOriginationPosition, true);
+            }
+            if (IsPullingInCatch)
+            {
+                if (RodSpriteInstance.JustChangedFrame)
+                {
+                    FishingLineInstance.OriginationVector = RodLineOriginationPosition;
+                }
+                if (FishOnTheLine.Visible)
+                {
+                    FishingLineInstance.DestinationVector = FishOnTheLine.MouthPosition;
+                }
+                FishingLineInstance.UpdateLineFromFishReelIn();
+            }
+
+            FishingLineInstance.Visible = ((IsCastingRod && IsAfterWindUp) || IsFishing || IsPullingInCatch) && !IsDisplayingCatch;
             RodSpriteInstance.Visible = (IsCastingRod || IsFishing) && !IsDisplayingCatch;
             BobberInstance.Visible = (IsAfterWindUp || IsFishing || (IsPullingInCatch && IsTuggingLine)) && !IsDisplayingCatch && (!IsPullingInCatch || IsTuggingLine);
         }
@@ -298,6 +342,7 @@ namespace FishKing.Entities
             IsDisplayingCatch = false;
             HasFinishedDisplayingCatch = false;
             SpriteInstance.CurrentChainName = SpriteInstance.CurrentChainName.Replace("Cast", "Stand");
+            FishingLineInstance.Reset();
         }
 
         public void StandStill()
@@ -325,7 +370,7 @@ namespace FishKing.Entities
             SpriteInstance.CurrentChainName = RodSpriteInstance.CurrentChainName = chainName;
             SpriteInstance.Animate = RodSpriteInstance.Animate = true;
             SpriteInstance.CurrentFrameIndex = RodSpriteInstance.CurrentFrameIndex = 0;
-            BobberInstance.ReactToCharacterTugging();
+            FishingLineInstance.ReactToTugging();
         }
 
         private void PullInFish()

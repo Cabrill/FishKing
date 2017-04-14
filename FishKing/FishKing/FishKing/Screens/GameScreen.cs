@@ -615,10 +615,10 @@ namespace FishKing.Screens
                 waterFallAmbientSound.Stop();
                 waterFallAmbientSound.Dispose();
             }
-            if (oceanAmbientSound != null)
+            if (deepOceanAmbientSound != null)
             {
-                oceanAmbientSound.Stop();
-                oceanAmbientSound.Dispose();
+                deepOceanAmbientSound.Stop();
+                deepOceanAmbientSound.Dispose();
             }
             if (riverAmbientSound != null)
             {

@@ -111,6 +111,5 @@ namespace FishKing.Entities
                 }
             }
         }
-        
     }
 }
