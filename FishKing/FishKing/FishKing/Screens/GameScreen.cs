@@ -414,7 +414,7 @@ namespace FishKing.Screens
 
         private void AddWaterTiles()
         {
-            var waterNames = new List<string>() { "IsOcean", "IsDeepOcean", "IsLake", "IsRiver", "IsPond", "IsDeepOcean", "InWaterfall" };
+            var waterNames = new List<string>() { "IsOcean", "IsDeepOcean", "IsLake", "IsRiver", "IsPond", "IsDeepOcean", "IsWaterfall" };
             WaterTiles.AddWaterFrom(CurrentTileMap, (List =>
                 List.Any(item => waterNames.Contains(item.Name))
                 ));
