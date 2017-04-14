@@ -1515,7 +1515,7 @@
     <property name="Name" value="CaveExit"/>
    </properties>
   </object>
-  <object id="41" gid="1799" x="260" y="228" width="32" height="32">
+  <object id="41" gid="1799" x="260" y="224" width="32" height="32">
    <properties>
     <property name="EntityToCreate" value="StartPoint"/>
     <property name="Name" value="BoatExit"/>
