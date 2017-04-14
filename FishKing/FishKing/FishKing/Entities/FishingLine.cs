@@ -18,7 +18,8 @@ namespace FishKing.Entities
 	public partial class FishingLine
 	{
         Tweener lineTweener;
-        private const float optimalLineLength = 10f;
+        private const double optimalTime = 0.1;
+        private double lastLineTime = 0;
         private bool isReelingIn;
         private bool lineIsSettling;
         public bool LineIsSettling
@@ -95,11 +96,6 @@ namespace FishKing.Entities
             }
         }
 
-        /// <summary>
-        /// Initialization logic which is execute only one time for this Entity (unless the Entity is pooled).
-        /// This method is called when the Entity is added to managers. Entities which are instantiated but not
-        /// added to managers will not have this method called.
-        /// </summary>
 		private void CustomInitialize()
 		{
 
@@ -117,8 +113,9 @@ namespace FishKing.Entities
         public void UpdateLineFromBobberCast(Vector3 bobberPosition, bool isFinalUpdate = false)
         {
             DestinationVector = bobberPosition;
+            var currentTime = FlatRedBall.TimeManager.CurrentTime;
             var lastLine = FishingLineLinesList.Last;
-            if (lastLine == null || (lastLine.GetLength() >= optimalLineLength))
+            if (lastLine == null || (currentTime-lastLineTime >= optimalTime))
             {
                 var newLine = ShapeManager.AddLine();
                 newLine.Color = new Color(LineColorRed, LineColorGreen, LineColorBlue, LineColorAlpha);
@@ -131,6 +128,7 @@ namespace FishKing.Entities
                     newLine.SetFromAbsoluteEndpoints(lastLine.AbsolutePoint2, new Point3D(DestinationVector));
                 }
                 FishingLineLinesList.Add(newLine);
+                lastLineTime = currentTime;
             }
             else
             {
@@ -198,14 +196,14 @@ namespace FishKing.Entities
 
         private void SwitchToSingleLine()
         {
+            TweenerManager.Self.StopAllTweenersOwnedBy(this);
             while (FishingLineLinesList.Count > 1)
             {
                 ShapeManager.Remove(FishingLineLinesList.Last);
             }
-            var lastLine = FishingLineLinesList.Last;
-            if (lastLine != null)
+            if (FishingLineLinesList.Last != null)
             {
-                lastLine.SetFromAbsoluteEndpoints(originationVector, destinationVector);
+                FishingLineLinesList.Last.SetFromAbsoluteEndpoints(originationVector, destinationVector);
             }
         }
 
@@ -218,23 +216,37 @@ namespace FishKing.Entities
             lineTweener = new Tweener(0, 1, inTime, ipt, e);
             lineTweener.Owner = this;
             lineTweener.PositionChanged += (a) => {
+                if (!fromLines[0].AbsolutePoint1.Equals(FishingLineLinesList[0].AbsolutePoint1))
+                {
+                    fromLines[0].SetFromAbsoluteEndpoints(FishingLineLinesList[0].AbsolutePoint1, fromLines[0].AbsolutePoint2);
+                    toLines[0].SetFromAbsoluteEndpoints(FishingLineLinesList[0].AbsolutePoint1, toLines[0].AbsolutePoint2);
+                }
+                if (!fromLines.Last.AbsolutePoint2.Equals(FishingLineLinesList.Last.AbsolutePoint2))
+                {
+                    fromLines.Last.SetFromAbsoluteEndpoints(fromLines.Last.AbsolutePoint1, FishingLineLinesList.Last.AbsolutePoint2);
+                    toLines.Last.SetFromAbsoluteEndpoints(toLines.Last.AbsolutePoint1, FishingLineLinesList.Last.AbsolutePoint2);
+                }
+
                 mod = 1 - a;
                 for (int i = 0; i < toLines.Count; i++)
                 {
-                    lineToChange = FishingLineLinesList[i];
-                    originalLine = fromLines[i];
-                    settledLine = toLines[i];
-
-                    if (lineToChange != null)
+                    if (i < FishingLineLinesList.Count)
                     {
-                        lineToChange.SetFromAbsoluteEndpoints(
-                        new Point3D(
-                            (originalLine.AbsolutePoint1.X * mod) + (settledLine.AbsolutePoint1.X * a),
-                            (originalLine.AbsolutePoint1.Y * mod) + (settledLine.AbsolutePoint1.Y * a)),
-                        new Point3D(
-                            (originalLine.AbsolutePoint2.X * mod) + (settledLine.AbsolutePoint2.X * a),
-                            (originalLine.AbsolutePoint2.Y * mod) + (settledLine.AbsolutePoint2.Y * a))
-                        );
+                        lineToChange = FishingLineLinesList[i];
+                        originalLine = fromLines[i];
+                        settledLine = toLines[i];
+
+                        if (lineToChange != null)
+                        {
+                            lineToChange.SetFromAbsoluteEndpoints(
+                            new Point3D(
+                                (originalLine.AbsolutePoint1.X * mod) + (settledLine.AbsolutePoint1.X * a),
+                                (originalLine.AbsolutePoint1.Y * mod) + (settledLine.AbsolutePoint1.Y * a)),
+                            new Point3D(
+                                (originalLine.AbsolutePoint2.X * mod) + (settledLine.AbsolutePoint2.X * a),
+                                (originalLine.AbsolutePoint2.Y * mod) + (settledLine.AbsolutePoint2.Y * a))
+                            );
+                        }
                     }
                 }
             };
@@ -276,10 +288,7 @@ namespace FishKing.Entities
                     newY = pointY * totalY;
 
                     point1 = new Point3D(clonedLine.AbsolutePoint1.X, FishingLineLinesList.Last.AbsolutePoint2.Y + newY);
-                }
 
-                if (i > 0)
-                {
                     previousLine = settledFishingLineLines[i - 1];
                     previousLine.SetFromAbsoluteEndpoints(previousLine.AbsolutePoint1, point1);
                 }
@@ -292,12 +301,7 @@ namespace FishKing.Entities
                 point2 = new Point3D(clonedLine.AbsolutePoint2.X, FishingLineLinesList.Last.AbsolutePoint2.Y + newY);
 
                 clonedLine.SetFromAbsoluteEndpoints(point1, point2);
-#if DEBUG
-                if (DebuggingVariables.ShowSettledFishingLine)
-                {
-                    ShapeManager.AddLine(clonedLine);
-                }
-#endif
+
                 settledFishingLineLines.Add(clonedLine);
             }
             
@@ -349,12 +353,7 @@ namespace FishKing.Entities
                 point2 = new Point3D(FishingLineLinesList.Last.AbsolutePoint2.X + newX, clonedLine.AbsolutePoint2.Y);
 
                 clonedLine.SetFromAbsoluteEndpoints(point1, point2);
-#if DEBUG
-                if (DebuggingVariables.ShowSettledFishingLine)
-                {
-                    ShapeManager.AddLine(clonedLine);
-                }
-#endif
+
                 settledFishingLineLines.Add(clonedLine);
             }
 
@@ -376,11 +375,11 @@ namespace FishKing.Entities
             lineTweener.Owner = this;
             lineTweener.PositionChanged += (a) =>
             {
-                iterations = FishingLineLinesList.Count - 1;
+                iterations = FishingLineLinesList.Count-1;
                 modValue = (a - aprior);
                 incrementVector = changeVector * modValue / (iterations);
                 aprior = a;
-                for (int i = iterations; i > 1; i--)
+                for (int i = iterations; i > 0; i--)
                 {
                     point1 = FishingLineLinesList[i].AbsolutePoint1 + (incrementVector * i);
                     if (i == iterations)
@@ -394,7 +393,10 @@ namespace FishKing.Entities
                     
                     FishingLineLinesList[i].SetFromAbsoluteEndpoints(point1, point2);
                 }
-                
+                if (FishingLineLinesList.Count >= 2)
+                {
+                    FishingLineLinesList[0].SetFromAbsoluteEndpoints(FishingLineLinesList[0].AbsolutePoint1, FishingLineLinesList[1].AbsolutePoint1);
+                }
             };
             lineTweener.Start();
             TweenerManager.Self.Add(lineTweener);
@@ -408,7 +410,7 @@ namespace FishKing.Entities
                 ShapeManager.Remove(FishingLineLinesList.Last);
             }
             DirectionCast = Direction.None;
-            originationVector = Vector3.Zero;
+            //originationVector = Vector3.Zero;
             lineHasSettled = false;
             lineIsSettling = false;
             isReelingIn = false;

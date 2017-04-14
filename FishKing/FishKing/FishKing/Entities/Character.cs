@@ -296,32 +296,35 @@ namespace FishKing.Entities
                 }
             }
 
-            if (BobberInstance.IsMoving)
+            if (!characterMoved)
             {
-                if (RodSpriteInstance.JustChangedFrame)
+                if (BobberInstance.Visible && BobberInstance.IsMoving)
                 {
-                    FishingLineInstance.OriginationVector = RodLineOriginationPosition;
+                    if (RodSpriteInstance.JustChangedFrame)
+                    {
+                        FishingLineInstance.OriginationVector = RodLineOriginationPosition;
+                    }
+                    FishingLineInstance.UpdateLineFromBobberCast(BobberInstance.LineOriginationPosition);
                 }
-                FishingLineInstance.UpdateLineFromBobberCast(BobberInstance.LineOriginationPosition);
-            }
-            else if (BobberInstance.Visible && !FishingLineInstance.LineIsSettling && !FishingLineInstance.LineHasSettled)
-            {
-                FishingLineInstance.UpdateLineFromBobberCast(BobberInstance.LineOriginationPosition, true);
-            }
-            if (IsPullingInCatch)
-            {
-                if (RodSpriteInstance.JustChangedFrame)
+                else if (BobberInstance.Visible && !FishingLineInstance.LineIsSettling && !FishingLineInstance.LineHasSettled)
                 {
-                    FishingLineInstance.OriginationVector = RodLineOriginationPosition;
+                    FishingLineInstance.UpdateLineFromBobberCast(BobberInstance.LineOriginationPosition, true);
                 }
-                if (FishOnTheLine.Visible)
+                if (IsPullingInCatch)
                 {
-                    FishingLineInstance.DestinationVector = FishOnTheLine.MouthPosition;
+                    if (RodSpriteInstance.JustChangedFrame)
+                    {
+                        FishingLineInstance.OriginationVector = RodLineOriginationPosition;
+                    }
+                    if (FishOnTheLine.Visible)
+                    {
+                        FishingLineInstance.DestinationVector = FishOnTheLine.MouthPosition;
+                    }
+                    FishingLineInstance.UpdateLineFromFishReelIn();
                 }
-                FishingLineInstance.UpdateLineFromFishReelIn();
             }
 
-            FishingLineInstance.Visible = ((IsCastingRod && IsAfterWindUp) || IsFishing || IsPullingInCatch) && !IsDisplayingCatch;
+            FishingLineInstance.Visible = BobberInstance.Visible || (IsPullingInCatch && !IsDisplayingCatch);
             RodSpriteInstance.Visible = (IsCastingRod || IsFishing) && !IsDisplayingCatch;
             BobberInstance.Visible = (IsAfterWindUp || IsFishing || (IsPullingInCatch && IsTuggingLine)) && !IsDisplayingCatch && (!IsPullingInCatch || IsTuggingLine);
         }
