@@ -8,7 +8,7 @@ namespace FishKing.Enums
 {
     public static class WaterTypes
     {
-        public enum WaterType { None, Ocean, Lake, River, Pond, Waterfall, DeepOcean };
+        public enum WaterType { None, Ocean, Lake, CaveLake, River, Pond, Waterfall, DeepOcean };
 
         public static List<string> AsStringList()
         {
@@ -25,6 +25,7 @@ namespace FishKing.Enums
                 case "IsPond": return WaterType.Pond;
                 case "IsWaterfall": return WaterType.Waterfall; 
                 case "IsDeepOcean": return WaterType.DeepOcean;
+                case "IsCaveLake": return WaterType.CaveLake;
                 default: return WaterType.None;
             }
         }
