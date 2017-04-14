@@ -1028,7 +1028,7 @@
           </Properties>
           <Name>ForcedFishType</Name>
           <Type>FishKing.DataTypes.Fish_Types</Type>
-          <DefaultValue xsi:type="xsd:string">Shark in Fish_Types.csv</DefaultValue>
+          <DefaultValue xsi:type="xsd:string">Largemouth Bass in Fish_Types.csv</DefaultValue>
           <IsShared>true</IsShared>
         </CustomVariable>
       </CustomVariables>

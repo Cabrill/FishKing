@@ -39,6 +39,11 @@ namespace FishKing.GumRuntimes
         private float fightOrLuckMaxVelocity = 0.25f;
         private float fightOrLuckMinVelocity = -0.5f;
         private float fightVelocityIncrementRate = 0.08f;
+        private float effectiveFightVelocityIncrementRate
+        {
+            get { return (fightBoosted ? fightVelocityIncrementRate * 3 : fightVelocityIncrementRate); }
+        }
+
         private float luckVelocityIncrementRate = 0.08f;
         private float fightOrLuckVelocityAttritionRate = 0.005f;
 
@@ -128,7 +133,7 @@ namespace FishKing.GumRuntimes
 
             
             fightBoostMaxVelocity = fightOrLuckMaxVelocity + ((FishSpeed + FishFight) / 500);
-            ChanceOfFight = FishFight / 3000;
+            ChanceOfFight = 0.01f + (FishFight / 6000);
             ChanceOfLuck = 0.001f;
             ChanceOfFightBoost = 0.001f + (ChanceOfFight/10);
 
@@ -247,7 +252,7 @@ namespace FishKing.GumRuntimes
             if (ChanceOfFightBoost > fightOrLuck)
             {
                 fightBoosted = true;
-                fightOrLuckVelocity = effectiveFightMaxVelocity;
+                fightOrLuckVelocity = fightOrLuckMaxVelocity;
 
                 this.Call(() =>
                 {
@@ -256,7 +261,7 @@ namespace FishKing.GumRuntimes
             }
             if (ChanceOfFight > fightOrLuck)
             {
-                fightOrLuckVelocity = Math.Min(effectiveFightMaxVelocity, fightOrLuckVelocity + (fightVelocityIncrementRate * totalModifier));
+                fightOrLuckVelocity = Math.Min(effectiveFightMaxVelocity, fightOrLuckVelocity + (effectiveFightVelocityIncrementRate * totalModifier));
             }
             else if (ChanceOfLuck > fightOrLuck)
             {
