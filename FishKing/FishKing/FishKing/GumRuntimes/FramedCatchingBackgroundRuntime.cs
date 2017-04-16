@@ -120,6 +120,7 @@ namespace FishKing.GumRuntimes
                 case WaterType.Pond: this.CurrentWaterTypeBackgroundState = WaterTypeBackground.Pond; break;
                 case WaterType.Ocean: this.CurrentWaterTypeBackgroundState = WaterTypeBackground.Ocean; break;
                 case WaterType.Waterfall: this.CurrentWaterTypeBackgroundState = WaterTypeBackground.Waterfall; break;
+                case WaterType.CaveLake: this.CurrentWaterTypeBackgroundState = WaterTypeBackground.CaveLake; break;
             }
         }
 

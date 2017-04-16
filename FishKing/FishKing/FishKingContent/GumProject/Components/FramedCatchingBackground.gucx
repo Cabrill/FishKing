@@ -844,25 +844,25 @@
     <Variable>
       <Type>int</Type>
       <Name>WaterBackgroundSprite.Texture Height</Name>
-      <Value xsi:type="xsd:int">1024</Value>
+      <Value xsi:type="xsd:int">550</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>WaterBackgroundSprite.Texture Left</Name>
-      <Value xsi:type="xsd:int">476</Value>
+      <Value xsi:type="xsd:int">1748</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>WaterBackgroundSprite.Texture Top</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">1498</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>WaterBackgroundSprite.Texture Width</Name>
-      <Value xsi:type="xsd:int">261</Value>
+      <Value xsi:type="xsd:int">300</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1103,7 +1103,7 @@
       <Variable>
         <Type>int</Type>
         <Name>WaterBackgroundSprite.Texture Left</Name>
-        <Value xsi:type="xsd:int">1512</Value>
+        <Value xsi:type="xsd:int">1148</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -1118,7 +1118,7 @@
       <Variable>
         <Type>int</Type>
         <Name>WaterBackgroundSprite.Texture Left</Name>
-        <Value xsi:type="xsd:int">476</Value>
+        <Value xsi:type="xsd:int">1448</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -1127,13 +1127,13 @@
       <Variable>
         <Type>int</Type>
         <Name>WaterBackgroundSprite.Texture Left</Name>
-        <Value xsi:type="xsd:int">738</Value>
+        <Value xsi:type="xsd:int">1748</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>WaterBackgroundSprite.Texture Width</Name>
-        <Value xsi:type="xsd:int">259</Value>
+        <Name>WaterBackgroundSprite.Texture Top</Name>
+        <Value xsi:type="xsd:int">1498</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -1141,8 +1141,8 @@
       <Name>DeepOcean</Name>
       <Variable>
         <Type>int</Type>
-        <Name>WaterBackgroundSprite.Texture Left</Name>
-        <Value xsi:type="xsd:int">998</Value>
+        <Name>WaterBackgroundSprite.Texture Top</Name>
+        <Value xsi:type="xsd:int">948</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -1157,7 +1157,13 @@
       <Variable>
         <Type>int</Type>
         <Name>WaterBackgroundSprite.Texture Left</Name>
-        <Value xsi:type="xsd:int">1262</Value>
+        <Value xsi:type="xsd:int">1448</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>WaterBackgroundSprite.Texture Top</Name>
+        <Value xsi:type="xsd:int">948</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -1190,7 +1196,13 @@
       <Variable>
         <Type>int</Type>
         <Name>WaterBackgroundSprite.Texture Left</Name>
-        <Value xsi:type="xsd:int">1762</Value>
+        <Value xsi:type="xsd:int">1148</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>WaterBackgroundSprite.Texture Top</Name>
+        <Value xsi:type="xsd:int">948</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -1216,8 +1228,8 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>WaterBackgroundSprite.Texture Left</Name>
-        <Value xsi:type="xsd:int">1762</Value>
+        <Name>WaterBackgroundSprite.Texture Top</Name>
+        <Value xsi:type="xsd:int">398</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

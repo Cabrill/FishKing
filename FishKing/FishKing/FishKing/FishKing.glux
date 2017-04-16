@@ -1004,7 +1004,7 @@
           </Properties>
           <Name>ForceAFishType</Name>
           <Type>bool</Type>
-          <DefaultValue xsi:type="xsd:boolean">false</DefaultValue>
+          <DefaultValue xsi:type="xsd:boolean">true</DefaultValue>
           <IsShared>true</IsShared>
         </CustomVariable>
         <CustomVariable>
@@ -1022,7 +1022,8 @@
       </CustomVariables>
       <ImplementsIDrawableBatch>false</ImplementsIDrawableBatch>
       <Name>Entities\DebuggingVariables</Name>
-      <Is2D>true</Is2D>
+      <UseGlobalContent>true</UseGlobalContent>
+      <Is2D>false</Is2D>
     </EntitySave>
     <EntitySave>
       <Tags>
