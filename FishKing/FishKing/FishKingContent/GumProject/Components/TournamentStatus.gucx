@@ -5,6 +5,97 @@
   <State>
     <Name>Default</Name>
     <Variable>
+      <Type>int</Type>
+      <Name>CheckeredFlagSprite.Alpha</Name>
+      <Value xsi:type="xsd:int">200</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>CheckeredFlagSprite.Height</Name>
+      <Value xsi:type="xsd:float">-14</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>CheckeredFlagSprite.Height Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>CheckeredFlagSprite.Parent</Name>
+      <Value xsi:type="xsd:string">&lt;SCREEN BOUNDS&gt;</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>CheckeredFlagSprite.SourceFile</Name>
+      <Value xsi:type="xsd:string">GumUI.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TextureAddress</Type>
+      <Name>CheckeredFlagSprite.Texture Address</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CheckeredFlagSprite.Texture Height</Name>
+      <Value xsi:type="xsd:int">156</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CheckeredFlagSprite.Texture Left</Name>
+      <Value xsi:type="xsd:int">1081</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CheckeredFlagSprite.Texture Top</Name>
+      <Value xsi:type="xsd:int">1892</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>CheckeredFlagSprite.Texture Width</Name>
+      <Value xsi:type="xsd:int">66</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>CheckeredFlagSprite.Width</Name>
+      <Value xsi:type="xsd:float">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>CheckeredFlagSprite.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>CheckeredFlagSprite.X</Name>
+      <Value xsi:type="xsd:float">93</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>CheckeredFlagSprite.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>CheckeredFlagSprite.Y</Name>
+      <Value xsi:type="xsd:float">7</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>ChildrenLayout</Type>
       <Name>Children Layout</Name>
       <Value xsi:type="xsd:int">0</Value>
@@ -44,477 +135,6 @@
       <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
-      <Type>float</Type>
-      <Name>FishContainer1.Height</Name>
-      <Value xsi:type="xsd:float">80</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>FishContainer1.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>FishContainer1.Parent</Name>
-      <Value xsi:type="xsd:string">WaveFishContainer</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FishContainer1.Width</Name>
-      <Value xsi:type="xsd:float">95</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>FishContainer1.Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FishContainer1.X</Name>
-      <Value xsi:type="xsd:float">2.5</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>FishContainer1.X Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FishContainer1.Y</Name>
-      <Value xsi:type="xsd:float">10</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>FishContainer1.Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FishContainer2.Height</Name>
-      <Value xsi:type="xsd:float">80</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>FishContainer2.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>FishContainer2.Parent</Name>
-      <Value xsi:type="xsd:string">WaveFishContainer</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FishContainer2.Width</Name>
-      <Value xsi:type="xsd:float">95</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>FishContainer2.Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FishContainer2.X</Name>
-      <Value xsi:type="xsd:float">2.5</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>FishContainer2.X Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FishContainer2.Y</Name>
-      <Value xsi:type="xsd:float">20</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>FishContainer2.Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FishContainer3.Height</Name>
-      <Value xsi:type="xsd:float">80</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>FishContainer3.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>FishContainer3.Parent</Name>
-      <Value xsi:type="xsd:string">WaveFishContainer</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FishContainer3.Width</Name>
-      <Value xsi:type="xsd:float">95</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>FishContainer3.Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FishContainer3.X</Name>
-      <Value xsi:type="xsd:float">2.5</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>FishContainer3.X Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FishContainer3.Y</Name>
-      <Value xsi:type="xsd:float">30</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>FishContainer3.Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FishSprite1.Height</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>FishSprite1.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>FishSprite1.Parent</Name>
-      <Value xsi:type="xsd:string">FishContainer1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FishSprite1.Rotation</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <IsFile>true</IsFile>
-      <Type>string</Type>
-      <Name>FishSprite1.SourceFile</Name>
-      <Value xsi:type="xsd:string">TournamentFish.png</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>TextureAddress</Type>
-      <Name>FishSprite1.Texture Address</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>FishSprite1.Texture Height</Name>
-      <Value xsi:type="xsd:int">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>FishSprite1.Texture Left</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>FishSprite1.Texture Top</Name>
-      <Value xsi:type="xsd:int">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>FishSprite1.Texture Width</Name>
-      <Value xsi:type="xsd:int">128</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FishSprite1.Width</Name>
-      <Value xsi:type="xsd:float">5</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>FishSprite1.Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FishSprite1.X</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>HorizontalAlignment</Type>
-      <Name>FishSprite1.X Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>FishSprite1.X Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FishSprite1.Y</Name>
-      <Value xsi:type="xsd:float">40</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>VerticalAlignment</Type>
-      <Name>FishSprite1.Y Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>FishSprite1.Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FishSprite2.Height</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>FishSprite2.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>FishSprite2.Parent</Name>
-      <Value xsi:type="xsd:string">FishContainer2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <IsFile>true</IsFile>
-      <Type>string</Type>
-      <Name>FishSprite2.SourceFile</Name>
-      <Value xsi:type="xsd:string">TournamentFish.png</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>TextureAddress</Type>
-      <Name>FishSprite2.Texture Address</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>FishSprite2.Texture Height</Name>
-      <Value xsi:type="xsd:int">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>FishSprite2.Texture Left</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>FishSprite2.Texture Top</Name>
-      <Value xsi:type="xsd:int">400</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>FishSprite2.Texture Width</Name>
-      <Value xsi:type="xsd:int">128</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FishSprite2.Width</Name>
-      <Value xsi:type="xsd:float">5</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>FishSprite2.Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FishSprite2.X</Name>
-      <Value xsi:type="xsd:float">40</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>HorizontalAlignment</Type>
-      <Name>FishSprite2.X Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>FishSprite2.X Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FishSprite2.Y</Name>
-      <Value xsi:type="xsd:float">40</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>VerticalAlignment</Type>
-      <Name>FishSprite2.Y Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>FishSprite2.Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FishSprite3.Height</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>FishSprite3.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>FishSprite3.Parent</Name>
-      <Value xsi:type="xsd:string">FishContainer3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <IsFile>true</IsFile>
-      <Type>string</Type>
-      <Name>FishSprite3.SourceFile</Name>
-      <Value xsi:type="xsd:string">TournamentFish.png</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>TextureAddress</Type>
-      <Name>FishSprite3.Texture Address</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>FishSprite3.Texture Height</Name>
-      <Value xsi:type="xsd:int">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>FishSprite3.Texture Left</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>FishSprite3.Texture Top</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>FishSprite3.Texture Width</Name>
-      <Value xsi:type="xsd:int">128</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FishSprite3.Width</Name>
-      <Value xsi:type="xsd:float">5</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>FishSprite3.Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>HorizontalAlignment</Type>
-      <Name>FishSprite3.X Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>FishSprite3.X Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FishSprite3.Y</Name>
-      <Value xsi:type="xsd:float">40</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>VerticalAlignment</Type>
-      <Name>FishSprite3.Y Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>FishSprite3.Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>string</Type>
       <Name>Guide</Name>
       <Category>Position</Category>
@@ -544,6 +164,12 @@
     <Variable>
       <Type>string</Type>
       <Name>Parent</Name>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>ChildrenLayout</Type>
+      <Name>SingleBarFrameInstance.Children Layout</Name>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -593,6 +219,12 @@
       <Type>DimensionUnitType</Type>
       <Name>SingleBarFrameInstance.Width Units</Name>
       <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>SingleBarFrameInstance.Wraps Children</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -701,6 +333,114 @@
     <Variable>
       <Type>State</Type>
       <Name>State</Name>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>FishTypeState</Type>
+      <Name>TournamentFishInstance.FishTypeState</Name>
+      <Value xsi:type="xsd:string">FishType1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>TournamentFishInstance.Parent</Name>
+      <Value xsi:type="xsd:string">WaveFishContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TournamentFishInstance.TournamentFishProgress</Name>
+      <Value xsi:type="xsd:float">80</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TournamentFishInstance.TournamentFishSpriteProgress</Name>
+      <Value xsi:type="xsd:float">50</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TournamentPlaceState</Type>
+      <Name>TournamentFishInstance.TournamentPlaceState</Name>
+      <Value xsi:type="xsd:string">FirstPlace</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TournamentFishInstance.Y</Name>
+      <Value xsi:type="xsd:float">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>FishTypeState</Type>
+      <Name>TournamentFishInstance1.FishTypeState</Name>
+      <Value xsi:type="xsd:string">FishType2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>TournamentFishInstance1.Parent</Name>
+      <Value xsi:type="xsd:string">WaveFishContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TournamentFishInstance1.TournamentFishProgress</Name>
+      <Value xsi:type="xsd:float">45</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TournamentFishInstance1.TournamentFishSpriteProgress</Name>
+      <Value xsi:type="xsd:float">20</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TournamentPlaceState</Type>
+      <Name>TournamentFishInstance1.TournamentPlaceState</Name>
+      <Value xsi:type="xsd:string">SecondPlace</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TournamentFishInstance1.Y</Name>
+      <Value xsi:type="xsd:float">20</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>FishTypeState</Type>
+      <Name>TournamentFishInstance2.FishTypeState</Name>
+      <Value xsi:type="xsd:string">FishType3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>TournamentFishInstance2.Parent</Name>
+      <Value xsi:type="xsd:string">WaveFishContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TournamentFishInstance2.TournamentFishProgress</Name>
+      <Value xsi:type="xsd:float">20</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TournamentPlaceState</Type>
+      <Name>TournamentFishInstance2.TournamentPlaceState</Name>
+      <Value xsi:type="xsd:string">ThirdPlace</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TournamentFishInstance2.X</Name>
+      <Value xsi:type="xsd:float">2.5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TournamentFishInstance2.Y</Name>
+      <Value xsi:type="xsd:float">30</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -2122,15 +1862,21 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>string</Type>
+      <Name>WaveFishContainer.Parent</Name>
+      <Value xsi:type="xsd:string">&lt;SCREEN BOUNDS&gt;</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>WaveFishContainer.Width</Name>
-      <Value xsi:type="xsd:float">-14</Value>
+      <Value xsi:type="xsd:float">94</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>WaveFishContainer.Width Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -2585,210 +2331,21 @@
       </Variable>
     </State>
   </Category>
-  <Category>
-    <Name>Fish1State</Name>
-    <State>
-      <Name>Fish1Start</Name>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishSprite1.Rotation</Name>
-        <Value xsi:type="xsd:float">3</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishSprite1.Y</Name>
-        <Value xsi:type="xsd:float">44</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-    </State>
-    <State>
-      <Name>Fish1Middle</Name>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishSprite1.Rotation</Name>
-        <Value xsi:type="xsd:float">0</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishSprite1.Y</Name>
-        <Value xsi:type="xsd:float">40</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-    </State>
-    <State>
-      <Name>Fish1End</Name>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishSprite1.Rotation</Name>
-        <Value xsi:type="xsd:float">-3</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishSprite1.Y</Name>
-        <Value xsi:type="xsd:float">36</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-    </State>
-  </Category>
-  <Category>
-    <Name>Fish2State</Name>
-    <State>
-      <Name>Fish2Start</Name>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishSprite2.Rotation</Name>
-        <Value xsi:type="xsd:float">-3</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishSprite2.Y</Name>
-        <Value xsi:type="xsd:float">36</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-    </State>
-    <State>
-      <Name>Fish2Middle</Name>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishSprite2.Rotation</Name>
-        <Value xsi:type="xsd:float">0</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishSprite2.Y</Name>
-        <Value xsi:type="xsd:float">40</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-    </State>
-    <State>
-      <Name>Fish2End</Name>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishSprite2.Rotation</Name>
-        <Value xsi:type="xsd:float">3</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishSprite2.Y</Name>
-        <Value xsi:type="xsd:float">44</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-    </State>
-  </Category>
-  <Category>
-    <Name>Fish3State</Name>
-    <State>
-      <Name>Fish3Start</Name>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishSprite3.Rotation</Name>
-        <Value xsi:type="xsd:float">3</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishSprite3.Y</Name>
-        <Value xsi:type="xsd:float">44</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-    </State>
-    <State>
-      <Name>Fish3Middle</Name>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishSprite3.Rotation</Name>
-        <Value xsi:type="xsd:float">0</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishSprite3.Y</Name>
-        <Value xsi:type="xsd:float">40</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-    </State>
-    <State>
-      <Name>Fish3End</Name>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishSprite3.Rotation</Name>
-        <Value xsi:type="xsd:float">-3</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishSprite3.Y</Name>
-        <Value xsi:type="xsd:float">36</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-    </State>
-  </Category>
-  <Category>
-    <Name>DemoMovement</Name>
-    <State>
-      <Name>DemoStart</Name>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishSprite1.X</Name>
-        <Value xsi:type="xsd:float">0</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishSprite2.X</Name>
-        <Value xsi:type="xsd:float">0</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishSprite3.X</Name>
-        <Value xsi:type="xsd:float">0</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-    </State>
-    <State>
-      <Name>DemoEnd</Name>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishSprite1.X</Name>
-        <Value xsi:type="xsd:float">100</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishSprite2.X</Name>
-        <Value xsi:type="xsd:float">80</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishSprite3.X</Name>
-        <Value xsi:type="xsd:float">65</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-    </State>
-  </Category>
-  <Instance>
-    <Name>WaveContainer1</Name>
-    <BaseType>Container</BaseType>
-  </Instance>
   <Instance>
     <Name>SkyContainer</Name>
     <BaseType>Container</BaseType>
   </Instance>
   <Instance>
-    <Name>Wave1</Name>
-    <BaseType>Sprite</BaseType>
+    <Name>WaveContainer1</Name>
+    <BaseType>Container</BaseType>
   </Instance>
   <Instance>
-    <Name>FishContainer1</Name>
-    <BaseType>Container</BaseType>
+    <Name>TournamentFishInstance</Name>
+    <BaseType>subcomponent\TournamentFish</BaseType>
+  </Instance>
+  <Instance>
+    <Name>Wave1</Name>
+    <BaseType>Sprite</BaseType>
   </Instance>
   <Instance>
     <Name>Wave2</Name>
@@ -2807,8 +2364,8 @@
     <BaseType>Container</BaseType>
   </Instance>
   <Instance>
-    <Name>FishContainer2</Name>
-    <BaseType>Container</BaseType>
+    <Name>TournamentFishInstance1</Name>
+    <BaseType>subcomponent\TournamentFish</BaseType>
   </Instance>
   <Instance>
     <Name>Wave4</Name>
@@ -2817,10 +2374,6 @@
   <Instance>
     <Name>WaveFishContainer</Name>
     <BaseType>Container</BaseType>
-  </Instance>
-  <Instance>
-    <Name>SingleBarFrameInstance</Name>
-    <BaseType>SingleBarFrame</BaseType>
   </Instance>
   <Instance>
     <Name>Wave5</Name>
@@ -2843,8 +2396,8 @@
     <BaseType>Sprite</BaseType>
   </Instance>
   <Instance>
-    <Name>FishContainer3</Name>
-    <BaseType>Container</BaseType>
+    <Name>TournamentFishInstance2</Name>
+    <BaseType>subcomponent\TournamentFish</BaseType>
   </Instance>
   <Instance>
     <Name>WaveContainer4</Name>
@@ -2867,15 +2420,11 @@
     <BaseType>Sprite</BaseType>
   </Instance>
   <Instance>
-    <Name>FishSprite2</Name>
-    <BaseType>Sprite</BaseType>
+    <Name>SingleBarFrameInstance</Name>
+    <BaseType>SingleBarFrame</BaseType>
   </Instance>
   <Instance>
-    <Name>FishSprite3</Name>
-    <BaseType>Sprite</BaseType>
-  </Instance>
-  <Instance>
-    <Name>FishSprite1</Name>
+    <Name>CheckeredFlagSprite</Name>
     <BaseType>Sprite</BaseType>
   </Instance>
   <Behaviors />

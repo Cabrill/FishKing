@@ -92,6 +92,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>subcomponent\TournamentFish</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>TournamentStatus</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>

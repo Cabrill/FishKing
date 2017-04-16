@@ -1,0 +1,43 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ElementAnimationsSave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Animations>
+    <AnimationSave>
+      <Loops>false</Loops>
+      <Name>FishSwim</Name>
+      <States>
+        <AnimatedStateSave>
+          <StateName>FishMovement/FishStart</StateName>
+          <Time>0</Time>
+          <InterpolationType>Sinusoidal</InterpolationType>
+          <Easing>InOut</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>FishMovement/FishMiddle</StateName>
+          <Time>0.25</Time>
+          <InterpolationType>Sinusoidal</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>FishMovement/FishEnd</StateName>
+          <Time>0.5</Time>
+          <InterpolationType>Sinusoidal</InterpolationType>
+          <Easing>InOut</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>FishMovement/FishMiddle</StateName>
+          <Time>0.75</Time>
+          <InterpolationType>Sinusoidal</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>FishMovement/FishStart</StateName>
+          <Time>1</Time>
+          <InterpolationType>Sinusoidal</InterpolationType>
+          <Easing>InOut</Easing>
+        </AnimatedStateSave>
+      </States>
+      <Animations />
+      <Events />
+    </AnimationSave>
+  </Animations>
+</ElementAnimationsSave>
