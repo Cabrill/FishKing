@@ -1,17 +1,21 @@
 ﻿using FishKing.DataTypes;
 using FishKing.Entities;
+using FishKing.Extensions;
+using FishKing.UtilityClasses;
 using Microsoft.Xna.Framework.Graphics;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static FishKing.Enums.WaterTypes;
 
 namespace FishKing
 {
     static class FishGenerator
     {
-        private static Random randomSeed = new Random();
+        public static DistributedRandomGenerator drng = new DistributedRandomGenerator();
+        public static Random randomSeed = new Random(DateTime.Now.Millisecond);
 
         public static int MaximumLengthMM
         {
@@ -29,26 +33,37 @@ namespace FishKing
             }
         }
 
-        public static Fish CreateFish(string waterType = "")
+        static FishGenerator()
         {
-            List<Fish_Types> availableFish;
+            drng.AddValue(1, 0.1);
+            drng.AddValue(2, 0.2);
+            drng.AddValue(3, 0.4);
+            drng.AddValue(4, 0.2);
+            drng.AddValue(5, 0.1);
+        }
 
-            switch (waterType.ToLower())
+        public static Fish CreateFish(WaterType waterType)
+        {
+            List<Tuple<Fish_Types,int>> availableFish;
+
+            switch (waterType)
             {
-                case "river":
-                    availableFish = GlobalContent.Fish_Types.Values.Where(ftv => ftv.InRiver > 0).ToList(); break;
-                case "ocean":
-                    availableFish = GlobalContent.Fish_Types.Values.Where(ftv => ftv.InOcean > 0).ToList(); break;
-                case "deepocean":
-                    availableFish = GlobalContent.Fish_Types.Values.Where(ftv => ftv.InDeepOcean > 0).ToList(); break;
-                case "pond":
-                    availableFish = GlobalContent.Fish_Types.Values.Where(ftv => ftv.InPond > 0).ToList(); break;
-                case "lake":
-                    availableFish = GlobalContent.Fish_Types.Values.Where(ftv => ftv.InLake > 0).ToList(); break;
-                case "waterfall":
-                    availableFish = GlobalContent.Fish_Types.Values.Where(ftv => ftv.InWaterfall > 0).ToList(); break;
+                case WaterType.River:
+                    availableFish = GlobalContent.Fish_Types.Values.Where(ftv => ftv.InRiver > 0).Select(ft => Tuple.Create(ft, ft.InRiver)).ToList(); break;
+                case WaterType.Ocean:
+                    availableFish = GlobalContent.Fish_Types.Values.Where(ftv => ftv.InOcean > 0).Select(ft => Tuple.Create(ft, ft.InOcean)).ToList(); break;
+                case WaterType.DeepOcean:
+                    availableFish = GlobalContent.Fish_Types.Values.Where(ftv => ftv.InDeepOcean > 0).Select(ft => Tuple.Create(ft, ft.InDeepOcean)).ToList(); break;
+                case WaterType.Pond:
+                    availableFish = GlobalContent.Fish_Types.Values.Where(ftv => ftv.InPond > 0).Select(ft => Tuple.Create(ft, ft.InPond)).ToList(); break;
+                case WaterType.Lake:
+                    availableFish = GlobalContent.Fish_Types.Values.Where(ftv => ftv.InLake > 0).Select(ft => Tuple.Create(ft, ft.InLake)).ToList(); break;
+                case WaterType.CaveLake:
+                    availableFish = GlobalContent.Fish_Types.Values.Where(ftv => ftv.InCaveLake > 0).Select(ft => Tuple.Create(ft, ft.InCaveLake)).ToList(); break;
+                case WaterType.Waterfall:
+                    availableFish = GlobalContent.Fish_Types.Values.Where(ftv => ftv.InWaterfall > 0).Select(ft => Tuple.Create(ft, ft.InWaterfall)).ToList(); break;
                 default:
-                    availableFish = GlobalContent.Fish_Types.Values.ToList(); break;
+                    throw new Exception("Water type doesn't exist: " + waterType.ToString());
             }
             Fish_Types fishType;
 #if DEBUG
@@ -58,7 +73,7 @@ namespace FishKing
             }
             else
             {
-                fishType = availableFish.RandomElement();
+                fishType = availableFish.GetRandomFish();
             }
 #else
             fishType = availableFish.RandomElement();
@@ -70,17 +85,6 @@ namespace FishKing
             fish.FishType = fishType;
 
             return fish;
-        }
-
-        private static T RandomElement<T>(this IEnumerable<T> enumerable)
-        {
-            return enumerable.RandomElementUsing<T>(randomSeed);
-        }
-
-        private static T RandomElementUsing<T>(this IEnumerable<T> enumerable, Random rand)
-        {
-            int index = rand.Next(0, enumerable.Count());
-            return enumerable.ElementAt(index);
         }
     }
 }

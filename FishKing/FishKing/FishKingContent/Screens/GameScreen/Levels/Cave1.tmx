@@ -197,7 +197,7 @@
   </tile>
   <tile id="890">
    <properties>
-    <property name="IsLake" type="bool" value="true"/>
+    <property name="IsCaveLake" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="1080">

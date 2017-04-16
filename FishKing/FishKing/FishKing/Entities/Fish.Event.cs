@@ -15,7 +15,6 @@ namespace FishKing.Entities
 {
 	public partial class Fish
 	{
-        static Random randomSeed = new Random();
         private static double minGramBonus = 0.8;
         private static double maxGramBonus = 1.2;
 
@@ -34,18 +33,23 @@ namespace FishKing.Entities
             SpriteInstance.LeftTexturePixel = textureCol * textureWidth;
             SpriteInstance.RightTexturePixel = (textureCol + 1) * textureWidth;
 
+            var randomSeed = FishGenerator.randomSeed;
 
             double gramsPerMM = (double)decimal.Divide(fishType.MaxGrams, fishType.MaxMM);
 
-            var fishLengthMM = randomSeed.Next(fishType.AvgMM, fishType.MaxMM + 1);
+            var randomBonus = randomSeed.NextDouble() * ((int)FishGenerator.drng.GetDistributedRandomValue(randomSeed.NextDouble()) / 5f);
 
-            var fishGrams = (int)Math.Min(fishType.MaxGrams, ((randomSeed.NextDouble() * (maxGramBonus - minGramBonus)) + minGramBonus) * (fishLengthMM * gramsPerMM));
+            var fishLengthMM = (int)(fishType.AvgMM + (randomBonus *  (fishType.MaxMM- fishType.AvgMM)));
+
+            randomBonus = randomSeed.NextDouble() * ((int)FishGenerator.drng.GetDistributedRandomValue(randomSeed.NextDouble()) / 5f);
+
+            var fishGrams = (int)Math.Min(fishType.MaxGrams, ((randomBonus * (maxGramBonus - minGramBonus)) + minGramBonus) * (fishLengthMM * gramsPerMM));
 
             var minPoints = 1;
             var maxPoints = fishType.MaxPoints;
             var pointBonus = (((double)fishLengthMM / (double)fishType.MaxMM) + ((double)fishGrams / fishType.MaxGrams)) / 2;
 
-            var fishPoints = (int)(fishType.MaxPoints * (0.2 + pointBonus));
+            var fishPoints = (int)(fishType.MaxPoints * (0.15 + pointBonus));
             fishPoints = Math.Min(fishPoints, maxPoints);
             fishPoints = Math.Max(fishPoints, minPoints);
 

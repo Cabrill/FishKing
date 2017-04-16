@@ -214,17 +214,6 @@ namespace FishKing.Screens
 
         private void FishingActivity()
         {
-#if DEBUG
-            if (DebuggingVariables.ImmediatelyStartFishing && !CharacterInstance.IsFishing && !CharacterInstance.IsMoving)
-            {
-                FishCatchingInterfaceInstance.Reset();
-                CharacterInstance.ResetFishingStatus();
-                CharacterInstance.IsFishing = true;
-                var fish = FishGenerator.CreateFish();
-                CharacterInstance.FishOnTheLine = fish;
-                CharacterInstance.HasInitiatedCatching = true;
-            }
-#endif
             if ((CharacterInstance.IsMoving && FishCatchingInterfaceInstance.HasAttachedFish) || 
                 (CharacterInstance.IsAttemptingAction && CharacterInstance.HasFinishedDisplayingCatch))
             {
@@ -341,7 +330,7 @@ namespace FishKing.Screens
                 else
                 {
                     var rnd = new Random();
-                    var catchChance = 0.003;
+                    var catchChance = 0.0025;
                     var catchRoll = rnd.NextDouble();
 
                     if (
@@ -350,7 +339,7 @@ namespace FishKing.Screens
 #endif
                         catchRoll <= catchChance)
                     {
-                        var fish = FishGenerator.CreateFish();
+                        var fish = FishGenerator.CreateFish(GetWaterType());
                         CharacterInstance.FishOnTheLine = fish;
                     }
                 }

@@ -978,18 +978,6 @@
               <ValueAsString>bool</ValueAsString>
             </PropertySave>
           </Properties>
-          <Name>ImmediatelyStartFishing</Name>
-          <Type>bool</Type>
-          <DefaultValue xsi:type="xsd:boolean">false</DefaultValue>
-          <IsShared>true</IsShared>
-        </CustomVariable>
-        <CustomVariable>
-          <Properties>
-            <PropertySave>
-              <Name>Type</Name>
-              <ValueAsString>bool</ValueAsString>
-            </PropertySave>
-          </Properties>
           <Name>ShowFishDebugText</Name>
           <Type>bool</Type>
           <DefaultValue xsi:type="xsd:boolean">true</DefaultValue>
@@ -1016,7 +1004,7 @@
           </Properties>
           <Name>ForceAFishType</Name>
           <Type>bool</Type>
-          <DefaultValue xsi:type="xsd:boolean">true</DefaultValue>
+          <DefaultValue xsi:type="xsd:boolean">false</DefaultValue>
           <IsShared>true</IsShared>
         </CustomVariable>
         <CustomVariable>
