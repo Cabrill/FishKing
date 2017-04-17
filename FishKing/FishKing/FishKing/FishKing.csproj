@@ -334,6 +334,7 @@
     <Compile Include="GumRuntimes\subcomponent\TextBoxRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TextEntryBoxRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TournamentFishRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\subcomponent\TrophyDisplayRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\TextRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\TournamentStatusRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\UnknownFishRuntime.Generated.cs" />

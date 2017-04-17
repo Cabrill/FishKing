@@ -25,7 +25,7 @@
     <Variable>
       <Type>string</Type>
       <Name>CheckeredFlagSprite.Parent</Name>
-      <Value xsi:type="xsd:string">&lt;SCREEN BOUNDS&gt;</Value>
+      <Value xsi:type="xsd:string">TournamentContainer</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -80,7 +80,7 @@
     <Variable>
       <Type>float</Type>
       <Name>CheckeredFlagSprite.X</Name>
-      <Value xsi:type="xsd:float">93</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -210,6 +210,11 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>string</Type>
+      <Name>SingleBarFrameInstance.Parent</Name>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>SingleBarFrameInstance.Width</Name>
       <Value xsi:type="xsd:float">100</Value>
@@ -236,43 +241,43 @@
     <Variable>
       <Type>float</Type>
       <Name>SkyContainer.Height</Name>
-      <Value xsi:type="xsd:float">-14</Value>
+      <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>SkyContainer.Height Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
       <Name>SkyContainer.Parent</Name>
-      <Value xsi:type="xsd:string">&lt;SCREEN BOUNDS&gt;</Value>
+      <Value xsi:type="xsd:string">WaveFishContainer</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>SkyContainer.Width</Name>
-      <Value xsi:type="xsd:float">-14</Value>
+      <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>SkyContainer.Width Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>SkyContainer.X</Name>
-      <Value xsi:type="xsd:float">7</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>SkyContainer.Y</Name>
-      <Value xsi:type="xsd:float">7</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -336,6 +341,42 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>ChildrenLayout</Type>
+      <Name>TournamentContainer.Children Layout</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TournamentContainer.Height</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>TournamentContainer.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TournamentContainer.Width</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>TournamentContainer.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>TournamentContainer.Wraps Children</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>FishTypeState</Type>
       <Name>TournamentFishInstance.FishTypeState</Name>
       <Value xsi:type="xsd:string">FishType1</Value>
@@ -350,7 +391,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TournamentFishInstance.TournamentFishProgress</Name>
-      <Value xsi:type="xsd:float">80</Value>
+      <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -368,7 +409,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TournamentFishInstance.Y</Name>
-      <Value xsi:type="xsd:float">10</Value>
+      <Value xsi:type="xsd:float">24</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -404,7 +445,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TournamentFishInstance1.Y</Name>
-      <Value xsi:type="xsd:float">20</Value>
+      <Value xsi:type="xsd:float">26</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -440,7 +481,43 @@
     <Variable>
       <Type>float</Type>
       <Name>TournamentFishInstance2.Y</Name>
-      <Value xsi:type="xsd:float">30</Value>
+      <Value xsi:type="xsd:float">28</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TrophyDisplayInstance.Height</Name>
+      <Value xsi:type="xsd:float">-14</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>TrophyDisplayInstance.Height Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>TrophyDisplayInstance.Parent</Name>
+      <Value xsi:type="xsd:string">TournamentContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TrophyPlaceState</Type>
+      <Name>TrophyDisplayInstance.TrophyPlaceState</Name>
+      <Value xsi:type="xsd:string">FirstPlace</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TrophyDisplayInstance.Width</Name>
+      <Value xsi:type="xsd:float">4.3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TrophyDisplayInstance.Y</Name>
+      <Value xsi:type="xsd:float">7</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -555,7 +632,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Wave1.Y</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Value xsi:type="xsd:float">12</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -610,7 +687,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Wave10.Y</Name>
-      <Value xsi:type="xsd:float">18</Value>
+      <Value xsi:type="xsd:float">20</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -665,7 +742,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Wave11.Y</Name>
-      <Value xsi:type="xsd:float">18</Value>
+      <Value xsi:type="xsd:float">20</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -720,7 +797,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Wave12.Y</Name>
-      <Value xsi:type="xsd:float">18</Value>
+      <Value xsi:type="xsd:float">20</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -834,7 +911,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Wave2.Y</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Value xsi:type="xsd:float">12</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -948,7 +1025,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Wave3.Y</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Value xsi:type="xsd:float">12</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1062,7 +1139,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Wave4.Y</Name>
-      <Value xsi:type="xsd:float">6</Value>
+      <Value xsi:type="xsd:float">14</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1176,7 +1253,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Wave5.Y</Name>
-      <Value xsi:type="xsd:float">6</Value>
+      <Value xsi:type="xsd:float">14</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1285,7 +1362,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Wave6.Y</Name>
-      <Value xsi:type="xsd:float">6</Value>
+      <Value xsi:type="xsd:float">14</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1394,7 +1471,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Wave7.Y</Name>
-      <Value xsi:type="xsd:float">12</Value>
+      <Value xsi:type="xsd:float">18</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1503,7 +1580,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Wave8.Y</Name>
-      <Value xsi:type="xsd:float">12</Value>
+      <Value xsi:type="xsd:float">18</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1612,7 +1689,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Wave9.Y</Name>
-      <Value xsi:type="xsd:float">12</Value>
+      <Value xsi:type="xsd:float">18</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1864,13 +1941,13 @@
     <Variable>
       <Type>string</Type>
       <Name>WaveFishContainer.Parent</Name>
-      <Value xsi:type="xsd:string">&lt;SCREEN BOUNDS&gt;</Value>
+      <Value xsi:type="xsd:string">TournamentContainer</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>WaveFishContainer.Width</Name>
-      <Value xsi:type="xsd:float">94</Value>
+      <Value xsi:type="xsd:float">90</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1919,8 +1996,9 @@
     <Variable>
       <Type>float</Type>
       <Name>X</Name>
+      <Value xsi:type="xsd:float">0</Value>
       <Category>Position</Category>
-      <SetsValue>false</SetsValue>
+      <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>HorizontalAlignment</Type>
@@ -1977,7 +2055,7 @@
       <Variable>
         <Type>float</Type>
         <Name>Wave1.Y</Name>
-        <Value xsi:type="xsd:float">0</Value>
+        <Value xsi:type="xsd:float">12</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -1989,7 +2067,7 @@
       <Variable>
         <Type>float</Type>
         <Name>Wave2.Y</Name>
-        <Value xsi:type="xsd:float">0</Value>
+        <Value xsi:type="xsd:float">12</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -2001,7 +2079,7 @@
       <Variable>
         <Type>float</Type>
         <Name>Wave3.Y</Name>
-        <Value xsi:type="xsd:float">0</Value>
+        <Value xsi:type="xsd:float">12</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -2016,19 +2094,19 @@
       <Variable>
         <Type>float</Type>
         <Name>Wave1.Y</Name>
-        <Value xsi:type="xsd:float">4</Value>
+        <Value xsi:type="xsd:float">16</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave2.Y</Name>
-        <Value xsi:type="xsd:float">4</Value>
+        <Value xsi:type="xsd:float">16</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave3.Y</Name>
-        <Value xsi:type="xsd:float">4</Value>
+        <Value xsi:type="xsd:float">16</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -2043,19 +2121,19 @@
       <Variable>
         <Type>float</Type>
         <Name>Wave1.Y</Name>
-        <Value xsi:type="xsd:float">0</Value>
+        <Value xsi:type="xsd:float">12</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave2.Y</Name>
-        <Value xsi:type="xsd:float">0</Value>
+        <Value xsi:type="xsd:float">12</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave3.Y</Name>
-        <Value xsi:type="xsd:float">0</Value>
+        <Value xsi:type="xsd:float">12</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -2067,25 +2145,25 @@
       <Variable>
         <Type>float</Type>
         <Name>Wave4.X</Name>
-        <Value xsi:type="xsd:float">-88</Value>
+        <Value xsi:type="xsd:float">-32</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave4.Y</Name>
-        <Value xsi:type="xsd:float">6</Value>
+        <Value xsi:type="xsd:float">14</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave5.Y</Name>
-        <Value xsi:type="xsd:float">6</Value>
+        <Value xsi:type="xsd:float">14</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave6.Y</Name>
-        <Value xsi:type="xsd:float">6</Value>
+        <Value xsi:type="xsd:float">14</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -2094,25 +2172,25 @@
       <Variable>
         <Type>float</Type>
         <Name>Wave4.X</Name>
-        <Value xsi:type="xsd:float">-56</Value>
+        <Value xsi:type="xsd:float">-64</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave4.Y</Name>
-        <Value xsi:type="xsd:float">10</Value>
+        <Value xsi:type="xsd:float">18</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave5.Y</Name>
-        <Value xsi:type="xsd:float">10</Value>
+        <Value xsi:type="xsd:float">18</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave6.Y</Name>
-        <Value xsi:type="xsd:float">10</Value>
+        <Value xsi:type="xsd:float">18</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -2121,25 +2199,25 @@
       <Variable>
         <Type>float</Type>
         <Name>Wave4.X</Name>
-        <Value xsi:type="xsd:float">-24</Value>
+        <Value xsi:type="xsd:float">-96</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave4.Y</Name>
-        <Value xsi:type="xsd:float">6</Value>
+        <Value xsi:type="xsd:float">14</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave5.Y</Name>
-        <Value xsi:type="xsd:float">6</Value>
+        <Value xsi:type="xsd:float">14</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave6.Y</Name>
-        <Value xsi:type="xsd:float">6</Value>
+        <Value xsi:type="xsd:float">14</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -2157,7 +2235,7 @@
       <Variable>
         <Type>float</Type>
         <Name>Wave7.Y</Name>
-        <Value xsi:type="xsd:float">12</Value>
+        <Value xsi:type="xsd:float">18</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -2169,7 +2247,7 @@
       <Variable>
         <Type>float</Type>
         <Name>Wave8.Y</Name>
-        <Value xsi:type="xsd:float">12</Value>
+        <Value xsi:type="xsd:float">18</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -2181,7 +2259,7 @@
       <Variable>
         <Type>float</Type>
         <Name>Wave9.Y</Name>
-        <Value xsi:type="xsd:float">12</Value>
+        <Value xsi:type="xsd:float">18</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -2196,19 +2274,19 @@
       <Variable>
         <Type>float</Type>
         <Name>Wave7.Y</Name>
-        <Value xsi:type="xsd:float">16</Value>
+        <Value xsi:type="xsd:float">22</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave8.Y</Name>
-        <Value xsi:type="xsd:float">16</Value>
+        <Value xsi:type="xsd:float">22</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave9.Y</Name>
-        <Value xsi:type="xsd:float">16</Value>
+        <Value xsi:type="xsd:float">22</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -2223,19 +2301,19 @@
       <Variable>
         <Type>float</Type>
         <Name>Wave7.Y</Name>
-        <Value xsi:type="xsd:float">12</Value>
+        <Value xsi:type="xsd:float">18</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave8.Y</Name>
-        <Value xsi:type="xsd:float">12</Value>
+        <Value xsi:type="xsd:float">18</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave9.Y</Name>
-        <Value xsi:type="xsd:float">12</Value>
+        <Value xsi:type="xsd:float">18</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -2247,25 +2325,25 @@
       <Variable>
         <Type>float</Type>
         <Name>Wave10.X</Name>
-        <Value xsi:type="xsd:float">-64</Value>
+        <Value xsi:type="xsd:float">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave10.Y</Name>
-        <Value xsi:type="xsd:float">18</Value>
+        <Value xsi:type="xsd:float">20</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave11.Y</Name>
-        <Value xsi:type="xsd:float">18</Value>
+        <Value xsi:type="xsd:float">20</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave12.Y</Name>
-        <Value xsi:type="xsd:float">18</Value>
+        <Value xsi:type="xsd:float">20</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -2280,19 +2358,19 @@
       <Variable>
         <Type>float</Type>
         <Name>Wave10.Y</Name>
-        <Value xsi:type="xsd:float">22</Value>
+        <Value xsi:type="xsd:float">24</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave11.Y</Name>
-        <Value xsi:type="xsd:float">22</Value>
+        <Value xsi:type="xsd:float">24</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave12.Y</Name>
-        <Value xsi:type="xsd:float">22</Value>
+        <Value xsi:type="xsd:float">24</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <VariableList xsi:type="VariableListSaveOfString">
@@ -2308,29 +2386,33 @@
       <Variable>
         <Type>float</Type>
         <Name>Wave10.X</Name>
-        <Value xsi:type="xsd:float">0</Value>
+        <Value xsi:type="xsd:float">-64</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave10.Y</Name>
-        <Value xsi:type="xsd:float">18</Value>
+        <Value xsi:type="xsd:float">20</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave11.Y</Name>
-        <Value xsi:type="xsd:float">18</Value>
+        <Value xsi:type="xsd:float">20</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave12.Y</Name>
-        <Value xsi:type="xsd:float">18</Value>
+        <Value xsi:type="xsd:float">20</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
   </Category>
+  <Instance>
+    <Name>TournamentContainer</Name>
+    <BaseType>Container</BaseType>
+  </Instance>
   <Instance>
     <Name>SkyContainer</Name>
     <BaseType>Container</BaseType>
@@ -2420,12 +2502,16 @@
     <BaseType>Sprite</BaseType>
   </Instance>
   <Instance>
+    <Name>CheckeredFlagSprite</Name>
+    <BaseType>Sprite</BaseType>
+  </Instance>
+  <Instance>
     <Name>SingleBarFrameInstance</Name>
     <BaseType>SingleBarFrame</BaseType>
   </Instance>
   <Instance>
-    <Name>CheckeredFlagSprite</Name>
-    <BaseType>Sprite</BaseType>
+    <Name>TrophyDisplayInstance</Name>
+    <BaseType>subcomponent\TrophyDisplay</BaseType>
   </Instance>
   <Behaviors />
 </ComponentSave>

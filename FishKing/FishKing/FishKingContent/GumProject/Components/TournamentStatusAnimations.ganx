@@ -13,13 +13,13 @@
         </AnimatedStateSave>
         <AnimatedStateSave>
           <StateName>Wave1State/Wave1Middle</StateName>
-          <Time>1</Time>
+          <Time>6</Time>
           <InterpolationType>Linear</InterpolationType>
           <Easing>Out</Easing>
         </AnimatedStateSave>
         <AnimatedStateSave>
           <StateName>Wave1State/Wave1End</StateName>
-          <Time>2</Time>
+          <Time>12</Time>
           <InterpolationType>Linear</InterpolationType>
           <Easing>Out</Easing>
         </AnimatedStateSave>
@@ -39,13 +39,13 @@
         </AnimatedStateSave>
         <AnimatedStateSave>
           <StateName>Wave2State/Wave2Middle</StateName>
-          <Time>1</Time>
+          <Time>3</Time>
           <InterpolationType>Linear</InterpolationType>
           <Easing>Out</Easing>
         </AnimatedStateSave>
         <AnimatedStateSave>
           <StateName>Wave2State/Wave2End</StateName>
-          <Time>2</Time>
+          <Time>6</Time>
           <InterpolationType>Linear</InterpolationType>
           <Easing>Out</Easing>
         </AnimatedStateSave>
@@ -65,13 +65,13 @@
         </AnimatedStateSave>
         <AnimatedStateSave>
           <StateName>Wave3State/Wave3Middle</StateName>
-          <Time>1</Time>
+          <Time>1.5</Time>
           <InterpolationType>Linear</InterpolationType>
           <Easing>Out</Easing>
         </AnimatedStateSave>
         <AnimatedStateSave>
           <StateName>Wave3State/Wave3End</StateName>
-          <Time>2</Time>
+          <Time>3</Time>
           <InterpolationType>Linear</InterpolationType>
           <Easing>Out</Easing>
         </AnimatedStateSave>
@@ -91,13 +91,13 @@
         </AnimatedStateSave>
         <AnimatedStateSave>
           <StateName>Wave4State/Wave4Middle</StateName>
-          <Time>1</Time>
+          <Time>0.75</Time>
           <InterpolationType>Linear</InterpolationType>
           <Easing>Out</Easing>
         </AnimatedStateSave>
         <AnimatedStateSave>
           <StateName>Wave4State/Wave4End</StateName>
-          <Time>2</Time>
+          <Time>1.5</Time>
           <InterpolationType>Linear</InterpolationType>
           <Easing>Out</Easing>
         </AnimatedStateSave>
@@ -115,10 +115,6 @@
           <Time>0</Time>
         </AnimationReferenceSave>
         <AnimationReferenceSave>
-          <Name>Wave2Animate</Name>
-          <Time>0</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
           <Name>Wave3Animate</Name>
           <Time>0</Time>
         </AnimationReferenceSave>
@@ -126,159 +122,101 @@
           <Name>Wave4Animate</Name>
           <Time>0</Time>
         </AnimationReferenceSave>
-      </Animations>
-      <Events />
-    </AnimationSave>
-    <AnimationSave>
-      <Loops>true</Loops>
-      <Name>Fish1Animate</Name>
-      <States>
-        <AnimatedStateSave>
-          <StateName>Fish1State/Fish1Start</StateName>
-          <Time>0</Time>
-          <InterpolationType>Sinusoidal</InterpolationType>
-          <Easing>InOut</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Fish1State/Fish1Middle</StateName>
-          <Time>0.25</Time>
-          <InterpolationType>Sinusoidal</InterpolationType>
-          <Easing>Out</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Fish1State/Fish1End</StateName>
-          <Time>0.5</Time>
-          <InterpolationType>Sinusoidal</InterpolationType>
-          <Easing>InOut</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Fish1State/Fish1Middle</StateName>
-          <Time>0.75</Time>
-          <InterpolationType>Sinusoidal</InterpolationType>
-          <Easing>Out</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Fish1State/Fish1Start</StateName>
-          <Time>1</Time>
-          <InterpolationType>Sinusoidal</InterpolationType>
-          <Easing>InOut</Easing>
-        </AnimatedStateSave>
-      </States>
-      <Animations />
-      <Events />
-    </AnimationSave>
-    <AnimationSave>
-      <Loops>true</Loops>
-      <Name>Fish2Animate</Name>
-      <States>
-        <AnimatedStateSave>
-          <StateName>Fish2State/Fish2Start</StateName>
-          <Time>0</Time>
-          <InterpolationType>Sinusoidal</InterpolationType>
-          <Easing>InOut</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Fish2State/Fish2Middle</StateName>
-          <Time>0.25</Time>
-          <InterpolationType>Sinusoidal</InterpolationType>
-          <Easing>Out</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Fish2State/Fish2End</StateName>
-          <Time>0.5</Time>
-          <InterpolationType>Sinusoidal</InterpolationType>
-          <Easing>InOut</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Fish2State/Fish2Middle</StateName>
-          <Time>0.75</Time>
-          <InterpolationType>Sinusoidal</InterpolationType>
-          <Easing>Out</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Fish2State/Fish2Start</StateName>
-          <Time>1</Time>
-          <InterpolationType>Sinusoidal</InterpolationType>
-          <Easing>InOut</Easing>
-        </AnimatedStateSave>
-      </States>
-      <Animations />
-      <Events />
-    </AnimationSave>
-    <AnimationSave>
-      <Loops>true</Loops>
-      <Name>Fish3Animate</Name>
-      <States>
-        <AnimatedStateSave>
-          <StateName>Fish3State/Fish3Start</StateName>
-          <Time>0</Time>
-          <InterpolationType>Sinusoidal</InterpolationType>
-          <Easing>InOut</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Fish3State/Fish3Middle</StateName>
-          <Time>0.25</Time>
-          <InterpolationType>Sinusoidal</InterpolationType>
-          <Easing>Out</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Fish3State/Fish3End</StateName>
-          <Time>0.5</Time>
-          <InterpolationType>Sinusoidal</InterpolationType>
-          <Easing>InOut</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Fish3State/Fish3Middle</StateName>
-          <Time>0.75</Time>
-          <InterpolationType>Sinusoidal</InterpolationType>
-          <Easing>Out</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Fish3State/Fish3Start</StateName>
-          <Time>1</Time>
-          <InterpolationType>Sinusoidal</InterpolationType>
-          <Easing>InOut</Easing>
-        </AnimatedStateSave>
-      </States>
-      <Animations />
-      <Events />
-    </AnimationSave>
-    <AnimationSave>
-      <Loops>true</Loops>
-      <Name>FishAnimate</Name>
-      <States />
-      <Animations>
         <AnimationReferenceSave>
-          <Name>Fish1Animate</Name>
+          <Name>Wave2Animate</Name>
           <Time>0</Time>
         </AnimationReferenceSave>
         <AnimationReferenceSave>
-          <Name>Fish2Animate</Name>
-          <Time>0</Time>
+          <Name>Wave4Animate</Name>
+          <Time>1.5</Time>
         </AnimationReferenceSave>
         <AnimationReferenceSave>
-          <Name>Fish3Animate</Name>
-          <Time>0</Time>
+          <Name>Wave3Animate</Name>
+          <Time>3</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>Wave4Animate</Name>
+          <Time>3</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>Wave4Animate</Name>
+          <Time>4.5</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>Wave3Animate</Name>
+          <Time>6</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>Wave2Animate</Name>
+          <Time>6</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>Wave4Animate</Name>
+          <Time>6</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>Wave4Animate</Name>
+          <Time>7.5</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>Wave4Animate</Name>
+          <Time>9</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>Wave3Animate</Name>
+          <Time>9</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>Wave4Animate</Name>
+          <Time>10.5</Time>
         </AnimationReferenceSave>
       </Animations>
       <Events />
     </AnimationSave>
     <AnimationSave>
-      <Loops>true</Loops>
-      <Name>FishAndWavesAnimate</Name>
+      <Loops>false</Loops>
+      <Name>DemoAnimation</Name>
       <States />
       <Animations>
-        <AnimationReferenceSave>
-          <Name>FishAnimate</Name>
-          <Time>0</Time>
-        </AnimationReferenceSave>
         <AnimationReferenceSave>
           <Name>WavesAnimate</Name>
           <Time>0</Time>
         </AnimationReferenceSave>
         <AnimationReferenceSave>
-          <Name>FishAnimate</Name>
+          <Name>TournamentFishInstance.FishSwim</Name>
+          <Time>0</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>TournamentFishInstance1.FishSwim</Name>
+          <Time>0</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>TournamentFishInstance2.FishSwim</Name>
+          <Time>0</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>TournamentFishInstance.FishSwim</Name>
           <Time>1</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>TournamentFishInstance1.FishSwim</Name>
+          <Time>1</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>TournamentFishInstance2.FishSwim</Name>
+          <Time>1</Time>
+        </AnimationReferenceSave>
+      </Animations>
+      <Events />
+    </AnimationSave>
+    <AnimationSave>
+      <Loops>false</Loops>
+      <Name>ThrowConfetti</Name>
+      <States />
+      <Animations>
+        <AnimationReferenceSave>
+          <Name>TrophyDisplayInstance.DropConfetti</Name>
+          <Time>0</Time>
         </AnimationReferenceSave>
       </Animations>
       <Events />

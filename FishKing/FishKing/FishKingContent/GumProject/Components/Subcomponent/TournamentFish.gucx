@@ -321,7 +321,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TournamentPlaceSprite.Y</Name>
-      <Value xsi:type="xsd:float">-3</Value>
+      <Value xsi:type="xsd:float">20</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -333,7 +333,7 @@
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>TournamentPlaceSprite.Y Units</Name>
-      <Value xsi:type="xsd:int">7</Value>
+      <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

@@ -96,6 +96,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>subcomponent\TrophyDisplay</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>TournamentStatus</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
