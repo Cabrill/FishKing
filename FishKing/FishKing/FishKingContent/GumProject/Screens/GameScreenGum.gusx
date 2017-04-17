@@ -86,40 +86,13 @@
       <Name>TournamentBarPlacementState</Name>
       <SetsValue>false</SetsValue>
     </Variable>
+    <Variable>
+      <Type>PlacementState</Type>
+      <Name>TournamentStatusInstance.PlacementState</Name>
+      <Value xsi:type="xsd:string">TopOfScreen</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
   </State>
-  <Category>
-    <Name>TournamentBarPlacement</Name>
-    <State>
-      <Name>TournamentBarTop</Name>
-      <Variable>
-        <Type>float</Type>
-        <Name>TournamentStatusInstance.Y</Name>
-        <Value xsi:type="xsd:float">-7</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>PositionUnitType</Type>
-        <Name>TournamentStatusInstance.Y Units</Name>
-        <Value xsi:type="xsd:int">1</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-    </State>
-    <State>
-      <Name>TournamentBarBottom</Name>
-      <Variable>
-        <Type>float</Type>
-        <Name>TournamentStatusInstance.Y</Name>
-        <Value xsi:type="xsd:float">7</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>PositionUnitType</Type>
-        <Name>TournamentStatusInstance.Y Units</Name>
-        <Value xsi:type="xsd:int">5</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-    </State>
-  </Category>
   <Instance>
     <Name>ProgressBarInstance</Name>
     <BaseType>ProgressBar</BaseType>

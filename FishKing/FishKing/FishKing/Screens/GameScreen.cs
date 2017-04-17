@@ -155,7 +155,7 @@ namespace FishKing.Screens
             {
                 AmbientAudioManager.UpdateAmbientSoundSources();
             }
-            TournamentStatusRuntimeInstance.CustomActivity();
+            TournamentStatusInstance.CustomActivity();
         }
 
         private void UpdateCamera()
@@ -173,6 +173,15 @@ namespace FishKing.Screens
                 // assuming CameraMinX, CameraMaxX, CameraMinY, and CameraMaxY are all defined:
                 camera.X = MathHelper.Clamp(camera.X, CameraMinX, CameraMaxX);
                 camera.Y = MathHelper.Clamp(camera.Y, CameraMinY, CameraMaxY);
+
+                if (camera.Y == CameraMaxY)
+                {
+                    TournamentStatusInstance.CurrentPlacementState = GumRuntimes.TournamentStatusRuntime.Placement.BottomOfScreen;
+                }
+                else
+                {
+                    TournamentStatusInstance.CurrentPlacementState = GumRuntimes.TournamentStatusRuntime.Placement.TopOfScreen;
+                }
             }
             else
             {

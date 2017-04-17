@@ -55,7 +55,7 @@
     <Variable>
       <Type>int</Type>
       <Name>CheckeredFlagSprite.Alpha</Name>
-      <Value xsi:type="xsd:int">200</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -314,6 +314,11 @@
       <Type>string</Type>
       <Name>Parent</Name>
       <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PlacementState</Type>
+      <Name>PlacementState</Name>
+      <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
       <Type>ChildrenLayout</Type>
@@ -2449,14 +2454,14 @@
     <Variable>
       <Type>float</Type>
       <Name>Width</Name>
-      <Value xsi:type="xsd:float">100</Value>
+      <Value xsi:type="xsd:float">5</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">2</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -2469,7 +2474,7 @@
     <Variable>
       <Type>float</Type>
       <Name>X</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Value xsi:type="xsd:float">-3</Value>
       <Category>Position</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -2490,8 +2495,9 @@
     <Variable>
       <Type>float</Type>
       <Name>Y</Name>
+      <Value xsi:type="xsd:float">-4</Value>
       <Category>Position</Category>
-      <SetsValue>false</SetsValue>
+      <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
@@ -2503,7 +2509,7 @@
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <Category>Position</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -2899,6 +2905,57 @@
         <Type>float</Type>
         <Name>TextInstance.Y</Name>
         <Value xsi:type="xsd:float">97</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
+  <Category>
+    <Name>Placement</Name>
+    <State>
+      <Name>TopOfScreen</Name>
+      <Variable>
+        <Type>float</Type>
+        <Name>X</Name>
+        <Value xsi:type="xsd:float">-3</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Y</Name>
+        <Value xsi:type="xsd:float">-4</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>VerticalAlignment</Type>
+        <Name>Y Origin</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>PositionUnitType</Type>
+        <Name>Y Units</Name>
+        <Value xsi:type="xsd:int">1</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>BottomOfScreen</Name>
+      <Variable>
+        <Type>float</Type>
+        <Name>Y</Name>
+        <Value xsi:type="xsd:float">4</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>VerticalAlignment</Type>
+        <Name>Y Origin</Name>
+        <Value xsi:type="xsd:int">2</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>PositionUnitType</Type>
+        <Name>Y Units</Name>
+        <Value xsi:type="xsd:int">5</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
