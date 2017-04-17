@@ -189,22 +189,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>UnknownFish</Name>
     </None>
-    <None Include="GumProject\FontCache\Font10Arial.fnt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font10Arial</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font10Arial_0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font10Arial_0</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font12Arial.fnt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font12Arial</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font12Arial_0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font12Arial_0</Name>
-    </None>
     <None Include="GumProject\FontCache\Font12Britannic Bold.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font12Britannic Bold</Name>
@@ -229,38 +213,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font18Britannic Bold_0</Name>
     </None>
-    <None Include="GumProject\FontCache\Font18Kristen ITC.fnt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font18Kristen ITC</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font18Kristen ITC_0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font18Kristen ITC_0</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font22Kristen ITC.fnt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font22Kristen ITC</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font22Kristen ITC_0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font22Kristen ITC_0</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font24Arial.fnt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font24Arial</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font24Arial_0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font24Arial_0</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font24Britannic Bold.fnt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font24Britannic Bold</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font24Britannic Bold_0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font24Britannic Bold_0</Name>
-    </None>
     <None Include="GumProject\FontCache\Font30Kristen ITC.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font30Kristen ITC</Name>
@@ -268,14 +220,6 @@
     <None Include="GumProject\FontCache\Font30Kristen ITC_0.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font30Kristen ITC_0</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font32SimSun-ExtB.fnt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font32SimSun-ExtB</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font32SimSun-ExtB_0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font32SimSun-ExtB_0</Name>
     </None>
     <None Include="GumProject\FontCache\Font36Arial.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -285,49 +229,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font36Arial_0</Name>
     </None>
-    <None Include="GumProject\FontCache\Font36Britannic Bold.fnt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font36Britannic Bold</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font36Britannic Bold_0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font36Britannic Bold_0</Name>
-    </None>
     <None Include="GumProject\FontCache\Font36Touch Of Nature.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font36Touch Of Nature</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font36Touch Of Nature_0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font36Touch Of Nature_0</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font60Touch Of Nature.fnt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font60Touch Of Nature</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font60Touch Of Nature_0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font60Touch Of Nature_0</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font60Touch Of Nature_1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font60Touch Of Nature_1</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font72Arial.fnt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font72Arial</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font72Arial_0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font72Arial_0</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font72Arial_1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font72Arial_1</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font72Arial_2.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font72Arial_2</Name>
     </None>
     <None Include="GumProject\frblogo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -580,6 +484,7 @@
       <Name>FishSplat</Name>
     </Compile>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildExtensionsPath)\Microsoft\XNA Game Studio\$(XnaFrameworkVersion)\Microsoft.Xna.GameStudio.ContentPipeline.targets" />
   <!--  To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
