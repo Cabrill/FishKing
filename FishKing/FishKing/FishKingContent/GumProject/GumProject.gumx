@@ -88,6 +88,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>subcomponent\GlowingStar</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>subcomponent\TextEntryBox</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>

@@ -60,7 +60,7 @@
     <Variable>
       <Type>float</Type>
       <Name>ProgressBarInstance.X</Name>
-      <Value xsi:type="xsd:float">219</Value>
+      <Value xsi:type="xsd:float">252</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -72,7 +72,7 @@
     <Variable>
       <Type>float</Type>
       <Name>ProgressBarInstance.Y</Name>
-      <Value xsi:type="xsd:float">-546</Value>
+      <Value xsi:type="xsd:float">-448</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -81,7 +81,45 @@
       <Value xsi:type="xsd:int">5</Value>
       <SetsValue>true</SetsValue>
     </Variable>
+    <Variable>
+      <Type>TournamentBarPlacementState</Type>
+      <Name>TournamentBarPlacementState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
   </State>
+  <Category>
+    <Name>TournamentBarPlacement</Name>
+    <State>
+      <Name>TournamentBarTop</Name>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentStatusInstance.Y</Name>
+        <Value xsi:type="xsd:float">-7</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>PositionUnitType</Type>
+        <Name>TournamentStatusInstance.Y Units</Name>
+        <Value xsi:type="xsd:int">1</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>TournamentBarBottom</Name>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentStatusInstance.Y</Name>
+        <Value xsi:type="xsd:float">7</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>PositionUnitType</Type>
+        <Name>TournamentStatusInstance.Y Units</Name>
+        <Value xsi:type="xsd:int">5</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
   <Instance>
     <Name>ProgressBarInstance</Name>
     <BaseType>ProgressBar</BaseType>
@@ -93,5 +131,9 @@
   <Instance>
     <Name>FishCatchDisplayInstance</Name>
     <BaseType>FishCatchDisplay</BaseType>
+  </Instance>
+  <Instance>
+    <Name>TournamentStatusInstance</Name>
+    <BaseType>TournamentStatus</BaseType>
   </Instance>
 </ScreenSave>

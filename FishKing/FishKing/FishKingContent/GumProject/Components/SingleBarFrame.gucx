@@ -308,6 +308,11 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>ConnectionsState</Type>
+      <Name>ConnectionsState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>bool</Type>
       <Name>ExposeChildrenEvents</Name>
       <Value xsi:type="xsd:boolean">true</Value>
@@ -1012,6 +1017,99 @@
       <Value />
     </VariableList>
   </State>
+  <Category>
+    <Name>Connections</Name>
+    <State>
+      <Name>LeftConnect</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>BottomLeft.Texture Left</Name>
+        <Value xsi:type="xsd:int">17</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>BottomLeft.Texture Top</Name>
+        <Value xsi:type="xsd:int">389</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>Left.Texture Left</Name>
+        <Value xsi:type="xsd:int">95</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Middle.Width</Name>
+        <Value xsi:type="xsd:float">-9</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Middle.X</Name>
+        <Value xsi:type="xsd:float">-2</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TopLeft.Texture Left</Name>
+        <Value xsi:type="xsd:int">17</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TopLeft.Texture Top</Name>
+        <Value xsi:type="xsd:int">313</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>RightConnect</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>BottomRight.Texture Left</Name>
+        <Value xsi:type="xsd:int">6</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>BottomRight.Texture Top</Name>
+        <Value xsi:type="xsd:int">389</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Middle.Width</Name>
+        <Value xsi:type="xsd:float">-8</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Middle.X</Name>
+        <Value xsi:type="xsd:float">3</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>Right.Texture Left</Name>
+        <Value xsi:type="xsd:int">208</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TopRight.Texture Left</Name>
+        <Value xsi:type="xsd:int">6</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TopRight.Texture Top</Name>
+        <Value xsi:type="xsd:int">313</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
   <Instance>
     <Name>Middle</Name>
     <BaseType>Sprite</BaseType>

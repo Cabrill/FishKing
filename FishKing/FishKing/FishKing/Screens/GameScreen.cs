@@ -155,7 +155,7 @@ namespace FishKing.Screens
             {
                 AmbientAudioManager.UpdateAmbientSoundSources();
             }
-
+            TournamentStatusRuntimeInstance.CustomActivity();
         }
 
         private void UpdateCamera()

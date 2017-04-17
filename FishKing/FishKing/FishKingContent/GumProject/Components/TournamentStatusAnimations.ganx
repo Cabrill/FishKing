@@ -175,7 +175,7 @@
     </AnimationSave>
     <AnimationSave>
       <Loops>false</Loops>
-      <Name>DemoAnimation</Name>
+      <Name>AnimateAll</Name>
       <States />
       <Animations>
         <AnimationReferenceSave>

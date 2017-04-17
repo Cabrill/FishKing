@@ -165,6 +165,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>CatchStatWithScale</Name>
     </None>
+    <None Include="GumProject\Components\subcomponent\GlowingStar.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>GlowingStar</Name>
+    </None>
     <None Include="GumProject\Components\subcomponent\TextEntryBox.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TextEntryBox</Name>
@@ -288,6 +292,26 @@
     <None Include="GumProject\FontCache\Font36Britannic Bold_0.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font36Britannic Bold_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font36Touch Of Nature.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font36Touch Of Nature</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font36Touch Of Nature_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font36Touch Of Nature_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font60Touch Of Nature.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Touch Of Nature</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font60Touch Of Nature_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Touch Of Nature_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font60Touch Of Nature_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Touch Of Nature_1</Name>
     </None>
     <None Include="GumProject\FontCache\Font72Arial.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
