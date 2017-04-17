@@ -63,5 +63,69 @@
       <Animations />
       <Events />
     </AnimationSave>
+    <AnimationSave>
+      <Loops>false</Loops>
+      <Name>TrophyPulse</Name>
+      <States>
+        <AnimatedStateSave>
+          <StateName>GlowPulse/NormalGlow</StateName>
+          <Time>0</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>GlowPulse/SmallGlow</StateName>
+          <Time>1</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>InOut</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>GlowPulse/NormalGlow</StateName>
+          <Time>2</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>In</Easing>
+        </AnimatedStateSave>
+      </States>
+      <Animations />
+      <Events />
+    </AnimationSave>
+    <AnimationSave>
+      <Loops>false</Loops>
+      <Name>TrophyGlow</Name>
+      <States>
+        <AnimatedStateSave>
+          <StateName>GlowPulse/NormalGlow</StateName>
+          <Time>0</Time>
+          <InterpolationType>Exponential</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>GlowPulse/BigGlow</StateName>
+          <Time>0.5</Time>
+          <InterpolationType>Exponential</InterpolationType>
+          <Easing>InOut</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>GlowPulse/NormalGlow</StateName>
+          <Time>1</Time>
+          <InterpolationType>Exponential</InterpolationType>
+          <Easing>In</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>GlowPulse/BigGlow</StateName>
+          <Time>1.5</Time>
+          <InterpolationType>Exponential</InterpolationType>
+          <Easing>In</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>GlowPulse/NormalGlow</StateName>
+          <Time>2</Time>
+          <InterpolationType>Exponential</InterpolationType>
+          <Easing>InOut</Easing>
+        </AnimatedStateSave>
+      </States>
+      <Animations />
+      <Events />
+    </AnimationSave>
   </Animations>
 </ElementAnimationsSave>

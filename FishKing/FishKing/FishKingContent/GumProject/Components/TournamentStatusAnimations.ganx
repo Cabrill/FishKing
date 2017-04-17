@@ -218,6 +218,14 @@
           <Name>TrophyDisplayInstance.DropConfetti</Name>
           <Time>0</Time>
         </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>TrophyDisplayInstance.TrophyGlow</Name>
+          <Time>0</Time>
+        </AnimationReferenceSave>
+        <AnimationReferenceSave>
+          <Name>TrophyDisplayInstance.TrophyGlow</Name>
+          <Time>2</Time>
+        </AnimationReferenceSave>
       </Animations>
       <Events />
     </AnimationSave>

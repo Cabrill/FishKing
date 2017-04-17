@@ -5,6 +5,12 @@
   <State>
     <Name>Default</Name>
     <Variable>
+      <Type>float</Type>
+      <Name>BackdropSprite.Height</Name>
+      <Value xsi:type="xsd:float">50</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>DimensionUnitType</Type>
       <Name>BackdropSprite.Height Units</Name>
       <Value xsi:type="xsd:int">1</Value>
@@ -45,6 +51,12 @@
       <Type>int</Type>
       <Name>BackdropSprite.Texture Width</Name>
       <Value xsi:type="xsd:int">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>BackdropSprite.Width</Name>
+      <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -916,16 +928,49 @@
   <Category>
     <Name>GlowPulse</Name>
     <State>
-      <Name>GlowPulse1</Name>
+      <Name>SmallGlow</Name>
+      <Variable>
+        <Type>float</Type>
+        <Name>BackdropSprite.Height</Name>
+        <Value xsi:type="xsd:float">30</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>BackdropSprite.Width</Name>
+        <Value xsi:type="xsd:float">30</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
     </State>
     <State>
-      <Name>GlowPulse2</Name>
+      <Name>NormalGlow</Name>
+      <Variable>
+        <Type>float</Type>
+        <Name>BackdropSprite.Height</Name>
+        <Value xsi:type="xsd:float">80</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>BackdropSprite.Width</Name>
+        <Value xsi:type="xsd:float">80</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
     </State>
     <State>
-      <Name>GlowPulse3</Name>
-    </State>
-    <State>
-      <Name>GlowPulse4</Name>
+      <Name>BigGlow</Name>
+      <Variable>
+        <Type>float</Type>
+        <Name>BackdropSprite.Height</Name>
+        <Value xsi:type="xsd:float">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>BackdropSprite.Width</Name>
+        <Value xsi:type="xsd:float">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
     </State>
   </Category>
   <Instance>
