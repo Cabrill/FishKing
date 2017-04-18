@@ -64,7 +64,7 @@
       <Events />
     </AnimationSave>
     <AnimationSave>
-      <Loops>false</Loops>
+      <Loops>true</Loops>
       <Name>TrophyPulse</Name>
       <States>
         <AnimatedStateSave>
