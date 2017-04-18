@@ -249,12 +249,23 @@ namespace FishKing.GumRuntimes
             //fishJumpTweener.Ended += afterAction;
             fishJumpTweener.Start();
             TweenerManager.Self.Add(fishJumpTweener);
-            fish.FishJumpAnimation.Play();
+            if (!fish.FishJumpAnimation.IsPlaying())
+            {
+                fish.FishJumpAnimation.Play();
+            }
         }
 
         private void Reset()
         {
             ScoreText.Text = "0";
+
+            lastTopFishScore = 0;
+            PlayerScore = 0;
+            lastBottomFishScore = 0;
+
+            lastTopFishPlace = 8;
+            lastPlayerPlace = 8;
+            lastBottomFishPlace = 8;
 
             TopFishInstance.TournamentFishProgress = 0;
             PlayerFishInstance.TournamentFishProgress = 0;
