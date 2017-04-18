@@ -94,8 +94,8 @@ namespace FishKing.GumRuntimes
                 }
                 else
                 {
-                    topFishScore = -1;
-                    bottomFishScore = 1000;
+                    topFishScore = 1000;
+                    bottomFishScore = -1;
                 }
 
                 for (int i = 1; i < scoreArray.Length; i++)
@@ -118,7 +118,7 @@ namespace FishKing.GumRuntimes
                     else if (playerInLast)
                     {
                         scoreDiff = scoreArray[i] - playerScore;
-                        if (scoreDiff < topFishScore - playerScore)
+                        if (scoreDiff > 0 && (topFishScore == 1000 || scoreDiff < topFishScore - playerScore || i == scoreArray.Length-1))
                         {
                             bottomFishScore = topFishScore;
                             bottomFishNum = topFishNum;
@@ -178,6 +178,7 @@ namespace FishKing.GumRuntimes
                 {
                     JumpFishTo(TopFishInstance, (float)Decimal.Divide(topFishScore, GoalScore)*100);
                 }
+                
 
                 if (bottomFishNum != lastBottomFishNum)
                 {
@@ -188,13 +189,15 @@ namespace FishKing.GumRuntimes
                 {
                     JumpFishTo(BottomFishInstance, (float)Decimal.Divide(bottomFishScore, GoalScore)*100);
                 }
+                
 
                 if (playerScore != lastPlayerScore)
                 {
                     JumpFishTo(PlayerFishInstance, (float)Decimal.Divide(playerScore, GoalScore)*100);
                 }
 
-                Array.Sort<int>(scoreArray,
+                var sortedScore = (int[])scoreArray.Clone();
+                Array.Sort<int>(sortedScore,
                     new Comparison<int>(
                             (i1, i2) => i2.CompareTo(i1)
                     ));
@@ -209,10 +212,10 @@ namespace FishKing.GumRuntimes
                 }
                 else
                 {
-                    PlayerPlace = Array.IndexOf(scoreArray, playerScore) + 1;
+                    PlayerPlace = Array.IndexOf(sortedScore, playerScore) + 1;
                 }
-                var topFishPlace = Array.IndexOf(scoreArray, topFishScore) + 1;
-                var bottomFishPlace = Array.IndexOf(scoreArray, bottomFishScore) + 1;
+                var topFishPlace = Array.IndexOf(sortedScore, topFishScore) + 1;
+                var bottomFishPlace = Array.IndexOf(sortedScore, bottomFishScore) + 1;
 
                 if (topFishPlace != lastTopFishPlace)
                 {
@@ -226,6 +229,13 @@ namespace FishKing.GumRuntimes
                 {
                     SetFishPlaceFromNumber(BottomFishInstance, bottomFishPlace);
                 }
+
+                lastTopFishNum = topFishNum;
+                lastBottomFishNum = bottomFishNum;
+
+                lastTopFishScore = topFishScore;
+                lastPlayerScore = PlayerScore;
+                lastBottomFishScore = bottomFishScore;
 
                 lastTopFishPlace = topFishPlace;
                 lastPlayerPlace = PlayerPlace;

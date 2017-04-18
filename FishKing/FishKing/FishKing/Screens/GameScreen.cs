@@ -58,7 +58,7 @@ namespace FishKing.Screens
 		void CustomInitialize()
         {
             LoadLevel(levelToLoad);
-
+            
             InitializeCharacter();
 
             InitializeCamera();
@@ -67,6 +67,7 @@ namespace FishKing.Screens
             {
                 TournamentScore = new TournamentScores();
                 TournamentStatusInstance.GoalScore = 200;
+                TournamentStatusInstance.PlayerFishNumber = 4;
             }
         }
 
@@ -171,6 +172,37 @@ namespace FishKing.Screens
 
         void CustomActivity(bool firstTimeCalled)
 		{
+
+#if DEBUG
+            if (DebuggingVariables.TournamentScoresYUIOP)
+            {
+                if (InputManager.Keyboard.GetKey(Keys.Y).WasJustPressed)
+                {
+                    TournamentScore.AddToNonPlayerScore(1, 10);
+                }
+                if (InputManager.Keyboard.GetKey(Keys.U).WasJustPressed)
+                {
+                    TournamentScore.AddToNonPlayerScore(2, 10);
+                }
+                if (InputManager.Keyboard.GetKey(Keys.I).WasJustPressed)
+                {
+                    TournamentScore.AddToNonPlayerScore(3, 10);
+                }
+                if (InputManager.Keyboard.GetKey(Keys.O).WasJustPressed)
+                {
+                    TournamentScore.AddToNonPlayerScore(4, 10);
+                }
+                if (InputManager.Keyboard.GetKey(Keys.P).WasJustPressed)
+                {
+                    TournamentScore.AddToNonPlayerScore(5, 10);
+                }
+                if (InputManager.Keyboard.GetKey(Keys.T).WasJustPressed)
+                {
+                    TournamentScore.AddToPlayerScore(10);
+                }
+            }
+#endif
+
             if (shouldUpdateCamera) UpdateCamera();
             DialogActivity();
             FishingActivity();
