@@ -233,6 +233,22 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font36Touch Of Nature</Name>
     </None>
+    <None Include="GumProject\FontCache\Font36Touch Of Nature_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font36Touch Of Nature_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font60Touch Of Nature.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Touch Of Nature</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font60Touch Of Nature_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Touch Of Nature_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font60Touch Of Nature_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Touch Of Nature_1</Name>
+    </None>
     <None Include="GumProject\frblogo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>frblogo</Name>

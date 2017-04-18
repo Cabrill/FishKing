@@ -343,6 +343,7 @@
           <SourceClassType>Sprite</SourceClassType>
           <InstanceName>CaveLightConeSprite</InstanceName>
           <AttachToContainer>true</AttachToContainer>
+          <AttachToCamera>true</AttachToCamera>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IncludeInICollidable>false</IncludeInICollidable>
           <IndependentOfCamera>true</IndependentOfCamera>

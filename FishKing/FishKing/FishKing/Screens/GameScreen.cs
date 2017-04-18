@@ -40,6 +40,7 @@ namespace FishKing.Screens
         static string levelToLoad = "DesertIsland";
         static string startPointName = "FirstSpawn";
         private bool wasFishing = false;
+        private bool shouldUpdateCamera;
 
         bool CanMoveCharacter
         {
@@ -57,6 +58,32 @@ namespace FishKing.Screens
             LoadLevel(levelToLoad);
 
             InitializeCharacter();
+
+            InitializeCamera();
+        }
+
+        private void InitializeCamera()
+        {
+            var camera = Camera.Main;
+            camera.ClearBorders();
+            camera.ClearMinimumsAndMaximums();
+            if (CurrentTileMap.Width > camera.OrthogonalWidth && CurrentTileMap.Height > camera.OrthogonalHeight)
+            {
+                shouldUpdateCamera = true;
+
+                camera.MinimumX = (camera.OrthogonalWidth / 2);
+                camera.MaximumX = (CurrentTileMap.Width) - (camera.OrthogonalWidth / 2);
+                camera.MinimumY = -CurrentTileMap.Height + camera.OrthogonalHeight / 2;
+                camera.MaximumY = -(camera.OrthogonalHeight / 2) + TournamentStatusInstance.AbsoluteHeight;
+                camera.X = this.CharacterInstance.X;
+                camera.Y = this.CharacterInstance.Y;
+            }
+            else
+            {
+                shouldUpdateCamera = false;
+                camera.X = CurrentTileMap.Width / 2;
+                camera.Y = -CurrentTileMap.Height / 2;
+            }
         }
 
 
@@ -76,7 +103,6 @@ namespace FishKing.Screens
             AddWaterTiles();
             RemoveBlockeddWaterTiles();
             AdjustNpcs();
-            UpdateCamera();
 
 #if DEBUG
             this.SolidCollisions.Visible =
@@ -137,7 +163,7 @@ namespace FishKing.Screens
 
         void CustomActivity(bool firstTimeCalled)
 		{
-            UpdateCamera();
+            if (shouldUpdateCamera) UpdateCamera();
             DialogActivity();
             FishingActivity();
 
@@ -160,36 +186,8 @@ namespace FishKing.Screens
 
         private void UpdateCamera()
         {
-            
-            Camera camera = Camera.Main;
-            if (CurrentTileMap.Width > camera.OrthogonalWidth && CurrentTileMap.Height > camera.OrthogonalHeight)
-            {
-                var CameraMinX = (camera.OrthogonalWidth / 2);
-                var CameraMaxX = (CurrentTileMap.Width) - (camera.OrthogonalWidth / 2);
-                var CameraMinY = -CurrentTileMap.Height + camera.OrthogonalHeight / 2;
-                var CameraMaxY = -(camera.OrthogonalHeight / 2);
-                camera.X = this.CharacterInstance.X;
-                camera.Y = this.CharacterInstance.Y;
-                // assuming CameraMinX, CameraMaxX, CameraMinY, and CameraMaxY are all defined:
-                camera.X = MathHelper.Clamp(camera.X, CameraMinX, CameraMaxX);
-                camera.Y = MathHelper.Clamp(camera.Y, CameraMinY, CameraMaxY);
-
-                if (camera.Y == CameraMaxY)
-                {
-                    TournamentStatusInstance.CurrentPlacementState = GumRuntimes.TournamentStatusRuntime.Placement.BottomOfScreen;
-                }
-                else
-                {
-                    TournamentStatusInstance.CurrentPlacementState = GumRuntimes.TournamentStatusRuntime.Placement.TopOfScreen;
-                }
-            }
-            else
-            {
-                camera.ClearBorders();
-                camera.ClearMinimumsAndMaximums();
-                camera.X = CurrentTileMap.Width/2;
-                camera.Y = -CurrentTileMap.Height/2;
-            }
+            Camera.Main.X = this.CharacterInstance.X;
+            Camera.Main.Y = this.CharacterInstance.Y;
         }
 
         private void DialogActivity()

@@ -503,7 +503,7 @@
     <Variable>
       <Type>int</Type>
       <Name>ScoreText.OutlineThickness</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -695,7 +695,7 @@
     <Variable>
       <Type>int</Type>
       <Name>TextInstance.OutlineThickness</Name>
-      <Value xsi:type="xsd:int">2</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -707,13 +707,13 @@
     <Variable>
       <Type>float</Type>
       <Name>TextInstance.Rotation</Name>
-      <Value xsi:type="xsd:float">90</Value>
+      <Value xsi:type="xsd:float">-90</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
       <Name>TextInstance.Text</Name>
-      <Value xsi:type="xsd:string">600</Value>
+      <Value xsi:type="xsd:string">300</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -737,7 +737,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TextInstance.X</Name>
-      <Value xsi:type="xsd:float">115</Value>
+      <Value xsi:type="xsd:float">-15</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -755,7 +755,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TextInstance.Y</Name>
-      <Value xsi:type="xsd:float">97</Value>
+      <Value xsi:type="xsd:float">54</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -791,7 +791,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TournamentContainer.Width</Name>
-      <Value xsi:type="xsd:float">-14</Value>
+      <Value xsi:type="xsd:float">-11</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -2895,7 +2895,7 @@
       <Variable>
         <Type>float</Type>
         <Name>TextInstance.Y</Name>
-        <Value xsi:type="xsd:float">88</Value>
+        <Value xsi:type="xsd:float">59</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -2904,7 +2904,7 @@
       <Variable>
         <Type>float</Type>
         <Name>TextInstance.Y</Name>
-        <Value xsi:type="xsd:float">97</Value>
+        <Value xsi:type="xsd:float">56</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

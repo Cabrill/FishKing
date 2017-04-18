@@ -8,9 +8,17 @@ namespace FishKing.GumRuntimes
 {
     partial class TournamentStatusRuntime
     {
+        public float AbsoluteHeight
+        {
+            get
+            {
+                return (this as RenderingLibrary.IPositionedSizedObject).Height - 14f;
+            }
+        }
+
         partial void CustomInitialize()
         {
-            
+            ScoreText.Text = "0";
         }
 
         public void CustomActivity()
@@ -54,6 +62,11 @@ namespace FishKing.GumRuntimes
         private static void CustomLoadStaticContent(string contentManagerName)
         {
 
+
+        }
+
+        private void UpdateFishPlaceMarkers()
+        {
 
         }
     }
