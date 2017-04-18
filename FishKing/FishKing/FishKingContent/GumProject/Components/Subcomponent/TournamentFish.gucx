@@ -432,6 +432,12 @@
         <Value xsi:type="xsd:int">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>TournamentPlaceSprite.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
     </State>
     <State>
       <Name>SecondPlace</Name>
@@ -439,6 +445,12 @@
         <Type>int</Type>
         <Name>TournamentPlaceSprite.Texture Top</Name>
         <Value xsi:type="xsd:int">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>TournamentPlaceSprite.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -450,6 +462,12 @@
         <Value xsi:type="xsd:int">200</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>TournamentPlaceSprite.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
     </State>
     <State>
       <Name>FourthPlace</Name>
@@ -457,6 +475,12 @@
         <Type>int</Type>
         <Name>TournamentPlaceSprite.Texture Top</Name>
         <Value xsi:type="xsd:int">300</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>TournamentPlaceSprite.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -468,6 +492,12 @@
         <Value xsi:type="xsd:int">400</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>TournamentPlaceSprite.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
     </State>
     <State>
       <Name>SixthPlace</Name>
@@ -475,6 +505,12 @@
         <Type>int</Type>
         <Name>TournamentPlaceSprite.Texture Top</Name>
         <Value xsi:type="xsd:int">500</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>TournamentPlaceSprite.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -486,6 +522,12 @@
         <Value xsi:type="xsd:int">600</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>TournamentPlaceSprite.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
     </State>
     <State>
       <Name>EighthPlace</Name>
@@ -493,6 +535,21 @@
         <Type>int</Type>
         <Name>TournamentPlaceSprite.Texture Top</Name>
         <Value xsi:type="xsd:int">700</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>TournamentPlaceSprite.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>None</Name>
+      <Variable>
+        <Type>bool</Type>
+        <Name>TournamentPlaceSprite.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

@@ -2,7 +2,7 @@
 <ElementAnimationsSave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Animations>
     <AnimationSave>
-      <Loops>false</Loops>
+      <Loops>true</Loops>
       <Name>Wave1Animate</Name>
       <States>
         <AnimatedStateSave>
@@ -28,7 +28,7 @@
       <Events />
     </AnimationSave>
     <AnimationSave>
-      <Loops>false</Loops>
+      <Loops>true</Loops>
       <Name>Wave2Animate</Name>
       <States>
         <AnimatedStateSave>
@@ -54,7 +54,7 @@
       <Events />
     </AnimationSave>
     <AnimationSave>
-      <Loops>false</Loops>
+      <Loops>true</Loops>
       <Name>Wave3Animate</Name>
       <States>
         <AnimatedStateSave>
@@ -183,27 +183,27 @@
           <Time>0</Time>
         </AnimationReferenceSave>
         <AnimationReferenceSave>
-          <Name>TournamentFishInstance.FishSwim</Name>
+          <Name>TopFishInstance.FishSwim</Name>
           <Time>0</Time>
         </AnimationReferenceSave>
         <AnimationReferenceSave>
-          <Name>TournamentFishInstance1.FishSwim</Name>
+          <Name>PlayerFishInstance.FishSwim</Name>
           <Time>0</Time>
         </AnimationReferenceSave>
         <AnimationReferenceSave>
-          <Name>TournamentFishInstance2.FishSwim</Name>
+          <Name>BottomFishInstance.FishSwim</Name>
           <Time>0</Time>
         </AnimationReferenceSave>
         <AnimationReferenceSave>
-          <Name>TournamentFishInstance.FishSwim</Name>
+          <Name>TopFishInstance.FishSwim</Name>
           <Time>1</Time>
         </AnimationReferenceSave>
         <AnimationReferenceSave>
-          <Name>TournamentFishInstance1.FishSwim</Name>
+          <Name>PlayerFishInstance.FishSwim</Name>
           <Time>1</Time>
         </AnimationReferenceSave>
         <AnimationReferenceSave>
-          <Name>TournamentFishInstance2.FishSwim</Name>
+          <Name>BottomFishInstance.FishSwim</Name>
           <Time>1</Time>
         </AnimationReferenceSave>
       </Animations>

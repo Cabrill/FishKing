@@ -646,127 +646,127 @@
     </Variable>
     <Variable>
       <Type>int</Type>
-      <Name>TextInstance.Blue</Name>
+      <Name>GoalScoreText.Blue</Name>
       <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>TextInstance.Font</Name>
+      <Name>GoalScoreText.Font</Name>
       <Value xsi:type="xsd:string">Touch Of Nature</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>TextInstance.Font Scale</Name>
+      <Name>GoalScoreText.Font Scale</Name>
       <Value xsi:type="xsd:float">0.3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
-      <Name>TextInstance.FontSize</Name>
+      <Name>GoalScoreText.FontSize</Name>
       <Value xsi:type="xsd:int">60</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
-      <Name>TextInstance.Green</Name>
+      <Name>GoalScoreText.Green</Name>
       <Value xsi:type="xsd:int">223</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>TextInstance.Height</Name>
+      <Name>GoalScoreText.Height</Name>
       <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
-      <Name>TextInstance.Height Units</Name>
+      <Name>GoalScoreText.Height Units</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>HorizontalAlignment</Type>
-      <Name>TextInstance.HorizontalAlignment</Name>
+      <Name>GoalScoreText.HorizontalAlignment</Name>
       <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
-      <Name>TextInstance.OutlineThickness</Name>
+      <Name>GoalScoreText.OutlineThickness</Name>
       <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>TextInstance.Parent</Name>
+      <Name>GoalScoreText.Parent</Name>
       <Value xsi:type="xsd:string">CheckeredFlagSprite</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>TextInstance.Rotation</Name>
+      <Name>GoalScoreText.Rotation</Name>
       <Value xsi:type="xsd:float">-90</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>TextInstance.Text</Name>
+      <Name>GoalScoreText.Text</Name>
       <Value xsi:type="xsd:string">300</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
-      <Name>TextInstance.VerticalAlignment</Name>
+      <Name>GoalScoreText.VerticalAlignment</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>TextInstance.Width</Name>
+      <Name>GoalScoreText.Width</Name>
       <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
-      <Name>TextInstance.Width Units</Name>
+      <Name>GoalScoreText.Width Units</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>TextInstance.X</Name>
+      <Name>GoalScoreText.X</Name>
       <Value xsi:type="xsd:float">-15</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>HorizontalAlignment</Type>
-      <Name>TextInstance.X Origin</Name>
+      <Name>GoalScoreText.X Origin</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
-      <Name>TextInstance.X Units</Name>
+      <Name>GoalScoreText.X Units</Name>
       <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>TextInstance.Y</Name>
+      <Name>GoalScoreText.Y</Name>
       <Value xsi:type="xsd:float">54</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
-      <Name>TextInstance.Y Origin</Name>
+      <Name>GoalScoreText.Y Origin</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
-      <Name>TextInstance.Y Units</Name>
+      <Name>GoalScoreText.Y Units</Name>
       <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -820,109 +820,109 @@
     </Variable>
     <Variable>
       <Type>FishTypeState</Type>
-      <Name>TournamentFishInstance.FishTypeState</Name>
+      <Name>TopFishInstance.FishTypeState</Name>
       <Value xsi:type="xsd:string">FishType1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>TournamentFishInstance.Parent</Name>
+      <Name>TopFishInstance.Parent</Name>
       <Value xsi:type="xsd:string">WaveFishContainer</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>TournamentFishInstance.TournamentFishProgress</Name>
+      <Name>TopFishInstance.TournamentFishProgress</Name>
       <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>TournamentFishInstance.TournamentFishSpriteProgress</Name>
+      <Name>TopFishInstance.TournamentFishSpriteProgress</Name>
       <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>TournamentPlaceState</Type>
-      <Name>TournamentFishInstance.TournamentPlaceState</Name>
+      <Name>TopFishInstance.TournamentPlaceState</Name>
       <Value xsi:type="xsd:string">FirstPlace</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>TournamentFishInstance.Y</Name>
+      <Name>TopFishInstance.Y</Name>
       <Value xsi:type="xsd:float">24</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>FishTypeState</Type>
-      <Name>TournamentFishInstance1.FishTypeState</Name>
+      <Name>PlayerFishInstance.FishTypeState</Name>
       <Value xsi:type="xsd:string">FishType2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>TournamentFishInstance1.Parent</Name>
+      <Name>PlayerFishInstance.Parent</Name>
       <Value xsi:type="xsd:string">WaveFishContainer</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>TournamentFishInstance1.TournamentFishProgress</Name>
+      <Name>PlayerFishInstance.TournamentFishProgress</Name>
       <Value xsi:type="xsd:float">45</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>TournamentFishInstance1.TournamentFishSpriteProgress</Name>
+      <Name>PlayerFishInstance.TournamentFishSpriteProgress</Name>
       <Value xsi:type="xsd:float">20</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>TournamentPlaceState</Type>
-      <Name>TournamentFishInstance1.TournamentPlaceState</Name>
+      <Name>PlayerFishInstance.TournamentPlaceState</Name>
       <Value xsi:type="xsd:string">SecondPlace</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>TournamentFishInstance1.Y</Name>
+      <Name>PlayerFishInstance.Y</Name>
       <Value xsi:type="xsd:float">26</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>FishTypeState</Type>
-      <Name>TournamentFishInstance2.FishTypeState</Name>
+      <Name>BottomFishInstance.FishTypeState</Name>
       <Value xsi:type="xsd:string">FishType3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>TournamentFishInstance2.Parent</Name>
+      <Name>BottomFishInstance.Parent</Name>
       <Value xsi:type="xsd:string">WaveFishContainer</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>TournamentFishInstance2.TournamentFishProgress</Name>
+      <Name>BottomFishInstance.TournamentFishProgress</Name>
       <Value xsi:type="xsd:float">20</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>TournamentPlaceState</Type>
-      <Name>TournamentFishInstance2.TournamentPlaceState</Name>
+      <Name>BottomFishInstance.TournamentPlaceState</Name>
       <Value xsi:type="xsd:string">ThirdPlace</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>TournamentFishInstance2.X</Name>
+      <Name>BottomFishInstance.X</Name>
       <Value xsi:type="xsd:float">2.5</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>TournamentFishInstance2.Y</Name>
+      <Name>BottomFishInstance.Y</Name>
       <Value xsi:type="xsd:float">28</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -2894,7 +2894,7 @@
       <Name>OneHundreds</Name>
       <Variable>
         <Type>float</Type>
-        <Name>TextInstance.Y</Name>
+        <Name>GoalScoreText.Y</Name>
         <Value xsi:type="xsd:float">59</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -2903,7 +2903,7 @@
       <Name>More</Name>
       <Variable>
         <Type>float</Type>
-        <Name>TextInstance.Y</Name>
+        <Name>GoalScoreText.Y</Name>
         <Value xsi:type="xsd:float">56</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -2977,7 +2977,7 @@
     <BaseType>Container</BaseType>
   </Instance>
   <Instance>
-    <Name>TournamentFishInstance</Name>
+    <Name>TopFishInstance</Name>
     <BaseType>subcomponent\TournamentFish</BaseType>
   </Instance>
   <Instance>
@@ -3001,7 +3001,7 @@
     <BaseType>Container</BaseType>
   </Instance>
   <Instance>
-    <Name>TournamentFishInstance1</Name>
+    <Name>PlayerFishInstance</Name>
     <BaseType>subcomponent\TournamentFish</BaseType>
   </Instance>
   <Instance>
@@ -3033,7 +3033,7 @@
     <BaseType>Sprite</BaseType>
   </Instance>
   <Instance>
-    <Name>TournamentFishInstance2</Name>
+    <Name>BottomFishInstance</Name>
     <BaseType>subcomponent\TournamentFish</BaseType>
   </Instance>
   <Instance>
@@ -3085,7 +3085,7 @@
     <BaseType>Text</BaseType>
   </Instance>
   <Instance>
-    <Name>TextInstance</Name>
+    <Name>GoalScoreText</Name>
     <BaseType>Text</BaseType>
   </Instance>
   <Instance>
