@@ -17,6 +17,12 @@ namespace FishKing.GumRuntimes
                 return (this as RenderingLibrary.IPositionedSizedObject).Height - 14f;
             }
         }
+        private int playerScore = 0;
+        public int PlayerScore
+        {
+            get { return playerScore; }
+            private set { playerScore = value;  UpdatePlayerScore();  }
+        }
         private int playerFishNumber = 0;
         public int PlayerFishNumber
         {
@@ -38,7 +44,7 @@ namespace FishKing.GumRuntimes
 
         private int lastTopFishPlace = 8;
         private int lastBottomFishPlace = 8;
-        private int lastPlayerPlayer = 8;
+        private int lastPlayerPlace = 8;
         private int lastTopFishNum = -1;
         private int lastBottomFishNum = -1;
         private int lastTopFishScore = 0;
@@ -63,7 +69,7 @@ namespace FishKing.GumRuntimes
 
         }
 
-        private void UpdateFishPlaceMarkers(int[] scoreArray)
+        public void UpdateFishPlaceMarkers(int[] scoreArray)
         {
             if (scoreArray.Sum() > 0)
             {
@@ -166,26 +172,26 @@ namespace FishKing.GumRuntimes
                 if (topFishNum != lastTopFishNum)
                 {
                     SetFishTypeFromNumber(TopFishInstance, topFishNum);
-                    TopFishInstance.TournamentFishProgress = (topFishScore / GoalScore);
+                    TopFishInstance.TournamentFishProgress = (float)Decimal.Divide(topFishScore, GoalScore) * 100;
                 }
                 else if (lastTopFishScore != topFishScore)
                 {
-                    JumpFishTo(TopFishInstance, (topFishScore / GoalScore));
+                    JumpFishTo(TopFishInstance, (float)Decimal.Divide(topFishScore, GoalScore)*100);
                 }
 
                 if (bottomFishNum != lastBottomFishNum)
                 {
                     SetFishTypeFromNumber(BottomFishInstance, bottomFishNum);
-                    BottomFishInstance.TournamentFishProgress = (bottomFishScore / GoalScore);
+                    BottomFishInstance.TournamentFishProgress = (float)Decimal.Divide(bottomFishScore, GoalScore) * 100;
                 }
                 else if (lastBottomFishScore != bottomFishScore)
                 {
-                    JumpFishTo(BottomFishInstance, (bottomFishScore / GoalScore));
+                    JumpFishTo(BottomFishInstance, (float)Decimal.Divide(bottomFishScore, GoalScore)*100);
                 }
 
                 if (playerScore != lastPlayerScore)
                 {
-                    JumpFishTo(PlayerFishInstance, (playerScore / GoalScore));
+                    JumpFishTo(PlayerFishInstance, (float)Decimal.Divide(playerScore, GoalScore)*100);
                 }
 
                 Array.Sort<int>(scoreArray,
@@ -208,9 +214,24 @@ namespace FishKing.GumRuntimes
                 var topFishPlace = Array.IndexOf(scoreArray, topFishScore) + 1;
                 var bottomFishPlace = Array.IndexOf(scoreArray, bottomFishScore) + 1;
 
-                SetFishPlaceFromNumber(TopFishInstance, lastTopFishPlace);
-                SetFishPlaceFromNumber(PlayerFishInstance, PlayerPlace);
-                SetFishPlaceFromNumber(BottomFishInstance, bottomFishPlace);
+                if (topFishPlace != lastTopFishPlace)
+                {
+                    SetFishPlaceFromNumber(TopFishInstance, topFishPlace);
+                }
+                if (PlayerPlace != lastPlayerPlace)
+                {
+                    SetFishPlaceFromNumber(PlayerFishInstance, PlayerPlace);
+                }
+                if (bottomFishPlace != lastBottomFishPlace)
+                {
+                    SetFishPlaceFromNumber(BottomFishInstance, bottomFishPlace);
+                }
+
+                lastTopFishPlace = topFishPlace;
+                lastPlayerPlace = PlayerPlace;
+                lastBottomFishPlace = bottomFishPlace;
+
+                PlayerScore = playerScore;
             }
         }
 
@@ -221,12 +242,14 @@ namespace FishKing.GumRuntimes
             var tweenHolder = new TweenerHolder();
             tweenHolder.Caller = fish;
             var fishJumpTweener = new Tweener(startValue, newPosition, timeToTween, InterpolationType.Quartic, Easing.Out);
-            fishJumpTweener.PositionChanged += (a) =>
+            fishJumpTweener.PositionChanged += (position) =>
             {
+                fish.TournamentFishProgress = position;
             };
             //fishJumpTweener.Ended += afterAction;
             fishJumpTweener.Start();
             TweenerManager.Self.Add(fishJumpTweener);
+            fish.FishJumpAnimation.Play();
         }
 
         private void Reset()
@@ -253,6 +276,11 @@ namespace FishKing.GumRuntimes
             {
                 CurrentGoalValueState = GoalValue.OneHundreds;
             }
+        }
+
+        private void UpdatePlayerScore()
+        {
+            ScoreText.Text = PlayerScore.ToString();
         }
 
         public void SetPlayerFish()

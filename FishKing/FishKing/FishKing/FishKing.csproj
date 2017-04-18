@@ -407,6 +407,7 @@
     <Compile Include="TileGraphics\Tileset.cs" />
     <Compile Include="TileGraphics\TilesetExtensionMethods.cs" />
     <Compile Include="UtilityClasses\DistributedRandomGenerator.cs" />
+    <Compile Include="UtilityClasses\TournamentScores.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Game.ico" />

@@ -25,6 +25,7 @@ using FlatRedBall.TileCollisions;
 using FishKing.Enums;
 using static FishKing.Enums.WaterTypes;
 using Microsoft.Xna.Framework.Audio;
+using FishKing.UtilityClasses;
 
 #if FRB_XNA || SILVERLIGHT
 using Keys = Microsoft.Xna.Framework.Input.Keys;
@@ -41,6 +42,7 @@ namespace FishKing.Screens
         static string startPointName = "FirstSpawn";
         private bool wasFishing = false;
         private bool shouldUpdateCamera;
+        private static TournamentScores TournamentScore;
 
         bool CanMoveCharacter
         {
@@ -60,6 +62,12 @@ namespace FishKing.Screens
             InitializeCharacter();
 
             InitializeCamera();
+
+            if (TournamentScore == null)
+            {
+                TournamentScore = new TournamentScores();
+                TournamentStatusInstance.GoalScore = 200;
+            }
         }
 
         private void InitializeCamera()
@@ -181,7 +189,11 @@ namespace FishKing.Screens
             {
                 AmbientAudioManager.UpdateAmbientSoundSources();
             }
-            TournamentStatusInstance.CustomActivity();
+            if (TournamentScore.HasScoreChanged)
+            {
+                TournamentStatusInstance.UpdateFishPlaceMarkers(TournamentScore.Scores);
+                TournamentScore.MarkScoreReviewed();
+            }
         }
 
         private void UpdateCamera()
@@ -305,6 +317,7 @@ namespace FishKing.Screens
                             } else if(CharacterInstance.IsDisplayingCatch && CharacterInstance.IsOnFinalFrameOfAnimationChain && !FishCatchDisplayInstance.Visible)
                             {
                                 FishCatchDisplayInstance.ShowFish(CharacterInstance.FishOnTheLine);
+                                TournamentScore.AddToPlayerScore(CharacterInstance.FishOnTheLine.Points);
                             }
                         }
                         else
