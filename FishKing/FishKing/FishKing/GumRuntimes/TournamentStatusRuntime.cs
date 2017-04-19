@@ -19,25 +19,25 @@ namespace FishKing.GumRuntimes
                 return (this as RenderingLibrary.IPositionedSizedObject).Height - 14f;
             }
         }
-        private int playerScore = 0;
+        private int playerScore;
         public int PlayerScore
         {
             get { return playerScore; }
             private set { playerScore = value; UpdatePlayerScore(); }
         }
-        private int playerFishNumber = 0;
+        private int playerFishNumber;
         public int PlayerFishNumber
         {
             get { return playerFishNumber; }
             set { playerFishNumber = value; SetPlayerFish(); }
         }
-        private int goalScore = 0;
+        private int goalScore;
         public int GoalScore
         {
             get { return goalScore; }
             set { goalScore = value; UpdateGoalScore(); }
         }
-        private int playerPlace = 8;
+        private int playerPlace;
         public int PlayerPlace
         {
             get { return playerPlace; }
@@ -287,12 +287,26 @@ namespace FishKing.GumRuntimes
 
         private bool IsFishNearPlayerPlace(bool playerInFirst, bool playerInLast, int fishPlace)
         {
+            int nonZeroPlace1 = -1;
+            int nonZeroPlace2 = -1;
+            var lastNonZero = sortedScore.Where(s => s > 0);
+            if (lastNonZero.Count() > 0)
+            {
+                nonZeroPlace1 = Array.IndexOf(score, lastNonZero.Last());
+            }
+            if (lastNonZero.Count() > 1)
+            {
+                nonZeroPlace2 = Array.IndexOf(score, lastNonZero.ElementAt(lastNonZero.Count() - 2));
+            }
+
             return ((fishPlace == PlayerPlace)
                     ||
                     (playerInFirst && fishPlace < 4) //Fish in top 3
                     ||
                     (playerInLast &&
-                        (fishPlace == PlayerPlace + 1 || //Second-to-last
+                        (fishPlace == nonZeroPlace1 ||
+                        fishPlace == nonZeroPlace2 ||
+                        fishPlace == PlayerPlace + 1 || //Second-to-last
                         fishPlace == PlayerPlace + 2)) //Third-to-last
                     ||
                     (!playerInFirst && !playerInLast &&
@@ -330,25 +344,32 @@ namespace FishKing.GumRuntimes
             }
             else if (playerInLast)
             {
-                int possibleScore = sortedScore[sortedScore.Count() - 2];
-                int possibleFishNum = Array.IndexOf(score, possibleScore, 1);
-
-                if (exceptNum == possibleFishNum)
+                var nonZeroScores = sortedScore.Where(s => s > 0);
+                if (nonZeroScores.Count() > 0)
                 {
-                    fishScore = sortedScore[sortedScore.Count() - 3];
-                    if (fishScore == possibleScore)
+                    int possibleScore = nonZeroScores.Last();
+                    int possibleFishNum = Array.IndexOf(score, possibleScore, 1);
+
+                    if (exceptNum == possibleFishNum)
                     {
-                        fishNum = Array.IndexOf(score, fishScore, exceptNum + 1);
+                        if (nonZeroScores.Count() > 1)
+                        {
+                            fishScore = nonZeroScores.ElementAt(nonZeroScores.Count() - 2);
+                            if (fishScore == possibleScore)
+                            {
+                                fishNum = Array.IndexOf(score, fishScore, exceptNum + 1);
+                            }
+                            else
+                            {
+                                fishNum = Array.IndexOf(score, fishScore, 1);
+                            }
+                        }
                     }
                     else
                     {
-                        fishNum = Array.IndexOf(score, fishScore, 1);
+                        fishScore = possibleScore;
+                        fishNum = possibleFishNum;
                     }
-                }
-                else
-                {
-                    fishScore = possibleScore;
-                    fishNum = possibleFishNum;
                 }
             }
             else
@@ -445,9 +466,9 @@ namespace FishKing.GumRuntimes
             PlayerScore = 0;
             lastBottomFishScore = 0;
 
-            lastTopFishPlace = 8;
-            lastPlayerPlace = 8;
-            lastBottomFishPlace = 8;
+            lastTopFishPlace = -1;
+            lastPlayerPlace = -1;
+            lastBottomFishPlace = -1;
 
             TopFishInstance.TournamentFishProgress = 0;
             PlayerFishInstance.TournamentFishProgress = 0;
