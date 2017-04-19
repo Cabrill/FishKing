@@ -80,7 +80,7 @@
       <Events />
     </AnimationSave>
     <AnimationSave>
-      <Loops>false</Loops>
+      <Loops>true</Loops>
       <Name>Wave4Animate</Name>
       <States>
         <AnimatedStateSave>
@@ -103,110 +103,6 @@
         </AnimatedStateSave>
       </States>
       <Animations />
-      <Events />
-    </AnimationSave>
-    <AnimationSave>
-      <Loops>true</Loops>
-      <Name>WavesAnimate</Name>
-      <States />
-      <Animations>
-        <AnimationReferenceSave>
-          <Name>Wave1Animate</Name>
-          <Time>0</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>Wave3Animate</Name>
-          <Time>0</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>Wave4Animate</Name>
-          <Time>0</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>Wave2Animate</Name>
-          <Time>0</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>Wave4Animate</Name>
-          <Time>1.5</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>Wave3Animate</Name>
-          <Time>3</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>Wave4Animate</Name>
-          <Time>3</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>Wave4Animate</Name>
-          <Time>4.5</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>Wave3Animate</Name>
-          <Time>6</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>Wave2Animate</Name>
-          <Time>6</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>Wave4Animate</Name>
-          <Time>6</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>Wave4Animate</Name>
-          <Time>7.5</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>Wave4Animate</Name>
-          <Time>9</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>Wave3Animate</Name>
-          <Time>9</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>Wave4Animate</Name>
-          <Time>10.5</Time>
-        </AnimationReferenceSave>
-      </Animations>
-      <Events />
-    </AnimationSave>
-    <AnimationSave>
-      <Loops>false</Loops>
-      <Name>AnimateAll</Name>
-      <States />
-      <Animations>
-        <AnimationReferenceSave>
-          <Name>WavesAnimate</Name>
-          <Time>0</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>TopFishInstance.FishSwim</Name>
-          <Time>0</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>PlayerFishInstance.FishSwim</Name>
-          <Time>0</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>BottomFishInstance.FishSwim</Name>
-          <Time>0</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>TopFishInstance.FishSwim</Name>
-          <Time>1</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>PlayerFishInstance.FishSwim</Name>
-          <Time>1</Time>
-        </AnimationReferenceSave>
-        <AnimationReferenceSave>
-          <Name>BottomFishInstance.FishSwim</Name>
-          <Time>1</Time>
-        </AnimationReferenceSave>
-      </Animations>
       <Events />
     </AnimationSave>
     <AnimationSave>

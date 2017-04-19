@@ -57,6 +57,7 @@ namespace FishKing.Screens
 
 		void CustomInitialize()
         {
+            TournamentStatusInstance.gameScreen = this;
             LoadLevel(levelToLoad);
             
             InitializeCharacter();
@@ -221,6 +222,12 @@ namespace FishKing.Screens
             {
                 AmbientAudioManager.UpdateAmbientSoundSources();
             }
+#if DEBUG
+            if (DebuggingVariables.SimulateTournamentScores)
+            {
+                TournamentScore.SimulateTournament();
+            }
+#endif
             if (TournamentScore.HasScoreChanged)
             {
                 TournamentStatusInstance.UpdateFishPlaceMarkers(TournamentScore.Scores);

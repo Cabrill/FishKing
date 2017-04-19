@@ -53,5 +53,20 @@ namespace FishKing.UtilityClasses
         {
             scoreHasChanged = false;
         }
+
+#if DEBUG
+        public void SimulateTournament()
+        {
+            var random = RandomNumbers.Random;
+
+            if (random.NextDouble() > 0.999)
+            {
+                var randomScore = random.Next(1, scores.Length);
+                var randomPoints = random.Next(5, 101);
+                scores[randomScore] += randomPoints;
+                scoreHasChanged = true;
+            }
+        }
+#endif
     }
 }

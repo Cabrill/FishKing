@@ -15,7 +15,6 @@ namespace FishKing
     static class FishGenerator
     {
         public static DistributedRandomGenerator drng = new DistributedRandomGenerator();
-        public static Random randomSeed = new Random(DateTime.Now.Millisecond);
 
         public static int MaximumLengthMM
         {

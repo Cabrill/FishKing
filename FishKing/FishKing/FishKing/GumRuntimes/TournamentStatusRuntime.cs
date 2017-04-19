@@ -1,4 +1,6 @@
-﻿using FlatRedBall.Glue.StateInterpolation;
+﻿using FishKing.Screens;
+using FlatRedBall.Glue.StateInterpolation;
+using FlatRedBall.Instructions;
 using StateInterpolationPlugin;
 using System;
 using System.Collections.Generic;
@@ -8,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace FishKing.GumRuntimes
 {
-    partial class TournamentStatusRuntime
+    partial class TournamentStatusRuntime : IInstructable
     {
         public float AbsoluteHeight
         {
@@ -21,19 +23,19 @@ namespace FishKing.GumRuntimes
         public int PlayerScore
         {
             get { return playerScore; }
-            private set { playerScore = value;  UpdatePlayerScore();  }
+            private set { playerScore = value; UpdatePlayerScore(); }
         }
         private int playerFishNumber = 0;
         public int PlayerFishNumber
         {
-            get { return playerFishNumber;  }
-            set { playerFishNumber = value; SetPlayerFish();  }
+            get { return playerFishNumber; }
+            set { playerFishNumber = value; SetPlayerFish(); }
         }
         private int goalScore = 0;
         public int GoalScore
         {
             get { return goalScore; }
-            set { goalScore = value; UpdateGoalScore();  }
+            set { goalScore = value; UpdateGoalScore(); }
         }
         private int playerPlace = 8;
         public int PlayerPlace
@@ -41,6 +43,16 @@ namespace FishKing.GumRuntimes
             get { return playerPlace; }
             private set { playerPlace = value; }
         }
+
+        public InstructionList Instructions
+        {
+            get
+            {
+                return ((IInstructable)gameScreen).Instructions;
+            }
+        }
+
+        public GameScreen gameScreen;
 
         private int? lastTopFishPlace = null;
         private int? lastBottomFishPlace = null;
@@ -50,6 +62,8 @@ namespace FishKing.GumRuntimes
         private int? lastTopFishScore = null;
         private int? lastBottomFishScore = null;
         private int? lastPlayerScore = null;
+        private int[] score;
+        private int[] sortedScore;
 
         partial void CustomInitialize()
         {
@@ -64,6 +78,8 @@ namespace FishKing.GumRuntimes
             BottomFishInstance.FishSwimAnimation.Play();
             GlowingStarInstance.StarGlowAnimation.Play();
             TrophyDisplayInstance.TrophyPulseAnimation.Play();
+            BottomFishInstance.Visible = false;
+            TopFishInstance.Visible = false;
         }
 
         public void CustomActivity()
@@ -73,166 +89,353 @@ namespace FishKing.GumRuntimes
 
         public void UpdateFishPlaceMarkers(int[] scoreArray)
         {
-            if (scoreArray.Sum() > 0)
+            score = scoreArray;
+            sortedScore = (int[])scoreArray.Clone();
+            Array.Sort<int>(sortedScore,
+                new Comparison<int>(
+                        (i1, i2) => i2.CompareTo(i1)
+                ));
+
+            int playerScore = scoreArray[0];
+            int maxScore = scoreArray.Max();
+            int minScore = scoreArray.Min();
+
+            bool playerInFirst = playerScore == maxScore;
+            bool playerInLast = playerScore == minScore;
+            playerPlace = (playerInFirst ? 1 : playerInLast ? scoreArray.Count() : Array.IndexOf(sortedScore, playerScore) + 1);
+
+            int topFishNum = -1, bottomFishNum = -1,
+                topFishPlace = 0, bottomFishPlace = 0,
+                topFishScore = 0, bottomFishScore = 0;
+
+            bool firstUpdate = !lastTopFishScore.HasValue;
+
+            if (firstUpdate)
             {
-                int playerScore = scoreArray[0];
-
-                int maxScore = scoreArray.Max();
-                int minScore = scoreArray.Min();
-
-                bool playerInFirst = playerScore > 0 && playerScore == maxScore;
-                bool playerInLast = playerScore == minScore && scoreArray.Where(i => i > PlayerScore).Count() > 0;
-
-                int scoreDiff, topFishNum, bottomFishNum;
-                topFishNum = bottomFishNum = 0;
-
-                int? topFishScore = null;
-                int? bottomFishScore = null;
-                
-                for (int i = 1; i < scoreArray.Length; i++)
+                if (playerScore > 0)
                 {
-                    if (playerInFirst)
+                    JumpFishTo(PlayerFishInstance, GetGoalProgress(playerScore));
+                    SetFishPlaceFromNumber(PlayerFishInstance, playerPlace);
+                }
+                if (scoreArray.Sum() > playerScore)
+                {
+                    topFishScore = scoreArray.Where(s => s > playerScore).Max();
+                    topFishNum = Array.IndexOf(scoreArray, topFishScore);
+                    topFishPlace = Array.IndexOf(sortedScore, topFishScore);
+                    JumpFishTo(TopFishInstance, GetGoalProgress(topFishScore));
+                    SetFishPlaceFromNumber(TopFishInstance, topFishPlace);
+                }
+            }
+            else
+            {
+                //Update player
+                if (lastPlayerPlace != playerPlace)
+                {
+                    SetFishPlaceFromNumber(PlayerFishInstance, playerPlace);
+                }
+                if (playerScore != lastPlayerScore)
+                {
+                    JumpFishTo(PlayerFishInstance, GetGoalProgress(playerScore));
+                }
+                //Check if top fish needs updating
+                if (lastTopFishNum.HasValue)
+                {
+                    topFishNum = lastTopFishNum.Value;
+                    topFishScore = scoreArray[topFishNum];
+                    topFishPlace = Array.IndexOf(sortedScore, topFishScore) + 1;
+
+                    if (IsFishNearPlayerPlace(playerInFirst, playerInLast, topFishPlace))
                     {
-                        if (!topFishScore.HasValue || scoreArray[i] > topFishScore)
+                        if (topFishScore != lastTopFishScore)
                         {
-                            bottomFishScore = topFishScore;
-                            bottomFishNum = topFishNum;
-                            topFishScore = scoreArray[i];
-                            topFishNum = i;
+                            JumpFishTo(TopFishInstance, GetGoalProgress(topFishScore));
                         }
-                        else if (!bottomFishScore.HasValue || scoreArray[i] > bottomFishScore)
+                        if (topFishPlace != lastTopFishPlace)
                         {
-                            bottomFishScore = scoreArray[i];
-                            bottomFishNum = i;
+                            SetFishPlaceFromNumber(TopFishInstance, topFishPlace);
                         }
                     }
-                    else if (playerInLast)
+                    else //Choose a new fish for top
                     {
-                        scoreDiff = scoreArray[i] - playerScore;
-                        if (scoreDiff > 0 && (!topFishScore.HasValue || scoreDiff < topFishScore - playerScore))
+                        int exceptNum = (lastBottomFishNum.HasValue ? lastBottomFishNum.Value : 0);
+                        var newFish = GetSuitableFish(playerInFirst, playerInLast, exceptNum);
+                        if (newFish.Item1 != -1)
                         {
-                            bottomFishScore = topFishScore;
-                            bottomFishNum = topFishNum;
-                            topFishScore = scoreArray[i];
-                            topFishNum = i;
-                        }
-                        else if (!bottomFishScore.HasValue || scoreDiff < bottomFishScore - playerScore)
-                        {
-                            bottomFishScore = scoreArray[i];
-                            bottomFishNum = i;
+                            topFishNum = newFish.Item1;
+                            topFishScore = newFish.Item2;
+                            topFishPlace = newFish.Item3;
                         }
                     }
-                    else
+                    if (topFishNum != lastTopFishNum.Value)
                     {
-                        if (scoreArray[i] > playerScore)
+                        if (scoreArray[lastTopFishNum.Value] > scoreArray[topFishNum])
                         {
-                            scoreDiff = scoreArray[i] - playerScore;
-                            if (!topFishScore.HasValue || scoreDiff < topFishScore - playerScore)
-                            {
-                                topFishScore = scoreArray[i];
-                                topFishNum = i;
-                            }
-                        }
-                        else if (scoreArray[i] < playerScore)
-                        {
-                            scoreDiff = playerScore - scoreArray[i];
-                            if (!bottomFishScore.HasValue || scoreDiff < playerScore - bottomFishScore)
-                            {
-                                bottomFishScore = scoreArray[i];
-                                bottomFishNum = i;
-                            }
+                            FishPassing(TopFishInstance, topFishNum, topFishPlace, topFishScore);
                         }
                         else
                         {
-                            if (!topFishScore.HasValue || topFishScore != playerScore)
-                            {
-                                topFishScore = scoreArray[i];
-                                topFishNum = i;
-                            }
-                            else if (!bottomFishScore.HasValue || bottomFishScore != playerScore)
-                            {
-                                bottomFishScore = scoreArray[i];
-                                bottomFishNum = i;
-                            }
+                            FishPassedBy(TopFishInstance, topFishNum, topFishPlace, topFishScore);
                         }
                     }
                 }
-                topFishNum = (topFishNum == playerFishNumber ? 0 : topFishNum);
-                bottomFishNum = (bottomFishNum == playerFishNumber ? 0 : bottomFishNum);
-
-                if (lastTopFishNum.HasValue && topFishNum != lastTopFishNum)
+                else
                 {
-                    SetFishTypeFromNumber(TopFishInstance, topFishNum);
-                    TopFishInstance.TournamentFishProgress = (float)Decimal.Divide(topFishScore.Value, GoalScore) * 100;
-                }
-                else if ((!lastTopFishScore.HasValue && topFishScore  > 0) || topFishScore != lastTopFishScore)
-                {
-                    JumpFishTo(TopFishInstance, (float)Decimal.Divide(topFishScore.Value, GoalScore)*100);
-                }
-                
-
-                if (lastBottomFishNum.HasValue && bottomFishNum != lastBottomFishNum)
-                {
-                    SetFishTypeFromNumber(BottomFishInstance, bottomFishNum);
-                    BottomFishInstance.TournamentFishProgress = (float)Decimal.Divide(bottomFishScore.Value, GoalScore) * 100;
-                }
-                else if ((!lastBottomFishScore.HasValue && bottomFishScore > 0) || bottomFishScore != lastBottomFishScore)
-                {
-                    JumpFishTo(BottomFishInstance, (float)Decimal.Divide(bottomFishScore.Value, GoalScore)*100);
-                }
-                
-                if ((!lastPlayerScore.HasValue && playerScore > 0) || playerScore != lastPlayerScore)
-                {
-                    JumpFishTo(PlayerFishInstance, (float)Decimal.Divide(playerScore, GoalScore)*100);
+                    int exceptNum = (lastBottomFishNum.HasValue ? lastBottomFishNum.Value : 0);
+                    var newFish = GetSuitableFish(playerInFirst, playerInLast, exceptNum);
+                    if (newFish.Item1 != -1)
+                    {
+                        topFishNum = newFish.Item1;
+                        topFishScore = newFish.Item2;
+                        topFishPlace = newFish.Item3;
+                        TopFishInstance.TournamentFishProgress = GetGoalProgress(topFishScore);
+                        SetFishPlaceFromNumber(TopFishInstance, topFishPlace);
+                        SetFishTypeFromNumber(TopFishInstance, topFishNum);
+                    }
                 }
 
-                var sortedScore = (int[])scoreArray.Clone();
-                Array.Sort<int>(sortedScore,
-                    new Comparison<int>(
-                            (i1, i2) => i2.CompareTo(i1)
-                    ));
+                //Check if bottom fish needs updating
+                if (lastBottomFishNum.HasValue)
+                {
+                    bottomFishNum = lastBottomFishNum.Value;
+                    bottomFishScore = scoreArray[bottomFishNum];
+                    bottomFishPlace = Array.IndexOf(sortedScore, bottomFishScore) + 1;
 
-                if (playerInFirst)
-                {
-                    PlayerPlace = 1;
+                    if (IsFishNearPlayerPlace(playerInFirst, playerInLast, bottomFishPlace))
+                    {
+                        //Bottom fish keeps its place, update if necessary
+                        if (bottomFishScore != lastBottomFishScore)
+                        {
+                            JumpFishTo(BottomFishInstance, GetGoalProgress(bottomFishScore));
+                        }
+                        if (bottomFishPlace != lastBottomFishPlace)
+                        {
+                            SetFishPlaceFromNumber(BottomFishInstance, bottomFishPlace);
+                        }
+                    }
+                    else //Choose a new fish for bottom
+                    {
+                        var newFish = GetSuitableFish(playerInFirst, playerInLast, topFishNum);
+                        if (newFish.Item1 != -1)
+                        {
+                            bottomFishNum = newFish.Item1;
+                            bottomFishScore = newFish.Item2;
+                            bottomFishPlace = newFish.Item3;
+                        }
+                    }
+                    if (bottomFishNum != lastBottomFishNum.Value)
+                    {
+                        if (scoreArray[lastBottomFishNum.Value] > scoreArray[bottomFishNum])
+                        {
+                            FishPassing(BottomFishInstance, bottomFishNum, bottomFishPlace, bottomFishScore);
+                        }
+                        else
+                        {
+                            FishPassedBy(BottomFishInstance, bottomFishNum, bottomFishPlace, bottomFishScore);
+                        }
+                    }
                 }
-                else if (playerInLast)
+                else //Choose a new fish for bottom
                 {
-                    PlayerPlace = 8;
+                    var newFish = GetSuitableFish(playerInFirst, playerInLast, topFishNum);
+                    if (newFish.Item1 != -1)
+                    {
+                        bottomFishNum = newFish.Item1;
+                        bottomFishScore = newFish.Item2;
+                        bottomFishPlace = newFish.Item3;
+                        BottomFishInstance.TournamentFishProgress = GetGoalProgress(bottomFishScore);
+                        SetFishPlaceFromNumber(BottomFishInstance, bottomFishPlace);
+                        SetFishTypeFromNumber(BottomFishInstance, bottomFishNum);
+                    }
+                }
+            }
+
+            //Handle tournamentplaceholder markers
+            if (!playerInFirst && topFishPlace != 1 && bottomFishPlace != 1)
+            {
+                SetPlaceHolder(PlaceHolder1, 1, GetGoalProgress(maxScore));
+            }
+            else if (playerInFirst || topFishPlace == 1 || bottomFishPlace == 1)
+            {
+                SetPlaceHolder(PlaceHolder1, score.Length, GetGoalProgress(minScore));
+            }
+            else
+            {
+                HidePlaceHolder(PlaceHolder1);
+            }
+            if (PlayerPlace > 3)
+            {
+                var placeToShow = PlayerPlace - 2;
+                var scoreForPlace = sortedScore[placeToShow - 1];
+                if (scoreForPlace > playerScore && scoreForPlace != topFishScore && scoreForPlace != bottomFishScore)
+                {
+                    SetPlaceHolder(PlaceHolder2, placeToShow, GetGoalProgress(scoreForPlace));
+                }
+            }
+            else
+            {
+                HidePlaceHolder(PlaceHolder2);
+            }
+            
+            if (topFishNum != -1)
+            {
+                lastTopFishNum = topFishNum;
+                lastTopFishScore = topFishScore;
+                lastTopFishPlace = topFishPlace;
+                TopFishInstance.Visible = true;
+            }
+            else
+            {
+                lastTopFishNum = lastTopFishScore = lastTopFishPlace = null;
+                TopFishInstance.Visible = false;
+            }
+            if (bottomFishNum != -1)
+            {
+                lastBottomFishNum = bottomFishNum;
+                lastBottomFishScore = bottomFishScore;
+                lastBottomFishPlace = bottomFishPlace;
+                BottomFishInstance.Visible = true;
+            }
+            else
+            {
+                lastBottomFishNum = lastBottomFishScore = lastBottomFishPlace = null;
+                BottomFishInstance.Visible = false;
+            }
+
+            lastPlayerScore = playerScore;
+            lastPlayerPlace = PlayerPlace;
+            PlayerScore = playerScore;
+        }
+
+        private bool IsFishNearPlayerPlace(bool playerInFirst, bool playerInLast, int fishPlace)
+        {
+            return ((fishPlace == PlayerPlace)
+                    ||
+                    (playerInFirst && fishPlace < 4) //Fish in top 3
+                    ||
+                    (playerInLast &&
+                        (fishPlace == PlayerPlace + 1 || //Second-to-last
+                        fishPlace == PlayerPlace + 2)) //Third-to-last
+                    ||
+                    (!playerInFirst && !playerInLast &&
+                        (fishPlace == PlayerPlace + 1 || //One place ahead of player
+                        fishPlace == PlayerPlace - 1))); //One place behind player
+        }
+
+        private Tuple<int, int, int> GetSuitableFish(bool playerInFirst, bool playerInLast, int exceptNum)
+        {
+            int fishScore = 0;
+            int fishNum = 0;
+            int fishPlace = 0;
+            if (playerInFirst)
+            {
+                int possibleScore = sortedScore[1];
+                int possibleFishNum = Array.IndexOf(score, possibleScore, 1);
+
+                if (exceptNum == possibleFishNum)
+                {
+                    fishScore = sortedScore[2];
+                    if (fishScore == possibleScore)
+                    {
+                        fishNum = Array.IndexOf(score, fishScore, exceptNum + 1);
+                    }
+                    else
+                    {
+                        fishNum = Array.IndexOf(score, fishScore, 1);
+                    }
                 }
                 else
                 {
-                    PlayerPlace = Array.IndexOf(sortedScore, playerScore) + 1;
+                    fishScore = possibleScore;
+                    fishNum = possibleFishNum;
                 }
-                var topFishPlace = Array.IndexOf(sortedScore, topFishScore) + 1;
-                var bottomFishPlace = Array.IndexOf(sortedScore, bottomFishScore) + 1;
-
-                if (!lastTopFishPlace.HasValue || topFishPlace != lastTopFishPlace)
-                {
-                    SetFishPlaceFromNumber(TopFishInstance, topFishPlace);
-                }
-                if (!lastPlayerPlace.HasValue || PlayerPlace != lastPlayerPlace)
-                {
-                    SetFishPlaceFromNumber(PlayerFishInstance, PlayerPlace);
-                }
-                if (!lastBottomFishPlace.HasValue || bottomFishPlace != lastBottomFishPlace)
-                {
-                    SetFishPlaceFromNumber(BottomFishInstance, bottomFishPlace);
-                }
-
-                lastTopFishNum = topFishNum;
-                lastBottomFishNum = bottomFishNum;
-
-                lastTopFishScore = topFishScore;
-                lastPlayerScore = PlayerScore;
-                lastBottomFishScore = bottomFishScore;
-
-                lastTopFishPlace = topFishPlace;
-                lastPlayerPlace = PlayerPlace;
-                lastBottomFishPlace = bottomFishPlace;
-
-                PlayerScore = playerScore;
             }
+            else if (playerInLast)
+            {
+                int possibleScore = sortedScore[sortedScore.Count() - 2];
+                int possibleFishNum = Array.IndexOf(score, possibleScore, 1);
+
+                if (exceptNum == possibleFishNum)
+                {
+                    fishScore = sortedScore[sortedScore.Count() - 3];
+                    if (fishScore == possibleScore)
+                    {
+                        fishNum = Array.IndexOf(score, fishScore, exceptNum + 1);
+                    }
+                    else
+                    {
+                        fishNum = Array.IndexOf(score, fishScore, 1);
+                    }
+                }
+                else
+                {
+                    fishScore = possibleScore;
+                    fishNum = possibleFishNum;
+                }
+            }
+            else
+            {
+                int possibleScore = sortedScore[PlayerPlace];
+                int possibleFishNum = Array.IndexOf(score, possibleScore, 1);
+
+                if (exceptNum == possibleFishNum)
+                {
+                    fishScore = sortedScore[PlayerPlace - 2];
+                    if (fishScore == possibleScore)
+                    {
+                        fishNum = Array.IndexOf(score, fishScore, exceptNum + 1);
+                    }
+                    else
+                    {
+                        fishNum = Array.IndexOf(score, fishScore, 1);
+                    }
+                }
+                else
+                {
+                    fishScore = possibleScore;
+                    fishNum = possibleFishNum;
+                }
+            }
+            fishPlace = Array.IndexOf(sortedScore, fishScore) + 1;
+
+            if (fishScore == 0)
+            {
+                fishNum = -1;
+            }
+
+            return new Tuple<int, int, int>(fishNum, fishScore, fishPlace);
+        }
+
+        private float GetGoalProgress(int score)
+        {
+            return (float)Decimal.Divide(score, goalScore) * 100;
+        }
+
+        private void FishPassedBy(TournamentFishRuntime fish, int newFishNum, int newFishPlace, int newFishScore)
+        {
+            fish.FishSwimAnimation.Stop();
+            fish.PassedOutAnimation.Play();
+            this.Call(() =>
+            {
+                SetFishTypeFromNumber(fish, newFishNum);
+                fish.TournamentFishProgress = GetGoalProgress(newFishScore);
+                SetFishPlaceFromNumber(fish, newFishPlace);
+                fish.PassedInAnimation.Play();
+                this.Call(fish.FishSwimAnimation.Play).After(fish.PassedInAnimation.Length);
+            }).After(fish.PassedOutAnimation.Length);
+        }
+
+        private void FishPassing(TournamentFishRuntime fish, int newFishNum, int newFishPlace, int newFishScore)
+        {
+            fish.FishSwimAnimation.Stop();
+            fish.PassingOutAnimation.Play();
+            this.Call(() =>
+            {
+                SetFishTypeFromNumber(fish, newFishNum);
+                fish.TournamentFishProgress = GetGoalProgress(newFishScore);
+                SetFishPlaceFromNumber(fish, newFishPlace);
+                fish.PassingInAnimation.Play();
+                this.Call(fish.FishSwimAnimation.Play).After(fish.PassingInAnimation.Length);
+            }).After(fish.PassingOutAnimation.Length);
         }
 
         private void JumpFishTo(TournamentFishRuntime fish, float newPosition)
@@ -274,6 +477,40 @@ namespace FishKing.GumRuntimes
             TopFishInstance.CurrentTournamentPlaceState = TournamentFishRuntime.TournamentPlace.None;
             PlayerFishInstance.CurrentTournamentPlaceState = TournamentFishRuntime.TournamentPlace.None;
             BottomFishInstance.CurrentTournamentPlaceState = TournamentFishRuntime.TournamentPlace.None;
+
+            HidePlaceHolder(PlaceHolder1);
+            HidePlaceHolder(PlaceHolder2);
+        }
+
+        private void SetPlaceHolder(TournamentPlaceHolderRuntime holder, int place, float progress)
+        {
+            TournamentPlaceHolderRuntime.Place placeState;
+            switch (place)
+            {
+                case 1: placeState = TournamentPlaceHolderRuntime.Place.First; break;
+                case 2: placeState = TournamentPlaceHolderRuntime.Place.Second; break;
+                case 3: placeState = TournamentPlaceHolderRuntime.Place.Third; break;
+                case 4: placeState = TournamentPlaceHolderRuntime.Place.Fourth; break;
+                case 5: placeState = TournamentPlaceHolderRuntime.Place.Fifth; break;
+                case 6: placeState = TournamentPlaceHolderRuntime.Place.Sixth; break;
+                case 7: placeState = TournamentPlaceHolderRuntime.Place.Seventh; break;
+                case 8: placeState = TournamentPlaceHolderRuntime.Place.Eighth; break;
+                default: placeState = TournamentPlaceHolderRuntime.Place.First; break;
+            }
+
+            holder.TournamentPlaceHolderProgress = progress;
+            holder.CurrentPlaceState = placeState;
+            holder.Visible = true;
+            if (!holder.PlacePulseAnimation.IsPlaying())
+            {
+                holder.PlacePulseAnimation.Play();
+            }
+        }
+
+        private void HidePlaceHolder(TournamentPlaceHolderRuntime holder)
+        {
+            holder.PlacePulseAnimation.Stop();
+            holder.Visible = false;
         }
 
         private void UpdateGoalScore()
@@ -301,6 +538,11 @@ namespace FishKing.GumRuntimes
 
         private void SetFishTypeFromNumber(TournamentFishRuntime fish, int fishNumber)
         {
+            if (fish != PlayerFishInstance && fishNumber == PlayerFishNumber)
+            {
+                fishNumber = 0;
+            }
+
             TournamentFishRuntime.FishType fishType;
             switch (fishNumber)
             {

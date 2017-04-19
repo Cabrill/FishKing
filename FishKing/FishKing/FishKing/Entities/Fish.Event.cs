@@ -10,6 +10,7 @@ using FishKing.Entities;
 using FishKing.Screens;
 using FlatRedBall.Math.Geometry;
 using System.Collections.Generic;
+using FishKing.UtilityClasses;
 
 namespace FishKing.Entities
 {
@@ -33,7 +34,7 @@ namespace FishKing.Entities
             SpriteInstance.LeftTexturePixel = textureCol * textureWidth;
             SpriteInstance.RightTexturePixel = (textureCol + 1) * textureWidth;
 
-            var randomSeed = FishGenerator.randomSeed;
+            var randomSeed = RandomNumbers.Random;
 
             double gramsPerMM = (double)decimal.Divide(fishType.MaxGrams, fishType.MaxMM);
 

@@ -335,6 +335,7 @@
     <Compile Include="GumRuntimes\subcomponent\TextBoxRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TextEntryBoxRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TournamentFishRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\subcomponent\TournamentPlaceHolderRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TrophyDisplayRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\TextRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\TournamentStatusRuntime.cs" />
@@ -407,6 +408,7 @@
     <Compile Include="TileGraphics\Tileset.cs" />
     <Compile Include="TileGraphics\TilesetExtensionMethods.cs" />
     <Compile Include="UtilityClasses\DistributedRandomGenerator.cs" />
+    <Compile Include="UtilityClasses\RandomNumbers.cs" />
     <Compile Include="UtilityClasses\TournamentScores.cs" />
   </ItemGroup>
   <ItemGroup>

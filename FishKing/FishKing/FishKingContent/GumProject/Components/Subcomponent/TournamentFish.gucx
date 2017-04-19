@@ -34,6 +34,16 @@
       <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
+      <Type>FishPassed</Type>
+      <Name>FishPassedState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>FishPassingState</Type>
+      <Name>FishPassingState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>FishTypeState</Type>
       <Name>FishTypeState</Name>
       <SetsValue>false</SetsValue>
@@ -54,7 +64,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Height</Name>
-      <Value xsi:type="xsd:float">80</Value>
+      <Value xsi:type="xsd:float">10</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -107,7 +117,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TournamentFishContainer.X</Name>
-      <Value xsi:type="xsd:float">100</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <ExposedAsName>TournamentFishProgress</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -747,6 +757,426 @@
       <Variable>
         <Type>float</Type>
         <Name>TournamentFishSprite.Y</Name>
+        <Value xsi:type="xsd:float">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
+  <Category>
+    <Name>FishPassed</Name>
+    <State>
+      <Name>Out1</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentFishSprite.Alpha</Name>
+        <Value xsi:type="xsd:int">200</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Height</Name>
+        <Value xsi:type="xsd:float">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Rotation</Name>
+        <Value xsi:type="xsd:float">5</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Width</Name>
+        <Value xsi:type="xsd:float">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.X</Name>
+        <Value xsi:type="xsd:float">-20</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Y</Name>
+        <Value xsi:type="xsd:float">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Out2</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentFishSprite.Alpha</Name>
+        <Value xsi:type="xsd:int">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Height</Name>
+        <Value xsi:type="xsd:float">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Rotation</Name>
+        <Value xsi:type="xsd:float">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Width</Name>
+        <Value xsi:type="xsd:float">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.X</Name>
+        <Value xsi:type="xsd:float">-50</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Y</Name>
+        <Value xsi:type="xsd:float">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Out3</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentFishSprite.Alpha</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Height</Name>
+        <Value xsi:type="xsd:float">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Rotation</Name>
+        <Value xsi:type="xsd:float">-5</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Width</Name>
+        <Value xsi:type="xsd:float">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.X</Name>
+        <Value xsi:type="xsd:float">-100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Y</Name>
+        <Value xsi:type="xsd:float">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>In1</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentFishSprite.Alpha</Name>
+        <Value xsi:type="xsd:int">50</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Height</Name>
+        <Value xsi:type="xsd:float">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Rotation</Name>
+        <Value xsi:type="xsd:float">-5</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Width</Name>
+        <Value xsi:type="xsd:float">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.X</Name>
+        <Value xsi:type="xsd:float">-100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Y</Name>
+        <Value xsi:type="xsd:float">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>In2</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentFishSprite.Alpha</Name>
+        <Value xsi:type="xsd:int">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Height</Name>
+        <Value xsi:type="xsd:float">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Rotation</Name>
+        <Value xsi:type="xsd:float">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Width</Name>
+        <Value xsi:type="xsd:float">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.X</Name>
+        <Value xsi:type="xsd:float">-50</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Y</Name>
+        <Value xsi:type="xsd:float">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>In3</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentFishSprite.Alpha</Name>
+        <Value xsi:type="xsd:int">200</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Height</Name>
+        <Value xsi:type="xsd:float">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Rotation</Name>
+        <Value xsi:type="xsd:float">5</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Width</Name>
+        <Value xsi:type="xsd:float">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.X</Name>
+        <Value xsi:type="xsd:float">-25</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>In4</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentFishSprite.Alpha</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Height</Name>
+        <Value xsi:type="xsd:float">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Rotation</Name>
+        <Value xsi:type="xsd:float">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Width</Name>
+        <Value xsi:type="xsd:float">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.X</Name>
+        <Value xsi:type="xsd:float">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Y</Name>
+        <Value xsi:type="xsd:float">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
+  <Category>
+    <Name>FishPassing</Name>
+    <State>
+      <Name>Out1</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentFishSprite.Alpha</Name>
+        <Value xsi:type="xsd:int">200</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Rotation</Name>
+        <Value xsi:type="xsd:float">5</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.X</Name>
+        <Value xsi:type="xsd:float">25</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Out2</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentFishSprite.Alpha</Name>
+        <Value xsi:type="xsd:int">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Rotation</Name>
+        <Value xsi:type="xsd:float">-5</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.X</Name>
+        <Value xsi:type="xsd:float">50</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Out3</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentFishSprite.Alpha</Name>
+        <Value xsi:type="xsd:int">50</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Rotation</Name>
+        <Value xsi:type="xsd:float">5</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.X</Name>
+        <Value xsi:type="xsd:float">50</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Out4</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentFishSprite.Alpha</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Rotation</Name>
+        <Value xsi:type="xsd:float">-5</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.X</Name>
+        <Value xsi:type="xsd:float">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>In1</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentFishSprite.Alpha</Name>
+        <Value xsi:type="xsd:int">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Rotation</Name>
+        <Value xsi:type="xsd:float">5</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.X</Name>
+        <Value xsi:type="xsd:float">90</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>In2</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentFishSprite.Alpha</Name>
+        <Value xsi:type="xsd:int">200</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Rotation</Name>
+        <Value xsi:type="xsd:float">-5</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.X</Name>
+        <Value xsi:type="xsd:float">50</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>In3</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentFishSprite.Alpha</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.Rotation</Name>
+        <Value xsi:type="xsd:float">5</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TournamentFishSprite.X</Name>
         <Value xsi:type="xsd:float">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>

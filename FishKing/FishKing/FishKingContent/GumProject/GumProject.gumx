@@ -100,6 +100,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>subcomponent\TournamentPlaceHolder</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>subcomponent\TrophyDisplay</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>

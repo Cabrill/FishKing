@@ -177,6 +177,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TournamentFish</Name>
     </None>
+    <None Include="GumProject\Components\subcomponent\TournamentPlaceHolder.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TournamentPlaceHolder</Name>
+    </None>
     <None Include="GumProject\Components\subcomponent\TrophyDisplay.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TrophyDisplay</Name>

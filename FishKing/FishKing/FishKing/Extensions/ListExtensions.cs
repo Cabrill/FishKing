@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FishKing.UtilityClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -10,12 +11,12 @@ namespace FishKing.Extensions
     {
         static T RandomElement<T>(this IEnumerable<T> enumerable)
         {
-            return enumerable.RandomElementUsing<T>(FishGenerator.randomSeed);
+            return enumerable.RandomElementUsing<T>();
         }
 
-        static T RandomElementUsing<T>(this IEnumerable<T> enumerable, Random rand)
+        static T RandomElementUsing<T>(this IEnumerable<T> enumerable)
         {
-            int index = rand.Next(0, enumerable.Count());
+            int index = RandomNumbers.Random.Next(0, enumerable.Count());
             return enumerable.ElementAt(index);
         }
     }

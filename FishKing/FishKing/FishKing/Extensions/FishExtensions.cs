@@ -23,7 +23,7 @@ namespace FishKing.Extensions
                 ftdrng.AddValue(ftt.Item1, (double)Decimal.Divide(ftt.Item2, probabilitySum));
             }
 
-            fishType = (Fish_Types)ftdrng.GetDistributedRandomValue(FishGenerator.randomSeed.NextDouble());
+            fishType = (Fish_Types)ftdrng.GetDistributedRandomValue(RandomNumbers.Random.NextDouble());
             return fishType;
         }
     }
