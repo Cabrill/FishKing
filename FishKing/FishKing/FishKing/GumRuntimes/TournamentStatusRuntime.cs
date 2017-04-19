@@ -292,11 +292,11 @@ namespace FishKing.GumRuntimes
             var lastNonZero = sortedScore.Where(s => s > 0);
             if (lastNonZero.Count() > 0)
             {
-                nonZeroPlace1 = Array.IndexOf(score, lastNonZero.Last());
+                nonZeroPlace1 = Array.IndexOf(sortedScore, lastNonZero.Last())+1;
             }
             if (lastNonZero.Count() > 1)
             {
-                nonZeroPlace2 = Array.IndexOf(score, lastNonZero.ElementAt(lastNonZero.Count() - 2));
+                nonZeroPlace2 = Array.IndexOf(sortedScore, lastNonZero.ElementAt(lastNonZero.Count() - 2))+1;
             }
 
             return ((fishPlace == PlayerPlace)
