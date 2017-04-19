@@ -54,6 +54,7 @@ namespace FishKing.Entities
         public I2DInput MovementInput { get; set; }
         public IPressableInput FishingAlignmentInput { get; set; }
         public IPressableInput ActionInput { get; set; }
+        public IPressableInput ReelingInput { get; set; }
 
         private bool isMovingToTile = false;
         public bool IsMoving { get { return SpriteInstance.CurrentChainName.Substring(0, 4) == "Walk"; } }
@@ -67,6 +68,7 @@ namespace FishKing.Entities
 
         public bool IsHoldingAction { get; private set; }
         public bool IsHoldingAlignButton { get; private set; }
+        public bool IsHoldingReelButton { get; private set; }
 
         private int WindUpAnimationFrame { get { return (DirectionFacing == Direction.Left || DirectionFacing == Direction.Right) ? 2 : 3; } }
         public bool IsOnFinalFrameOfAnimationChain { get { return SpriteInstance.CurrentFrameIndex == SpriteInstance.CurrentChain.Count - 1; } }
@@ -153,6 +155,7 @@ namespace FishKing.Entities
                 ResetFishingStatus();
             }
             IsHoldingAlignButton = FishingAlignmentInput != null && FishingAlignmentInput.IsDown;
+            IsHoldingReelButton = ReelingInput != null && ReelingInput.IsDown;
         }
 
 
@@ -513,19 +516,30 @@ namespace FishKing.Entities
 
             if (MovementInput != null)
             {
-                if (MovementInput.X < 0)
+                var x = MovementInput.X;
+                var y = MovementInput.Y;
+                if (Math.Abs(x) > Math.Abs(y))
+                {
+                    y = 0;
+                }
+                else if (Math.Abs(x) < Math.Abs(y))
+                {
+                    x = 0;
+                }
+
+                if (x < 0)
                 {
                     desiredDirection = Direction.Left;
                 }
-                else if (MovementInput.X > 0)
+                else if (x > 0)
                 {
                     desiredDirection = Direction.Right;
                 }
-                else if (MovementInput.Y < 0)
+                else if (y < 0)
                 {
                     desiredDirection = Direction.Down;
                 }
-                else if (MovementInput.Y > 0)
+                else if (y > 0)
                 {
                     desiredDirection = Direction.Up;
                 }

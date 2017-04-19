@@ -67,8 +67,15 @@ namespace FishKing.Screens
             if (TournamentScore == null)
             {
                 TournamentScore = new TournamentScores();
+                TournamentStatusInstance.Reset();
                 TournamentStatusInstance.GoalScore = 200;
                 TournamentStatusInstance.PlayerFishNumber = 4;
+            }
+            else
+            {
+                TournamentStatusInstance.GoalScore = 200;
+                TournamentStatusInstance.PlayerFishNumber = 4;
+                TournamentStatusInstance.ResumeExistingTournament(TournamentScore.Scores);
             }
         }
 
@@ -152,11 +159,31 @@ namespace FishKing.Screens
 
             this.CharacterInstance.ReactToReposition();
 
-            this.CharacterInstance.MovementInput = InputManager.Keyboard.Get2DInput(
-                Keys.A, Keys.D, Keys.W, Keys.S);
+            var gamePad = InputManager.Xbox360GamePads[0];
 
-            this.CharacterInstance.ActionInput = InputManager.Keyboard.GetKey(Keys.Space);
-            this.CharacterInstance.FishingAlignmentInput = InputManager.Mouse.GetButton(Mouse.MouseButtons.LeftButton);
+            var movementInputs = new Multiple2DInputs();
+            movementInputs.Inputs.Add(InputManager.Keyboard.Get2DInput(
+                Keys.A, Keys.D, Keys.W, Keys.S));
+            movementInputs.Inputs.Add(gamePad.DPad);
+            movementInputs.Inputs.Add(gamePad.LeftStick);
+
+            var actionInputs = new MultiplePressableInputs();
+            actionInputs.Inputs.Add(InputManager.Keyboard.GetKey(Keys.Space));
+            actionInputs.Inputs.Add(InputManager.Xbox360GamePads[0].GetButton(Xbox360GamePad.Button.A));
+
+            var alignmentInputs = new MultiplePressableInputs();
+            alignmentInputs.Inputs.Add(InputManager.Mouse.GetButton(Mouse.MouseButtons.LeftButton));
+            alignmentInputs.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.RightTrigger));
+
+            var reelingInputs = new MultiplePressableInputs();
+            reelingInputs.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.LeftTrigger));
+            reelingInputs.Inputs.Add(InputManager.Keyboard.GetKey(Keys.LeftShift));
+            reelingInputs.Inputs.Add(InputManager.Keyboard.GetKey(Keys.RightShift));
+
+            this.CharacterInstance.MovementInput = movementInputs;
+            this.CharacterInstance.ActionInput = actionInputs;
+            this.CharacterInstance.FishingAlignmentInput = alignmentInputs;
+            this.CharacterInstance.ReelingInput = reelingInputs;
 
             var overlayLayer = CurrentTileMap.MapLayers.FindByName("Overlay");
             if (overlayLayer != null)
@@ -377,7 +404,7 @@ namespace FishKing.Screens
                                 {
                                     FishCatchingInterfaceInstance.RaiseAlignmentBar();
                                 }
-                                if (CharacterInstance.IsHoldingAction)
+                                if (CharacterInstance.IsHoldingReelButton)
                                 {
                                     FishCatchingInterfaceInstance.SpinReel();
                                 }
