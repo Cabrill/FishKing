@@ -493,6 +493,21 @@
       <Processor>SoundEffectProcessor</Processor>
       <Name>WaterfallAmbient</Name>
     </Compile>
+    <Compile Include="Screens\GameScreen\Audio\Audionautix_AcousticGuitar1.mp3">
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Name>Audionautix_AcousticGuitar1</Name>
+    </Compile>
+    <Compile Include="Screens\GameScreen\Audio\Audionautix_OneFineDay.mp3">
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Name>Audionautix_OneFineDay</Name>
+    </Compile>
+    <Compile Include="Screens\GameScreen\Audio\Audionautix_Serenity.mp3">
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Name>Audionautix_Serenity</Name>
+    </Compile>
     <Compile Include="Screens\GameScreen\Audio\FishCaught.wav">
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>

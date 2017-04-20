@@ -343,6 +343,7 @@
       <DependentUpon>TournamentStatusRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\UnknownFishRuntime.Generated.cs" />
+    <Compile Include="MusicManager.cs" />
     <Compile Include="OcularPlaneRuntime\OcularPlaneManager.cs" />
     <Compile Include="Performance\IEntityFactory.Generated.cs" />
     <Compile Include="Performance\PoolList.Generated.cs" />

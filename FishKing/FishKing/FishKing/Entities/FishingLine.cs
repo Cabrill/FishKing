@@ -18,7 +18,7 @@ namespace FishKing.Entities
 	public partial class FishingLine
 	{
         Tweener lineTweener;
-        private const double optimalTime = 0.1;
+        private double optimalTime;
         private double lastLineTime = 0;
         private bool isReelingIn;
         private bool lineIsSettling;
@@ -59,12 +59,7 @@ namespace FishKing.Entities
                     if (FishingLineLinesList.Count > 0)
                     {
                         FishingLineLinesList[0].SetFromAbsoluteEndpoints(new Point3D(originationVector), FishingLineLinesList[0].AbsolutePoint2);
-                        if (!LineIsSettling)
-                        {
-                            //ReactToNewOrigination(priorOrigination);
-                        }
                     }
-                    
                 }
             }
         }
@@ -117,6 +112,7 @@ namespace FishKing.Entities
 
         public void UpdateLineFromBobberCast(Vector3 bobberPosition, bool isFinalUpdate = false)
         {
+            optimalTime = (DirectionCast == Direction.Down ? 0.1 : 0.06);
             DestinationVector = bobberPosition;
             var currentTime = FlatRedBall.TimeManager.CurrentTime;
             var lastLine = FishingLineLinesList.Last;
@@ -260,11 +256,6 @@ namespace FishKing.Entities
             TweenerManager.Self.Add(lineTweener);
         }
 
-        public void UpdateLineFromFishReelIn()
-        {
-            //TweenerManager.Self.StopAllTweenersOwnedBy(this);
-        }
-        
         private void SettleHorizontalFishingLine()
         {
             var totalX = FishingLineLinesList[0].AbsolutePoint1.X - FishingLineLinesList.Last.AbsolutePoint2.X;
@@ -412,7 +403,7 @@ namespace FishKing.Entities
 
         private void ReactToNewDestination(Vector3 priorDestination)
         {
-            TweenerManager.Self.StopAllTweenersOwnedBy(this);
+            //TweenerManager.Self.StopAllTweenersOwnedBy(this);
 
             var changeVector = (DestinationVector - priorDestination);
             Vector3 incrementVector;

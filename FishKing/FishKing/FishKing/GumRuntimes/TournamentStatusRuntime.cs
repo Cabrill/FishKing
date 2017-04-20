@@ -229,19 +229,21 @@ namespace FishKing.GumRuntimes
             }
 
             //Handle tournamentplaceholder markers
-            if (!playerInFirst && topFishPlace != 1 && bottomFishPlace != 1)
+            var maxPossiblePlace = score.Where(s => s >= goalScore).Count() + 1;
+            if (!playerInFirst && topFishPlace != maxPossiblePlace && bottomFishPlace != maxPossiblePlace)
             {
-                SetPlaceHolder(PlaceHolder1, 1, GetGoalProgress(maxScore));
+                SetPlaceHolder(PlaceHolder1, maxPossiblePlace, GetGoalProgress(sortedScore[maxPossiblePlace - 1]));
             }
-            else if (playerInFirst || topFishPlace == 1 || bottomFishPlace == 1)
+            else if (playerInFirst)
             {
-                SetPlaceHolder(PlaceHolder1, score.Length, GetGoalProgress(minScore));
+                var placeToShow = Math.Max(topFishPlace, bottomFishPlace) + 1;
+                SetPlaceHolder(PlaceHolder1, placeToShow, GetGoalProgress(sortedScore[placeToShow - 1]));
             }
             else
             {
                 HidePlaceHolder(PlaceHolder1);
             }
-            if (PlayerPlace > 3)
+            if (PlayerPlace > maxPossiblePlace + 2)
             {
                 var placeToShow = PlayerPlace - 2;
                 var scoreForPlace = sortedScore[placeToShow - 1];
@@ -283,6 +285,8 @@ namespace FishKing.GumRuntimes
             lastPlayerScore = playerScore;
             lastPlayerPlace = PlayerPlace;
             PlayerScore = playerScore;
+
+            SetGoalStatusByPlace(maxPossiblePlace);
         }
 
         private bool IsFishNearPlayerPlace(bool playerInFirst, bool playerInLast, int fishPlace)
@@ -403,6 +407,24 @@ namespace FishKing.GumRuntimes
             }
 
             return new Tuple<int, int, int>(fishNum, fishScore, fishPlace);
+        }
+
+        private void SetGoalStatusByPlace(int placePossible)
+        {
+            TrophyDisplayRuntime.TrophyPlace goalPlace;
+            switch (placePossible)
+            {
+                case 1: goalPlace = TrophyDisplayRuntime.TrophyPlace.FirstPlace; break;
+                case 2: goalPlace = TrophyDisplayRuntime.TrophyPlace.SecondPlace; break;
+                case 3: goalPlace = TrophyDisplayRuntime.TrophyPlace.ThirdPlace; break;
+                case 4: goalPlace = TrophyDisplayRuntime.TrophyPlace.FourthPlace; break;
+                case 5: goalPlace = TrophyDisplayRuntime.TrophyPlace.FifthPlace; break;
+                case 6: goalPlace = TrophyDisplayRuntime.TrophyPlace.SixthPlace; break;
+                case 7: goalPlace = TrophyDisplayRuntime.TrophyPlace.SeventhPlace; break;
+                case 8: goalPlace = TrophyDisplayRuntime.TrophyPlace.EighthPlace; break;
+                default: goalPlace = TrophyDisplayRuntime.TrophyPlace.FirstPlace; break;
+            }
+            TrophyDisplayInstance.CurrentTrophyPlaceState = goalPlace;
         }
 
         private float GetGoalProgress(int score)

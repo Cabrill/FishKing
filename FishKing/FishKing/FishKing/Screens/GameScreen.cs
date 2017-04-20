@@ -26,6 +26,7 @@ using FishKing.Enums;
 using static FishKing.Enums.WaterTypes;
 using Microsoft.Xna.Framework.Audio;
 using FishKing.UtilityClasses;
+using Microsoft.Xna.Framework.Media;
 
 #if FRB_XNA || SILVERLIGHT
 using Keys = Microsoft.Xna.Framework.Input.Keys;
@@ -57,6 +58,14 @@ namespace FishKing.Screens
 
 		void CustomInitialize()
         {
+            if (!MusicManager.PlayingSong)
+            {
+                List<Song> playList = new List<Song>() { Audionautix_AcousticGuitar1, Audionautix_OneFineDay, Audionautix_Serenity };
+                MusicManager.PlayList = playList;
+                MusicManager.Volume = 0.15f;
+                MusicManager.PlaySong();
+            }
+            
             TournamentStatusInstance.gameScreen = this;
             LoadLevel(levelToLoad);
             
@@ -67,6 +76,7 @@ namespace FishKing.Screens
             if (TournamentScore == null)
             {
                 TournamentScore = new TournamentScores();
+                TournamentScore.GoalScore = 200;
                 TournamentStatusInstance.Reset();
                 TournamentStatusInstance.GoalScore = 200;
                 TournamentStatusInstance.PlayerFishNumber = 4;
@@ -260,6 +270,7 @@ namespace FishKing.Screens
                 TournamentStatusInstance.UpdateFishPlaceMarkers(TournamentScore.Scores);
                 TournamentScore.MarkScoreReviewed();
             }
+            MusicManager.Update();
         }
 
         private void UpdateCamera()

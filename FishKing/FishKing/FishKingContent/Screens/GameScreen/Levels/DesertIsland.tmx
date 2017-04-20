@@ -51,10 +51,6 @@
     <frame tileid="9" duration="200"/>
     <frame tileid="12" duration="200"/>
     <frame tileid="15" duration="200"/>
-    <frame tileid="454" duration="200"/>
-    <frame tileid="457" duration="200"/>
-    <frame tileid="460" duration="200"/>
-    <frame tileid="463" duration="200"/>
    </animation>
   </tile>
   <tile id="26">
@@ -63,10 +59,6 @@
     <frame tileid="10" duration="200"/>
     <frame tileid="13" duration="200"/>
     <frame tileid="16" duration="200"/>
-    <frame tileid="455" duration="200"/>
-    <frame tileid="458" duration="200"/>
-    <frame tileid="461" duration="200"/>
-    <frame tileid="464" duration="200"/>
    </animation>
   </tile>
   <tile id="27">
@@ -75,10 +67,6 @@
     <frame tileid="11" duration="200"/>
     <frame tileid="14" duration="200"/>
     <frame tileid="17" duration="200"/>
-    <frame tileid="456" duration="200"/>
-    <frame tileid="459" duration="200"/>
-    <frame tileid="462" duration="200"/>
-    <frame tileid="465" duration="200"/>
    </animation>
   </tile>
   <tile id="69">
@@ -113,10 +101,6 @@
     <frame tileid="73" duration="200"/>
     <frame tileid="76" duration="200"/>
     <frame tileid="79" duration="200"/>
-    <frame tileid="518" duration="200"/>
-    <frame tileid="521" duration="200"/>
-    <frame tileid="524" duration="200"/>
-    <frame tileid="527" duration="200"/>
    </animation>
   </tile>
   <tile id="90">
@@ -125,10 +109,6 @@
     <frame tileid="74" duration="200"/>
     <frame tileid="77" duration="200"/>
     <frame tileid="80" duration="200"/>
-    <frame tileid="519" duration="200"/>
-    <frame tileid="522" duration="200"/>
-    <frame tileid="525" duration="200"/>
-    <frame tileid="528" duration="200"/>
    </animation>
   </tile>
   <tile id="91">
@@ -137,10 +117,6 @@
     <frame tileid="75" duration="200"/>
     <frame tileid="78" duration="200"/>
     <frame tileid="81" duration="200"/>
-    <frame tileid="520" duration="200"/>
-    <frame tileid="523" duration="200"/>
-    <frame tileid="526" duration="200"/>
-    <frame tileid="529" duration="200"/>
    </animation>
   </tile>
   <tile id="133">
@@ -162,10 +138,6 @@
     <frame tileid="137" duration="200"/>
     <frame tileid="140" duration="200"/>
     <frame tileid="143" duration="200"/>
-    <frame tileid="582" duration="200"/>
-    <frame tileid="585" duration="200"/>
-    <frame tileid="588" duration="200"/>
-    <frame tileid="591" duration="200"/>
    </animation>
   </tile>
   <tile id="154">
@@ -174,10 +146,6 @@
     <frame tileid="138" duration="200"/>
     <frame tileid="141" duration="200"/>
     <frame tileid="144" duration="200"/>
-    <frame tileid="583" duration="200"/>
-    <frame tileid="586" duration="200"/>
-    <frame tileid="589" duration="200"/>
-    <frame tileid="592" duration="200"/>
    </animation>
   </tile>
   <tile id="155">
@@ -186,10 +154,6 @@
     <frame tileid="139" duration="200"/>
     <frame tileid="142" duration="200"/>
     <frame tileid="145" duration="200"/>
-    <frame tileid="584" duration="200"/>
-    <frame tileid="587" duration="200"/>
-    <frame tileid="590" duration="200"/>
-    <frame tileid="593" duration="200"/>
    </animation>
   </tile>
   <tile id="197">
@@ -207,10 +171,6 @@
   </tile>
   <tile id="217">
    <animation>
-    <frame tileid="198" duration="200"/>
-    <frame tileid="201" duration="200"/>
-    <frame tileid="204" duration="200"/>
-    <frame tileid="207" duration="200"/>
     <frame tileid="582" duration="200"/>
     <frame tileid="585" duration="200"/>
     <frame tileid="588" duration="200"/>
@@ -219,10 +179,6 @@
   </tile>
   <tile id="218">
    <animation>
-    <frame tileid="199" duration="200"/>
-    <frame tileid="202" duration="200"/>
-    <frame tileid="205" duration="200"/>
-    <frame tileid="208" duration="200"/>
     <frame tileid="583" duration="200"/>
     <frame tileid="586" duration="200"/>
     <frame tileid="589" duration="200"/>
@@ -231,10 +187,6 @@
   </tile>
   <tile id="219">
    <animation>
-    <frame tileid="200" duration="200"/>
-    <frame tileid="203" duration="200"/>
-    <frame tileid="206" duration="200"/>
-    <frame tileid="209" duration="200"/>
     <frame tileid="584" duration="200"/>
     <frame tileid="587" duration="200"/>
     <frame tileid="590" duration="200"/>
@@ -263,10 +215,6 @@
     <frame tileid="265" duration="200"/>
     <frame tileid="268" duration="200"/>
     <frame tileid="271" duration="200"/>
-    <frame tileid="646" duration="200"/>
-    <frame tileid="649" duration="200"/>
-    <frame tileid="652" duration="200"/>
-    <frame tileid="655" duration="200"/>
    </animation>
   </tile>
   <tile id="282">
@@ -274,10 +222,6 @@
     <property name="IsWaterfall" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="263" duration="200"/>
-    <frame tileid="266" duration="200"/>
-    <frame tileid="269" duration="200"/>
-    <frame tileid="272" duration="200"/>
     <frame tileid="647" duration="200"/>
     <frame tileid="650" duration="200"/>
     <frame tileid="653" duration="200"/>
@@ -289,10 +233,6 @@
     <property name="IsWaterfall" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="264" duration="200"/>
-    <frame tileid="267" duration="200"/>
-    <frame tileid="270" duration="200"/>
-    <frame tileid="273" duration="200"/>
     <frame tileid="648" duration="200"/>
     <frame tileid="651" duration="200"/>
     <frame tileid="654" duration="200"/>
@@ -333,10 +273,6 @@
     <property name="IsWaterfall" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="326" duration="200"/>
-    <frame tileid="329" duration="200"/>
-    <frame tileid="332" duration="200"/>
-    <frame tileid="335" duration="200"/>
     <frame tileid="710" duration="200"/>
     <frame tileid="713" duration="200"/>
     <frame tileid="716" duration="200"/>
@@ -348,10 +284,6 @@
     <property name="IsWaterfall" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="327" duration="200"/>
-    <frame tileid="330" duration="200"/>
-    <frame tileid="333" duration="200"/>
-    <frame tileid="336" duration="200"/>
     <frame tileid="711" duration="200"/>
     <frame tileid="714" duration="200"/>
     <frame tileid="717" duration="200"/>
@@ -363,10 +295,6 @@
     <property name="IsWaterfall" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="328" duration="200"/>
-    <frame tileid="331" duration="200"/>
-    <frame tileid="334" duration="200"/>
-    <frame tileid="337" duration="200"/>
     <frame tileid="712" duration="200"/>
     <frame tileid="715" duration="200"/>
     <frame tileid="718" duration="200"/>
@@ -1466,12 +1394,12 @@
    <property name="IsWater" type="bool" value="true"/>
   </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC93Wy3GDMBAGYBmC7HsuyTFJLzSQiyqiBk4phxooJ9IgzLLs6k3QRDP/jO2B9Qd69ncheiovIrl9dEJ86nx1cfcN+vr+gXKCL6cdjJQt8rnPNA4oV9tM61ttuS8p3a/vRP6bT3abb8LJ7F91E2LWGW/b51ibfGwpPXeVtUFjqu0s3wyMoT7KdoZvbo7xNTgfcChf6hiU+t5vsc+rTUlfyjs0aym2QZ/PSO5thfY3zra2LGOmz2cz7afZ8mYzMuMSGw/rX+Q66LOtFmVdyn6H2T0vGousL9Bo5gQMbgr4YIr4rHHSfS1lmm9s9saxOf7m8rHjL/C8NbX7cO+Pigp4f/h8FXvemnT9Xi4ZmDHP+ULeX45Ntsu+NEkbc+5wzHvcz9gW4wu1mT3y6Stw/gnxxdigr8T+vdZ1zg9HfWwr6cN1Y32U7dC/iX0cc76i6nttGUbORvnwurwmyEYYYQ0qLhv0kXuH/T/qPtaGjZ7rXLbVx+5tTA2vDRozfc69l6gRbItIKd8ZNp8xxPdXqd1HjvXKfNhYow8aa7RBY622Z2q2Yd/VFpfvaofLd7XBkV8xw3p2ABkAAA==
+   H4sIAAAAAAAAC93Wy42DMBAGYAcWJ/dcNg3RwF5cETVw2nKogXJiCxOGYcZvFmst/VISJeaLX+P+LkRP5UsktxdITBs6/dwHygm+nHYwUrbuGhtlHFCutpnWt9pyX1J6Xl9E/ptPdptvwsmcX3UTYtYZb9vrWJt8bCm9d5W1QWOq7SzfDIyhPsp2hm9ujvE1uB9wKF/qGpT6tz9in6dNSV/KGJqzFNugz2cka1uh+sbZ1pZlzPT5bKb9Nlu+bUZmXWLj4fyLPAd9ttWirEvZ9zC7/4vWIusLNJo9AYObAj6YIj5rnPRcS5nmG5u9cWyOn7l87PoLvG9N7T7c+FFRAeOH71ex961J99/LJQOz5jlfyPjl2GS71KVJ2ph7h2Pf43nGthhfqM3UyI+vwP0nxBdjg74S9Xvt17k/HP1jW0kf7jfWR9kO85s4xzH3K6p/ry3DyNkoHz6X1wTZCCPsg4rLBn1k7bDPo37H2rDR8z2XbfWxtY3pw2uDxkyfs/YSfQTbIlLKd4bNZwzx/VVq95FrvTIfNtbog8YabdBYq+2Tmm3Yd7XF5bva4fJdbXDkDdIpSfoAGQAA
   </data>
  </layer>
  <layer name="Ground" width="40" height="40">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2WS1LbQBCGlXikMidIhbChSLCo5Bw+Q4BsAkQJF/EVIipLCoMv4kOksskDYyo5RP6umcbtphHSDEv9VX9JsufxTU/PI8va6WiYZQuXZRd4ng+bn1L6P+lqaPfVVuNnafW7aEL9PW9fvkDZCfi2N+L6+4vY/GsZnxH6+DFoz8hs31GnzD3jMXzSwW/hd4+U+bTh2aiPfecZxy3GQ/P6fuC9i3ojuHTr73vhW//2E/4l/FuU4ecCPDfwboFvuITP8PsH152vQp3P8Be3euf2l/mKi/4/hbfz9bZ28lU9ekomzYbXbN5ificoU4Bx0xjzUo2buZjT4qM2qCyVGeV+Pit4mndnkzHcFDGTTEt8T+FL+AqeBbam+F3xuMRYYtkkn+SQMaS98MZ51tvANnuAbxrGKXOFym9FsjHfAerXMr9FDG8V7yxwWnyLME4d862W68GSlYOl6GNq8NLa/eNWbbwB2+vcr+GFux/zFD6SzMG7dRL60H1ZbMfwR8Go9yLi63puWHycP5w71p5nsZXBklHmH+/JsYwyBy9F7ki+x9jIXObare/be4mMnIPEeBhcyz1HrYc7ttC3ZNO6FpxdzjaLcZ55F2rPqRQfrVU5f5rfEtXhXExZK6SxiuWhapP+r8X+ofkf4jt9Aj6+07zAPLyEXzlvzcf8dYgzr40mvtS9ULIdwPuBrzDKyjwow9lGjEcGJ+drSvw02zf4bNB8LllnTyk42cSWcpbEsJHk2aPP3MrdP+e63P1S2VjW/WLWwBZzv4pl4/o8x2VuO/V+9RVMdQQbydrbtWPZuH3el+dP1YblyLtBr169evXq1atXrzj9B+M5sfgAGQAA
+   H4sIAAAAAAAAC+2WS3LTQBCGBR6pnBNQhGxShFgpOIfPQBI2JESQi/gKKMWSwokv4kNQbHjEcQoOwd8103Gn3VakUZbzV/0lyZ7HNz09jyxrp5Nhli1cln3D8+uw+bmb+zov8/X/pKthy843aPykX/0umlB/T9uXL1B2Ar7drbj+/iI2/1rGZ4Q+fgzaMzLbd9Qpc894Cn/o4NfwmwfKnG15Nurj0HnGcYvx0Ly+HXjvo94ILt3994PwrX/7Cf8S/i3K8HMBnht4v8A3XMIX+P2d685Xoc5H+JNbvXP7y3zFRf+fu9XaYNEa4Xr0lEyaDa/ZvMX8TlCmAOO2MealGjdzMafFR21QWSozyv18VvA0784mY7gtYiaZlviewpfwFTwLbE3xu+JxibHEskk+ySFjSHvhjfOst4FttoFvGsYpc4XK70SyMd8R6tcyv0UMbxXvLHBafIswTh3znZbrwZKVg6XoY2rw0tr941ZtvALbXu7X8MKtx7wPH0nm4N06CX3oviy2U/i9YNR7EfF1PTcsPs4fzh1rz7PYymDJKPOP9+RYRpmDlyJ3JN9DbGQuc+3u79sHPRk5B4nxOLiWe45aD3dsoW/JpnUtOLucbRbjPPMu1J5TKT5aq3L+NL8lqsO52GetkMYqlseqTfq/FvuH5t/Ed/4IfHyneYZ5eA6/cN6aj/nrEGdeG018ffdCyXYEHwa+wigr86AMZxsxnhicnK994qfZvsAXg+ZzyTp7SsHJJrY+Z0kMG0mePfrMrdz6Odfl7teXjWXdL2YNbDH3q1g2rs9zXOa2+96vPoOpjmAjWXu7diwbt8/78vyx2rAceTdISkpKSkpKSkqK039Ou9n4ABkAAA==
   </data>
  </layer>
  <layer name="Bridge" width="40" height="40">
@@ -1515,7 +1443,7 @@
     <property name="Name" value="CaveExit"/>
    </properties>
   </object>
-  <object id="41" gid="1799" x="260" y="224" width="32" height="32">
+  <object id="41" gid="1799" x="256" y="224" width="32" height="32">
    <properties>
     <property name="EntityToCreate" value="StartPoint"/>
     <property name="Name" value="BoatExit"/>

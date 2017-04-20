@@ -323,7 +323,6 @@ namespace FishKing.Entities
                     {
                         FishingLineInstance.DestinationVector = FishOnTheLine.MouthPosition;
                     }
-                    FishingLineInstance.UpdateLineFromFishReelIn();
                 }
             }
 
