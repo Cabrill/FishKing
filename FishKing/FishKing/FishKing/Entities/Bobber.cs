@@ -61,6 +61,7 @@ namespace FishKing.Entities
             IsMoving = false;
             ShadowInstance.SpriteInstanceWidth = this.BobberSpriteInstance.Width * 0.9f;
             ShadowInstance.SpriteInstanceAlpha = 0.5f;
+            originalTextureScale = this.BobberSpriteInstance.TextureScale;
         }
 
         /// <summary>
@@ -122,7 +123,6 @@ namespace FishKing.Entities
         public void TraverseTo(Vector3 relativeDestination, int tileSize)
         {
             IsMoving = true;
-            originalTextureScale = BobberSpriteInstance.TextureScale;
             CurrentState = VariableState.OutOfWater;
             this.RelativePosition = Vector3.Zero;
             ShadowInstance.RelativeZ = -0.5f;

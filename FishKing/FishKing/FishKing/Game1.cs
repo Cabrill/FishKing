@@ -82,7 +82,12 @@ namespace FishKing
         protected override void Update(GameTime gameTime)
         {
             FlatRedBallServices.Update(gameTime);
-
+#if DEBUG
+            if (Entities.DebuggingVariables.ShowFrbProfiler)
+            {
+                FlatRedBall.Debugging.Debugger.WriteAutomaticallyUpdatedObjectInformation();
+            }
+#endif
             FlatRedBall.Screens.ScreenManager.Activity();
 
             base.Update(gameTime);
