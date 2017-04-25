@@ -27,6 +27,7 @@ using static FishKing.Enums.WaterTypes;
 using Microsoft.Xna.Framework.Audio;
 using FishKing.UtilityClasses;
 using Microsoft.Xna.Framework.Media;
+using FlatRedBall.Math;
 
 #if FRB_XNA || SILVERLIGHT
 using Keys = Microsoft.Xna.Framework.Input.Keys;
@@ -174,21 +175,33 @@ namespace FishKing.Screens
             var movementInputs = new Multiple2DInputs();
             movementInputs.Inputs.Add(InputManager.Keyboard.Get2DInput(
                 Keys.A, Keys.D, Keys.W, Keys.S));
-            movementInputs.Inputs.Add(gamePad.DPad);
-            movementInputs.Inputs.Add(gamePad.LeftStick);
+            if (InputManager.NumberOfConnectedGamePads > 0)
+            {
+                movementInputs.Inputs.Add(gamePad.DPad);
+                movementInputs.Inputs.Add(gamePad.LeftStick);
+            }
 
             var actionInputs = new MultiplePressableInputs();
             actionInputs.Inputs.Add(InputManager.Keyboard.GetKey(Keys.Space));
-            actionInputs.Inputs.Add(InputManager.Xbox360GamePads[0].GetButton(Xbox360GamePad.Button.A));
+            if (InputManager.NumberOfConnectedGamePads > 0)
+            {
+                actionInputs.Inputs.Add(InputManager.Xbox360GamePads[0].GetButton(Xbox360GamePad.Button.A));
+            }
 
             var alignmentInputs = new MultiplePressableInputs();
             alignmentInputs.Inputs.Add(InputManager.Mouse.GetButton(Mouse.MouseButtons.LeftButton));
-            alignmentInputs.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.RightTrigger));
+            if (InputManager.NumberOfConnectedGamePads > 0)
+            {
+                alignmentInputs.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.RightTrigger));
+            }
 
             var reelingInputs = new MultiplePressableInputs();
-            reelingInputs.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.LeftTrigger));
             reelingInputs.Inputs.Add(InputManager.Keyboard.GetKey(Keys.LeftShift));
             reelingInputs.Inputs.Add(InputManager.Keyboard.GetKey(Keys.RightShift));
+            if (InputManager.NumberOfConnectedGamePads > 0)
+            {
+                reelingInputs.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.LeftTrigger));
+            }
 
             this.CharacterInstance.MovementInput = movementInputs;
             this.CharacterInstance.ActionInput = actionInputs;
@@ -273,10 +286,13 @@ namespace FishKing.Screens
             MusicManager.Update();
         }
 
+
+        const float offset = .1f;
+        const float roundingValue = 1;
         private void UpdateCamera()
         {
-            Camera.Main.X = this.CharacterInstance.X;
-            Camera.Main.Y = this.CharacterInstance.Y;
+            Camera.Main.X = MathFunctions.RoundFloat(this.CharacterInstance.X, roundingValue, offset);
+            Camera.Main.Y = MathFunctions.RoundFloat(this.CharacterInstance.Y, roundingValue, offset);
         }
 
         private void DialogActivity()
