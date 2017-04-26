@@ -435,12 +435,12 @@ namespace FlatRedBall.TileGraphics
 
             if (rtmi.NumberCellsWide > rtmi.NumberCellsTall)
             {
-                quads = reducedLayerInfo.Quads.OrderBy(item => item.LeftQuadCoordinate);
+                quads = reducedLayerInfo.Quads.OrderBy(item => item.LeftQuadCoordinate).ToList();
                 toReturn.mSortAxis = SortAxis.X;
             }
             else
             {
-                quads = reducedLayerInfo.Quads.OrderBy(item => item.BottomQuadCoordinate);
+                quads = reducedLayerInfo.Quads.OrderBy(item => item.BottomQuadCoordinate).ToList();
                 toReturn.mSortAxis = SortAxis.Y;
             }
 
@@ -494,12 +494,14 @@ namespace FlatRedBall.TileGraphics
                     toReturn.ApplyDiagonalFlip(tileIndex);
                 }
 
-                if (quad.QuadSpecificProperties != null)
-                {
-                    var listToAdd = quad.QuadSpecificProperties.ToList();
-                    listToAdd.Add(new NamedValue { Name = "Name", Value = quad.Name });
-                    owner.Properties.Add(quad.Name, listToAdd);
-                }
+                // This was moved to outside of this conversion, to support shaps
+                //if (quad.QuadSpecificProperties != null)
+                //{
+                //    var listToAdd = quad.QuadSpecificProperties.ToList();
+                //    listToAdd.Add(new NamedValue { Name = "Name", Value = quad.Name });
+                //    owner.Properties.Add(quad.Name, listToAdd);
+                //}
+
 
                 toReturn.RegisterName(quad.Name, tileIndex);
             }

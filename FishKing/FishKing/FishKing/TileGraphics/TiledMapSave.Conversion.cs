@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -92,6 +92,35 @@ namespace TMXGlueLib
             }
         }
 
+        public void NameUnnamedObjects()
+        {
+            int index = 0;
+            foreach (var objectLayer in this.objectgroup)
+            {
+                // Seems like this can be null, not sure why...
+                if (objectLayer.@object != null)
+                {
+
+                    foreach (var objectInstance in objectLayer.@object)
+                    {
+                        bool hasName = string.IsNullOrEmpty(objectInstance.Name) == false;
+                        bool hasNameProperty = objectInstance.properties.Any(item => item.StrippedNameLower == "name");
+
+                        if (!hasName && !hasNameProperty)
+                        {
+                            objectInstance.Name = $"object{index}_autoname";
+                            objectInstance.properties.Add(new TMXGlueLib.property { name = "name", value = objectInstance.Name });
+                            index++;
+
+                        }
+                        else if (hasName && !hasNameProperty)
+                        {
+                            objectInstance.properties.Add(new TMXGlueLib.property { name = "name", value = objectInstance.Name });
+                        }
+                    }
+                }
+            }
+        }
 
         public string ToCSVString(CSVPropertyType type = CSVPropertyType.Tile, string layerName = null)
         {

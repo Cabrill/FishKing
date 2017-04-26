@@ -59,7 +59,7 @@ namespace FlatRedBall.TileCollisions
         public static void AddCollisionFromLayer(this FlatRedBall.TileCollisions.TileShapeCollection tileShapeCollection,
         LayeredTileMap layeredTileMap, List<string> layerNames)
         {
-            var properties = layeredTileMap.Properties;
+            var properties = layeredTileMap.TileProperties;
 
             foreach (var kvp in properties)
             {
@@ -101,7 +101,7 @@ namespace FlatRedBall.TileCollisions
         public static void RemoveCollisionsFromLayer(this FlatRedBall.TileCollisions.TileShapeCollection tileShapeCollection,
                     LayeredTileMap layeredTileMap, List<string> layerNames)
         {
-            var properties = layeredTileMap.Properties;
+            var properties = layeredTileMap.TileProperties;
 
             foreach (var kvp in properties)
             {
@@ -164,7 +164,7 @@ namespace FlatRedBall.TileCollisions
         public static void RemoveCollisionFrom(this FlatRedBall.TileCollisions.TileShapeCollection tileShapeCollection, LayeredTileMap layeredTileMap,
             Func<List<TMXGlueLib.DataTypes.NamedValue>, bool> predicate)
         {
-            var properties = layeredTileMap.Properties;
+            var properties = layeredTileMap.TileProperties;
 
             foreach (var kvp in properties)
             {
@@ -209,7 +209,7 @@ namespace FlatRedBall.TileCollisions
         public static void AddWaterFrom(this FlatRedBall.TileCollisions.TileShapeCollection tileShapeCollection, LayeredTileMap layeredTileMap,
     Func<List<TMXGlueLib.DataTypes.NamedValue>, bool> predicate)
         {
-            var properties = layeredTileMap.Properties;
+            var properties = layeredTileMap.TileProperties;
 
             foreach (var kvp in properties)
             {

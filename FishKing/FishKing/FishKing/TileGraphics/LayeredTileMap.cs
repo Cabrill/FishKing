@@ -1,5 +1,4 @@
-using FishKing.DataTypes;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -32,30 +31,21 @@ namespace FlatRedBall.TileGraphics
         float? mNumberTilesWide;
         float? mNumberTilesTall;
 
-        float? mWidthPerTile;
-        float? mHeightPerTile;
+        public float? WidthPerTile { get; private set; }
+        public float? HeightPerTile { get; private set; }
 
         #endregion
 
         #region Properties
 
-        public float? WidthPerTile
+        public Dictionary<string, List<NamedValue>> TileProperties
         {
-            get
-            {
-                return mWidthPerTile;
-            }
-        }
+            get;
+            private set;
+        } = new Dictionary<string, List<NamedValue>>();
 
-        public float? HeightPerTile
-        {
-            get
-            {
-                return mHeightPerTile;
-            }
-        }
 
-        public Dictionary<string, List<NamedValue>> Properties
+        public Dictionary<string, List<NamedValue>> ShapeProperties
         {
             get;
             private set;
@@ -129,9 +119,9 @@ namespace FlatRedBall.TileGraphics
         {
             get
             {
-                if (mNumberTilesWide.HasValue && mWidthPerTile.HasValue)
+                if (mNumberTilesWide.HasValue && WidthPerTile.HasValue)
                 {
-                    return mNumberTilesWide.Value * mWidthPerTile.Value;
+                    return mNumberTilesWide.Value * WidthPerTile.Value;
                 }
                 else
                 {
@@ -147,9 +137,9 @@ namespace FlatRedBall.TileGraphics
         {
             get
             {
-                if (mNumberTilesTall.HasValue && mHeightPerTile.HasValue)
+                if (mNumberTilesTall.HasValue && HeightPerTile.HasValue)
                 {
-                    return mNumberTilesTall.Value * mHeightPerTile.Value;
+                    return mNumberTilesTall.Value * HeightPerTile.Value;
                 }
                 else
                 {
@@ -207,7 +197,7 @@ namespace FlatRedBall.TileGraphics
 
         public IEnumerable<string> TileNamesWith(string propertyName)
         {
-            foreach (var item in Properties.Values)
+            foreach (var item in TileProperties.Values)
             {
                 if (item.Any(item2 => item2.Name == propertyName))
                 {
@@ -323,8 +313,8 @@ namespace FlatRedBall.TileGraphics
                 toReturn.mNumberTilesTall = rtmi.NumberCellsTall;
             }
 
-            toReturn.mWidthPerTile = rtmi.QuadWidth;
-            toReturn.mHeightPerTile = rtmi.QuadHeight;
+            toReturn.WidthPerTile = rtmi.QuadWidth;
+            toReturn.HeightPerTile = rtmi.QuadHeight;
 
             for (int i = 0; i < rtmi.Layers.Count; i++)
             {
@@ -350,6 +340,7 @@ namespace FlatRedBall.TileGraphics
             // If a tile has no name but it has properties, those properties
             // will be lost in the conversion. Therefore, we have to add name properties.
             tms.NameUnnamedTilesetTiles();
+            tms.NameUnnamedObjects();
 
 
             string directory = FlatRedBall.IO.FileManager.GetDirectory(fileName);
@@ -362,9 +353,14 @@ namespace FlatRedBall.TileGraphics
 
             foreach (var mapObjectgroup in tms.objectgroup)
             {
+                int indexInAllLayers = tms.MapLayers.IndexOf(mapObjectgroup);
+
                 var shapeCollection = tms.ToShapeCollection(mapObjectgroup.Name);
                 if (shapeCollection != null && shapeCollection.IsEmpty == false)
                 {
+                    // This makes all shapes have the same Z as the index layer, which is useful if instantiating objects, so they're layered properly
+                    shapeCollection.Shift(new Microsoft.Xna.Framework.Vector3(0, 0, indexInAllLayers));
+
                     shapeCollection.Name = mapObjectgroup.Name;
                     toReturn.ShapeCollections.Add(shapeCollection);
                 }
@@ -395,6 +391,7 @@ namespace FlatRedBall.TileGraphics
                 }
             }
 
+
             foreach (var tileset in tms.Tilesets)
             {
                 foreach (var tile in tileset.TileDictionary.Values)
@@ -403,26 +400,37 @@ namespace FlatRedBall.TileGraphics
                     {
                         // this needs a name:
                         string name = tile.properties.FirstOrDefault(item => item.StrippedName.ToLowerInvariant() == "name")?.value;
+                        AddPropertiesToMap(tms, toReturn.TileProperties, tile.properties, name);
+                    }
+                }
+            }
 
-                        if (!string.IsNullOrEmpty(name))
+            foreach (var objectLayer in tms.objectgroup)
+            {
+                if (objectLayer.@object != null)
+                {
+                    foreach (var objectInstance in objectLayer.@object)
+                    {
+                        if (objectInstance.properties.Count != 0)
                         {
-                            List<NamedValue> namedValues = new List<NamedValue>();
-                            foreach (var prop in tile.properties)
+                            string name = objectInstance.Name;
+                            // if name is null, check the properties:
+                            if (string.IsNullOrEmpty(name))
                             {
-                                namedValues.Add(new NamedValue()
-                                { Name = prop.StrippedName, Value = prop.value, Type = prop.Type });
+                                name = objectInstance.properties.FirstOrDefault(item => item.StrippedNameLower == "name")?.value;
                             }
+                            var properties = objectInstance.properties;
 
-#if DEBUG
-                            if(toReturn.Properties.Any(item => item.Key == name))
+                            var objectInstanceIsTile = objectInstance.gid != null;
+
+                            if (objectInstanceIsTile)
                             {
-                                string message = $"The tileset contains more than one tile with the name {name}. Names must be unique in a tileset.";
-                                throw new InvalidOperationException(message);
+                                AddPropertiesToMap(tms, toReturn.TileProperties, properties, name);
                             }
-#endif
-
-                            toReturn.Properties.Add(name, namedValues);
-
+                            else
+                            {
+                                AddPropertiesToMap(tms, toReturn.ShapeProperties, properties, name);
+                            }
                         }
                     }
                 }
@@ -495,12 +503,45 @@ namespace FlatRedBall.TileGraphics
 
             toReturn.MapProperties = tms.properties
                 .Select(propertySave => new NamedValue
-                    { Name = propertySave.name, Value = propertySave.value, Type = propertySave.Type })
+                { Name = propertySave.name, Value = propertySave.value, Type = propertySave.Type })
                 .ToList();
 
 
             return toReturn;
         }
+
+        private static void AddPropertiesToMap(TiledMapSave tms, Dictionary<string, List<NamedValue>> dictionaryToAddTo, List<property> properties, string name)
+        {
+            if (!string.IsNullOrEmpty(name))
+            {
+                List<NamedValue> namedValues = new List<NamedValue>();
+                foreach (var prop in properties)
+                {
+                    namedValues.Add(new NamedValue()
+                    { Name = prop.StrippedName, Value = prop.value, Type = prop.Type });
+                }
+
+
+#if DEBUG
+                if (dictionaryToAddTo.Any(item => item.Key == name))
+                {
+                    // Assume it was a duplicate tile name, but it may not be
+                    string message = $"The tileset contains more than one tile with the name {name}. Names must be unique in a tileset.";
+                    bool hasDuplicateObject = tms.objectgroup.Any(item => item.@object.Any(objectInstance => objectInstance.Name == name));
+                    if (hasDuplicateObject)
+                    {
+                        message = $"The tileset contains a tile with the name {name}, but this name is already used in an object layer";
+                    }
+                    throw new InvalidOperationException(message);
+                }
+#endif
+
+                dictionaryToAddTo.Add(name, namedValues);
+
+            }
+        }
+
+
 
         public void AnimateSelf()
         {

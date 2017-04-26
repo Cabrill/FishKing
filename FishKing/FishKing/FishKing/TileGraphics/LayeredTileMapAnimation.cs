@@ -1,4 +1,4 @@
-using FlatRedBall.Graphics.Animation;
+﻿using FlatRedBall.Graphics.Animation;
 using System;
 using System.Collections.Generic;
 using System.Linq;

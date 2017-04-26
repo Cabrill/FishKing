@@ -1,4 +1,4 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -84,8 +84,19 @@ namespace TMXGlueLib.DataTypes
             toReturn.CellHeightInPixels = (ushort)tiledMapSave.tileheight;
             toReturn.CellWidthInPixels = (ushort)tiledMapSave.tilewidth;
 
+            // We used to set the quad width/height based on the sprite size, 
+            // but if there is an object layer that doesn't match the tile size,
+            // then the quad width/height is reported incorrectly. Changing this to
+            // use the tileheight and tilewidth values.
+            //if (ses.SpriteList.Count != 0)
+            //{
+            //    SpriteSave spriteSave = ses.SpriteList[0];
 
-            SetQuadWidthAndHeight(toReturn, ses);
+            //    toReturn.QuadWidth = spriteSave.ScaleX * 2;
+            //    toReturn.QuadHeight = spriteSave.ScaleY * 2;
+            //}
+            toReturn.QuadHeight = tiledMapSave.tileheight;
+            toReturn.QuadWidth = tiledMapSave.tilewidth;
 
             float z = float.NaN;
 
@@ -156,9 +167,25 @@ namespace TMXGlueLib.DataTypes
 
                 if (currentLayer is mapObjectgroup)
                 {
-                    var objectInstance = (currentLayer as mapObjectgroup).@object[indexInLayer];
+                    var asMapObjectGroup = currentLayer as mapObjectgroup;
+                    var objectInstance = asMapObjectGroup.@object[indexInLayer];
 
-                    if (objectInstance.properties.Count != 0)
+                    // skip over any non-sprite objects:
+                    while (objectInstance.gid == null)
+                    {
+                        indexInLayer++;
+                        if (indexInLayer >= asMapObjectGroup.@object.Length)
+                        {
+                            objectInstance = null;
+                            break;
+                        }
+                        else
+                        {
+                            objectInstance = asMapObjectGroup.@object[indexInLayer];
+                        }
+                    }
+
+                    if (objectInstance != null && objectInstance.properties.Count != 0)
                     {
                         var nameProperty = objectInstance.properties.FirstOrDefault(item => item.StrippedNameLower == "name");
                         if (nameProperty != null)
@@ -202,17 +229,6 @@ namespace TMXGlueLib.DataTypes
 
 
 
-        }
-
-        private static void SetQuadWidthAndHeight(ReducedTileMapInfo toReturn, SceneSave ses)
-        {
-            if (ses.SpriteList.Count != 0)
-            {
-                SpriteSave spriteSave = ses.SpriteList[0];
-
-                toReturn.QuadWidth = spriteSave.ScaleX * 2;
-                toReturn.QuadHeight = spriteSave.ScaleY * 2;
-            }
         }
 
 
