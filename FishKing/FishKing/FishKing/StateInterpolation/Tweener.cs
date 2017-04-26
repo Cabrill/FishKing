@@ -26,7 +26,8 @@ namespace FlatRedBall.Glue.StateInterpolation
         Quadratic,
         Quartic,
         Quintic,
-        Sinusoidal
+        Sinusoidal,
+        Instant
     }
 
 

@@ -238,6 +238,7 @@
     <Compile Include="GumCore\InstanceSaveExtensionMethods.GumRuntime.cs">
       <DependentUpon>InstanceSaveExtensionMethods.cs</DependentUpon>
     </Compile>
+    <Compile Include="GumCore\InvisibleRenderable.cs" />
     <Compile Include="GumCore\IPositionedSizedObject.cs" />
     <Compile Include="GumCore\IRenderable.cs" />
     <Compile Include="GumCore\IRenderableIpso.cs" />
@@ -373,6 +374,7 @@
     <Compile Include="StateInterpolation\Cubic.cs" />
     <Compile Include="StateInterpolation\Elastic.cs" />
     <Compile Include="StateInterpolation\Exponential.cs" />
+    <Compile Include="StateInterpolation\Instant.cs" />
     <Compile Include="StateInterpolation\Linear.cs" />
     <Compile Include="StateInterpolation\Quadratic.cs" />
     <Compile Include="StateInterpolation\Quartic.cs" />
