@@ -2484,6 +2484,7 @@
   <PluginData>
     <RequiredPlugins>
       <string>Tiled Plugin</string>
+      <string>Gum Plugin</string>
     </RequiredPlugins>
   </PluginData>
 </GlueProjectSave>

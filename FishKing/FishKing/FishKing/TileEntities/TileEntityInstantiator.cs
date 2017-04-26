@@ -46,6 +46,38 @@ namespace FlatRedBall.TileEntities
                 string remove = entityToRemove;
                 layeredTileMap.RemoveTiles(t => t.Any(item => item.Name == "EntityToCreate" && item.Value as string == remove), layeredTileMap.Properties);
             }
+            foreach (var shapeCollection in layeredTileMap.ShapeCollections)
+            {
+                var polygons = shapeCollection.Polygons;
+                for (int i = polygons.Count - 1; i > -1; i--)
+                {
+                    var polygon = polygons[i];
+                    if (!string.IsNullOrEmpty(polygon.Name) && layeredTileMap.Properties.ContainsKey(polygon.Name))
+                    {
+                        var properties = layeredTileMap.Properties[polygon.Name];
+                        var entityAddingProperty = properties.FirstOrDefault(item => item.Name == "EntityToCreate");
+
+                        var entityType = entityAddingProperty.Value as string;
+                        if (!string.IsNullOrEmpty(entityType))
+                        {
+                            IEntityFactory factory = GetFactory(entityType);
+
+                            var entity = factory.CreateNew(null) as PositionedObject;
+
+                            ApplyPropertiesTo(entity, properties, polygon.Position);
+                            shapeCollection.Polygons.Remove(polygon);
+
+                            if (entity is Math.Geometry.ICollidable)
+                            {
+                                var entityCollision = (entity as Math.Geometry.ICollidable).Collision;
+                                entityCollision.Polygons.Add(polygon);
+                                polygon.AttachTo(entity, false);
+                            }
+
+                        }
+                    }
+                }
+            }
         }
 
         private static void CreateEntitiesFrom(List<string> entitiesToRemove, MapDrawableBatch layer, Dictionary<string, List<NamedValue>> propertiesDictionary)
@@ -108,12 +140,15 @@ namespace FlatRedBall.TileEntities
             float left;
             float bottom;
             layer.GetBottomLeftWorldCoordinateForOrderedTile(tileIndex, out left, out bottom);
+            Microsoft.Xna.Framework.Vector3 position = new Microsoft.Xna.Framework.Vector3(left + dimensionHalf, bottom + dimensionHalf, layer.Z);
+            ApplyPropertiesTo(entity, propertiesToAssign, position);
+        }
 
+        private static void ApplyPropertiesTo(PositionedObject entity, List<NamedValue> propertiesToAssign, Microsoft.Xna.Framework.Vector3 position)
+        {
             if (entity != null)
             {
-                entity.X = left + dimensionHalf;
-                entity.Y = bottom + dimensionHalf;
-                entity.Z = layer.Z;
+                entity.Position = position;
             }
 
             var entityType = entity.GetType();
@@ -121,13 +156,30 @@ namespace FlatRedBall.TileEntities
 
             foreach (var property in propertiesToAssign)
             {
+                var valueToSet = property.Value;
+                valueToSet = SetValueAccordingToType(valueToSet, property.Name, property.Type, entityType);
                 try
                 {
-                    var valueToSet = property.Value;
-
-                    valueToSet = SetValueAccordingToType(valueToSet, property.Name, property.Type, entityType);
-
                     lateBinder.SetValue(entity, property.Name, valueToSet);
+                }
+                catch (InvalidCastException e)
+                {
+                    string assignedType = valueToSet.GetType().ToString() ?? "unknown type";
+                    assignedType = GetFriendlyNameForType(assignedType);
+
+                    string expectedType = "unknown type";
+                    object outValue;
+                    if (lateBinder.TryGetValue(entity, property.Name, out outValue) && outValue != null)
+                    {
+                        expectedType = outValue.GetType().ToString();
+                        expectedType = GetFriendlyNameForType(expectedType);
+                    }
+
+                    // This means that the property exists but is of a different type. 
+                    string message = $"Attempted to assign the property {property.Name} " +
+                        $"to a value of type {assignedType} but expected {expectedType}. " +
+                        $"Check the property type in your TMX and make sure it matches the type on the entity.";
+                    throw new Exception(message, e);
                 }
                 catch (Exception e)
                 {
@@ -136,6 +188,18 @@ namespace FlatRedBall.TileEntities
 
                 }
             }
+        }
+
+
+        private static string GetFriendlyNameForType(string type)
+        {
+            switch (type)
+            {
+                case "System.String": return "string";
+                case "System.Single": return "float";
+
+            }
+            return type;
         }
 
 
@@ -193,7 +257,8 @@ namespace FlatRedBall.TileEntities
             {
 #if WINDOWS_8 || UWP
                 var assembly = typeof(TileEntityInstantiator).GetTypeInfo().Assembly;
-                typesInThisAssembly = assembly.DefinedTypes.ToArray();
+                typesInThisAssembly = assembly.DefinedTypes.Select(item=>item.AsType()).ToArray();
+
 #else
                 var assembly = Assembly.GetExecutingAssembly();
                 typesInThisAssembly = assembly.GetTypes();
@@ -203,8 +268,8 @@ namespace FlatRedBall.TileEntities
 
 #if WINDOWS_8 || UWP
             var filteredTypes =
-                types.Where(t => t.ImplementedInterfaces.Contains(typeof(IEntityFactory))
-                            && t.DeclaredConstructors.Any(c=>c.GetParameters().Count() == 0));
+                typesInThisAssembly.Where(t => t.GetInterfaces().Contains(typeof(IEntityFactory))
+                            && t.GetConstructors().Any(c=>c.GetParameters().Count() == 0));
 #else
             var filteredTypes =
                 typesInThisAssembly.Where(t => t.GetInterfaces().Contains(typeof(IEntityFactory))
@@ -216,7 +281,7 @@ namespace FlatRedBall.TileEntities
                     t =>
                     {
 #if WINDOWS_8 || UWP
-                                var propertyInfo = t.DeclaredProperties.First(item => item.Name == "Self");
+                        var propertyInfo = t.GetProperty("Self");
 #else
                         var propertyInfo = t.GetProperty("Self");
 #endif
