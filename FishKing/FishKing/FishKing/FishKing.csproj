@@ -17,7 +17,7 @@
     <XnaProfile>HiDef</XnaProfile>
     <XnaCrossPlatformGroupID>6e8472f3-363d-4b52-a484-aa934eebcf1f</XnaCrossPlatformGroupID>
     <XnaOutputType>Game</XnaOutputType>
-    <ApplicationIcon>FishKing.ico</ApplicationIcon>
+    <ApplicationIcon>FishKing_Win32.ico</ApplicationIcon>
     <Thumbnail>thumbnail173.png</Thumbnail>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>publish\</PublishUrl>
@@ -416,6 +416,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="FishKing.ico" />
+    <Content Include="FishKing_Win32.ico" />
     <Content Include="Game.ico" />
     <Content Include="GameThumbnail.png" />
     <Content Include="Libraries\Xna4Pc\Debug\FlatRedBall.Content.dll" />
