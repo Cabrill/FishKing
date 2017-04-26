@@ -68,11 +68,7 @@ namespace FishKing.GumRuntimes
         partial void CustomInitialize()
         {
             Reset();
-
-            Wave1AnimateAnimation.Play();
-            Wave2AnimateAnimation.Play();
-            Wave3AnimateAnimation.Play();
-            Wave4AnimateAnimation.Play();
+            WaveMovementAnimation.Play();
             TopFishInstance.FishSwimAnimation.Play();
             PlayerFishInstance.FishSwimAnimation.Play();
             BottomFishInstance.FishSwimAnimation.Play();

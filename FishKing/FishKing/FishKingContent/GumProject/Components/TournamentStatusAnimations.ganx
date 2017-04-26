@@ -2,110 +2,6 @@
 <ElementAnimationsSave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Animations>
     <AnimationSave>
-      <Loops>true</Loops>
-      <Name>Wave1Animate</Name>
-      <States>
-        <AnimatedStateSave>
-          <StateName>Wave1State/Wave1Start</StateName>
-          <Time>0</Time>
-          <InterpolationType>Linear</InterpolationType>
-          <Easing>Out</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Wave1State/Wave1Middle</StateName>
-          <Time>6</Time>
-          <InterpolationType>Linear</InterpolationType>
-          <Easing>Out</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Wave1State/Wave1End</StateName>
-          <Time>12</Time>
-          <InterpolationType>Linear</InterpolationType>
-          <Easing>Out</Easing>
-        </AnimatedStateSave>
-      </States>
-      <Animations />
-      <Events />
-    </AnimationSave>
-    <AnimationSave>
-      <Loops>true</Loops>
-      <Name>Wave2Animate</Name>
-      <States>
-        <AnimatedStateSave>
-          <StateName>Wave2State/Wave2Start</StateName>
-          <Time>0</Time>
-          <InterpolationType>Linear</InterpolationType>
-          <Easing>Out</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Wave2State/Wave2Middle</StateName>
-          <Time>3</Time>
-          <InterpolationType>Linear</InterpolationType>
-          <Easing>Out</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Wave2State/Wave2End</StateName>
-          <Time>6</Time>
-          <InterpolationType>Linear</InterpolationType>
-          <Easing>Out</Easing>
-        </AnimatedStateSave>
-      </States>
-      <Animations />
-      <Events />
-    </AnimationSave>
-    <AnimationSave>
-      <Loops>true</Loops>
-      <Name>Wave3Animate</Name>
-      <States>
-        <AnimatedStateSave>
-          <StateName>Wave3State/Wave3Start</StateName>
-          <Time>0</Time>
-          <InterpolationType>Linear</InterpolationType>
-          <Easing>Out</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Wave3State/Wave3Middle</StateName>
-          <Time>1.5</Time>
-          <InterpolationType>Linear</InterpolationType>
-          <Easing>Out</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Wave3State/Wave3End</StateName>
-          <Time>3</Time>
-          <InterpolationType>Linear</InterpolationType>
-          <Easing>Out</Easing>
-        </AnimatedStateSave>
-      </States>
-      <Animations />
-      <Events />
-    </AnimationSave>
-    <AnimationSave>
-      <Loops>true</Loops>
-      <Name>Wave4Animate</Name>
-      <States>
-        <AnimatedStateSave>
-          <StateName>Wave4State/Wave4Start</StateName>
-          <Time>0</Time>
-          <InterpolationType>Linear</InterpolationType>
-          <Easing>Out</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Wave4State/Wave4Middle</StateName>
-          <Time>0.75</Time>
-          <InterpolationType>Linear</InterpolationType>
-          <Easing>Out</Easing>
-        </AnimatedStateSave>
-        <AnimatedStateSave>
-          <StateName>Wave4State/Wave4End</StateName>
-          <Time>1.5</Time>
-          <InterpolationType>Linear</InterpolationType>
-          <Easing>Out</Easing>
-        </AnimatedStateSave>
-      </States>
-      <Animations />
-      <Events />
-    </AnimationSave>
-    <AnimationSave>
       <Loops>false</Loops>
       <Name>ThrowConfetti</Name>
       <States />
@@ -123,6 +19,68 @@
           <Time>2</Time>
         </AnimationReferenceSave>
       </Animations>
+      <Events />
+    </AnimationSave>
+    <AnimationSave>
+      <Loops>true</Loops>
+      <Name>WaveMovement</Name>
+      <States>
+        <AnimatedStateSave>
+          <StateName>WaveState/WaveState1</StateName>
+          <Time>0</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>WaveState/WaveState2</StateName>
+          <Time>1</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>WaveState/WaveState3</StateName>
+          <Time>2</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>WaveState/WaveState4</StateName>
+          <Time>3</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>WaveState/WaveState5</StateName>
+          <Time>4</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>WaveState/WaveState6</StateName>
+          <Time>5</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>WaveState/WaveState7</StateName>
+          <Time>6</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>WaveState/WaveState8</StateName>
+          <Time>7</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>WaveState/WaveState9</StateName>
+          <Time>8</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+      </States>
+      <Animations />
       <Events />
     </AnimationSave>
   </Animations>

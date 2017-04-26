@@ -1200,7 +1200,7 @@
     <Variable>
       <Type>int</Type>
       <Name>Wave1.Texture Width</Name>
-      <Value xsi:type="xsd:int">384</Value>
+      <Value xsi:type="xsd:int">1147</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1240,171 +1240,6 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>int</Type>
-      <Name>Wave10.Alpha</Name>
-      <Value xsi:type="xsd:int">200</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>Wave10.Parent</Name>
-      <Value xsi:type="xsd:string">WaveContainer4</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <IsFile>true</IsFile>
-      <Type>string</Type>
-      <Name>Wave10.SourceFile</Name>
-      <Value xsi:type="xsd:string">GumUI.png</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>TextureAddress</Type>
-      <Name>Wave10.Texture Address</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave10.Texture Height</Name>
-      <Value xsi:type="xsd:int">32</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave10.Texture Top</Name>
-      <Value xsi:type="xsd:int">987</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave10.Texture Width</Name>
-      <Value xsi:type="xsd:int">384</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave10.X</Name>
-      <Value xsi:type="xsd:float">-64</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave10.Y</Name>
-      <Value xsi:type="xsd:float">20</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave11.Alpha</Name>
-      <Value xsi:type="xsd:int">200</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>Wave11.Parent</Name>
-      <Value xsi:type="xsd:string">WaveContainer4</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <IsFile>true</IsFile>
-      <Type>string</Type>
-      <Name>Wave11.SourceFile</Name>
-      <Value xsi:type="xsd:string">GumUI.png</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>TextureAddress</Type>
-      <Name>Wave11.Texture Address</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave11.Texture Height</Name>
-      <Value xsi:type="xsd:int">32</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave11.Texture Top</Name>
-      <Value xsi:type="xsd:int">987</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave11.Texture Width</Name>
-      <Value xsi:type="xsd:int">384</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave11.X</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave11.Y</Name>
-      <Value xsi:type="xsd:float">20</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave12.Alpha</Name>
-      <Value xsi:type="xsd:int">200</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>Wave12.Parent</Name>
-      <Value xsi:type="xsd:string">WaveContainer4</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <IsFile>true</IsFile>
-      <Type>string</Type>
-      <Name>Wave12.SourceFile</Name>
-      <Value xsi:type="xsd:string">GumUI.png</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>TextureAddress</Type>
-      <Name>Wave12.Texture Address</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave12.Texture Height</Name>
-      <Value xsi:type="xsd:int">32</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave12.Texture Top</Name>
-      <Value xsi:type="xsd:int">987</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave12.Texture Width</Name>
-      <Value xsi:type="xsd:int">384</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave12.X</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave12.Y</Name>
-      <Value xsi:type="xsd:float">20</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>Wave1StateState</Type>
       <Name>Wave1StateState</Name>
       <SetsValue>false</SetsValue>
@@ -1436,7 +1271,7 @@
     <Variable>
       <Type>string</Type>
       <Name>Wave2.Parent</Name>
-      <Value xsi:type="xsd:string">WaveContainer1</Value>
+      <Value xsi:type="xsd:string">WaveContainer2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1479,7 +1314,7 @@
     <Variable>
       <Type>int</Type>
       <Name>Wave2.Texture Width</Name>
-      <Value xsi:type="xsd:int">384</Value>
+      <Value xsi:type="xsd:int">1147</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1509,13 +1344,13 @@
     <Variable>
       <Type>float</Type>
       <Name>Wave2.X</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Value xsi:type="xsd:float">-24</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>Wave2.Y</Name>
-      <Value xsi:type="xsd:float">12</Value>
+      <Value xsi:type="xsd:float">14</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1550,7 +1385,7 @@
     <Variable>
       <Type>string</Type>
       <Name>Wave3.Parent</Name>
-      <Value xsi:type="xsd:string">WaveContainer1</Value>
+      <Value xsi:type="xsd:string">WaveContainer3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1593,7 +1428,7 @@
     <Variable>
       <Type>int</Type>
       <Name>Wave3.Texture Width</Name>
-      <Value xsi:type="xsd:int">384</Value>
+      <Value xsi:type="xsd:int">1147</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1623,13 +1458,13 @@
     <Variable>
       <Type>float</Type>
       <Name>Wave3.X</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Value xsi:type="xsd:float">-48</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>Wave3.Y</Name>
-      <Value xsi:type="xsd:float">12</Value>
+      <Value xsi:type="xsd:float">16</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1644,27 +1479,9 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>Blend</Type>
-      <Name>Wave4.Blend</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave4.Height</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>Wave4.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>string</Type>
       <Name>Wave4.Parent</Name>
-      <Value xsi:type="xsd:string">WaveContainer2</Value>
+      <Value xsi:type="xsd:string">WaveContainer4</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1687,18 +1504,6 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>float</Type>
-      <Name>Wave4.Texture Height Scale</Name>
-      <Value xsi:type="xsd:float">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave4.Texture Left</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>int</Type>
       <Name>Wave4.Texture Top</Name>
       <Value xsi:type="xsd:int">987</Value>
@@ -1707,594 +1512,25 @@
     <Variable>
       <Type>int</Type>
       <Name>Wave4.Texture Width</Name>
-      <Value xsi:type="xsd:int">384</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave4.Texture Width Scale</Name>
-      <Value xsi:type="xsd:float">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave4.Width</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>Wave4.Width Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>bool</Type>
-      <Name>Wave4.Wrap</Name>
-      <Value xsi:type="xsd:boolean">false</Value>
+      <Value xsi:type="xsd:int">1147</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>Wave4.X</Name>
-      <Value xsi:type="xsd:float">-24</Value>
+      <Value xsi:type="xsd:float">-64</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>Wave4.Y</Name>
-      <Value xsi:type="xsd:float">14</Value>
+      <Value xsi:type="xsd:float">18</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>Wave4StateState</Type>
       <Name>Wave4StateState</Name>
       <SetsValue>false</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave5.Alpha</Name>
-      <Value xsi:type="xsd:int">200</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>Blend</Type>
-      <Name>Wave5.Blend</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave5.Height</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>Wave5.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>Wave5.Parent</Name>
-      <Value xsi:type="xsd:string">WaveContainer2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <IsFile>true</IsFile>
-      <Type>string</Type>
-      <Name>Wave5.SourceFile</Name>
-      <Value xsi:type="xsd:string">GumUI.png</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>TextureAddress</Type>
-      <Name>Wave5.Texture Address</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave5.Texture Height</Name>
-      <Value xsi:type="xsd:int">32</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave5.Texture Height Scale</Name>
-      <Value xsi:type="xsd:float">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave5.Texture Left</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave5.Texture Top</Name>
-      <Value xsi:type="xsd:int">987</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave5.Texture Width</Name>
-      <Value xsi:type="xsd:int">384</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave5.Texture Width Scale</Name>
-      <Value xsi:type="xsd:float">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave5.Width</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>Wave5.Width Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>bool</Type>
-      <Name>Wave5.Wrap</Name>
-      <Value xsi:type="xsd:boolean">false</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave5.X</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave5.Y</Name>
-      <Value xsi:type="xsd:float">14</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave6.Alpha</Name>
-      <Value xsi:type="xsd:int">200</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>Blend</Type>
-      <Name>Wave6.Blend</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave6.Height</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>Wave6.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>Wave6.Parent</Name>
-      <Value xsi:type="xsd:string">WaveContainer2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <IsFile>true</IsFile>
-      <Type>string</Type>
-      <Name>Wave6.SourceFile</Name>
-      <Value xsi:type="xsd:string">GumUI.png</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>TextureAddress</Type>
-      <Name>Wave6.Texture Address</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave6.Texture Height</Name>
-      <Value xsi:type="xsd:int">32</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave6.Texture Height Scale</Name>
-      <Value xsi:type="xsd:float">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave6.Texture Left</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave6.Texture Top</Name>
-      <Value xsi:type="xsd:int">987</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave6.Texture Width</Name>
-      <Value xsi:type="xsd:int">384</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave6.Texture Width Scale</Name>
-      <Value xsi:type="xsd:float">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave6.Width</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>Wave6.Width Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>bool</Type>
-      <Name>Wave6.Wrap</Name>
-      <Value xsi:type="xsd:boolean">false</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave6.X</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave6.Y</Name>
-      <Value xsi:type="xsd:float">14</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave7.Alpha</Name>
-      <Value xsi:type="xsd:int">200</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>Blend</Type>
-      <Name>Wave7.Blend</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave7.Height</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>Wave7.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>Wave7.Parent</Name>
-      <Value xsi:type="xsd:string">WaveContainer3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <IsFile>true</IsFile>
-      <Type>string</Type>
-      <Name>Wave7.SourceFile</Name>
-      <Value xsi:type="xsd:string">GumUI.png</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>TextureAddress</Type>
-      <Name>Wave7.Texture Address</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave7.Texture Height</Name>
-      <Value xsi:type="xsd:int">32</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave7.Texture Height Scale</Name>
-      <Value xsi:type="xsd:float">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave7.Texture Left</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave7.Texture Top</Name>
-      <Value xsi:type="xsd:int">987</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave7.Texture Width</Name>
-      <Value xsi:type="xsd:int">384</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave7.Texture Width Scale</Name>
-      <Value xsi:type="xsd:float">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave7.Width</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>Wave7.Width Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>bool</Type>
-      <Name>Wave7.Wrap</Name>
-      <Value xsi:type="xsd:boolean">false</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave7.X</Name>
-      <Value xsi:type="xsd:float">-48</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave7.Y</Name>
-      <Value xsi:type="xsd:float">18</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave8.Alpha</Name>
-      <Value xsi:type="xsd:int">200</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>Blend</Type>
-      <Name>Wave8.Blend</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave8.Height</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>Wave8.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>Wave8.Parent</Name>
-      <Value xsi:type="xsd:string">WaveContainer3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <IsFile>true</IsFile>
-      <Type>string</Type>
-      <Name>Wave8.SourceFile</Name>
-      <Value xsi:type="xsd:string">GumUI.png</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>TextureAddress</Type>
-      <Name>Wave8.Texture Address</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave8.Texture Height</Name>
-      <Value xsi:type="xsd:int">32</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave8.Texture Height Scale</Name>
-      <Value xsi:type="xsd:float">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave8.Texture Left</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave8.Texture Top</Name>
-      <Value xsi:type="xsd:int">987</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave8.Texture Width</Name>
-      <Value xsi:type="xsd:int">384</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave8.Texture Width Scale</Name>
-      <Value xsi:type="xsd:float">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave8.Width</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>Wave8.Width Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>bool</Type>
-      <Name>Wave8.Wrap</Name>
-      <Value xsi:type="xsd:boolean">false</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave8.X</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave8.Y</Name>
-      <Value xsi:type="xsd:float">18</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave9.Alpha</Name>
-      <Value xsi:type="xsd:int">200</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>Blend</Type>
-      <Name>Wave9.Blend</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave9.Height</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>Wave9.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>Wave9.Parent</Name>
-      <Value xsi:type="xsd:string">WaveContainer3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <IsFile>true</IsFile>
-      <Type>string</Type>
-      <Name>Wave9.SourceFile</Name>
-      <Value xsi:type="xsd:string">GumUI.png</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>TextureAddress</Type>
-      <Name>Wave9.Texture Address</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave9.Texture Height</Name>
-      <Value xsi:type="xsd:int">32</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave9.Texture Height Scale</Name>
-      <Value xsi:type="xsd:float">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave9.Texture Left</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave9.Texture Top</Name>
-      <Value xsi:type="xsd:int">987</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>Wave9.Texture Width</Name>
-      <Value xsi:type="xsd:int">384</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave9.Texture Width Scale</Name>
-      <Value xsi:type="xsd:float">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave9.Width</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>Wave9.Width Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>bool</Type>
-      <Name>Wave9.Wrap</Name>
-      <Value xsi:type="xsd:boolean">false</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave9.X</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>Wave9.Y</Name>
-      <Value xsi:type="xsd:float">18</Value>
-      <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>ChildrenLayout</Type>
@@ -2347,7 +1583,7 @@
     <Variable>
       <Type>bool</Type>
       <Name>WaveContainer1.Wraps Children</Name>
-      <Value xsi:type="xsd:boolean">true</Value>
+      <Value xsi:type="xsd:boolean">false</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -2413,7 +1649,7 @@
     <Variable>
       <Type>bool</Type>
       <Name>WaveContainer2.Wraps Children</Name>
-      <Value xsi:type="xsd:boolean">true</Value>
+      <Value xsi:type="xsd:boolean">false</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -2473,7 +1709,7 @@
     <Variable>
       <Type>bool</Type>
       <Name>WaveContainer3.Wraps Children</Name>
-      <Value xsi:type="xsd:boolean">true</Value>
+      <Value xsi:type="xsd:boolean">false</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -2578,6 +1814,11 @@
       <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
+      <Type>WaveState</Type>
+      <Name>WaveStateState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>Width</Name>
       <Value xsi:type="xsd:float">5</Value>
@@ -2648,13 +1889,13 @@
     </VariableList>
   </State>
   <Category>
-    <Name>Wave1State</Name>
+    <Name>WaveState</Name>
     <State>
-      <Name>Wave1Start</Name>
+      <Name>WaveState1</Name>
       <Variable>
         <Type>float</Type>
         <Name>Wave1.X</Name>
-        <Value xsi:type="xsd:float">0</Value>
+        <Value xsi:type="xsd:float">-58</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -2666,7 +1907,109 @@
       <Variable>
         <Type>float</Type>
         <Name>Wave2.X</Name>
+        <Value xsi:type="xsd:float">-40</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave2.Y</Name>
+        <Value xsi:type="xsd:float">13</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave3.X</Name>
+        <Value xsi:type="xsd:float">-16</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave3.Y</Name>
+        <Value xsi:type="xsd:float">14</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave4.X</Name>
         <Value xsi:type="xsd:float">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave4.Y</Name>
+        <Value xsi:type="xsd:float">18</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>WaveState2</Name>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave1.X</Name>
+        <Value xsi:type="xsd:float">-66</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave1.Y</Name>
+        <Value xsi:type="xsd:float">10</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave2.X</Name>
+        <Value xsi:type="xsd:float">-56</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave2.Y</Name>
+        <Value xsi:type="xsd:float">14</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave3.X</Name>
+        <Value xsi:type="xsd:float">-40</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave3.Y</Name>
+        <Value xsi:type="xsd:float">15</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave4.X</Name>
+        <Value xsi:type="xsd:float">-32</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave4.Y</Name>
+        <Value xsi:type="xsd:float">17</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>WaveState3</Name>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave1.X</Name>
+        <Value xsi:type="xsd:float">-74</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave1.Y</Name>
+        <Value xsi:type="xsd:float">10</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave2.X</Name>
+        <Value xsi:type="xsd:float">-72</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -2678,102 +2021,15 @@
       <Variable>
         <Type>float</Type>
         <Name>Wave3.X</Name>
-        <Value xsi:type="xsd:float">0</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave3.Y</Name>
-        <Value xsi:type="xsd:float">12</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-    </State>
-    <State>
-      <Name>Wave1Middle</Name>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave1.X</Name>
-        <Value xsi:type="xsd:float">-32</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave1.Y</Name>
-        <Value xsi:type="xsd:float">16</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave2.Y</Name>
-        <Value xsi:type="xsd:float">16</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave3.Y</Name>
-        <Value xsi:type="xsd:float">16</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-    </State>
-    <State>
-      <Name>Wave1End</Name>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave1.X</Name>
         <Value xsi:type="xsd:float">-64</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>Wave1.Y</Name>
-        <Value xsi:type="xsd:float">12</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave2.Y</Name>
-        <Value xsi:type="xsd:float">12</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
         <Name>Wave3.Y</Name>
-        <Value xsi:type="xsd:float">12</Value>
+        <Value xsi:type="xsd:float">16</Value>
         <SetsValue>true</SetsValue>
       </Variable>
-    </State>
-  </Category>
-  <Category>
-    <Name>Wave2State</Name>
-    <State>
-      <Name>Wave2Start</Name>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave4.X</Name>
-        <Value xsi:type="xsd:float">-32</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave4.Y</Name>
-        <Value xsi:type="xsd:float">14</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave5.Y</Name>
-        <Value xsi:type="xsd:float">14</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave6.Y</Name>
-        <Value xsi:type="xsd:float">14</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-    </State>
-    <State>
-      <Name>Wave2Middle</Name>
       <Variable>
         <Type>float</Type>
         <Name>Wave4.X</Name>
@@ -2786,21 +2042,45 @@
         <Value xsi:type="xsd:float">18</Value>
         <SetsValue>true</SetsValue>
       </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave5.Y</Name>
-        <Value xsi:type="xsd:float">18</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave6.Y</Name>
-        <Value xsi:type="xsd:float">18</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
     </State>
     <State>
-      <Name>Wave2End</Name>
+      <Name>WaveState4</Name>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave1.X</Name>
+        <Value xsi:type="xsd:float">-82</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave1.Y</Name>
+        <Value xsi:type="xsd:float">11</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave2.X</Name>
+        <Value xsi:type="xsd:float">-88</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave2.Y</Name>
+        <Value xsi:type="xsd:float">13</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave3.X</Name>
+        <Value xsi:type="xsd:float">-88</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave3.Y</Name>
+        <Value xsi:type="xsd:float">15</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
       <Variable>
         <Type>float</Type>
         <Name>Wave4.X</Name>
@@ -2810,206 +2090,232 @@
       <Variable>
         <Type>float</Type>
         <Name>Wave4.Y</Name>
-        <Value xsi:type="xsd:float">14</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave5.Y</Name>
-        <Value xsi:type="xsd:float">14</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave6.Y</Name>
-        <Value xsi:type="xsd:float">14</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-    </State>
-  </Category>
-  <Category>
-    <Name>Wave3State</Name>
-    <State>
-      <Name>Wave3Start</Name>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave7.X</Name>
-        <Value xsi:type="xsd:float">-48</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave7.Y</Name>
-        <Value xsi:type="xsd:float">18</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave8.X</Name>
-        <Value xsi:type="xsd:float">0</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave8.Y</Name>
-        <Value xsi:type="xsd:float">18</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave9.X</Name>
-        <Value xsi:type="xsd:float">0</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave9.Y</Name>
         <Value xsi:type="xsd:float">18</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
     <State>
-      <Name>Wave3Middle</Name>
+      <Name>WaveState5</Name>
       <Variable>
         <Type>float</Type>
-        <Name>Wave7.X</Name>
-        <Value xsi:type="xsd:float">-80</Value>
+        <Name>Wave1.X</Name>
+        <Value xsi:type="xsd:float">-90</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>Wave7.Y</Name>
-        <Value xsi:type="xsd:float">22</Value>
+        <Name>Wave1.Y</Name>
+        <Value xsi:type="xsd:float">11</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>Wave8.Y</Name>
-        <Value xsi:type="xsd:float">22</Value>
+        <Name>Wave2.X</Name>
+        <Value xsi:type="xsd:float">-104</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>Wave9.Y</Name>
-        <Value xsi:type="xsd:float">22</Value>
+        <Name>Wave2.Y</Name>
+        <Value xsi:type="xsd:float">13</Value>
         <SetsValue>true</SetsValue>
       </Variable>
-    </State>
-    <State>
-      <Name>Wave3End</Name>
       <Variable>
         <Type>float</Type>
-        <Name>Wave7.X</Name>
+        <Name>Wave3.X</Name>
         <Value xsi:type="xsd:float">-112</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>Wave7.Y</Name>
+        <Name>Wave3.Y</Name>
+        <Value xsi:type="xsd:float">15</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave4.X</Name>
+        <Value xsi:type="xsd:float">-128</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave4.Y</Name>
+        <Value xsi:type="xsd:float">18</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>WaveState6</Name>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave1.X</Name>
+        <Value xsi:type="xsd:float">-98</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave1.Y</Name>
+        <Value xsi:type="xsd:float">11</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave2.X</Name>
+        <Value xsi:type="xsd:float">-120</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave2.Y</Name>
+        <Value xsi:type="xsd:float">14</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave3.X</Name>
+        <Value xsi:type="xsd:float">-136</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave3.Y</Name>
+        <Value xsi:type="xsd:float">14</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave4.X</Name>
+        <Value xsi:type="xsd:float">-160</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave4.Y</Name>
+        <Value xsi:type="xsd:float">17</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>WaveState7</Name>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave1.X</Name>
+        <Value xsi:type="xsd:float">-106</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave1.Y</Name>
+        <Value xsi:type="xsd:float">11</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave2.X</Name>
+        <Value xsi:type="xsd:float">-136</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave2.Y</Name>
+        <Value xsi:type="xsd:float">12</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave3.X</Name>
+        <Value xsi:type="xsd:float">-160</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave3.Y</Name>
         <Value xsi:type="xsd:float">18</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>Wave8.Y</Name>
+        <Name>Wave4.X</Name>
+        <Value xsi:type="xsd:float">-192</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>WaveState8</Name>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave1.X</Name>
+        <Value xsi:type="xsd:float">-114</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave1.Y</Name>
+        <Value xsi:type="xsd:float">12</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave2.X</Name>
+        <Value xsi:type="xsd:float">-152</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave2.Y</Name>
+        <Value xsi:type="xsd:float">13</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave3.X</Name>
+        <Value xsi:type="xsd:float">-184</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave3.Y</Name>
+        <Value xsi:type="xsd:float">14</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave4.X</Name>
+        <Value xsi:type="xsd:float">-224</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Wave4.Y</Name>
         <Value xsi:type="xsd:float">18</Value>
         <SetsValue>true</SetsValue>
       </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave9.Y</Name>
-        <Value xsi:type="xsd:float">18</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-    </State>
-  </Category>
-  <Category>
-    <Name>Wave4State</Name>
-    <State>
-      <Name>Wave4Start</Name>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave10.X</Name>
-        <Value xsi:type="xsd:float">0</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave10.Y</Name>
-        <Value xsi:type="xsd:float">20</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave11.Y</Name>
-        <Value xsi:type="xsd:float">20</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave12.Y</Name>
-        <Value xsi:type="xsd:float">20</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
     </State>
     <State>
-      <Name>Wave4Middle</Name>
+      <Name>WaveState9</Name>
       <Variable>
         <Type>float</Type>
-        <Name>Wave10.X</Name>
-        <Value xsi:type="xsd:float">-32</Value>
+        <Name>Wave1.X</Name>
+        <Value xsi:type="xsd:float">-122</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>Wave10.Y</Name>
-        <Value xsi:type="xsd:float">24</Value>
+        <Name>Wave2.X</Name>
+        <Value xsi:type="xsd:float">-168</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>Wave11.Y</Name>
-        <Value xsi:type="xsd:float">24</Value>
+        <Name>Wave3.X</Name>
+        <Value xsi:type="xsd:float">-208</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>Wave12.Y</Name>
-        <Value xsi:type="xsd:float">24</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <VariableList xsi:type="VariableListSaveOfString">
-        <Type>string</Type>
-        <Name>AnimationFrames</Name>
-        <IsFile>false</IsFile>
-        <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
-        <Value />
-      </VariableList>
-    </State>
-    <State>
-      <Name>Wave4End</Name>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave10.X</Name>
-        <Value xsi:type="xsd:float">-64</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave10.Y</Name>
-        <Value xsi:type="xsd:float">20</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave11.Y</Name>
-        <Value xsi:type="xsd:float">20</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>Wave12.Y</Name>
-        <Value xsi:type="xsd:float">20</Value>
+        <Name>Wave4.X</Name>
+        <Value xsi:type="xsd:float">-256</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -3111,14 +2417,6 @@
     <BaseType>Sprite</BaseType>
   </Instance>
   <Instance>
-    <Name>Wave2</Name>
-    <BaseType>Sprite</BaseType>
-  </Instance>
-  <Instance>
-    <Name>Wave3</Name>
-    <BaseType>Sprite</BaseType>
-  </Instance>
-  <Instance>
     <Name>SpriteInstance</Name>
     <BaseType>Sprite</BaseType>
   </Instance>
@@ -3131,7 +2429,7 @@
     <BaseType>subcomponent\TournamentFish</BaseType>
   </Instance>
   <Instance>
-    <Name>Wave4</Name>
+    <Name>Wave2</Name>
     <BaseType>Sprite</BaseType>
   </Instance>
   <Instance>
@@ -3139,23 +2437,11 @@
     <BaseType>Container</BaseType>
   </Instance>
   <Instance>
-    <Name>Wave5</Name>
-    <BaseType>Sprite</BaseType>
-  </Instance>
-  <Instance>
-    <Name>Wave6</Name>
-    <BaseType>Sprite</BaseType>
-  </Instance>
-  <Instance>
     <Name>WaveContainer3</Name>
     <BaseType>Container</BaseType>
   </Instance>
   <Instance>
-    <Name>Wave7</Name>
-    <BaseType>Sprite</BaseType>
-  </Instance>
-  <Instance>
-    <Name>Wave8</Name>
+    <Name>Wave3</Name>
     <BaseType>Sprite</BaseType>
   </Instance>
   <Instance>
@@ -3167,19 +2453,7 @@
     <BaseType>Container</BaseType>
   </Instance>
   <Instance>
-    <Name>Wave9</Name>
-    <BaseType>Sprite</BaseType>
-  </Instance>
-  <Instance>
-    <Name>Wave10</Name>
-    <BaseType>Sprite</BaseType>
-  </Instance>
-  <Instance>
-    <Name>Wave11</Name>
-    <BaseType>Sprite</BaseType>
-  </Instance>
-  <Instance>
-    <Name>Wave12</Name>
+    <Name>Wave4</Name>
     <BaseType>Sprite</BaseType>
   </Instance>
   <Instance>

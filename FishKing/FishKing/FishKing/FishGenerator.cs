@@ -75,7 +75,7 @@ namespace FishKing
                 fishType = availableFish.GetRandomFish();
             }
 #else
-            fishType = availableFish.RandomElement();
+            fishType = availableFish.GetRandomFish();
 #endif
             var fishTypeName = fishType.Name.ToString().Replace(" ","");
 

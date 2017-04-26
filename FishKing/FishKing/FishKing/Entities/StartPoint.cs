@@ -35,8 +35,9 @@ namespace FishKing.Entities
         /// </summary>
 		private void CustomInitialize()
 		{
+#if DEBUG
             this.CircleInstance.Visible = DebuggingVariables.ShowShapes;
-
+#endif
         }
 
         private void CustomActivity()

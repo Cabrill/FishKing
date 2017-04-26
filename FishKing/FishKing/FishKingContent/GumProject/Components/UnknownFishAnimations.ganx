@@ -7,38 +7,38 @@
       <States>
         <AnimatedStateSave>
           <StateName>Animation/FishFrame1</StateName>
-          <Time>0.3</Time>
-          <InterpolationType>Linear</InterpolationType>
+          <Time>0</Time>
+          <InterpolationType>Instant</InterpolationType>
           <Easing>Out</Easing>
         </AnimatedStateSave>
         <AnimatedStateSave>
           <StateName>Animation/FishFrame2</StateName>
-          <Time>0.6</Time>
-          <InterpolationType>Linear</InterpolationType>
+          <Time>0.3</Time>
+          <InterpolationType>Instant</InterpolationType>
           <Easing>Out</Easing>
         </AnimatedStateSave>
         <AnimatedStateSave>
           <StateName>Animation/FishFrame3</StateName>
-          <Time>0.9</Time>
-          <InterpolationType>Linear</InterpolationType>
+          <Time>0.6</Time>
+          <InterpolationType>Instant</InterpolationType>
           <Easing>Out</Easing>
         </AnimatedStateSave>
         <AnimatedStateSave>
           <StateName>Animation/FishFrame4</StateName>
-          <Time>1.2</Time>
-          <InterpolationType>Linear</InterpolationType>
+          <Time>0.9</Time>
+          <InterpolationType>Instant</InterpolationType>
           <Easing>Out</Easing>
         </AnimatedStateSave>
         <AnimatedStateSave>
           <StateName>Animation/FishFrame3</StateName>
-          <Time>1.5</Time>
-          <InterpolationType>Linear</InterpolationType>
+          <Time>1.2</Time>
+          <InterpolationType>Instant</InterpolationType>
           <Easing>Out</Easing>
         </AnimatedStateSave>
         <AnimatedStateSave>
           <StateName>Animation/FishFrame2</StateName>
-          <Time>1.8</Time>
-          <InterpolationType>Linear</InterpolationType>
+          <Time>1.5</Time>
+          <InterpolationType>Instant</InterpolationType>
           <Easing>Out</Easing>
         </AnimatedStateSave>
       </States>
