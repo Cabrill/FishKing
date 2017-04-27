@@ -289,6 +289,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>MainMenu</Name>
     </None>
+    <None Include="GumProject\Screens\TitleScreenGum.gusx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TitleScreenGum</Name>
+    </None>
     <None Include="GumProject\Standards\Circle.gutx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Circle</Name>
@@ -356,6 +360,14 @@
     <None Include="GumProject\Standards\Text.gutx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Text</Name>
+    </None>
+    <None Include="GumProject\TitleBackground.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TitleBackground</Name>
+    </None>
+    <None Include="GumProject\TitleComponents.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TitleComponents</Name>
     </None>
     <None Include="GumProject\TournamentFish.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

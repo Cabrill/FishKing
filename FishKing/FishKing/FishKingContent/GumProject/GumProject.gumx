@@ -23,6 +23,10 @@
     <Name>MainMenu</Name>
     <ElementType>Screen</ElementType>
   </ScreenReference>
+  <ScreenReference>
+    <Name>TitleScreenGum</Name>
+    <ElementType>Screen</ElementType>
+  </ScreenReference>
   <ComponentReference>
     <Name>AlignmentBar</Name>
     <ElementType>Component</ElementType>
@@ -89,6 +93,10 @@
   </ComponentReference>
   <ComponentReference>
     <Name>subcomponent\GlowingStar</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>subcomponent\MainMenuButton</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
