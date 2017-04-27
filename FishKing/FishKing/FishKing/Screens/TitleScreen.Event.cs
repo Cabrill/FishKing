@@ -16,6 +16,10 @@ namespace FishKing.Screens
         {
             LoadingScreen.TransitionToScreen(typeof(GameScreen).FullName);
         }
+        void OnExitButtonClick (FlatRedBall.Gui.IWindow window)
+        {
+            FlatRedBallServices.Game.Exit();
+        }
 		
 	}
 }

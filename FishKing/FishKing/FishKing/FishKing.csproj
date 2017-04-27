@@ -332,7 +332,10 @@
     <Compile Include="GumRuntimes\StressAccentuatorRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\CatchStatWithScaleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\GlowingStarRuntime.Generated.cs" />
-    <Compile Include="GumRuntimes\subcomponent\MainMenuButtonRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\subcomponent\MainMenuButtonRuntime.cs" />
+    <Compile Include="GumRuntimes\subcomponent\MainMenuButtonRuntime.Generated.cs">
+      <DependentUpon>MainMenuButtonRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\subcomponent\TextBoxRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TextEntryBoxRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TournamentFishRuntime.Generated.cs" />
