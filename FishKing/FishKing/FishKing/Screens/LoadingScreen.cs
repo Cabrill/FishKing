@@ -21,19 +21,21 @@ namespace FishKing.Screens
 
 		void CustomInitialize()
 		{
+            LoadingScreenInstance.CurrentVariableState = GumRuntimes.LoadingScreenRuntime.VariableState.Default;
+            LoadingScreenInstance.CurrentFishSpinState = GumRuntimes.LoadingScreenRuntime.FishSpin.Start;
             LoadingScreenInstance.FishSpinningAnimation.Play();
 		}
 
 		void CustomActivity(bool firstTimeCalled)
 		{
-            if (this.AsyncLoadingState == FlatRedBall.Screens.AsyncLoadingState.NotStarted)
-            {
-                StartAsyncLoad(typeof(GameScreen).FullName);
-            }
-            else if (this.AsyncLoadingState == FlatRedBall.Screens.AsyncLoadingState.Done)
-            {
-                IsActivityFinished = true;
-            }
+            //if (this.AsyncLoadingState == FlatRedBall.Screens.AsyncLoadingState.NotStarted)
+            //{
+            //    StartAsyncLoad(typeof(GameScreen).FullName);
+            //}
+            //else if (this.AsyncLoadingState == FlatRedBall.Screens.AsyncLoadingState.Done)
+            //{
+            //    IsActivityFinished = true;
+            //}
         }
 
 		void CustomDestroy()

@@ -441,6 +441,15 @@
         <string>GLUE</string>
       </Tags>
       <Source>GLUE</Source>
+      <Events>
+        <EventResponseSave>
+          <EventName>PlayButtonClick</EventName>
+          <SourceObject>PlayButton</SourceObject>
+          <SourceObjectEvent>Click</SourceObjectEvent>
+          <BeforeOrAfter>Before</BeforeOrAfter>
+          <DelegateType />
+        </EventResponseSave>
+      </Events>
       <Name>Screens\TitleScreen</Name>
       <ReferencedFiles>
         <ReferencedFileSave>
@@ -456,6 +465,15 @@
           <SourceFile>GumProject/Screens/TitleScreenGum.gusx</SourceFile>
           <SourceName>this (FishKing.GumRuntimes.TitleScreenGumRuntime)</SourceName>
           <InstanceName>TitleScreenGumRuntime</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/TitleScreenGum.gusx</SourceFile>
+          <SourceName>PlayButton (FishKing.GumRuntimes.MainMenuButtonRuntime)</SourceName>
+          <InstanceName>PlayButton</InstanceName>
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>

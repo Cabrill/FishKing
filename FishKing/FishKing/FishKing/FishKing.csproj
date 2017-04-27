@@ -368,7 +368,13 @@
       <DependentUpon>LoadingScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\TitleScreen.cs" />
+    <Compile Include="Screens\TitleScreen.Event.cs">
+      <DependentUpon>TitleScreen.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\TitleScreen.Generated.cs">
+      <DependentUpon>TitleScreen.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\TitleScreen.Generated.Event.cs">
       <DependentUpon>TitleScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Setup\CameraSetup.cs" />

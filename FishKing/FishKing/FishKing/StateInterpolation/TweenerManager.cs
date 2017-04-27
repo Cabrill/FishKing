@@ -86,18 +86,6 @@ namespace StateInterpolationPlugin
         {
 
         }
-
-        public bool IsObjectReferencedByTweeners(object obj)
-        {
-            foreach (var tweener in mTweeners)
-            {
-                if (tweener.Owner == obj)
-                {
-                    return true;
-                }
-            }
-            return false;
-        }
     }
 
     public static class PositionedObjectTweenerExtensionMethods
@@ -151,8 +139,6 @@ namespace StateInterpolationPlugin
                     interpolation, easing);
 
                 tweener.PositionChanged = HandlePositionSet;
-
-                tweener.Owner = Caller;
 
                 TweenerManager.Self.Add(tweener);
                 tweener.Start();

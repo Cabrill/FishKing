@@ -22,12 +22,12 @@ namespace FlatRedBall.Glue.StateInterpolation
         Cubic,
         Elastic,
         Exponential,
+        Instant,
         Linear,
         Quadratic,
         Quartic,
         Quintic,
-        Sinusoidal,
-        Instant
+        Sinusoidal
     }
 
 
@@ -206,6 +206,18 @@ namespace FlatRedBall.Glue.StateInterpolation
                             return Exponential.EaseOut;
                         case Easing.InOut:
                             return Exponential.EaseInOut;
+                        default:
+                            throw new Exception();
+                    }
+                case InterpolationType.Instant:
+                    switch (easing)
+                    {
+                        case Easing.In:
+                            return Instant.EaseIn;
+                        case Easing.Out:
+                            return Instant.EaseOut;
+                        case Easing.InOut:
+                            return Instant.EaseInOut;
                         default:
                             throw new Exception();
                     }

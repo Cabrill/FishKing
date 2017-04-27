@@ -23,13 +23,14 @@ namespace FishKing.Screens
 		{
             
             TitleScreenGumRuntime.IntroAnimation.Play();
+            FlatRedBallServices.Game.IsMouseVisible = true;
 		}
 
 		void CustomActivity(bool firstTimeCalled)
 		{
 
-
-		}
+            FlatRedBall.Debugging.Debugger.Write(FlatRedBall.Gui.GuiManager.Cursor.WindowOver);
+        }
 
 		void CustomDestroy()
 		{

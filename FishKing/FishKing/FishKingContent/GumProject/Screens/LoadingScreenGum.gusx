@@ -3,6 +3,12 @@
   <Name>LoadingScreenGum</Name>
   <State>
     <Name>Default</Name>
+    <Variable>
+      <Type>FishSpin</Type>
+      <Name>LoadingScreenInstance.FishSpinState</Name>
+      <Value xsi:type="xsd:string">Start</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
   </State>
   <Instance>
     <Name>LoadingScreenInstance</Name>
