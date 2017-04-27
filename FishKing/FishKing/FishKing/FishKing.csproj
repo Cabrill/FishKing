@@ -317,7 +317,6 @@
     <Compile Include="GumRuntimes\LinearScaleContainerRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\LoadingScreenGumRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\LoadingScreenRuntime.Generated.cs" />
-    <Compile Include="GumRuntimes\MainMenuRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\NineSliceRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\ProgressBarRuntime.cs" />
     <Compile Include="GumRuntimes\ProgressBarRuntime.Generated.cs">
@@ -333,13 +332,17 @@
     <Compile Include="GumRuntimes\StressAccentuatorRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\CatchStatWithScaleRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\GlowingStarRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\subcomponent\MainMenuButtonRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TextBoxRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TextEntryBoxRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TournamentFishRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TournamentPlaceHolderRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TrophyDisplayRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\TextRuntime.Generated.cs" />
-    <Compile Include="GumRuntimes\TitleScreenGumRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\TitleScreenGumRuntime.cs" />
+    <Compile Include="GumRuntimes\TitleScreenGumRuntime.Generated.cs">
+      <DependentUpon>TitleScreenGumRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\TournamentStatusRuntime.cs" />
     <Compile Include="GumRuntimes\TournamentStatusRuntime.Generated.cs">
       <DependentUpon>TournamentStatusRuntime.cs</DependentUpon>
@@ -364,9 +367,9 @@
     <Compile Include="Screens\LoadingScreen.Generated.cs">
       <DependentUpon>LoadingScreen.cs</DependentUpon>
     </Compile>
-    <Compile Include="Screens\MainMenuScreen.cs" />
-    <Compile Include="Screens\MainMenuScreen.Generated.cs">
-      <DependentUpon>MainMenuScreen.cs</DependentUpon>
+    <Compile Include="Screens\TitleScreen.cs" />
+    <Compile Include="Screens\TitleScreen.Generated.cs">
+      <DependentUpon>TitleScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Setup\CameraSetup.cs" />
     <Compile Include="StateInterpolation\Back.cs" />

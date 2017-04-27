@@ -169,6 +169,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>GlowingStar</Name>
     </None>
+    <None Include="GumProject\Components\subcomponent\MainMenuButton.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>MainMenuButton</Name>
+    </None>
     <None Include="GumProject\Components\subcomponent\TextEntryBox.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TextEntryBox</Name>
@@ -216,6 +220,14 @@
     <None Include="GumProject\FontCache\Font18Britannic Bold_0.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font18Britannic Bold_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font28Touch Of Nature_o1.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font28Touch Of Nature_o1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font28Touch Of Nature_o1_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font28Touch Of Nature_o1_0</Name>
     </None>
     <None Include="GumProject\FontCache\Font30Kristen ITC.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -284,10 +296,6 @@
     <None Include="GumProject\Screens\LoadingScreenGum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>LoadingScreenGum</Name>
-    </None>
-    <None Include="GumProject\Screens\MainMenu.gusx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>MainMenu</Name>
     </None>
     <None Include="GumProject\Screens\TitleScreenGum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

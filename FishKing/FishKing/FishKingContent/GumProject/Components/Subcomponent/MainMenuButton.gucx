@@ -335,12 +335,6 @@
     <State>
       <Name>Highlighted</Name>
       <Variable>
-        <Type>bool</Type>
-        <Name>ColoredRectangleInstance.Visible</Name>
-        <Value xsi:type="xsd:boolean">true</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
         <Type>int</Type>
         <Name>ButtonText.Blue</Name>
         <Value xsi:type="xsd:int">0</Value>
@@ -358,15 +352,15 @@
         <Value xsi:type="xsd:int">255</Value>
         <SetsValue>true</SetsValue>
       </Variable>
-    </State>
-    <State>
-      <Name>NotHighlighted</Name>
       <Variable>
         <Type>bool</Type>
         <Name>ColoredRectangleInstance.Visible</Name>
-        <Value xsi:type="xsd:boolean">false</Value>
+        <Value xsi:type="xsd:boolean">true</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+    </State>
+    <State>
+      <Name>NotHighlighted</Name>
       <Variable>
         <Type>int</Type>
         <Name>ButtonText.Blue</Name>
@@ -383,6 +377,12 @@
         <Type>int</Type>
         <Name>ButtonText.Red</Name>
         <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>ColoredRectangleInstance.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -397,6 +397,18 @@
         <Value xsi:type="xsd:int">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Height</Name>
+        <Value xsi:type="xsd:float">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Width</Name>
+        <Value xsi:type="xsd:float">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
     </State>
     <State>
       <Name>End</Name>
@@ -404,6 +416,18 @@
         <Type>int</Type>
         <Name>ButtonText.Alpha</Name>
         <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Height</Name>
+        <Value xsi:type="xsd:float">50</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>Width</Name>
+        <Value xsi:type="xsd:float">30</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

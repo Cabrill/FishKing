@@ -16,13 +16,13 @@ using FlatRedBall.Localization;
 
 namespace FishKing.Screens
 {
-	public partial class MainMenuScreen
+	public partial class TitleScreen
 	{
 
 		void CustomInitialize()
 		{
-
-
+            
+            TitleScreenGumRuntime.IntroAnimation.Play();
 		}
 
 		void CustomActivity(bool firstTimeCalled)
