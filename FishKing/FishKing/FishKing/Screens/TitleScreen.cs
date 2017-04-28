@@ -22,7 +22,10 @@ namespace FishKing.Screens
 	{
         Multiple2DInputs MovementInput;
         MultiplePressableInputs SelectionInput;
+        MultiplePressableInputs ExitInput;
         TitleScreenGumRuntime screen;
+        double lastMovementTime = 0;
+        double timeBetweenMovement = 0.2;
 
         void CustomInitialize()
 		{
@@ -30,6 +33,8 @@ namespace FishKing.Screens
             screen = TitleScreenGumRuntime;
             screen.IntroAnimation.Play();
             FlatRedBallServices.Game.IsMouseVisible = true;
+            Microsoft.Xna.Framework.Media.MediaPlayer.Volume = 0.5f;
+            FlatRedBall.Audio.AudioManager.PlaySong(Echinoderm_Regeneration_Sting, true, false);
         }
 
         private void InitializeInput()
@@ -47,19 +52,44 @@ namespace FishKing.Screens
             }
             MovementInput = movementInputs;
 
-            var actionInputs = new MultiplePressableInputs();
-            actionInputs.Inputs.Add(InputManager.Keyboard.GetKey(Keys.Space));
+            var selectionInputs = new MultiplePressableInputs();
+            selectionInputs.Inputs.Add(InputManager.Keyboard.GetKey(Keys.Space));
+            selectionInputs.Inputs.Add(InputManager.Keyboard.GetKey(Keys.Enter));
             if (InputManager.NumberOfConnectedGamePads > 0)
             {
-                actionInputs.Inputs.Add(InputManager.Xbox360GamePads[0].GetButton(Xbox360GamePad.Button.A));
+                selectionInputs.Inputs.Add(InputManager.Xbox360GamePads[0].GetButton(Xbox360GamePad.Button.A));
             }
-            SelectionInput = actionInputs;
+            SelectionInput = selectionInputs;
+
+            var exitInputs = new MultiplePressableInputs();
+            exitInputs.Inputs.Add(InputManager.Keyboard.GetKey(Keys.Escape));
+            ExitInput = exitInputs;
         }
 
         void CustomActivity(bool firstTimeCalled)
 		{
             HandleMenuMovement();
             HandleMenuSelection();
+            HandleExitInput();
+            if (FlatRedBall.Audio.AudioManager.CurrentlyPlayingSong == null)
+            {
+                //FlatRedBall.Audio.AudioManager.PlaySong(The_Low_Seas, true, false);
+            }
+        }
+
+        private void HandleExitInput()
+        {
+            if (ExitInput.WasJustPressed)
+            {
+                if (AboutPopup.Visible)
+                {
+                    AboutPopup.HandleExit();
+                }
+                else
+                {
+                    ExitButton.CallClick();
+                }
+            }
         }
 
         private void HandleMenuSelection()
@@ -175,9 +205,10 @@ namespace FishKing.Screens
 
         private Direction GetDesiredDirection()
         {
+
             Direction desiredDirection = Direction.None;
 
-            if (MovementInput != null)
+            if (MovementInput != null && FlatRedBall.TimeManager.CurrentTime - lastMovementTime > timeBetweenMovement)
             {
                 var x = MovementInput.X;
                 var y = MovementInput.Y;
@@ -206,6 +237,11 @@ namespace FishKing.Screens
                 {
                     desiredDirection = Direction.Up;
                 }
+            }
+
+            if (desiredDirection != Direction.None)
+            {
+                lastMovementTime = FlatRedBall.TimeManager.CurrentTime;
             }
 
             return desiredDirection;

@@ -320,7 +320,9 @@
     <Compile Include="GumRuntimes\NineSliceRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\PaperFrameRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\PopupMessageRuntime.cs" />
-    <Compile Include="GumRuntimes\PopupMessageRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\PopupMessageRuntime.Generated.cs">
+      <DependentUpon>PopupMessageRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\ProgressBarRuntime.cs" />
     <Compile Include="GumRuntimes\ProgressBarRuntime.Generated.cs">
       <DependentUpon>ProgressBarRuntime.cs</DependentUpon>
@@ -340,7 +342,9 @@
       <DependentUpon>MainMenuButtonRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\subcomponent\SubmenuButtonRuntime.cs" />
-    <Compile Include="GumRuntimes\subcomponent\SubmenuButtonRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\subcomponent\SubmenuButtonRuntime.Generated.cs">
+      <DependentUpon>SubmenuButtonRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\subcomponent\TextBoxRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TextEntryBoxRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TournamentFishRuntime.Generated.cs" />

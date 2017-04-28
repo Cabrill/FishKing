@@ -110,5 +110,24 @@ namespace FishKing.GumRuntimes
             }
         }
 
+        public void HandleExit()
+        {
+            switch (CurrentPopupDisplayState)
+            {
+                case PopupDisplay.JustOK:
+                    OKButton.CallClick(); break;
+                case PopupDisplay.OKCancel:
+                    CancelButton.CallClick();
+                    break;
+                case PopupDisplay.YesNo:
+                    NoButton.CallClick();
+                    break;
+                case PopupDisplay.YesNoCancel:
+                    CancelButton.CallClick();
+                    break;
+                default: break;
+            }
+        }
+
     }
 }
