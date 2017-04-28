@@ -544,7 +544,7 @@
       <Variable>
         <Type>float</Type>
         <Name>TextStatValue.Y</Name>
-        <Value xsi:type="xsd:float">80</Value>
+        <Value xsi:type="xsd:float">85</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

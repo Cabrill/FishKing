@@ -301,13 +301,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font36Arial_0</Name>
     </None>
-    <None Include="GumProject\FontCache\Font36Britannic Bold.fnt">
+    <None Include="GumProject\FontCache\Font36Britannic Bold_o1.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font36Britannic Bold</Name>
+      <Name>Font36Britannic Bold_o1</Name>
     </None>
-    <None Include="GumProject\FontCache\Font36Britannic Bold_0.png">
+    <None Include="GumProject\FontCache\Font36Britannic Bold_o1_0.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font36Britannic Bold_0</Name>
+      <Name>Font36Britannic Bold_o1_0</Name>
     </None>
     <None Include="GumProject\FontCache\Font36Rockwell Extra Bold_o2.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
