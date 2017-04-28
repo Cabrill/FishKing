@@ -407,6 +407,12 @@
       <Name>Bronze</Name>
       <Variable>
         <Type>int</Type>
+        <Name>GlowSprite.Alpha</Name>
+        <Value xsi:type="xsd:int">150</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
         <Name>GlowSprite.Blue</Name>
         <Value xsi:type="xsd:int">255</Value>
         <SetsValue>true</SetsValue>

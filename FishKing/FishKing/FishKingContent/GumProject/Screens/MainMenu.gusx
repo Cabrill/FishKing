@@ -48,7 +48,7 @@
     <Variable>
       <Type>float</Type>
       <Name>BackButton.Y</Name>
-      <Value xsi:type="xsd:float">88.5</Value>
+      <Value xsi:type="xsd:float">90</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -125,6 +125,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>ChildrenLayout</Type>
+      <Name>FishCaughtContainer.Children Layout</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>FishCaughtContainer.Height</Name>
       <Value xsi:type="xsd:float">10</Value>
@@ -175,7 +181,13 @@
     <Variable>
       <Type>string</Type>
       <Name>FishCaughtText.Text</Name>
-      <Value xsi:type="xsd:string">Fish Caught: 0</Value>
+      <Value xsi:type="xsd:string">Fish Caught:</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishCaughtText.Width</Name>
+      <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -205,6 +217,60 @@
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>FishCaughtText.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishCaughtValue.Height</Name>
+      <Value xsi:type="xsd:float">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>FishCaughtValue.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FishCaughtValue.Parent</Name>
+      <Value xsi:type="xsd:string">FishCaughtContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FishCaughtValue.Text</Name>
+      <Value xsi:type="xsd:string">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>FishCaughtValue.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishCaughtValue.X</Name>
+      <Value xsi:type="xsd:float">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>FishCaughtValue.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishCaughtValue.Y</Name>
+      <Value xsi:type="xsd:float">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>FishCaughtValue.Y Units</Name>
       <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -276,7 +342,7 @@
     <Variable>
       <Type>float</Type>
       <Name>FishopediaButton.Y</Name>
-      <Value xsi:type="xsd:float">3.5</Value>
+      <Value xsi:type="xsd:float">1.5</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -330,7 +396,7 @@
     <Variable>
       <Type>float</Type>
       <Name>GearButton.Y</Name>
-      <Value xsi:type="xsd:float">88.5</Value>
+      <Value xsi:type="xsd:float">90</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -378,7 +444,7 @@
     <Variable>
       <Type>int</Type>
       <Name>LeftBackgroundRectangle.Alpha</Name>
-      <Value xsi:type="xsd:int">225</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -420,7 +486,7 @@
     <Variable>
       <Type>float</Type>
       <Name>LeftBackgroundRectangle.Width</Name>
-      <Value xsi:type="xsd:float">100</Value>
+      <Value xsi:type="xsd:float">104</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -432,7 +498,7 @@
     <Variable>
       <Type>float</Type>
       <Name>LeftBackgroundRectangle.X</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Value xsi:type="xsd:float">-2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -456,7 +522,7 @@
     <Variable>
       <Type>float</Type>
       <Name>LeftContainer.Height</Name>
-      <Value xsi:type="xsd:float">61</Value>
+      <Value xsi:type="xsd:float">78</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -468,7 +534,7 @@
     <Variable>
       <Type>float</Type>
       <Name>LeftContainer.Width</Name>
-      <Value xsi:type="xsd:float">40</Value>
+      <Value xsi:type="xsd:float">42</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -480,7 +546,7 @@
     <Variable>
       <Type>float</Type>
       <Name>LeftContainer.X</Name>
-      <Value xsi:type="xsd:float">6.3</Value>
+      <Value xsi:type="xsd:float">5</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -492,13 +558,86 @@
     <Variable>
       <Type>float</Type>
       <Name>LeftContainer.Y</Name>
-      <Value xsi:type="xsd:float">19</Value>
+      <Value xsi:type="xsd:float">11</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>LeftContainer.Y Units</Name>
       <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>MoneySeparatorSprite.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>MoneySeparatorSprite.Parent</Name>
+      <Value xsi:type="xsd:string">StatusContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>MoneySeparatorSprite.SourceFile</Name>
+      <Value xsi:type="xsd:string">GumUI.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TextureAddress</Type>
+      <Name>MoneySeparatorSprite.Texture Address</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>MoneySeparatorSprite.Texture Height</Name>
+      <Value xsi:type="xsd:int">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>MoneySeparatorSprite.Texture Left</Name>
+      <Value xsi:type="xsd:int">200</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>MoneySeparatorSprite.Texture Top</Name>
+      <Value xsi:type="xsd:int">91</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>MoneySeparatorSprite.Texture Width</Name>
+      <Value xsi:type="xsd:int">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>MoneySeparatorSprite.Width</Name>
+      <Value xsi:type="xsd:float">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>MoneySeparatorSprite.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>MoneySeparatorSprite.X</Name>
+      <Value xsi:type="xsd:float">75</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>MoneySeparatorSprite.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -576,7 +715,7 @@
     <Variable>
       <Type>int</Type>
       <Name>RightBackgroundRectangle.Alpha</Name>
-      <Value xsi:type="xsd:int">225</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -654,7 +793,7 @@
     <Variable>
       <Type>float</Type>
       <Name>RightContainer.Height</Name>
-      <Value xsi:type="xsd:float">61</Value>
+      <Value xsi:type="xsd:float">78</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -671,7 +810,7 @@
     <Variable>
       <Type>float</Type>
       <Name>RightContainer.Width</Name>
-      <Value xsi:type="xsd:float">39.5</Value>
+      <Value xsi:type="xsd:float">42</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -695,7 +834,7 @@
     <Variable>
       <Type>float</Type>
       <Name>RightContainer.Y</Name>
-      <Value xsi:type="xsd:float">19</Value>
+      <Value xsi:type="xsd:float">11</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -749,79 +888,6 @@
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>SilverTrophyCount.X Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>SpriteInstance.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>SpriteInstance.Parent</Name>
-      <Value xsi:type="xsd:string">StatusContainer</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <IsFile>true</IsFile>
-      <Type>string</Type>
-      <Name>SpriteInstance.SourceFile</Name>
-      <Value xsi:type="xsd:string">GumUI.png</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>TextureAddress</Type>
-      <Name>SpriteInstance.Texture Address</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>SpriteInstance.Texture Height</Name>
-      <Value xsi:type="xsd:int">10</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>SpriteInstance.Texture Left</Name>
-      <Value xsi:type="xsd:int">200</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>SpriteInstance.Texture Top</Name>
-      <Value xsi:type="xsd:int">91</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>SpriteInstance.Texture Width</Name>
-      <Value xsi:type="xsd:int">10</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>SpriteInstance.Width</Name>
-      <Value xsi:type="xsd:float">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>SpriteInstance.Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>SpriteInstance.X</Name>
-      <Value xsi:type="xsd:float">75</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>SpriteInstance.X Units</Name>
       <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -888,7 +954,7 @@
     <Variable>
       <Type>float</Type>
       <Name>StatusContainer.Height</Name>
-      <Value xsi:type="xsd:float">7</Value>
+      <Value xsi:type="xsd:float">7.5</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -900,7 +966,7 @@
     <Variable>
       <Type>float</Type>
       <Name>StatusContainer.Width</Name>
-      <Value xsi:type="xsd:float">37.5</Value>
+      <Value xsi:type="xsd:float">39.5</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -912,7 +978,7 @@
     <Variable>
       <Type>float</Type>
       <Name>StatusContainer.X</Name>
-      <Value xsi:type="xsd:float">7.5</Value>
+      <Value xsi:type="xsd:float">6.5</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -924,7 +990,7 @@
     <Variable>
       <Type>float</Type>
       <Name>StatusContainer.Y</Name>
-      <Value xsi:type="xsd:float">4.1</Value>
+      <Value xsi:type="xsd:float">1.7</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -936,19 +1002,19 @@
     <Variable>
       <Type>int</Type>
       <Name>StatusRectangle.Alpha</Name>
-      <Value xsi:type="xsd:int">225</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>StatusRectangle.Blue</Name>
-      <Value xsi:type="xsd:int">50</Value>
+      <Value xsi:type="xsd:int">25</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>StatusRectangle.Green</Name>
-      <Value xsi:type="xsd:int">50</Value>
+      <Value xsi:type="xsd:int">25</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -972,7 +1038,7 @@
     <Variable>
       <Type>int</Type>
       <Name>StatusRectangle.Red</Name>
-      <Value xsi:type="xsd:int">50</Value>
+      <Value xsi:type="xsd:int">25</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1032,7 +1098,7 @@
     <Variable>
       <Type>float</Type>
       <Name>StoreButton.Y</Name>
-      <Value xsi:type="xsd:float">88.5</Value>
+      <Value xsi:type="xsd:float">90</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1180,9 +1246,185 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>HighlightState</Type>
+      <Name>TournamentPreviewInstance.HighlightState</Name>
+      <Value xsi:type="xsd:string">Highlighted</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>TournamentPreviewInstance.Parent</Name>
       <Value xsi:type="xsd:string">LeftContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TrophySeparator1.Height</Name>
+      <Value xsi:type="xsd:float">110</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>TrophySeparator1.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>TrophySeparator1.Parent</Name>
+      <Value xsi:type="xsd:string">StatusContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>TrophySeparator1.SourceFile</Name>
+      <Value xsi:type="xsd:string">GumUI.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TextureAddress</Type>
+      <Name>TrophySeparator1.Texture Address</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TrophySeparator1.Texture Height</Name>
+      <Value xsi:type="xsd:int">11</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TrophySeparator1.Texture Left</Name>
+      <Value xsi:type="xsd:int">203</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TrophySeparator1.Texture Top</Name>
+      <Value xsi:type="xsd:int">294</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TrophySeparator1.Texture Width</Name>
+      <Value xsi:type="xsd:int">5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TrophySeparator1.Width</Name>
+      <Value xsi:type="xsd:float">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>TrophySeparator1.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TrophySeparator1.X</Name>
+      <Value xsi:type="xsd:float">24</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>TrophySeparator1.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>TrophySeparator1.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TrophySeparator2.Height</Name>
+      <Value xsi:type="xsd:float">110</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>TrophySeparator2.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>TrophySeparator2.Parent</Name>
+      <Value xsi:type="xsd:string">StatusContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>TrophySeparator2.SourceFile</Name>
+      <Value xsi:type="xsd:string">GumUI.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TextureAddress</Type>
+      <Name>TrophySeparator2.Texture Address</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TrophySeparator2.Texture Height</Name>
+      <Value xsi:type="xsd:int">11</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TrophySeparator2.Texture Left</Name>
+      <Value xsi:type="xsd:int">203</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TrophySeparator2.Texture Top</Name>
+      <Value xsi:type="xsd:int">294</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TrophySeparator2.Texture Width</Name>
+      <Value xsi:type="xsd:int">5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TrophySeparator2.Width</Name>
+      <Value xsi:type="xsd:float">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>TrophySeparator2.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TrophySeparator2.X</Name>
+      <Value xsi:type="xsd:float">49</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>TrophySeparator2.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>TrophySeparator2.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <VariableList xsi:type="VariableListSaveOfString">
@@ -1194,8 +1436,8 @@
     </VariableList>
   </State>
   <Instance>
-    <Name>BackgroundSprite</Name>
-    <BaseType>Sprite</BaseType>
+    <Name>StatusContainer</Name>
+    <BaseType>Container</BaseType>
   </Instance>
   <Instance>
     <Name>LeftBackgroundRectangle</Name>
@@ -1206,24 +1448,12 @@
     <BaseType>Container</BaseType>
   </Instance>
   <Instance>
-    <Name>BackButton</Name>
-    <BaseType>subcomponent\SubmenuButton</BaseType>
-  </Instance>
-  <Instance>
-    <Name>FishopediaButton</Name>
-    <BaseType>subcomponent\SubmenuButton</BaseType>
-  </Instance>
-  <Instance>
     <Name>RightContainer</Name>
     <BaseType>Container</BaseType>
   </Instance>
   <Instance>
     <Name>RightBackgroundRectangle</Name>
     <BaseType>ColoredRectangle</BaseType>
-  </Instance>
-  <Instance>
-    <Name>StatusContainer</Name>
-    <BaseType>Container</BaseType>
   </Instance>
   <Instance>
     <Name>StatusRectangle</Name>
@@ -1242,19 +1472,11 @@
     <BaseType>subcomponent\TrophyCount</BaseType>
   </Instance>
   <Instance>
-    <Name>StoreButton</Name>
-    <BaseType>subcomponent\SubmenuButton</BaseType>
-  </Instance>
-  <Instance>
-    <Name>GearButton</Name>
-    <BaseType>subcomponent\SubmenuButton</BaseType>
-  </Instance>
-  <Instance>
     <Name>MoneyText</Name>
     <BaseType>Text</BaseType>
   </Instance>
   <Instance>
-    <Name>SpriteInstance</Name>
+    <Name>MoneySeparatorSprite</Name>
     <BaseType>Sprite</BaseType>
   </Instance>
   <Instance>
@@ -1284,5 +1506,37 @@
   <Instance>
     <Name>TimePlayedValue</Name>
     <BaseType>Text</BaseType>
+  </Instance>
+  <Instance>
+    <Name>FishCaughtValue</Name>
+    <BaseType>Text</BaseType>
+  </Instance>
+  <Instance>
+    <Name>BackgroundSprite</Name>
+    <BaseType>Sprite</BaseType>
+  </Instance>
+  <Instance>
+    <Name>GearButton</Name>
+    <BaseType>subcomponent\SubmenuButton</BaseType>
+  </Instance>
+  <Instance>
+    <Name>StoreButton</Name>
+    <BaseType>subcomponent\SubmenuButton</BaseType>
+  </Instance>
+  <Instance>
+    <Name>FishopediaButton</Name>
+    <BaseType>subcomponent\SubmenuButton</BaseType>
+  </Instance>
+  <Instance>
+    <Name>BackButton</Name>
+    <BaseType>subcomponent\SubmenuButton</BaseType>
+  </Instance>
+  <Instance>
+    <Name>TrophySeparator1</Name>
+    <BaseType>Sprite</BaseType>
+  </Instance>
+  <Instance>
+    <Name>TrophySeparator2</Name>
+    <BaseType>Sprite</BaseType>
   </Instance>
 </ScreenSave>
