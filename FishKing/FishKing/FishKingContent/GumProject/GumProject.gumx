@@ -20,7 +20,7 @@
     <ElementType>Screen</ElementType>
   </ScreenReference>
   <ScreenReference>
-    <Name>MainMenu</Name>
+    <Name>MainMenuGum</Name>
     <ElementType>Screen</ElementType>
   </ScreenReference>
   <ScreenReference>

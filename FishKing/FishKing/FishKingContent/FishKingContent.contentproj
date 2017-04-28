@@ -417,9 +417,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>LoadingScreenGum</Name>
     </None>
-    <None Include="GumProject\Screens\MainMenu.gusx">
+    <None Include="GumProject\Screens\MainMenuGum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>MainMenu</Name>
+      <Name>MainMenuGum</Name>
     </None>
     <None Include="GumProject\Screens\TitleScreenGum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

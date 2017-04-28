@@ -441,6 +441,149 @@
         <string>GLUE</string>
       </Tags>
       <Source>GLUE</Source>
+      <Name>Screens\MainMenu</Name>
+      <ReferencedFiles>
+        <ReferencedFileSave>
+          <Name>GumProject/Screens/MainMenuGum.gusx</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>FlatRedBall.Gum.GumIdb</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+      </ReferencedFiles>
+      <NamedObjects>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/MainMenuGum.gusx</SourceFile>
+          <SourceName>GoldTrophyCount (FishKing.GumRuntimes.TrophyCountRuntime)</SourceName>
+          <InstanceName>GoldTrophyCount</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/MainMenuGum.gusx</SourceFile>
+          <SourceName>SilverTrophyCount (FishKing.GumRuntimes.TrophyCountRuntime)</SourceName>
+          <InstanceName>SilverTrophyCount</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/MainMenuGum.gusx</SourceFile>
+          <SourceName>BronzeTrophyCount (FishKing.GumRuntimes.TrophyCountRuntime)</SourceName>
+          <InstanceName>BronzeTrophyCount</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/MainMenuGum.gusx</SourceFile>
+          <SourceName>MoneyText (FishKing.GumRuntimes.TextRuntime)</SourceName>
+          <InstanceName>MoneyText</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/MainMenuGum.gusx</SourceFile>
+          <SourceName>BackButton (FishKing.GumRuntimes.SubmenuButtonRuntime)</SourceName>
+          <InstanceName>BackButton</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/MainMenuGum.gusx</SourceFile>
+          <SourceName>GoFishButton (FishKing.GumRuntimes.SubmenuButtonRuntime)</SourceName>
+          <InstanceName>GoFishButton</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/MainMenuGum.gusx</SourceFile>
+          <SourceName>GearButton (FishKing.GumRuntimes.SubmenuButtonRuntime)</SourceName>
+          <InstanceName>GearButton</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/MainMenuGum.gusx</SourceFile>
+          <SourceName>StoreButton (FishKing.GumRuntimes.SubmenuButtonRuntime)</SourceName>
+          <InstanceName>StoreButton</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/MainMenuGum.gusx</SourceFile>
+          <SourceName>FishopediaButton (FishKing.GumRuntimes.SubmenuButtonRuntime)</SourceName>
+          <InstanceName>FishopediaButton</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/MainMenuGum.gusx</SourceFile>
+          <SourceName>TimePlayedValue (FishKing.GumRuntimes.TextRuntime)</SourceName>
+          <InstanceName>TimePlayedValue</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/MainMenuGum.gusx</SourceFile>
+          <SourceName>FishCaughtValue (FishKing.GumRuntimes.TextRuntime)</SourceName>
+          <InstanceName>FishCaughtValue</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/MainMenuGum.gusx</SourceFile>
+          <SourceName>LongestFishValue (FishKing.GumRuntimes.TextRuntime)</SourceName>
+          <InstanceName>LongestFishValue</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/MainMenuGum.gusx</SourceFile>
+          <SourceName>HeaviestFishValue (FishKing.GumRuntimes.TextRuntime)</SourceName>
+          <InstanceName>HeaviestFishValue</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/MainMenuGum.gusx</SourceFile>
+          <SourceName>RarestFishValue (FishKing.GumRuntimes.TextRuntime)</SourceName>
+          <InstanceName>RarestFishValue</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+      </NamedObjects>
+    </ScreenSave>
+    <ScreenSave>
+      <Tags>
+        <string>GLUE</string>
+      </Tags>
+      <Source>GLUE</Source>
       <Events>
         <EventResponseSave>
           <EventName>PlayButtonClick</EventName>

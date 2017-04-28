@@ -1,6 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ScreenSave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Name>MainMenu</Name>
+  <Name>MainMenuGum</Name>
   <State>
     <Name>Default</Name>
     <Variable>
@@ -242,6 +242,12 @@
       <Type>string</Type>
       <Name>FishCaughtValue.Text</Name>
       <Value xsi:type="xsd:string">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishCaughtValue.Width</Name>
+      <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -616,6 +622,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>float</Type>
+      <Name>HeaviestFishValue.Width</Name>
+      <Value xsi:type="xsd:float">50</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>DimensionUnitType</Type>
       <Name>HeaviestFishValue.Width Units</Name>
       <Value xsi:type="xsd:int">1</Value>
@@ -889,6 +901,12 @@
       <Type>string</Type>
       <Name>LongestFishValue.Text</Name>
       <Value xsi:type="xsd:string">0mm</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>LongestFishValue.Width</Name>
+      <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1184,6 +1202,12 @@
       <Type>string</Type>
       <Name>RarestFishValue.Text</Name>
       <Value xsi:type="xsd:string" />
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>RarestFishValue.Width</Name>
+      <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
