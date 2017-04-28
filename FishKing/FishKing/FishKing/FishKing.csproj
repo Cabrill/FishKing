@@ -317,6 +317,7 @@
     <Compile Include="GumRuntimes\LinearScaleContainerRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\LoadingScreenGumRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\LoadingScreenRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\MainMenuRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\NineSliceRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\PaperFrameRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\PopupMessageRuntime.cs" />
@@ -349,6 +350,7 @@
     <Compile Include="GumRuntimes\subcomponent\TextEntryBoxRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TournamentFishRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TournamentPlaceHolderRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\subcomponent\TrophyCountRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TrophyDisplayRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\TextRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\TitleScreenGumRuntime.cs" />

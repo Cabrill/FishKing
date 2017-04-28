@@ -20,6 +20,10 @@
     <ElementType>Screen</ElementType>
   </ScreenReference>
   <ScreenReference>
+    <Name>MainMenu</Name>
+    <ElementType>Screen</ElementType>
+  </ScreenReference>
+  <ScreenReference>
     <Name>TitleScreenGum</Name>
     <ElementType>Screen</ElementType>
   </ScreenReference>
@@ -68,6 +72,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>PaperFrame</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>PopupMessage</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
@@ -77,10 +85,6 @@
   </ComponentReference>
   <ComponentReference>
     <Name>SingleBarFrame</Name>
-    <ElementType>Component</ElementType>
-  </ComponentReference>
-  <ComponentReference>
-    <Name>PaperFrame</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
@@ -117,6 +121,10 @@
   </ComponentReference>
   <ComponentReference>
     <Name>subcomponent\TournamentPlaceHolder</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>subcomponent\TrophyCount</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>

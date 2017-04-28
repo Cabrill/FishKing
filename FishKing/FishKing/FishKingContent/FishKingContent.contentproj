@@ -197,6 +197,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TournamentPlaceHolder</Name>
     </None>
+    <None Include="GumProject\Components\subcomponent\TrophyCount.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TrophyCount</Name>
+    </None>
     <None Include="GumProject\Components\subcomponent\TrophyDisplay.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TrophyDisplay</Name>
@@ -248,6 +252,14 @@
     <None Include="GumProject\FontCache\Font24Touch Of Nature_o1_0.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font24Touch Of Nature_o1_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font26Bernard MT Condensed_o1.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font26Bernard MT Condensed_o1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font26Bernard MT Condensed_o1_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font26Bernard MT Condensed_o1_0</Name>
     </None>
     <None Include="GumProject\FontCache\Font28Touch Of Nature_o1.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -301,6 +313,18 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font60Touch Of Nature_1</Name>
     </None>
+    <None Include="GumProject\FontCache\Font60Touch Of Nature_o1.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Touch Of Nature_o1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font60Touch Of Nature_o1_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Touch Of Nature_o1_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font60Touch Of Nature_o1_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Touch Of Nature_o1_1</Name>
+    </None>
     <None Include="GumProject\frblogo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>frblogo</Name>
@@ -321,6 +345,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>loadingscreenitems-min</Name>
     </None>
+    <None Include="GumProject\MenuBackground.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>MenuBackground</Name>
+    </None>
     <None Include="GumProject\Screens\FlatRedBallSplashGum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FlatRedBallSplashGum</Name>
@@ -332,6 +360,10 @@
     <None Include="GumProject\Screens\LoadingScreenGum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>LoadingScreenGum</Name>
+    </None>
+    <None Include="GumProject\Screens\MainMenu.gusx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>MainMenu</Name>
     </None>
     <None Include="GumProject\Screens\TitleScreenGum.gusx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
