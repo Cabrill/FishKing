@@ -124,6 +124,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>subcomponent\TournamentPreview</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>subcomponent\TrophyCount</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>

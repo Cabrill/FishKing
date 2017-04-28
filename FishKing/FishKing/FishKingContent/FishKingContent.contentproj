@@ -197,6 +197,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TournamentPlaceHolder</Name>
     </None>
+    <None Include="GumProject\Components\subcomponent\TournamentPreview.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TournamentPreview</Name>
+    </None>
     <None Include="GumProject\Components\subcomponent\TrophyCount.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TrophyCount</Name>
@@ -212,6 +216,42 @@
     <None Include="GumProject\Components\UnknownFish.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>UnknownFish</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font1202Peas 4th of July_o1.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font1202Peas 4th of July_o1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font1202Peas 4th of July_o1_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font1202Peas 4th of July_o1_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font1202Peas 4th of July_o1_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font1202Peas 4th of July_o1_1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font1202Peas 4th of July_o1_2.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font1202Peas 4th of July_o1_2</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font1202Peas 4th of July_o1_3.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font1202Peas 4th of July_o1_3</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font1202Peas 4th of July_o1_4.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font1202Peas 4th of July_o1_4</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font1202Peas 4th of July_o1_5.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font1202Peas 4th of July_o1_5</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font1202Peas 4th of July_o1_6.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font1202Peas 4th of July_o1_6</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font1202Peas 4th of July_o1_7.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font1202Peas 4th of July_o1_7</Name>
     </None>
     <None Include="GumProject\FontCache\Font12Britannic Bold.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -244,6 +284,14 @@
     <None Include="GumProject\FontCache\Font18MV Boli_0.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font18MV Boli_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font24Arial.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font24Arial</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font24Arial_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font24Arial_0</Name>
     </None>
     <None Include="GumProject\FontCache\Font24Touch Of Nature_o1.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -292,6 +340,18 @@
     <None Include="GumProject\FontCache\Font36Arial_0.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font36Arial_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font36Rockwell Extra Bold_o1.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font36Rockwell Extra Bold_o1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font36Rockwell Extra Bold_o1_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font36Rockwell Extra Bold_o1_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font36Rockwell Extra Bold_o1_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font36Rockwell Extra Bold_o1_1</Name>
     </None>
     <None Include="GumProject\FontCache\Font36Touch Of Nature.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
