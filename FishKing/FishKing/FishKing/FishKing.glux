@@ -456,6 +456,20 @@
           <BeforeOrAfter>Before</BeforeOrAfter>
           <DelegateType />
         </EventResponseSave>
+        <EventResponseSave>
+          <EventName>AboutPopupOKButtonClick</EventName>
+          <SourceObject>AboutPopup</SourceObject>
+          <SourceObjectEvent>OKButtonClick</SourceObjectEvent>
+          <BeforeOrAfter>Before</BeforeOrAfter>
+          <DelegateType />
+        </EventResponseSave>
+        <EventResponseSave>
+          <EventName>AboutButtonClick</EventName>
+          <SourceObject>AboutButton</SourceObject>
+          <SourceObjectEvent>Click</SourceObjectEvent>
+          <BeforeOrAfter>Before</BeforeOrAfter>
+          <DelegateType />
+        </EventResponseSave>
       </Events>
       <Name>Screens\TitleScreen</Name>
       <ReferencedFiles>
@@ -490,6 +504,24 @@
           <SourceFile>GumProject/Screens/TitleScreenGum.gusx</SourceFile>
           <SourceName>ExitButton (FishKing.GumRuntimes.MainMenuButtonRuntime)</SourceName>
           <InstanceName>ExitButton</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/TitleScreenGum.gusx</SourceFile>
+          <SourceName>AboutButton (FishKing.GumRuntimes.MainMenuButtonRuntime)</SourceName>
+          <InstanceName>AboutButton</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/TitleScreenGum.gusx</SourceFile>
+          <SourceName>AboutPopup (FishKing.GumRuntimes.PopupMessageRuntime)</SourceName>
+          <InstanceName>AboutPopup</InstanceName>
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
@@ -2530,6 +2562,8 @@
     <RequiredPlugins>
       <string>Tiled Plugin</string>
       <string>gumplugin</string>
+      <string>Gum Plugin</string>
+      <string>State Interpolation Plugin</string>
     </RequiredPlugins>
   </PluginData>
 </GlueProjectSave>

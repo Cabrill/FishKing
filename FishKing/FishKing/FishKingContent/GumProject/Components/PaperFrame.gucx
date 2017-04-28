@@ -1,13 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <ComponentSave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
-  <Name>SingleBarFrame</Name>
+  <Name>PaperFrame</Name>
   <BaseType>Container</BaseType>
   <State>
     <Name>Default</Name>
     <Variable>
       <Type>float</Type>
       <Name>Bottom.Height</Name>
-      <Value xsi:type="xsd:float">11</Value>
+      <Value xsi:type="xsd:float">25</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -32,31 +32,31 @@
     <Variable>
       <Type>int</Type>
       <Name>Bottom.Texture Height</Name>
-      <Value xsi:type="xsd:int">11</Value>
+      <Value xsi:type="xsd:int">25</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>Bottom.Texture Left</Name>
-      <Value xsi:type="xsd:int">124</Value>
+      <Value xsi:type="xsd:int">1888</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>Bottom.Texture Top</Name>
-      <Value xsi:type="xsd:int">437</Value>
+      <Value xsi:type="xsd:int">48</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>Bottom.Texture Width</Name>
-      <Value xsi:type="xsd:int">74</Value>
+      <Value xsi:type="xsd:int">80</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>Bottom.Width</Name>
-      <Value xsi:type="xsd:float">-22</Value>
+      <Value xsi:type="xsd:float">-160</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -104,7 +104,7 @@
     <Variable>
       <Type>float</Type>
       <Name>BottomLeft.Height</Name>
-      <Value xsi:type="xsd:float">11</Value>
+      <Value xsi:type="xsd:float">25</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -129,31 +129,31 @@
     <Variable>
       <Type>int</Type>
       <Name>BottomLeft.Texture Height</Name>
-      <Value xsi:type="xsd:int">11</Value>
+      <Value xsi:type="xsd:int">25</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>BottomLeft.Texture Left</Name>
-      <Value xsi:type="xsd:int">91</Value>
+      <Value xsi:type="xsd:int">1808</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>BottomLeft.Texture Top</Name>
-      <Value xsi:type="xsd:int">437</Value>
+      <Value xsi:type="xsd:int">48</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>BottomLeft.Texture Width</Name>
-      <Value xsi:type="xsd:int">11</Value>
+      <Value xsi:type="xsd:int">80</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>BottomLeft.Width</Name>
-      <Value xsi:type="xsd:float">11</Value>
+      <Value xsi:type="xsd:float">80</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -201,7 +201,7 @@
     <Variable>
       <Type>float</Type>
       <Name>BottomRight.Height</Name>
-      <Value xsi:type="xsd:float">11</Value>
+      <Value xsi:type="xsd:float">25</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -226,31 +226,31 @@
     <Variable>
       <Type>int</Type>
       <Name>BottomRight.Texture Height</Name>
-      <Value xsi:type="xsd:int">11</Value>
+      <Value xsi:type="xsd:int">24</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>BottomRight.Texture Left</Name>
-      <Value xsi:type="xsd:int">214</Value>
+      <Value xsi:type="xsd:int">1968</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>BottomRight.Texture Top</Name>
-      <Value xsi:type="xsd:int">437</Value>
+      <Value xsi:type="xsd:int">48</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>BottomRight.Texture Width</Name>
-      <Value xsi:type="xsd:int">11</Value>
+      <Value xsi:type="xsd:int">80</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>BottomRight.Width</Name>
-      <Value xsi:type="xsd:float">11</Value>
+      <Value xsi:type="xsd:float">80</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -335,7 +335,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Height</Name>
-      <Value xsi:type="xsd:float">140</Value>
+      <Value xsi:type="xsd:float">72</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -349,7 +349,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Left.Height</Name>
-      <Value xsi:type="xsd:float">-22</Value>
+      <Value xsi:type="xsd:float">-50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -374,31 +374,31 @@
     <Variable>
       <Type>int</Type>
       <Name>Left.Texture Height</Name>
-      <Value xsi:type="xsd:int">59</Value>
+      <Value xsi:type="xsd:int">24</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>Left.Texture Left</Name>
-      <Value xsi:type="xsd:int">91</Value>
+      <Value xsi:type="xsd:int">1808</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>Left.Texture Top</Name>
-      <Value xsi:type="xsd:int">360</Value>
+      <Value xsi:type="xsd:int">24</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>Left.Texture Width</Name>
-      <Value xsi:type="xsd:int">11</Value>
+      <Value xsi:type="xsd:int">80</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>Left.Width</Name>
-      <Value xsi:type="xsd:float">11</Value>
+      <Value xsi:type="xsd:float">80</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -464,7 +464,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Middle.Height</Name>
-      <Value xsi:type="xsd:float">-14</Value>
+      <Value xsi:type="xsd:float">-50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -496,35 +496,35 @@
     <Variable>
       <Type>int</Type>
       <Name>Middle.Texture Height</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">24</Value>
       <ExposedAsName>MiddleTexture Height</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>Middle.Texture Left</Name>
-      <Value xsi:type="xsd:int">118</Value>
+      <Value xsi:type="xsd:int">1888</Value>
       <ExposedAsName>MiddleTexture Left</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>Middle.Texture Top</Name>
-      <Value xsi:type="xsd:int">233</Value>
+      <Value xsi:type="xsd:int">24</Value>
       <ExposedAsName>MiddleTexture Top</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>Middle.Texture Width</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">80</Value>
       <ExposedAsName>MiddleTexture Width</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>Middle.Width</Name>
-      <Value xsi:type="xsd:float">-14</Value>
+      <Value xsi:type="xsd:float">-160</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -577,7 +577,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Right.Height</Name>
-      <Value xsi:type="xsd:float">-22</Value>
+      <Value xsi:type="xsd:float">-50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -602,31 +602,31 @@
     <Variable>
       <Type>int</Type>
       <Name>Right.Texture Height</Name>
-      <Value xsi:type="xsd:int">59</Value>
+      <Value xsi:type="xsd:int">24</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>Right.Texture Left</Name>
-      <Value xsi:type="xsd:int">214</Value>
+      <Value xsi:type="xsd:int">1968</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>Right.Texture Top</Name>
-      <Value xsi:type="xsd:int">360</Value>
+      <Value xsi:type="xsd:int">24</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>Right.Texture Width</Name>
-      <Value xsi:type="xsd:int">11</Value>
+      <Value xsi:type="xsd:int">80</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>Right.Width</Name>
-      <Value xsi:type="xsd:float">11</Value>
+      <Value xsi:type="xsd:float">80</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -679,7 +679,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Top.Height</Name>
-      <Value xsi:type="xsd:float">11</Value>
+      <Value xsi:type="xsd:float">25</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -704,31 +704,31 @@
     <Variable>
       <Type>int</Type>
       <Name>Top.Texture Height</Name>
-      <Value xsi:type="xsd:int">11</Value>
+      <Value xsi:type="xsd:int">32</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>Top.Texture Left</Name>
-      <Value xsi:type="xsd:int">124</Value>
+      <Value xsi:type="xsd:int">1888</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>Top.Texture Top</Name>
-      <Value xsi:type="xsd:int">330</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>Top.Texture Width</Name>
-      <Value xsi:type="xsd:int">74</Value>
+      <Value xsi:type="xsd:int">80</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>Top.Width</Name>
-      <Value xsi:type="xsd:float">-22</Value>
+      <Value xsi:type="xsd:float">-160</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -776,7 +776,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TopLeft.Height</Name>
-      <Value xsi:type="xsd:float">11</Value>
+      <Value xsi:type="xsd:float">25</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -801,31 +801,31 @@
     <Variable>
       <Type>int</Type>
       <Name>TopLeft.Texture Height</Name>
-      <Value xsi:type="xsd:int">11</Value>
+      <Value xsi:type="xsd:int">24</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>TopLeft.Texture Left</Name>
-      <Value xsi:type="xsd:int">91</Value>
+      <Value xsi:type="xsd:int">1808</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>TopLeft.Texture Top</Name>
-      <Value xsi:type="xsd:int">330</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>TopLeft.Texture Width</Name>
-      <Value xsi:type="xsd:int">11</Value>
+      <Value xsi:type="xsd:int">80</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>TopLeft.Width</Name>
-      <Value xsi:type="xsd:float">11</Value>
+      <Value xsi:type="xsd:float">80</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -873,7 +873,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TopRight.Height</Name>
-      <Value xsi:type="xsd:float">11</Value>
+      <Value xsi:type="xsd:float">25</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -898,31 +898,31 @@
     <Variable>
       <Type>int</Type>
       <Name>TopRight.Texture Height</Name>
-      <Value xsi:type="xsd:int">11</Value>
+      <Value xsi:type="xsd:int">24</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>TopRight.Texture Left</Name>
-      <Value xsi:type="xsd:int">214</Value>
+      <Value xsi:type="xsd:int">1968</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>TopRight.Texture Top</Name>
-      <Value xsi:type="xsd:int">330</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>TopRight.Texture Width</Name>
-      <Value xsi:type="xsd:int">11</Value>
+      <Value xsi:type="xsd:int">80</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>TopRight.Width</Name>
-      <Value xsi:type="xsd:float">11</Value>
+      <Value xsi:type="xsd:float">80</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -976,7 +976,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Width</Name>
-      <Value xsi:type="xsd:float">144</Value>
+      <Value xsi:type="xsd:float">240</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>

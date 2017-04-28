@@ -20,6 +20,14 @@ namespace FishKing.Screens
         {
             FlatRedBallServices.Game.Exit();
         }
+        void OnAboutPopupOKButtonClick (FlatRedBall.Gui.IWindow window)
+        {
+            AboutPopup.Visible = false;
+        }
+        void OnAboutButtonClick (FlatRedBall.Gui.IWindow window)
+        {
+            AboutPopup.Visible = true;
+        }
 		
 	}
 }

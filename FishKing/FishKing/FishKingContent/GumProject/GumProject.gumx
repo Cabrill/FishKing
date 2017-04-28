@@ -68,11 +68,19 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>PopupMessage</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>ProgressBar</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
     <Name>SingleBarFrame</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>PaperFrame</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
@@ -93,6 +101,10 @@
   </ComponentReference>
   <ComponentReference>
     <Name>subcomponent\MainMenuButton</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>subcomponent\SubmenuButton</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>

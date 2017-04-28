@@ -1,13 +1,13 @@
-﻿using System;
+﻿using FlatRedBall.Gui;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using FlatRedBall.Gui;
 
 namespace FishKing.GumRuntimes
 {
-    partial class MainMenuButtonRuntime
+    partial class SubmenuButtonRuntime
     {
         public bool IsHighlighted
         {

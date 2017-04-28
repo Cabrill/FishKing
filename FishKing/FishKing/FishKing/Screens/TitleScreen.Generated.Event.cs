@@ -26,5 +26,19 @@ namespace FishKing.Screens
 				ExitButtonClick(window);
 			}
 		}
+		void OnAboutPopupOKButtonClickTunnel (FlatRedBall.Gui.IWindow window)
+		{
+			if (this.AboutPopupOKButtonClick != null)
+			{
+				AboutPopupOKButtonClick(window);
+			}
+		}
+		void OnAboutButtonClickTunnel (FlatRedBall.Gui.IWindow window)
+		{
+			if (this.AboutButtonClick != null)
+			{
+				AboutButtonClick(window);
+			}
+		}
 	}
 }

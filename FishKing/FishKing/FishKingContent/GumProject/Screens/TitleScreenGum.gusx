@@ -52,6 +52,30 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>string</Type>
+      <Name>AboutPopup.PopupText</Name>
+      <Value xsi:type="xsd:string">This is a University of Helsinki student game design project made by Jared Bagley. Creative Commons attributions for all resources used are pending. </Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TitleBarState</Type>
+      <Name>AboutPopup.TitleBarState</Name>
+      <Value xsi:type="xsd:string">TitlePresent</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>AboutPopup.TitleText</Name>
+      <Value xsi:type="xsd:string">About</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>AboutPopup.Visible</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>DimensionUnitType</Type>
       <Name>BackgroundSprite.Height Units</Name>
       <Value xsi:type="xsd:int">1</Value>
@@ -1537,5 +1561,9 @@
   <Instance>
     <Name>ContinueButton</Name>
     <BaseType>subcomponent\MainMenuButton</BaseType>
+  </Instance>
+  <Instance>
+    <Name>AboutPopup</Name>
+    <BaseType>PopupMessage</BaseType>
   </Instance>
 </ScreenSave>

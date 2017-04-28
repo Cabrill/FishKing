@@ -145,6 +145,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>LoadingScreen</Name>
     </None>
+    <None Include="GumProject\Components\PaperFrame.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>PaperFrame</Name>
+    </None>
+    <None Include="GumProject\Components\PopupMessage.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>PopupMessage</Name>
+    </None>
     <None Include="GumProject\Components\ProgressBar.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ProgressBar</Name>
@@ -172,6 +180,10 @@
     <None Include="GumProject\Components\subcomponent\MainMenuButton.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>MainMenuButton</Name>
+    </None>
+    <None Include="GumProject\Components\subcomponent\SubmenuButton.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>SubmenuButton</Name>
     </None>
     <None Include="GumProject\Components\subcomponent\TextEntryBox.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -221,6 +233,22 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font18Britannic Bold_0</Name>
     </None>
+    <None Include="GumProject\FontCache\Font18MV Boli.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font18MV Boli</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font18MV Boli_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font18MV Boli_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font24Touch Of Nature_o1.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font24Touch Of Nature_o1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font24Touch Of Nature_o1_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font24Touch Of Nature_o1_0</Name>
+    </None>
     <None Include="GumProject\FontCache\Font28Touch Of Nature_o1.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font28Touch Of Nature_o1</Name>
@@ -236,6 +264,14 @@
     <None Include="GumProject\FontCache\Font30Kristen ITC_0.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font30Kristen ITC_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font32Touch Of Nature_o1.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font32Touch Of Nature_o1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font32Touch Of Nature_o1_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font32Touch Of Nature_o1_0</Name>
     </None>
     <None Include="GumProject\FontCache\Font36Arial.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
