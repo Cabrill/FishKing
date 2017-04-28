@@ -285,6 +285,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font18MV Boli_0</Name>
     </None>
+    <None Include="GumProject\FontCache\Font18Rockwell Extra Bold_o1.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font18Rockwell Extra Bold_o1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font18Rockwell Extra Bold_o1_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font18Rockwell Extra Bold_o1_0</Name>
+    </None>
     <None Include="GumProject\FontCache\Font24Arial.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font24Arial</Name>
@@ -340,18 +348,6 @@
     <None Include="GumProject\FontCache\Font36Arial_0.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font36Arial_0</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font36Rockwell Extra Bold_o1.fnt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font36Rockwell Extra Bold_o1</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font36Rockwell Extra Bold_o1_0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font36Rockwell Extra Bold_o1_0</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font36Rockwell Extra Bold_o1_1.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font36Rockwell Extra Bold_o1_1</Name>
     </None>
     <None Include="GumProject\FontCache\Font36Touch Of Nature.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
