@@ -253,14 +253,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font1202Peas 4th of July_o1_7</Name>
     </None>
-    <None Include="GumProject\FontCache\Font12Britannic Bold.fnt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font12Britannic Bold</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font12Britannic Bold_0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font12Britannic Bold_0</Name>
-    </None>
     <None Include="GumProject\FontCache\Font18Arial.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font18Arial</Name>
@@ -268,14 +260,6 @@
     <None Include="GumProject\FontCache\Font18Arial_0.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font18Arial_0</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font18Britannic Bold.fnt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font18Britannic Bold</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font18Britannic Bold_0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font18Britannic Bold_0</Name>
     </None>
     <None Include="GumProject\FontCache\Font18MV Boli.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -285,45 +269,13 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font18MV Boli_0</Name>
     </None>
-    <None Include="GumProject\FontCache\Font18Rockwell Extra Bold_o1.fnt">
+    <None Include="GumProject\FontCache\Font24Britannic Bold.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font18Rockwell Extra Bold_o1</Name>
+      <Name>Font24Britannic Bold</Name>
     </None>
-    <None Include="GumProject\FontCache\Font18Rockwell Extra Bold_o1_0.png">
+    <None Include="GumProject\FontCache\Font24Britannic Bold_0.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font18Rockwell Extra Bold_o1_0</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font24Arial.fnt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font24Arial</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font24Arial_0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font24Arial_0</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font24Touch Of Nature_o1.fnt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font24Touch Of Nature_o1</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font24Touch Of Nature_o1_0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font24Touch Of Nature_o1_0</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font26Bernard MT Condensed_o1.fnt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font26Bernard MT Condensed_o1</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font26Bernard MT Condensed_o1_0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font26Bernard MT Condensed_o1_0</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font28Touch Of Nature_o1.fnt">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font28Touch Of Nature_o1</Name>
-    </None>
-    <None Include="GumProject\FontCache\Font28Touch Of Nature_o1_0.png">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font28Touch Of Nature_o1_0</Name>
+      <Name>Font24Britannic Bold_0</Name>
     </None>
     <None Include="GumProject\FontCache\Font30Kristen ITC.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -349,37 +301,85 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font36Arial_0</Name>
     </None>
-    <None Include="GumProject\FontCache\Font36Touch Of Nature.fnt">
+    <None Include="GumProject\FontCache\Font36Britannic Bold.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font36Touch Of Nature</Name>
+      <Name>Font36Britannic Bold</Name>
     </None>
-    <None Include="GumProject\FontCache\Font36Touch Of Nature_0.png">
+    <None Include="GumProject\FontCache\Font36Britannic Bold_0.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font36Touch Of Nature_0</Name>
+      <Name>Font36Britannic Bold_0</Name>
     </None>
-    <None Include="GumProject\FontCache\Font60Touch Of Nature.fnt">
+    <None Include="GumProject\FontCache\Font36Rockwell Extra Bold_o2.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font60Touch Of Nature</Name>
+      <Name>Font36Rockwell Extra Bold_o2</Name>
     </None>
-    <None Include="GumProject\FontCache\Font60Touch Of Nature_0.png">
+    <None Include="GumProject\FontCache\Font36Rockwell Extra Bold_o2_0.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font60Touch Of Nature_0</Name>
+      <Name>Font36Rockwell Extra Bold_o2_0</Name>
     </None>
-    <None Include="GumProject\FontCache\Font60Touch Of Nature_1.png">
+    <None Include="GumProject\FontCache\Font36Rockwell Extra Bold_o2_1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font60Touch Of Nature_1</Name>
+      <Name>Font36Rockwell Extra Bold_o2_1</Name>
     </None>
-    <None Include="GumProject\FontCache\Font60Touch Of Nature_o1.fnt">
+    <None Include="GumProject\FontCache\Font48Britannic Bold.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font60Touch Of Nature_o1</Name>
+      <Name>Font48Britannic Bold</Name>
     </None>
-    <None Include="GumProject\FontCache\Font60Touch Of Nature_o1_0.png">
+    <None Include="GumProject\FontCache\Font48Britannic Bold_0.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font60Touch Of Nature_o1_0</Name>
+      <Name>Font48Britannic Bold_0</Name>
     </None>
-    <None Include="GumProject\FontCache\Font60Touch Of Nature_o1_1.png">
+    <None Include="GumProject\FontCache\Font48Britannic Bold_1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font60Touch Of Nature_o1_1</Name>
+      <Name>Font48Britannic Bold_1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font52Bernard MT Condensed_o1.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font52Bernard MT Condensed_o1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font52Bernard MT Condensed_o1_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font52Bernard MT Condensed_o1_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font52Bernard MT Condensed_o1_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font52Bernard MT Condensed_o1_1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font56Touch Of Nature_o1.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font56Touch Of Nature_o1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font56Touch Of Nature_o1_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font56Touch Of Nature_o1_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font56Touch Of Nature_o1_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font56Touch Of Nature_o1_1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font60Touch Of Nature_o2.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Touch Of Nature_o2</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font60Touch Of Nature_o2_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Touch Of Nature_o2_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font60Touch Of Nature_o2_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Touch Of Nature_o2_1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font62Touch Of Nature_o2.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font62Touch Of Nature_o2</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font62Touch Of Nature_o2_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font62Touch Of Nature_o2_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font62Touch Of Nature_o2_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font62Touch Of Nature_o2_1</Name>
     </None>
     <None Include="GumProject\frblogo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

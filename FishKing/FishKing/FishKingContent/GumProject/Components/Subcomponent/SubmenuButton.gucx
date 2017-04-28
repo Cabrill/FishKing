@@ -192,9 +192,15 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>float</Type>
+      <Name>TextInstance.Font Scale</Name>
+      <Value xsi:type="xsd:float">0.4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>int</Type>
       <Name>TextInstance.FontSize</Name>
-      <Value xsi:type="xsd:int">24</Value>
+      <Value xsi:type="xsd:int">62</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -218,7 +224,7 @@
     <Variable>
       <Type>int</Type>
       <Name>TextInstance.OutlineThickness</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -267,7 +273,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TextInstance.Y</Name>
-      <Value xsi:type="xsd:float">50</Value>
+      <Value xsi:type="xsd:float">95</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

@@ -43,7 +43,7 @@
     <Variable>
       <Type>int</Type>
       <Name>CountText.OutlineThickness</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

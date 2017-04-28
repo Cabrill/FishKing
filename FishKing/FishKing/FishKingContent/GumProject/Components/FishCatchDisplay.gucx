@@ -437,18 +437,6 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>int</Type>
-      <Name>StarWithScale.TextStatValueFontSize</Name>
-      <Value xsi:type="xsd:int">12</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>StarWithScale.TextStatValueX</Name>
-      <Value xsi:type="xsd:float">-5</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>float</Type>
       <Name>StarWithScale.Width</Name>
       <Value xsi:type="xsd:float">100</Value>
@@ -498,13 +486,13 @@
     <Variable>
       <Type>float</Type>
       <Name>TextFishName.Font Scale</Name>
-      <Value xsi:type="xsd:float">1</Value>
+      <Value xsi:type="xsd:float">0.5</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>TextFishName.FontSize</Name>
-      <Value xsi:type="xsd:int">18</Value>
+      <Value xsi:type="xsd:int">36</Value>
       <ExposedAsName>TextFishNameFontSize</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -589,7 +577,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TextFishName.Y</Name>
-      <Value xsi:type="xsd:float">95</Value>
+      <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

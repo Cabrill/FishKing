@@ -162,6 +162,18 @@
     </Variable>
     <Variable>
       <Type>float</Type>
+      <Name>FishCaughtText.Font Scale</Name>
+      <Value xsi:type="xsd:float">0.5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>FishCaughtText.FontSize</Name>
+      <Value xsi:type="xsd:int">36</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
       <Name>FishCaughtText.Height</Name>
       <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
@@ -218,6 +230,18 @@
       <Type>PositionUnitType</Type>
       <Name>FishCaughtText.Y Units</Name>
       <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishCaughtValue.Font Scale</Name>
+      <Value xsi:type="xsd:float">0.5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>FishCaughtValue.FontSize</Name>
+      <Value xsi:type="xsd:int">36</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -539,6 +563,18 @@
     </Variable>
     <Variable>
       <Type>float</Type>
+      <Name>HeaviestFishText.Font Scale</Name>
+      <Value xsi:type="xsd:float">0.5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>HeaviestFishText.FontSize</Name>
+      <Value xsi:type="xsd:int">36</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
       <Name>HeaviestFishText.Height</Name>
       <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
@@ -595,6 +631,18 @@
       <Type>PositionUnitType</Type>
       <Name>HeaviestFishText.Y Units</Name>
       <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>HeaviestFishValue.Font Scale</Name>
+      <Value xsi:type="xsd:float">0.5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>HeaviestFishValue.FontSize</Name>
+      <Value xsi:type="xsd:int">36</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -821,6 +869,18 @@
     </Variable>
     <Variable>
       <Type>float</Type>
+      <Name>LongestFishText.Font Scale</Name>
+      <Value xsi:type="xsd:float">0.5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>LongestFishText.FontSize</Name>
+      <Value xsi:type="xsd:int">36</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
       <Name>LongestFishText.Height</Name>
       <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
@@ -877,6 +937,18 @@
       <Type>PositionUnitType</Type>
       <Name>LongestFishText.Y Units</Name>
       <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>LongestFishValue.Font Scale</Name>
+      <Value xsi:type="xsd:float">0.5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>LongestFishValue.FontSize</Name>
+      <Value xsi:type="xsd:int">36</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1025,9 +1097,15 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>float</Type>
+      <Name>MoneyText.Font Scale</Name>
+      <Value xsi:type="xsd:float">0.5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>int</Type>
       <Name>MoneyText.FontSize</Name>
-      <Value xsi:type="xsd:int">26</Value>
+      <Value xsi:type="xsd:int">52</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1122,6 +1200,18 @@
     </Variable>
     <Variable>
       <Type>float</Type>
+      <Name>RarestFishText.Font Scale</Name>
+      <Value xsi:type="xsd:float">0.5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>RarestFishText.FontSize</Name>
+      <Value xsi:type="xsd:int">36</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
       <Name>RarestFishText.Height</Name>
       <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
@@ -1178,6 +1268,18 @@
       <Type>PositionUnitType</Type>
       <Name>RarestFishText.Y Units</Name>
       <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>RarestFishValue.Font Scale</Name>
+      <Value xsi:type="xsd:float">0.5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>RarestFishValue.FontSize</Name>
+      <Value xsi:type="xsd:int">36</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1685,6 +1787,18 @@
     </Variable>
     <Variable>
       <Type>float</Type>
+      <Name>TimePlayedText.Font Scale</Name>
+      <Value xsi:type="xsd:float">0.5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TimePlayedText.FontSize</Name>
+      <Value xsi:type="xsd:int">36</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
       <Name>TimePlayedText.Height</Name>
       <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
@@ -1705,6 +1819,12 @@
       <Type>string</Type>
       <Name>TimePlayedText.Text</Name>
       <Value xsi:type="xsd:string">Time Played:</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>TimePlayedText.VerticalAlignment</Name>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1745,6 +1865,18 @@
     </Variable>
     <Variable>
       <Type>float</Type>
+      <Name>TimePlayedValue.Font Scale</Name>
+      <Value xsi:type="xsd:float">0.5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TimePlayedValue.FontSize</Name>
+      <Value xsi:type="xsd:int">36</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
       <Name>TimePlayedValue.Height</Name>
       <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
@@ -1765,6 +1897,12 @@
       <Type>string</Type>
       <Name>TimePlayedValue.Text</Name>
       <Value xsi:type="xsd:string">3h5m</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>TimePlayedValue.VerticalAlignment</Name>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

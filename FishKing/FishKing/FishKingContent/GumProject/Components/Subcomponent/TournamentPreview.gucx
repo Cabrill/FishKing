@@ -219,13 +219,13 @@
     <Variable>
       <Type>float</Type>
       <Name>ParticipantsText.Font Scale</Name>
-      <Value xsi:type="xsd:float">0.8</Value>
+      <Value xsi:type="xsd:float">0.5</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>ParticipantsText.FontSize</Name>
-      <Value xsi:type="xsd:int">24</Value>
+      <Value xsi:type="xsd:int">36</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -315,13 +315,13 @@
     <Variable>
       <Type>float</Type>
       <Name>ParticipantsValue.Font Scale</Name>
-      <Value xsi:type="xsd:float">0.8</Value>
+      <Value xsi:type="xsd:float">0.5</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>ParticipantsValue.FontSize</Name>
-      <Value xsi:type="xsd:int">24</Value>
+      <Value xsi:type="xsd:int">36</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -483,13 +483,13 @@
     <Variable>
       <Type>float</Type>
       <Name>RulesText.Font Scale</Name>
-      <Value xsi:type="xsd:float">0.8</Value>
+      <Value xsi:type="xsd:float">0.5</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>RulesText.FontSize</Name>
-      <Value xsi:type="xsd:int">24</Value>
+      <Value xsi:type="xsd:int">36</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -579,13 +579,13 @@
     <Variable>
       <Type>float</Type>
       <Name>RulesText1.Font Scale</Name>
-      <Value xsi:type="xsd:float">0.8</Value>
+      <Value xsi:type="xsd:float">0.5</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>RulesText1.FontSize</Name>
-      <Value xsi:type="xsd:int">24</Value>
+      <Value xsi:type="xsd:int">36</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -675,13 +675,13 @@
     <Variable>
       <Type>float</Type>
       <Name>RulesValue.Font Scale</Name>
-      <Value xsi:type="xsd:float">0.8</Value>
+      <Value xsi:type="xsd:float">0.5</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>RulesValue.FontSize</Name>
-      <Value xsi:type="xsd:int">24</Value>
+      <Value xsi:type="xsd:int">36</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -771,13 +771,13 @@
     <Variable>
       <Type>float</Type>
       <Name>RulesValue1.Font Scale</Name>
-      <Value xsi:type="xsd:float">0.8</Value>
+      <Value xsi:type="xsd:float">0.5</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>RulesValue1.FontSize</Name>
-      <Value xsi:type="xsd:int">24</Value>
+      <Value xsi:type="xsd:int">36</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1023,13 +1023,13 @@
     <Variable>
       <Type>float</Type>
       <Name>TournamentTitleText.Font Scale</Name>
-      <Value xsi:type="xsd:float">1</Value>
+      <Value xsi:type="xsd:float">0.5</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>TournamentTitleText.FontSize</Name>
-      <Value xsi:type="xsd:int">18</Value>
+      <Value xsi:type="xsd:int">36</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1053,7 +1053,7 @@
     <Variable>
       <Type>int</Type>
       <Name>TournamentTitleText.OutlineThickness</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1113,7 +1113,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TournamentTitleText.Y</Name>
-      <Value xsi:type="xsd:float">10</Value>
+      <Value xsi:type="xsd:float">20</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

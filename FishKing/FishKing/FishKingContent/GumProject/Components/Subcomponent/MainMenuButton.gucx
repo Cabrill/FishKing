@@ -13,13 +13,13 @@
     <Variable>
       <Type>float</Type>
       <Name>ButtonText.Font Scale</Name>
-      <Value xsi:type="xsd:float">1</Value>
+      <Value xsi:type="xsd:float">0.5</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>ButtonText.FontSize</Name>
-      <Value xsi:type="xsd:int">28</Value>
+      <Value xsi:type="xsd:int">56</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -87,6 +87,12 @@
       <Type>PositionUnitType</Type>
       <Name>ButtonText.X Units</Name>
       <Value xsi:type="xsd:int">6</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ButtonText.Y</Name>
+      <Value xsi:type="xsd:float">15</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

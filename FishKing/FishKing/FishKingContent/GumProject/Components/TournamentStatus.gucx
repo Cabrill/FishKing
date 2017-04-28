@@ -347,7 +347,7 @@
     <Variable>
       <Type>int</Type>
       <Name>GoalScoreText.OutlineThickness</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -737,13 +737,13 @@
     <Variable>
       <Type>float</Type>
       <Name>ScoreText.Font Scale</Name>
-      <Value xsi:type="xsd:float">0.5</Value>
+      <Value xsi:type="xsd:float">0.25</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>ScoreText.FontSize</Name>
-      <Value xsi:type="xsd:int">36</Value>
+      <Value xsi:type="xsd:int">60</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -773,7 +773,7 @@
     <Variable>
       <Type>int</Type>
       <Name>ScoreText.OutlineThickness</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

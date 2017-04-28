@@ -308,13 +308,13 @@
     <Variable>
       <Type>float</Type>
       <Name>TextStatValue.Font Scale</Name>
-      <Value xsi:type="xsd:float">1</Value>
+      <Value xsi:type="xsd:float">0.5</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>TextStatValue.FontSize</Name>
-      <Value xsi:type="xsd:int">12</Value>
+      <Value xsi:type="xsd:int">24</Value>
       <ExposedAsName>TextStatValueFontSize</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -395,7 +395,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TextStatValue.Y</Name>
-      <Value xsi:type="xsd:float">50</Value>
+      <Value xsi:type="xsd:float">65</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -527,6 +527,24 @@
         <Type>int</Type>
         <Name>SpriteInstance.Texture Top</Name>
         <Value xsi:type="xsd:int">750</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextStatValue.FontSize</Name>
+        <Value xsi:type="xsd:int">48</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TextStatValue.X</Name>
+        <Value xsi:type="xsd:float">5</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TextStatValue.Y</Name>
+        <Value xsi:type="xsd:float">80</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
