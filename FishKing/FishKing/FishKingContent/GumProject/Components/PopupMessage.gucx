@@ -390,6 +390,18 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>float</Type>
+      <Name>PopupTextInstance.Font Scale</Name>
+      <Value xsi:type="xsd:float">0.5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>PopupTextInstance.FontSize</Name>
+      <Value xsi:type="xsd:int">36</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>int</Type>
       <Name>PopupTextInstance.Green</Name>
       <Value xsi:type="xsd:int">0</Value>
@@ -467,9 +479,15 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>float</Type>
+      <Name>TitleTextInstance.Font Scale</Name>
+      <Value xsi:type="xsd:float">0.5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>int</Type>
       <Name>TitleTextInstance.FontSize</Name>
-      <Value xsi:type="xsd:int">32</Value>
+      <Value xsi:type="xsd:int">48</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

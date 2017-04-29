@@ -14,7 +14,7 @@ namespace FishKing.Screens
 	{
         void OnPlayButtonClick (FlatRedBall.Gui.IWindow window)
         {
-            LoadingScreen.TransitionToScreen(typeof(GameScreen).FullName);
+            this.MoveToScreen(NextScreen);   
         }
         void OnExitButtonClick (FlatRedBall.Gui.IWindow window)
         {

@@ -501,7 +501,7 @@
     <Variable>
       <Type>float</Type>
       <Name>RulesText.Height</Name>
-      <Value xsi:type="xsd:float">25</Value>
+      <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -693,7 +693,7 @@
     <Variable>
       <Type>float</Type>
       <Name>RulesValue.Height</Name>
-      <Value xsi:type="xsd:float">25</Value>
+      <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1329,10 +1329,6 @@
   <Instance>
     <Name>TextInstance</Name>
     <BaseType>Text</BaseType>
-  </Instance>
-  <Instance>
-    <Name>RectangleInstance</Name>
-    <BaseType>Rectangle</BaseType>
   </Instance>
   <Instance>
     <Name>TournamentTitleText</Name>

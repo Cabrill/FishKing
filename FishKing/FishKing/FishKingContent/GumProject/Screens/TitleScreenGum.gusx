@@ -54,7 +54,7 @@
     <Variable>
       <Type>string</Type>
       <Name>AboutPopup.PopupText</Name>
-      <Value xsi:type="xsd:string">This is a University of Helsinki student game design project made by Jared Bagley. Creative Commons attributions for all resources used are pending. </Value>
+      <Value xsi:type="xsd:string">This is a University of Helsinki student game design project created using the FlatRedBall engine, made by Jared Bagley. Creative Commons attributions for all resources used are pending. </Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

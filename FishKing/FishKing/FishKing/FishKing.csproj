@@ -337,6 +337,7 @@
     <Compile Include="GumRuntimes\SpriteRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\StressAccentuatorRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\CatchStatWithScaleRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\subcomponent\ComingSoonTextRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\GlowingStarRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\MainMenuButtonRuntime.cs" />
     <Compile Include="GumRuntimes\subcomponent\MainMenuButtonRuntime.Generated.cs">
@@ -350,7 +351,10 @@
     <Compile Include="GumRuntimes\subcomponent\TextEntryBoxRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TournamentFishRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TournamentPlaceHolderRuntime.Generated.cs" />
-    <Compile Include="GumRuntimes\subcomponent\TournamentPreviewRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\subcomponent\TournamentPreviewRuntime.cs" />
+    <Compile Include="GumRuntimes\subcomponent\TournamentPreviewRuntime.Generated.cs">
+      <DependentUpon>TournamentPreviewRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\subcomponent\TrophyCountRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TrophyDisplayRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\TextRuntime.Generated.cs" />
@@ -383,7 +387,14 @@
       <DependentUpon>LoadingScreen.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\MainMenu.cs" />
+    <Compile Include="Screens\MainMenu.Event.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
     <Compile Include="Screens\MainMenu.Generated.cs">
+      <DependentUpon>MainMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Screens\MainMenu.Generated.Event.cs">
       <DependentUpon>MainMenu.cs</DependentUpon>
     </Compile>
     <Compile Include="Screens\TitleScreen.cs" />

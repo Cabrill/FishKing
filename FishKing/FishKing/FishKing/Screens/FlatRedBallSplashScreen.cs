@@ -18,17 +18,21 @@ namespace FishKing.Screens
 {
 	public partial class FlatRedBallSplashScreen
 	{
+        private double startTime;
+        private double displaySeconds = 3;
 
 		void CustomInitialize()
 		{
-
-
+            startTime = FlatRedBall.TimeManager.CurrentTime;
 		}
 
 		void CustomActivity(bool firstTimeCalled)
 		{
-
-
+            if (FlatRedBall.TimeManager.CurrentTime - startTime > displaySeconds ||
+                InputManager.Keyboard.AnyKeyPushed())
+            {
+                MoveToScreen(NextScreen);
+            }
 		}
 
 		void CustomDestroy()

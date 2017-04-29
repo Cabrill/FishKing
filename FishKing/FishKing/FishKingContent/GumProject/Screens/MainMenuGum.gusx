@@ -58,6 +58,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>BackgroundSprite.ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>DimensionUnitType</Type>
       <Name>BackgroundSprite.Height Units</Name>
       <Value xsi:type="xsd:int">1</Value>
@@ -125,9 +131,81 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>ComingSoonTextInstance.ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>ComingSoonTextInstance.HasEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ComingSoonTextInstance.X</Name>
+      <Value xsi:type="xsd:float">606</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ComingSoonTextInstance.Y</Name>
+      <Value xsi:type="xsd:float">-40</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>ComingSoonTextInstance1.ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>ComingSoonTextInstance1.HasEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ComingSoonTextInstance1.X</Name>
+      <Value xsi:type="xsd:float">702</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ComingSoonTextInstance1.Y</Name>
+      <Value xsi:type="xsd:float">435</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>ComingSoonTextInstance2.HasEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ComingSoonTextInstance2.X</Name>
+      <Value xsi:type="xsd:float">504</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ComingSoonTextInstance2.Y</Name>
+      <Value xsi:type="xsd:float">435</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>ChildrenLayout</Type>
       <Name>FishCaughtContainer.Children Layout</Name>
       <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>FishCaughtContainer.ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -532,6 +610,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>HeaviestFishContainer.ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>HeaviestFishContainer.Height</Name>
       <Value xsi:type="xsd:float">10</Value>
@@ -835,6 +919,12 @@
       <Type>ChildrenLayout</Type>
       <Name>LongestFishContainer.Children Layout</Name>
       <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>LongestFishContainer.ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1169,6 +1259,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>RarestFishContainer.ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>RarestFishContainer.Height</Name>
       <Value xsi:type="xsd:float">10</Value>
@@ -1421,6 +1517,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>RightContainer.ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>RightContainer.Height</Name>
       <Value xsi:type="xsd:float">78</Value>
@@ -1528,6 +1630,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>StatsContainer.ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>StatsContainer.Height</Name>
       <Value xsi:type="xsd:float">90</Value>
@@ -1579,6 +1687,12 @@
       <Type>PositionUnitType</Type>
       <Name>StatsContainer.Y Units</Name>
       <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>StatusContainer.ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1756,6 +1870,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>TimePlayedContainer.ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>TimePlayedContainer.Height</Name>
       <Value xsi:type="xsd:float">10</Value>
@@ -1924,6 +2044,60 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>ChildrenLayout</Type>
+      <Name>TournamentPreviewContainer.Children Layout</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TournamentPreviewContainer.Height</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>TournamentPreviewContainer.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>TournamentPreviewContainer.Parent</Name>
+      <Value xsi:type="xsd:string">LeftContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TournamentPreviewContainer.Width</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>TournamentPreviewContainer.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>TournamentPreviewContainer.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>TournamentPreviewContainer.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>TournamentPreviewInstance.ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>HighlightState</Type>
       <Name>TournamentPreviewInstance.HighlightState</Name>
       <Value xsi:type="xsd:string">Highlighted</Value>
@@ -1932,7 +2106,7 @@
     <Variable>
       <Type>string</Type>
       <Name>TournamentPreviewInstance.Parent</Name>
-      <Value xsi:type="xsd:string">LeftContainer</Value>
+      <Value xsi:type="xsd:string">TournamentPreviewContainer</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -2130,6 +2304,10 @@
     <BaseType>Container</BaseType>
   </Instance>
   <Instance>
+    <Name>BackgroundSprite</Name>
+    <BaseType>Sprite</BaseType>
+  </Instance>
+  <Instance>
     <Name>RightBackgroundRectangle</Name>
     <BaseType>ColoredRectangle</BaseType>
   </Instance>
@@ -2188,10 +2366,6 @@
   <Instance>
     <Name>FishCaughtValue</Name>
     <BaseType>Text</BaseType>
-  </Instance>
-  <Instance>
-    <Name>BackgroundSprite</Name>
-    <BaseType>Sprite</BaseType>
   </Instance>
   <Instance>
     <Name>GearButton</Name>
@@ -2256,5 +2430,21 @@
   <Instance>
     <Name>RarestFishValue</Name>
     <BaseType>Text</BaseType>
+  </Instance>
+  <Instance>
+    <Name>ComingSoonTextInstance</Name>
+    <BaseType>subcomponent\ComingSoonText</BaseType>
+  </Instance>
+  <Instance>
+    <Name>ComingSoonTextInstance1</Name>
+    <BaseType>subcomponent\ComingSoonText</BaseType>
+  </Instance>
+  <Instance>
+    <Name>ComingSoonTextInstance2</Name>
+    <BaseType>subcomponent\ComingSoonText</BaseType>
+  </Instance>
+  <Instance>
+    <Name>TournamentPreviewContainer</Name>
+    <BaseType>Container</BaseType>
   </Instance>
 </ScreenSave>

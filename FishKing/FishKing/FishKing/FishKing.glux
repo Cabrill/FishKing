@@ -14,6 +14,7 @@
         <string>GLUE</string>
       </Tags>
       <Source>GLUE</Source>
+      <NextScreen>Screens\TitleScreen</NextScreen>
       <Name>Screens\FlatRedBallSplashScreen</Name>
       <ReferencedFiles>
         <ReferencedFileSave>
@@ -441,6 +442,44 @@
         <string>GLUE</string>
       </Tags>
       <Source>GLUE</Source>
+      <Events>
+        <EventResponseSave>
+          <EventName>BackButtonClick</EventName>
+          <SourceObject>BackButton</SourceObject>
+          <SourceObjectEvent>Click</SourceObjectEvent>
+          <BeforeOrAfter>Before</BeforeOrAfter>
+          <DelegateType />
+        </EventResponseSave>
+        <EventResponseSave>
+          <EventName>GoFishButtonClick</EventName>
+          <SourceObject>GoFishButton</SourceObject>
+          <SourceObjectEvent>Click</SourceObjectEvent>
+          <BeforeOrAfter>Before</BeforeOrAfter>
+          <DelegateType />
+        </EventResponseSave>
+        <EventResponseSave>
+          <EventName>GearButtonClick</EventName>
+          <SourceObject>GearButton</SourceObject>
+          <SourceObjectEvent>Click</SourceObjectEvent>
+          <BeforeOrAfter>Before</BeforeOrAfter>
+          <DelegateType />
+        </EventResponseSave>
+        <EventResponseSave>
+          <EventName>StoreButtonClick</EventName>
+          <SourceObject>StoreButton</SourceObject>
+          <SourceObjectEvent>Click</SourceObjectEvent>
+          <BeforeOrAfter>Before</BeforeOrAfter>
+          <DelegateType />
+        </EventResponseSave>
+        <EventResponseSave>
+          <EventName>FishopediaButtonClick</EventName>
+          <SourceObject>FishopediaButton</SourceObject>
+          <SourceObjectEvent>Click</SourceObjectEvent>
+          <BeforeOrAfter>Before</BeforeOrAfter>
+          <DelegateType />
+        </EventResponseSave>
+      </Events>
+      <BaseScreen />
       <Name>Screens\MainMenu</Name>
       <ReferencedFiles>
         <ReferencedFileSave>
@@ -577,7 +616,26 @@
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
         </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/MainMenuGum.gusx</SourceFile>
+          <SourceName>this (FishKing.GumRuntimes.MainMenuGumRuntime)</SourceName>
+          <InstanceName>MainMenuGumRuntime</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/MainMenuGum.gusx</SourceFile>
+          <SourceName>TournamentPreviewInstance (FishKing.GumRuntimes.TournamentPreviewRuntime)</SourceName>
+          <InstanceName>TournamentPreviewInstance</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
       </NamedObjects>
+      <UseGlobalContent>true</UseGlobalContent>
     </ScreenSave>
     <ScreenSave>
       <Tags>
@@ -614,6 +672,7 @@
           <DelegateType />
         </EventResponseSave>
       </Events>
+      <NextScreen>Screens\MainMenu</NextScreen>
       <Name>Screens\TitleScreen</Name>
       <ReferencedFiles>
         <ReferencedFileSave>
@@ -2646,7 +2705,7 @@
     <RecordLockContention>false</RecordLockContention>
   </GlobalContentSettingsSave>
   <SyncedProjects />
-  <StartUpScreen>Screens\TitleScreen</StartUpScreen>
+  <StartUpScreen>Screens\FlatRedBallSplashScreen</StartUpScreen>
   <ResolutionPresets>
     <ResolutionValues>
       <Name>720p</Name>

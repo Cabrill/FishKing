@@ -56,9 +56,9 @@ namespace FishKing.Entities
 
             fish.Name = fishType.Name;
             fish.Grams = fishGrams;
-            fish.WeightDisplay = WeightToString(fishGrams);
+            fish.WeightDisplay = FishInfoToString.Weight(fishGrams);
             fish.LengthMM = fishLengthMM;
-            fish.LengthDisplay = LengthToString(fishLengthMM);
+            fish.LengthDisplay = FishInfoToString.Length(fishLengthMM);
             fish.Points = fishPoints;
             SpriteInstance.TextureScale = Math.Max(0.1f, (float)Decimal.Divide(fishLengthMM, 3000));
             fish.IsSmall = SpriteInstance.TextureScale < 0.15;
