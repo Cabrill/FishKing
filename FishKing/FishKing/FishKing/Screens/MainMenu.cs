@@ -66,7 +66,7 @@ namespace FishKing.Screens
 
         void CustomActivity(bool firstTimeCalled)
         {
-            FlatRedBall.Debugging.Debugger.Write(FlatRedBall.Gui.GuiManager.Cursor.WindowOver);
+            //FlatRedBall.Debugging.Debugger.Write(FlatRedBall.Gui.GuiManager.Cursor.WindowOver);
             HandleMenuMovement();
             HandleMenuSelection();
             HandleExitInput();

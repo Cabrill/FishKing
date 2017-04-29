@@ -21,7 +21,7 @@ namespace FishKing
 			internal static void SetupCamera (Camera cameraToSetUp, GraphicsDeviceManager graphicsDeviceManager, int width, int height)
 			{
 				#if WINDOWS
-				FlatRedBall.FlatRedBallServices.GraphicsOptions.SetResolution(width, height);
+				FlatRedBall.FlatRedBallServices.GraphicsOptions.SetFullScreen(width, height);
 				#elif IOS || ANDROID
 				FlatRedBall.FlatRedBallServices.GraphicsOptions.SetFullScreen(FlatRedBall.FlatRedBallServices.GraphicsOptions.ResolutionWidth, FlatRedBall.FlatRedBallServices.GraphicsOptions.ResolutionHeight);
 				#endif

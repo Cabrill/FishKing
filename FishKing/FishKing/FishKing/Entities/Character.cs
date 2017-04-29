@@ -55,6 +55,9 @@ namespace FishKing.Entities
         public IPressableInput FishingAlignmentInput { get; set; }
         public IPressableInput ActionInput { get; set; }
         public IPressableInput ReelingInput { get; set; }
+        public IPressableInput EscapeInput { get; set; }
+        public IPressableInput HelpInput { get; set; }
+
 
         private bool isMovingToTile = false;
         public bool IsMoving { get { return SpriteInstance.CurrentChainName.Substring(0, 4) == "Walk"; } }

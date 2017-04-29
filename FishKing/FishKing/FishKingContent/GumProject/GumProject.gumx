@@ -52,6 +52,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>HelpScreen</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>icons\GoldMeasureSprite</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
@@ -73,6 +77,10 @@
   </ComponentReference>
   <ComponentReference>
     <Name>PaperFrame</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>PauseMenu</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>

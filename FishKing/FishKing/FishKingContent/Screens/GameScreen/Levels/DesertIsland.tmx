@@ -1407,7 +1407,7 @@
    <property name="IsBridge" type="bool" value="true"/>
   </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3TwQmDUBAE0L38346mkihW4smkiigWop7ULtJJkg4yoqB8gpccnJB5MLDHYWDNRERERITF2ZslSLpkujN/dKvVDV1KpFoy3TVRv19x92tEWDXOrEU6d3STzx7o9URepP0i/HeMnEj/XPt9h22/POjBsF/h5lyQa3Az7Ne7OQMyBjfDflt50INhvz1s+4nIf3sDeyWvzgAZAAA=
+   H4sIAAAAAAAAC+3TwQmDUBAE0L38345aSRIsRq0iEQtJPJl0YSfRDhzxgyBiDh4cyTwY2OMwsGYiIiIiwuLiza7ILWS8U390q9kdXR5IGTLeFVG/s2j9HBFWT2f2Qmp3dJN1X/TqkJ60X4T/jpGE9M+13z7a77fMTcmRYnEz7Ne4KW/ks7gZ9tvCsN8W9v1E5L8MGJVsiQAZAAA=
   </data>
  </layer>
  <layer name="Walls" width="40" height="40">
@@ -1415,12 +1415,12 @@
    <property name="HasCollision" type="bool" value="true"/>
   </properties>
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2XSQrCMBSGn6ClXsNp6cJDeBZRadWFV3C4hS4cqrhw4RUcbuFUdy48gT+oILGtdWqivg8+SCBpfl7SQIjcyYaIWjpRWz/18xGPwWdyPsb0NKK+dmp38O0uzN6f5sgSc1dwDTdvdgttuNOfDHcmFiWKw8QDXvAak4SpqPu630wN56MOG7CpyU5zyxSZZnAOFwrm+wT5MFEBFsOykzhjIdcADgPKZ2HfB3+y9wzDBIPNdwrDMAoxEt51Yx/vvCDZC3kOiuVLC3d6RrE7nuv3GirUz8CaJizBMqxctSdCHhn1E2vkhYz6PZJPRv0MrGnCEizDylW7qsD580L1/9eptgzD/DZHy1djKwAZAAA=
+   H4sIAAAAAAAAC+2XSQrCMBSGn6ClXsNp6cJDeBZRcVp4BYdb6MKhFRcuvILDLZx3LjyBP7SCxBrr1ER8H3ykhaT5eUkDIbpPNkTUMYm6pvOej0g6u+R89BkYREPDee7h232YfTzMkxXGruEGbj/sDu7hwXwxnEssShSHiSe8IOuThKno/Xl/mQb2RxO2YNtQneaWGTLN4QIuNcz3DfJhogIshlUn8cZCLhuOAspnYd3tP1l7hmGCYc9nCsMwGjEW7nUTH/e8IDkKeU6a5UsLZ3pGszOe6/ceOtSvhDnLsAKrQjsV8qion1gjGSrqJ+4xGSrqV8KcZVjxaOsa7D8Zuv+/17Wtwppm+RiG+TxneMuIigAZAAA=
   </data>
  </layer>
  <layer name="Overlay" width="40" height="40">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2WTwqCQBTGR5BHZzBPUB2kGwTquqCWQYuOUq1r17+TtAuqbduyTtAnTpihCEm9kd4PfszgQj++mQcq9TntWvZzB9ahW+Ld38SDPgy4g+QwgVM44w6SwwEe4Yk7SA6OhfsHXYs7STYecvkweMvXsJVqwpbNk8s0+qTUgLhTCJycKzALkjFNFzPbM3hu58i2MDhfGTo/vos7SlvEvgKzIgiCIAjC/zDS/y9DvY4p2QvFLHVXa71uKdk/4ezzor8dvmQIK3K+Ubcr3eeG4m5NIur2SnGfN3g3LJ8gZPEAwYfz0QAZAAA=
+   H4sIAAAAAAAAC+2TPQrCQBBGNxAGzxBzAvUg3kBIUito6W3UWjv/TpJOUFtbjZ7Ab0kKI7sKBp0NzoPHQorkMdlR6nO6DfPzADZhWOHd3ySCMUy4QyxM4BTOuEMs7OEBHrlDLAQe7h8MPe4SMxG6Ypg89bV8pdqw4/N0ucaQlBoRd4XAyakGuyCNZfrY2YHDeztH28Lhvir0fnwXUyr7jl0NdkUQBEEQhP9jTOZTeM2ymNPacmo4Z3kuvp09NGQ1+bd6tivKZ7mBW8e69WwvlM/zCm+O9QmCiTuFO0w7ABkAAA==
   </data>
  </layer>
  <objectgroup name="SpawnPoints">

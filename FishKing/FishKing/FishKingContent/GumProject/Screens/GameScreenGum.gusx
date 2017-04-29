@@ -34,6 +34,18 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>HelpScreenInstance.Visible</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>PauseMenuInstance.Visible</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>int</Type>
       <Name>ProgressBarInstance.BarFillTextureWidth</Name>
       <Value xsi:type="xsd:int">457</Value>
@@ -108,5 +120,13 @@
   <Instance>
     <Name>TournamentStatusInstance</Name>
     <BaseType>TournamentStatus</BaseType>
+  </Instance>
+  <Instance>
+    <Name>PauseMenuInstance</Name>
+    <BaseType>PauseMenu</BaseType>
+  </Instance>
+  <Instance>
+    <Name>HelpScreenInstance</Name>
+    <BaseType>HelpScreen</BaseType>
   </Instance>
 </ScreenSave>

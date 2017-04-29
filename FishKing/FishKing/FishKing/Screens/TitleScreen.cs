@@ -15,6 +15,7 @@ using Microsoft.Xna.Framework.Input;
 using FlatRedBall.Gui;
 using FishKing.Entities;
 using FishKing.GumRuntimes;
+using FishKing.UtilityClasses;
 
 namespace FishKing.Screens
 {
@@ -129,7 +130,7 @@ namespace FishKing.Screens
 
         private void HandleMenuMovement()
         {
-            var desiredDirection = GetDesiredDirection();
+            var desiredDirection = CardinalTimedDirection.GetDesiredDirection(MovementInput);
 
             if (desiredDirection == Direction.None)
             {

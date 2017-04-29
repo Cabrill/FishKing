@@ -1,7 +1,7 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <GlueProjectSave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <In2D>true</In2D>
-  <RunFullscreen>false</RunFullscreen>
+  <RunFullscreen>true</RunFullscreen>
   <SetResolution>true</SetResolution>
   <ResolutionWidth>1280</ResolutionWidth>
   <ResolutionHeight>720</ResolutionHeight>
@@ -401,6 +401,24 @@
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
         </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/GameScreenGum.gusx</SourceFile>
+          <SourceName>PauseMenuInstance (FishKing.GumRuntimes.PauseMenuRuntime)</SourceName>
+          <InstanceName>PauseMenuInstance</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/GameScreenGum.gusx</SourceFile>
+          <SourceName>HelpScreenInstance (FishKing.GumRuntimes.HelpScreenRuntime)</SourceName>
+          <InstanceName>HelpScreenInstance</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
       </NamedObjects>
       <UseGlobalContent>true</UseGlobalContent>
     </ScreenSave>
@@ -486,6 +504,18 @@
           <Name>GumProject/Screens/MainMenuGum.gusx</Name>
           <IsSharedStatic>true</IsSharedStatic>
           <RuntimeType>FlatRedBall.Gum.GumIdb</RuntimeType>
+          <ProjectsToExcludeFrom />
+        </ReferencedFileSave>
+        <ReferencedFileSave>
+          <Properties>
+            <PropertySave>
+              <Name>UseContentPipeline</Name>
+              <ValueAsBool>true</ValueAsBool>
+            </PropertySave>
+          </Properties>
+          <Name>Screens/MainMenu/A_Himitsu_Adventures.mp3</Name>
+          <IsSharedStatic>true</IsSharedStatic>
+          <RuntimeType>Microsoft.Xna.Framework.Media.Song</RuntimeType>
           <ProjectsToExcludeFrom />
         </ReferencedFileSave>
       </ReferencedFiles>

@@ -125,6 +125,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FramedCatchingBackground</Name>
     </None>
+    <None Include="GumProject\Components\HelpScreen.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>HelpScreen</Name>
+    </None>
     <None Include="GumProject\Components\icons\GoldMeasureSprite.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>GoldMeasureSprite</Name>
@@ -148,6 +152,10 @@
     <None Include="GumProject\Components\PaperFrame.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>PaperFrame</Name>
+    </None>
+    <None Include="GumProject\Components\PauseMenu.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>PauseMenu</Name>
     </None>
     <None Include="GumProject\Components\PopupMessage.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -265,6 +273,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font18Arial_0</Name>
     </None>
+    <None Include="GumProject\FontCache\Font24Arial_o1.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font24Arial_o1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font24Arial_o1_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font24Arial_o1_0</Name>
+    </None>
     <None Include="GumProject\FontCache\Font24Britannic Bold.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font24Britannic Bold</Name>
@@ -289,6 +305,14 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font36Arial_0</Name>
     </None>
+    <None Include="GumProject\FontCache\Font36Berlin Sans FB Demi.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font36Berlin Sans FB Demi</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font36Berlin Sans FB Demi_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font36Berlin Sans FB Demi_0</Name>
+    </None>
     <None Include="GumProject\FontCache\Font36Britannic Bold_o1.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font36Britannic Bold_o1</Name>
@@ -304,6 +328,18 @@
     <None Include="GumProject\FontCache\Font36MV Boli_0.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font36MV Boli_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font36Rockwell Extra Bold_o1.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font36Rockwell Extra Bold_o1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font36Rockwell Extra Bold_o1_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font36Rockwell Extra Bold_o1_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font36Rockwell Extra Bold_o1_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font36Rockwell Extra Bold_o1_1</Name>
     </None>
     <None Include="GumProject\FontCache\Font36Rockwell Extra Bold_o2.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -373,6 +409,18 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font56Touch Of Nature_o1_1</Name>
     </None>
+    <None Include="GumProject\FontCache\Font60Touch Of Nature_o1.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Touch Of Nature_o1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font60Touch Of Nature_o1_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Touch Of Nature_o1_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font60Touch Of Nature_o1_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Touch Of Nature_o1_1</Name>
+    </None>
     <None Include="GumProject\FontCache\Font60Touch Of Nature_o2.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font60Touch Of Nature_o2</Name>
@@ -408,6 +456,10 @@
     <None Include="GumProject\GumUI.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>GumUI</Name>
+    </None>
+    <None Include="GumProject\inputs.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>inputs</Name>
     </None>
     <None Include="GumProject\LoadingScreenBackground-min.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -681,6 +733,11 @@
   </ItemGroup>
   <ItemGroup />
   <ItemGroup>
+    <Compile Include="Screens\MainMenu\A_Himitsu_Adventures.mp3">
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Name>A_Himitsu_Adventures</Name>
+    </Compile>
     <Compile Include="Screens\Titlescreen\Echinoderm_Regeneration_Sting.mp3">
       <Name>Echinoderm_Regeneration_Sting</Name>
       <Importer>Mp3Importer</Importer>

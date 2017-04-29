@@ -28,6 +28,7 @@ using Microsoft.Xna.Framework.Audio;
 using FishKing.UtilityClasses;
 using Microsoft.Xna.Framework.Media;
 using FlatRedBall.Math;
+using FlatRedBall.Gui;
 
 #if FRB_XNA || SILVERLIGHT
 using Keys = Microsoft.Xna.Framework.Input.Keys;
@@ -59,6 +60,8 @@ namespace FishKing.Screens
 
 		void CustomInitialize()
         {
+            InitializePauseMenuButtons();
+
             if (!MusicManager.PlayingSong)
             {
                 List<Song> playList = new List<Song>() { Audionautix_AcousticGuitar1, Audionautix_OneFineDay, Audionautix_Serenity };
@@ -89,6 +92,14 @@ namespace FishKing.Screens
                 TournamentStatusInstance.ResumeExistingTournament(TournamentScore.Scores);
             }
         }
+
+        private void InitializePauseMenuButtons()
+        {
+            PauseMenuInstance.ResumeGameButtonClick += (IWindow window) => { UnpauseThisScreen(); PauseMenuInstance.Visible = false; };
+            PauseMenuInstance.HelpButtonClick += (IWindow window) => { HelpScreenInstance.Visible = true; };
+            PauseMenuInstance.ExitButtonClick += (IWindow window) => { FlatRedBallServices.Game.Exit(); };
+        }
+
 
         private void InitializeCamera()
         {
@@ -175,6 +186,8 @@ namespace FishKing.Screens
             var movementInputs = new Multiple2DInputs();
             movementInputs.Inputs.Add(InputManager.Keyboard.Get2DInput(
                 Keys.A, Keys.D, Keys.W, Keys.S));
+            movementInputs.Inputs.Add(InputManager.Keyboard.Get2DInput(
+                Keys.Left, Keys.Right, Keys.Up, Keys.Down));
             if (InputManager.NumberOfConnectedGamePads > 0)
             {
                 movementInputs.Inputs.Add(gamePad.DPad);
@@ -186,6 +199,9 @@ namespace FishKing.Screens
             if (InputManager.NumberOfConnectedGamePads > 0)
             {
                 actionInputs.Inputs.Add(InputManager.Xbox360GamePads[0].GetButton(Xbox360GamePad.Button.A));
+                actionInputs.Inputs.Add(InputManager.Xbox360GamePads[0].GetButton(Xbox360GamePad.Button.Y));
+                actionInputs.Inputs.Add(InputManager.Xbox360GamePads[0].GetButton(Xbox360GamePad.Button.X));
+                actionInputs.Inputs.Add(InputManager.Xbox360GamePads[0].GetButton(Xbox360GamePad.Button.B));
             }
 
             var alignmentInputs = new MultiplePressableInputs();
@@ -203,10 +219,26 @@ namespace FishKing.Screens
                 reelingInputs.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.LeftTrigger));
             }
 
+            var escapeInputs = new MultiplePressableInputs();
+            escapeInputs.Inputs.Add(InputManager.Keyboard.GetKey(Keys.Escape));
+            if (InputManager.NumberOfConnectedGamePads > 0)
+            {
+                escapeInputs.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.Start));
+            }
+
+            var helpInputs = new MultiplePressableInputs();
+            helpInputs.Inputs.Add(InputManager.Keyboard.GetKey(Keys.F1));
+            if (InputManager.NumberOfConnectedGamePads > 0)
+            {
+                helpInputs.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.Back));
+            }
+
             this.CharacterInstance.MovementInput = movementInputs;
             this.CharacterInstance.ActionInput = actionInputs;
             this.CharacterInstance.FishingAlignmentInput = alignmentInputs;
             this.CharacterInstance.ReelingInput = reelingInputs;
+            this.CharacterInstance.EscapeInput = escapeInputs;
+            this.CharacterInstance.HelpInput = helpInputs;
 
             var overlayLayer = CurrentTileMap.MapLayers.FindByName("Overlay");
             if (overlayLayer != null)
@@ -223,69 +255,103 @@ namespace FishKing.Screens
 
         void CustomActivity(bool firstTimeCalled)
 		{
-
-#if DEBUG
-            if (DebuggingVariables.TournamentScoresYUIOP)
-            {
-                if (InputManager.Keyboard.GetKey(Keys.Y).WasJustPressed)
-                {
-                    TournamentScore.AddToNonPlayerScore(1, 10);
-                }
-                if (InputManager.Keyboard.GetKey(Keys.U).WasJustPressed)
-                {
-                    TournamentScore.AddToNonPlayerScore(2, 10);
-                }
-                if (InputManager.Keyboard.GetKey(Keys.I).WasJustPressed)
-                {
-                    TournamentScore.AddToNonPlayerScore(3, 10);
-                }
-                if (InputManager.Keyboard.GetKey(Keys.O).WasJustPressed)
-                {
-                    TournamentScore.AddToNonPlayerScore(4, 10);
-                }
-                if (InputManager.Keyboard.GetKey(Keys.P).WasJustPressed)
-                {
-                    TournamentScore.AddToNonPlayerScore(5, 10);
-                }
-                if (InputManager.Keyboard.GetKey(Keys.T).WasJustPressed)
-                {
-                    TournamentScore.AddToPlayerScore(10);
-                }
-            }
-#endif
-
-            if (shouldUpdateCamera) UpdateCamera();
-            DialogActivity();
-            FishingActivity();
-
-            bool characterMoved = false;
-            if (CanMoveCharacter)
-            {
-                characterMoved = this.CharacterInstance.PerformMovementActivity(this.SolidCollisions, NpcCharacterList);
-            }
-
-            CharacterInstance.UpdateFishingStatus(characterMoved);
-            this.CharacterInstance.SetSpriteOffset();
-
-            CollisionActivity();
-            if (CharacterInstance.IsMoving)
-            {
-                AmbientAudioManager.UpdateAmbientSoundSources();
-            }
-#if DEBUG
-            if (DebuggingVariables.SimulateTournamentScores)
-            {
-                TournamentScore.SimulateTournament();
-            }
-#endif
-            if (TournamentScore.HasScoreChanged)
-            {
-                TournamentStatusInstance.UpdateFishPlaceMarkers(TournamentScore.Scores);
-                TournamentScore.MarkScoreReviewed();
-            }
             MusicManager.Update();
+            if (CharacterInstance.EscapeInput.WasJustPressed)
+            {
+                if (HelpScreenInstance.Visible)
+                {
+                    HelpScreenInstance.Visible = false;
+                }
+                else
+                {
+                    PauseMenuInstance.Visible = !PauseMenuInstance.Visible;
+
+                    if (PauseMenuInstance.Visible)
+                    {
+                        PauseThisScreen();
+                    }
+                    else
+                    {
+                        UnpauseThisScreen();
+                    }
+                }
+            }
+
+            FlatRedBallServices.Game.IsMouseVisible = IsPaused;
+            if (IsPaused)
+            {
+                HandlePauseInput();
+            }
+            else
+            { 
+#if DEBUG
+                if (DebuggingVariables.TournamentScoresYUIOP)
+                {
+                    if (InputManager.Keyboard.GetKey(Keys.Y).WasJustPressed)
+                    {
+                        TournamentScore.AddToNonPlayerScore(1, 10);
+                    }
+                    if (InputManager.Keyboard.GetKey(Keys.U).WasJustPressed)
+                    {
+                        TournamentScore.AddToNonPlayerScore(2, 10);
+                    }
+                    if (InputManager.Keyboard.GetKey(Keys.I).WasJustPressed)
+                    {
+                        TournamentScore.AddToNonPlayerScore(3, 10);
+                    }
+                    if (InputManager.Keyboard.GetKey(Keys.O).WasJustPressed)
+                    {
+                        TournamentScore.AddToNonPlayerScore(4, 10);
+                    }
+                    if (InputManager.Keyboard.GetKey(Keys.P).WasJustPressed)
+                    {
+                        TournamentScore.AddToNonPlayerScore(5, 10);
+                    }
+                    if (InputManager.Keyboard.GetKey(Keys.T).WasJustPressed)
+                    {
+                        TournamentScore.AddToPlayerScore(10);
+                    }
+                }
+#endif
+
+                if (shouldUpdateCamera) UpdateCamera();
+                DialogActivity();
+                FishingActivity();
+
+                bool characterMoved = false;
+                if (CanMoveCharacter)
+                {
+                    characterMoved = this.CharacterInstance.PerformMovementActivity(this.SolidCollisions, NpcCharacterList);
+                }
+
+                CharacterInstance.UpdateFishingStatus(characterMoved);
+                this.CharacterInstance.SetSpriteOffset();
+
+                CollisionActivity();
+                if (CharacterInstance.IsMoving)
+                {
+                    AmbientAudioManager.UpdateAmbientSoundSources();
+                }
+#if DEBUG
+                if (DebuggingVariables.SimulateTournamentScores)
+                {
+                    TournamentScore.SimulateTournament();
+                }
+#endif
+                if (TournamentScore.HasScoreChanged)
+                {
+                    TournamentStatusInstance.UpdateFishPlaceMarkers(TournamentScore.Scores);
+                    TournamentScore.MarkScoreReviewed();
+                }
+            }
         }
 
+        private void HandlePauseInput()
+        {
+            PauseMenuInstance.HandleMovement(CharacterInstance.MovementInput);
+            PauseMenuInstance.HandleSelection(CharacterInstance.ActionInput);
+        }
+        
 
         const float offset = .1f;
         const float roundingValue = 1;

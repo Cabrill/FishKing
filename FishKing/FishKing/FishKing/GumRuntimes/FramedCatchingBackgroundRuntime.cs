@@ -23,9 +23,10 @@ namespace FishKing.GumRuntimes
         private static Random randomSeed = new Random();
 
         private float alignmentVelocity = 0f;
-        private float alignmentVelocityAttritionRate = 0.02f;
+        private float alignmentVelocityAttritionRate = 0.01f;
         private float alignmentVelocityIncrementRate = 0.05f;
-        private float maxAlignmentVelocity = 1.3f;
+        private float maxAlignmentVelocity = 0.5f;
+        private float minAlignmentVelocity = -0.3f;
 
         private float ChanceOfFightBoost;
         private bool fightBoosted = false;
@@ -142,6 +143,8 @@ namespace FishKing.GumRuntimes
 
             UnknownFishInstance.XOrigin = RenderingLibrary.Graphics.HorizontalAlignment.Left;
             UnknownFishInstance.YOrigin = RenderingLibrary.Graphics.VerticalAlignment.Center;
+
+            AlignmentBarInstance.Height = 15f;
 
             MaxAlignmentY = 100 - AlignmentBarInstance.Height;
 
@@ -422,7 +425,7 @@ namespace FishKing.GumRuntimes
             }
             else
             {
-                alignmentVelocity = Math.Max(-2, alignmentVelocity - alignmentVelocityAttritionRate);
+                alignmentVelocity = Math.Max(minAlignmentVelocity, alignmentVelocity - alignmentVelocityAttritionRate);
             }
 
             if (AlignmentTop < FishMiddle && AlignmentBottom > FishMiddle)
