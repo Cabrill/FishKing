@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FishKing.GameClasses
 {
-    class Tournament
+    public class TournamentStructure
     {
         public string TournamentName { get; private set; }
         public int NumberOfParticipants { get; private set; }
@@ -14,7 +14,7 @@ namespace FishKing.GameClasses
         public string MapName { get; private set; }
         public TournamentRules TournamentRules { get; private set; }
 
-        public Tournament(string name, int numParticipants, int reward, string map, TournamentRules rules)
+        public TournamentStructure(string name, int numParticipants, int reward, string map, TournamentRules rules)
         {
             TournamentName = name;
             NumberOfParticipants = numParticipants;

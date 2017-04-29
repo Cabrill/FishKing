@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FishKing.GameClasses
 {
-    class TournamentRules
+    public class TournamentRules
     {
         public List<Fish> FishTypesAllowed
         {
