@@ -29,9 +29,17 @@ namespace FishKing.Screens
 		void CustomActivity(bool firstTimeCalled)
 		{
             if (FlatRedBall.TimeManager.CurrentTime - startTime > displaySeconds ||
-                InputManager.Keyboard.AnyKeyPushed())
+                InputManager.Keyboard.AnyKeyPushed() ||
+                (InputManager.NumberOfConnectedGamePads > 0 && InputManager.Xbox360GamePads[0].AnyButtonPushed()))
             {
-                MoveToScreen(NextScreen);
+                if (AsyncLoadingState == FlatRedBall.Screens.AsyncLoadingState.NotStarted)
+                {
+                    StartAsyncLoad(NextScreen);
+                }
+                else if (AsyncLoadingState == FlatRedBall.Screens.AsyncLoadingState.Done)
+                {
+                    MoveToScreen(NextScreen);
+                }
             }
 		}
 

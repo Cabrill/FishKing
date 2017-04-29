@@ -61,16 +61,21 @@ namespace FishKing.UtilityClasses
         }
 
 #if DEBUG
+        private double startTime = 0;
         public void SimulateTournament()
         {
-            if (FlatRedBall.TimeManager.CurrentTime > 10)
+            if (startTime == 0)
+            {
+                startTime = FlatRedBall.TimeManager.CurrentTime;
+            }
+            if (FlatRedBall.TimeManager.CurrentTime - startTime > 10)
             {
                 var random = RandomNumbers.Random;
 
                 if (random.NextDouble() > 0.999)
                 {
                     var randomScore = random.Next(1, scores.Length);
-                    var randomPoints = random.Next(3, 51);
+                    var randomPoints = random.Next(3, 26);
                     if (scores[randomScore] < goalScore)
                     {
                         scores[randomScore] += randomPoints;

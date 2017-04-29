@@ -34,7 +34,7 @@ namespace FishKing.Screens
             screen = TitleScreenGumRuntime;
             screen.IntroAnimation.Play();
             FlatRedBallServices.Game.IsMouseVisible = true;
-            Microsoft.Xna.Framework.Media.MediaPlayer.Volume = 0.5f;
+            Microsoft.Xna.Framework.Media.MediaPlayer.Volume = 0.3f;
             FlatRedBall.Audio.AudioManager.PlaySong(Echinoderm_Regeneration_Sting, true, false);
         }
 
