@@ -38,7 +38,7 @@ namespace FishKing.GumRuntimes
         private float fightOrLuckVelocity = 0f;
         private float fightOrLuckMaxVelocity = 0.25f;
         private float fightOrLuckMinVelocity = -0.5f;
-        private float fightVelocityIncrementRate = 0.08f;
+        private float fightVelocityIncrementRate = 0.05f;
         private float effectiveFightVelocityIncrementRate
         {
             get { return (fightBoosted ? fightVelocityIncrementRate * 3 : fightVelocityIncrementRate); }
@@ -50,7 +50,7 @@ namespace FishKing.GumRuntimes
         private float DefaultFishingLineX;
         private float DefaultFishingLineY;
 
-        private float reelInRate = 0.05f;
+        private float reelInRate = 0.08f;
         public float CurrentReelSpeed { get; set; }
 
         public Fish AttachedFish { get; set; }
@@ -133,7 +133,7 @@ namespace FishKing.GumRuntimes
             FightModifier = 1f + ((float)FishFight / 100);
 
             
-            fightBoostMaxVelocity = fightOrLuckMaxVelocity + ((FishSpeed + FishFight) / 500);
+            fightBoostMaxVelocity = fightOrLuckMaxVelocity + ((FishSpeed + FishFight) / 800);
             ChanceOfFight = 0.01f + (FishFight / 6000);
             ChanceOfLuck = 0.001f;
             ChanceOfFightBoost = 0.001f + (ChanceOfFight/10);

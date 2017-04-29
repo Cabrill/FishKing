@@ -16,8 +16,7 @@ namespace FishKing.Screens
         {
             //this.IsActivityFinished = true;
             //this.IsMovingBack = true;
-            HandleBackNavigation();
-            
+            MoveToScreen(typeof(TitleScreen));
         }
         void OnGoFishButtonClick (FlatRedBall.Gui.IWindow window)
         {

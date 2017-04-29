@@ -199,6 +199,11 @@
     <Compile Include="Factories\MapNavigationTriggerFactory.Generated.cs" />
     <Compile Include="Factories\StartPointFactory.Generated.cs" />
     <Compile Include="FishGenerator.cs" />
+    <Compile Include="GameClasses\FishRecord.cs" />
+    <Compile Include="GameClasses\SaveFileData.cs" />
+    <Compile Include="GameClasses\Tournament.cs" />
+    <Compile Include="GameClasses\TournamentResults.cs" />
+    <Compile Include="GameClasses\TournamentRules.cs" />
     <Compile Include="GlobalContent.Generated.cs" />
     <Compile Include="GumCore\AnimationFrame.cs" />
     <Compile Include="GumCore\Atlas.cs" />
@@ -450,9 +455,12 @@
     <Compile Include="TileGraphics\TileNodeNetworkCreator.cs" />
     <Compile Include="TileGraphics\Tileset.cs" />
     <Compile Include="TileGraphics\TilesetExtensionMethods.cs" />
+    <Compile Include="UtilityClasses\AnalogButtonTo1DInput.cs" />
     <Compile Include="UtilityClasses\DistributedRandomGenerator.cs" />
+    <Compile Include="UtilityClasses\FishInfoToString.cs" />
+    <Compile Include="UtilityClasses\PressableTo1DInput.cs" />
     <Compile Include="UtilityClasses\RandomNumbers.cs" />
-    <Compile Include="UtilityClasses\TournamentScores.cs" />
+    <Compile Include="GameClasses\TournamentScores.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="FishKing.ico" />
