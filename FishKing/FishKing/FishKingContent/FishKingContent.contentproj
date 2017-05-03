@@ -397,6 +397,18 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font52Bernard MT Condensed_o1_1</Name>
     </None>
+    <None Include="GumProject\FontCache\Font52Bodoni MT_o1.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font52Bodoni MT_o1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font52Bodoni MT_o1_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font52Bodoni MT_o1_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font52Bodoni MT_o1_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font52Bodoni MT_o1_1</Name>
+    </None>
     <None Include="GumProject\FontCache\Font56Touch Of Nature_o1.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font56Touch Of Nature_o1</Name>
