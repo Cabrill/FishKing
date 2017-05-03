@@ -127,6 +127,7 @@
     <Reference Include="System">
       <Private>False</Private>
     </Reference>
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml">
       <Private>False</Private>
     </Reference>
@@ -486,6 +487,7 @@
     <Compile Include="UtilityClasses\PressableTo1DInput.cs" />
     <Compile Include="UtilityClasses\RandomNumbers.cs" />
     <Compile Include="GameClasses\TournamentScores.cs" />
+    <Compile Include="UtilityClasses\TextInputHandler.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="FishKing.ico" />

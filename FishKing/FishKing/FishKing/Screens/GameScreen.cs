@@ -358,7 +358,7 @@ namespace FishKing.Screens
         }
         
 
-        const float offset = .1f;
+        const float offset = .5f;
         const float roundingValue = 1;
         private void UpdateCamera()
         {
