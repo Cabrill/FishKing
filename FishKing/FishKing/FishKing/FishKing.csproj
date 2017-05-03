@@ -142,7 +142,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AmbientAudioManager.cs" />
+    <Compile Include="GumRuntimes\subcomponent\TextEntryBoxRuntime.cs" />
+    <Compile Include="Managers\AmbientAudioManager.cs" />
     <Compile Include="DataTypes\fish_types.Generated.cs" />
     <Compile Include="DataTypes\GameText.Generated.cs" />
     <Compile Include="DataTypes\keypixels.Generated.cs" />
@@ -373,7 +374,9 @@
       <DependentUpon>SubmenuButtonRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\subcomponent\TextBoxRuntime.Generated.cs" />
-    <Compile Include="GumRuntimes\subcomponent\TextEntryBoxRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\subcomponent\TextEntryBoxRuntime.Generated.cs">
+      <DependentUpon>TextEntryBoxRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\subcomponent\TournamentFishRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TournamentPlaceHolderRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TournamentPreviewRuntime.cs" />
@@ -392,7 +395,8 @@
       <DependentUpon>TournamentStatusRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\UnknownFishRuntime.Generated.cs" />
-    <Compile Include="MusicManager.cs" />
+    <Compile Include="Managers\MusicManager.cs" />
+    <Compile Include="Managers\SaveGameManager.cs" />
     <Compile Include="OcularPlaneRuntime\OcularPlaneManager.cs" />
     <Compile Include="Performance\IEntityFactory.Generated.cs" />
     <Compile Include="Performance\PoolList.Generated.cs" />

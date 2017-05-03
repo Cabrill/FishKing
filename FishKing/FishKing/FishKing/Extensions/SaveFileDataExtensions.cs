@@ -24,7 +24,7 @@ namespace FishKing.Extensions
             }
         }
 
-        public static bool SaveData(this SaveFileData saveFile, string path)
+        public static bool SaveFile(this SaveFileData saveFile, string path)
         {
             try
             {
