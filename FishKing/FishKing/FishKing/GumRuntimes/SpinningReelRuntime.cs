@@ -38,9 +38,9 @@ namespace FishKing.GumRuntimes
         }
 
         
-        public void SpinReel()
+        public void SpinReel(float percent)
         {
-            spinVelocity = Math.Min(maxVelocity, spinVelocity + velocityIncrementRate);
+            spinVelocity = Math.Min(maxVelocity, spinVelocity + (velocityIncrementRate*percent));
             if (JammingAnimation.IsPlaying())
             {
                 JammingAnimation.Stop();

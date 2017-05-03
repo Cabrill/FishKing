@@ -203,9 +203,11 @@
     <Compile Include="Entities\WaterSplash.Generated.cs">
       <DependentUpon>WaterSplash.cs</DependentUpon>
     </Compile>
+    <Compile Include="Enums\TrophyTypes.cs" />
     <Compile Include="Enums\WaterTypes.cs" />
     <Compile Include="Extensions\FishExtensions.cs" />
     <Compile Include="Extensions\ListExtensions.cs" />
+    <Compile Include="Extensions\SaveFileDataExtensions.cs" />
     <Compile Include="Extensions\SpriteExtensions.cs" />
     <Compile Include="Factories\CharacterFactory.Generated.cs" />
     <Compile Include="Factories\FishFactory.Generated.cs" />
@@ -214,9 +216,9 @@
     <Compile Include="FishGenerator.cs" />
     <Compile Include="GameClasses\FishRecord.cs" />
     <Compile Include="GameClasses\SaveFileData.cs" />
-    <Compile Include="GameClasses\Tournament.cs" />
     <Compile Include="GameClasses\TournamentResults.cs" />
     <Compile Include="GameClasses\TournamentRules.cs" />
+    <Compile Include="GameClasses\TournamentStructure.cs" />
     <Compile Include="GlobalContent.Generated.cs" />
     <Compile Include="GumCore\AnimationFrame.cs" />
     <Compile Include="GumCore\Atlas.cs" />

@@ -403,9 +403,9 @@ namespace FishKing.GumRuntimes
             WaterBoxFishingLine.Height = fishingLineLength;
         }
 
-        public void RaiseAlignmentBar()
+        public void RaiseAlignmentBar(float percent)
         {
-            alignmentVelocity = Math.Min(maxAlignmentVelocity, alignmentVelocity + alignmentVelocityIncrementRate);
+            alignmentVelocity = Math.Min(maxAlignmentVelocity, alignmentVelocity + (alignmentVelocityIncrementRate * percent));
         }
 
         private void UpdateAlignmentBarStatus()

@@ -52,12 +52,16 @@ namespace FishKing.Entities
         public string Animation { set { this.SpriteInstance.AnimationChains = GetFile(value) as AnimationChainList;} }
 
         public I2DInput MovementInput { get; set; }
-        public IPressableInput FishingAlignmentInput { get; set; }
+        //public IPressableInput FishingAlignmentInput { get; set; }
+        public I1DInput FishingAlignmentInput { get; set; }
         public IPressableInput ActionInput { get; set; }
-        public IPressableInput ReelingInput { get; set; }
+
+        public Multiple1DInputs ReelingInput { get; set; }
         public IPressableInput EscapeInput { get; set; }
         public IPressableInput HelpInput { get; set; }
 
+        public float ReelAmount { get; private set; }
+        public float AlignAmount { get; private set; }
 
         private bool isMovingToTile = false;
         public bool IsMoving { get { return SpriteInstance.CurrentChainName.Substring(0, 4) == "Walk"; } }
@@ -157,8 +161,10 @@ namespace FishKing.Entities
             {
                 ResetFishingStatus();
             }
-            IsHoldingAlignButton = FishingAlignmentInput != null && FishingAlignmentInput.IsDown;
-            IsHoldingReelButton = ReelingInput != null && ReelingInput.IsDown;
+            IsHoldingAlignButton = FishingAlignmentInput != null && FishingAlignmentInput.Value > 0;
+            AlignAmount = FishingAlignmentInput.Value;
+            IsHoldingReelButton = ReelingInput != null && ReelingInput.Value > 0;
+            ReelAmount = ReelingInput.Value;
         }
 
 

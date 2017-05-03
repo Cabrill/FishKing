@@ -73,18 +73,18 @@ namespace FishKing.GumRuntimes
             }
         }
 
-        public void RaiseAlignmentBar()
+        public void RaiseAlignmentBar(float percentPressure = 1f)
         {
-            FramedCatchingBackgroundInstance.RaiseAlignmentBar();
+            FramedCatchingBackgroundInstance.RaiseAlignmentBar(percentPressure);
         }
 
-        public void SpinReel()
+        public void SpinReel(float percentPressure = 1f)
         {
             if (!LineHasSnapped && !FishIsCaught)
             {
                 if (FramedCatchingBackgroundInstance.IsAligned)
                 {
-                    SpinningReelInstance.SpinReel();
+                    SpinningReelInstance.SpinReel(percentPressure);
                 }
                 else
                 {

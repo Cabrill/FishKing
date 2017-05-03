@@ -204,19 +204,24 @@ namespace FishKing.Screens
                 actionInputs.Inputs.Add(InputManager.Xbox360GamePads[0].GetButton(Xbox360GamePad.Button.B));
             }
 
-            var alignmentInputs = new MultiplePressableInputs();
-            alignmentInputs.Inputs.Add(InputManager.Mouse.GetButton(Mouse.MouseButtons.LeftButton));
+            var alignmentInputs = new Multiple1DInputs();
+            var leftMouseButton = new PressableTo1DInput(InputManager.Mouse.GetButton(Mouse.MouseButtons.LeftButton));
+            alignmentInputs.Inputs.Add(leftMouseButton);
             if (InputManager.NumberOfConnectedGamePads > 0)
             {
-                alignmentInputs.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.RightTrigger));
+                var rightTrigger = new AnalogButtonTo1DInput(gamePad.RightTrigger);
+                alignmentInputs.Inputs.Add(rightTrigger);
             }
 
-            var reelingInputs = new MultiplePressableInputs();
-            reelingInputs.Inputs.Add(InputManager.Keyboard.GetKey(Keys.LeftShift));
-            reelingInputs.Inputs.Add(InputManager.Keyboard.GetKey(Keys.RightShift));
+            var reelingInputs = new Multiple1DInputs();
+            var leftShift = new PressableTo1DInput(InputManager.Keyboard.GetKey(Keys.LeftShift));
+            reelingInputs.Inputs.Add(leftShift);
+            var rightShift = new PressableTo1DInput(InputManager.Keyboard.GetKey(Keys.RightShift));
+            reelingInputs.Inputs.Add(rightShift);
             if (InputManager.NumberOfConnectedGamePads > 0)
             {
-                reelingInputs.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.LeftTrigger));
+                var leftTrigger = new AnalogButtonTo1DInput(gamePad.LeftTrigger);
+                reelingInputs.Inputs.Add(leftTrigger);
             }
 
             var escapeInputs = new MultiplePressableInputs();
@@ -495,11 +500,11 @@ namespace FishKing.Screens
                             {
                                 if (CharacterInstance.IsHoldingAlignButton)
                                 {
-                                    FishCatchingInterfaceInstance.RaiseAlignmentBar();
+                                    FishCatchingInterfaceInstance.RaiseAlignmentBar(CharacterInstance.AlignAmount);
                                 }
                                 if (CharacterInstance.IsHoldingReelButton)
                                 {
-                                    FishCatchingInterfaceInstance.SpinReel();
+                                    FishCatchingInterfaceInstance.SpinReel(CharacterInstance.ReelAmount);
                                 }
                             }
                             FishCatchingInterfaceInstance.Update();
