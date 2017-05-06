@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FishKing.UtilityClasses
 {
-    public static class FishInfoToString
+    public static class InfoToString
     {
         public static string Weight(int grams)
         {
@@ -45,5 +45,40 @@ namespace FishKing.UtilityClasses
             }
         }
 
-}
+        public static string Time(TimeSpan timeSpan)
+        {
+            return String.Format("{0} H {1} M {2} S", timeSpan.Hours, timeSpan.Minutes, timeSpan.Seconds);
+        }
+
+        public static string Date(DateTime dateTime)
+        {
+            return String.Format(dateTime.ToString("MMM dd{0}, YYYY"), AddOrdinal(dateTime.Day));
+        }
+
+        public static string AddOrdinal(int num)
+        {
+            if (num <= 0) return num.ToString();
+
+            switch (num % 100)
+            {
+                case 11:
+                case 12:
+                case 13:
+                    return num + "th";
+            }
+
+            switch (num % 10)
+            {
+                case 1:
+                    return num + "st";
+                case 2:
+                    return num + "nd";
+                case 3:
+                    return num + "rd";
+                default:
+                    return num + "th";
+            }
+
+        }
+    }
 }

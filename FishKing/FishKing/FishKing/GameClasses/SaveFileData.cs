@@ -11,6 +11,7 @@ namespace FishKing.GameClasses
     public class SaveFileData
     {
         public string PlayerName { get; private set; }
+        public int PlayerFishNumber { get; private set; }
 
         public string UniqueID { get; private set; }
 

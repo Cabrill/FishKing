@@ -38,7 +38,7 @@ namespace FishKing.GameClasses
         {
             get
             {
-                return FishInfoToString.Weight(MinimumWeight);
+                return InfoToString.Weight(MinimumWeight);
             }
         }
 
@@ -50,7 +50,7 @@ namespace FishKing.GameClasses
         {
             get
             {
-                return FishInfoToString.Length(MinimumLength);
+                return InfoToString.Length(MinimumLength);
             }
         }
 

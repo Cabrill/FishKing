@@ -143,6 +143,15 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GumRuntimes\subcomponent\GameSelectPreviewRuntime.cs" />
+    <Compile Include="GumRuntimes\subcomponent\GameSelectPreviewRuntime.Generated.cs">
+      <DependentUpon>GameSelectPreviewRuntime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GumRuntimes\subcomponent\LeftRightArrowRuntime.cs" />
+    <Compile Include="GumRuntimes\subcomponent\LeftRightArrowRuntime.Generated.cs">
+      <DependentUpon>LeftRightArrowRuntime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GumRuntimes\subcomponent\NewGameDisplayRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TextEntryBoxRuntime.cs" />
     <Compile Include="Managers\AmbientAudioManager.cs" />
     <Compile Include="DataTypes\fish_types.Generated.cs" />

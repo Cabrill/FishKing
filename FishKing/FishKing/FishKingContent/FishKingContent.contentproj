@@ -185,13 +185,25 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ComingSoonText</Name>
     </None>
+    <None Include="GumProject\Components\subcomponent\GameSelectPreview.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>GameSelectPreview</Name>
+    </None>
     <None Include="GumProject\Components\subcomponent\GlowingStar.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>GlowingStar</Name>
     </None>
+    <None Include="GumProject\Components\subcomponent\LeftRightArrow.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>LeftRightArrow</Name>
+    </None>
     <None Include="GumProject\Components\subcomponent\MainMenuButton.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>MainMenuButton</Name>
+    </None>
+    <None Include="GumProject\Components\subcomponent\NewGameDisplay.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>NewGameDisplay</Name>
     </None>
     <None Include="GumProject\Components\subcomponent\SubmenuButton.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -352,6 +364,22 @@
     <None Include="GumProject\FontCache\Font36Rockwell Extra Bold_o2_1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font36Rockwell Extra Bold_o2_1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font36Touch Of Nature_o1.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font36Touch Of Nature_o1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font36Touch Of Nature_o1_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font36Touch Of Nature_o1_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font36Touch Of Nature_o2.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font36Touch Of Nature_o2</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font36Touch Of Nature_o2_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font36Touch Of Nature_o2_0</Name>
     </None>
     <None Include="GumProject\FontCache\Font40Impact_o1.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
