@@ -704,6 +704,69 @@
           <BeforeOrAfter>Before</BeforeOrAfter>
           <DelegateType />
         </EventResponseSave>
+        <EventResponseSave>
+          <EventName>PlayBackButtonClick</EventName>
+          <SourceObject>PlayBackButton</SourceObject>
+          <SourceObjectEvent>Click</SourceObjectEvent>
+          <BeforeOrAfter>Before</BeforeOrAfter>
+          <DelegateType />
+        </EventResponseSave>
+        <EventResponseSave>
+          <EventName>NewGameButtonClick</EventName>
+          <SourceObject>NewGameButton</SourceObject>
+          <SourceObjectEvent>Click</SourceObjectEvent>
+          <BeforeOrAfter>Before</BeforeOrAfter>
+          <DelegateType />
+        </EventResponseSave>
+        <EventResponseSave>
+          <EventName>ContinueButtonClick</EventName>
+          <SourceObject>ContinueButton</SourceObject>
+          <SourceObjectEvent>Click</SourceObjectEvent>
+          <BeforeOrAfter>Before</BeforeOrAfter>
+          <DelegateType />
+        </EventResponseSave>
+        <EventResponseSave>
+          <EventName>NewGameBackButtonClick</EventName>
+          <SourceObject>NewGameBackButton</SourceObject>
+          <SourceObjectEvent>Click</SourceObjectEvent>
+          <BeforeOrAfter>Before</BeforeOrAfter>
+          <DelegateType />
+        </EventResponseSave>
+        <EventResponseSave>
+          <EventName>SaveGamePreview1Click</EventName>
+          <SourceObject>SaveGamePreview1</SourceObject>
+          <SourceObjectEvent>Click</SourceObjectEvent>
+          <BeforeOrAfter>Before</BeforeOrAfter>
+          <DelegateType />
+        </EventResponseSave>
+        <EventResponseSave>
+          <EventName>SaveGamePreview2Click</EventName>
+          <SourceObject>SaveGamePreview2</SourceObject>
+          <SourceObjectEvent>Click</SourceObjectEvent>
+          <BeforeOrAfter>Before</BeforeOrAfter>
+          <DelegateType />
+        </EventResponseSave>
+        <EventResponseSave>
+          <EventName>SaveGamePreview3Click</EventName>
+          <SourceObject>SaveGamePreview3</SourceObject>
+          <SourceObjectEvent>Click</SourceObjectEvent>
+          <BeforeOrAfter>Before</BeforeOrAfter>
+          <DelegateType />
+        </EventResponseSave>
+        <EventResponseSave>
+          <EventName>SaveGameBackButtonClick</EventName>
+          <SourceObject>SaveGameBackButton</SourceObject>
+          <SourceObjectEvent>Click</SourceObjectEvent>
+          <BeforeOrAfter>Before</BeforeOrAfter>
+          <DelegateType />
+        </EventResponseSave>
+        <EventResponseSave>
+          <EventName>NewGameDisplayInstanceFishContainerClick</EventName>
+          <SourceObject>NewGameDisplayInstance</SourceObject>
+          <SourceObjectEvent>FishContainerClick</SourceObjectEvent>
+          <BeforeOrAfter>Before</BeforeOrAfter>
+          <DelegateType />
+        </EventResponseSave>
       </Events>
       <NextScreen>Screens\MainMenu</NextScreen>
       <Name>Screens\TitleScreen</Name>
@@ -783,6 +846,105 @@
           <SourceFile>GumProject/Screens/TitleScreenGum.gusx</SourceFile>
           <SourceName>AboutPopup (FishKing.GumRuntimes.PopupMessageRuntime)</SourceName>
           <InstanceName>AboutPopup</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/TitleScreenGum.gusx</SourceFile>
+          <SourceName>PlayBackButton (FishKing.GumRuntimes.MainMenuButtonRuntime)</SourceName>
+          <InstanceName>PlayBackButton</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/TitleScreenGum.gusx</SourceFile>
+          <SourceName>NewGameDisplayInstance (FishKing.GumRuntimes.NewGameDisplayRuntime)</SourceName>
+          <InstanceName>NewGameDisplayInstance</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/TitleScreenGum.gusx</SourceFile>
+          <SourceName>NewGameButton (FishKing.GumRuntimes.MainMenuButtonRuntime)</SourceName>
+          <InstanceName>NewGameButton</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/TitleScreenGum.gusx</SourceFile>
+          <SourceName>ContinueButton (FishKing.GumRuntimes.MainMenuButtonRuntime)</SourceName>
+          <InstanceName>ContinueButton</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/TitleScreenGum.gusx</SourceFile>
+          <SourceName>NewGameBackButton (FishKing.GumRuntimes.MainMenuButtonRuntime)</SourceName>
+          <InstanceName>NewGameBackButton</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/TitleScreenGum.gusx</SourceFile>
+          <SourceName>SaveGamePreview1 (FishKing.GumRuntimes.GameSelectPreviewRuntime)</SourceName>
+          <InstanceName>SaveGamePreview1</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/TitleScreenGum.gusx</SourceFile>
+          <SourceName>SaveGamePreview2 (FishKing.GumRuntimes.GameSelectPreviewRuntime)</SourceName>
+          <InstanceName>SaveGamePreview2</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/TitleScreenGum.gusx</SourceFile>
+          <SourceName>SaveGamePreview3 (FishKing.GumRuntimes.GameSelectPreviewRuntime)</SourceName>
+          <InstanceName>SaveGamePreview3</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/TitleScreenGum.gusx</SourceFile>
+          <SourceName>SaveGameBackButton (FishKing.GumRuntimes.MainMenuButtonRuntime)</SourceName>
+          <InstanceName>SaveGameBackButton</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/TitleScreenGum.gusx</SourceFile>
+          <SourceName>PopupMessageInstance (FishKing.GumRuntimes.PopupMessageRuntime)</SourceName>
+          <InstanceName>PopupMessageInstance</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/TitleScreenGum.gusx</SourceFile>
+          <SourceName>ChooseSlot (FishKing.GumRuntimes.ColoredRectangleRuntime)</SourceName>
+          <InstanceName>ChooseSlotText</InstanceName>
           <AttachToContainer>true</AttachToContainer>
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>

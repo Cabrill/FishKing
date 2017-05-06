@@ -40,5 +40,68 @@ namespace FishKing.Screens
 				AboutButtonClick(window);
 			}
 		}
+		void OnPlayBackButtonClickTunnel (FlatRedBall.Gui.IWindow window)
+		{
+			if (this.PlayBackButtonClick != null)
+			{
+				PlayBackButtonClick(window);
+			}
+		}
+		void OnNewGameButtonClickTunnel (FlatRedBall.Gui.IWindow window)
+		{
+			if (this.NewGameButtonClick != null)
+			{
+				NewGameButtonClick(window);
+			}
+		}
+		void OnContinueButtonClickTunnel (FlatRedBall.Gui.IWindow window)
+		{
+			if (this.ContinueButtonClick != null)
+			{
+				ContinueButtonClick(window);
+			}
+		}
+		void OnNewGameBackButtonClickTunnel (FlatRedBall.Gui.IWindow window)
+		{
+			if (this.NewGameBackButtonClick != null)
+			{
+				NewGameBackButtonClick(window);
+			}
+		}
+		void OnSaveGamePreview1ClickTunnel (FlatRedBall.Gui.IWindow window)
+		{
+			if (this.SaveGamePreview1Click != null)
+			{
+				SaveGamePreview1Click(window);
+			}
+		}
+		void OnSaveGamePreview2ClickTunnel (FlatRedBall.Gui.IWindow window)
+		{
+			if (this.SaveGamePreview2Click != null)
+			{
+				SaveGamePreview2Click(window);
+			}
+		}
+		void OnSaveGamePreview3ClickTunnel (FlatRedBall.Gui.IWindow window)
+		{
+			if (this.SaveGamePreview3Click != null)
+			{
+				SaveGamePreview3Click(window);
+			}
+		}
+		void OnSaveGameBackButtonClickTunnel (FlatRedBall.Gui.IWindow window)
+		{
+			if (this.SaveGameBackButtonClick != null)
+			{
+				SaveGameBackButtonClick(window);
+			}
+		}
+		void OnNewGameDisplayInstanceFishContainerClickTunnel (FlatRedBall.Gui.IWindow window)
+		{
+			if (this.NewGameDisplayInstanceFishContainerClick != null)
+			{
+				NewGameDisplayInstanceFishContainerClick(window);
+			}
+		}
 	}
 }

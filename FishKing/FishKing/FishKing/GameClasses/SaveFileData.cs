@@ -10,10 +10,9 @@ namespace FishKing.GameClasses
 {
     public class SaveFileData
     {
-        public string PlayerName { get; private set; }
         public int PlayerFishNumber { get; private set; }
 
-        public string UniqueID { get; private set; }
+        public int SaveSlotNumber { get; private set; }
 
         public DateTime DateCreated { get; private set; }
         public DateTime LastPlayed { get; private set; }
@@ -86,15 +85,15 @@ namespace FishKing.GameClasses
 
         public SaveFileData() { }
 
-        public SaveFileData(string playerName, string saveFileId)
+        public SaveFileData(int saveSlot, int playerFishNumber)
         {
-            PlayerName = playerName;
+            SaveSlotNumber = saveSlot;
+            PlayerFishNumber = playerFishNumber;
             DateCreated = DateTime.Now;
             LastPlayed = DateTime.Now;
             TimePlayed = new TimeSpan(0);
             FishCaught = new Dictionary<Fish_Types, FishRecord>();
             ParticipatedTournaments = new List<TournamentResults>();
-            UniqueID = saveFileId;
         }
 
         public void StartPlaySession()

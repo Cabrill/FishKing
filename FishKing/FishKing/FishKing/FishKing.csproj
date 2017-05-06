@@ -151,7 +151,10 @@
     <Compile Include="GumRuntimes\subcomponent\LeftRightArrowRuntime.Generated.cs">
       <DependentUpon>LeftRightArrowRuntime.cs</DependentUpon>
     </Compile>
-    <Compile Include="GumRuntimes\subcomponent\NewGameDisplayRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\subcomponent\NewGameDisplayRuntime.cs" />
+    <Compile Include="GumRuntimes\subcomponent\NewGameDisplayRuntime.Generated.cs">
+      <DependentUpon>NewGameDisplayRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\subcomponent\TextEntryBoxRuntime.cs" />
     <Compile Include="Managers\AmbientAudioManager.cs" />
     <Compile Include="DataTypes\fish_types.Generated.cs" />
@@ -492,7 +495,7 @@
     <Compile Include="UtilityClasses\AnalogButtonTo1DInput.cs" />
     <Compile Include="UtilityClasses\CardinalTimedDirection.cs" />
     <Compile Include="UtilityClasses\DistributedRandomGenerator.cs" />
-    <Compile Include="UtilityClasses\FishInfoToString.cs" />
+    <Compile Include="UtilityClasses\InfoToString.cs" />
     <Compile Include="UtilityClasses\PressableTo1DInput.cs" />
     <Compile Include="UtilityClasses\RandomNumbers.cs" />
     <Compile Include="GameClasses\TournamentScores.cs" />

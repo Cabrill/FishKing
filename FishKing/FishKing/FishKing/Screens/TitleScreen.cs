@@ -16,6 +16,9 @@ using FlatRedBall.Gui;
 using FishKing.Entities;
 using FishKing.GumRuntimes;
 using FishKing.UtilityClasses;
+using System.Threading.Tasks;
+using FishKing.Managers;
+using FishKing.GameClasses;
 
 namespace FishKing.Screens
 {
@@ -25,17 +28,21 @@ namespace FishKing.Screens
         MultiplePressableInputs SelectionInput;
         MultiplePressableInputs ExitInput;
         TitleScreenGumRuntime screen;
-        double lastMovementTime = 0;
-        double timeBetweenMovement = 0.2;
+
+        private enum PlayType { None, Continue, NewGame };
+        PlayType currentPlayType;
+        int currentSaveSlot = 0;
 
         void CustomInitialize()
 		{
             InitializeInput();
+            currentPlayType = PlayType.None;
             screen = TitleScreenGumRuntime;
             screen.IntroAnimation.Play();
             FlatRedBallServices.Game.IsMouseVisible = true;
             Microsoft.Xna.Framework.Media.MediaPlayer.Volume = 0.3f;
             FlatRedBall.Audio.AudioManager.PlaySong(Echinoderm_Regeneration_Sting, true, false);
+            LoadSaveData();
         }
 
         private void InitializeInput()
@@ -65,32 +72,52 @@ namespace FishKing.Screens
             var exitInputs = new MultiplePressableInputs();
             exitInputs.Inputs.Add(InputManager.Keyboard.GetKey(Keys.Escape));
             ExitInput = exitInputs;
+            this.Call(startMusic).After(3);
+        }
+
+        private async void LoadSaveData()
+        {
+            SaveGamePreview1.CurrentFilledState = GameSelectPreviewRuntime.Filled.Empty;
+            SaveGamePreview2.CurrentFilledState = GameSelectPreviewRuntime.Filled.Empty;
+            SaveGamePreview3.CurrentFilledState = GameSelectPreviewRuntime.Filled.Empty;
+
+            var saveGames = await SaveGameManager.GetAllSaves();
+            foreach (SaveFileData save in saveGames)
+            {
+                switch (save.SaveSlotNumber)
+                {
+                    case 1: SaveGamePreview1.AssociatedWithSaveGame(save); break;
+                    case 2: SaveGamePreview2.AssociatedWithSaveGame(save); break;
+                    case 3: SaveGamePreview3.AssociatedWithSaveGame(save); break;
+                }
+            }
+            if (saveGames.Count == 0)
+            {
+                ContinueButton.CurrentEnabledState = MainMenuButtonRuntime.Enabled.IsDisabled;
+            }
+            else
+            {
+                ContinueButton.CurrentEnabledState = MainMenuButtonRuntime.Enabled.IsEnabled;
+            }
+        }
+
+        void startMusic()
+        {
+            FlatRedBall.Audio.AudioManager.PlaySong(The_Low_Seas, true, false);
         }
 
         void CustomActivity(bool firstTimeCalled)
 		{
+            if (InputManager.Mouse.AnyButtonPushed())
+            {
+                NewGameDisplayInstance.TestCollision(GuiManager.Cursor);
+            }
+
             HandleMenuMovement();
             HandleMenuSelection();
             HandleExitInput();
-            if (FlatRedBall.Audio.AudioManager.CurrentlyPlayingSong == null)
-            {
-                //FlatRedBall.Audio.AudioManager.PlaySong(The_Low_Seas, true, false);
-            }
-        }
 
-        private void HandleExitInput()
-        {
-            if (ExitInput.WasJustPressed)
-            {
-                if (AboutPopup.Visible)
-                {
-                    AboutPopup.HandleExit();
-                }
-                else
-                {
-                    ExitButton.CallClick();
-                }
-            }
+            FlatRedBall.Debugging.Debugger.Write(FlatRedBall.Gui.GuiManager.Cursor.WindowOver);
         }
 
         private void HandleMenuSelection()
@@ -101,30 +128,26 @@ namespace FishKing.Screens
                 {
                     AboutPopup.HandleSelection();
                 }
+                else if (PopupMessageInstance.Visible)
+                {
+                    PopupMessageInstance.HandleSelection();
+                }
                 else if (screen.CurrentMenuScreenButtonsState == TitleScreenGumRuntime.MenuScreenButtons.InitialButtons)
                 {
                     HandleInitialScreenSelection();
                 }
                 else if (TitleScreenGumRuntime.CurrentMenuScreenButtonsState == TitleScreenGumRuntime.MenuScreenButtons.PlayButtons)
                 {
-                    //TODO:  Add new game/continue
+                    HandlePlayScreenSelection();
                 }
-            }
-        }
-
-        private void HandleInitialScreenSelection()
-        {
-            if (PlayButton.IsHighlighted)
-            {
-                PlayButton.CallClick();
-            }
-            else if (AboutButton.IsHighlighted)
-            {
-                AboutButton.CallClick();
-            }
-            else if (ExitButton.IsHighlighted)
-            {
-                ExitButton.CallClick();
+                else if (TitleScreenGumRuntime.CurrentMenuScreenButtonsState == TitleScreenGumRuntime.MenuScreenButtons.NewGameButtons)
+                {
+                    HandleNewGameScreenSelection();
+                }
+                else if (TitleScreenGumRuntime.CurrentMenuScreenButtonsState == TitleScreenGumRuntime.MenuScreenButtons.SaveGameButtons)
+                {
+                    HandleSaveGameScreenSelection();
+                }
             }
         }
 
@@ -141,13 +164,202 @@ namespace FishKing.Screens
             {
                 AboutPopup.HandleMovement(desiredDirection);
             }
+            else if (PopupMessageInstance.Visible)
+            {
+                PopupMessageInstance.HandleMovement(desiredDirection);
+            }
             else if (screen.CurrentMenuScreenButtonsState == TitleScreenGumRuntime.MenuScreenButtons.InitialButtons)
             {
                 HandleInitialScreenMovement(desiredDirection);
             }
             else if (TitleScreenGumRuntime.CurrentMenuScreenButtonsState == TitleScreenGumRuntime.MenuScreenButtons.PlayButtons)
             {
-                //TODO:  Add new game/continue
+                HandlePlayScreenMovement(desiredDirection);
+            } else if (TitleScreenGumRuntime.CurrentMenuScreenButtonsState == TitleScreenGumRuntime.MenuScreenButtons.SaveGameButtons)
+            {
+                HandleSaveGameScreenMovement(desiredDirection);
+            }
+            else if (TitleScreenGumRuntime.CurrentMenuScreenButtonsState == TitleScreenGumRuntime.MenuScreenButtons.NewGameButtons)
+            {
+                HandleNewGameScreenMovement(desiredDirection);
+            }
+        }
+
+        private void HandleExitInput()
+        {
+            if (ExitInput.WasJustPressed)
+            {
+                if (AboutPopup.Visible)
+                {
+                    AboutPopup.HandleExit();
+                }
+                else if (PopupMessageInstance.Visible)
+                {
+                    PopupMessageInstance.HandleExit();
+                }
+                else
+                {
+                    if (screen.CurrentMenuScreenButtonsState == TitleScreenGumRuntime.MenuScreenButtons.InitialButtons)
+                    {
+                        ExitButton.CallClick();
+                    }
+                    else if (screen.CurrentMenuScreenButtonsState == TitleScreenGumRuntime.MenuScreenButtons.SaveGameButtons)
+                    {
+                        SaveGameBackButton.CallClick();
+                    }
+                    else if (screen.CurrentMenuScreenButtonsState == TitleScreenGumRuntime.MenuScreenButtons.NewGameButtons)
+                    {
+                        if (NewGameDisplayInstance.CurrentConfirmationState == NewGameDisplayRuntime.Confirmation.Confirming)
+                        {
+                            NewGameDisplayInstance.CurrentConfirmationState = NewGameDisplayRuntime.Confirmation.Unconfirmed;
+                        }
+                        else
+                        {
+                            NewGameBackButton.CallClick();
+                        }
+                    }
+                }
+            }
+        }
+
+        private void HandleNewGameScreenSelection()
+        {
+            if (NewGameBackButton.IsHighlighted) NewGameBackButton.CallClick();
+            else NewGameDisplayInstance.MainClick();
+        }
+
+        private void HandleSaveGameScreenSelection()
+        {
+            if (SaveGameBackButton.IsHighlighted) SaveGameBackButton.CallClick();
+            else if (SaveGamePreview1.IsHighlighted) SaveGamePreview1.CallClick();
+            else if (SaveGamePreview2.IsHighlighted) SaveGamePreview2.CallClick();
+            else if (SaveGamePreview3.IsHighlighted) SaveGamePreview3.CallClick();
+        }
+
+        private void HandlePlayScreenSelection()
+        {
+            if (PlayBackButton.IsHighlighted) PlayBackButton.CallClick();
+            else if (NewGameButton.IsHighlighted) NewGameButton.CallClick();
+            else if (ContinueButton.IsHighlighted) ContinueButton.CallClick();
+        }
+
+        private void HandleInitialScreenSelection()
+        {
+            if (PlayButton.IsHighlighted) PlayButton.CallClick();
+            else if (AboutButton.IsHighlighted) AboutButton.CallClick();
+            else if (ExitButton.IsHighlighted) ExitButton.CallClick();
+        }
+
+
+        private void HandleNewGameScreenMovement(Direction desiredDirection)
+        {
+            switch (desiredDirection)
+            {
+                case Direction.Left:
+                    NewGameDisplayInstance.LeftClick(); break;
+                case Direction.Right:
+                    NewGameDisplayInstance.RightClick(); break;
+                case Direction.Down:
+                    NewGameDisplayInstance.UnhighlightButton();
+                    NewGameBackButton.HighlightButton(); break;
+                case Direction.Up:
+                    NewGameDisplayInstance.HighlightButton();
+                    NewGameBackButton.UnhighlightButton(); break;
+            }
+        }
+
+        private void HandleSaveGameScreenMovement(Direction desiredDirection)
+        {
+            switch (desiredDirection)
+            {
+                case Direction.Left:
+                    if (SaveGamePreview3.IsHighlighted)
+                    {
+                        SaveGamePreview3.UnhighlightButton();
+                        SaveGamePreview2.HighlightButton();
+                    } else if (SaveGamePreview2.IsHighlighted)
+                    {
+                        SaveGamePreview2.UnhighlightButton();
+                        SaveGamePreview1.HighlightButton();
+                    } else if (SaveGamePreview1.IsHighlighted)
+                    {
+                        SaveGamePreview1.UnhighlightButton();
+                        SaveGameBackButton.HighlightButton();
+                    }
+                    break;
+                case Direction.Right:
+                    if (SaveGameBackButton.IsHighlighted)
+                    {
+                        SaveGameBackButton.UnhighlightButton();
+                        SaveGamePreview1.HighlightButton();
+                    }
+                    else if (SaveGamePreview1.IsHighlighted)
+                    {
+                        SaveGamePreview1.UnhighlightButton();
+                        SaveGamePreview2.HighlightButton();
+                    }
+                    else if (SaveGamePreview2.IsHighlighted)
+                    {
+                        SaveGamePreview2.UnhighlightButton();
+                        SaveGamePreview3.HighlightButton();
+                    }
+                    break;
+            }
+        }
+
+        private void HandlePlayScreenMovement(Direction desiredDirection)
+        {
+            switch (desiredDirection)
+            {
+                case Direction.Left:
+                    if (ContinueButton.IsHighlighted)
+                    {
+                        ContinueButton.UnhighlightButton();
+                        NewGameButton.HighlightButton();
+                    }
+                    else if (NewGameButton.IsHighlighted)
+                    {
+                        NewGameButton.UnhighlightButton();
+                        PlayBackButton.HighlightButton();
+                    }
+                    break;
+                case Direction.Right:
+                    if (PlayBackButton.IsHighlighted)
+                    {
+                        PlayBackButton.UnhighlightButton();
+                        NewGameButton.HighlightButton();
+                    }
+                    else if (NewGameButton.IsHighlighted)
+                    {
+                        if (ContinueButton.CurrentEnabledState != MainMenuButtonRuntime.Enabled.IsDisabled)
+                        {
+                            NewGameButton.UnhighlightButton();
+                            ContinueButton.HighlightButton();
+                        }
+                    }
+                    break;
+                case Direction.Down:
+                    if (NewGameButton.IsHighlighted)
+                    {
+                        NewGameButton.UnhighlightButton();
+                        if (MovementInput.X > 0 && ContinueButton.CurrentEnabledState != MainMenuButtonRuntime.Enabled.IsDisabled)
+                        {
+                            ContinueButton.HighlightButton();
+                        }
+                        else
+                        {
+                            PlayBackButton.HighlightButton();
+                        }
+                    }
+                    break;
+                case Direction.Up:
+                    if (PlayBackButton.IsHighlighted || ContinueButton.IsHighlighted)
+                    {
+                        PlayBackButton.UnhighlightButton();
+                        ContinueButton.UnhighlightButton();
+                        NewGameButton.HighlightButton();
+                    }
+                    break;
             }
         }
 
@@ -203,51 +415,7 @@ namespace FishKing.Screens
                     break;
             }
         }
-
-        private Direction GetDesiredDirection()
-        {
-
-            Direction desiredDirection = Direction.None;
-
-            if (MovementInput != null && FlatRedBall.TimeManager.CurrentTime - lastMovementTime > timeBetweenMovement)
-            {
-                var x = MovementInput.X;
-                var y = MovementInput.Y;
-                if (Math.Abs(x) > Math.Abs(y))
-                {
-                    y = 0;
-                }
-                else if (Math.Abs(x) < Math.Abs(y))
-                {
-                    x = 0;
-                }
-
-                if (x < 0)
-                {
-                    desiredDirection = Direction.Left;
-                }
-                else if (x > 0)
-                {
-                    desiredDirection = Direction.Right;
-                }
-                else if (y < 0)
-                {
-                    desiredDirection = Direction.Down;
-                }
-                else if (y > 0)
-                {
-                    desiredDirection = Direction.Up;
-                }
-            }
-
-            if (desiredDirection != Direction.None)
-            {
-                lastMovementTime = FlatRedBall.TimeManager.CurrentTime;
-            }
-
-            return desiredDirection;
-        }
-
+        
         void CustomDestroy()
 		{
 
@@ -258,6 +426,5 @@ namespace FishKing.Screens
 
 
         }
-
 	}
 }

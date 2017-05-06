@@ -108,6 +108,54 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>int</Type>
+      <Name>ColoredRectangleInstance.Alpha</Name>
+      <Value xsi:type="xsd:int">150</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ColoredRectangleInstance.Blue</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ColoredRectangleInstance.Green</Name>
+      <Value xsi:type="xsd:int">255</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ColoredRectangleInstance.Height</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>ColoredRectangleInstance.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ColoredRectangleInstance.Red</Name>
+      <Value xsi:type="xsd:int">255</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ColoredRectangleInstance.Width</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>ColoredRectangleInstance.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>ConfirmationState</Type>
       <Name>ConfirmationState</Name>
       <SetsValue>false</SetsValue>
@@ -175,7 +223,7 @@
     <Variable>
       <Type>string</Type>
       <Name>ExplanationText.Text</Name>
-      <Value xsi:type="xsd:string">*Represents you on the tournament progress bar.</Value>
+      <Value xsi:type="xsd:string">To represent you on the tournament progress bar.</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -341,6 +389,18 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>FishContainer.ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>FishContainer.HasEvents</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>FishContainer.Height</Name>
       <Value xsi:type="xsd:float">60</Value>
@@ -493,7 +553,7 @@
     <Variable>
       <Type>bool</Type>
       <Name>HasEvents</Name>
-      <Value xsi:type="xsd:boolean">true</Value>
+      <Value xsi:type="xsd:boolean">false</Value>
       <Category>Behavior</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -512,9 +572,26 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>HighlightedState</Type>
+      <Name>HighlightedState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>HighlightState</Type>
       <Name>HighlightState</Name>
       <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>InnerContainer.ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>InnerContainer.HasEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
@@ -559,9 +636,27 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>LeftArrow.ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>LeftArrow.HasEvents</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>LeftRightState</Type>
       <Name>LeftArrow.LeftRightState</Name>
       <Value xsi:type="xsd:string">Left</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>LeftArrow.Parent</Name>
+      <Value xsi:type="xsd:string">InnerContainer</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -599,6 +694,30 @@
       <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>RightArrow.ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>RightArrow.HasEvents</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>LeftRightState</Type>
+      <Name>RightArrow.LeftRightState</Name>
+      <Value xsi:type="xsd:string">Right</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>RightArrow.Parent</Name>
+      <Value xsi:type="xsd:string">InnerContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>RightArrow.X</Name>
       <Value xsi:type="xsd:float">80</Value>
@@ -620,6 +739,24 @@
       <Type>PositionUnitType</Type>
       <Name>RightArrow.Y Units</Name>
       <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>SingleBarFrameInstance.Clips Children</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>SingleBarFrameInstance.ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>SingleBarFrameInstance.HasEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1114,15 +1251,33 @@
     <State>
       <Name>Confirming</Name>
       <Variable>
+        <Type>int</Type>
+        <Name>ExplanationText.Blue</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
         <Type>float</Type>
         <Name>ExplanationText.Font Scale</Name>
         <Value xsi:type="xsd:float">0.3</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
+        <Type>int</Type>
+        <Name>ExplanationText.Green</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
         <Type>HorizontalAlignment</Type>
         <Name>ExplanationText.HorizontalAlignment</Name>
         <Value xsi:type="xsd:int">1</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ExplanationText.Red</Name>
+        <Value xsi:type="xsd:int">127</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -1155,41 +1310,92 @@
         <Value xsi:type="xsd:boolean">false</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+    </State>
+  </Category>
+  <Category>
+    <Name>Highlight</Name>
+    <State>
+      <Name>Highlighted</Name>
       <Variable>
-        <Type>int</Type>
-        <Name>ExplanationText.Red</Name>
-        <Value xsi:type="xsd:int">127</Value>
+        <Type>bool</Type>
+        <Name>ColoredRectangleInstance.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>ExplanationText.Green</Name>
+        <Name>FishChoice.Blue</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>FishChoice.Green</Name>
         <Value xsi:type="xsd:int">255</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>ExplanationText.Blue</Name>
-        <Value xsi:type="xsd:int">0</Value>
+        <Name>FishChoice.Red</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>FishHighlight.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>NotHighlighted</Name>
+      <Variable>
+        <Type>bool</Type>
+        <Name>ColoredRectangleInstance.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>FishChoice.Blue</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>FishChoice.Green</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>FishChoice.Red</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>FishHighlight.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
   </Category>
   <Instance>
-    <Name>FishHighlight</Name>
-    <BaseType>Sprite</BaseType>
+    <Name>ColoredRectangleInstance</Name>
+    <BaseType>ColoredRectangle</BaseType>
   </Instance>
   <Instance>
     <Name>SingleBarFrameInstance</Name>
     <BaseType>SingleBarFrame</BaseType>
   </Instance>
   <Instance>
-    <Name>FishChoice</Name>
-    <BaseType>Text</BaseType>
+    <Name>FishHighlight</Name>
+    <BaseType>Sprite</BaseType>
   </Instance>
   <Instance>
-    <Name>FishContainer</Name>
-    <BaseType>Container</BaseType>
+    <Name>FishChoice</Name>
+    <BaseType>Text</BaseType>
   </Instance>
   <Instance>
     <Name>InnerContainer</Name>
@@ -1210,6 +1416,10 @@
   <Instance>
     <Name>LeftArrow</Name>
     <BaseType>subcomponent\LeftRightArrow</BaseType>
+  </Instance>
+  <Instance>
+    <Name>FishContainer</Name>
+    <BaseType>Container</BaseType>
   </Instance>
   <Behaviors />
 </ComponentSave>

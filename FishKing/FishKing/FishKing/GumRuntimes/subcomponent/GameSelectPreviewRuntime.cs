@@ -11,6 +11,8 @@ namespace FishKing.GumRuntimes
 {
     partial class GameSelectPreviewRuntime
     {
+        public SaveFileData SaveData { get; private set; }
+
         public bool IsHighlighted
         {
             get { return CurrentHighlightState == Highlight.Highlighted; }
@@ -44,6 +46,8 @@ namespace FishKing.GumRuntimes
 
         public void AssociatedWithSaveGame(SaveFileData saveData)
         {
+            SaveData = saveData;
+
             this.LastPlayedValue.Text = InfoToString.Date(saveData.LastPlayed);
             this.TimePlayedValue.Text = InfoToString.Time(saveData.TimePlayed);
 
@@ -62,6 +66,7 @@ namespace FishKing.GumRuntimes
                 case 6: CurrentPlayerFishState = PlayerFish.Fish7; break;
                 case 7: CurrentPlayerFishState = PlayerFish.Fish8; break;
             }
+            this.CurrentFilledState = Filled.Full;
         }
     }
 }

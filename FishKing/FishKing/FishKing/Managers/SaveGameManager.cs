@@ -25,7 +25,7 @@ namespace FishKing.Managers
         }
         public static SaveFileData CurrentSaveData { get; private set; }
 
-        public static List<SaveFileData> GetAllSaves()
+        public static async Task<List<SaveFileData>> GetAllSaves()
         {
             List<SaveFileData> returnList = new List<SaveFileData>();
 
@@ -45,11 +45,11 @@ namespace FishKing.Managers
             return returnList;
         }
 
-        public static bool Save()
+        public static bool SaveCurrentData()
         {
-            if (CurrentSaveData != null && !String.IsNullOrWhiteSpace(CurrentSaveData.UniqueID))
+            if (CurrentSaveData != null && CurrentSaveData.SaveSlotNumber > 0)
             {
-                string savePath = Path.Combine(SavePath, CurrentSaveData.UniqueID + ".xml");
+                string savePath = Path.Combine(SavePath, "Game"+CurrentSaveData.SaveSlotNumber + ".xml");
 
                 return CurrentSaveData.SaveFile(savePath);
             }

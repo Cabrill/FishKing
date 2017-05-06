@@ -32,12 +32,18 @@ namespace FishKing.GumRuntimes
 
         public void HighlightButton()
         {
-            this.CurrentHighlightState = Highlight.Highlighted;
+            if (CurrentEnabledState != MainMenuButtonRuntime.Enabled.IsDisabled)
+            {
+                this.CurrentHighlightState = Highlight.Highlighted;
+            }
         }
 
         public void UnhighlightButton()
         {
-            this.CurrentHighlightState = Highlight.NotHighlighted;
+            if (CurrentEnabledState != MainMenuButtonRuntime.Enabled.IsDisabled)
+            {
+                this.CurrentHighlightState = Highlight.NotHighlighted;
+            }
         }
     }
 }

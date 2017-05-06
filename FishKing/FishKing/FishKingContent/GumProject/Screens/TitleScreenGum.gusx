@@ -101,6 +101,18 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>ButtonsContainer.ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>ButtonsContainer.HasEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>ButtonsContainer.Height</Name>
       <Value xsi:type="xsd:float">25</Value>
@@ -166,9 +178,123 @@
       <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
+      <Type>int</Type>
+      <Name>ChooseSlot.Blue</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>ChooseSlot.ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ChooseSlot.Green</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
-      <Name>ContinueBackButton.Parent</Name>
-      <Value xsi:type="xsd:string">ContinueButtons</Value>
+      <Name>ChooseSlot.Parent</Name>
+      <Value xsi:type="xsd:string">ButtonsContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ChooseSlot.Red</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>ChooseSlot.Visible</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>ChooseSlotText.Font</Name>
+      <Value xsi:type="xsd:string">Touch Of Nature</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ChooseSlotText.Font Scale</Name>
+      <Value xsi:type="xsd:float">0.5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ChooseSlotText.FontSize</Name>
+      <Value xsi:type="xsd:int">36</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ChooseSlotText.Height</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>ChooseSlotText.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ChooseSlotText.OutlineThickness</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>ChooseSlotText.Parent</Name>
+      <Value xsi:type="xsd:string">ChooseSlot</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>ChooseSlotText.Text</Name>
+      <Value xsi:type="xsd:string">Choose a save slot:</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ChooseSlotText.Width</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>ChooseSlotText.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ChooseSlotText.X</Name>
+      <Value xsi:type="xsd:float">15</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>ChooseSlotText.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ChooseSlotText.Y</Name>
+      <Value xsi:type="xsd:float">5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>ChooseSlotText.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -217,30 +343,6 @@
       <Type>VerticalAlignment</Type>
       <Name>ContinueButton.Y Origin</Name>
       <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>ContinueButtons.Parent</Name>
-      <Value xsi:type="xsd:string">ButtonsContainer</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>ContinueGamePreview1.Parent</Name>
-      <Value xsi:type="xsd:string">ContinueButtons</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>ContinueGamePreview2.Parent</Name>
-      <Value xsi:type="xsd:string">ContinueButtons</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>ContinueGamePreview3.Parent</Name>
-      <Value xsi:type="xsd:string">ContinueButtons</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1075,6 +1177,18 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>HighlightState</Type>
+      <Name>NewGameBackButton.HighlightState</Name>
+      <Value xsi:type="xsd:string">NotHighlighted</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>NewGameBackButton.Parent</Name>
+      <Value xsi:type="xsd:string">NewGameButtons</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>NewGameButton.ButtonTextText</Name>
       <Value xsi:type="xsd:string">New Game</Value>
@@ -1117,9 +1231,33 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>NewGameButtons.ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>NewGameButtons.Parent</Name>
       <Value xsi:type="xsd:string">ButtonsContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>NewGameDisplayInstance.ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>NewGameDisplayInstance.HasEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>NewGameDisplayInstance.Parent</Name>
+      <Value xsi:type="xsd:string">NewGameButtons</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1213,9 +1351,57 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>PopupMessageInstance.Visible</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
-      <Name>NewGameDisplayInstance.Parent</Name>
-      <Value xsi:type="xsd:string">NewGameButtons</Value>
+      <Name>SaveGameBackButton.Parent</Name>
+      <Value xsi:type="xsd:string">SaveGameButtons</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>ChildrenLayout</Type>
+      <Name>SaveGameButtons.Children Layout</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>SaveGameButtons.ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>SaveGameButtons.HasEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>SaveGameButtons.Parent</Name>
+      <Value xsi:type="xsd:string">ButtonsContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>SaveGamePreview1.Parent</Name>
+      <Value xsi:type="xsd:string">SaveGameButtons</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>SaveGamePreview2.Parent</Name>
+      <Value xsi:type="xsd:string">SaveGameButtons</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>SaveGamePreview3.Parent</Name>
+      <Value xsi:type="xsd:string">SaveGameButtons</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <VariableList xsi:type="VariableListSaveOfString">
@@ -1505,7 +1691,7 @@
       <Name>InitialButtons</Name>
       <Variable>
         <Type>bool</Type>
-        <Name>ContinueButtons.Visible</Name>
+        <Name>ChooseSlot.Visible</Name>
         <Value xsi:type="xsd:boolean">false</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -1524,6 +1710,12 @@
       <Variable>
         <Type>bool</Type>
         <Name>PlayButtons.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>SaveGameButtons.Visible</Name>
         <Value xsi:type="xsd:boolean">false</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -1532,7 +1724,7 @@
       <Name>PlayButtons</Name>
       <Variable>
         <Type>bool</Type>
-        <Name>ContinueButtons.Visible</Name>
+        <Name>ChooseSlot.Visible</Name>
         <Value xsi:type="xsd:boolean">false</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -1554,211 +1746,313 @@
         <Value xsi:type="xsd:boolean">true</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>SaveGameButtons.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
     </State>
     <State>
-      <Name>ContinueButtons</Name>
+      <Name>SaveGameButtons</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>ChooseSlot.Alpha</Name>
+        <Value xsi:type="xsd:int">150</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>ChooseSlot.Height</Name>
+        <Value xsi:type="xsd:float">45</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>DimensionUnitType</Type>
+        <Name>ChooseSlot.Height Units</Name>
+        <Value xsi:type="xsd:int">1</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>ChooseSlot.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>ChooseSlot.Width</Name>
+        <Value xsi:type="xsd:float">18</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>DimensionUnitType</Type>
+        <Name>ChooseSlot.Width Units</Name>
+        <Value xsi:type="xsd:int">1</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>PositionUnitType</Type>
+        <Name>ChooseSlot.X Units</Name>
+        <Value xsi:type="xsd:int">2</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ChooseSlotText.Blue</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
       <Variable>
         <Type>string</Type>
-        <Name>ContinueBackButton.ButtonTextText</Name>
+        <Name>ChooseSlotText.Font</Name>
+        <Value xsi:type="xsd:string">Touch Of Nature</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>ChooseSlotText.Font Scale</Name>
+        <Value xsi:type="xsd:float">0.45</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ChooseSlotText.FontSize</Name>
+        <Value xsi:type="xsd:int">36</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ChooseSlotText.Green</Name>
+        <Value xsi:type="xsd:int">140</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ChooseSlotText.OutlineThickness</Name>
+        <Value xsi:type="xsd:int">1</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ChooseSlotText.Red</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>ChooseSlotText.X</Name>
+        <Value xsi:type="xsd:float">5</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>ChooseSlotText.Y</Name>
+        <Value xsi:type="xsd:float">15</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>InitialButtons.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>NewGameButtons.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>PlayButtons.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>string</Type>
+        <Name>SaveGameBackButton.ButtonTextText</Name>
         <Value xsi:type="xsd:string">Back</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>HighlightState</Type>
-        <Name>ContinueBackButton.HighlightState</Name>
+        <Name>SaveGameBackButton.HighlightState</Name>
         <Value xsi:type="xsd:string">Highlighted</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>ContinueBackButton.Width</Name>
+        <Name>SaveGameBackButton.Width</Name>
         <Value xsi:type="xsd:float">15</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>ContinueBackButton.X</Name>
+        <Name>SaveGameBackButton.X</Name>
         <Value xsi:type="xsd:float">1</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>HorizontalAlignment</Type>
-        <Name>ContinueBackButton.X Origin</Name>
+        <Name>SaveGameBackButton.X Origin</Name>
         <Value xsi:type="xsd:int">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>PositionUnitType</Type>
-        <Name>ContinueBackButton.X Units</Name>
+        <Name>SaveGameBackButton.X Units</Name>
         <Value xsi:type="xsd:int">2</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>ContinueBackButton.Y</Name>
+        <Name>SaveGameBackButton.Y</Name>
         <Value xsi:type="xsd:float">95</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>VerticalAlignment</Type>
-        <Name>ContinueBackButton.Y Origin</Name>
+        <Name>SaveGameBackButton.Y Origin</Name>
         <Value xsi:type="xsd:int">2</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>ChildrenLayout</Type>
-        <Name>ContinueButtons.Children Layout</Name>
+        <Name>SaveGameButtons.Children Layout</Name>
         <Value xsi:type="xsd:int">2</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>ContinueButtons.Height</Name>
+        <Name>SaveGameButtons.Height</Name>
         <Value xsi:type="xsd:float">100</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>DimensionUnitType</Type>
-        <Name>ContinueButtons.Height Units</Name>
+        <Name>SaveGameButtons.Height Units</Name>
         <Value xsi:type="xsd:int">1</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>bool</Type>
-        <Name>ContinueButtons.Visible</Name>
+        <Name>SaveGameButtons.Visible</Name>
         <Value xsi:type="xsd:boolean">true</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>ContinueButtons.Width</Name>
+        <Name>SaveGameButtons.Width</Name>
         <Value xsi:type="xsd:float">100</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>DimensionUnitType</Type>
-        <Name>ContinueButtons.Width Units</Name>
+        <Name>SaveGameButtons.Width Units</Name>
         <Value xsi:type="xsd:int">1</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>ContinueGamePreview1.Height</Name>
+        <Name>SaveGamePreview1.Height</Name>
         <Value xsi:type="xsd:float">100</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>HighlightState</Type>
-        <Name>ContinueGamePreview1.HighlightState</Name>
+        <Name>SaveGamePreview1.HighlightState</Name>
         <Value xsi:type="xsd:string">NotHighlighted</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>PlayerFish</Type>
-        <Name>ContinueGamePreview1.PlayerFishState</Name>
+        <Name>SaveGamePreview1.PlayerFishState</Name>
         <Value xsi:type="xsd:string">Fish1</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>ContinueGamePreview1.X</Name>
+        <Name>SaveGamePreview1.X</Name>
         <Value xsi:type="xsd:float">2</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>PositionUnitType</Type>
-        <Name>ContinueGamePreview1.X Units</Name>
+        <Name>SaveGamePreview1.X Units</Name>
         <Value xsi:type="xsd:int">2</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>PositionUnitType</Type>
-        <Name>ContinueGamePreview1.Y Units</Name>
+        <Name>SaveGamePreview1.Y Units</Name>
         <Value xsi:type="xsd:int">3</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>ContinueGamePreview2.Height</Name>
+        <Name>SaveGamePreview2.Height</Name>
         <Value xsi:type="xsd:float">100</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>HighlightState</Type>
-        <Name>ContinueGamePreview2.HighlightState</Name>
+        <Name>SaveGamePreview2.HighlightState</Name>
         <Value xsi:type="xsd:string">NotHighlighted</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>PlayerFish</Type>
-        <Name>ContinueGamePreview2.PlayerFishState</Name>
+        <Name>SaveGamePreview2.PlayerFishState</Name>
         <Value xsi:type="xsd:string">Fish2</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>ContinueGamePreview2.Width</Name>
+        <Name>SaveGamePreview2.Width</Name>
         <Value xsi:type="xsd:float">25</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>ContinueGamePreview2.X</Name>
+        <Name>SaveGamePreview2.X</Name>
         <Value xsi:type="xsd:float">2</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>PositionUnitType</Type>
-        <Name>ContinueGamePreview2.X Units</Name>
+        <Name>SaveGamePreview2.X Units</Name>
         <Value xsi:type="xsd:int">2</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>ContinueGamePreview3.Height</Name>
+        <Name>SaveGamePreview3.Height</Name>
         <Value xsi:type="xsd:float">100</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>HighlightState</Type>
-        <Name>ContinueGamePreview3.HighlightState</Name>
+        <Name>SaveGamePreview3.HighlightState</Name>
         <Value xsi:type="xsd:string">NotHighlighted</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>PlayerFish</Type>
-        <Name>ContinueGamePreview3.PlayerFishState</Name>
+        <Name>SaveGamePreview3.PlayerFishState</Name>
         <Value xsi:type="xsd:string">Fish3</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>float</Type>
-        <Name>ContinueGamePreview3.X</Name>
+        <Name>SaveGamePreview3.X</Name>
         <Value xsi:type="xsd:float">2</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>PositionUnitType</Type>
-        <Name>ContinueGamePreview3.X Units</Name>
+        <Name>SaveGamePreview3.X Units</Name>
         <Value xsi:type="xsd:int">2</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>bool</Type>
-        <Name>InitialButtons.Visible</Name>
-        <Value xsi:type="xsd:boolean">false</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>bool</Type>
-        <Name>NewGameButtons.Visible</Name>
-        <Value xsi:type="xsd:boolean">false</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>bool</Type>
-        <Name>PlayButtons.Visible</Name>
-        <Value xsi:type="xsd:boolean">false</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -1766,7 +2060,7 @@
       <Name>NewGameButtons</Name>
       <Variable>
         <Type>bool</Type>
-        <Name>ContinueButtons.Visible</Name>
+        <Name>ChooseSlot.Visible</Name>
         <Value xsi:type="xsd:boolean">false</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -1774,6 +2068,54 @@
         <Type>bool</Type>
         <Name>InitialButtons.Visible</Name>
         <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>string</Type>
+        <Name>NewGameBackButton.ButtonTextText</Name>
+        <Value xsi:type="xsd:string">Back</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>HighlightState</Type>
+        <Name>NewGameBackButton.HighlightState</Name>
+        <Value xsi:type="xsd:string">NotHighlighted</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>NewGameBackButton.Width</Name>
+        <Value xsi:type="xsd:float">15</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>NewGameBackButton.X</Name>
+        <Value xsi:type="xsd:float">1</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>HorizontalAlignment</Type>
+        <Name>NewGameBackButton.X Origin</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>PositionUnitType</Type>
+        <Name>NewGameBackButton.X Units</Name>
+        <Value xsi:type="xsd:int">2</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>NewGameBackButton.Y</Name>
+        <Value xsi:type="xsd:float">50</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>VerticalAlignment</Type>
+        <Name>NewGameBackButton.Y Origin</Name>
+        <Value xsi:type="xsd:int">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -1813,6 +2155,12 @@
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
+        <Type>HighlightState</Type>
+        <Name>NewGameDisplayInstance.HighlightState</Name>
+        <Value xsi:type="xsd:string">Highlighted</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
         <Type>HorizontalAlignment</Type>
         <Name>NewGameDisplayInstance.X Origin</Name>
         <Value xsi:type="xsd:int">1</Value>
@@ -1842,10 +2190,16 @@
         <Value xsi:type="xsd:boolean">false</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>SaveGameButtons.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
     </State>
   </Category>
   <Instance>
-    <Name>ContinueBackButton</Name>
+    <Name>SaveGameBackButton</Name>
     <BaseType>subcomponent\MainMenuButton</BaseType>
   </Instance>
   <Instance>
@@ -1925,19 +2279,19 @@
     <BaseType>PopupMessage</BaseType>
   </Instance>
   <Instance>
-    <Name>ContinueButtons</Name>
+    <Name>SaveGameButtons</Name>
     <BaseType>Container</BaseType>
   </Instance>
   <Instance>
-    <Name>ContinueGamePreview1</Name>
+    <Name>SaveGamePreview1</Name>
     <BaseType>subcomponent\GameSelectPreview</BaseType>
   </Instance>
   <Instance>
-    <Name>ContinueGamePreview2</Name>
+    <Name>SaveGamePreview2</Name>
     <BaseType>subcomponent\GameSelectPreview</BaseType>
   </Instance>
   <Instance>
-    <Name>ContinueGamePreview3</Name>
+    <Name>SaveGamePreview3</Name>
     <BaseType>subcomponent\GameSelectPreview</BaseType>
   </Instance>
   <Instance>
@@ -1947,5 +2301,21 @@
   <Instance>
     <Name>NewGameDisplayInstance</Name>
     <BaseType>subcomponent\NewGameDisplay</BaseType>
+  </Instance>
+  <Instance>
+    <Name>NewGameBackButton</Name>
+    <BaseType>subcomponent\MainMenuButton</BaseType>
+  </Instance>
+  <Instance>
+    <Name>PopupMessageInstance</Name>
+    <BaseType>PopupMessage</BaseType>
+  </Instance>
+  <Instance>
+    <Name>ChooseSlotText</Name>
+    <BaseType>Text</BaseType>
+  </Instance>
+  <Instance>
+    <Name>ChooseSlot</Name>
+    <BaseType>ColoredRectangle</BaseType>
   </Instance>
 </ScreenSave>

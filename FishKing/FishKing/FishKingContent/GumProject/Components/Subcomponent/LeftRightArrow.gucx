@@ -146,6 +146,11 @@
       <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
+      <Type>Highlight</Type>
+      <Name>HighlightState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>LeftRightState</Type>
       <Name>LeftRightState</Name>
       <SetsValue>false</SetsValue>

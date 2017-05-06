@@ -228,6 +228,11 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>EnabledState</Type>
+      <Name>EnabledState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>bool</Type>
       <Name>ExposeChildrenEvents</Name>
       <Value xsi:type="xsd:boolean">false</Value>
@@ -446,6 +451,51 @@
         <Type>float</Type>
         <Name>Width</Name>
         <Value xsi:type="xsd:float">30</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
+  <Category>
+    <Name>Enabled</Name>
+    <State>
+      <Name>IsEnabled</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>ButtonText.Red</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ButtonText.Green</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ButtonText.Blue</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>IsDisabled</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>ButtonText.Red</Name>
+        <Value xsi:type="xsd:int">169</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ButtonText.Green</Name>
+        <Value xsi:type="xsd:int">169</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>ButtonText.Blue</Name>
+        <Value xsi:type="xsd:int">169</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
