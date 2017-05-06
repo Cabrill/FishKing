@@ -18,10 +18,16 @@ namespace FishKing.GumRuntimes
 
         partial void CustomInitialize()
         {
+            FishWithGlowInstance.Click += FishWithGlowInstance_Click;
             LeftArrow.Click += LeftArrow_Click;
             RightArrow.Click += RightArrow_Click;
             this.RollOn += HighlightButton;
             this.RollOff += UnhighlightButton;
+        }
+
+        private void FishWithGlowInstance_Click(IWindow window)
+        {
+            this.CallClick();
         }
 
         public bool IsHighlighted
@@ -51,7 +57,7 @@ namespace FishKing.GumRuntimes
 
         public void MainClick()
         {
-            FishContainer.CallClick();
+            FishWithGlowInstance.CallClick();
         }
 
         public void LeftClick()

@@ -185,6 +185,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ComingSoonText</Name>
     </None>
+    <None Include="GumProject\Components\subcomponent\FishWithGlow.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FishWithGlow</Name>
+    </None>
     <None Include="GumProject\Components\subcomponent\GameSelectPreview.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>GameSelectPreview</Name>

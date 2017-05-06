@@ -112,6 +112,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>subcomponent\FishWithGlow</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>subcomponent\GameSelectPreview</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>

@@ -96,11 +96,11 @@ namespace FishKing.Screens
 				SaveGameBackButtonClick(window);
 			}
 		}
-		void OnNewGameDisplayInstanceFishContainerClickTunnel (FlatRedBall.Gui.IWindow window)
+		void OnNewGameDisplayInstanceClickTunnel (FlatRedBall.Gui.IWindow window)
 		{
-			if (this.NewGameDisplayInstanceFishContainerClick != null)
+			if (this.NewGameDisplayInstanceClick != null)
 			{
-				NewGameDisplayInstanceFishContainerClick(window);
+				NewGameDisplayInstanceClick(window);
 			}
 		}
 	}

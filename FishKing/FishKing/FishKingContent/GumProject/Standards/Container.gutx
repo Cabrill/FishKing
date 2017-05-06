@@ -31,7 +31,7 @@
     <Variable>
       <Type>bool</Type>
       <Name>HasEvents</Name>
-      <Value xsi:type="xsd:boolean">false</Value>
+      <Value xsi:type="xsd:boolean">true</Value>
       <Category>Behavior</Category>
       <SetsValue>true</SetsValue>
     </Variable>

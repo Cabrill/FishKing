@@ -11,97 +11,6 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>float</Type>
-      <Name>ChosenFish.Height</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>ChosenFish.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>ChosenFish.Parent</Name>
-      <Value xsi:type="xsd:string">FishContainer</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <IsFile>true</IsFile>
-      <Type>string</Type>
-      <Name>ChosenFish.SourceFile</Name>
-      <Value xsi:type="xsd:string">TournamentFish.png</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>TextureAddress</Type>
-      <Name>ChosenFish.Texture Address</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>ChosenFish.Texture Height</Name>
-      <Value xsi:type="xsd:int">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>ChosenFish.Texture Left</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>ChosenFish.Texture Top</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>ChosenFish.Texture Width</Name>
-      <Value xsi:type="xsd:int">128</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>ChosenFish.Width</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>ChosenFish.Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>ChosenFish.X</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>HorizontalAlignment</Type>
-      <Name>ChosenFish.X Origin</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>ChosenFish.X Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>ChosenFish.Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>bool</Type>
       <Name>Clips Children</Name>
       <Value xsi:type="xsd:boolean">false</Value>
@@ -389,160 +298,45 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>bool</Type>
-      <Name>FishContainer.ExposeChildrenEvents</Name>
-      <Value xsi:type="xsd:boolean">false</Value>
-      <SetsValue>true</SetsValue>
+      <Type>FishTypeState</Type>
+      <Name>FishTypeState</Name>
+      <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
       <Type>bool</Type>
-      <Name>FishContainer.HasEvents</Name>
+      <Name>FishWithGlowInstance.HasEvents</Name>
       <Value xsi:type="xsd:boolean">true</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>float</Type>
-      <Name>FishContainer.Height</Name>
-      <Value xsi:type="xsd:float">60</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>FishContainer.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>string</Type>
-      <Name>FishContainer.Parent</Name>
+      <Name>FishWithGlowInstance.Parent</Name>
       <Value xsi:type="xsd:string">InnerContainer</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>float</Type>
-      <Name>FishContainer.Width</Name>
-      <Value xsi:type="xsd:float">50</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>FishContainer.Width Units</Name>
+      <Type>HorizontalAlignment</Type>
+      <Name>FishWithGlowInstance.X Origin</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>float</Type>
-      <Name>FishContainer.X</Name>
-      <Value xsi:type="xsd:float">25</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
       <Type>PositionUnitType</Type>
-      <Name>FishContainer.X Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
+      <Name>FishWithGlowInstance.X Units</Name>
+      <Value xsi:type="xsd:int">6</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>FishContainer.Y</Name>
+      <Name>FishWithGlowInstance.Y</Name>
       <Value xsi:type="xsd:float">15</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
-      <Name>FishContainer.Y Units</Name>
+      <Name>FishWithGlowInstance.Y Units</Name>
       <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>FishHighlight.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>FishHighlight.Parent</Name>
-      <Value xsi:type="xsd:string">FishContainer</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <IsFile>true</IsFile>
-      <Type>string</Type>
-      <Name>FishHighlight.SourceFile</Name>
-      <Value xsi:type="xsd:string">TournamentFish.png</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>TextureAddress</Type>
-      <Name>FishHighlight.Texture Address</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>FishHighlight.Texture Height</Name>
-      <Value xsi:type="xsd:int">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>FishHighlight.Texture Left</Name>
-      <Value xsi:type="xsd:int">228</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>FishHighlight.Texture Top</Name>
-      <Value xsi:type="xsd:int">400</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>FishHighlight.Texture Width</Name>
-      <Value xsi:type="xsd:int">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FishHighlight.Width</Name>
-      <Value xsi:type="xsd:float">100</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>FishHighlight.Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>FishHighlight.X</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>HorizontalAlignment</Type>
-      <Name>FishHighlight.X Origin</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>FishHighlight.X Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>FishHighlight.Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>FishTypeState</Type>
-      <Name>FishTypeState</Name>
-      <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
@@ -662,7 +456,7 @@
     <Variable>
       <Type>float</Type>
       <Name>LeftArrow.X</Name>
-      <Value xsi:type="xsd:float">-20</Value>
+      <Value xsi:type="xsd:float">-8</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -674,7 +468,7 @@
     <Variable>
       <Type>float</Type>
       <Name>LeftArrow.Y</Name>
-      <Value xsi:type="xsd:float">24</Value>
+      <Value xsi:type="xsd:float">20</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -706,6 +500,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>float</Type>
+      <Name>RightArrow.Height</Name>
+      <Value xsi:type="xsd:float">50</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>LeftRightState</Type>
       <Name>RightArrow.LeftRightState</Name>
       <Value xsi:type="xsd:string">Right</Value>
@@ -715,6 +515,12 @@
       <Type>string</Type>
       <Name>RightArrow.Parent</Name>
       <Value xsi:type="xsd:string">InnerContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>RightArrow.Width</Name>
+      <Value xsi:type="xsd:float">25</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -732,7 +538,7 @@
     <Variable>
       <Type>float</Type>
       <Name>RightArrow.Y</Name>
-      <Value xsi:type="xsd:float">24</Value>
+      <Value xsi:type="xsd:float">20</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -891,354 +697,72 @@
     <State>
       <Name>Fish1</Name>
       <Variable>
-        <Type>int</Type>
-        <Name>ChosenFish.Texture Top</Name>
-        <Value xsi:type="xsd:int">0</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>FishHighlight.Blue</Name>
-        <Value xsi:type="xsd:int">0</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>FishHighlight.Green</Name>
-        <Value xsi:type="xsd:int">69</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>FishHighlight.Red</Name>
-        <Value xsi:type="xsd:int">255</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishHighlight.Width</Name>
-        <Value xsi:type="xsd:float">110</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishHighlight.X</Name>
-        <Value xsi:type="xsd:float">0</Value>
+        <Type>FishChoiceState</Type>
+        <Name>FishWithGlowInstance.FishChoiceState</Name>
+        <Value xsi:type="xsd:string">Fish1</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
     <State>
       <Name>Fish2</Name>
       <Variable>
-        <Type>int</Type>
-        <Name>ChosenFish.Texture Top</Name>
-        <Value xsi:type="xsd:int">100</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>FishHighlight.Blue</Name>
-        <Value xsi:type="xsd:int">0</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>FishHighlight.Green</Name>
-        <Value xsi:type="xsd:int">165</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishHighlight.Height</Name>
-        <Value xsi:type="xsd:float">130</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>FishHighlight.Red</Name>
-        <Value xsi:type="xsd:int">255</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishHighlight.Width</Name>
-        <Value xsi:type="xsd:float">120</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishHighlight.X</Name>
-        <Value xsi:type="xsd:float">-15</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishHighlight.Y</Name>
-        <Value xsi:type="xsd:float">-15</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>PositionUnitType</Type>
-        <Name>FishHighlight.Y Units</Name>
-        <Value xsi:type="xsd:int">3</Value>
+        <Type>FishChoiceState</Type>
+        <Name>FishWithGlowInstance.FishChoiceState</Name>
+        <Value xsi:type="xsd:string">Fish2</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
     <State>
       <Name>Fish3</Name>
       <Variable>
-        <Type>int</Type>
-        <Name>ChosenFish.Texture Top</Name>
-        <Value xsi:type="xsd:int">200</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>FishHighlight.Blue</Name>
-        <Value xsi:type="xsd:int">204</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>FishHighlight.Green</Name>
-        <Value xsi:type="xsd:int">209</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishHighlight.Height</Name>
-        <Value xsi:type="xsd:float">110</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>FishHighlight.Red</Name>
-        <Value xsi:type="xsd:int">72</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishHighlight.Width</Name>
-        <Value xsi:type="xsd:float">110</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishHighlight.X</Name>
-        <Value xsi:type="xsd:float">-10</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishHighlight.Y</Name>
-        <Value xsi:type="xsd:float">-5</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>PositionUnitType</Type>
-        <Name>FishHighlight.Y Units</Name>
-        <Value xsi:type="xsd:int">3</Value>
+        <Type>FishChoiceState</Type>
+        <Name>FishWithGlowInstance.FishChoiceState</Name>
+        <Value xsi:type="xsd:string">Fish3</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
     <State>
       <Name>Fish4</Name>
       <Variable>
-        <Type>int</Type>
-        <Name>ChosenFish.Texture Top</Name>
-        <Value xsi:type="xsd:int">300</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>FishHighlight.Blue</Name>
-        <Value xsi:type="xsd:int">255</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>FishHighlight.Green</Name>
-        <Value xsi:type="xsd:int">0</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishHighlight.Height</Name>
-        <Value xsi:type="xsd:float">110</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>FishHighlight.Red</Name>
-        <Value xsi:type="xsd:int">0</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishHighlight.Width</Name>
-        <Value xsi:type="xsd:float">110</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishHighlight.X</Name>
-        <Value xsi:type="xsd:float">-5</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishHighlight.Y</Name>
-        <Value xsi:type="xsd:float">-6</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>PositionUnitType</Type>
-        <Name>FishHighlight.Y Units</Name>
-        <Value xsi:type="xsd:int">3</Value>
+        <Type>FishChoiceState</Type>
+        <Name>FishWithGlowInstance.FishChoiceState</Name>
+        <Value xsi:type="xsd:string">Fish4</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
     <State>
       <Name>Fish5</Name>
       <Variable>
-        <Type>int</Type>
-        <Name>ChosenFish.Texture Top</Name>
-        <Value xsi:type="xsd:int">400</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>FishHighlight.Blue</Name>
-        <Value xsi:type="xsd:int">255</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>FishHighlight.Green</Name>
-        <Value xsi:type="xsd:int">255</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>FishHighlight.Red</Name>
-        <Value xsi:type="xsd:int">0</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishHighlight.Width</Name>
-        <Value xsi:type="xsd:float">110</Value>
+        <Type>FishChoiceState</Type>
+        <Name>FishWithGlowInstance.FishChoiceState</Name>
+        <Value xsi:type="xsd:string">Fish5</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
     <State>
       <Name>Fish6</Name>
       <Variable>
-        <Type>int</Type>
-        <Name>ChosenFish.Texture Top</Name>
-        <Value xsi:type="xsd:int">500</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>FishHighlight.Blue</Name>
-        <Value xsi:type="xsd:int">255</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>FishHighlight.Green</Name>
-        <Value xsi:type="xsd:int">0</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>FishHighlight.Red</Name>
-        <Value xsi:type="xsd:int">255</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishHighlight.Width</Name>
-        <Value xsi:type="xsd:float">110</Value>
+        <Type>FishChoiceState</Type>
+        <Name>FishWithGlowInstance.FishChoiceState</Name>
+        <Value xsi:type="xsd:string">Fish6</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
     <State>
       <Name>Fish7</Name>
       <Variable>
-        <Type>int</Type>
-        <Name>ChosenFish.Texture Top</Name>
-        <Value xsi:type="xsd:int">600</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>FishHighlight.Blue</Name>
-        <Value xsi:type="xsd:int">211</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>FishHighlight.Green</Name>
-        <Value xsi:type="xsd:int">85</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishHighlight.Height</Name>
-        <Value xsi:type="xsd:float">120</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>FishHighlight.Red</Name>
-        <Value xsi:type="xsd:int">186</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishHighlight.Width</Name>
-        <Value xsi:type="xsd:float">100</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishHighlight.X</Name>
-        <Value xsi:type="xsd:float">-5</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>float</Type>
-        <Name>FishHighlight.Y</Name>
-        <Value xsi:type="xsd:float">-15</Value>
+        <Type>FishChoiceState</Type>
+        <Name>FishWithGlowInstance.FishChoiceState</Name>
+        <Value xsi:type="xsd:string">Fish7</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
     <State>
       <Name>Fish8</Name>
       <Variable>
-        <Type>int</Type>
-        <Name>ChosenFish.Texture Top</Name>
-        <Value xsi:type="xsd:int">700</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>FishHighlight.Blue</Name>
-        <Value xsi:type="xsd:int">180</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>FishHighlight.Green</Name>
-        <Value xsi:type="xsd:int">105</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>int</Type>
-        <Name>FishHighlight.Red</Name>
-        <Value xsi:type="xsd:int">255</Value>
+        <Type>FishChoiceState</Type>
+        <Name>FishWithGlowInstance.FishChoiceState</Name>
+        <Value xsi:type="xsd:string">Fish8</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -1341,9 +865,9 @@
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
-        <Type>bool</Type>
-        <Name>FishHighlight.Visible</Name>
-        <Value xsi:type="xsd:boolean">true</Value>
+        <Type>HighlightState</Type>
+        <Name>FishWithGlowInstance.HighlightState</Name>
+        <Value xsi:type="xsd:string">Highlighted</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -1374,9 +898,9 @@
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
-        <Type>bool</Type>
-        <Name>FishHighlight.Visible</Name>
-        <Value xsi:type="xsd:boolean">false</Value>
+        <Type>HighlightState</Type>
+        <Name>FishWithGlowInstance.HighlightState</Name>
+        <Value xsi:type="xsd:string">NotHighlighted</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -1390,20 +914,12 @@
     <BaseType>SingleBarFrame</BaseType>
   </Instance>
   <Instance>
-    <Name>FishHighlight</Name>
-    <BaseType>Sprite</BaseType>
-  </Instance>
-  <Instance>
     <Name>FishChoice</Name>
     <BaseType>Text</BaseType>
   </Instance>
   <Instance>
     <Name>InnerContainer</Name>
     <BaseType>Container</BaseType>
-  </Instance>
-  <Instance>
-    <Name>ChosenFish</Name>
-    <BaseType>Sprite</BaseType>
   </Instance>
   <Instance>
     <Name>ExplanationText</Name>
@@ -1418,8 +934,8 @@
     <BaseType>subcomponent\LeftRightArrow</BaseType>
   </Instance>
   <Instance>
-    <Name>FishContainer</Name>
-    <BaseType>Container</BaseType>
+    <Name>FishWithGlowInstance</Name>
+    <BaseType>subcomponent\FishWithGlow</BaseType>
   </Instance>
   <Behaviors />
 </ComponentSave>

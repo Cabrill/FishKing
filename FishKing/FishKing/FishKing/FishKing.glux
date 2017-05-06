@@ -761,9 +761,9 @@
           <DelegateType />
         </EventResponseSave>
         <EventResponseSave>
-          <EventName>NewGameDisplayInstanceFishContainerClick</EventName>
+          <EventName>NewGameDisplayInstanceClick</EventName>
           <SourceObject>NewGameDisplayInstance</SourceObject>
-          <SourceObjectEvent>FishContainerClick</SourceObjectEvent>
+          <SourceObjectEvent>Click</SourceObjectEvent>
           <BeforeOrAfter>Before</BeforeOrAfter>
           <DelegateType />
         </EventResponseSave>

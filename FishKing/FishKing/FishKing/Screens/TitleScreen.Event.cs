@@ -66,7 +66,7 @@ namespace FishKing.Screens
 
 
         //Game start buttons
-        void OnNewGameDisplayInstanceFishContainerClick(FlatRedBall.Gui.IWindow window)
+        void OnNewGameDisplayInstanceClick(FlatRedBall.Gui.IWindow window)
         {
             if (NewGameDisplayInstance.CurrentConfirmationState == GumRuntimes.NewGameDisplayRuntime.Confirmation.Unconfirmed)
             {
@@ -141,6 +141,6 @@ namespace FishKing.Screens
         private void PopupMessageInstance_YesButtonClick(FlatRedBall.Gui.IWindow window)
         {
             screen.CurrentMenuScreenButtonsState = GumRuntimes.TitleScreenGumRuntime.MenuScreenButtons.NewGameButtons;
-        }       
+        }              
     }
 }

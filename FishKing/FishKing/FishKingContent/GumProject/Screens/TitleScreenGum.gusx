@@ -1251,7 +1251,7 @@
     <Variable>
       <Type>bool</Type>
       <Name>NewGameDisplayInstance.HasEvents</Name>
-      <Value xsi:type="xsd:boolean">false</Value>
+      <Value xsi:type="xsd:boolean">true</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -2146,6 +2146,12 @@
         <Type>DimensionUnitType</Type>
         <Name>NewGameButtons.Width Units</Name>
         <Value xsi:type="xsd:int">1</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>ConfirmationState</Type>
+        <Name>NewGameDisplayInstance.ConfirmationState</Name>
+        <Value xsi:type="xsd:string">Unconfirmed</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
