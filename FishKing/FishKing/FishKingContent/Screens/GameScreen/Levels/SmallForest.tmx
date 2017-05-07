@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="30" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" name="alltiles" tilewidth="32" tileheight="32" tilecount="4096" columns="64">
+  <image source="../Tilesets/alltiles.png" width="2048" height="2048"/>
+  <tile id="342">
+   <animation>
+    <frame tileid="338" duration="500"/>
+    <frame tileid="339" duration="500"/>
+    <frame tileid="340" duration="500"/>
+    <frame tileid="341" duration="500"/>
+    <frame tileid="342" duration="500"/>
+   </animation>
+  </tile>
+  <tile id="2000">
+   <animation>
+    <frame tileid="2000" duration="100"/>
+    <frame tileid="2448" duration="100"/>
+    <frame tileid="2704" duration="100"/>
+    <frame tileid="2326" duration="100"/>
+   </animation>
+  </tile>
+ </tileset>
+ <layer name="Water" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3NMQ0AMAwEsS/K8mcSAFmbdLGlmy8BptzT8/V9/d3y6wsAzCnKyLN1EA4AAA==
+  </data>
+ </layer>
+ <layer name="Ground" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+2SwQ2EIBBFfyIe3a1CtxrdKjZbDVqFbitetAzr2CExBgnqQELiYUjejczjAWMOjEIURQY8PDyztN6a5jceCpXGvXUqv9fwTuA96kzdzPFym0sAlcULx3s1zWuJ+cQ5ER3D+8F+fU+82xurvWcObI3x1o7PvKc5x7TeBac1xqsdX+w/tr0L8bvwus1tYKfPe9Xq/q9Ql01PrmGF0yoIgiAIwv35A7pfOFwQDgAA
+  </data>
+ </layer>
+ <layer name="Walls" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC9PgZWDQJIBX8DAwrOQhrI4YfRpQGh3o8TEw6PNhitMKvAK66zUQvwHitzzUN/89DjO1gH7XBmIdLGFAS5AFtC+bznZSEyRyMzAkAXEyEKdw08/ehUC7FgHxYiBeQkd7R8EoGK5gEgcDw2QgngLEUznoZ+8loF2XgfgKEF+lo72jYBSMglEwCkbBYAcAH3mZlxAOAAA=
+  </data>
+ </layer>
+ <layer name="Overlay" width="30" height="30">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3TOQ6CQBiG4ekgAQtk6V1aDiPbFbRSr+J6Bm3Uq7geQz2Cb+s4lQ7RmP9LngIoXpaQNtTTrhzfcNfOf7Khr9QIY//1Wmqxo29Db4udoSt7by1PqTY66Hrfvpv/X+Ao1USICDESp/5uj0aGHAVKVJa7fcO/P6ExxQxzLLC03F0bunsaBxxxwhmXGt7zQGsHLt8XISLESFz73ZXhmTM6OQqUqGroymQymUwm+/09AOjqSCYQDgAA
+  </data>
+ </layer>
+</map>

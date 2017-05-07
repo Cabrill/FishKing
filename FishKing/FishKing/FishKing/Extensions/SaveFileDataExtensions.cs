@@ -5,6 +5,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml;
 using System.Xml.Serialization;
 
 namespace FishKing.Extensions
@@ -40,14 +41,21 @@ namespace FishKing.Extensions
             }
         }
 
-        public static void LoadData(this SaveFileData saveFile, string path)
+        public static async Task<bool> LoadData(this SaveFileData saveFile, string path)
         {
             if (File.Exists(path))
             {
-                using (StreamReader reader = new StreamReader(path))
+                await Task.Run(() =>
                 {
+                    // A FileStream is needed to read the XML document.
+                    FileStream fs = new FileStream(path, FileMode.Open);
+                    XmlReader reader = XmlReader.Create(fs);
+
+                    // Use the Deserialize method to restore the object's state.
                     saveFile = (SaveFileData)serializer.Deserialize(reader);
-                }
+                    fs.Close();
+                });
+                return true;
             }
             else
             {

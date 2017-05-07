@@ -29,6 +29,7 @@ using FishKing.UtilityClasses;
 using Microsoft.Xna.Framework.Media;
 using FlatRedBall.Math;
 using FlatRedBall.Gui;
+using FishKing.Managers;
 
 #if FRB_XNA || SILVERLIGHT
 using Keys = Microsoft.Xna.Framework.Input.Keys;
@@ -45,7 +46,6 @@ namespace FishKing.Screens
         static string startPointName = "FirstSpawn";
         private bool wasFishing = false;
         private bool shouldUpdateCamera;
-        private static TournamentScores TournamentScore;
 
         bool CanMoveCharacter
         {
@@ -69,28 +69,14 @@ namespace FishKing.Screens
                 MusicManager.Volume = 0.15f;
                 MusicManager.PlaySong();
             }
-            
-            TournamentStatusInstance.gameScreen = this;
+
             LoadLevel(levelToLoad);
             
             InitializeCharacter();
 
             InitializeCamera();
 
-            if (TournamentScore == null)
-            {
-                TournamentScore = new TournamentScores();
-                TournamentScore.GoalScore = 200;
-                TournamentStatusInstance.Reset();
-                TournamentStatusInstance.GoalScore = 200;
-                TournamentStatusInstance.PlayerFishNumber = 4;
-            }
-            else
-            {
-                TournamentStatusInstance.GoalScore = 200;
-                TournamentStatusInstance.PlayerFishNumber = 4;
-                TournamentStatusInstance.ResumeExistingTournament(TournamentScore.Scores);
-            }
+            TournamentStatusInstance.Setup(this);
         }
 
         private void InitializePauseMenuButtons()
@@ -294,27 +280,27 @@ namespace FishKing.Screens
                 {
                     if (InputManager.Keyboard.GetKey(Keys.Y).WasJustPressed)
                     {
-                        TournamentScore.AddToNonPlayerScore(1, 10);
+                        TournamentManager.CurrentScores.AddToNonPlayerScore(1, 10);
                     }
                     if (InputManager.Keyboard.GetKey(Keys.U).WasJustPressed)
                     {
-                        TournamentScore.AddToNonPlayerScore(2, 10);
+                        TournamentManager.CurrentScores.AddToNonPlayerScore(2, 10);
                     }
                     if (InputManager.Keyboard.GetKey(Keys.I).WasJustPressed)
                     {
-                        TournamentScore.AddToNonPlayerScore(3, 10);
+                        TournamentManager.CurrentScores.AddToNonPlayerScore(3, 10);
                     }
                     if (InputManager.Keyboard.GetKey(Keys.O).WasJustPressed)
                     {
-                        TournamentScore.AddToNonPlayerScore(4, 10);
+                        TournamentManager.CurrentScores.AddToNonPlayerScore(4, 10);
                     }
                     if (InputManager.Keyboard.GetKey(Keys.P).WasJustPressed)
                     {
-                        TournamentScore.AddToNonPlayerScore(5, 10);
+                        TournamentManager.CurrentScores.AddToNonPlayerScore(5, 10);
                     }
                     if (InputManager.Keyboard.GetKey(Keys.T).WasJustPressed)
                     {
-                        TournamentScore.AddToPlayerScore(10);
+                        TournamentManager.CurrentScores.AddToPlayerScore(10);
                     }
                 }
 #endif
@@ -340,13 +326,13 @@ namespace FishKing.Screens
 #if DEBUG
                 if (DebuggingVariables.SimulateTournamentScores)
                 {
-                    TournamentScore.SimulateTournament();
+                    TournamentManager.CurrentScores.SimulateTournament();
                 }
 #endif
-                if (TournamentScore.HasScoreChanged)
+                if (TournamentManager.CurrentScores.HasScoreChanged)
                 {
-                    TournamentStatusInstance.UpdateFishPlaceMarkers(TournamentScore.Scores);
-                    TournamentScore.MarkScoreReviewed();
+                    TournamentStatusInstance.UpdateFishPlaceMarkers(TournamentManager.CurrentScores.AsArray);
+                    TournamentManager.CurrentScores.MarkScoreReviewed();
                 }
             }
         }
@@ -481,7 +467,7 @@ namespace FishKing.Screens
                             } else if(CharacterInstance.IsDisplayingCatch && CharacterInstance.IsOnFinalFrameOfAnimationChain && !FishCatchDisplayInstance.Visible)
                             {
                                 FishCatchDisplayInstance.ShowFish(CharacterInstance.FishOnTheLine);
-                                TournamentScore.AddToPlayerScore(CharacterInstance.FishOnTheLine.Points);
+                                TournamentManager.CurrentScores.AddToPlayerScore(CharacterInstance.FishOnTheLine.Points);
                             }
                         }
                         else

@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FishKing.UtilityClasses
 {
-    class TournamentScores
+    public class TournamentScores
     {
         int goalScore;
         public int GoalScore
@@ -15,7 +15,7 @@ namespace FishKing.UtilityClasses
             set { goalScore = value; }
         }
         int[] scores;
-        public int[] Scores
+        public int[] AsArray
         {
             get { return scores;  }
         }
@@ -29,6 +29,11 @@ namespace FishKing.UtilityClasses
         public bool HasScoreChanged
         {
             get { return scoreHasChanged; }
+        }
+
+        public bool HasPlayerFinished
+        {
+            get { return PlayerScore >= GoalScore; }
         }
 
         public TournamentScores(int playerSize = 8)

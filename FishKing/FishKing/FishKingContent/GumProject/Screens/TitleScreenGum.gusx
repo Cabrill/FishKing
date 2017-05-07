@@ -1387,15 +1387,51 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>FilledState</Type>
+      <Name>SaveGamePreview1.FilledState</Name>
+      <Value xsi:type="xsd:string">Empty</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HighlightState</Type>
+      <Name>SaveGamePreview1.HighlightState</Name>
+      <Value xsi:type="xsd:string">NotHighlighted</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>SaveGamePreview1.Parent</Name>
       <Value xsi:type="xsd:string">SaveGameButtons</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>FilledState</Type>
+      <Name>SaveGamePreview2.FilledState</Name>
+      <Value xsi:type="xsd:string">Empty</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HighlightState</Type>
+      <Name>SaveGamePreview2.HighlightState</Name>
+      <Value xsi:type="xsd:string">NotHighlighted</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>SaveGamePreview2.Parent</Name>
       <Value xsi:type="xsd:string">SaveGameButtons</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>FilledState</Type>
+      <Name>SaveGamePreview3.FilledState</Name>
+      <Value xsi:type="xsd:string">Empty</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HighlightState</Type>
+      <Name>SaveGamePreview3.HighlightState</Name>
+      <Value xsi:type="xsd:string">NotHighlighted</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

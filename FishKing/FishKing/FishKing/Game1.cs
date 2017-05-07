@@ -64,7 +64,7 @@ namespace FishKing
 
             GameSpecificInitialization();
 
-			FlatRedBall.Screens.ScreenManager.Start(typeof(FishKing.Screens.FlatRedBallSplashScreen));
+			FlatRedBall.Screens.ScreenManager.Start(typeof(FishKing.Screens.MainMenu));
 
 #if DEBUG
             //var debugVariables = new Entities.DebuggingVariables();

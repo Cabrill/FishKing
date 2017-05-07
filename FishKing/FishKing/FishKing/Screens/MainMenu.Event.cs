@@ -20,7 +20,10 @@ namespace FishKing.Screens
         }
         void OnGoFishButtonClick (FlatRedBall.Gui.IWindow window)
         {
-            LoadingScreen.TransitionToScreen(typeof(GameScreen).FullName);
+            if (MainMenuGumRuntime.TournamentIsSelected)
+            {
+                LoadingScreen.TransitionToScreen(typeof(GameScreen).FullName);
+            }
         }
         void OnGearButtonClick (FlatRedBall.Gui.IWindow window)
         {

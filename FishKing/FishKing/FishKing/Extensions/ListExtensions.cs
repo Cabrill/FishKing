@@ -19,5 +19,13 @@ namespace FishKing.Extensions
             int index = RandomNumbers.Random.Next(0, enumerable.Count());
             return enumerable.ElementAt(index);
         }
+
+        public static void ForEach<T>(this IEnumerable<T> source, Action<T> action)
+        {
+            foreach (T element in source)
+            {
+                action(element);
+            }
+        }
     }
 }

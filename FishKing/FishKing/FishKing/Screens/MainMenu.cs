@@ -14,6 +14,8 @@ using FlatRedBall.Localization;
 using FishKing.GumRuntimes;
 using Microsoft.Xna.Framework.Input;
 using FishKing.Entities;
+using FishKing.UtilityClasses;
+using FishKing.GameClasses;
 
 namespace FishKing.Screens
 {
@@ -22,14 +24,11 @@ namespace FishKing.Screens
         Multiple2DInputs MovementInput;
         MultiplePressableInputs SelectionInput;
         MultiplePressableInputs ExitInput;
-        MainMenuGumRuntime screen;
-        double lastMovementTime = 0;
-        double timeBetweenMovement = 0.2;
+        I1DInput ScrollInput;
 
         void CustomInitialize()
         {
             InitializeInput();
-            screen = MainMenuGumRuntime;
             FlatRedBallServices.Game.IsMouseVisible = true;
             Microsoft.Xna.Framework.Media.MediaPlayer.Volume = 0.5f;
             //FlatRedBall.Audio.AudioManager.PlaySong(Echinoderm_Regeneration_Sting, true, false);
@@ -37,6 +36,8 @@ namespace FishKing.Screens
 
         private void InitializeInput()
         {
+            BackgroundSprite.Enabled = false;
+            
             var gamePad = InputManager.Xbox360GamePads[0];
 
             var movementInputs = new Multiple2DInputs();
@@ -62,17 +63,29 @@ namespace FishKing.Screens
             var exitInputs = new MultiplePressableInputs();
             exitInputs.Inputs.Add(InputManager.Keyboard.GetKey(Keys.Escape));
             ExitInput = exitInputs;
+
+            ScrollInput = InputManager.Mouse.ScrollWheel;
         }
 
         void CustomActivity(bool firstTimeCalled)
         {
-            //FlatRedBall.Debugging.Debugger.Write(FlatRedBall.Gui.GuiManager.Cursor.WindowOver);
+            FlatRedBall.Debugging.Debugger.Write(FlatRedBall.Gui.GuiManager.Cursor.WindowOver);
             HandleMenuMovement();
             HandleMenuSelection();
             HandleExitInput();
+            HandleScrollInput();
+            GoFishButton.Visible = MainMenuGumRuntime.TournamentIsSelected;
             if (FlatRedBall.Audio.AudioManager.CurrentlyPlayingSong == null)
             {
                 //FlatRedBall.Audio.AudioManager.PlaySong(The_Low_Seas, true, false);
+            }
+        }
+
+        private void HandleScrollInput()
+        {
+            if (ScrollInput.Value != 0)
+            {
+                MainMenuGumRuntime.HandleScrollInput(ScrollInput.Velocity);
             }
         }
 
@@ -120,11 +133,15 @@ namespace FishKing.Screens
             {
                 BackButton.CallClick();
             }
+            else if (MainMenuGumRuntime.AnyTournamentIsHighlighted)
+            {
+                MainMenuGumRuntime.HandleSelect();
+            }
         }
 
         private void HandleMenuMovement()
         {
-            var desiredDirection = GetDesiredDirection();
+            var desiredDirection = CardinalTimedDirection.GetDesiredDirection(MovementInput);
 
             if (desiredDirection == Direction.None)
             {
@@ -155,6 +172,11 @@ namespace FishKing.Screens
                         GoFishButton.UnhighlightButton();
                         BackButton.HighlightButton();
                     }
+                    else if (MainMenuGumRuntime.AnyTournamentIsHighlighted)
+                    {
+                        MainMenuGumRuntime.UnhighlightAllTournaments();
+                        BackButton.HighlightButton();
+                    }
                     break;
                 case Direction.Right:
                     if (BackButton.IsHighlighted)
@@ -162,11 +184,17 @@ namespace FishKing.Screens
                         BackButton.UnhighlightButton();
                         GoFishButton.HighlightButton();
                     }
+                    else if (MainMenuGumRuntime.AnyTournamentIsHighlighted && GoFishButton.Visible)
+                    {
+                        MainMenuGumRuntime.UnhighlightAllTournaments();
+                        GoFishButton.HighlightButton();
+                    }
                     break;
                 case Direction.Down:
-                    if (TournamentPreviewInstance.IsHighlighted)
+                    if (MainMenuGumRuntime.LastTournamentPreviewIsHighlighted)
                     {
-                        TournamentPreviewInstance.UnhighlightButton();
+                        MainMenuGumRuntime.UnhighlightAllTournaments();
+                        
                         if (MovementInput.X > 0)
                         {
                             GoFishButton.HighlightButton();
@@ -176,62 +204,22 @@ namespace FishKing.Screens
                             BackButton.HighlightButton();
                         }
                     }
+                    else
+                    {
+                        MainMenuGumRuntime.HandleTournamentPreviewMovement(desiredDirection);
+                    }
                     break;
                 case Direction.Up:
                     if (GoFishButton.IsHighlighted || BackButton.IsHighlighted)
                     {
                         GoFishButton.UnhighlightButton();
                         BackButton.UnhighlightButton();
-                        TournamentPreviewInstance.HighlightButton();
                     }
+                    MainMenuGumRuntime.HandleTournamentPreviewMovement(desiredDirection);
                     break;
             }
         }
-
-        private Direction GetDesiredDirection()
-        {
-
-            Direction desiredDirection = Direction.None;
-
-            if (MovementInput != null && FlatRedBall.TimeManager.CurrentTime - lastMovementTime > timeBetweenMovement)
-            {
-                var x = MovementInput.X;
-                var y = MovementInput.Y;
-                if (Math.Abs(x) > Math.Abs(y))
-                {
-                    y = 0;
-                }
-                else if (Math.Abs(x) < Math.Abs(y))
-                {
-                    x = 0;
-                }
-
-                if (x < 0)
-                {
-                    desiredDirection = Direction.Left;
-                }
-                else if (x > 0)
-                {
-                    desiredDirection = Direction.Right;
-                }
-                else if (y < 0)
-                {
-                    desiredDirection = Direction.Down;
-                }
-                else if (y > 0)
-                {
-                    desiredDirection = Direction.Up;
-                }
-            }
-
-            if (desiredDirection != Direction.None)
-            {
-                lastMovementTime = FlatRedBall.TimeManager.CurrentTime;
-            }
-
-            return desiredDirection;
-        }
-
+        
         void CustomDestroy()
         {
 

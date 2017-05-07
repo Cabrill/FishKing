@@ -667,6 +667,15 @@
           <GenerateTimedEmit>true</GenerateTimedEmit>
           <IndependentOfCamera>true</IndependentOfCamera>
         </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/MainMenuGum.gusx</SourceFile>
+          <SourceName>BackgroundSprite (FishKing.GumRuntimes.SpriteRuntime)</SourceName>
+          <InstanceName>BackgroundSprite</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+        </NamedObjectSave>
       </NamedObjects>
       <UseGlobalContent>true</UseGlobalContent>
     </ScreenSave>
@@ -2900,7 +2909,7 @@
     <RecordLockContention>false</RecordLockContention>
   </GlobalContentSettingsSave>
   <SyncedProjects />
-  <StartUpScreen>Screens\FlatRedBallSplashScreen</StartUpScreen>
+  <StartUpScreen>Screens\MainMenu</StartUpScreen>
   <ResolutionPresets>
     <ResolutionValues>
       <Name>720p</Name>

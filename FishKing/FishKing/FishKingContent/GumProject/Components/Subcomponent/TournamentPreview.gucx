@@ -17,6 +17,60 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>int</Type>
+      <Name>ColoredRectangleInstance.Alpha</Name>
+      <Value xsi:type="xsd:int">150</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ColoredRectangleInstance.Blue</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ColoredRectangleInstance.Green</Name>
+      <Value xsi:type="xsd:int">255</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ColoredRectangleInstance.Height</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>ColoredRectangleInstance.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ColoredRectangleInstance.Red</Name>
+      <Value xsi:type="xsd:int">255</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>ColoredRectangleInstance.Visible</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ColoredRectangleInstance.Width</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>ColoredRectangleInstance.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>ChildrenLayout</Type>
       <Name>DetailsContainer.Children Layout</Name>
       <Value xsi:type="xsd:int">1</Value>
@@ -1051,6 +1105,11 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>SelectionState</Type>
+      <Name>SelectionState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>SingleBarFrameInstance.Height</Name>
       <Value xsi:type="xsd:float">100</Value>
@@ -1321,6 +1380,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>GlowPulseState</Type>
+      <Name>TrophyDisplayInstance.GlowPulseState</Name>
+      <Value xsi:type="xsd:string">SmallGlow</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>TrophyDisplayInstance.Height</Name>
       <Value xsi:type="xsd:float">100</Value>
@@ -1542,6 +1607,43 @@
       </Variable>
     </State>
   </Category>
+  <Category>
+    <Name>Selection</Name>
+    <State>
+      <Name>Selected</Name>
+      <Variable>
+        <Type>bool</Type>
+        <Name>ColoredRectangleInstance.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>GlowPulseState</Type>
+        <Name>TrophyDisplayInstance.GlowPulseState</Name>
+        <Value xsi:type="xsd:string">BigGlow</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>NotSelected</Name>
+      <Variable>
+        <Type>bool</Type>
+        <Name>ColoredRectangleInstance.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>GlowPulseState</Type>
+        <Name>TrophyDisplayInstance.GlowPulseState</Name>
+        <Value xsi:type="xsd:string">SmallGlow</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
+  <Instance>
+    <Name>ColoredRectangleInstance</Name>
+    <BaseType>ColoredRectangle</BaseType>
+  </Instance>
   <Instance>
     <Name>PaperFrameInstance</Name>
     <BaseType>PaperFrame</BaseType>

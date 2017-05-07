@@ -2050,6 +2050,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>TournamentPreviewContainer.Clips Children</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>TournamentPreviewContainer.Height</Name>
       <Value xsi:type="xsd:float">100</Value>
@@ -2080,6 +2086,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>TournamentPreviewContainer.Wraps Children</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>PositionUnitType</Type>
       <Name>TournamentPreviewContainer.X Units</Name>
       <Value xsi:type="xsd:int">2</Value>
@@ -2100,7 +2112,7 @@
     <Variable>
       <Type>HighlightState</Type>
       <Name>TournamentPreviewInstance.HighlightState</Name>
-      <Value xsi:type="xsd:string">Highlighted</Value>
+      <Value xsi:type="xsd:string">NotHighlighted</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

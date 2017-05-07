@@ -38,7 +38,7 @@ namespace FishKing.Managers
             foreach (string filePath in filePaths)
             {
                 SaveFileData sfd = new SaveFileData();
-                sfd.LoadData(filePath);
+                await sfd.LoadData(filePath);
                 returnList.Add(sfd);
             }
 
@@ -49,6 +49,8 @@ namespace FishKing.Managers
         {
             if (CurrentSaveData != null && CurrentSaveData.SaveSlotNumber > 0)
             {
+                System.IO.Directory.CreateDirectory(SavePath);
+
                 string savePath = Path.Combine(SavePath, "Game"+CurrentSaveData.SaveSlotNumber + ".xml");
 
                 return CurrentSaveData.SaveFile(savePath);

@@ -143,6 +143,8 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="GameClasses\MasterTournamentList.cs" />
+    <Compile Include="GumRuntimes\MainMenuGumRuntime.cs" />
     <Compile Include="GumRuntimes\subcomponent\FishWithGlowRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\GameSelectPreviewRuntime.cs" />
     <Compile Include="GumRuntimes\subcomponent\GameSelectPreviewRuntime.Generated.cs">
@@ -353,7 +355,9 @@
     <Compile Include="GumRuntimes\LinearScaleContainerRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\LoadingScreenGumRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\LoadingScreenRuntime.Generated.cs" />
-    <Compile Include="GumRuntimes\MainMenuGumRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\MainMenuGumRuntime.Generated.cs">
+      <DependentUpon>MainMenuGumRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\NineSliceRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\PaperFrameRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\PauseMenuRuntime.cs" />
@@ -411,6 +415,7 @@
     <Compile Include="GumRuntimes\UnknownFishRuntime.Generated.cs" />
     <Compile Include="Managers\MusicManager.cs" />
     <Compile Include="Managers\SaveGameManager.cs" />
+    <Compile Include="Managers\TournamentManager.cs" />
     <Compile Include="OcularPlaneRuntime\OcularPlaneManager.cs" />
     <Compile Include="Performance\IEntityFactory.Generated.cs" />
     <Compile Include="Performance\PoolList.Generated.cs" />

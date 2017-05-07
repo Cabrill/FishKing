@@ -1,4 +1,7 @@
-﻿using FishKing.Screens;
+﻿using FishKing.GameClasses;
+using FishKing.Managers;
+using FishKing.Screens;
+using FishKing.UtilityClasses;
 using FlatRedBall.Glue.StateInterpolation;
 using FlatRedBall.Instructions;
 using StateInterpolationPlugin;
@@ -80,7 +83,10 @@ namespace FishKing.GumRuntimes
 
         public void CustomActivity()
         {
-
+            if (PlayerScore >= GoalScore && !ThrowConfettiAnimation.IsPlaying())
+            {
+                ThrowConfettiAnimation.Play();
+            }
         }
 
         public void UpdateFishPlaceMarkers(int[] scoreArray)
@@ -608,7 +614,15 @@ namespace FishKing.GumRuntimes
 
         }
 
-        public void ResumeExistingTournament(int[] existingScore)
+        public void Setup(GameScreen screen)
+        {
+            this.gameScreen = screen;
+            PlayerFishNumber = SaveGameManager.CurrentSaveData.PlayerFishNumber;
+            GoalScore = TournamentManager.CurrentTournament.GoalPoints;
+            SetupFromScores(TournamentManager.CurrentScores.AsArray);            
+        }
+
+        private void SetupFromScores(int[] existingScore)
         {
             sortedScore = (int[])existingScore.Clone();
             Array.Sort<int>(sortedScore,
