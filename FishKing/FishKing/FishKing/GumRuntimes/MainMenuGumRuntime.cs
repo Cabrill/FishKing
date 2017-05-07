@@ -75,6 +75,25 @@ namespace FishKing.GumRuntimes
             UnselectAllTournaments();
             GoFishButton.Visible = AnyTournamentIsSelected;
             scrollAmount = 0;
+            DisplaySaveDataInfo();
+        }
+
+        private void DisplaySaveDataInfo()
+        {
+            var currentSave = SaveGameManager.CurrentSaveData;
+
+            if (currentSave != null)
+            {
+                TimePlayedValue.Text = InfoToString.Time(currentSave.TimePlayed);
+                FishCaughtValue.Text = currentSave.NumberOfFishCaught.ToString();
+                LongestFishValue.Text = InfoToString.Length(currentSave.LongestFish);
+                HeaviestFishValue.Text = InfoToString.Weight(currentSave.HeaviestFish);
+                GoldTrophyCount.TrophyCountText = currentSave.NumberOfGoldTrophies.ToString();
+                SilverTrophyCount.TrophyCountText = currentSave.NumberOfSilverTrophies.ToString();
+                BronzeTrophyCount.TrophyCountText = currentSave.NumberOfBronzeTrophies.ToString();
+                MoneyText.Text = "$" + currentSave.MoneyAvailable.ToString();
+                //RarestFishValue.Text = ???
+            }
         }
 
         public void HandleTournamentPreviewMovement(Direction desiredDirection)
