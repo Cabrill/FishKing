@@ -43,9 +43,14 @@ namespace FishKing.GumRuntimes
             get { return TournamentPreviews.Where(tp => tp.IsHighlighted).FirstOrDefault(); }
         }
 
-        public bool TournamentIsSelected
+        public TournamentPreviewRuntime CurrentlySelectedTournament
         {
-            get { return TournamentPreviewContainer.Children.Where(tp => (tp as TournamentPreviewRuntime).IsSelected).Any(); }
+            get { return TournamentPreviews.Where(tp => tp.IsSelected).FirstOrDefault(); }
+        }
+
+        public bool AnyTournamentIsSelected
+        {
+            get { return CurrentlySelectedTournament != null; }
         }
 
         public bool AnyTournamentIsHighlighted
@@ -68,7 +73,7 @@ namespace FishKing.GumRuntimes
             LoadTournamentList();
             UnhighlightAllTournaments();
             UnselectAllTournaments();
-            GoFishButton.Visible = TournamentIsSelected;
+            GoFishButton.Visible = AnyTournamentIsSelected;
             scrollAmount = 0;
         }
 
@@ -99,7 +104,7 @@ namespace FishKing.GumRuntimes
                 CurrentlyHighlightedTournament.CallClick();
                 CurrentlyHighlightedTournament.UnhighlightButton();
             }
-            if (TournamentIsSelected)
+            if (AnyTournamentIsSelected)
             {
                 GoFishButton.Visible = true;
                 GoFishButton.HighlightButton();

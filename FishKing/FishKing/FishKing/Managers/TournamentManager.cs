@@ -11,6 +11,11 @@ namespace FishKing.Managers
 {
     public static class TournamentManager
     {
+        public static bool TournamentHasStarted
+        {
+            get; private set;
+        }
+
         public static TournamentStructure CurrentTournament
         {
             get; private set;
@@ -31,11 +36,16 @@ namespace FishKing.Managers
             get { return CurrentScores.HasPlayerFinished; }
         }
 
-        public static void StartNewTournament(TournamentStructure newTournament)
+        public static void SetCurrentTournament(TournamentStructure newTournament)
         {
             CurrentTournament = newTournament;
             CurrentScores = new TournamentScores(newTournament.NumberOfParticipants);
+            TournamentHasStarted = false;
+        }
 
+        public static void StartTournament()
+        {
+            TournamentHasStarted = true;
         }
     }
 }

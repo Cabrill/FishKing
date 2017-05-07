@@ -79,7 +79,7 @@ namespace FishKing.Screens
             HandleMenuSelection();
             HandleExitInput();
             HandleScrollInput();
-            GoFishButton.Visible = MainMenuGumRuntime.TournamentIsSelected;
+            GoFishButton.Visible = MainMenuGumRuntime.AnyTournamentIsSelected;
 
             if (FlatRedBall.Audio.AudioManager.CurrentlyPlayingSong == null)
             {
@@ -185,7 +185,7 @@ namespace FishKing.Screens
                     }
                     break;
                 case Direction.Right:
-                    if (BackButton.IsHighlighted)
+                    if (BackButton.IsHighlighted && GoFishButton.Visible)
                     {
                         BackButton.UnhighlightButton();
                         GoFishButton.HighlightButton();

@@ -8,6 +8,8 @@ using FlatRedBall.Audio;
 using FlatRedBall.Screens;
 using FishKing.Entities;
 using FishKing.Screens;
+using FishKing.Managers;
+
 namespace FishKing.Screens
 {
 	public partial class MainMenu
@@ -20,8 +22,9 @@ namespace FishKing.Screens
         }
         void OnGoFishButtonClick (FlatRedBall.Gui.IWindow window)
         {
-            if (MainMenuGumRuntime.TournamentIsSelected)
+            if (MainMenuGumRuntime.AnyTournamentIsSelected)
             {
+                TournamentManager.SetCurrentTournament(MainMenuGumRuntime.CurrentlySelectedTournament.Tournament);
                 LoadingScreen.TransitionToScreen(typeof(GameScreen).FullName);
             }
         }

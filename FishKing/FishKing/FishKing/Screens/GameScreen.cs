@@ -69,6 +69,11 @@ namespace FishKing.Screens
                 MusicManager.Volume = 0.15f;
                 MusicManager.PlaySong();
             }
+            if (!TournamentManager.TournamentHasStarted)
+            {
+                TournamentManager.StartTournament();
+                levelToLoad = TournamentManager.CurrentTournament.MapName;
+            }
 
             LoadLevel(levelToLoad);
             
