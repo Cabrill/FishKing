@@ -69,12 +69,18 @@ namespace FishKing.Screens
 
         void CustomActivity(bool firstTimeCalled)
         {
+            if (firstTimeCalled)
+            {
+                MainMenuGumRuntime.ScrollToAndHighlightLastEligibleTournament();
+            }
+
             FlatRedBall.Debugging.Debugger.Write(FlatRedBall.Gui.GuiManager.Cursor.WindowOver);
             HandleMenuMovement();
             HandleMenuSelection();
             HandleExitInput();
             HandleScrollInput();
             GoFishButton.Visible = MainMenuGumRuntime.TournamentIsSelected;
+
             if (FlatRedBall.Audio.AudioManager.CurrentlyPlayingSong == null)
             {
                 //FlatRedBall.Audio.AudioManager.PlaySong(The_Low_Seas, true, false);
@@ -204,7 +210,7 @@ namespace FishKing.Screens
                             BackButton.HighlightButton();
                         }
                     }
-                    else
+                    else if (!GoFishButton.IsHighlighted && !BackButton.IsHighlighted)
                     {
                         MainMenuGumRuntime.HandleTournamentPreviewMovement(desiredDirection);
                     }

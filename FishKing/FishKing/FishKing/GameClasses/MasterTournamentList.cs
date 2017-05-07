@@ -41,6 +41,24 @@ namespace FishKing.GameClasses
                 requirements: Tuple.Create(Enums.TrophyTypes.TrophyType.Bronze, 1)
             ));
 
+            allTournaments.Add(new TournamentStructure(name: "Easy Peasey2",
+                goal: 100,
+                numParticipants: 4,
+                reward: 20,
+                map: "DesertIsland",
+                rules: new TournamentRules(),
+                requirements: Tuple.Create(Enums.TrophyTypes.TrophyType.None, 0)
+            ));
+
+            allTournaments.Add(new TournamentStructure(name: "Easy Peasey3",
+                goal: 100,
+                numParticipants: 4,
+                reward: 20,
+                map: "DesertIsland",
+                rules: new TournamentRules(),
+                requirements: Tuple.Create(Enums.TrophyTypes.TrophyType.None, 0)
+            ));
+
             allTournaments.Add(new TournamentStructure(name: "Paradise Isle",
                 goal: 500,
                 numParticipants: 8,
@@ -50,6 +68,15 @@ namespace FishKing.GameClasses
                 requirements: Tuple.Create(Enums.TrophyTypes.TrophyType.Silver, 3)
             ));
 
+            allTournaments.Add(new TournamentStructure(name: "Easy Peasey4",
+                goal: 100,
+                numParticipants: 4,
+                reward: 20,
+                map: "DesertIsland",
+                rules: new TournamentRules(),
+                requirements: Tuple.Create(Enums.TrophyTypes.TrophyType.None, 0)
+            ));
+
             allTournaments.Add(new TournamentStructure(name: "Haunted Forest",
                 goal: 666,
                 numParticipants: 6,
@@ -57,6 +84,15 @@ namespace FishKing.GameClasses
                 map: "DesertIsland",
                 rules: new TournamentRules(null, 0, 100),
                 requirements: Tuple.Create(Enums.TrophyTypes.TrophyType.Gold, 25)
+            ));
+
+            allTournaments.Add(new TournamentStructure(name: "Easy Peasey5",
+                goal: 100,
+                numParticipants: 4,
+                reward: 20,
+                map: "DesertIsland",
+                rules: new TournamentRules(),
+                requirements: Tuple.Create(Enums.TrophyTypes.TrophyType.None, 0)
             ));
 
             allTournaments.Add(new TournamentStructure(name: "Flooded Library",

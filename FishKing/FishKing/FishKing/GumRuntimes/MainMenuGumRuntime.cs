@@ -60,7 +60,7 @@ namespace FishKing.GumRuntimes
 
         public bool LastTournamentPreviewIsHighlighted
         {
-            get { return TournamentPreviews.Last().IsHighlighted; }
+            get { return TournamentPreviews.Where(tp => tp.RequirementsMet).Last().IsHighlighted; }
         }
 
         partial void CustomInitialize()
@@ -79,7 +79,7 @@ namespace FishKing.GumRuntimes
                 case Direction.Up:
                     if (!AnyTournamentIsHighlighted)
                     {
-                        GetBottomVisibleTournamentPreview().HighlightButton();
+                        ScrollToAndHighlightLastEligibleTournament();
                     }
                     else 
                     {
@@ -118,7 +118,7 @@ namespace FishKing.GumRuntimes
             {
                 UnhighlightAllTournaments();
                 previous.HighlightButton();
-                if ((previous as IPositionedSizedObject).Y + PreviewHeight < ContainerY)
+                if ((previous as IPositionedSizedObject).Y < ContainerY)
                 {
                     ScrollUp();
                 }
@@ -137,16 +137,30 @@ namespace FishKing.GumRuntimes
             {
                 UnhighlightAllTournaments();
                 next.HighlightButton();
-                if ((next as IPositionedSizedObject).Y + PreviewHeight > ContainerY + ContainerHeight)
+                if ((next as IPositionedSizedObject).Y+PreviewHeight > ContainerY+ContainerHeight)
                 {
                     ScrollDown();
                 }
             }
         }
 
+        public void ScrollToAndHighlightLastEligibleTournament()
+        {
+            var lastTournament = GetLastEligibleTournament();
+            lastTournament.HighlightButton();
+            ScrollTo(lastTournament);
+        }
+
         public void HandleScrollInput(float scrollWheel)
         {
             SetScrollAmount(scrollAmount + (scrollWheel*10));
+        }
+
+        public void ScrollTo(TournamentPreviewRuntime lastTournament)
+        {
+            var idx = TournamentPreviews.IndexOf(lastTournament);
+
+            SetScrollAmount(-idx * PreviewHeight);
         }
 
         private void ScrollUp()
@@ -161,7 +175,14 @@ namespace FishKing.GumRuntimes
 
         private void SetScrollAmount(float scroll)
         {
-            scrollAmount = MathHelper.Clamp(scroll, -PreviewHeight * (TournamentPreviews.Count - 3), 0);
+            if (FirstTournamentPreviewIsHighlighted)
+            {
+                scrollAmount = 0;
+            }
+            else
+            {
+                scrollAmount = MathHelper.Clamp(scroll, -PreviewHeight * (TournamentPreviews.Count - 3), 0);
+            }
             TournamentPreviews.First().Y = 100 * scrollAmount/ContainerHeight;
         }
 
@@ -177,6 +198,7 @@ namespace FishKing.GumRuntimes
 
         private void LoadTournamentList()
         {
+
             TournamentPreviewContainer.Children.Clear();
             var allTournaments = MasterTournamentList.AllTournaments;
             allTournaments.Sort(new TournamentSorter());
@@ -203,20 +225,11 @@ namespace FishKing.GumRuntimes
             TournamentPreviews.Where(tp => tp != tournamentSelected).ForEach(tp => tp.Unselect());
         }
 
-        private TournamentPreviewRuntime GetBottomVisibleTournamentPreview()
+        private TournamentPreviewRuntime GetLastEligibleTournament()
         {
-            var container = TournamentPreviewContainer;
-            var returnTP = container.Children.First() as TournamentPreviewRuntime;
+            var previews = TournamentPreviews.Where(tp => tp.RequirementsMet);
 
-            for (int i = container.Children.Count - 1; i > 0; i--)
-            {
-                if ((container.Children[i].Y + PreviewHeight) <= ContainerY + ContainerHeight + scrollAmount)
-                {
-                    returnTP = container.Children[i] as TournamentPreviewRuntime;
-                    break;
-                }
-            }
-            return returnTP;
+            return previews.Last();
         }
     }
 }

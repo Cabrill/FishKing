@@ -78,6 +78,9 @@ namespace FishKing.GumRuntimes
         public void UnhighlightButton()
         {
             this.CurrentHighlightState = Highlight.NotHighlighted;
+
+            //Refresh values changed by highlight change
+            CurrentSelectionState = CurrentSelectionState;
         }
 
         public void AssociateWithTournament(TournamentStructure tournament)

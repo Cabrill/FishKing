@@ -1945,19 +1945,19 @@
       <Variable>
         <Type>int</Type>
         <Name>TextInstance.Blue</Name>
-        <Value xsi:type="xsd:int">214</Value>
+        <Value xsi:type="xsd:int">211</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
         <Name>TextInstance.Green</Name>
-        <Value xsi:type="xsd:int">112</Value>
+        <Value xsi:type="xsd:int">85</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
         <Type>int</Type>
         <Name>TextInstance.Red</Name>
-        <Value xsi:type="xsd:int">218</Value>
+        <Value xsi:type="xsd:int">186</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -1969,7 +1969,7 @@
       <Variable>
         <Type>int</Type>
         <Name>TournamentTitleText.Green</Name>
-        <Value xsi:type="xsd:int">215</Value>
+        <Value xsi:type="xsd:int">255</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -2035,6 +2035,42 @@
         <Value xsi:type="xsd:string">BigGlow</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance.Red</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance.Green</Name>
+        <Value xsi:type="xsd:int">215</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance.Blue</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentTitleText.Red</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentTitleText.Green</Name>
+        <Value xsi:type="xsd:int">215</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentTitleText.Blue</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
     </State>
     <State>
       <Name>NotSelected</Name>
@@ -2048,6 +2084,42 @@
         <Type>GlowPulseState</Type>
         <Name>TrophyDisplayInstance.GlowPulseState</Name>
         <Value xsi:type="xsd:string">SmallGlow</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentTitleText.Red</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentTitleText.Green</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentTitleText.Blue</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance.Red</Name>
+        <Value xsi:type="xsd:int">148</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance.Green</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TextInstance.Blue</Name>
+        <Value xsi:type="xsd:int">211</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
