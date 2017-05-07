@@ -62,5 +62,22 @@ namespace FishKing.Extensions
                 throw new ArgumentNullException("File does not exist: " + path);
             }
         }
+
+        public static bool MeetsRequirements(this SaveFileData saveFile, TournamentStructure tournament)
+        {
+            if (saveFile == null) return false;
+
+            var trophyType = tournament.TrophyRequirements.Item1;
+            var trophyNum = tournament.TrophyRequirements.Item2;
+
+            switch (trophyType)
+            {
+                case Enums.TrophyTypes.TrophyType.None: return true;
+                case Enums.TrophyTypes.TrophyType.Gold: return (trophyNum <= saveFile.NumberOfGoldTrophies);
+                case Enums.TrophyTypes.TrophyType.Silver: return (trophyNum <= saveFile.NumberOfGoldTrophies + saveFile.NumberOfSilverTrophies);
+                case Enums.TrophyTypes.TrophyType.Bronze: return (trophyNum <= saveFile.NumberOfAllTrophies);
+                default: return false;
+            }
+        }
     }
 }

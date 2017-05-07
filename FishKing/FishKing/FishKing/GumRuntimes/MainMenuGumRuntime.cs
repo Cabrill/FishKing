@@ -188,7 +188,10 @@ namespace FishKing.GumRuntimes
         private void HandleTournamentPreviewClick(IWindow window)
         {
             var tournamentSelected = window as TournamentPreviewRuntime;
-            UnselectAllTournamentsExcept(tournamentSelected);
+            if (tournamentSelected.RequirementsMet)
+            {
+                UnselectAllTournamentsExcept(tournamentSelected);
+            }
         }
 
         private void UnselectAllTournamentsExcept(TournamentPreviewRuntime tournamentSelected)

@@ -52,6 +52,14 @@ namespace FishKing.GameClasses
             }
         }
 
+        public int NumberOfAllTrophies
+        {
+            get
+            {
+                return ParticipatedTournaments.Where(tr => tr.PlaceTaken <= 3).Count();
+            }
+        }
+
         public Dictionary<Fish_Types, FishRecord> FishCaught;
         public int NumberOfFishCaught { get { return FishCaught.Keys.Count; } }
         public int HeaviestFish
