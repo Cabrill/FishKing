@@ -506,6 +506,7 @@
     <Compile Include="UtilityClasses\RandomNumbers.cs" />
     <Compile Include="GameClasses\TournamentScores.cs" />
     <Compile Include="UtilityClasses\TextInputHandler.cs" />
+    <Compile Include="UtilityClasses\TournamentSorter.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="FishKing.ico" />

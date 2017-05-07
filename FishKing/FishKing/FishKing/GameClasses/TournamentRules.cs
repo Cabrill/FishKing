@@ -1,4 +1,5 @@
-﻿using FishKing.Entities;
+﻿using FishKing.DataTypes;
+using FishKing.Entities;
 using FishKing.UtilityClasses;
 using System;
 using System.Collections.Generic;
@@ -10,7 +11,7 @@ namespace FishKing.GameClasses
 {
     public class TournamentRules
     {
-        public List<Fish> FishTypesAllowed
+        public List<Fish_Types> FishTypesAllowed
         {
             get; private set;
         }
@@ -54,11 +55,11 @@ namespace FishKing.GameClasses
             }
         }
 
-        public TournamentRules(List<Fish> fishType = null, int minWeight = 0, int minLength = 0)
+        public TournamentRules(List<Fish_Types> fishType = null, int minWeight = 0, int minLength = 0)
         {
             if (fishType == null)
             {
-                fishType = new List<Fish>();
+                fishType = new List<Fish_Types>();
             }
             FishTypesAllowed = fishType;
             MinimumWeight = minWeight;

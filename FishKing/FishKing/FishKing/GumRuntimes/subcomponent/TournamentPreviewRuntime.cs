@@ -69,7 +69,10 @@ namespace FishKing.GumRuntimes
 
         public void HighlightButton()
         {
-            this.CurrentHighlightState = Highlight.Highlighted;
+            if (RequirementsMet)
+            {
+                this.CurrentHighlightState = Highlight.Highlighted;
+            }
         }
 
         public void UnhighlightButton()

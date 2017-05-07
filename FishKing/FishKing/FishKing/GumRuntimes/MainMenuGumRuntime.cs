@@ -9,6 +9,8 @@ using System.Text;
 using System.Threading.Tasks;
 using FlatRedBall.Gui;
 using FishKing.Extensions;
+using FishKing.Managers;
+using FishKing.UtilityClasses;
 
 namespace FishKing.GumRuntimes
 {
@@ -176,7 +178,9 @@ namespace FishKing.GumRuntimes
         private void LoadTournamentList()
         {
             TournamentPreviewContainer.Children.Clear();
-            foreach (TournamentStructure tournament in MasterTournamentList.AllTournaments)
+            var allTournaments = MasterTournamentList.AllTournaments;
+            allTournaments.Sort(new TournamentSorter());
+            foreach (TournamentStructure tournament in allTournaments)
             {
                 var tournamentPreview = new TournamentPreviewRuntime();
                 tournamentPreview.AssociateWithTournament(tournament);
