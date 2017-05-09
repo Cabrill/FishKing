@@ -294,7 +294,7 @@ namespace FishKing.GumRuntimes
             lastPlayerPlace = PlayerPlace;
             PlayerScore = playerScore;
 
-            TrophyDisplayInstance.SetTrophyByPlaceNumber(maxPossiblePlace);
+            TrophyDisplayInstance.SetTrophyByPlaceNumber(Math.Min(playerPlace,maxPossiblePlace));
         }
 
         private bool IsFishNearPlayerPlace(bool playerInFirst, bool playerInLast, int fishPlace)
