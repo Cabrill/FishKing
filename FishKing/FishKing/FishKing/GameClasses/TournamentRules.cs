@@ -6,14 +6,17 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace FishKing.GameClasses
 {
     public class TournamentRules
     {
+        [XmlArray("FishTypesAllowed")]
+        [XmlArrayItem("FishType")]
         public List<Fish_Types> FishTypesAllowed
         {
-            get; private set;
+            get; set;
         }
         public string FishTypesAllowedString
         {
@@ -33,7 +36,7 @@ namespace FishKing.GameClasses
 
         public int MinimumWeight
         {
-            get; private set;
+            get; set;
         }
         public string MinimumWeightString
         {
@@ -45,7 +48,7 @@ namespace FishKing.GameClasses
 
         public int MinimumLength
         {
-            get; private set;
+            get; set;
         }
         public string MinimumLengthString
         {
@@ -55,6 +58,12 @@ namespace FishKing.GameClasses
             }
         }
 
+        public TournamentRules()
+        {
+            FishTypesAllowed = new List<Fish_Types>();
+            MinimumWeight = 0;
+            MinimumLength = 0;
+        }
         public TournamentRules(List<Fish_Types> fishType = null, int minWeight = 0, int minLength = 0)
         {
             if (fishType == null)

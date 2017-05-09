@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FishKing.UtilityClasses;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -9,15 +10,17 @@ namespace FishKing.GameClasses
 {
     public class TournamentStructure
     {
-        public string TournamentName { get; private set; }
-        public int GoalPoints { get; private set; }
-        public int NumberOfParticipants { get; private set; }
-        public int RewardAmount { get; private set; }
-        public string MapName { get; private set; }
-        public TournamentRules TournamentRules { get; private set; }
-        public Tuple<TrophyType, int> TrophyRequirements { get; private set; } 
+        public string TournamentName { get; set; }
+        public int GoalPoints { get; set; }
+        public int NumberOfParticipants { get; set; }
+        public int RewardAmount { get; set; }
+        public string MapName { get; set; }
+        public TournamentRules TournamentRules { get; set; }
+        public SerializableTuple<TrophyType, int> TrophyRequirements { get; set; }
 
-        public TournamentStructure(string name, int goal, int numParticipants, int reward, string map, TournamentRules rules, Tuple<TrophyType, int> requirements)
+        public TournamentStructure() { }
+
+        public TournamentStructure(string name, int goal, int numParticipants, int reward, string map, TournamentRules rules, SerializableTuple<TrophyType, int> requirements)
         {
             TournamentName = name;
             NumberOfParticipants = numParticipants;

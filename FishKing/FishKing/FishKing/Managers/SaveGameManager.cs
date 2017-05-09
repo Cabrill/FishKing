@@ -29,7 +29,7 @@ namespace FishKing.Managers
         {
             List<SaveFileData> returnList = new List<SaveFileData>();
 
-            if (!File.Exists(SavePath))
+            if (!Directory.Exists(SavePath))
             {
                 return returnList;
             }
@@ -38,12 +38,14 @@ namespace FishKing.Managers
             foreach (string filePath in filePaths)
             {
                 SaveFileData sfd = new SaveFileData();
-                await sfd.LoadData(filePath);
+                sfd.LoadData(out sfd, filePath);
                 returnList.Add(sfd);
             }
 
             return returnList;
         }
+
+
 
         public static bool SaveCurrentData()
         {

@@ -10,16 +10,18 @@ namespace FishKing.GameClasses
     {
         public TournamentStructure Tournament
         {
-            get; private set;
+            get; set;
         }
         public int PlaceTaken
         {
-            get; private set;
+            get; set;
         }
         public int RewardEarned
         {
-            get; private set;
+            get; set;
         }
+
+        public TournamentResults() { }
 
         public TournamentResults(TournamentStructure tournament, int place, int rewardEarned)
         {

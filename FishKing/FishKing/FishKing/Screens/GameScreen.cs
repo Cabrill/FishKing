@@ -88,7 +88,11 @@ namespace FishKing.Screens
         {
             PauseMenuInstance.ResumeGameButtonClick += (IWindow window) => { UnpauseThisScreen(); PauseMenuInstance.Visible = false; };
             PauseMenuInstance.HelpButtonClick += (IWindow window) => { HelpScreenInstance.Visible = true; };
-            PauseMenuInstance.ExitButtonClick += (IWindow window) => { FlatRedBallServices.Game.Exit(); };
+            PauseMenuInstance.ExitButtonClick += (IWindow window) => {
+                SaveGameManager.CurrentSaveData.StopPlaySession();
+                SaveGameManager.SaveCurrentData();
+                FlatRedBallServices.Game.Exit();
+            };
         }
 
 
@@ -97,7 +101,7 @@ namespace FishKing.Screens
             var camera = Camera.Main;
             camera.ClearBorders();
             camera.ClearMinimumsAndMaximums();
-            if (CurrentTileMap.Width > camera.OrthogonalWidth && CurrentTileMap.Height > camera.OrthogonalHeight)
+            if (CurrentTileMap.Width > camera.OrthogonalWidth || CurrentTileMap.Height > camera.OrthogonalHeight)
             {
                 shouldUpdateCamera = true;
 
@@ -137,8 +141,10 @@ namespace FishKing.Screens
 #if DEBUG
             this.SolidCollisions.Visible =
                 DebuggingVariables.ShowShapes;
+#else
+            this.SolidCollisions.Visible = false;
 #endif
-            
+
             if (levelToLoad.Contains("Cave"))
             {
                 CaveLightConeSprite.Position = Camera.Main.Position;
@@ -473,6 +479,7 @@ namespace FishKing.Screens
                             {
                                 FishCatchDisplayInstance.ShowFish(CharacterInstance.FishOnTheLine);
                                 TournamentManager.CurrentScores.AddToPlayerScore(CharacterInstance.FishOnTheLine.Points);
+                                SaveGameManager.CurrentSaveData.AddCaughtFish(CharacterInstance.FishOnTheLine);
                             }
                         }
                         else

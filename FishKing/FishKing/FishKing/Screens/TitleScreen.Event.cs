@@ -74,8 +74,9 @@ namespace FishKing.Screens
             }
             else
             {
-                var newSaveGame = new SaveFileData(NewGameDisplayInstance.PlayerFishChoice, currentSaveSlot);
+                var newSaveGame = new SaveFileData(currentSaveSlot, NewGameDisplayInstance.PlayerFishChoice);
                 SaveGameManager.SetCurrentData(newSaveGame);
+                SaveGameManager.CurrentSaveData.StartPlaySession();
                 startGame();
             }
         }
@@ -98,6 +99,7 @@ namespace FishKing.Screens
             if (currentPlayType == PlayType.Continue && savePreview.SaveData != null)
             {
                 SaveGameManager.SetCurrentData(savePreview.SaveData);
+                SaveGameManager.CurrentSaveData.StartPlaySession();
                 startGame();
             }
             else if (currentPlayType == PlayType.NewGame)
@@ -131,6 +133,7 @@ namespace FishKing.Screens
 
             PopupMessageInstance.YesButtonClick += PopupMessageInstance_YesButtonClick;
             PopupMessageInstance.NoButtonClick += PopupMessageInstance_NoButtonClick;
+            PopupMessageInstance.Visible = true;
         }
 
         private void PopupMessageInstance_NoButtonClick(FlatRedBall.Gui.IWindow window)
@@ -141,6 +144,7 @@ namespace FishKing.Screens
         private void PopupMessageInstance_YesButtonClick(FlatRedBall.Gui.IWindow window)
         {
             screen.CurrentMenuScreenButtonsState = GumRuntimes.TitleScreenGumRuntime.MenuScreenButtons.NewGameButtons;
+            PopupMessageInstance.Visible = false;
         }              
     }
 }

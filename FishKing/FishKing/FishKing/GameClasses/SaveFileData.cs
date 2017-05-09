@@ -1,25 +1,47 @@
 ﻿using FishKing.DataTypes;
+using FishKing.Entities;
 using FishKing.UtilityClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Xml.Serialization;
 
 namespace FishKing.GameClasses
 {
+    [Serializable]
     public class SaveFileData
     {
-        public int PlayerFishNumber { get; private set; }
+        public int PlayerFishNumber { get; set; }
 
-        public int SaveSlotNumber { get; private set; }
+        public int SaveSlotNumber { get; set; }
 
-        public DateTime DateCreated { get; private set; }
-        public DateTime LastPlayed { get; private set; }
-        public TimeSpan TimePlayed { get; private set; }
+        public DateTime DateCreated { get; set; }
+        public DateTime LastPlayed { get; set; }
+
         private DateTime recentStartTime;
 
-        public int MoneySpent { get; private set; }
+        private TimeSpan m_TimePlayed;
+
+        [XmlIgnore]
+        public TimeSpan TimePlayed
+        {
+            get { return m_TimePlayed; }
+            set { m_TimePlayed = value; }
+        }
+
+        // Pretend property for serialization
+        [XmlElement("TimePlayed")]
+        public long TimeSinceLastEventTicks
+        {
+            get { return m_TimePlayed.Ticks; }
+            set { m_TimePlayed = new TimeSpan(value); }
+        }
+
+        public int MoneySpent { get; set; }
+
+        [XmlIgnore]
         public int MoneyEarned
         {
             get
@@ -27,9 +49,15 @@ namespace FishKing.GameClasses
                 return ParticipatedTournaments.Sum(tr => tr.RewardEarned);
             }
         }
+
+        [XmlIgnore]
         public int MoneyAvailable { get { return MoneyEarned - MoneySpent; } }
 
-        public List<TournamentResults> ParticipatedTournaments { get; private set; }
+        [XmlArray("TournamentResults")]
+        [XmlArrayItem("TournamentResult")]
+        public List<TournamentResults> ParticipatedTournaments { get; set; }
+
+        [XmlIgnore]
         public int NumberOfGoldTrophies
         {
             get
@@ -37,6 +65,8 @@ namespace FishKing.GameClasses
                 return ParticipatedTournaments.Where(tr => tr.PlaceTaken == 1).Count();
             }
         }
+
+        [XmlIgnore]
         public int NumberOfSilverTrophies
         {
             get
@@ -44,6 +74,8 @@ namespace FishKing.GameClasses
                 return ParticipatedTournaments.Where(tr => tr.PlaceTaken == 2).Count();
             }
         }
+
+        [XmlIgnore]
         public int NumberOfBronzeTrophies
         {
             get
@@ -52,6 +84,7 @@ namespace FishKing.GameClasses
             }
         }
 
+        [XmlIgnore]
         public int NumberOfAllTrophies
         {
             get
@@ -60,8 +93,12 @@ namespace FishKing.GameClasses
             }
         }
 
-        public Dictionary<Fish_Types, FishRecord> FishCaught;
+        public SerializableDictionary<Fish_Types, FishRecord> FishCaught;
+
+        [XmlIgnore]
         public int NumberOfFishCaught { get { return FishCaught.Keys.Count; } }
+
+        [XmlIgnore]
         public int HeaviestFish
         {
             get
@@ -76,6 +113,8 @@ namespace FishKing.GameClasses
                 }
             }
         }
+
+        [XmlIgnore]
         public int LongestFish
         {
             get
@@ -100,7 +139,7 @@ namespace FishKing.GameClasses
             DateCreated = DateTime.Now;
             LastPlayed = DateTime.Now;
             TimePlayed = new TimeSpan(0);
-            FishCaught = new Dictionary<Fish_Types, FishRecord>();
+            FishCaught = new SerializableDictionary<Fish_Types, FishRecord>();
             ParticipatedTournaments = new List<TournamentResults>();
         }
 
@@ -131,6 +170,12 @@ namespace FishKing.GameClasses
             {
                 ParticipatedTournaments.Add(result);
             }
+        }
+
+        public void AddCaughtFish(Fish fish)
+        {
+            var fishRecord = new FishRecord(fish.Name, fish.Grams, fish.LengthMM);
+            FishCaught.Add(fish.FishType, fishRecord);
         }
     }
 }

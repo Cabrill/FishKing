@@ -35,7 +35,11 @@ namespace FishKing.Entities
         /// </summary>
 		private void CustomInitialize()
 		{
+#if DEBUG
             this.Collision.Visible = DebuggingVariables.ShowShapes;
+#else
+            Collision.Visible = false;
+#endif
         }
 
         private void CustomActivity()

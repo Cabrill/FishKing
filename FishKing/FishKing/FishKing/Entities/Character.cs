@@ -126,7 +126,7 @@ namespace FishKing.Entities
             ForwardCollision.Position = Position;
             BackwardCollision.Position = this.Position;
             UpdateActionCollision();
-
+            ForwardCollision.Visible = BackwardCollision.Visible = false;
 #if DEBUG
             ForwardCollision.Visible = BackwardCollision.Visible =
                 ActionCollision.Visible = DebuggingVariables.ShowShapes;

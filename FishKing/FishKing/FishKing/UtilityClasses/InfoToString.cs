@@ -52,7 +52,7 @@ namespace FishKing.UtilityClasses
 
         public static string Date(DateTime dateTime)
         {
-            return String.Format(dateTime.ToString("MMM dd{0}, YYYY"), AddOrdinal(dateTime.Day));
+            return String.Format(dateTime.ToString("MMM {0}, yyyy"), AddOrdinal(dateTime.Day));
         }
 
         public static string AddOrdinal(int num)

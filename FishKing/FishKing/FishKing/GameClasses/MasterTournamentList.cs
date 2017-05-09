@@ -1,9 +1,11 @@
 ﻿using FishKing.DataTypes;
+using FishKing.UtilityClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static FishKing.Enums.TrophyTypes;
 
 namespace FishKing.GameClasses
 {
@@ -29,7 +31,7 @@ namespace FishKing.GameClasses
                 reward: 200,
                 map: "DesertIsland",
                 rules: new TournamentRules(),
-                requirements: Tuple.Create(Enums.TrophyTypes.TrophyType.Gold, 5)
+                requirements: SpecifyRequirements(TrophyType.Gold, 5)
             ));
 
             allTournaments.Add(new TournamentStructure(name: "Ice Floe",
@@ -38,25 +40,16 @@ namespace FishKing.GameClasses
                 reward: 100,
                 map: "IceFloe",
                 rules: new TournamentRules(new List<Fish_Types>() { GlobalContent.Fish_Types[Fish_Types.Coho_Salmon] }),
-                requirements: Tuple.Create(Enums.TrophyTypes.TrophyType.Bronze, 1)
+                requirements: SpecifyRequirements(TrophyType.Bronze, 1)
             ));
 
             allTournaments.Add(new TournamentStructure(name: "Easy Peasey2",
                 goal: 100,
                 numParticipants: 4,
                 reward: 20,
-                map: "DesertIsland",
+                map: "SmallForest",
                 rules: new TournamentRules(),
-                requirements: Tuple.Create(Enums.TrophyTypes.TrophyType.None, 0)
-            ));
-
-            allTournaments.Add(new TournamentStructure(name: "Easy Peasey3",
-                goal: 100,
-                numParticipants: 4,
-                reward: 20,
-                map: "DesertIsland",
-                rules: new TournamentRules(),
-                requirements: Tuple.Create(Enums.TrophyTypes.TrophyType.None, 0)
+                requirements: SpecifyRequirements(TrophyType.None, 0)
             ));
 
             allTournaments.Add(new TournamentStructure(name: "Paradise Isle",
@@ -65,7 +58,7 @@ namespace FishKing.GameClasses
                 reward: 200,
                 map: "DesertIsland",
                 rules: new TournamentRules(null, 500),
-                requirements: Tuple.Create(Enums.TrophyTypes.TrophyType.Silver, 3)
+                requirements: SpecifyRequirements(TrophyType.Silver, 3)
             ));
 
             allTournaments.Add(new TournamentStructure(name: "Easy Peasey4",
@@ -74,7 +67,7 @@ namespace FishKing.GameClasses
                 reward: 20,
                 map: "DesertIsland",
                 rules: new TournamentRules(),
-                requirements: Tuple.Create(Enums.TrophyTypes.TrophyType.None, 0)
+                requirements: SpecifyRequirements(TrophyType.Gold, 2)
             ));
 
             allTournaments.Add(new TournamentStructure(name: "Haunted Forest",
@@ -83,7 +76,7 @@ namespace FishKing.GameClasses
                 reward: 66,
                 map: "DesertIsland",
                 rules: new TournamentRules(null, 0, 100),
-                requirements: Tuple.Create(Enums.TrophyTypes.TrophyType.Gold, 25)
+                requirements: SpecifyRequirements(TrophyType.Gold, 25)
             ));
 
             allTournaments.Add(new TournamentStructure(name: "Easy Peasey5",
@@ -92,7 +85,7 @@ namespace FishKing.GameClasses
                 reward: 20,
                 map: "DesertIsland",
                 rules: new TournamentRules(),
-                requirements: Tuple.Create(Enums.TrophyTypes.TrophyType.None, 0)
+                requirements: SpecifyRequirements(TrophyType.Bronze, 10)
             ));
 
             allTournaments.Add(new TournamentStructure(name: "Flooded Library",
@@ -101,7 +94,7 @@ namespace FishKing.GameClasses
                 reward: 300,
                 map: "DesertIsland",
                 rules: new TournamentRules(),
-                requirements: Tuple.Create(Enums.TrophyTypes.TrophyType.Gold, 1)
+                requirements: SpecifyRequirements(TrophyType.Gold, 1)
             ));
 
             allTournaments.Add(new TournamentStructure(name: "Easy Peasey",
@@ -110,9 +103,14 @@ namespace FishKing.GameClasses
                 reward: 20,
                 map: "DesertIsland",
                 rules: new TournamentRules(),
-                requirements: Tuple.Create(Enums.TrophyTypes.TrophyType.None, 0)
+                requirements: SpecifyRequirements(TrophyType.Silver, 5)
             ));
 
+        }
+
+        private static SerializableTuple<TrophyType, int> SpecifyRequirements(TrophyType tt, int i)
+        {
+            return SerializableTuple<TrophyType, int>.Create(tt, i);
         }
     }
 }

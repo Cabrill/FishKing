@@ -9,11 +9,12 @@ namespace FishKing.GameClasses
 {
     public class FishRecord
     {
-        public string FishName { get; private set; }
-        public int TimesCaught { get; private set; }
-        public int HeaviestCaught { get; private set; }
-        public int LongestCaught { get; private set; }
+        public string FishName { get; set; }
+        public int TimesCaught { get; set; }
+        public int HeaviestCaught { get; set; }
+        public int LongestCaught { get; set; }
 
+        public FishRecord() { }
         public FishRecord(string fishName, int weight, int length)
         {
             FishName = fishName;
