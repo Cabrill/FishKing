@@ -124,6 +124,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>subcomponent\FishEntry</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>subcomponent\FishWithGlow</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>

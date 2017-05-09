@@ -19,7 +19,7 @@
     <Variable>
       <Type>int</Type>
       <Name>ButtonText.FontSize</Name>
-      <Value xsi:type="xsd:int">56</Value>
+      <Value xsi:type="xsd:int">60</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -461,7 +461,7 @@
       <Name>IsEnabled</Name>
       <Variable>
         <Type>int</Type>
-        <Name>ButtonText.Red</Name>
+        <Name>ButtonText.Blue</Name>
         <Value xsi:type="xsd:int">255</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -473,7 +473,7 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>ButtonText.Blue</Name>
+        <Name>ButtonText.Red</Name>
         <Value xsi:type="xsd:int">255</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -482,7 +482,7 @@
       <Name>IsDisabled</Name>
       <Variable>
         <Type>int</Type>
-        <Name>ButtonText.Red</Name>
+        <Name>ButtonText.Blue</Name>
         <Value xsi:type="xsd:int">169</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -494,7 +494,7 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>ButtonText.Blue</Name>
+        <Name>ButtonText.Red</Name>
         <Value xsi:type="xsd:int">169</Value>
         <SetsValue>true</SetsValue>
       </Variable>

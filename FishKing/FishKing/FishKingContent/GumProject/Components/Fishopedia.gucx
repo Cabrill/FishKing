@@ -5,6 +5,61 @@
   <State>
     <Name>Default</Name>
     <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>BookBackground.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>BookBackground.Parent</Name>
+      <Value xsi:type="xsd:string">BookContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>BookBackground.SourceFile</Name>
+      <Value xsi:type="xsd:string">FishBook.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TextureAddress</Type>
+      <Name>BookBackground.Texture Address</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>BookBackground.Texture Height</Name>
+      <Value xsi:type="xsd:int">1224</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>BookBackground.Texture Left</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>BookBackground.Texture Top</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>BookBackground.Texture Width</Name>
+      <Value xsi:type="xsd:int">1920</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>BookBackground.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>BookContainer.Height</Name>
       <Value xsi:type="xsd:float">80</Value>
@@ -174,6 +229,18 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>FoundItemsState</Type>
+      <Name>FishEntryInstance.FoundItemsState</Name>
+      <Value xsi:type="xsd:string">Item3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FishEntryInstance.Parent</Name>
+      <Value xsi:type="xsd:string">LeftPage</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>Guide</Name>
       <Category>Position</Category>
@@ -261,6 +328,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>ChildrenLayout</Type>
+      <Name>LeftPage.Children Layout</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>LeftPage.Height</Name>
       <Value xsi:type="xsd:float">90</Value>
@@ -288,6 +361,12 @@
       <Type>DimensionUnitType</Type>
       <Name>LeftPage.Width Units</Name>
       <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>LeftPage.Wraps Children</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -410,6 +489,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>ChildrenLayout</Type>
+      <Name>RightPage.Children Layout</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>RightPage.Height</Name>
       <Value xsi:type="xsd:float">90</Value>
@@ -437,6 +522,12 @@
       <Type>DimensionUnitType</Type>
       <Name>RightPage.Width Units</Name>
       <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>RightPage.Wraps Children</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -509,61 +600,6 @@
       <Type>PositionUnitType</Type>
       <Name>RightPageCorner.Y Units</Name>
       <Value xsi:type="xsd:int">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>SpriteInstance.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>SpriteInstance.Parent</Name>
-      <Value xsi:type="xsd:string">BookContainer</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <IsFile>true</IsFile>
-      <Type>string</Type>
-      <Name>SpriteInstance.SourceFile</Name>
-      <Value xsi:type="xsd:string">FishBook.png</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>TextureAddress</Type>
-      <Name>SpriteInstance.Texture Address</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>SpriteInstance.Texture Height</Name>
-      <Value xsi:type="xsd:int">1224</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>SpriteInstance.Texture Left</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>SpriteInstance.Texture Top</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>SpriteInstance.Texture Width</Name>
-      <Value xsi:type="xsd:int">1920</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>SpriteInstance.Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -654,7 +690,7 @@
     <BaseType>Container</BaseType>
   </Instance>
   <Instance>
-    <Name>SpriteInstance</Name>
+    <Name>BookBackground</Name>
     <BaseType>Sprite</BaseType>
   </Instance>
   <Instance>
@@ -688,6 +724,10 @@
   <Instance>
     <Name>LeftPageCorner</Name>
     <BaseType>subcomponent\PageCorner</BaseType>
+  </Instance>
+  <Instance>
+    <Name>FishEntryInstance</Name>
+    <BaseType>subcomponent\FishEntry</BaseType>
   </Instance>
   <Behaviors />
 </ComponentSave>

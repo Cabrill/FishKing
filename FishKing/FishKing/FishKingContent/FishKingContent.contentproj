@@ -197,6 +197,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ComingSoonText</Name>
     </None>
+    <None Include="GumProject\Components\subcomponent\FishEntry.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FishEntry</Name>
+    </None>
     <None Include="GumProject\Components\subcomponent\FishWithGlow.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FishWithGlow</Name>
@@ -252,6 +256,10 @@
     <None Include="GumProject\Components\subcomponent\TrophyDisplay.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TrophyDisplay</Name>
+    </None>
+    <None Include="GumProject\Components\Subcomponent\WaveFrame.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>WaveFrame</Name>
     </None>
     <None Include="GumProject\Components\TournamentStatus.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
