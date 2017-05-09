@@ -257,6 +257,12 @@ namespace FishKing.Screens
 
         void CustomActivity(bool firstTimeCalled)
 		{
+#if DEBUG
+            if (FlatRedBall.Input.InputManager.Keyboard.GetKey(Keys.F5).WasJustPressed)
+            {
+                RestartScreen(reloadContent: true);
+            }
+#endif
             MusicManager.Update();
             if (CharacterInstance.EscapeInput.WasJustPressed && !TournamentStatusInstance.HasStartedCelebration)
             {

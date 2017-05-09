@@ -132,30 +132,6 @@
     </Variable>
     <Variable>
       <Type>bool</Type>
-      <Name>ComingSoonTextInstance.ExposeChildrenEvents</Name>
-      <Value xsi:type="xsd:boolean">false</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>bool</Type>
-      <Name>ComingSoonTextInstance.HasEvents</Name>
-      <Value xsi:type="xsd:boolean">false</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>ComingSoonTextInstance.X</Name>
-      <Value xsi:type="xsd:float">606</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>ComingSoonTextInstance.Y</Name>
-      <Value xsi:type="xsd:float">-40</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>bool</Type>
       <Name>ComingSoonTextInstance1.ExposeChildrenEvents</Name>
       <Value xsi:type="xsd:boolean">false</Value>
       <SetsValue>true</SetsValue>
@@ -456,6 +432,42 @@
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>FishopediaButton.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishopediaInstance.Height</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>FishopediaInstance.Visible</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishopediaInstance.X</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>FishopediaInstance.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishopediaInstance.Y</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>FishopediaInstance.Y Units</Name>
       <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -2444,10 +2456,6 @@
     <BaseType>Text</BaseType>
   </Instance>
   <Instance>
-    <Name>ComingSoonTextInstance</Name>
-    <BaseType>subcomponent\ComingSoonText</BaseType>
-  </Instance>
-  <Instance>
     <Name>ComingSoonTextInstance1</Name>
     <BaseType>subcomponent\ComingSoonText</BaseType>
   </Instance>
@@ -2458,5 +2466,9 @@
   <Instance>
     <Name>TournamentPreviewContainer</Name>
     <BaseType>Container</BaseType>
+  </Instance>
+  <Instance>
+    <Name>FishopediaInstance</Name>
+    <BaseType>Fishopedia</BaseType>
   </Instance>
 </ScreenSave>

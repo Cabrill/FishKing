@@ -257,10 +257,6 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TrophyDisplay</Name>
     </None>
-    <None Include="GumProject\Components\Subcomponent\WaveFrame.gucx">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>WaveFrame</Name>
-    </None>
     <None Include="GumProject\Components\TournamentStatus.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TournamentStatus</Name>
@@ -480,6 +476,18 @@
     <None Include="GumProject\FontCache\Font56Touch Of Nature_o1_1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font56Touch Of Nature_o1_1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font60Touch Of Nature.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Touch Of Nature</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font60Touch Of Nature_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Touch Of Nature_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font60Touch Of Nature_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Touch Of Nature_1</Name>
     </None>
     <None Include="GumProject\FontCache\Font60Touch Of Nature_o1.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

@@ -19,7 +19,7 @@
     <Variable>
       <Type>float</Type>
       <Name>DetailsContainer.Height</Name>
-      <Value xsi:type="xsd:float">100</Value>
+      <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -345,7 +345,7 @@
     <Variable>
       <Type>string</Type>
       <Name>FoundInValue.Text</Name>
-      <Value xsi:type="xsd:string">River, Ocean, Lake, Beach</Value>
+      <Value xsi:type="xsd:string">Cave</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -435,7 +435,7 @@
     <Variable>
       <Type>float</Type>
       <Name>HeaviestText.Width</Name>
-      <Value xsi:type="xsd:float">50</Value>
+      <Value xsi:type="xsd:float">49</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -525,7 +525,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Height</Name>
-      <Value xsi:type="xsd:float">25</Value>
+      <Value xsi:type="xsd:float">50</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -535,6 +535,11 @@
       <Value xsi:type="xsd:int">1</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>KnownState</Type>
+      <Name>KnownState</Name>
+      <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
@@ -593,7 +598,7 @@
     <Variable>
       <Type>float</Type>
       <Name>LongestText.Width</Name>
-      <Value xsi:type="xsd:float">50</Value>
+      <Value xsi:type="xsd:float">49</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -688,7 +693,7 @@
     <Variable>
       <Type>float</Type>
       <Name>SpriteContainer.Height</Name>
-      <Value xsi:type="xsd:float">100</Value>
+      <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -892,7 +897,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TimesCaughtText.Width</Name>
-      <Value xsi:type="xsd:float">75</Value>
+      <Value xsi:type="xsd:float">74</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1087,8 +1092,9 @@
     <Variable>
       <Type>float</Type>
       <Name>X</Name>
+      <Value xsi:type="xsd:float">3</Value>
       <Category>Position</Category>
-      <SetsValue>false</SetsValue>
+      <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>HorizontalAlignment</Type>
@@ -1100,7 +1106,7 @@
     <Variable>
       <Type>PositionUnitType</Type>
       <Name>X Units</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">2</Value>
       <Category>Position</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -1167,6 +1173,99 @@
         <Type>float</Type>
         <Name>FoundInValue.Font Scale</Name>
         <Value xsi:type="xsd:float">0.1</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
+  <Category>
+    <Name>PreviouslyCaught</Name>
+    <State>
+      <Name>Caught</Name>
+      <Variable>
+        <Type>Blend</Type>
+        <Name>FishSprite.Blend</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>FishSprite.Blue</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>FishSprite.Green</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>FishSprite.Red</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>NotCaught</Name>
+      <Variable>
+        <Type>float</Type>
+        <Name>FishNameValue.Font Scale</Name>
+        <Value xsi:type="xsd:float">0.5</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>FishNameValue.Height</Name>
+        <Value xsi:type="xsd:float">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>DimensionUnitType</Type>
+        <Name>FishNameValue.Height Units</Name>
+        <Value xsi:type="xsd:int">1</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>string</Type>
+        <Name>FishNameValue.Text</Name>
+        <Value xsi:type="xsd:string">???</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>VerticalAlignment</Type>
+        <Name>FishNameValue.VerticalAlignment</Name>
+        <Value xsi:type="xsd:int">1</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>Blend</Type>
+        <Name>FishSprite.Blend</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>FishSprite.Blue</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>FishSprite.Green</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>FishSprite.Red</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>TextContainer.Clips Children</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

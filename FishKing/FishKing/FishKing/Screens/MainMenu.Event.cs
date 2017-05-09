@@ -38,7 +38,9 @@ namespace FishKing.Screens
         }
         void OnFishopediaButtonClick (FlatRedBall.Gui.IWindow window)
         {
-            
+            FishopediaInstance.CaughtFish = SaveGameManager.CurrentSaveData.FishCaught;
+            FishopediaInstance.LoadAllFish();
+            FishopediaInstance.Visible = true;
         }
 		
 	}

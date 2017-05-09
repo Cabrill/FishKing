@@ -145,14 +145,23 @@
   <ItemGroup>
     <Compile Include="Extensions\TournamentExtensions.cs" />
     <Compile Include="GameClasses\MasterTournamentList.cs" />
-    <Compile Include="GumRuntimes\FishopediaRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\FishopediaRuntime.cs" />
+    <Compile Include="GumRuntimes\FishopediaRuntime.Generated.cs">
+      <DependentUpon>FishopediaRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\MainMenuGumRuntime.cs" />
     <Compile Include="GumRuntimes\ResultsDisplayRuntime.cs" />
     <Compile Include="GumRuntimes\ResultsDisplayRuntime.Generated.cs">
       <DependentUpon>ResultsDisplayRuntime.cs</DependentUpon>
     </Compile>
-    <Compile Include="GumRuntimes\subcomponent\BookMarkRuntime.Generated.cs" />
-    <Compile Include="GumRuntimes\subcomponent\FishEntryRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\subcomponent\BookMarkRuntime.cs" />
+    <Compile Include="GumRuntimes\subcomponent\BookMarkRuntime.Generated.cs">
+      <DependentUpon>BookMarkRuntime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GumRuntimes\subcomponent\FishEntryRuntime.cs" />
+    <Compile Include="GumRuntimes\subcomponent\FishEntryRuntime.Generated.cs">
+      <DependentUpon>FishEntryRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\subcomponent\FishWithGlowRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\GameSelectPreviewRuntime.cs" />
     <Compile Include="GumRuntimes\subcomponent\GameSelectPreviewRuntime.Generated.cs">
@@ -166,7 +175,10 @@
     <Compile Include="GumRuntimes\subcomponent\NewGameDisplayRuntime.Generated.cs">
       <DependentUpon>NewGameDisplayRuntime.cs</DependentUpon>
     </Compile>
-    <Compile Include="GumRuntimes\subcomponent\PageCornerRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\subcomponent\PageCornerRuntime.cs" />
+    <Compile Include="GumRuntimes\subcomponent\PageCornerRuntime.Generated.cs">
+      <DependentUpon>PageCornerRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\subcomponent\TextEntryBoxRuntime.cs" />
     <Compile Include="GumRuntimes\subcomponent\TrophyDisplayRunTime.cs" />
     <Compile Include="GumRuntimes\subcomponent\WaveFrameRuntime.Generated.cs" />
