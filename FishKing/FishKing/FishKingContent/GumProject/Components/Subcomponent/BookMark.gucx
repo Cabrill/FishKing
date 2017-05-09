@@ -1,0 +1,468 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ComponentSave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>subcomponent\BookMark</Name>
+  <BaseType>Container</BaseType>
+  <State>
+    <Name>Default</Name>
+    <Variable>
+      <Type>string</Type>
+      <Name>BookmarkLabel.Font</Name>
+      <Value xsi:type="xsd:string">Touch Of Nature</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>BookmarkLabel.Font Scale</Name>
+      <Value xsi:type="xsd:float">0.2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>BookmarkLabel.FontSize</Name>
+      <Value xsi:type="xsd:int">60</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>BookmarkLabel.Height</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>BookmarkLabel.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>BookmarkLabel.HorizontalAlignment</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>BookmarkLabel.OutlineThickness</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>BookmarkLabel.Parent</Name>
+      <Value xsi:type="xsd:string">BookmarkSprite</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>BookmarkLabel.Rotation</Name>
+      <Value xsi:type="xsd:float">-90</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>BookmarkLabel.Text</Name>
+      <ExposedAsName>BookmarkLabelText</ExposedAsName>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>BookmarkLabel.VerticalAlignment</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>BookmarkLabel.Width</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>BookmarkLabel.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>BookmarkLabel.X</Name>
+      <Value xsi:type="xsd:float">60</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>BookmarkLabel.X Origin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>BookmarkLabel.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>BookmarkLabel.Y</Name>
+      <Value xsi:type="xsd:float">35</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>BookmarkLabel.Y Origin</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>BookmarkLabel.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>BookmarkSprite.Blue</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <ExposedAsName>BookmarkBlue</ExposedAsName>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>BookmarkSprite.Green</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <ExposedAsName>BookmarkGreen</ExposedAsName>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>BookmarkSprite.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>BookmarkSprite.Red</Name>
+      <ExposedAsName>BookmarkRed</ExposedAsName>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>BookmarkSprite.SourceFile</Name>
+      <Value xsi:type="xsd:string">FishBook.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TextureAddress</Type>
+      <Name>BookmarkSprite.Texture Address</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>BookmarkSprite.Texture Height</Name>
+      <Value xsi:type="xsd:int">512</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>BookmarkSprite.Texture Left</Name>
+      <Value xsi:type="xsd:int">256</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>BookmarkSprite.Texture Top</Name>
+      <Value xsi:type="xsd:int">1225</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>BookmarkSprite.Texture Width</Name>
+      <Value xsi:type="xsd:int">256</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>BookmarkSprite.Width</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>BookmarkSprite.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>ChildrenLayout</Type>
+      <Name>Children Layout</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>Clips Children</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <Category>Behavior</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>Guide</Name>
+      <Category>Position</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>HasEvents</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <Category>Behavior</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Height</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <Category>Dimensions</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <Category>Dimensions</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HighlightState</Type>
+      <Name>HighlightState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>Parent</Name>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ShadowSprite.Blue</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ShadowSprite.Green</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ShadowSprite.Height</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>ShadowSprite.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ShadowSprite.Red</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>ShadowSprite.SourceFile</Name>
+      <Value xsi:type="xsd:string">FishBook.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TextureAddress</Type>
+      <Name>ShadowSprite.Texture Address</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ShadowSprite.Texture Height</Name>
+      <Value xsi:type="xsd:int">512</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ShadowSprite.Texture Left</Name>
+      <Value xsi:type="xsd:int">512</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ShadowSprite.Texture Top</Name>
+      <Value xsi:type="xsd:int">1225</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>ShadowSprite.Texture Width</Name>
+      <Value xsi:type="xsd:int">256</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>ShadowSprite.Width</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>ShadowSprite.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>State</Type>
+      <Name>State</Name>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>Visible</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Width</Name>
+      <Value xsi:type="xsd:float">25</Value>
+      <Category>Dimensions</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <Category>Dimensions</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>Wraps Children</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>X</Name>
+      <Category>Position</Category>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>X Origin</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <Category>Position</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>X Units</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <Category>Position</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Y</Name>
+      <Category>Position</Category>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>Y Origin</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <Category>Position</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>Y Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <Category>Position</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <VariableList xsi:type="VariableListSaveOfString">
+      <Type>string</Type>
+      <Name>AnimationFrames</Name>
+      <IsFile>false</IsFile>
+      <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
+      <Value />
+    </VariableList>
+  </State>
+  <Category>
+    <Name>Highlight</Name>
+    <State>
+      <Name>Highlighted</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>BookmarkLabel.Red</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>BookmarkLabel.Green</Name>
+        <Value xsi:type="xsd:int">215</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>BookmarkLabel.Blue</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>NotHighlighted</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>BookmarkLabel.Red</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>BookmarkLabel.Green</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>BookmarkLabel.Blue</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
+  <Instance>
+    <Name>BookmarkSprite</Name>
+    <BaseType>Sprite</BaseType>
+  </Instance>
+  <Instance>
+    <Name>ShadowSprite</Name>
+    <BaseType>Sprite</BaseType>
+  </Instance>
+  <Instance>
+    <Name>BookmarkLabel</Name>
+    <BaseType>Text</BaseType>
+  </Instance>
+  <Behaviors />
+</ComponentSave>

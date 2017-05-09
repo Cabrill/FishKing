@@ -121,6 +121,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FishingLineStatus</Name>
     </None>
+    <None Include="GumProject\Components\Fishopedia.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Fishopedia</Name>
+    </None>
     <None Include="GumProject\Components\FramedCatchingBackground.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FramedCatchingBackground</Name>
@@ -181,6 +185,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>StressAccentuator</Name>
     </None>
+    <None Include="GumProject\Components\subcomponent\BookMark.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>BookMark</Name>
+    </None>
     <None Include="GumProject\Components\subcomponent\CatchStatWithScale.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>CatchStatWithScale</Name>
@@ -212,6 +220,10 @@
     <None Include="GumProject\Components\subcomponent\NewGameDisplay.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>NewGameDisplay</Name>
+    </None>
+    <None Include="GumProject\Components\subcomponent\PageCorner.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>PageCorner</Name>
     </None>
     <None Include="GumProject\Components\subcomponent\SubmenuButton.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -248,6 +260,10 @@
     <None Include="GumProject\Components\UnknownFish.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>UnknownFish</Name>
+    </None>
+    <None Include="GumProject\FishBook.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FishBook</Name>
     </None>
     <None Include="GumProject\FontCache\Font1202Peas 4th of July_o1.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

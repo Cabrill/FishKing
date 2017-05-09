@@ -90,7 +90,7 @@ namespace FishKing.GameClasses
 
             allTournaments.Add(new TournamentStructure(name: "Flooded Library",
                 goal: 50,
-                numParticipants: 2,
+                numParticipants: 3,
                 reward: 300,
                 map: "DesertIsland",
                 rules: new TournamentRules(),

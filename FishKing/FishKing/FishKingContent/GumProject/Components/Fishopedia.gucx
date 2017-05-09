@@ -1,0 +1,693 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ComponentSave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Name>Fishopedia</Name>
+  <BaseType>Container</BaseType>
+  <State>
+    <Name>Default</Name>
+    <Variable>
+      <Type>float</Type>
+      <Name>BookContainer.Height</Name>
+      <Value xsi:type="xsd:float">80</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>BookContainer.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>BookContainer.Width</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>BookContainer.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>BookmarkAll.BookmarkBlue</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>BookmarkAll.BookmarkLabelText</Name>
+      <Value xsi:type="xsd:string">All</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>BookmarkAll.BookmarkRed</Name>
+      <Value xsi:type="xsd:int">255</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>BookmarkAll.Height</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>BookmarkAll.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>BookmarkAll.Parent</Name>
+      <Value xsi:type="xsd:string">LeftBookmarkContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>BookmarkAll.Width</Name>
+      <Value xsi:type="xsd:float">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>BookmarkAll.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>BookmarkCaught.BookmarkBlue</Name>
+      <Value xsi:type="xsd:int">150</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>BookmarkCaught.BookmarkGreen</Name>
+      <Value xsi:type="xsd:int">255</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>BookmarkCaught.BookmarkLabelText</Name>
+      <Value xsi:type="xsd:string">Caught</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>BookmarkCaught.BookmarkRed</Name>
+      <Value xsi:type="xsd:int">150</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>BookmarkCaught.Parent</Name>
+      <Value xsi:type="xsd:string">LeftBookmarkContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>BookmarkCaught.Width</Name>
+      <Value xsi:type="xsd:float">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>BookmarkCaught.X</Name>
+      <Value xsi:type="xsd:float">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>BookmarkCaught.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>ChildrenLayout</Type>
+      <Name>Bookmarks.Children Layout</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Bookmarks.Height</Name>
+      <Value xsi:type="xsd:float">20</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>Bookmarks.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Bookmarks.Width</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>Bookmarks.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>ChildrenLayout</Type>
+      <Name>Children Layout</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>Clips Children</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>ExposeChildrenEvents</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <Category>Behavior</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>Guide</Name>
+      <Category>Position</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>HasEvents</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <Category>Behavior</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Height</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <Category>Dimensions</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <Category>Dimensions</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>ChildrenLayout</Type>
+      <Name>LeftBookmarkContainer.Children Layout</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>LeftBookmarkContainer.Height</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>LeftBookmarkContainer.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>LeftBookmarkContainer.Parent</Name>
+      <Value xsi:type="xsd:string">Bookmarks</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>LeftBookmarkContainer.Width</Name>
+      <Value xsi:type="xsd:float">45</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>LeftBookmarkContainer.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>LeftBookmarkContainer.X</Name>
+      <Value xsi:type="xsd:float">5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>LeftBookmarkContainer.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>LeftBookmarkContainer.Y</Name>
+      <Value xsi:type="xsd:float">-1.2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>LeftBookmarkContainer.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>LeftPage.Height</Name>
+      <Value xsi:type="xsd:float">90</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>LeftPage.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>LeftPage.Parent</Name>
+      <Value xsi:type="xsd:string">BookContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>LeftPage.Width</Name>
+      <Value xsi:type="xsd:float">40</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>LeftPage.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>LeftPage.X</Name>
+      <Value xsi:type="xsd:float">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>LeftPage.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>LeftPage.Y</Name>
+      <Value xsi:type="xsd:float">5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>LeftPage.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>LeftPageCorner.Height</Name>
+      <Value xsi:type="xsd:float">8.908732</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>LeftOrRightState</Type>
+      <Name>LeftPageCorner.LeftOrRightState</Name>
+      <Value xsi:type="xsd:string">Left</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>LeftPageCorner.Parent</Name>
+      <Value xsi:type="xsd:string">BookContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>LeftPageCorner.Width</Name>
+      <Value xsi:type="xsd:float">5.178573</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>LeftPageCorner.X</Name>
+      <Value xsi:type="xsd:float">4.89583349</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>LeftPageCorner.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>LeftPageCorner.Y</Name>
+      <Value xsi:type="xsd:float">89.86773</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>LeftPageCorner.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>Parent</Name>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>RightBookmarkContainer.Height</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>RightBookmarkContainer.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>RightBookmarkContainer.Parent</Name>
+      <Value xsi:type="xsd:string">Bookmarks</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>RightBookmarkContainer.Width</Name>
+      <Value xsi:type="xsd:float">45</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>RightBookmarkContainer.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>RightBookmarkContainer.Y</Name>
+      <Value xsi:type="xsd:float">-1.2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>RightBookmarkContainer.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>RightPage.Height</Name>
+      <Value xsi:type="xsd:float">90</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>RightPage.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>RightPage.Parent</Name>
+      <Value xsi:type="xsd:string">BookContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>RightPage.Width</Name>
+      <Value xsi:type="xsd:float">40</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>RightPage.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>RightPage.X</Name>
+      <Value xsi:type="xsd:float">50</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>RightPage.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>RightPage.Y</Name>
+      <Value xsi:type="xsd:float">5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>RightPage.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>RightPageCorner.Height</Name>
+      <Value xsi:type="xsd:float">8.908732</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>LeftOrRightState</Type>
+      <Name>RightPageCorner.LeftOrRightState</Name>
+      <Value xsi:type="xsd:string">Right</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>RightPageCorner.Parent</Name>
+      <Value xsi:type="xsd:string">BookContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>RightPageCorner.Width</Name>
+      <Value xsi:type="xsd:float">5.17857265</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>RightPageCorner.X</Name>
+      <Value xsi:type="xsd:float">89.94048</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>RightPageCorner.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>RightPageCorner.Y</Name>
+      <Value xsi:type="xsd:float">89.86773</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>RightPageCorner.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>SpriteInstance.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>SpriteInstance.Parent</Name>
+      <Value xsi:type="xsd:string">BookContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>SpriteInstance.SourceFile</Name>
+      <Value xsi:type="xsd:string">FishBook.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TextureAddress</Type>
+      <Name>SpriteInstance.Texture Address</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>SpriteInstance.Texture Height</Name>
+      <Value xsi:type="xsd:int">1224</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>SpriteInstance.Texture Left</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>SpriteInstance.Texture Top</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>SpriteInstance.Texture Width</Name>
+      <Value xsi:type="xsd:int">1920</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>SpriteInstance.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>State</Type>
+      <Name>State</Name>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>Visible</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Width</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <Category>Dimensions</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <Category>Dimensions</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>Wraps Children</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>X</Name>
+      <Category>Position</Category>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>X Origin</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <Category>Position</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>X Units</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <Category>Position</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Y</Name>
+      <Category>Position</Category>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>Y Origin</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <Category>Position</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>Y Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <Category>Position</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <VariableList xsi:type="VariableListSaveOfString">
+      <Type>string</Type>
+      <Name>AnimationFrames</Name>
+      <IsFile>false</IsFile>
+      <IsHiddenInPropertyGrid>false</IsHiddenInPropertyGrid>
+      <Value />
+    </VariableList>
+  </State>
+  <Instance>
+    <Name>BookContainer</Name>
+    <BaseType>Container</BaseType>
+  </Instance>
+  <Instance>
+    <Name>LeftBookmarkContainer</Name>
+    <BaseType>Container</BaseType>
+  </Instance>
+  <Instance>
+    <Name>SpriteInstance</Name>
+    <BaseType>Sprite</BaseType>
+  </Instance>
+  <Instance>
+    <Name>BookmarkAll</Name>
+    <BaseType>subcomponent\BookMark</BaseType>
+  </Instance>
+  <Instance>
+    <Name>BookmarkCaught</Name>
+    <BaseType>subcomponent\BookMark</BaseType>
+  </Instance>
+  <Instance>
+    <Name>LeftPage</Name>
+    <BaseType>Container</BaseType>
+  </Instance>
+  <Instance>
+    <Name>RightPage</Name>
+    <BaseType>Container</BaseType>
+  </Instance>
+  <Instance>
+    <Name>RightBookmarkContainer</Name>
+    <BaseType>Container</BaseType>
+  </Instance>
+  <Instance>
+    <Name>Bookmarks</Name>
+    <BaseType>Container</BaseType>
+  </Instance>
+  <Instance>
+    <Name>RightPageCorner</Name>
+    <BaseType>subcomponent\PageCorner</BaseType>
+  </Instance>
+  <Instance>
+    <Name>LeftPageCorner</Name>
+    <BaseType>subcomponent\PageCorner</BaseType>
+  </Instance>
+  <Behaviors />
+</ComponentSave>

@@ -48,6 +48,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>Fishopedia</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>FramedCatchingBackground</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
@@ -108,6 +112,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>subcomponent\BookMark</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>subcomponent\CatchStatWithScale</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
@@ -137,6 +145,10 @@
   </ComponentReference>
   <ComponentReference>
     <Name>subcomponent\NewGameDisplay</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>subcomponent\PageCorner</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
