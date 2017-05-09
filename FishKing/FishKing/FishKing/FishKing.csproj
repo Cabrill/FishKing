@@ -143,8 +143,13 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Extensions\TournamentExtensions.cs" />
     <Compile Include="GameClasses\MasterTournamentList.cs" />
     <Compile Include="GumRuntimes\MainMenuGumRuntime.cs" />
+    <Compile Include="GumRuntimes\ResultsDisplayRuntime.cs" />
+    <Compile Include="GumRuntimes\ResultsDisplayRuntime.Generated.cs">
+      <DependentUpon>ResultsDisplayRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\subcomponent\FishWithGlowRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\GameSelectPreviewRuntime.cs" />
     <Compile Include="GumRuntimes\subcomponent\GameSelectPreviewRuntime.Generated.cs">
@@ -159,6 +164,7 @@
       <DependentUpon>NewGameDisplayRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\subcomponent\TextEntryBoxRuntime.cs" />
+    <Compile Include="GumRuntimes\subcomponent\TrophyDisplayRunTime.cs" />
     <Compile Include="Managers\AmbientAudioManager.cs" />
     <Compile Include="DataTypes\fish_types.Generated.cs" />
     <Compile Include="DataTypes\GameText.Generated.cs" />
@@ -402,7 +408,9 @@
       <DependentUpon>TournamentPreviewRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\subcomponent\TrophyCountRuntime.Generated.cs" />
-    <Compile Include="GumRuntimes\subcomponent\TrophyDisplayRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\subcomponent\TrophyDisplayRuntime.Generated.cs">
+      <DependentUpon>TrophyDisplayRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\TextRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\TitleScreenGumRuntime.cs" />
     <Compile Include="GumRuntimes\TitleScreenGumRuntime.Generated.cs">

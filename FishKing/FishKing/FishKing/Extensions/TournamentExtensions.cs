@@ -23,5 +23,23 @@ namespace FishKing.Extensions
 
             return meetsRequirements;
         }
+
+        public static int DetermineRewardAmount(this TournamentStructure tournament, int playerPlace)
+        {
+            var rewardCutoff = tournament.NumberOfParticipants - 3;
+
+            if (playerPlace < rewardCutoff)
+            {
+                return 0;
+            }
+            else if (playerPlace == 1)
+            {
+                return tournament.RewardAmount;
+            }
+            else
+            {
+                return (1 / playerPlace) * tournament.RewardAmount;
+            }
+        }
     }
 }

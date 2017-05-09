@@ -92,6 +92,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>ResultsDisplay</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>SingleBarFrame</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>

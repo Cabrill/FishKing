@@ -112,27 +112,11 @@ namespace FishKing.GumRuntimes
             if (previousPlay != null)
             {
                 this.CurrentPlayedState = Played.PreviousPlayed;
-                this.TrophyDisplayInstance.CurrentTrophyPlaceState = NumberToPlace(previousPlay.PlaceTaken);
+                this.TrophyDisplayInstance.SetTrophyByPlaceNumber(previousPlay.PlaceTaken);
             }
             else
             {
                 this.CurrentPlayedState = Played.Unplayed;
-            }
-        }
-
-        private TrophyDisplayRuntime.TrophyPlace NumberToPlace(int place)
-        {
-            switch (place)
-            {
-                case 1: return TrophyDisplayRuntime.TrophyPlace.FirstPlace;
-                case 2: return TrophyDisplayRuntime.TrophyPlace.SecondPlace;
-                case 3: return TrophyDisplayRuntime.TrophyPlace.ThirdPlace;
-                case 4: return TrophyDisplayRuntime.TrophyPlace.FourthPlace;
-                case 5: return TrophyDisplayRuntime.TrophyPlace.FifthPlace;
-                case 6: return TrophyDisplayRuntime.TrophyPlace.SixthPlace;
-                case 7: return TrophyDisplayRuntime.TrophyPlace.SeventhPlace;
-                case 8: return TrophyDisplayRuntime.TrophyPlace.EighthPlace;
-                default: return TrophyDisplayRuntime.TrophyPlace.EighthPlace;
             }
         }
 

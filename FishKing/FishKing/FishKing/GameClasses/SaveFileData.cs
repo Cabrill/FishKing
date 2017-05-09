@@ -157,7 +157,7 @@ namespace FishKing.GameClasses
 
         public void AddTournamentResult(TournamentResults result)
         {
-            var existingResult = ParticipatedTournaments.Where(tr => tr.Tournament.TournamentName == result.Tournament.TournamentName).First();
+            var existingResult = ParticipatedTournaments.Where(tr => tr.Tournament.TournamentName == result.Tournament.TournamentName).FirstOrDefault();
             if (existingResult != null)
             {
                 if (existingResult.PlaceTaken > result.PlaceTaken)

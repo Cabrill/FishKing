@@ -26,9 +26,10 @@ namespace FishKing.Managers
             get; private set;
         }
 
+        private static TournamentResults results;
         public static TournamentResults CurrentTournamentResults
         {
-            get; private set;
+            get { return results; }
         }
 
         public static bool HasTournamentFinished
@@ -39,13 +40,20 @@ namespace FishKing.Managers
         public static void SetCurrentTournament(TournamentStructure newTournament)
         {
             CurrentTournament = newTournament;
-            CurrentScores = new TournamentScores(newTournament.NumberOfParticipants);
+            CurrentScores = new TournamentScores(newTournament.NumberOfParticipants, newTournament.GoalPoints);
             TournamentHasStarted = false;
+            results = null;
         }
 
         public static void StartTournament()
         {
             TournamentHasStarted = true;
+        }
+
+        public static void EndTournament()
+        {
+            CurrentScores.MarkScoreReviewed();
+            results = new TournamentResults(CurrentTournament, CurrentScores.PlayerPlace);
         }
     }
 }

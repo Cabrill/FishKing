@@ -45,12 +45,16 @@ namespace FishKing
         {
             if (PlayList.Count > 0)
             {
-                FlatRedBall.Audio.AudioManager.PlaySong(PlayList.ElementAt(currentTrackNumber++), true, false);
-                playingSong = true;
-                if (currentTrackNumber > TrackCount-1)
+                var nextSong = PlayList.ElementAt(currentTrackNumber++);
+                if (!nextSong.IsDisposed)
                 {
-                    currentTrackNumber = 0;
-                    NumberOfPlayListLoops++;
+                    FlatRedBall.Audio.AudioManager.PlaySong(nextSong, true, false);
+                    playingSong = true;
+                    if (currentTrackNumber > TrackCount - 1)
+                    {
+                        currentTrackNumber = 0;
+                        NumberOfPlayListLoops++;
+                    }
                 }
             }
         }

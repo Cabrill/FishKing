@@ -86,16 +86,16 @@ namespace FishKing.GameClasses
                 }
                 else if (MinimumLength > 0 && MinimumWeight > 0)
                 {
-                    returnString = string.Format("Measuring: {0}{1}Weighing: {2}",
+                    returnString = string.Format("At least {0}{1} & {2}",
                         MinimumLengthString, System.Environment.NewLine, MinimumWeightString);
                 }
                 else if (MinimumWeight > 0)
                 {
-                    returnString = string.Format("Weighing: {0}", MinimumWeightString);
+                    returnString = string.Format("At least {0}", MinimumWeightString);
                 }
                 else if (MinimumLength > 0)
                 {
-                    returnString = string.Format("Measuring: {0}", MinimumLengthString);
+                    returnString = string.Format("At least {0}", MinimumLengthString);
                 }
             }
             else

@@ -30,5 +30,28 @@ namespace FishKing.GameClasses
             TournamentRules = rules;
             TrophyRequirements = requirements;
         }
+
+        public static bool operator ==(TournamentStructure a, TournamentStructure b)
+        {
+
+            if (System.Object.ReferenceEquals(a, b))
+            {
+                return true;
+            }
+
+            // If one is null, but not both, return false.
+            if (((object)a == null) || ((object)b == null))
+            {
+                return false;
+            }
+
+            // Return true if the fields match:
+            return a.TournamentName == b.TournamentName;
+        }
+
+        public static bool operator !=(TournamentStructure a, TournamentStructure b)
+        {
+            return !(a == b);
+        }
     }
 }

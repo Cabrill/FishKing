@@ -165,6 +165,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ProgressBar</Name>
     </None>
+    <None Include="GumProject\Components\ResultsDisplay.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>ResultsDisplay</Name>
+    </None>
     <None Include="GumProject\Components\SingleBarFrame.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>SingleBarFrame</Name>

@@ -55,6 +55,12 @@ namespace FishKing.GumRuntimes
             }
         }
 
+        private bool hasStartedCelebration;
+        public bool HasStartedCelebration
+        {
+            get { return hasStartedCelebration; }
+        }
+
         public GameScreen gameScreen;
 
         private int? lastTopFishPlace = null;
@@ -288,7 +294,7 @@ namespace FishKing.GumRuntimes
             lastPlayerPlace = PlayerPlace;
             PlayerScore = playerScore;
 
-            SetGoalStatusByPlace(maxPossiblePlace);
+            TrophyDisplayInstance.SetTrophyByPlaceNumber(maxPossiblePlace);
         }
 
         private bool IsFishNearPlayerPlace(bool playerInFirst, bool playerInLast, int fishPlace)
@@ -410,25 +416,6 @@ namespace FishKing.GumRuntimes
 
             return new Tuple<int, int, int>(fishNum, fishScore, fishPlace);
         }
-
-        private void SetGoalStatusByPlace(int placePossible)
-        {
-            TrophyDisplayRuntime.TrophyPlace goalPlace;
-            switch (placePossible)
-            {
-                case 1: goalPlace = TrophyDisplayRuntime.TrophyPlace.FirstPlace; break;
-                case 2: goalPlace = TrophyDisplayRuntime.TrophyPlace.SecondPlace; break;
-                case 3: goalPlace = TrophyDisplayRuntime.TrophyPlace.ThirdPlace; break;
-                case 4: goalPlace = TrophyDisplayRuntime.TrophyPlace.FourthPlace; break;
-                case 5: goalPlace = TrophyDisplayRuntime.TrophyPlace.FifthPlace; break;
-                case 6: goalPlace = TrophyDisplayRuntime.TrophyPlace.SixthPlace; break;
-                case 7: goalPlace = TrophyDisplayRuntime.TrophyPlace.SeventhPlace; break;
-                case 8: goalPlace = TrophyDisplayRuntime.TrophyPlace.EighthPlace; break;
-                default: goalPlace = TrophyDisplayRuntime.TrophyPlace.FirstPlace; break;
-            }
-            TrophyDisplayInstance.CurrentTrophyPlaceState = goalPlace;
-        }
-
         private float GetGoalProgress(int score)
         {
             return (float)Decimal.Divide(score, goalScore) * 100;
@@ -484,6 +471,7 @@ namespace FishKing.GumRuntimes
 
         public void Reset()
         {
+            hasStartedCelebration = false;
             ScoreText.Text = "0";
 
             lastTopFishScore = 0;
@@ -644,6 +632,12 @@ namespace FishKing.GumRuntimes
             SetFishPlaceFromNumber(PlayerFishInstance, playerPlace);
             PlayerFishInstance.TournamentFishProgress = GetGoalProgress(playerScore);
             UpdateFishPlaceMarkers(existingScore);
+        }
+
+        public void StartCelebration()
+        {
+            hasStartedCelebration = true;
+            ThrowConfettiAnimation.Play();
         }
     }
 }

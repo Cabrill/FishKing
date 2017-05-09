@@ -17,12 +17,26 @@ namespace FishKing.UtilityClasses
         int[] scores;
         public int[] AsArray
         {
-            get { return scores;  }
+            get { return scores; }
         }
 
         public int PlayerScore
         {
             get { return scores[0]; }
+        }
+
+        public int PlayerPlace
+        {
+            get
+            {
+                var sortedScore = (int[])scores.Clone();
+                Array.Sort<int>(sortedScore,
+                    new Comparison<int>(
+                            (i1, i2) => i2.CompareTo(i1)
+                    ));
+
+                return Array.IndexOf(sortedScore, PlayerScore) + 1;
+            }
         }
 
         private bool scoreHasChanged = false;
@@ -33,16 +47,17 @@ namespace FishKing.UtilityClasses
 
         public bool HasPlayerFinished
         {
-            get { return PlayerScore >= GoalScore; }
+            get { return (GoalScore > 0 && PlayerScore >= GoalScore); }
         }
 
-        public TournamentScores(int playerSize = 8)
+        public TournamentScores(int playerSize, int goalScore)
         {
             scores = new int[playerSize];
             for (int i = 0; i < playerSize; i++)
             {
                 scores[i] = 0;
             }
+            GoalScore = goalScore;
         }
 
         public void AddToPlayerScore(int scoreIncrement)
@@ -53,7 +68,7 @@ namespace FishKing.UtilityClasses
 
         public void AddToNonPlayerScore(int npcNum, int scoreIncrement)
         {
-            if (npcNum > 0)
+            if (npcNum > 0 && npcNum < scores.Count()-1)
             {
                 scores[npcNum] += scoreIncrement;
                 scoreHasChanged = true;

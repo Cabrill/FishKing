@@ -64,6 +64,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>ProgressBarInstance.Visible</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>ProgressBarInstance.Width</Name>
       <Value xsi:type="xsd:float">25</Value>
@@ -91,6 +97,12 @@
       <Type>PositionUnitType</Type>
       <Name>ProgressBarInstance.Y Units</Name>
       <Value xsi:type="xsd:int">5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>ResultsDisplayInstance.Visible</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -128,5 +140,9 @@
   <Instance>
     <Name>HelpScreenInstance</Name>
     <BaseType>HelpScreen</BaseType>
+  </Instance>
+  <Instance>
+    <Name>ResultsDisplayInstance</Name>
+    <BaseType>ResultsDisplay</BaseType>
   </Instance>
 </ScreenSave>

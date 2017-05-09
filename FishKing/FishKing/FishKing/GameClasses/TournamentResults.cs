@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FishKing.Extensions;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -23,11 +24,11 @@ namespace FishKing.GameClasses
 
         public TournamentResults() { }
 
-        public TournamentResults(TournamentStructure tournament, int place, int rewardEarned)
+        public TournamentResults(TournamentStructure tournament, int place)
         {
             Tournament = tournament;
             PlaceTaken = place;
-            RewardEarned = rewardEarned;
+            RewardEarned = tournament.DetermineRewardAmount(place);
         }
     }
 }

@@ -258,7 +258,7 @@ namespace FishKing.Screens
         void CustomActivity(bool firstTimeCalled)
 		{
             MusicManager.Update();
-            if (CharacterInstance.EscapeInput.WasJustPressed)
+            if (CharacterInstance.EscapeInput.WasJustPressed && !TournamentStatusInstance.HasStartedCelebration)
             {
                 if (HelpScreenInstance.Visible)
                 {
@@ -316,36 +316,65 @@ namespace FishKing.Screens
                 }
 #endif
 
-                if (shouldUpdateCamera) UpdateCamera();
-                DialogActivity();
-                FishingActivity();
 
-                bool characterMoved = false;
-                if (CanMoveCharacter)
+                if (TournamentManager.CurrentScores.HasPlayerFinished)
                 {
-                    characterMoved = this.CharacterInstance.PerformMovementActivity(this.SolidCollisions, NpcCharacterList);
-                }
+                    if (!ResultsDisplayInstance.Visible)
+                    {
+                        TournamentStatusInstance.UpdateFishPlaceMarkers(TournamentManager.CurrentScores.AsArray);
+                        TournamentManager.EndTournament();
 
-                CharacterInstance.UpdateFishingStatus(characterMoved);
-                this.CharacterInstance.SetSpriteOffset();
+                        ResultsDisplayInstance.DisplayResults(TournamentManager.CurrentTournamentResults);
+                        ResultsDisplayInstance.OKButtonClick += ResultsDisplayOkClick;
+                        ResultsDisplayInstance.Visible = true;
 
-                CollisionActivity();
-                if (CharacterInstance.IsMoving)
-                {
-                    AmbientAudioManager.UpdateAmbientSoundSources();
+                        TournamentStatusInstance.StartCelebration();
+                    }
+                    else if (CharacterInstance.EscapeInput.WasJustPressed || CharacterInstance.ActionInput.WasJustPressed)
+                    {
+                        ResultsDisplayInstance.ClickOK();
+                    }
                 }
-#if DEBUG
-                if (DebuggingVariables.SimulateTournamentScores)
+                else
                 {
-                    TournamentManager.CurrentScores.SimulateTournament();
-                }
-#endif
-                if (TournamentManager.CurrentScores.HasScoreChanged)
-                {
-                    TournamentStatusInstance.UpdateFishPlaceMarkers(TournamentManager.CurrentScores.AsArray);
-                    TournamentManager.CurrentScores.MarkScoreReviewed();
+                    #if DEBUG
+                    if (DebuggingVariables.SimulateTournamentScores)
+                    {
+                        TournamentManager.CurrentScores.SimulateTournament();
+                    }
+                    #endif
+                    if (TournamentManager.CurrentScores.HasScoreChanged)
+                    {
+                        TournamentStatusInstance.UpdateFishPlaceMarkers(TournamentManager.CurrentScores.AsArray);
+                        TournamentManager.CurrentScores.MarkScoreReviewed();
+                    }
+                    if (shouldUpdateCamera) UpdateCamera();
+                    DialogActivity();
+                    FishingActivity();
+
+                    bool characterMoved = false;
+                    if (CanMoveCharacter)
+                    {
+                        characterMoved = this.CharacterInstance.PerformMovementActivity(this.SolidCollisions, NpcCharacterList);
+                    }
+
+                    CharacterInstance.UpdateFishingStatus(characterMoved);
+                    this.CharacterInstance.SetSpriteOffset();
+
+                    CollisionActivity();
+                    if (CharacterInstance.IsMoving)
+                    {
+                        AmbientAudioManager.UpdateAmbientSoundSources();
+                    }
                 }
             }
+        }
+
+        private void ResultsDisplayOkClick(IWindow window)
+        {
+            SaveGameManager.CurrentSaveData.AddTournamentResult(TournamentManager.CurrentTournamentResults);
+            SaveGameManager.SaveCurrentData();
+            LoadingScreen.TransitionToScreen(typeof(MainMenu).FullName);
         }
 
         private void HandlePauseInput()
