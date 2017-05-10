@@ -143,6 +143,7 @@
     <Reference Include="WindowsBase" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataTypes\Fish_Types.cs" />
     <Compile Include="Extensions\TournamentExtensions.cs" />
     <Compile Include="GameClasses\MasterTournamentList.cs" />
     <Compile Include="GumRuntimes\FishopediaRuntime.cs" />
@@ -183,7 +184,9 @@
     <Compile Include="GumRuntimes\subcomponent\TrophyDisplayRunTime.cs" />
     <Compile Include="GumRuntimes\subcomponent\WaveFrameRuntime.Generated.cs" />
     <Compile Include="Managers\AmbientAudioManager.cs" />
-    <Compile Include="DataTypes\fish_types.Generated.cs" />
+    <Compile Include="DataTypes\fish_types.Generated.cs">
+      <DependentUpon>fish_types.cs</DependentUpon>
+    </Compile>
     <Compile Include="DataTypes\GameText.Generated.cs" />
     <Compile Include="DataTypes\keypixels.Generated.cs" />
     <Compile Include="DataTypes\LevelNpc.Generated.cs" />

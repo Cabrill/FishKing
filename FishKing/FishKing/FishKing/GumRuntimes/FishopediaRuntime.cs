@@ -93,6 +93,7 @@ namespace FishKing.GumRuntimes
             var allFish = GlobalContent.Fish_Types;
             FishRecord fishRecord;
             Fish_Types fishType;
+            bool hasRightPage = false;
 
             var untilItem = (1 + pageIndex) * 12;
 
@@ -111,12 +112,16 @@ namespace FishKing.GumRuntimes
                 newFishEntry.AssociateWithFish(fishType, fishRecord);
 
                 newFishEntry.Parent = (i % 12 < 6 ? LeftPage : RightPage);
+                hasRightPage = i % 12 >= 6;
             }
 
             var maxPage = GlobalContent.Fish_Types.Keys.Count / 12;
 
             RightPageCorner.Visible = maxPage > pageIndex;
             LeftPageCorner.Visible = pageIndex > 0;
+            SetPageNumbers(pageIndex, hasRightPage);
+
+            SelectBookmark(BookmarkAll);
         }
 
         private void LoadCaughtFish(int atPageIndex = 0)
@@ -128,6 +133,7 @@ namespace FishKing.GumRuntimes
             var allFish = CaughtFish.Keys;
             FishRecord fishRecord;
             Fish_Types fishType;
+            bool hasRightPage = false;
 
             var untilItem = (1 + pageIndex) * 12;
 
@@ -140,12 +146,30 @@ namespace FishKing.GumRuntimes
                 newFishEntry.AssociateWithFish(fishType, fishRecord);
 
                 newFishEntry.Parent = (i % 12 < 6 ? LeftPage : RightPage);
+                hasRightPage = i % 12 >= 6;
             }
 
             var maxPage = CaughtFish.Keys.Count / 12;
 
             RightPageCorner.Visible = maxPage > pageIndex;
             LeftPageCorner.Visible = pageIndex > 0;
+            SetPageNumbers(pageIndex, hasRightPage);
+            SelectBookmark(BookmarkCaught);
+        }
+
+        private void SetPageNumbers(int page, bool hasRightPage)
+        {
+            LeftPageNumber.Text = (page*2 + 1).ToString();
+            RightPageNumber.Text = (page*2 + 2).ToString();
+            RightPageNumber.Visible = hasRightPage;
+        }
+
+        private void SelectBookmark(BookMarkRuntime bookmark)
+        {
+            BookmarkAll.Unselect();
+            BookmarkCaught.Unselect();
+
+            bookmark.Select();
         }
     }
 }

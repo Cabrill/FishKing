@@ -218,7 +218,7 @@
     <Variable>
       <Type>string</Type>
       <Name>Bookmarks.Parent</Name>
-      <Value xsi:type="xsd:string">SpriteInstance</Value>
+      <Value xsi:type="xsd:string">DeskBackground</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -231,6 +231,24 @@
       <Type>DimensionUnitType</Type>
       <Name>Bookmarks.Width Units</Name>
       <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Bookmarks.X</Name>
+      <Value xsi:type="xsd:float">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>Bookmarks.Y</Name>
+      <Value xsi:type="xsd:float">-5.18518543</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>Bookmarks.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -261,24 +279,6 @@
     <Variable>
       <Type>string</Type>
       <Name>FishEntryInstance.Parent</Name>
-      <Value xsi:type="xsd:string">LeftPage</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>FishEntryInstance1.Parent</Name>
-      <Value xsi:type="xsd:string">LeftPage</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>FishEntryInstance2.Parent</Name>
-      <Value xsi:type="xsd:string">LeftPage</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>FishEntryInstance3.Parent</Name>
       <Value xsi:type="xsd:string">LeftPage</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -508,6 +508,108 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>int</Type>
+      <Name>LeftPageNumber.Blue</Name>
+      <Value xsi:type="xsd:int">32</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>LeftPageNumber.Font</Name>
+      <Value xsi:type="xsd:string">Touch Of Nature</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>LeftPageNumber.Font Scale</Name>
+      <Value xsi:type="xsd:float">0.5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>LeftPageNumber.FontSize</Name>
+      <Value xsi:type="xsd:int">60</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>LeftPageNumber.Green</Name>
+      <Value xsi:type="xsd:int">165</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>LeftPageNumber.Height</Name>
+      <Value xsi:type="xsd:float">27</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>LeftPageNumber.Height Units</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>LeftPageNumber.OutlineThickness</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>LeftPageNumber.Parent</Name>
+      <Value xsi:type="xsd:string">BookContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>LeftPageNumber.Red</Name>
+      <Value xsi:type="xsd:int">218</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>LeftPageNumber.Text</Name>
+      <Value xsi:type="xsd:string">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>LeftPageNumber.Width</Name>
+      <Value xsi:type="xsd:float">37</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>LeftPageNumber.Width Units</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>LeftPageNumber.X</Name>
+      <Value xsi:type="xsd:float">5.145833</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>LeftPageNumber.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>LeftPageNumber.Y</Name>
+      <Value xsi:type="xsd:float">1.99074006</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>LeftPageNumber.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>Parent</Name>
       <SetsValue>true</SetsValue>
@@ -693,86 +795,194 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>int</Type>
+      <Name>RightPageNumber.Blue</Name>
+      <Value xsi:type="xsd:int">32</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>RightPageNumber.Font</Name>
+      <Value xsi:type="xsd:string">Touch Of Nature</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>RightPageNumber.Font Scale</Name>
+      <Value xsi:type="xsd:float">0.5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>RightPageNumber.FontSize</Name>
+      <Value xsi:type="xsd:int">60</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>RightPageNumber.Green</Name>
+      <Value xsi:type="xsd:int">165</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>RightPageNumber.Height</Name>
+      <Value xsi:type="xsd:float">29</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>RightPageNumber.Height Units</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>RightPageNumber.HorizontalAlignment</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>RightPageNumber.OutlineThickness</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>RightPageNumber.Parent</Name>
+      <Value xsi:type="xsd:string">BookContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>RightPageNumber.Red</Name>
+      <Value xsi:type="xsd:int">218</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>RightPageNumber.Text</Name>
+      <Value xsi:type="xsd:string">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>RightPageNumber.Width</Name>
+      <Value xsi:type="xsd:float">57</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>RightPageNumber.Width Units</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>RightPageNumber.X</Name>
+      <Value xsi:type="xsd:float">89.01489</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>RightPageNumber.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>RightPageNumber.Y</Name>
+      <Value xsi:type="xsd:float">2.652116</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>RightPageNumber.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>bool</Type>
-      <Name>SpriteInstance.ExposeChildrenEvents</Name>
+      <Name>DeskBackground.ExposeChildrenEvents</Name>
       <Value xsi:type="xsd:boolean">true</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>SpriteInstance.Height</Name>
+      <Name>DeskBackground.Height</Name>
       <Value xsi:type="xsd:float">20</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
-      <Name>SpriteInstance.Height Units</Name>
+      <Name>DeskBackground.Height Units</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>SpriteInstance.Parent</Name>
+      <Name>DeskBackground.Parent</Name>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <IsFile>true</IsFile>
       <Type>string</Type>
-      <Name>SpriteInstance.SourceFile</Name>
+      <Name>DeskBackground.SourceFile</Name>
       <Value xsi:type="xsd:string">FishBook.png</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>TextureAddress</Type>
-      <Name>SpriteInstance.Texture Address</Name>
+      <Name>DeskBackground.Texture Address</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
-      <Name>SpriteInstance.Texture Height</Name>
+      <Name>DeskBackground.Texture Height</Name>
       <Value xsi:type="xsd:int">311</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
-      <Name>SpriteInstance.Texture Left</Name>
+      <Name>DeskBackground.Texture Left</Name>
       <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
-      <Name>SpriteInstance.Texture Top</Name>
+      <Name>DeskBackground.Texture Top</Name>
       <Value xsi:type="xsd:int">1737</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
-      <Name>SpriteInstance.Texture Width</Name>
+      <Name>DeskBackground.Texture Width</Name>
       <Value xsi:type="xsd:int">2048</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
-      <Name>SpriteInstance.Width Units</Name>
+      <Name>DeskBackground.Width Units</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>SpriteInstance.X</Name>
+      <Name>DeskBackground.X</Name>
       <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>SpriteInstance.Y</Name>
+      <Name>DeskBackground.Y</Name>
       <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>PositionUnitType</Type>
-      <Name>SpriteInstance.Y Units</Name>
+      <Name>DeskBackground.Y Units</Name>
       <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -904,20 +1114,16 @@
     <BaseType>subcomponent\FishEntry</BaseType>
   </Instance>
   <Instance>
-    <Name>FishEntryInstance1</Name>
-    <BaseType>subcomponent\FishEntry</BaseType>
-  </Instance>
-  <Instance>
-    <Name>FishEntryInstance2</Name>
-    <BaseType>subcomponent\FishEntry</BaseType>
-  </Instance>
-  <Instance>
-    <Name>FishEntryInstance3</Name>
-    <BaseType>subcomponent\FishEntry</BaseType>
-  </Instance>
-  <Instance>
-    <Name>SpriteInstance</Name>
+    <Name>DeskBackground</Name>
     <BaseType>Sprite</BaseType>
+  </Instance>
+  <Instance>
+    <Name>LeftPageNumber</Name>
+    <BaseType>Text</BaseType>
+  </Instance>
+  <Instance>
+    <Name>RightPageNumber</Name>
+    <BaseType>Text</BaseType>
   </Instance>
   <Behaviors />
 </ComponentSave>

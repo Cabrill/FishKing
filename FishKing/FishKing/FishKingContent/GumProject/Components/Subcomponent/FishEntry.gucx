@@ -691,6 +691,11 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>PreviouslyCaught</Type>
+      <Name>PreviouslyCaughtState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>SpriteContainer.Height</Name>
       <Value xsi:type="xsd:float">50</Value>

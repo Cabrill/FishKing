@@ -329,8 +329,8 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>FishHighlight.Red</Name>
-        <Value xsi:type="xsd:int">220</Value>
+        <Name>FishHighlight.Blue</Name>
+        <Value xsi:type="xsd:int">60</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -341,8 +341,8 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>FishHighlight.Blue</Name>
-        <Value xsi:type="xsd:int">60</Value>
+        <Name>FishHighlight.Red</Name>
+        <Value xsi:type="xsd:int">220</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

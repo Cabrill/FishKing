@@ -199,8 +199,8 @@
       <Name>Highlighted</Name>
       <Variable>
         <Type>int</Type>
-        <Name>SpriteInstance.Red</Name>
-        <Value xsi:type="xsd:int">240</Value>
+        <Name>SpriteInstance.Blue</Name>
+        <Value xsi:type="xsd:int">140</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -211,8 +211,8 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>SpriteInstance.Blue</Name>
-        <Value xsi:type="xsd:int">140</Value>
+        <Name>SpriteInstance.Red</Name>
+        <Value xsi:type="xsd:int">240</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -220,7 +220,7 @@
       <Name>NotHighlighted</Name>
       <Variable>
         <Type>int</Type>
-        <Name>SpriteInstance.Red</Name>
+        <Name>SpriteInstance.Blue</Name>
         <Value xsi:type="xsd:int">255</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -232,7 +232,7 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>SpriteInstance.Blue</Name>
+        <Name>SpriteInstance.Red</Name>
         <Value xsi:type="xsd:int">255</Value>
         <SetsValue>true</SetsValue>
       </Variable>

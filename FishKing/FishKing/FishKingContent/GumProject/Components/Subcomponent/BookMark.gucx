@@ -250,6 +250,11 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>SelectedState</Type>
+      <Name>SelectedState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>int</Type>
       <Name>ShadowSprite.Blue</Name>
       <Value xsi:type="xsd:int">0</Value>
@@ -413,6 +418,51 @@
       <Name>Highlighted</Name>
       <Variable>
         <Type>int</Type>
+        <Name>BookmarkLabel.Blue</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>BookmarkLabel.Green</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>BookmarkLabel.Red</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>NotHighlighted</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>BookmarkLabel.Blue</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>BookmarkLabel.Green</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>BookmarkLabel.Red</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
+  <Category>
+    <Name>Selection</Name>
+    <State>
+      <Name>Selected</Name>
+      <Variable>
+        <Type>int</Type>
         <Name>BookmarkLabel.Red</Name>
         <Value xsi:type="xsd:int">255</Value>
         <SetsValue>true</SetsValue>
@@ -431,7 +481,7 @@
       </Variable>
     </State>
     <State>
-      <Name>NotHighlighted</Name>
+      <Name>NotSelected</Name>
       <Variable>
         <Type>int</Type>
         <Name>BookmarkLabel.Red</Name>
