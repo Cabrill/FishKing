@@ -103,7 +103,7 @@
     <Variable>
       <Type>float</Type>
       <Name>BookmarkLabel.Y</Name>
-      <Value xsi:type="xsd:float">35</Value>
+      <Value xsi:type="xsd:float">33</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -252,6 +252,11 @@
     <Variable>
       <Type>SelectedState</Type>
       <Name>SelectedState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>Selection</Type>
+      <Name>SelectionState</Name>
       <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
@@ -463,8 +468,8 @@
       <Name>Selected</Name>
       <Variable>
         <Type>int</Type>
-        <Name>BookmarkLabel.Red</Name>
-        <Value xsi:type="xsd:int">255</Value>
+        <Name>BookmarkLabel.Blue</Name>
+        <Value xsi:type="xsd:int">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -475,8 +480,8 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>BookmarkLabel.Blue</Name>
-        <Value xsi:type="xsd:int">0</Value>
+        <Name>BookmarkLabel.Red</Name>
+        <Value xsi:type="xsd:int">255</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -484,7 +489,7 @@
       <Name>NotSelected</Name>
       <Variable>
         <Type>int</Type>
-        <Name>BookmarkLabel.Red</Name>
+        <Name>BookmarkLabel.Blue</Name>
         <Value xsi:type="xsd:int">255</Value>
         <SetsValue>true</SetsValue>
       </Variable>
@@ -496,7 +501,7 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>BookmarkLabel.Blue</Name>
+        <Name>BookmarkLabel.Red</Name>
         <Value xsi:type="xsd:int">255</Value>
         <SetsValue>true</SetsValue>
       </Variable>

@@ -74,7 +74,7 @@
     <Variable>
       <Type>float</Type>
       <Name>BookContainer.Height</Name>
-      <Value xsi:type="xsd:float">80</Value>
+      <Value xsi:type="xsd:float">85</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -98,7 +98,7 @@
     <Variable>
       <Type>int</Type>
       <Name>BookmarkAll.BookmarkBlue</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -192,6 +192,48 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>string</Type>
+      <Name>BookmarkClose.BookmarkLabelText</Name>
+      <Value xsi:type="xsd:string">_X</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>BookmarkClose.Height</Name>
+      <Value xsi:type="xsd:float">65</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>BookmarkClose.Parent</Name>
+      <Value xsi:type="xsd:string">RightBookmarkContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>BookmarkClose.Width</Name>
+      <Value xsi:type="xsd:float">10</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>BookmarkClose.X</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>BookmarkClose.X Origin</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>BookmarkClose.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>ChildrenLayout</Type>
       <Name>Bookmarks.Children Layout</Name>
       <Value xsi:type="xsd:int">2</Value>
@@ -272,7 +314,7 @@
     <Variable>
       <Type>float</Type>
       <Name>DeskBackground.Height</Name>
-      <Value xsi:type="xsd:float">20</Value>
+      <Value xsi:type="xsd:float">15</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -302,7 +344,7 @@
     <Variable>
       <Type>int</Type>
       <Name>DeskBackground.Texture Height</Name>
-      <Value xsi:type="xsd:int">311</Value>
+      <Value xsi:type="xsd:int">149</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -314,7 +356,7 @@
     <Variable>
       <Type>int</Type>
       <Name>DeskBackground.Texture Top</Name>
-      <Value xsi:type="xsd:int">1737</Value>
+      <Value xsi:type="xsd:int">1899</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -361,8 +403,68 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>float</Type>
+      <Name>FishEntryInstance.Height</Name>
+      <Value xsi:type="xsd:float">47</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>FishEntryInstance.Parent</Name>
+      <Value xsi:type="xsd:string">LeftPage</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>FoundItemsState</Type>
+      <Name>FishEntryInstance1.FoundItemsState</Name>
+      <Value xsi:type="xsd:string">Item4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishEntryInstance1.Height</Name>
+      <Value xsi:type="xsd:float">47</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FishEntryInstance1.Parent</Name>
+      <Value xsi:type="xsd:string">LeftPage</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>FoundItemsState</Type>
+      <Name>FishEntryInstance2.FoundItemsState</Name>
+      <Value xsi:type="xsd:string">Item4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishEntryInstance2.Height</Name>
+      <Value xsi:type="xsd:float">47</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FishEntryInstance2.Parent</Name>
+      <Value xsi:type="xsd:string">LeftPage</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>FoundItemsState</Type>
+      <Name>FishEntryInstance3.FoundItemsState</Name>
+      <Value xsi:type="xsd:string">Item4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FishEntryInstance3.Height</Name>
+      <Value xsi:type="xsd:float">47</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FishEntryInstance3.Parent</Name>
       <Value xsi:type="xsd:string">LeftPage</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -594,7 +696,7 @@
     <Variable>
       <Type>int</Type>
       <Name>LeftPageNumber.Blue</Name>
-      <Value xsi:type="xsd:int">32</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -618,7 +720,7 @@
     <Variable>
       <Type>int</Type>
       <Name>LeftPageNumber.Green</Name>
-      <Value xsi:type="xsd:int">165</Value>
+      <Value xsi:type="xsd:int">215</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -648,7 +750,7 @@
     <Variable>
       <Type>int</Type>
       <Name>LeftPageNumber.Red</Name>
-      <Value xsi:type="xsd:int">218</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -691,6 +793,18 @@
       <Type>PositionUnitType</Type>
       <Name>LeftPageNumber.Y Units</Name>
       <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>PageDividerInstance.Height</Name>
+      <Value xsi:type="xsd:float">6</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>PageDividerInstance.Parent</Name>
+      <Value xsi:type="xsd:string">LeftPage</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -881,7 +995,7 @@
     <Variable>
       <Type>int</Type>
       <Name>RightPageNumber.Blue</Name>
-      <Value xsi:type="xsd:int">32</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -905,7 +1019,7 @@
     <Variable>
       <Type>int</Type>
       <Name>RightPageNumber.Green</Name>
-      <Value xsi:type="xsd:int">165</Value>
+      <Value xsi:type="xsd:int">215</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -941,7 +1055,7 @@
     <Variable>
       <Type>int</Type>
       <Name>RightPageNumber.Red</Name>
-      <Value xsi:type="xsd:int">218</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1124,6 +1238,26 @@
   <Instance>
     <Name>RightPageNumber</Name>
     <BaseType>Text</BaseType>
+  </Instance>
+  <Instance>
+    <Name>FishEntryInstance1</Name>
+    <BaseType>subcomponent\FishEntry</BaseType>
+  </Instance>
+  <Instance>
+    <Name>FishEntryInstance2</Name>
+    <BaseType>subcomponent\FishEntry</BaseType>
+  </Instance>
+  <Instance>
+    <Name>PageDividerInstance</Name>
+    <BaseType>subcomponent\PageDivider</BaseType>
+  </Instance>
+  <Instance>
+    <Name>FishEntryInstance3</Name>
+    <BaseType>subcomponent\FishEntry</BaseType>
+  </Instance>
+  <Instance>
+    <Name>BookmarkClose</Name>
+    <BaseType>subcomponent\BookMark</BaseType>
   </Instance>
   <Behaviors />
 </ComponentSave>

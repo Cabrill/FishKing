@@ -229,6 +229,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>PageCorner</Name>
     </None>
+    <None Include="GumProject\Components\subcomponent\PageDivider.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>PageDivider</Name>
+    </None>
     <None Include="GumProject\Components\subcomponent\SubmenuButton.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>SubmenuButton</Name>

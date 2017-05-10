@@ -27,6 +27,14 @@ namespace FishKing.GumRuntimes
             RightPageCorner.Click += RightPageCorner_Click;
             BookmarkAll.Click += BookmarkAll_Click;
             BookmarkCaught.Click += BookmarkCaught_Click;
+            BookmarkClose.Click += BookmarkClose_Click;
+        }
+
+        private void BookmarkClose_Click(FlatRedBall.Gui.IWindow window)
+        {
+            LeftPage.Children.Clear();
+            RightPage.Children.Clear();
+            this.Visible = false;
         }
 
         private void BookmarkCaught_Click(FlatRedBall.Gui.IWindow window)
@@ -111,6 +119,12 @@ namespace FishKing.GumRuntimes
                 }
                 newFishEntry.AssociateWithFish(fishType, fishRecord);
 
+                if (i % 12 == 3 || i % 12 == 9)
+                {
+                    var newPageDivider = new PageDividerRuntime();
+                    newPageDivider.Parent = (i % 12 < 6 ? LeftPage : RightPage);
+                }
+
                 newFishEntry.Parent = (i % 12 < 6 ? LeftPage : RightPage);
                 hasRightPage = i % 12 >= 6;
             }
@@ -144,6 +158,12 @@ namespace FishKing.GumRuntimes
                 fishRecord = CaughtFish[fishType];
 
                 newFishEntry.AssociateWithFish(fishType, fishRecord);
+
+                if (i % 12 == 3 || i % 12 == 9)
+                {
+                    var newPageDivider = new PageDividerRuntime();
+                    newPageDivider.Parent = (i % 12 < 6 ? LeftPage : RightPage);
+                }
 
                 newFishEntry.Parent = (i % 12 < 6 ? LeftPage : RightPage);
                 hasRightPage = i % 12 >= 6;

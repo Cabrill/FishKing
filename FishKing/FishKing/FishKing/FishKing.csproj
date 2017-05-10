@@ -180,6 +180,7 @@
     <Compile Include="GumRuntimes\subcomponent\PageCornerRuntime.Generated.cs">
       <DependentUpon>PageCornerRuntime.cs</DependentUpon>
     </Compile>
+    <Compile Include="GumRuntimes\subcomponent\PageDividerRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TextEntryBoxRuntime.cs" />
     <Compile Include="GumRuntimes\subcomponent\TrophyDisplayRunTime.cs" />
     <Compile Include="GumRuntimes\subcomponent\WaveFrameRuntime.Generated.cs" />

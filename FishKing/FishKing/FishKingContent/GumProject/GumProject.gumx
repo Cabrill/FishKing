@@ -156,6 +156,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>subcomponent\PageDivider</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>subcomponent\SubmenuButton</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
