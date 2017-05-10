@@ -345,7 +345,7 @@
     <Variable>
       <Type>string</Type>
       <Name>FoundInValue.Text</Name>
-      <Value xsi:type="xsd:string">Cave</Value>
+      <Value xsi:type="xsd:string">Lake, Pond, Waterfall</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

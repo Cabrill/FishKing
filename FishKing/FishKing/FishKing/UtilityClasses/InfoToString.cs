@@ -1,4 +1,5 @@
-﻿using System;
+﻿using FishKing.DataTypes;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -79,6 +80,43 @@ namespace FishKing.UtilityClasses
                     return num + "th";
             }
 
+        }
+
+        public static string PlacesCaught(Fish_Types fishType)
+        {
+            var placesString = "";
+            if (fishType.InDeepOcean > 0)
+            {
+                placesString += "Ocean,";
+            }
+            if (fishType.InRiver > 0)
+            {
+                placesString += " River,";
+            }
+            if (fishType.InLake > 0)
+            {
+                placesString += " Lake,";
+            }
+            if (fishType.InPond > 0)
+            {
+                placesString += " Pond,";
+            }
+            if (fishType.InWaterfall > 0)
+            {
+                placesString += " Waterfall,";
+            }
+            if (fishType.InOcean > 0)
+            {
+                placesString += " Beach,";
+            }
+            if (fishType.InCaveLake > 0)
+            {
+                placesString += " Cave,";
+            }
+
+            placesString = placesString.Trim();
+            placesString = placesString.Substring(0, placesString.Length - 1);
+            return placesString;
         }
     }
 }
