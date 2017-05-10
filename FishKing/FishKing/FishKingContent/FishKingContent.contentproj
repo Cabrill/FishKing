@@ -181,6 +181,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>SpinningReel</Name>
     </None>
+    <None Include="GumProject\Components\StoreScreen.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>StoreScreen</Name>
+    </None>
     <None Include="GumProject\Components\StressAccentuator.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>StressAccentuator</Name>
@@ -201,6 +205,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FishEntry</Name>
     </None>
+    <None Include="GumProject\Components\subcomponent\FishKingMover.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>FishKingMover</Name>
+    </None>
     <None Include="GumProject\Components\subcomponent\FishWithGlow.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>FishWithGlow</Name>
@@ -217,6 +225,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>LeftRightArrow</Name>
     </None>
+    <None Include="GumProject\Components\subcomponent\LetsGoFishKingScrollingBackground.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>LetsGoFishKingScrollingBackground</Name>
+    </None>
     <None Include="GumProject\Components\subcomponent\MainMenuButton.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>MainMenuButton</Name>
@@ -232,6 +244,14 @@
     <None Include="GumProject\Components\subcomponent\PageDivider.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>PageDivider</Name>
+    </None>
+    <None Include="GumProject\Components\subcomponent\StoreItemListing.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>StoreItemListing</Name>
+    </None>
+    <None Include="GumProject\Components\subcomponent\StoreItemPreview.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>StoreItemPreview</Name>
     </None>
     <None Include="GumProject\Components\subcomponent\SubmenuButton.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -348,6 +368,14 @@
     <None Include="GumProject\FontCache\Font36Arial_0.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font36Arial_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font36Arial_o1.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font36Arial_o1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font36Arial_o1_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font36Arial_o1_0</Name>
     </None>
     <None Include="GumProject\FontCache\Font36Berlin Sans FB Demi.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -532,6 +560,10 @@
     <None Include="GumProject\frblogo.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>frblogo</Name>
+    </None>
+    <None Include="GumProject\GearStore.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>GearStore</Name>
     </None>
     <None Include="GumProject\GumProject.gumx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

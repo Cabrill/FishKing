@@ -1,0 +1,83 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ElementAnimationsSave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Animations>
+    <AnimationSave>
+      <Loops>true</Loops>
+      <Name>BounceMove</Name>
+      <States>
+        <AnimatedStateSave>
+          <StateName>Movement/Move1</StateName>
+          <Time>0</Time>
+          <InterpolationType>Bounce</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>Movement/Move2</StateName>
+          <Time>0.5</Time>
+          <InterpolationType>Circular</InterpolationType>
+          <Easing>In</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>Movement/Move3</StateName>
+          <Time>1</Time>
+          <InterpolationType>Cubic</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>Movement/Move4</StateName>
+          <Time>3</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+      </States>
+      <Animations />
+      <Events />
+    </AnimationSave>
+    <AnimationSave>
+      <Loops>false</Loops>
+      <Name>OpposingSlideMove</Name>
+      <States>
+        <AnimatedStateSave>
+          <StateName>Movement/Move1</StateName>
+          <Time>0</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>Movement/Move4</StateName>
+          <Time>2</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>Movement/Move4</StateName>
+          <Time>3</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+      </States>
+      <Animations />
+      <Events />
+    </AnimationSave>
+    <AnimationSave>
+      <Loops>true</Loops>
+      <Name>Move</Name>
+      <States>
+        <AnimatedStateSave>
+          <StateName>Sliding/Slide1</StateName>
+          <Time>0</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>Sliding/Slide2</StateName>
+          <Time>2</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+      </States>
+      <Animations />
+      <Events />
+    </AnimationSave>
+  </Animations>
+</ElementAnimationsSave>

@@ -4,8 +4,9 @@
   <Version>1</Version>
   <DefaultCanvasWidth>960</DefaultCanvasWidth>
   <DefaultCanvasHeight>540</DefaultCanvasHeight>
-  <ShowOutlines>true</ShowOutlines>
+  <ShowOutlines>false</ShowOutlines>
   <RestrictToUnitValues>true</RestrictToUnitValues>
+  <RestrictFileNamesForAndroid>false</RestrictFileNamesForAndroid>
   <Guides />
   <ScreenReference>
     <Name>FlatRedBallSplashGum</Name>
@@ -108,6 +109,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>StoreScreen</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>StressAccentuator</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
@@ -128,6 +133,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>subcomponent\FishKingMover</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>subcomponent\FishWithGlow</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
@@ -144,6 +153,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>subcomponent\LetsGoFishKingScrollingBackground</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>subcomponent\MainMenuButton</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
@@ -157,6 +170,14 @@
   </ComponentReference>
   <ComponentReference>
     <Name>subcomponent\PageDivider</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>subcomponent\StoreItemListing</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>subcomponent\StoreItemPreview</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>

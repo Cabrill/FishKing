@@ -155,6 +155,8 @@
     <Compile Include="GumRuntimes\ResultsDisplayRuntime.Generated.cs">
       <DependentUpon>ResultsDisplayRuntime.cs</DependentUpon>
     </Compile>
+    <Compile Include="GumRuntimes\StoreScreenRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\subcomponent\BlueScreenBackgroundRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\BookMarkRuntime.cs" />
     <Compile Include="GumRuntimes\subcomponent\BookMarkRuntime.Generated.cs">
       <DependentUpon>BookMarkRuntime.cs</DependentUpon>
@@ -163,6 +165,7 @@
     <Compile Include="GumRuntimes\subcomponent\FishEntryRuntime.Generated.cs">
       <DependentUpon>FishEntryRuntime.cs</DependentUpon>
     </Compile>
+    <Compile Include="GumRuntimes\subcomponent\FishKingMoverRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\FishWithGlowRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\GameSelectPreviewRuntime.cs" />
     <Compile Include="GumRuntimes\subcomponent\GameSelectPreviewRuntime.Generated.cs">
@@ -172,6 +175,7 @@
     <Compile Include="GumRuntimes\subcomponent\LeftRightArrowRuntime.Generated.cs">
       <DependentUpon>LeftRightArrowRuntime.cs</DependentUpon>
     </Compile>
+    <Compile Include="GumRuntimes\subcomponent\LetsGoFishKingScrollingBackgroundRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\NewGameDisplayRuntime.cs" />
     <Compile Include="GumRuntimes\subcomponent\NewGameDisplayRuntime.Generated.cs">
       <DependentUpon>NewGameDisplayRuntime.cs</DependentUpon>
@@ -181,6 +185,9 @@
       <DependentUpon>PageCornerRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\subcomponent\PageDividerRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\subcomponent\ScrollingBackgroundRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\subcomponent\StoreItemListingRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\subcomponent\StoreItemPreviewRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TextEntryBoxRuntime.cs" />
     <Compile Include="GumRuntimes\subcomponent\TrophyDisplayRunTime.cs" />
     <Compile Include="GumRuntimes\subcomponent\WaveFrameRuntime.Generated.cs" />

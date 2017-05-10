@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ElementAnimationsSave xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Animations>
+    <AnimationSave>
+      <Loops>true</Loops>
+      <Name>AnimateBackground</Name>
+      <States />
+      <Animations>
+        <AnimationReferenceSave>
+          <Name>LetsGoFishKingScrollingBackgroundInstance.MoveIt</Name>
+          <Time>0</Time>
+        </AnimationReferenceSave>
+      </Animations>
+      <Events />
+    </AnimationSave>
+  </Animations>
+</ElementAnimationsSave>
