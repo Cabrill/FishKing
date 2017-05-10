@@ -717,6 +717,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>SmallForest</Name>
     </None>
+    <None Include="Screens\GameScreen\Levels\ThePond.tmx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>ThePond</Name>
+    </None>
     <None Include="Screens\GameScreen\Objects\RodAnimations.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>RodAnimations</Name>
