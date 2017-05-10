@@ -28,6 +28,7 @@ namespace FishKing.GumRuntimes
             BookmarkAll.Click += BookmarkAll_Click;
             BookmarkCaught.Click += BookmarkCaught_Click;
             BookmarkClose.Click += BookmarkClose_Click;
+            BookmarkClose.Unselect();
         }
 
         private void BookmarkClose_Click(FlatRedBall.Gui.IWindow window)
