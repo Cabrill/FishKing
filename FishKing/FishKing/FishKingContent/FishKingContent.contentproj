@@ -509,17 +509,41 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font56Touch Of Nature_o1_1</Name>
     </None>
-    <None Include="GumProject\FontCache\Font60Touch Of Nature.fnt">
+    <None Include="GumProject\FontCache\Font60Deutsche Zierschrift_o1.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font60Touch Of Nature</Name>
+      <Name>Font60Deutsche Zierschrift_o1</Name>
     </None>
-    <None Include="GumProject\FontCache\Font60Touch Of Nature_0.png">
+    <None Include="GumProject\FontCache\Font60Deutsche Zierschrift_o1_0.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font60Touch Of Nature_0</Name>
+      <Name>Font60Deutsche Zierschrift_o1_0</Name>
     </None>
-    <None Include="GumProject\FontCache\Font60Touch Of Nature_1.png">
+    <None Include="GumProject\FontCache\Font60Deutsche Zierschrift_o1_1.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>Font60Touch Of Nature_1</Name>
+      <Name>Font60Deutsche Zierschrift_o1_1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font60Kingthings Calligraphica_o1.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Kingthings Calligraphica_o1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font60Kingthings Calligraphica_o1_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Kingthings Calligraphica_o1_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font60Kingthings Calligraphica_o1_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Kingthings Calligraphica_o1_1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font60Mordred_o1.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Mordred_o1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font60Mordred_o1_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Mordred_o1_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font60Mordred_o1_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Mordred_o1_1</Name>
     </None>
     <None Include="GumProject\FontCache\Font60Touch Of Nature_o1.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

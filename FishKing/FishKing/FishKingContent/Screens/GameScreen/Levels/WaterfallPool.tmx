@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="40" tilewidth="32" tileheight="32" nextobjectid="43">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="17" tilewidth="32" tileheight="32" nextobjectid="1">
  <tileset firstgid="1" name="alltiles" tilewidth="32" tileheight="32" tilecount="4096" columns="64">
   <image source="../Tilesets/alltiles.png" width="2048" height="2048"/>
   <tile id="5">
@@ -657,11 +657,6 @@
     <frame tileid="1220" duration="200"/>
     <frame tileid="1221" duration="200"/>
    </animation>
-  </tile>
-  <tile id="1238">
-   <properties>
-    <property name="IsBridge" type="bool" value="true"/>
-   </properties>
   </tile>
   <tile id="1285">
    <properties>
@@ -1393,120 +1388,201 @@
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
   </tile>
+  <tile id="2944">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2949">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3008">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3013">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3072">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3077">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3078">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3081">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3136">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3137">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3138">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3139">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3140">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3142">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3143">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3144">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3145">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3201">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3202">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3203">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3204">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3207">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3208">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3459">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3520">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3523">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3584">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3648">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3651">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3712">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3713">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3714">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3777">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3778">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
  </tileset>
- <layer name="Water" width="40" height="40">
-  <properties>
-   <property name="IsWater" type="bool" value="true"/>
-  </properties>
+ <layer name="Water" width="30" height="17">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC93Wy42DMBAGYAcWJ/dcNg3RwF5cETVw2nKogXJiCxOGYcZvFmst/VISJeaLX+P+LkRP5UsktxdITBs6/dwHygm+nHYwUrbuGhtlHFCutpnWt9pyX1J6Xl9E/ptPdptvwsmcX3UTYtYZb9vrWJt8bCm9d5W1QWOq7SzfDIyhPsp2hm9ujvE1uB9wKF/qGpT6tz9in6dNSV/KGJqzFNugz2cka1uh+sbZ1pZlzPT5bKb9Nlu+bUZmXWLj4fyLPAd9ttWirEvZ9zC7/4vWIusLNJo9AYObAj6YIj5rnPRcS5nmG5u9cWyOn7l87PoLvG9N7T7c+FFRAeOH71ex961J99/LJQOz5jlfyPjl2GS71KVJ2ph7h2Pf43nGthhfqM3UyI+vwP0nxBdjg74S9Xvt17k/HP1jW0kf7jfWR9kO85s4xzH3K6p/ry3DyNkoHz6X1wTZCCPsg4rLBn1k7bDPo37H2rDR8z2XbfWxtY3pw2uDxkyfs/YSfQTbIlLKd4bNZwzx/VVq95FrvTIfNtbog8YabdBYq+2Tmm3Yd7XF5bva4fJdbXDkDdIpSfoAGQAA
+   H4sIAAAAAAAAC+2S0QmAMAxEmx+dwc0yWkbLOAq1cIY0RtD60weHUtre5VSpFD50x7LmFSFUxYN9lar4fI6cl3/ybTO3DNi9zfKGr0DHDJ4K3pkOMtjvifcqXcXOuzjrds3uE7NPgllwdux7eyDsFHNmaH1HGSOy/2vvbDand3YymXzLDlW2duj4BwAA
   </data>
  </layer>
- <layer name="Ground" width="40" height="40">
+ <layer name="Ground" width="30" height="17">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2WS3LTQBCGBR6pnBNQhGxShFgpOIfPQBI2JESQi/gKKMWSwokv4kNQbHjEcQoOwd8103Gn3VakUZbzV/0lyZ7HNz09jyxrp5Nhli1cln3D8+uw+bmb+zov8/X/pKthy843aPykX/0umlB/T9uXL1B2Ar7drbj+/iI2/1rGZ4Q+fgzaMzLbd9Qpc894Cn/o4NfwmwfKnG15Nurj0HnGcYvx0Ly+HXjvo94ILt3994PwrX/7Cf8S/i3K8HMBnht4v8A3XMIX+P2d685Xoc5H+JNbvXP7y3zFRf+fu9XaYNEa4Xr0lEyaDa/ZvMX8TlCmAOO2MealGjdzMafFR21QWSozyv18VvA0784mY7gtYiaZlviewpfwFTwLbE3xu+JxibHEskk+ySFjSHvhjfOst4FttoFvGsYpc4XK70SyMd8R6tcyv0UMbxXvLHBafIswTh3znZbrwZKVg6XoY2rw0tr941ZtvALbXu7X8MKtx7wPH0nm4N06CX3oviy2U/i9YNR7EfF1PTcsPs4fzh1rz7PYymDJKPOP9+RYRpmDlyJ3JN9DbGQuc+3u79sHPRk5B4nxOLiWe45aD3dsoW/JpnUtOLucbRbjPPMu1J5TKT5aq3L+NL8lqsO52GetkMYqlseqTfq/FvuH5t/Ed/4IfHyneYZ5eA6/cN6aj/nrEGdeG018ffdCyXYEHwa+wigr86AMZxsxnhicnK994qfZvsAXg+ZzyTp7SsHJJrY+Z0kMG0mePfrMrdz6Odfl7teXjWXdL2YNbDH3q1g2rs9zXOa2+96vPoOpjmAjWXu7diwbt8/78vyx2rAceTdISkpKSkpKSkqK039Ou9n4ABkAAA==
+   H4sIAAAAAAAAC2NggIAmbgaGZiBm5mVgOAKlmXgRtD4jA1FAF6juMFD/CW6IPhA+DDXvKDem+kPcEHmQnSehbmiB6gWZQYq9J5D0tUDdgMteJh6gHA+EPsyNcCfMDFLthemDuZ0FaC4rD2H9IPth4U2qf1ug4cbMx8DgxEe8nTAA8j8LD/k0KXbRErQR4Y5GKrmVGLtGwSgYBaNgMAMAZ2wiQvgHAAA=
   </data>
  </layer>
- <layer name="Bridge" width="40" height="40">
-  <properties>
-   <property name="IsBridge" type="bool" value="true"/>
-  </properties>
+ <layer name="WaterDetail" width="30" height="17">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+3TwQmDQBQE0H/IbjvRSmJIMWoVKinE5JSkC28pI9qBs6wgSFgPgewX58HAPw4DX4SIiIiItDhZkQw5T3H3xcZuNavQpUaaKe6+rvR7H/7TbUs6O4dIq9aI3JC7id3kuw969cigtN8R/50gqdI/536/4X7rcuNTIOXi1rDfw/g8kdfi1rBfiIb9QrTvR0T7MgLUTVwcABkAAA==
+   H4sIAAAAAAAAC2NgoD7g5RsYvaOAfMDGTjweBaNgFIyCUTB0AQDT/zyD+AcAAA==
   </data>
  </layer>
- <layer name="Walls" width="40" height="40">
-  <properties>
-   <property name="HasCollision" type="bool" value="true"/>
-  </properties>
+ <layer name="Walls" width="30" height="17">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2XSQrCMBSGn6ClXsNp6cJDeBZRcVp4BYdb6MKhFRcuvILDLZx3LjyBP7SCxBrr1ER8H3ykhaT5eUkDIbpPNkTUMYm6pvOej0g6u+R89BkYREPDee7h232YfTzMkxXGruEGbj/sDu7hwXwxnEssShSHiSe8IOuThKno/Xl/mQb2RxO2YNtQneaWGTLN4QIuNcz3DfJhogIshlUn8cZCLhuOAspnYd3tP1l7hmGCYc9nCsMwGjEW7nUTH/e8IDkKeU6a5UsLZ3pGszOe6/ceOtSvhDnLsAKrQjsV8qion1gjGSrqJ+4xGSrqV8KcZVjxaOsa7D8Zuv+/17Wtwppm+RiG+TxneMuIigAZAAA=
+   H4sIAAAAAAAAC2NgYGBo5GZgOMvHgBV0AMU7cciRCtDtOMiNW+0JoNqTZNpLSC8jD4Ldi6TuFJB9mkZ2goAj0F4nKHYGYnYgbuRFyL8l0c73SGxkf7jyoKprBPKboLgZiN2B+CCSveeAevMZibMzlxGiHgZA/nDhgdjZyoNbH9wtfAj/u/CQzobZBfJHC5F2wkATkj5S2aTaNQpGwSgYBYMVAADVRYhu+AcAAA==
   </data>
  </layer>
- <layer name="Overlay" width="40" height="40">
+ <layer name="Overlay" width="30" height="17">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2TOwrCQBRFJxAG1xCzAnUh7kBIUito6W7UWjt/K7FWW1uNrsA7JIWRGQuDvgncA4eBFMnhZZ5S39Nv2Z9HsA3jGu/+JQlMYSYd4mAG53AhHeLgCE/wLB3iIApw/2AcSJfYSdCVwuytrxMq1YW9UKbLN8ZaqYmWriCSXBqwC2ysMsTOjjze2yXaVh731WHw57t40FUJIYQQQprIVNtP8pl1Oaet4zRIzvJafjt/acgb8m/NbDe6mOUO7j3rNrO96WKed/jwrI8QG09J43yuABkAAA==
+   H4sIAAAAAAAAC2NgwA28+BgYvPnwKMADPID6OoC4k0j9vkjquoDsbjLtJcVOWgBfCuzuI1EvqerxAX1G4tTpEqmOWDALiGcTgedQ11qGW0B8mwh8h4p2zgCGnRQQSxOBZRgh6qkBbgDNkWQgHkdQ0V4YjkDCM9DEkelRMApGAe0BAAVRXKz4BwAA
   </data>
  </layer>
- <objectgroup name="SpawnPoints">
-  <object id="1" gid="1799" x="512" y="128" width="32" height="32">
-   <properties>
-    <property name="EntityToCreate" value="StartPoint"/>
-    <property name="Name" value="FirstSpawn"/>
-   </properties>
-  </object>
-  <object id="2" gid="1800" x="725.091" y="95.75" width="32" height="32">
-   <properties>
-    <property name="EntityToCreate" value="MapNavigationTrigger"/>
-    <property name="StartPointName" value="CaveEntrance"/>
-    <property name="TargetMap" value="Cave1"/>
-   </properties>
-  </object>
-  <object id="3" gid="1799" x="736" y="128" width="32" height="32">
-   <properties>
-    <property name="EntityToCreate" value="StartPoint"/>
-    <property name="Name" value="CaveExit"/>
-   </properties>
-  </object>
-  <object id="41" gid="1799" x="256" y="224" width="32" height="32">
-   <properties>
-    <property name="EntityToCreate" value="StartPoint"/>
-    <property name="Name" value="BoatExit"/>
-   </properties>
-  </object>
-  <object id="42" gid="1800" x="253" y="181" width="32" height="32">
-   <properties>
-    <property name="EntityToCreate" value="MapNavigationTrigger"/>
-    <property name="StartPointName" value="BoatEntrance"/>
-    <property name="TargetMap" value="DeepOcean1"/>
-   </properties>
-  </object>
- </objectgroup>
- <objectgroup name="WaterfallLines" visible="0">
-  <object id="4" x="689.455" y="157.636">
-   <properties>
-    <property name="name" value="Waterfall"/>
-   </properties>
-   <polyline points="0,0 63.0909,-0.909091"/>
-  </object>
- </objectgroup>
- <objectgroup name="LakeLines" visible="0">
-  <object id="7" x="885.5" y="427">
-   <properties>
-    <property name="name" value="Lake"/>
-   </properties>
-   <polyline points="0,0 146.5,34 144,166.5 74,198 -90.5,129.5 -90.5,41 -1,-1"/>
-  </object>
- </objectgroup>
- <objectgroup name="RiverLines" visible="0">
-  <object id="39" x="670" y="314">
-   <polyline points="0,0 -130,126 -133.333,172.667 -46.6667,173.333 99.3333,16 -0.666667,0"/>
-  </object>
- </objectgroup>
- <objectgroup name="RiverLines2" visible="0">
-  <object id="40" x="790" y="322">
-   <polyline points="0,0 98,99.3333 58.6667,99.3333 -22,14 -0.666667,-3.33333"/>
-  </object>
- </objectgroup>
- <objectgroup name="PondLines">
-  <object id="8" x="658" y="295.5">
-   <properties>
-    <property name="name" value="Pond"/>
-   </properties>
-   <polyline points="0,0 5,-147.5 125.5,-151.5 129.5,3.5 -0.5,0"/>
-  </object>
- </objectgroup>
- <objectgroup name="OceanLines" visible="0">
-  <object id="35" x="210.667" y="2.66667">
-   <polyline points="0,0 -67.3333,132.667 23.3333,486.667 108.667,536.667 -50.6667,703.333 -16,812.667"/>
-  </object>
-  <object id="38" x="1111.33" y="749.333">
-   <polyline points="0,0 64.6667,-70.6667 66.6667,-300.667 -23.3333,-428 88,-583.333 98,-657.333 16.6667,-742.667"/>
-  </object>
- </objectgroup>
- <objectgroup name="OceanLines2" visible="0">
-  <object id="37" x="196" y="818">
-   <polyline points="0,0 127.333,4 356.667,-206 423.333,-203.333 544.667,3.33333 835.333,2 908.667,-63.3333"/>
-  </object>
- </objectgroup>
+ <objectgroup name="SpawnPoints"/>
 </map>

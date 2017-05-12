@@ -92,7 +92,7 @@
     <Variable>
       <Type>float</Type>
       <Name>FishNameValue.Height</Name>
-      <Value xsi:type="xsd:float">10</Value>
+      <Value xsi:type="xsd:float">20</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -104,7 +104,7 @@
     <Variable>
       <Type>int</Type>
       <Name>FishNameValue.OutlineThickness</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -134,13 +134,19 @@
     <Variable>
       <Type>float</Type>
       <Name>FishNameValue.Y</Name>
-      <Value xsi:type="xsd:float">3</Value>
+      <Value xsi:type="xsd:float">-7</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>FishNameValue.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>FishSprite.Height</Name>
-      <Value xsi:type="xsd:float">50</Value>
+      <Value xsi:type="xsd:float">55</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -195,7 +201,7 @@
     <Variable>
       <Type>float</Type>
       <Name>FishSprite.Width</Name>
-      <Value xsi:type="xsd:float">60</Value>
+      <Value xsi:type="xsd:float">85</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -225,7 +231,7 @@
     <Variable>
       <Type>float</Type>
       <Name>FishSprite.Y</Name>
-      <Value xsi:type="xsd:float">25</Value>
+      <Value xsi:type="xsd:float">33</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -465,13 +471,13 @@
     <Variable>
       <Type>int</Type>
       <Name>HeaviestValue.Blue</Name>
-      <Value xsi:type="xsd:int">112</Value>
+      <Value xsi:type="xsd:int">226</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
       <Name>HeaviestValue.Font</Name>
-      <Value xsi:type="xsd:string">Touch Of Nature</Value>
+      <Value xsi:type="xsd:string">Mordred</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -489,7 +495,7 @@
     <Variable>
       <Type>int</Type>
       <Name>HeaviestValue.Green</Name>
-      <Value xsi:type="xsd:int">25</Value>
+      <Value xsi:type="xsd:int">43</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -507,7 +513,7 @@
     <Variable>
       <Type>int</Type>
       <Name>HeaviestValue.OutlineThickness</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -519,7 +525,7 @@
     <Variable>
       <Type>int</Type>
       <Name>HeaviestValue.Red</Name>
-      <Value xsi:type="xsd:int">25</Value>
+      <Value xsi:type="xsd:int">138</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -633,13 +639,13 @@
     <Variable>
       <Type>int</Type>
       <Name>LongestValue.Blue</Name>
-      <Value xsi:type="xsd:int">112</Value>
+      <Value xsi:type="xsd:int">226</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
       <Name>LongestValue.Font</Name>
-      <Value xsi:type="xsd:string">Touch Of Nature</Value>
+      <Value xsi:type="xsd:string">Mordred</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -657,7 +663,7 @@
     <Variable>
       <Type>int</Type>
       <Name>LongestValue.Green</Name>
-      <Value xsi:type="xsd:int">25</Value>
+      <Value xsi:type="xsd:int">43</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -675,7 +681,7 @@
     <Variable>
       <Type>int</Type>
       <Name>LongestValue.OutlineThickness</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -687,7 +693,7 @@
     <Variable>
       <Type>int</Type>
       <Name>LongestValue.Red</Name>
-      <Value xsi:type="xsd:int">25</Value>
+      <Value xsi:type="xsd:int">138</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -882,19 +888,19 @@
     <Variable>
       <Type>int</Type>
       <Name>TimesCaughtValue.Blue</Name>
-      <Value xsi:type="xsd:int">112</Value>
+      <Value xsi:type="xsd:int">211</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
       <Name>TimesCaughtValue.Font</Name>
-      <Value xsi:type="xsd:string">Touch Of Nature</Value>
+      <Value xsi:type="xsd:string">Kingthings Calligraphica</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>TimesCaughtValue.Font Scale</Name>
-      <Value xsi:type="xsd:float">0.2</Value>
+      <Value xsi:type="xsd:float">0.4</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -906,7 +912,7 @@
     <Variable>
       <Type>int</Type>
       <Name>TimesCaughtValue.Green</Name>
-      <Value xsi:type="xsd:int">25</Value>
+      <Value xsi:type="xsd:int">85</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -936,7 +942,7 @@
     <Variable>
       <Type>int</Type>
       <Name>TimesCaughtValue.Red</Name>
-      <Value xsi:type="xsd:int">25</Value>
+      <Value xsi:type="xsd:int">186</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -955,6 +961,24 @@
       <Type>DimensionUnitType</Type>
       <Name>TimesCaughtValue.Width Units</Name>
       <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TimesCaughtValue.X</Name>
+      <Value xsi:type="xsd:float">-1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TimesCaughtValue.Y</Name>
+      <Value xsi:type="xsd:float">-12.2023544</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>TimesCaughtValue.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1075,19 +1099,19 @@
     <Variable>
       <Type>int</Type>
       <Name>WaveBorder.Alpha</Name>
-      <Value xsi:type="xsd:int">225</Value>
+      <Value xsi:type="xsd:int">200</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>WaveBorder.Blue</Name>
-      <Value xsi:type="xsd:int">247</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>WaveBorder.Green</Name>
-      <Value xsi:type="xsd:int">169</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1111,7 +1135,7 @@
     <Variable>
       <Type>int</Type>
       <Name>WaveBorder.Red</Name>
-      <Value xsi:type="xsd:int">113</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1130,7 +1154,7 @@
     <Variable>
       <Type>int</Type>
       <Name>WaveBorder.Texture Height</Name>
-      <Value xsi:type="xsd:int">350</Value>
+      <Value xsi:type="xsd:int">292</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

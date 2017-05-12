@@ -2091,6 +2091,14 @@
    H4sIAAAAAAAAC42VTW7CMBCFLTYgxal9pkrAogv7TiXtwYpKj4WjZsTnxxCwNEriOH4/npnUGEJqUZfrHBlRlkgSfJ8e3M9j8xbCeQjhfezDMA23yLPySeCiOFneccz4cxhuxTeGl+W5CI8MLlyje3BsY49rnEvs9VFnwpoMHnqtsfeA3qSFx2fz/DTcOKpGw/4aXw96Xhy+xKVf1EbMXYvfldgCu8T7vKzQ+zP85xk5USt1fI9hdUyi2/bKoomDa+g1dV4c3H2bO7Q4jve4etZenmlN2tk802lYf23tR+z95j7efcWc5uWruDv4MUEvz0/rj7VWY++PaTEv1/QeFs8v8abXq2mtWfU4P8mrPTC8MCxPm9drObeGOzkY7BPaAzJwtN9ojyM2vaSf6hXzRmtX+y11spZUsxeqhX1Rc1Y9N17ai73eSa7FwfT24jnwX6U8s6ypsT833Uu/Zb7q2XH/KwMBWYT4BwAA
   </data>
  </layer>
+ <layer name="Bridge" width="30" height="17">
+  <properties>
+   <property name="IsBridge" type="bool" value="true"/>
+  </properties>
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgGAWjYBSMBDCdlYFhJiv97RVnY2CQZKO/vaNgFIwC7AAA8/2bTvgHAAA=
+  </data>
+ </layer>
  <layer name="Walls" width="30" height="17">
   <data encoding="base64" compression="gzip">
    H4sIAAAAAAAAC8VV6w2CMBgsagKxyBYa18BnZA/QNcRH9Ic6hcY1NBFfUbdwDq9JG6DiIxHqJZfQFr7jPq40sAjZgwI7XAd8rq3HxwfwaD3fl/TshhKypeQlJrhnaiXXScInPQHNJCQH5sGC+Vwn6iFN2NCqgXWwAWqSxgjjcQbafWj54AAcgjbq+5G+f9vfX1A08B40rstwguY5Q10GOWcqNBmScpZGryul9+tyzrLKswyRszJ6XeX9VqXN4EKzR9XkOYolNNfcrwrtGfbSHFwYod+WAr8X6F3BmxH6df7wfVVmSugKv1n9Ozo4Rx09HLM95HG/QlM+d6Ns8gzI8zJdXrfLa9+xXz0zvr7ifh9OmWAG+AcAAA==
@@ -2103,7 +2111,7 @@
  </layer>
  <layer name="Overlay" width="30" height="17">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC72VW07CQBSGz0s7lcLAG3EBIhuRiyj6RlxB3YiKyu2NsAJcjLcl+TXthDYpOIO2f/KlzdDmm56eHkSSPGiRR3jScjBF19nem43HtT4oh3v+Ixf4etCv2FvDFzrW6C+J8NzDJYwqrPUWxxu86PJrXVciDdDQhJZK1keW/dj2RE49d+8VnmsYww3cql0/22SC8+4I7wzPHBawhFX6vLbf0hrn5gjvO54P+IQv+FZ552/vt+1TZ9/dG6cR8H6hCa0g31Nlf0vjYHcez7gBDEt2znEugvzasAKvyVmYHM28qnpOm3nlOjvMfg/lhL6tqeLf4nn1qov/y4pqYdbMfrO9EdewA+fQTY+dut1zZB3mvK9SMj6z3yk87+mPKNzv+QGnh4IO+AcAAA==
+   H4sIAAAAAAAAC72VW26CQBRA7w8OCo7+NS6g6kZa66Pqn+kKdCOtj1bbXdTF+FqSh8BESNBA63CTkyED5Mxc7lxEwnjXIh8w13Iz0p7L+m48HJ4tgcrxzj3iCd8zdAr2VvB5OXP0n5jimUEP+gXm+hfHFlbafq59JVIFDTWoq3C+n7EeHxyRhpPfO8DzCkMYwVhd6jlLTHC+/cH7hWcNG/iGn2i/ts/SDs8eDnCEk0o6bZ6lqsv3hRrU3WRN2T5LQ/dyHfS4F+hadq5xbtzkXLcAr4lHLxxNvyq6T5t+lbd3mPXeijJ1W1Hp94J+9anT/2VpuTBzZr3x2ghy2IQWtKOx6WfbR9xhrjsqIuYz613A8kp9TL3rnjPlfHrX+AcAAA==
   </data>
  </layer>
  <objectgroup name="SpawnPoints">

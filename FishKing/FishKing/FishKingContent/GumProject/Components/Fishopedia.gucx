@@ -641,13 +641,13 @@
     <Variable>
       <Type>int</Type>
       <Name>LeftPageNumber.Blue</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">32</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
       <Name>LeftPageNumber.Font</Name>
-      <Value xsi:type="xsd:string">Touch Of Nature</Value>
+      <Value xsi:type="xsd:string">Deutsche Zierschrift</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -665,7 +665,7 @@
     <Variable>
       <Type>int</Type>
       <Name>LeftPageNumber.Green</Name>
-      <Value xsi:type="xsd:int">215</Value>
+      <Value xsi:type="xsd:int">165</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -695,7 +695,7 @@
     <Variable>
       <Type>int</Type>
       <Name>LeftPageNumber.Red</Name>
-      <Value xsi:type="xsd:int">255</Value>
+      <Value xsi:type="xsd:int">218</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -719,7 +719,7 @@
     <Variable>
       <Type>float</Type>
       <Name>LeftPageNumber.X</Name>
-      <Value xsi:type="xsd:float">5.145833</Value>
+      <Value xsi:type="xsd:float">6</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -731,7 +731,7 @@
     <Variable>
       <Type>float</Type>
       <Name>LeftPageNumber.Y</Name>
-      <Value xsi:type="xsd:float">1.99074006</Value>
+      <Value xsi:type="xsd:float">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -934,13 +934,13 @@
     <Variable>
       <Type>int</Type>
       <Name>RightPageNumber.Blue</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">32</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
       <Name>RightPageNumber.Font</Name>
-      <Value xsi:type="xsd:string">Touch Of Nature</Value>
+      <Value xsi:type="xsd:string">Deutsche Zierschrift</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -958,7 +958,7 @@
     <Variable>
       <Type>int</Type>
       <Name>RightPageNumber.Green</Name>
-      <Value xsi:type="xsd:int">215</Value>
+      <Value xsi:type="xsd:int">165</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -994,7 +994,7 @@
     <Variable>
       <Type>int</Type>
       <Name>RightPageNumber.Red</Name>
-      <Value xsi:type="xsd:int">255</Value>
+      <Value xsi:type="xsd:int">218</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1018,7 +1018,7 @@
     <Variable>
       <Type>float</Type>
       <Name>RightPageNumber.X</Name>
-      <Value xsi:type="xsd:float">89.01489</Value>
+      <Value xsi:type="xsd:float">88</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1030,7 +1030,7 @@
     <Variable>
       <Type>float</Type>
       <Name>RightPageNumber.Y</Name>
-      <Value xsi:type="xsd:float">2.652116</Value>
+      <Value xsi:type="xsd:float">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
