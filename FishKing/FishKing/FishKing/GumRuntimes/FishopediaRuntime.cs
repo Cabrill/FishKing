@@ -120,6 +120,9 @@ namespace FishKing.GumRuntimes
                 }
                 newFishEntry.AssociateWithFish(fishType, fishRecord);
 
+                if (i % 3 > 0) newFishEntry.CurrentLeftDividerState = FishEntryRuntime.LeftDivider.Visible;
+
+
                 if (i % 12 == 3 || i % 12 == 9)
                 {
                     var newPageDivider = new PageDividerRuntime();
@@ -159,6 +162,7 @@ namespace FishKing.GumRuntimes
                 fishRecord = CaughtFish[fishType];
 
                 newFishEntry.AssociateWithFish(fishType, fishRecord);
+                if (i % 3 > 0) newFishEntry.CurrentLeftDividerState = FishEntryRuntime.LeftDivider.Visible;
 
                 if (i % 12 == 3 || i % 12 == 9)
                 {

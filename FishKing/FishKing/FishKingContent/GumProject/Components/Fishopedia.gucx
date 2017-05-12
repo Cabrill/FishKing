@@ -348,6 +348,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>LeftDividerState</Type>
+      <Name>FishEntryInstance1.LeftDividerState</Name>
+      <Value xsi:type="xsd:string">Visible</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>FishEntryInstance1.Parent</Name>
       <Value xsi:type="xsd:string">LeftPage</Value>
@@ -363,6 +369,12 @@
       <Type>float</Type>
       <Name>FishEntryInstance2.Height</Name>
       <Value xsi:type="xsd:float">47</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>LeftDividerState</Type>
+      <Name>FishEntryInstance2.LeftDividerState</Name>
+      <Value xsi:type="xsd:string">Visible</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -386,6 +398,18 @@
     <Variable>
       <Type>string</Type>
       <Name>FishEntryInstance3.Parent</Name>
+      <Value xsi:type="xsd:string">LeftPage</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>LeftDividerState</Type>
+      <Name>FishEntryInstance4.LeftDividerState</Name>
+      <Value xsi:type="xsd:string">Visible</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FishEntryInstance4.Parent</Name>
       <Value xsi:type="xsd:string">LeftPage</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -714,12 +738,6 @@
       <Type>PositionUnitType</Type>
       <Name>LeftPageNumber.Y Units</Name>
       <Value xsi:type="xsd:int">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>PageDividerInstance.Height</Name>
-      <Value xsi:type="xsd:float">6</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1055,8 +1073,9 @@
     <Variable>
       <Type>float</Type>
       <Name>X</Name>
+      <Value xsi:type="xsd:float">24</Value>
       <Category>Position</Category>
-      <SetsValue>false</SetsValue>
+      <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>HorizontalAlignment</Type>
@@ -1075,8 +1094,9 @@
     <Variable>
       <Type>float</Type>
       <Name>Y</Name>
+      <Value xsi:type="xsd:float">-38</Value>
       <Category>Position</Category>
-      <SetsValue>false</SetsValue>
+      <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>
@@ -1175,6 +1195,10 @@
   <Instance>
     <Name>BookmarkClose</Name>
     <BaseType>subcomponent\BookMark</BaseType>
+  </Instance>
+  <Instance>
+    <Name>FishEntryInstance4</Name>
+    <BaseType>subcomponent\FishEntry</BaseType>
   </Instance>
   <Behaviors />
 </ComponentSave>

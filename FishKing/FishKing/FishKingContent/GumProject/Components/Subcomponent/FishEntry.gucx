@@ -62,7 +62,7 @@
     <Variable>
       <Type>int</Type>
       <Name>FishNameValue.Blue</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">226</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -86,7 +86,7 @@
     <Variable>
       <Type>int</Type>
       <Name>FishNameValue.Green</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">43</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -116,7 +116,7 @@
     <Variable>
       <Type>int</Type>
       <Name>FishNameValue.Red</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">138</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -309,7 +309,7 @@
     <Variable>
       <Type>int</Type>
       <Name>FoundInValue.Blue</Name>
-      <Value xsi:type="xsd:int">225</Value>
+      <Value xsi:type="xsd:int">146</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -357,7 +357,7 @@
     <Variable>
       <Type>int</Type>
       <Name>FoundInValue.Red</Name>
-      <Value xsi:type="xsd:int">65</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -560,6 +560,11 @@
       <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
+      <Type>LeftDividerState</Type>
+      <Name>LeftDividerState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>int</Type>
       <Name>LongestText.Blue</Name>
       <Value xsi:type="xsd:int">0</Value>
@@ -734,85 +739,6 @@
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>SpriteContainer.Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>SpriteInstance.Alpha</Name>
-      <Value xsi:type="xsd:int">150</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>SpriteInstance.Blue</Name>
-      <Value xsi:type="xsd:int">11</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>SpriteInstance.Green</Name>
-      <Value xsi:type="xsd:int">134</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>SpriteInstance.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>SpriteInstance.Parent</Name>
-      <Value xsi:type="xsd:string">DetailsContainer</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>SpriteInstance.Red</Name>
-      <Value xsi:type="xsd:int">184</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <IsFile>true</IsFile>
-      <Type>string</Type>
-      <Name>SpriteInstance.SourceFile</Name>
-      <Value xsi:type="xsd:string">FishBook.png</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>TextureAddress</Type>
-      <Name>SpriteInstance.Texture Address</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>SpriteInstance.Texture Height</Name>
-      <Value xsi:type="xsd:int">512</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>SpriteInstance.Texture Left</Name>
-      <Value xsi:type="xsd:int">1409</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>SpriteInstance.Texture Top</Name>
-      <Value xsi:type="xsd:int">1375</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>SpriteInstance.Texture Width</Name>
-      <Value xsi:type="xsd:int">512</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>SpriteInstance.Width Units</Name>
       <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -1032,9 +958,136 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>float</Type>
+      <Name>VerticalDividerSprite.Height</Name>
+      <Value xsi:type="xsd:float">80</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>VerticalDividerSprite.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>VerticalDividerSprite.Parent</Name>
+      <Value xsi:type="xsd:string">DetailsContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>VerticalDividerSprite.SourceFile</Name>
+      <Value xsi:type="xsd:string">FishBook.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TextureAddress</Type>
+      <Name>VerticalDividerSprite.Texture Address</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>VerticalDividerSprite.Texture Height</Name>
+      <Value xsi:type="xsd:int">1170</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>VerticalDividerSprite.Texture Left</Name>
+      <Value xsi:type="xsd:int">1920</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>VerticalDividerSprite.Texture Top</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>VerticalDividerSprite.Texture Width</Name>
+      <Value xsi:type="xsd:int">64</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>VerticalDividerSprite.Visible</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>VerticalDividerSprite.Width</Name>
+      <Value xsi:type="xsd:float">4</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>VerticalDividerSprite.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>VerticalDividerSprite.X</Name>
+      <Value xsi:type="xsd:float">-4.5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>VerticalDividerSprite.X Origin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>VerticalDividerSprite.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>VerticalDividerSprite.Y</Name>
+      <Value xsi:type="xsd:float">45</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>VerticalDividerSprite.Y Origin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>VerticalDividerSprite.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>bool</Type>
       <Name>Visible</Name>
       <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>WaveBorder.Alpha</Name>
+      <Value xsi:type="xsd:int">225</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>WaveBorder.Blue</Name>
+      <Value xsi:type="xsd:int">247</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>WaveBorder.Green</Name>
+      <Value xsi:type="xsd:int">169</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1053,6 +1106,12 @@
       <Type>string</Type>
       <Name>WaveBorder.Parent</Name>
       <Value xsi:type="xsd:string">SpriteContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>WaveBorder.Red</Name>
+      <Value xsi:type="xsd:int">113</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1090,6 +1149,12 @@
       <Type>int</Type>
       <Name>WaveBorder.Texture Width</Name>
       <Value xsi:type="xsd:int">389</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>WaveBorder.Visible</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1353,6 +1418,27 @@
       </Variable>
     </State>
   </Category>
+  <Category>
+    <Name>LeftDivider</Name>
+    <State>
+      <Name>Visible</Name>
+      <Variable>
+        <Type>bool</Type>
+        <Name>VerticalDividerSprite.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Hidden</Name>
+      <Variable>
+        <Type>bool</Type>
+        <Name>VerticalDividerSprite.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
   <Instance>
     <Name>WaveBorder</Name>
     <BaseType>Sprite</BaseType>
@@ -1368,10 +1454,6 @@
   <Instance>
     <Name>DetailsContainer</Name>
     <BaseType>Container</BaseType>
-  </Instance>
-  <Instance>
-    <Name>SpriteInstance</Name>
-    <BaseType>Sprite</BaseType>
   </Instance>
   <Instance>
     <Name>FishNameValue</Name>
@@ -1412,6 +1494,10 @@
   <Instance>
     <Name>FoundInValue</Name>
     <BaseType>Text</BaseType>
+  </Instance>
+  <Instance>
+    <Name>VerticalDividerSprite</Name>
+    <BaseType>Sprite</BaseType>
   </Instance>
   <Behaviors />
 </ComponentSave>
