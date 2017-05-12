@@ -1,4 +1,5 @@
-﻿using FishKing.GameClasses;
+﻿using FishKing.Entities;
+using FishKing.GameClasses;
 using FishKing.Managers;
 using FishKing.Screens;
 using FishKing.UtilityClasses;
@@ -618,6 +619,9 @@ namespace FishKing.GumRuntimes
 
         public void Setup(GameScreen screen)
         {
+#if DEBUG
+            if (DebuggingVariables.MapDebugMode) return;
+#endif
             this.gameScreen = screen;
             PlayerFishNumber = SaveGameManager.CurrentSaveData.PlayerFishNumber;
             GoalScore = TournamentManager.CurrentTournament.GoalPoints;

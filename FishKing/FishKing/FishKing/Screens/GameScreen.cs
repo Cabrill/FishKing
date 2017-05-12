@@ -42,7 +42,7 @@ namespace FishKing.Screens
 {
 	public partial class GameScreen
 	{
-        static string levelToLoad = "DesertIsland";
+        static string levelToLoad = "ForestPond";
         static string startPointName = "FirstSpawn";
         private bool wasFishing = false;
         private bool shouldUpdateCamera;
@@ -69,7 +69,12 @@ namespace FishKing.Screens
                 MusicManager.Volume = 0.15f;
                 MusicManager.PlaySong();
             }
-            if (!TournamentManager.TournamentHasStarted)
+
+            if (!TournamentManager.TournamentHasStarted
+#if DEBUG
+                && !DebuggingVariables.MapDebugMode
+#endif
+                )
             {
                 TournamentManager.StartTournament();
                 levelToLoad = TournamentManager.CurrentTournament.MapName;
@@ -82,6 +87,14 @@ namespace FishKing.Screens
             InitializeCamera();
 
             TournamentStatusInstance.Setup(this);
+
+#if DEBUG
+            if (DebuggingVariables.MapDebugMode)
+            {
+                RestartVariables.Add("this.CharacterInstance.X");
+                RestartVariables.Add("this.CharacterInstance.Y");
+            }
+#endif
         }
 
         private void InitializePauseMenuButtons()
@@ -322,38 +335,9 @@ namespace FishKing.Screens
                 }
 #endif
 
-
-                if (TournamentManager.CurrentScores.HasPlayerFinished)
+#if DEBUG
+                if (DebuggingVariables.MapDebugMode)
                 {
-                    if (!ResultsDisplayInstance.Visible)
-                    {
-                        TournamentStatusInstance.UpdateFishPlaceMarkers(TournamentManager.CurrentScores.AsArray);
-                        TournamentManager.EndTournament();
-
-                        ResultsDisplayInstance.DisplayResults(TournamentManager.CurrentTournamentResults);
-                        ResultsDisplayInstance.OKButtonClick += ResultsDisplayOkClick;
-                        ResultsDisplayInstance.Visible = true;
-
-                        TournamentStatusInstance.StartCelebration();
-                    }
-                    else if (CharacterInstance.EscapeInput.WasJustPressed || CharacterInstance.ActionInput.WasJustPressed)
-                    {
-                        ResultsDisplayInstance.ClickOK();
-                    }
-                }
-                else
-                {
-                    #if DEBUG
-                    if (DebuggingVariables.SimulateTournamentScores)
-                    {
-                        TournamentManager.CurrentScores.SimulateTournament();
-                    }
-                    #endif
-                    if (TournamentManager.CurrentScores.HasScoreChanged)
-                    {
-                        TournamentStatusInstance.UpdateFishPlaceMarkers(TournamentManager.CurrentScores.AsArray);
-                        TournamentManager.CurrentScores.MarkScoreReviewed();
-                    }
                     if (shouldUpdateCamera) UpdateCamera();
                     DialogActivity();
                     FishingActivity();
@@ -373,6 +357,62 @@ namespace FishKing.Screens
                         AmbientAudioManager.UpdateAmbientSoundSources();
                     }
                 }
+                else
+                {
+#endif
+                    if (TournamentManager.CurrentScores.HasPlayerFinished)
+                    {
+                        if (!ResultsDisplayInstance.Visible)
+                        {
+                            TournamentStatusInstance.UpdateFishPlaceMarkers(TournamentManager.CurrentScores.AsArray);
+                            TournamentManager.EndTournament();
+
+                            ResultsDisplayInstance.DisplayResults(TournamentManager.CurrentTournamentResults);
+                            ResultsDisplayInstance.OKButtonClick += ResultsDisplayOkClick;
+                            ResultsDisplayInstance.Visible = true;
+
+                            TournamentStatusInstance.StartCelebration();
+                        }
+                        else if (CharacterInstance.EscapeInput.WasJustPressed || CharacterInstance.ActionInput.WasJustPressed)
+                        {
+                            ResultsDisplayInstance.ClickOK();
+                        }
+                    }
+                    else
+                    {
+#if DEBUG
+                        if (DebuggingVariables.SimulateTournamentScores)
+                        {
+                            TournamentManager.CurrentScores.SimulateTournament();
+                        }
+#endif
+                        if (TournamentManager.CurrentScores.HasScoreChanged)
+                        {
+                            TournamentStatusInstance.UpdateFishPlaceMarkers(TournamentManager.CurrentScores.AsArray);
+                            TournamentManager.CurrentScores.MarkScoreReviewed();
+                        }
+                        if (shouldUpdateCamera) UpdateCamera();
+                        DialogActivity();
+                        FishingActivity();
+
+                        bool characterMoved = false;
+                        if (CanMoveCharacter)
+                        {
+                            characterMoved = this.CharacterInstance.PerformMovementActivity(this.SolidCollisions, NpcCharacterList);
+                        }
+
+                        CharacterInstance.UpdateFishingStatus(characterMoved);
+                        this.CharacterInstance.SetSpriteOffset();
+
+                        CollisionActivity();
+                        if (CharacterInstance.IsMoving)
+                        {
+                            AmbientAudioManager.UpdateAmbientSoundSources();
+                        }
+                    }
+#if DEBUG
+                }
+#endif
             }
         }
 
