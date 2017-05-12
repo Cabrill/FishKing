@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="40" height="23" tilewidth="32" tileheight="32" nextobjectid="1">
+ <tileset firstgid="1" name="alltiles" tilewidth="32" tileheight="32" tilecount="4096" columns="64">
+  <image source="../Tilesets/alltiles.png" width="2048" height="2048"/>
+  <tile id="69">
+   <animation>
+    <frame tileid="64" duration="50"/>
+    <frame tileid="65" duration="50"/>
+    <frame tileid="66" duration="50"/>
+    <frame tileid="67" duration="50"/>
+    <frame tileid="68" duration="50"/>
+    <frame tileid="69" duration="50"/>
+   </animation>
+  </tile>
+  <tile id="261">
+   <animation>
+    <frame tileid="256" duration="50"/>
+    <frame tileid="257" duration="50"/>
+    <frame tileid="258" duration="50"/>
+    <frame tileid="259" duration="50"/>
+    <frame tileid="260" duration="50"/>
+    <frame tileid="261" duration="50"/>
+   </animation>
+  </tile>
+  <tile id="325">
+   <animation>
+    <frame tileid="320" duration="50"/>
+    <frame tileid="321" duration="50"/>
+    <frame tileid="322" duration="50"/>
+    <frame tileid="323" duration="50"/>
+    <frame tileid="324" duration="50"/>
+    <frame tileid="325" duration="50"/>
+   </animation>
+  </tile>
+  <tile id="389">
+   <animation>
+    <frame tileid="384" duration="50"/>
+    <frame tileid="385" duration="50"/>
+    <frame tileid="386" duration="50"/>
+    <frame tileid="387" duration="50"/>
+    <frame tileid="388" duration="50"/>
+    <frame tileid="389" duration="50"/>
+   </animation>
+  </tile>
+  <tile id="453">
+   <animation>
+    <frame tileid="448" duration="50"/>
+    <frame tileid="449" duration="50"/>
+    <frame tileid="450" duration="50"/>
+    <frame tileid="451" duration="50"/>
+    <frame tileid="452" duration="50"/>
+    <frame tileid="453" duration="50"/>
+   </animation>
+  </tile>
+  <tile id="517">
+   <animation>
+    <frame tileid="512" duration="50"/>
+    <frame tileid="513" duration="50"/>
+    <frame tileid="514" duration="50"/>
+    <frame tileid="515" duration="50"/>
+    <frame tileid="516" duration="50"/>
+    <frame tileid="517" duration="50"/>
+   </animation>
+  </tile>
+  <tile id="581">
+   <animation>
+    <frame tileid="576" duration="50"/>
+    <frame tileid="577" duration="50"/>
+    <frame tileid="578" duration="50"/>
+    <frame tileid="579" duration="50"/>
+    <frame tileid="580" duration="50"/>
+    <frame tileid="581" duration="50"/>
+   </animation>
+  </tile>
+  <tile id="645">
+   <animation>
+    <frame tileid="640" duration="50"/>
+    <frame tileid="641" duration="50"/>
+    <frame tileid="642" duration="50"/>
+    <frame tileid="643" duration="50"/>
+    <frame tileid="644" duration="50"/>
+    <frame tileid="645" duration="50"/>
+   </animation>
+  </tile>
+  <tile id="1797">
+   <animation>
+    <frame tileid="1792" duration="50"/>
+    <frame tileid="1793" duration="50"/>
+    <frame tileid="1794" duration="50"/>
+    <frame tileid="1795" duration="50"/>
+    <frame tileid="1796" duration="50"/>
+    <frame tileid="1797" duration="50"/>
+   </animation>
+  </tile>
+  <tile id="2117">
+   <animation>
+    <frame tileid="2112" duration="50"/>
+    <frame tileid="2113" duration="50"/>
+    <frame tileid="2114" duration="50"/>
+    <frame tileid="2115" duration="50"/>
+    <frame tileid="2116" duration="50"/>
+    <frame tileid="2117" duration="50"/>
+   </animation>
+  </tile>
+  <tile id="2181">
+   <animation>
+    <frame tileid="2176" duration="50"/>
+    <frame tileid="2177" duration="50"/>
+    <frame tileid="2178" duration="50"/>
+    <frame tileid="2179" duration="50"/>
+    <frame tileid="2180" duration="50"/>
+    <frame tileid="2181" duration="50"/>
+   </animation>
+  </tile>
+ </tileset>
+ <layer name="Ground" width="40" height="23">
+  <data encoding="base64" compression="zlib">
+   eJzt0LERgCAMheEEPKdwGZvsReNoDqEOA6XJhXhSUbzvju6HAETamohO1ksSubw26kdmWNLaO+slQXuZ9gn6kRn2XQc753V6r92W71l/Zrztzr6ZlPZ/PPkdAQAAAACgrwLVuRtP
+  </data>
+ </layer>
+ <layer name="Water" width="40" height="23">
+  <data encoding="base64" compression="zlib">
+   eJztk0EOgCAMBDkhL/NpvlsSLh6ku01bRbDJ3jplICVvKeWao7T0ai+t7xqp7voRJzFf8NOe59mP/BAf3d9jGP6t+1hnzOSH6vez+bGOI/tp2dX8kOPKfh7/eHQ/iffys3AaP1QRfhpuZj/tHjHsE+/n5Ra159F+zHxPPjqM3wknExvq
+  </data>
+ </layer>
+ <layer name="Bridge" width="40" height="23">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20IX6AAAADgNw5gAAE=
+  </data>
+ </layer>
+ <layer name="Overlay" width="40" height="23">
+  <data encoding="base64" compression="zlib">
+   eJztwTEBAAAAwqD1T20IX6AAAADgNw5gAAE=
+  </data>
+ </layer>
+</map>

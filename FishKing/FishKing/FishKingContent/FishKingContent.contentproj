@@ -697,6 +697,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>CaveLightCone</Name>
     </None>
+    <None Include="Screens\GameScreen\Levels\AllBeach.tmx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>AllBeach</Name>
+    </None>
     <None Include="Screens\GameScreen\Levels\BasicIsland.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>BasicIsland</Name>
@@ -724,6 +728,14 @@
     <None Include="Screens\GameScreen\Levels\ThePond.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ThePond</Name>
+    </None>
+    <None Include="Screens\GameScreen\Levels\TheRaft.tmx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TheRaft</Name>
+    </None>
+    <None Include="Screens\GameScreen\Levels\TheUnderground.tmx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>TheUnderground</Name>
     </None>
     <None Include="Screens\GameScreen\Objects\RodAnimations.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
