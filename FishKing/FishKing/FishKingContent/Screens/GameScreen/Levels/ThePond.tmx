@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="17" tilewidth="32" tileheight="32" nextobjectid="3">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="17" tilewidth="32" tileheight="32" nextobjectid="4">
  <tileset firstgid="1" name="alltiles" tilewidth="32" tileheight="32" tilecount="4096" columns="64">
   <image source="../Tilesets/alltiles.png" width="2048" height="2048"/>
   <tile id="5">
@@ -1228,6 +1228,11 @@
  <objectgroup name="PondLines">
   <object id="2" x="179.333" y="146">
    <polyline points="0,0 538.667,1.33333 539.333,250.667 -1.33333,252.667 -2,0"/>
+  </object>
+ </objectgroup>
+ <objectgroup name="ForestLines">
+  <object id="3" x="36.6667" y="79.3333">
+   <polyline points="0,0 71.3333,-46.6667 914.667,-47.3333"/>
   </object>
  </objectgroup>
 </map>

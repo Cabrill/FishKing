@@ -99,7 +99,7 @@
     <Variable>
       <Type>int</Type>
       <Name>SpriteInstance.Texture Top</Name>
-      <Value xsi:type="xsd:int">1225</Value>
+      <Value xsi:type="xsd:int">1375</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

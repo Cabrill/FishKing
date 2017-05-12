@@ -74,7 +74,7 @@ namespace FishKing.Screens
                 MainMenuGumRuntime.ScrollToAndHighlightLastEligibleTournament();
             }
 
-            FlatRedBall.Debugging.Debugger.Write(FlatRedBall.Gui.GuiManager.Cursor.WindowOver);
+            //FlatRedBall.Debugging.Debugger.Write(FlatRedBall.Gui.GuiManager.Cursor.WindowOver);
             HandleMenuMovement();
             HandleMenuSelection();
             HandleExitInput();

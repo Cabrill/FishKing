@@ -717,6 +717,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>DesertIsland</Name>
     </None>
+    <None Include="Screens\GameScreen\Levels\ForestPond.tmx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>ForestPond</Name>
+    </None>
     <None Include="Screens\GameScreen\Levels\SmallForest.tmx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>SmallForest</Name>
@@ -794,6 +798,11 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Name>DeepOceanAmbient</Name>
+    </Compile>
+    <Compile Include="GlobalContent\SoundEffects\ForestAmbient.wav">
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Name>ForestAmbient</Name>
     </Compile>
     <Compile Include="GlobalContent\SoundEffects\LakeAmbient.wav">
       <Importer>WavImporter</Importer>

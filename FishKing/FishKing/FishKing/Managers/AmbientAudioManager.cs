@@ -20,11 +20,13 @@ namespace FishKing
         private static SoundEffectInstance deepOceanAmbientSound;
         private static SoundEffectInstance lakeAmbientSound;
         private static SoundEffectInstance caveAmbientSound;
+        private static SoundEffectInstance forestAmbientSound;
 
         private static AudioListener listener = new AudioListener();
         private static AudioEmitter waterfallEmitter;
         private static AudioEmitter oceanEmitter;
         private static AudioEmitter riverEmitter;
+        private static AudioEmitter forestEmitter;
 
         public static void UpdateAmbientSoundSources()
         {
@@ -147,6 +149,26 @@ namespace FishKing
                 if (deepOceanAmbientSound.State != SoundState.Playing)
                 {
                     deepOceanAmbientSound.Play();
+                }
+            }
+
+            if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "ForestLines") != null)
+            {
+                if (forestAmbientSound == null)
+                {
+                    forestAmbientSound = GlobalContent.ForestAmbient.CreateInstance();
+                    forestAmbientSound.IsLooped = true;
+                    forestEmitter = new AudioEmitter();
+                }
+
+                forestEmitter.Position = FindClosestPolygonPointOnLayer("ForestLines", charPosition);
+                forestAmbientSound.Volume = Math.Max(0, 1 - (forestEmitter.Position.Length() / 10));
+
+                forestAmbientSound.Apply3D(listener, waterfallEmitter);
+
+                if (forestAmbientSound.State != SoundState.Playing)
+                {
+                    forestAmbientSound.Play();
                 }
             }
         }

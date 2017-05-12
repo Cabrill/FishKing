@@ -32,7 +32,7 @@
     <Variable>
       <Type>int</Type>
       <Name>BookBackground.Texture Height</Name>
-      <Value xsi:type="xsd:int">1224</Value>
+      <Value xsi:type="xsd:int">1375</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -74,7 +74,7 @@
     <Variable>
       <Type>float</Type>
       <Name>BookContainer.Height</Name>
-      <Value xsi:type="xsd:float">85</Value>
+      <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -248,7 +248,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Bookmarks.Height</Name>
-      <Value xsi:type="xsd:float">100</Value>
+      <Value xsi:type="xsd:float">12.3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -260,7 +260,6 @@
     <Variable>
       <Type>string</Type>
       <Name>Bookmarks.Parent</Name>
-      <Value xsi:type="xsd:string">DeskBackground</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -278,13 +277,19 @@
     <Variable>
       <Type>float</Type>
       <Name>Bookmarks.X</Name>
-      <Value xsi:type="xsd:float">1</Value>
+      <Value xsi:type="xsd:float">3.994792</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>Bookmarks.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>Bookmarks.Y</Name>
-      <Value xsi:type="xsd:float">-5.18518543</Value>
+      <Value xsi:type="xsd:float">87.57099</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -296,97 +301,13 @@
     <Variable>
       <Type>ChildrenLayout</Type>
       <Name>Children Layout</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>bool</Type>
       <Name>Clips Children</Name>
       <Value xsi:type="xsd:boolean">false</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>bool</Type>
-      <Name>DeskBackground.ExposeChildrenEvents</Name>
-      <Value xsi:type="xsd:boolean">true</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>DeskBackground.Height</Name>
-      <Value xsi:type="xsd:float">15</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>DeskBackground.Height Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>DeskBackground.Parent</Name>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <IsFile>true</IsFile>
-      <Type>string</Type>
-      <Name>DeskBackground.SourceFile</Name>
-      <Value xsi:type="xsd:string">FishBook.png</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>TextureAddress</Type>
-      <Name>DeskBackground.Texture Address</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>DeskBackground.Texture Height</Name>
-      <Value xsi:type="xsd:int">149</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>DeskBackground.Texture Left</Name>
-      <Value xsi:type="xsd:int">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>DeskBackground.Texture Top</Name>
-      <Value xsi:type="xsd:int">1899</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>DeskBackground.Texture Width</Name>
-      <Value xsi:type="xsd:int">2048</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>DimensionUnitType</Type>
-      <Name>DeskBackground.Width Units</Name>
-      <Value xsi:type="xsd:int">1</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>DeskBackground.X</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>float</Type>
-      <Name>DeskBackground.Y</Name>
-      <Value xsi:type="xsd:float">0</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>PositionUnitType</Type>
-      <Name>DeskBackground.Y Units</Name>
-      <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -552,7 +473,7 @@
     <Variable>
       <Type>float</Type>
       <Name>LeftBookmarkContainer.Y</Name>
-      <Value xsi:type="xsd:float">-1.2</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -582,7 +503,7 @@
     <Variable>
       <Type>float</Type>
       <Name>LeftPage.Height</Name>
-      <Value xsi:type="xsd:float">90</Value>
+      <Value xsi:type="xsd:float">80</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -672,7 +593,7 @@
     <Variable>
       <Type>float</Type>
       <Name>LeftPageCorner.X</Name>
-      <Value xsi:type="xsd:float">4.89583349</Value>
+      <Value xsi:type="xsd:float">4.87847233</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -684,7 +605,7 @@
     <Variable>
       <Type>float</Type>
       <Name>LeftPageCorner.Y</Name>
-      <Value xsi:type="xsd:float">89.86773</Value>
+      <Value xsi:type="xsd:float">79.20369</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -839,7 +760,7 @@
     <Variable>
       <Type>float</Type>
       <Name>RightBookmarkContainer.Width</Name>
-      <Value xsi:type="xsd:float">45</Value>
+      <Value xsi:type="xsd:float">36.9097328</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -851,7 +772,7 @@
     <Variable>
       <Type>float</Type>
       <Name>RightBookmarkContainer.Y</Name>
-      <Value xsi:type="xsd:float">-1.2</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -881,7 +802,7 @@
     <Variable>
       <Type>float</Type>
       <Name>RightPage.Height</Name>
-      <Value xsi:type="xsd:float">90</Value>
+      <Value xsi:type="xsd:float">80</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -971,7 +892,7 @@
     <Variable>
       <Type>float</Type>
       <Name>RightPageCorner.X</Name>
-      <Value xsi:type="xsd:float">89.94048</Value>
+      <Value xsi:type="xsd:float">89.91964</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -983,7 +904,7 @@
     <Variable>
       <Type>float</Type>
       <Name>RightPageCorner.Y</Name>
-      <Value xsi:type="xsd:float">89.86773</Value>
+      <Value xsi:type="xsd:float">79.111145</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1226,10 +1147,6 @@
   <Instance>
     <Name>FishEntryInstance</Name>
     <BaseType>subcomponent\FishEntry</BaseType>
-  </Instance>
-  <Instance>
-    <Name>DeskBackground</Name>
-    <BaseType>Sprite</BaseType>
   </Instance>
   <Instance>
     <Name>LeftPageNumber</Name>
