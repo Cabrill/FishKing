@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="17" tilewidth="32" tileheight="32" nextobjectid="1">
+<map version="1.0" orientation="orthogonal" renderorder="right-down" width="30" height="17" tilewidth="32" tileheight="32" nextobjectid="5">
  <tileset firstgid="1" name="alltiles" tilewidth="32" tileheight="32" tilecount="4096" columns="64">
   <image source="../Tilesets/alltiles.png" width="2048" height="2048"/>
   <tile id="5">
@@ -95,6 +95,11 @@
     <frame tileid="2117" duration="100"/>
    </animation>
   </tile>
+  <tile id="88">
+   <properties>
+    <property name="IsWaterfall" type="bool" value="true"/>
+   </properties>
+  </tile>
   <tile id="89">
    <animation>
     <frame tileid="70" duration="200"/>
@@ -131,6 +136,11 @@
     <frame tileid="132" duration="200"/>
     <frame tileid="133" duration="200"/>
    </animation>
+  </tile>
+  <tile id="152">
+   <properties>
+    <property name="IsWaterfall" type="bool" value="true"/>
+   </properties>
   </tile>
   <tile id="153">
    <animation>
@@ -252,6 +262,11 @@
     <frame tileid="325" duration="200"/>
    </animation>
   </tile>
+  <tile id="342">
+   <properties>
+    <property name="IsPond" type="bool" value="true"/>
+   </properties>
+  </tile>
   <tile id="343">
    <properties>
     <property name="IsPond" type="bool" value="true"/>
@@ -338,6 +353,16 @@
     <frame tileid="412" duration="200"/>
    </animation>
   </tile>
+  <tile id="427">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="428">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
   <tile id="453">
    <properties>
     <property name="HasCollision" type="bool" value="true"/>
@@ -375,6 +400,21 @@
     <frame tileid="476" duration="200"/>
    </animation>
   </tile>
+  <tile id="491">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="492">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="497">
+   <properties>
+    <property name="HasCollision" type="bool" value="false"/>
+   </properties>
+  </tile>
   <tile id="517">
    <properties>
     <property name="HasCollision" type="bool" value="true"/>
@@ -387,6 +427,11 @@
     <frame tileid="516" duration="200"/>
     <frame tileid="517" duration="200"/>
    </animation>
+  </tile>
+  <tile id="534">
+   <properties>
+    <property name="IsLake" type="bool" value="true"/>
+   </properties>
   </tile>
   <tile id="535">
    <properties>
@@ -412,6 +457,11 @@
     <frame tileid="540" duration="200"/>
    </animation>
   </tile>
+  <tile id="561">
+   <properties>
+    <property name="HasCollision" type="bool" value="false"/>
+   </properties>
+  </tile>
   <tile id="581">
    <properties>
     <property name="HasCollision" type="bool" value="true"/>
@@ -424,6 +474,11 @@
     <frame tileid="580" duration="200"/>
     <frame tileid="581" duration="200"/>
    </animation>
+  </tile>
+  <tile id="598">
+   <properties>
+    <property name="IsLake" type="bool" value="true"/>
+   </properties>
   </tile>
   <tile id="599">
    <properties>
@@ -449,6 +504,11 @@
     <frame tileid="604" duration="200"/>
    </animation>
   </tile>
+  <tile id="625">
+   <properties>
+    <property name="HasCollision" type="bool" value="false"/>
+   </properties>
+  </tile>
   <tile id="645">
    <properties>
     <property name="HasCollision" type="bool" value="true"/>
@@ -461,6 +521,11 @@
     <frame tileid="644" duration="200"/>
     <frame tileid="645" duration="200"/>
    </animation>
+  </tile>
+  <tile id="662">
+   <properties>
+    <property name="IsLake" type="bool" value="true"/>
+   </properties>
   </tile>
   <tile id="663">
    <properties>
@@ -503,16 +568,21 @@
     <frame tileid="709" duration="200"/>
    </animation>
   </tile>
+  <tile id="726">
+   <properties>
+    <property name="IsRiver" type="bool" value="true"/>
+   </properties>
+  </tile>
   <tile id="727">
    <properties>
     <property name="IsRiver" type="bool" value="true"/>
    </properties>
    <animation>
-    <frame tileid="722" duration="200"/>
-    <frame tileid="723" duration="200"/>
-    <frame tileid="724" duration="200"/>
-    <frame tileid="725" duration="200"/>
-    <frame tileid="726" duration="200"/>
+    <frame tileid="722" duration="160"/>
+    <frame tileid="723" duration="160"/>
+    <frame tileid="724" duration="160"/>
+    <frame tileid="725" duration="160"/>
+    <frame tileid="726" duration="160"/>
    </animation>
   </tile>
   <tile id="732">
@@ -536,6 +606,16 @@
     <frame tileid="772" duration="200"/>
     <frame tileid="773" duration="200"/>
    </animation>
+  </tile>
+  <tile id="809">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="810">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
   </tile>
   <tile id="837">
    <properties>
@@ -576,6 +656,41 @@
     <frame tileid="965" duration="200"/>
    </animation>
   </tile>
+  <tile id="978">
+   <properties>
+    <property name="IsBridge" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="979">
+   <properties>
+    <property name="IsBridge" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="980">
+   <properties>
+    <property name="IsBridge" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1001">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1002">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1004">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1005">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
   <tile id="1029">
    <properties>
     <property name="IsOcean" type="bool" value="true"/>
@@ -589,6 +704,21 @@
     <frame tileid="1029" duration="200"/>
    </animation>
   </tile>
+  <tile id="1042">
+   <properties>
+    <property name="IsBridge" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1043">
+   <properties>
+    <property name="IsBridge" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1044">
+   <properties>
+    <property name="IsBridge" type="bool" value="true"/>
+   </properties>
+  </tile>
   <tile id="1093">
    <properties>
     <property name="IsOcean" type="bool" value="true"/>
@@ -601,6 +731,26 @@
     <frame tileid="1092" duration="200"/>
     <frame tileid="1093" duration="200"/>
    </animation>
+  </tile>
+  <tile id="1106">
+   <properties>
+    <property name="IsBridge" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1107">
+   <properties>
+    <property name="IsBridge" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1108">
+   <properties>
+    <property name="IsBridge" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1109">
+   <properties>
+    <property name="IsBridge" type="bool" value="true"/>
+   </properties>
   </tile>
   <tile id="1129">
    <properties>
@@ -830,6 +980,11 @@
     <frame tileid="1474" duration="200"/>
    </animation>
   </tile>
+  <tile id="1482">
+   <properties>
+    <property name="IsBridge" type="bool" value="true"/>
+   </properties>
+  </tile>
   <tile id="1513">
    <properties>
     <property name="HasCollision" type="bool" value="true"/>
@@ -898,6 +1053,11 @@
     <frame tileid="1541" duration="200"/>
    </animation>
   </tile>
+  <tile id="1546">
+   <properties>
+    <property name="IsBridge" type="bool" value="true"/>
+   </properties>
+  </tile>
   <tile id="1577">
    <properties>
     <property name="HasCollision" type="bool" value="true"/>
@@ -951,6 +1111,16 @@
     <frame tileid="1605" duration="200"/>
    </animation>
   </tile>
+  <tile id="1610">
+   <properties>
+    <property name="IsBridge" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1614">
+   <properties>
+    <property name="IsBridge" value="true"/>
+   </properties>
+  </tile>
   <tile id="1615">
    <properties>
     <property name="IsBridge" type="bool" value="true"/>
@@ -964,6 +1134,16 @@
   <tile id="1617">
    <properties>
     <property name="IsBridge" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1618">
+   <properties>
+    <property name="IsBridge" value="true"/>
+   </properties>
+  </tile>
+  <tile id="1622">
+   <properties>
+    <property name="IsDeepOcean" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="1639">
@@ -1180,6 +1360,7 @@
   <tile id="1797">
    <properties>
     <property name="IsOcean" type="bool" value="true"/>
+    <property name="IsRiver" type="bool" value="true"/>
    </properties>
    <animation>
     <frame tileid="1792" duration="250"/>
@@ -1189,6 +1370,11 @@
     <frame tileid="1796" duration="250"/>
     <frame tileid="1797" duration="250"/>
    </animation>
+  </tile>
+  <tile id="1828">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
   </tile>
   <tile id="1861">
    <properties>
@@ -1202,6 +1388,11 @@
     <frame tileid="1860" duration="250"/>
     <frame tileid="1861" duration="250"/>
    </animation>
+  </tile>
+  <tile id="1862">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
   </tile>
   <tile id="1925">
    <properties>
@@ -1293,6 +1484,7 @@
   <tile id="2181">
    <properties>
     <property name="IsOcean" type="bool" value="true"/>
+    <property name="IsRiver" type="bool" value="true"/>
    </properties>
    <animation>
     <frame tileid="2180" duration="250"/>
@@ -1302,6 +1494,41 @@
     <frame tileid="2178" duration="250"/>
     <frame tileid="2179" duration="250"/>
    </animation>
+  </tile>
+  <tile id="2188">
+   <properties>
+    <property name="HasCollision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="2189">
+   <properties>
+    <property name="HasCollision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="2190">
+   <properties>
+    <property name="HasCollision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="2193">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2194">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2195">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2196">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
   </tile>
   <tile id="2208">
    <properties>
@@ -1334,6 +1561,41 @@
    </properties>
   </tile>
   <tile id="2214">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2252">
+   <properties>
+    <property name="HasCollision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="2253">
+   <properties>
+    <property name="HasCollision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="2254">
+   <properties>
+    <property name="HasCollision" type="bool" value="false"/>
+   </properties>
+  </tile>
+  <tile id="2257">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2258">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2259">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2260">
    <properties>
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
@@ -1388,9 +1650,89 @@
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="2944">
+  <tile id="2353">
+   <properties>
+    <property name="IsPond" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2354">
+   <properties>
+    <property name="IsPond" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2355">
+   <properties>
+    <property name="IsPond" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2356">
+   <properties>
+    <property name="IsPond" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2357">
+   <properties>
+    <property name="IsPond" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2358">
+   <properties>
+    <property name="IsPond" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2852">
    <properties>
     <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2853">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2854">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2855">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2880">
+   <properties>
+    <property name="HasCollision" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2912">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2913">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2914">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2915">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2916">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2944">
+   <properties>
+    <property name="HasCollision" value="true"/>
    </properties>
   </tile>
   <tile id="2949">
@@ -1398,9 +1740,34 @@
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="3008">
+  <tile id="2976">
    <properties>
     <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2977">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2978">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2979">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="2980">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3008">
+   <properties>
+    <property name="HasCollision" value="true"/>
    </properties>
   </tile>
   <tile id="3013">
@@ -1408,54 +1775,109 @@
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="3072">
+  <tile id="3044">
    <properties>
     <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3053">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3054">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3072">
+   <properties>
+    <property name="HasCollision" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3076">
+   <properties>
+    <property name="HasCollision" value="true"/>
    </properties>
   </tile>
   <tile id="3077">
    <properties>
-    <property name="HasCollision" type="bool" value="true"/>
+    <property name="HasCollision" value="true"/>
    </properties>
   </tile>
   <tile id="3078">
    <properties>
-    <property name="HasCollision" type="bool" value="true"/>
+    <property name="HasCollision" value="true"/>
    </properties>
   </tile>
   <tile id="3081">
    <properties>
+    <property name="HasCollision" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3094">
+   <properties>
+    <property name="IsBridge" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3095">
+   <properties>
+    <property name="IsBridge" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3096">
+   <properties>
+    <property name="IsBridge" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3113">
+   <properties>
     <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3114">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3115">
+   <properties>
+    <property name="HasCollision" value="true"/>
    </properties>
   </tile>
   <tile id="3136">
    <properties>
-    <property name="HasCollision" type="bool" value="true"/>
+    <property name="HasCollision" value="true"/>
    </properties>
   </tile>
   <tile id="3137">
    <properties>
-    <property name="HasCollision" type="bool" value="true"/>
+    <property name="HasCollision" value="true"/>
    </properties>
   </tile>
   <tile id="3138">
    <properties>
-    <property name="HasCollision" type="bool" value="true"/>
+    <property name="HasCollision" value="true"/>
    </properties>
   </tile>
   <tile id="3139">
    <properties>
-    <property name="HasCollision" type="bool" value="true"/>
+    <property name="HasCollision" value="true"/>
    </properties>
   </tile>
   <tile id="3140">
+   <properties>
+    <property name="HasCollision" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3141">
    <properties>
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
   </tile>
   <tile id="3142">
    <properties>
-    <property name="HasCollision" type="bool" value="true"/>
+    <property name="HasCollision" value="true"/>
    </properties>
   </tile>
   <tile id="3143">
@@ -1470,7 +1892,27 @@
   </tile>
   <tile id="3145">
    <properties>
+    <property name="HasCollision" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3173">
+   <properties>
     <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3177">
+   <properties>
+    <property name="HasCollision" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3178">
+   <properties>
+    <property name="HasCollision" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3179">
+   <properties>
+    <property name="HasCollision" value="true"/>
    </properties>
   </tile>
   <tile id="3201">
@@ -1503,6 +1945,81 @@
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
   </tile>
+  <tile id="3241">
+   <properties>
+    <property name="HasCollision" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3242">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3305">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3306">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3307">
+   <properties>
+    <property name="HasCollision" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3310">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3369">
+   <properties>
+    <property name="HasCollision" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3370">
+   <properties>
+    <property name="HasCollision" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3371">
+   <properties>
+    <property name="HasCollision" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3427">
+   <properties>
+    <property name="HasCollision" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3428">
+   <properties>
+    <property name="HasCollision" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3429">
+   <properties>
+    <property name="HasCollision" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3433">
+   <properties>
+    <property name="HasCollision" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3434">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3456">
+   <properties>
+    <property name="HasCollision" value="true"/>
+   </properties>
+  </tile>
   <tile id="3459">
    <properties>
     <property name="HasCollision" type="bool" value="true"/>
@@ -1510,7 +2027,7 @@
   </tile>
   <tile id="3520">
    <properties>
-    <property name="HasCollision" type="bool" value="true"/>
+    <property name="HasCollision" value="true"/>
    </properties>
   </tile>
   <tile id="3523">
@@ -1523,27 +2040,57 @@
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
   </tile>
-  <tile id="3648">
+  <tile id="3629">
    <properties>
     <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3630">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3648">
+   <properties>
+    <property name="HasCollision" value="true"/>
    </properties>
   </tile>
   <tile id="3651">
    <properties>
-    <property name="HasCollision" type="bool" value="true"/>
+    <property name="HasCollision" value="true"/>
    </properties>
   </tile>
   <tile id="3712">
    <properties>
-    <property name="HasCollision" type="bool" value="true"/>
+    <property name="HasCollision" value="true"/>
    </properties>
   </tile>
   <tile id="3713">
    <properties>
-    <property name="HasCollision" type="bool" value="true"/>
+    <property name="HasCollision" value="true"/>
    </properties>
   </tile>
   <tile id="3714">
+   <properties>
+    <property name="HasCollision" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3721">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3722">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3741">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3742">
    <properties>
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
@@ -1558,31 +2105,108 @@
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
   </tile>
+  <tile id="3780">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3781">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3782">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3783">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3784">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3785">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3786">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3805">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
+  <tile id="3806">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
  </tileset>
  <layer name="Water" width="30" height="17">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2S0QmAMAxEmx+dwc0yWkbLOAq1cIY0RtD60weHUtre5VSpFD50x7LmFSFUxYN9lar4fI6cl3/ybTO3DNi9zfKGr0DHDJ4K3pkOMtjvifcqXcXOuzjrds3uE7NPgllwdux7eyDsFHNmaH1HGSOy/2vvbDand3YymXzLDlW2duj4BwAA
+   H4sIAAAAAAAAC62T0Q3EMAhDk9viNmM0RmOc68dFerVIQ9QgobZRirEx0VuzK1dh/3txpePdkF6o5bhXxR2Y+tR+niLQbxRwR58u3Mh5YK/q2Cau4oXgVXWOftfHpS4jPvVcYaon2HdFg0qoLqwb/Z4zHfVcz2Y+43MW5M7/v62e1Ix9VoL+jU3cHb/OuKuOmSeojW3ye8LWudH7OuNTniQ/5at9UJe3QQ7Zzqtvx/cpvtnO647w/ARutscu/FT3txEJBvtQP/thvkz1sc6hMt8fL38jAfgHAAA=
   </data>
  </layer>
  <layer name="Ground" width="30" height="17">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC2NggIAmbgaGZiBm5mVgOAKlmXgRtD4jA1FAF6juMFD/CW6IPhA+DDXvKDem+kPcEHmQnSehbmiB6gWZQYq9J5D0tUDdgMteJh6gHA+EPsyNcCfMDFLthemDuZ0FaC4rD2H9IPth4U2qf1ug4cbMx8DgxEe8nTAA8j8LD/k0KXbRErQR4Y5GKrmVGLtGwSgYBaNgMAMAZ2wiQvgHAAA=
+   H4sIAAAAAAAAC+2RWw6CMBBFx6JffezEuAeNui4BcV+gsbIqZ2wbCRRLy5cJk9xM0sztmQeAiZwDMAWQSYA7N5nJb96tYFJssa5Bv+bGR2rsfw8+rK8tl5gvVIEqrZf+iOHqjq+0PRA3U8N6JvBdmEx8UrfvWK7zud6JuRFhv+NnCfMS63Mr9LeY12Ia08UefQdl9hDDpfox1hHnOFmdpf+PHJmF5yapQcwn9lJJIy2GPVzwraYbz+RWws/sy/UwtoOY6O70F7PPn8MOzRdip0Yq0+mWMPN1Bm/hLtx/5L4B90ON8fgHAAA=
   </data>
  </layer>
- <layer name="WaterDetail" width="30" height="17">
+ <layer name="Detail" width="30" height="17">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC2NgoD7g5RsYvaOAfMDGTjweBaNgFIyCUTB0AQDT/zyD+AcAAA==
+   H4sIAAAAAAAAC2NgoD7g5RsYvaNgeAN2TvzynFy0sdedgL0g0MVBG7uxAQ+gPzt4IexOKN1BI7+TAnqoFAYeUL/A/AYC3lCzQf70QIoPZDXUAB1YzIOFrTcd4xg9PcHjGUp3U8kt6ObSGhCbRkD+70FK0yB38tIxjVMrfGEAX/hiy7uU5iVcYXUOKg4ACkc1RfgHAAA=
   </data>
  </layer>
  <layer name="Walls" width="30" height="17">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC2NgYGBo5GZgOMvHgBV0AMU7cciRCtDtOMiNW+0JoNqTZNpLSC8jD4Ldi6TuFJB9mkZ2goAj0F4nKHYGYnYgbuRFyL8l0c73SGxkf7jyoKprBPKboLgZiN2B+CCSveeAevMZibMzlxGiHgZA/nDhgdjZyoNbH9wtfAj/u/CQzobZBfJHC5F2wkATkj5S2aTaNQpGwSgYBYMVAADVRYhu+AcAAA==
+   H4sIAAAAAAAAC2NgYGBo5GZgOMvHgBV0AMU7cciRCkB2HONG8A9yo8ozIdlzAsg+Saa92PQi28vIg2D3AtU5ATEzUOwUkD5NRTvR7XUE2uEExc5A3AxU38gLkQP5nYlEu98jsXuR9LoCzWZD8mMjkN0Exc1AfBio9iDUXpC/zwH5+YzE2ZnLCFHPAjWfC0i78EDsbAViNx78+hv5EP534SGdDbPLC4hboHYeITLcYP5v4SGdDbNrFIwCfKCAjTQ+tcAGNtL4Ix3MA5YZ86lUr5EC7gHtvD8A9qIDAK8kqBr4BwAA
+  </data>
+ </layer>
+ <layer name="Bridge" width="30" height="17">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC2NgGAWjYBSMgqEPxHkgWAKIJYlkw2gQpgSEA/VHkIgjKbRzFIwCcgEAILX8efgHAAA=
   </data>
  </layer>
  <layer name="Overlay" width="30" height="17">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC2NgwA28+BgYvPnwKMADPID6OoC4k0j9vkjquoDsbjLtJcVOWgBfCuzuI1EvqerxAX1G4tTpEqmOWDALiGcTgedQ11qGW0B8mwh8h4p2zgCGnRQQSxOBZRgh6qkBbgDNkWQgHkdQ0V4YjkDCM9DEkelRMApGAe0BAAVRXKz4BwAA
+   H4sIAAAAAAAAC2NgwA28+BgYvPnwKMADPID6OoC4k0j9vkjquoDsbjLtJcVOTy6gH4HYm4s8u7ABZH944jC3EyjeBcTdaPJ9JPoZph7ZHyB2Jw57TwLFTwHxaTT5diBfn5E4Ozk5gXELxJ6cqP4AsU+SGI7sQDNmAenZROA5UPXo/iDVThBwB5pzC0jfJgLfgaqnFpAChrM0EViGyPgYBcMH3OVlYLgHxPeB+AEv/eyVBZYjckAsD8QKZJa75IBYoF1xQBwPxAl0tBcZLBggewcaAAAU7h7k+AcAAA==
   </data>
  </layer>
- <objectgroup name="SpawnPoints"/>
+ <layer name="Overlay2" width="30" height="17">
+  <data encoding="base64" compression="gzip">
+   H4sIAAAAAAAAC+3Uuw2AIBRGYVrZwNdAjOBrIDcQ0MS11LiLJ5HS+kIMf/LVh4arVBozOk53jtT9milivyAvL41t/AULB49d6G/cdA6cuAKJtdyhEhVq/XYbgds00ejQYwhGge5Cw8LBB2tCt/jvewDi/iyA+AcAAA==
+  </data>
+ </layer>
+ <objectgroup name="SpawnPoints" visible="0">
+  <object id="1" gid="1799" x="448" y="352" width="32" height="32">
+   <properties>
+    <property name="EntityToCreate" value="StartPoint"/>
+    <property name="Name" value="FirstSpawn"/>
+   </properties>
+  </object>
+ </objectgroup>
+ <objectgroup name="WaterfallLines" visible="0">
+  <object id="2" x="336.667" y="250">
+   <polyline points="0,0 317.333,2"/>
+  </object>
+ </objectgroup>
+ <objectgroup name="PondLines" visible="0">
+  <object id="3" x="4.66667" y="174">
+   <polyline points="0,0 237.333,116.667 252,148 694,146 760.667,76.6667 836,74.6667 930.667,-22 953.333,-34"/>
+  </object>
+ </objectgroup>
+ <objectgroup name="PondLines2" visible="0">
+  <object id="4" x="260.667" y="542">
+   <polyline points="0,0 0,-186.667 438,-186 439.333,1.33333"/>
+  </object>
+ </objectgroup>
 </map>
