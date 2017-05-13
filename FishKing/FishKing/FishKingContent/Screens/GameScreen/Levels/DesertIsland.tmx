@@ -1462,7 +1462,7 @@
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="WaterfallLines" visible="0">
+ <objectgroup name="WaterfallLines">
   <object id="4" x="689.455" y="157.636">
    <properties>
     <property name="name" value="Waterfall"/>
@@ -1470,7 +1470,7 @@
    <polyline points="0,0 63.0909,-0.909091"/>
   </object>
  </objectgroup>
- <objectgroup name="LakeLines" visible="0">
+ <objectgroup name="LakeLines">
   <object id="7" x="885.5" y="427">
    <properties>
     <property name="name" value="Lake"/>
@@ -1478,12 +1478,12 @@
    <polyline points="0,0 146.5,34 144,166.5 74,198 -90.5,129.5 -90.5,41 -1,-1"/>
   </object>
  </objectgroup>
- <objectgroup name="RiverLines" visible="0">
+ <objectgroup name="RiverLines">
   <object id="39" x="670" y="314">
    <polyline points="0,0 -130,126 -133.333,172.667 -46.6667,173.333 99.3333,16 -0.666667,0"/>
   </object>
  </objectgroup>
- <objectgroup name="RiverLines2" visible="0">
+ <objectgroup name="RiverLines2">
   <object id="40" x="790" y="322">
    <polyline points="0,0 98,99.3333 58.6667,99.3333 -22,14 -0.666667,-3.33333"/>
   </object>
@@ -1496,7 +1496,7 @@
    <polyline points="0,0 5,-147.5 125.5,-151.5 129.5,3.5 -0.5,0"/>
   </object>
  </objectgroup>
- <objectgroup name="OceanLines" visible="0">
+ <objectgroup name="OceanLines">
   <object id="35" x="210.667" y="2.66667">
    <polyline points="0,0 -67.3333,132.667 23.3333,486.667 108.667,536.667 -50.6667,703.333 -16,812.667"/>
   </object>
@@ -1504,7 +1504,7 @@
    <polyline points="0,0 64.6667,-70.6667 66.6667,-300.667 -23.3333,-428 88,-583.333 98,-657.333 16.6667,-742.667"/>
   </object>
  </objectgroup>
- <objectgroup name="OceanLines2" visible="0">
+ <objectgroup name="OceanLines2">
   <object id="37" x="196" y="818">
    <polyline points="0,0 127.333,4 356.667,-206 423.333,-203.333 544.667,3.33333 835.333,2 908.667,-63.3333"/>
   </object>

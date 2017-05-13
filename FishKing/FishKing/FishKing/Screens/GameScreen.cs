@@ -42,7 +42,7 @@ namespace FishKing.Screens
 {
 	public partial class GameScreen
 	{
-        static string levelToLoad = "ForestPond";
+        static string levelToLoad = "WaterfallPool";
         static string startPointName = "FirstSpawn";
         private bool wasFishing = false;
         private bool shouldUpdateCamera;

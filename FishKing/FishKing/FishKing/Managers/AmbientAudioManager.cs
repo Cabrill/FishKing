@@ -238,6 +238,8 @@ namespace FishKing
 
         public static void RemoveAmbientAudioSources()
         {
+            CurrentTileMap = null;
+
             if (waterFallAmbientSound != null)
             {
                 waterFallAmbientSound.Stop();

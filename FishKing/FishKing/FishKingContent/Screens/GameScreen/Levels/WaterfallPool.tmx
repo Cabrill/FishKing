@@ -2186,25 +2186,25 @@
    H4sIAAAAAAAAC+3Uuw2AIBRGYVrZwNdAjOBrIDcQ0MS11LiLJ5HS+kIMf/LVh4arVBozOk53jtT9milivyAvL41t/AULB49d6G/cdA6cuAKJtdyhEhVq/XYbgds00ejQYwhGge5Cw8LBB2tCt/jvewDi/iyA+AcAAA==
   </data>
  </layer>
- <objectgroup name="SpawnPoints" visible="0">
-  <object id="1" gid="1799" x="448" y="352" width="32" height="32">
+ <objectgroup name="SpawnPoints">
+  <object id="1" gid="1799" x="64" y="512" width="32" height="32">
    <properties>
     <property name="EntityToCreate" value="StartPoint"/>
     <property name="Name" value="FirstSpawn"/>
    </properties>
   </object>
  </objectgroup>
- <objectgroup name="WaterfallLines" visible="0">
+ <objectgroup name="WaterfallLines">
   <object id="2" x="336.667" y="250">
    <polyline points="0,0 317.333,2"/>
   </object>
  </objectgroup>
- <objectgroup name="PondLines" visible="0">
+ <objectgroup name="PondLines">
   <object id="3" x="4.66667" y="174">
    <polyline points="0,0 237.333,116.667 252,148 694,146 760.667,76.6667 836,74.6667 930.667,-22 953.333,-34"/>
   </object>
  </objectgroup>
- <objectgroup name="PondLines2" visible="0">
+ <objectgroup name="PondLines2">
   <object id="4" x="260.667" y="542">
    <polyline points="0,0 0,-186.667 438,-186 439.333,1.33333"/>
   </object>

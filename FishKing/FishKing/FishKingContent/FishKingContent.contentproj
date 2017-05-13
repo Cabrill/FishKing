@@ -781,6 +781,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>TheUnderground</Name>
     </None>
+    <None Include="Screens\GameScreen\Levels\WaterfallPool.tmx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>WaterfallPool</Name>
+    </None>
     <None Include="Screens\GameScreen\Objects\RodAnimations.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>RodAnimations</Name>
