@@ -152,6 +152,7 @@
     <Compile Include="Extensions\TournamentExtensions.cs" />
     <Compile Include="GameClasses\GameOptions.cs" />
     <Compile Include="GameClasses\MasterTournamentList.cs" />
+    <Compile Include="GameClasses\TournamentSimulator.cs" />
     <Compile Include="GumRuntimes\FishopediaRuntime.cs" />
     <Compile Include="GumRuntimes\FishopediaRuntime.Generated.cs">
       <DependentUpon>FishopediaRuntime.cs</DependentUpon>

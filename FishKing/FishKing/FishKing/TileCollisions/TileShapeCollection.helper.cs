@@ -1,4 +1,5 @@
-﻿using FlatRedBall.Math;
+﻿using FishKing.Enums;
+using FlatRedBall.Math;
 using FlatRedBall.Math.Geometry;
 using FlatRedBall.TileCollisions;
 using FlatRedBall.TileGraphics;
@@ -7,6 +8,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using static FishKing.Enums.WaterTypes;
 
 namespace FlatRedBall.TileCollisions
 {
@@ -56,7 +58,32 @@ namespace FlatRedBall.TileCollisions
 
     public static class TileShapeCollectionLayeredTileMapHelperExtensions
     {
-        public static void AddCollisionFromLayer(this FlatRedBall.TileCollisions.TileShapeCollection tileShapeCollection,
+        public static List<WaterType> GetAllWaterTypes(this LayeredTileMap layeredTileMap)
+        {
+            var waterTypes = new List<WaterType>();
+            var properties = layeredTileMap.TileProperties;
+
+            foreach (var kvp in properties)
+            {
+                string name = kvp.Key;
+                var namedValues = kvp.Value;
+                WaterType water;
+
+                foreach (var nameValue in namedValues)
+                {
+                    water = WaterTypes.WaterTypeNameToEnum(nameValue.Name);
+
+                    if (water != WaterType.None && !waterTypes.Contains(water))
+                    {
+                        waterTypes.Add(water);
+                    }
+                }
+                
+            }
+            return waterTypes;
+        }
+
+        public static void AddCollisionFromLayer(this TileShapeCollection tileShapeCollection,
         LayeredTileMap layeredTileMap, List<string> layerNames)
         {
             var properties = layeredTileMap.TileProperties;
@@ -98,7 +125,7 @@ namespace FlatRedBall.TileCollisions
             }
         }
 
-        public static void RemoveCollisionsFromLayer(this FlatRedBall.TileCollisions.TileShapeCollection tileShapeCollection,
+        public static void RemoveCollisionsFromLayer(this TileShapeCollection tileShapeCollection,
                     LayeredTileMap layeredTileMap, List<string> layerNames)
         {
             var properties = layeredTileMap.TileProperties;
@@ -140,14 +167,14 @@ namespace FlatRedBall.TileCollisions
             }
         }
 
-        public static void RemoveCollisionFrom(this FlatRedBall.TileCollisions.TileShapeCollection tileShapeCollection,
+        public static void RemoveCollisionFrom(this TileShapeCollection tileShapeCollection,
             LayeredTileMap layeredTileMap, string nameToUse)
         {
             RemoveCollisionFrom(tileShapeCollection, layeredTileMap,
                 new List<string> { nameToUse });
         }
 
-        public static void RemoveCollisionFrom(this FlatRedBall.TileCollisions.TileShapeCollection tileShapeCollection,
+        public static void RemoveCollisionFrom(this TileShapeCollection tileShapeCollection,
             LayeredTileMap layeredTileMap, IEnumerable<string> namesToUse)
         {
             Func<List<TMXGlueLib.DataTypes.NamedValue>, bool> predicate = (list) =>
@@ -161,7 +188,7 @@ namespace FlatRedBall.TileCollisions
 
         }
 
-        public static void RemoveCollisionFrom(this FlatRedBall.TileCollisions.TileShapeCollection tileShapeCollection, LayeredTileMap layeredTileMap,
+        public static void RemoveCollisionFrom(this TileShapeCollection tileShapeCollection, LayeredTileMap layeredTileMap,
             Func<List<TMXGlueLib.DataTypes.NamedValue>, bool> predicate)
         {
             var properties = layeredTileMap.TileProperties;
@@ -206,7 +233,7 @@ namespace FlatRedBall.TileCollisions
 
         }
 
-        public static void AddWaterFrom(this FlatRedBall.TileCollisions.TileShapeCollection tileShapeCollection, LayeredTileMap layeredTileMap,
+        public static void AddWaterFrom(this TileShapeCollection tileShapeCollection, LayeredTileMap layeredTileMap,
     Func<List<TMXGlueLib.DataTypes.NamedValue>, bool> predicate)
         {
             var properties = layeredTileMap.TileProperties;

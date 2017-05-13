@@ -75,7 +75,14 @@ namespace FishKing.GameClasses
 
         public bool IsFishRightType(Fish fish)
         {
-            return FishTypesAllowed.Contains(fish.FishType);
+            if (!FishTypesAllowed.Any())
+            {
+                return true;
+            }
+            else
+            {
+                return FishTypesAllowed.Contains(fish.FishType);
+            }
         }
 
         public TournamentRules()

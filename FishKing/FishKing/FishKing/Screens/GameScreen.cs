@@ -30,6 +30,7 @@ using Microsoft.Xna.Framework.Media;
 using FlatRedBall.Math;
 using FlatRedBall.Gui;
 using FishKing.Managers;
+using FishKing.GameClasses;
 
 #if FRB_XNA || SILVERLIGHT
 using Keys = Microsoft.Xna.Framework.Input.Keys;
@@ -70,6 +71,7 @@ namespace FishKing.Screens
                 MusicManager.PlaySong();
             }
 
+            bool shouldInitializeSimulator = false;
             if (!TournamentManager.TournamentHasStarted
 #if DEBUG
                 && !DebuggingVariables.MapDebugMode
@@ -78,6 +80,8 @@ namespace FishKing.Screens
             {
                 TournamentManager.StartTournament();
                 levelToLoad = TournamentManager.CurrentTournament.MapName;
+                shouldInitializeSimulator = true;
+                
             }
 
             LoadLevel(levelToLoad);
@@ -87,6 +91,10 @@ namespace FishKing.Screens
             InitializeCamera();
 
             TournamentStatusInstance.Setup(this);
+            if (shouldInitializeSimulator)
+            {
+                TournamentSimulator.Initialize(TournamentManager.CurrentTournament.NumberOfParticipants, CurrentTileMap.GetAllWaterTypes());
+            }
 
 #if DEBUG
             if (DebuggingVariables.MapDebugMode)
@@ -394,6 +402,7 @@ namespace FishKing.Screens
                             TournamentManager.CurrentScores.SimulateTournament();
                         }
 #endif
+                        TournamentSimulator.Update();
                         if (TournamentManager.CurrentScores.HasScoreChanged)
                         {
                             TournamentStatusInstance.UpdateFishPlaceMarkers(TournamentManager.CurrentScores.AsArray);

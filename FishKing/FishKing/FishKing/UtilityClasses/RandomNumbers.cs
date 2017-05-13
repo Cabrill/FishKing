@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace FishKing.UtilityClasses
 {
-    static class RandomNumbers
+    public static class RandomNumbers
     {
         private static Random randomSeed = new Random(DateTime.Now.Millisecond);
 

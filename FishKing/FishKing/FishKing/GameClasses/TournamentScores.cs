@@ -66,6 +66,11 @@ namespace FishKing.UtilityClasses
             scoreHasChanged = true;
         }
 
+        public bool HasNonPlayerFinished(int npcNum)
+        {
+            return (GoalScore > 0 && scores[npcNum] >= GoalScore);
+        }
+
         public void AddToNonPlayerScore(int npcNum, int scoreIncrement)
         {
             if (npcNum > 0 && npcNum < scores.Count()-1)
