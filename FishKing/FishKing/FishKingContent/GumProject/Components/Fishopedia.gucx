@@ -32,7 +32,7 @@
     <Variable>
       <Type>int</Type>
       <Name>BookBackground.Texture Height</Name>
-      <Value xsi:type="xsd:int">1375</Value>
+      <Value xsi:type="xsd:int">1372</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -289,7 +289,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Bookmarks.Y</Name>
-      <Value xsi:type="xsd:float">87.57099</Value>
+      <Value xsi:type="xsd:float">87.7561646</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -617,7 +617,7 @@
     <Variable>
       <Type>float</Type>
       <Name>LeftPageCorner.X</Name>
-      <Value xsi:type="xsd:float">4.87847233</Value>
+      <Value xsi:type="xsd:float">4.852431</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -629,7 +629,7 @@
     <Variable>
       <Type>float</Type>
       <Name>LeftPageCorner.Y</Name>
-      <Value xsi:type="xsd:float">79.20369</Value>
+      <Value xsi:type="xsd:float">79.34262</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -910,7 +910,7 @@
     <Variable>
       <Type>float</Type>
       <Name>RightPageCorner.X</Name>
-      <Value xsi:type="xsd:float">89.91964</Value>
+      <Value xsi:type="xsd:float">89.94566</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -922,7 +922,7 @@
     <Variable>
       <Type>float</Type>
       <Name>RightPageCorner.Y</Name>
-      <Value xsi:type="xsd:float">79.111145</Value>
+      <Value xsi:type="xsd:float">79.34262</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

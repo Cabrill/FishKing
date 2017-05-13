@@ -184,7 +184,19 @@ namespace FishKing.GameClasses
 
         public void AddCaughtFish(Fish fish)
         {
-            var fishRecord = new FishRecord(fish.Name, fish.Grams, fish.LengthMM);
+            FishRecord fishRecord;
+
+            if (FishCaught.ContainsKey(fish.FishType))
+            {
+                fishRecord = FishCaught[fish.FishType];
+                FishCaught.Remove(fish.FishType);
+                fishRecord.AddFish(fish);
+            }
+            else
+            {
+                fishRecord = new FishRecord(fish.Name, fish.Grams, fish.LengthMM);
+            }
+            
             FishCaught.Add(fish.FishType, fishRecord);
         }
     }

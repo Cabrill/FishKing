@@ -1383,7 +1383,7 @@
       <Variable>
         <Type>float</Type>
         <Name>FishNameValue.Height</Name>
-        <Value xsi:type="xsd:float">100</Value>
+        <Value xsi:type="xsd:float">107</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>

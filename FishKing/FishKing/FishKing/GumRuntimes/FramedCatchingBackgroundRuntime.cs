@@ -1,4 +1,5 @@
 ﻿using FishKing.Entities;
+using FishKing.Managers;
 using FlatRedBall.Glue.StateInterpolation;
 using FlatRedBall.Instructions;
 using Microsoft.Xna.Framework;
@@ -127,15 +128,17 @@ namespace FishKing.GumRuntimes
 
         private void SetLocalVariables()
         {
+            var difficulty = 1 + OptionsManager.Options.Difficulty;
+
             FishFight = GlobalContent.Fish_Types[AttachedFish.FishType.Name].Fight;
             FishSpeed = GlobalContent.Fish_Types[AttachedFish.FishType.Name].Speed;
 
-            SpeedModifier = 0.25f + ((float)FishSpeed / 100);
-            FightModifier = 1f + ((float)FishFight / 100);
+            SpeedModifier = 0.25f + (((float)FishSpeed / 50) * difficulty);
+            FightModifier = 1f + (((float)FishFight / 50) * difficulty);
 
             
-            fightBoostMaxVelocity = fightOrLuckMaxVelocity + ((FishSpeed + FishFight) / 800);
-            ChanceOfFight = 0.01f + (FishFight / 6000);
+            fightBoostMaxVelocity = difficulty * (fightOrLuckMaxVelocity + ((FishSpeed + FishFight) / 800));
+            ChanceOfFight = 0.01f + (difficulty * (FishFight / 6000));
             ChanceOfLuck = 0.001f;
             ChanceOfFightBoost = 0.001f + (ChanceOfFight/10);
 
@@ -144,7 +147,7 @@ namespace FishKing.GumRuntimes
             UnknownFishInstance.XOrigin = RenderingLibrary.Graphics.HorizontalAlignment.Left;
             UnknownFishInstance.YOrigin = RenderingLibrary.Graphics.VerticalAlignment.Center;
 
-            AlignmentBarInstance.Height = 15f;
+            AlignmentBarInstance.Height = 15f / difficulty;
 
             MaxAlignmentY = 100 - AlignmentBarInstance.Height;
 
