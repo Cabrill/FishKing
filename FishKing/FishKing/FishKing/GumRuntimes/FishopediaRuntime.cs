@@ -20,6 +20,8 @@ namespace FishKing.GumRuntimes
             get; set;
         }
 
+        private List<FishEntryRuntime> fishEntries;
+
         partial void CustomInitialize()
         {
             pageIndex = 0;
@@ -29,6 +31,7 @@ namespace FishKing.GumRuntimes
             BookmarkCaught.Click += BookmarkCaught_Click;
             BookmarkClose.Click += BookmarkClose_Click;
             BookmarkClose.Unselect();
+            fishEntries = LeftPage.Children.Union(RightPage.Children).Where(c => c is FishEntryRuntime).Cast<FishEntryRuntime>().ToList();
         }
 
         private void BookmarkClose_Click(FlatRedBall.Gui.IWindow window)
@@ -96,41 +99,51 @@ namespace FishKing.GumRuntimes
         public void LoadAllFish()
         {
             currentlyDisplaying = FishTypeDisplay.All;
-            LeftPage.Children.Clear();
-            RightPage.Children.Clear();
+            LeftPageDivider.Visible = false;
+            RightPageDivider.Visible = false;
 
             var allFish = GlobalContent.Fish_Types;
             FishRecord fishRecord;
             Fish_Types fishType;
+            FishEntryRuntime fishEntry;
             bool hasRightPage = false;
 
             var untilItem = (1 + pageIndex) * 12;
+            untilItem = (int)(Math.Round(untilItem / 12.0) * 12);
 
-            for (int i = pageIndex*12; i < untilItem && i < allFish.Values.Count; i++)
+            for (int i = pageIndex*12;i < untilItem; i++)
             {
-                var newFishEntry = new FishEntryRuntime();
-                fishType = allFish.Values.ElementAt(i);
-                if (CaughtFish.ContainsKey(fishType))
+                fishEntry = fishEntries.ElementAt(i % 12);
+
+                if (i < allFish.Count)
                 {
-                    fishRecord = CaughtFish[fishType];
+                    fishType = allFish.Values.ElementAt(i);
+                    if (CaughtFish.ContainsKey(fishType))
+                    {
+                        fishRecord = CaughtFish[fishType];
+                    }
+                    else
+                    {
+                        fishRecord = null;
+                    }
+                    fishEntry.AssociateWithFish(fishType, fishRecord);
+                    fishEntry.Visible = true;
+
+                    if (i % 12 == 3)
+                    {
+                        LeftPageDivider.Visible = true;
+                    }
+                    if (i % 12 == 9)
+                    {
+                        RightPageDivider.Visible = true;
+                    }
+
+                    hasRightPage = i % 12 >= 6;
                 }
                 else
                 {
-                    fishRecord = null;
+                    fishEntry.Visible = false;
                 }
-                newFishEntry.AssociateWithFish(fishType, fishRecord);
-
-                if (i % 3 > 0) newFishEntry.CurrentLeftDividerState = FishEntryRuntime.LeftDivider.Visible;
-
-
-                if (i % 12 == 3 || i % 12 == 9)
-                {
-                    var newPageDivider = new PageDividerRuntime();
-                    newPageDivider.Parent = (i % 12 < 6 ? LeftPage : RightPage);
-                }
-
-                newFishEntry.Parent = (i % 12 < 6 ? LeftPage : RightPage);
-                hasRightPage = i % 12 >= 6;
             }
 
             var maxPage = GlobalContent.Fish_Types.Keys.Count / 12;
@@ -145,33 +158,45 @@ namespace FishKing.GumRuntimes
         private void LoadCaughtFish(int atPageIndex = 0)
         {
             currentlyDisplaying = FishTypeDisplay.Caught;
-            LeftPage.Children.Clear();
-            RightPage.Children.Clear();
+            LeftPageDivider.Visible = false;
+            RightPageDivider.Visible = false;
 
             var allFish = CaughtFish.Keys;
             FishRecord fishRecord;
             Fish_Types fishType;
+            FishEntryRuntime fishEntry;
             bool hasRightPage = false;
 
             var untilItem = (1 + pageIndex) * 12;
+            untilItem = (int)(Math.Round(untilItem / 12.0) * 12);
 
-            for (int i = pageIndex * 12; i < untilItem && i < allFish.Count; i++)
+            for (int i = pageIndex * 12; i < untilItem; i++)
             {
-                var newFishEntry = new FishEntryRuntime();
-                fishType = allFish.ElementAt(i);
-                fishRecord = CaughtFish[fishType];
+                fishEntry = fishEntries.ElementAt(i % 12);
 
-                newFishEntry.AssociateWithFish(fishType, fishRecord);
-                if (i % 3 > 0) newFishEntry.CurrentLeftDividerState = FishEntryRuntime.LeftDivider.Visible;
-
-                if (i % 12 == 3 || i % 12 == 9)
+                if (i < allFish.Count)
                 {
-                    var newPageDivider = new PageDividerRuntime();
-                    newPageDivider.Parent = (i % 12 < 6 ? LeftPage : RightPage);
-                }
+                    fishType = allFish.ElementAt(i);
+                    fishRecord = CaughtFish[fishType];
 
-                newFishEntry.Parent = (i % 12 < 6 ? LeftPage : RightPage);
-                hasRightPage = i % 12 >= 6;
+                    fishEntry.AssociateWithFish(fishType, fishRecord);
+                    fishEntry.Visible = true;
+
+                    if (i % 12 == 3)
+                    {
+                        LeftPageDivider.Visible = true;
+                    }
+                    if (i % 12 == 9)
+                    {
+                        RightPageDivider.Visible = true;
+                    }
+
+                    hasRightPage = i % 12 >= 6;
+                }
+                else
+                {
+                    fishEntry.Visible = false;
+                }
             }
 
             var maxPage = CaughtFish.Keys.Count / 12;

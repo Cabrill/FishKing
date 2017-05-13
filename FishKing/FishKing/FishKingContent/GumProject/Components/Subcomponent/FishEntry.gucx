@@ -1290,7 +1290,7 @@
       <Variable>
         <Type>float</Type>
         <Name>FoundInValue.Font Scale</Name>
-        <Value xsi:type="xsd:float">0.18</Value>
+        <Value xsi:type="xsd:float">0.15</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -1324,9 +1324,21 @@
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
+        <Type>float</Type>
+        <Name>FishNameValue.Font Scale</Name>
+        <Value xsi:type="xsd:float">0.15</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
         <Type>int</Type>
         <Name>FishNameValue.Green</Name>
         <Value xsi:type="xsd:int">165</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>FishNameValue.Height</Name>
+        <Value xsi:type="xsd:float">20</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>

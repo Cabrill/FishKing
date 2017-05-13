@@ -20,6 +20,7 @@ namespace FishKing.GumRuntimes
             }
             else
             {
+                CurrentPreviouslyCaughtState = PreviouslyCaught.Caught;
                 FishNameValue.Text = fishType.Name;
                 TimesCaughtValue.Text = record.TimesCaught.ToString();
                 LongestValue.Text = InfoToString.Length(record.LongestCaught);

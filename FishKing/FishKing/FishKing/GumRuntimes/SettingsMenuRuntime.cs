@@ -55,7 +55,8 @@ namespace FishKing.GumRuntimes
                 form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
                 form.SetBounds(0, 0, 1280, 720);
                 FullScreenButton.ButtonText = "Full Screen";
-            } else
+            }
+            else
             {
                 var graphics = FlatRedBall.FlatRedBallServices.GraphicsOptions;
                 form.SetDesktopBounds(0, 0, graphics.ResolutionWidth, graphics.ResolutionHeight);
@@ -111,7 +112,8 @@ namespace FishKing.GumRuntimes
                     if (currentIdx > 0 && direction == Entities.Direction.Up)
                     {
                         slidersAsList.ElementAt(currentIdx - 1).HighlightSlider();
-                    } else if (direction == Entities.Direction.Down)
+                    }
+                    else if (direction == Entities.Direction.Down)
                     {
                         if (currentIdx < slidersAsList.Count - 1)
                         {

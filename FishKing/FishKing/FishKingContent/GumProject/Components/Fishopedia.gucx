@@ -361,6 +361,60 @@
     </Variable>
     <Variable>
       <Type>FoundItemsState</Type>
+      <Name>FishEntryInstance10.FoundItemsState</Name>
+      <Value xsi:type="xsd:string">Item3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>LeftDividerState</Type>
+      <Name>FishEntryInstance10.LeftDividerState</Name>
+      <Value xsi:type="xsd:string">Hidden</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FishEntryInstance10.Parent</Name>
+      <Value xsi:type="xsd:string">RightPage</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>FoundItemsState</Type>
+      <Name>FishEntryInstance11.FoundItemsState</Name>
+      <Value xsi:type="xsd:string">Item3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>LeftDividerState</Type>
+      <Name>FishEntryInstance11.LeftDividerState</Name>
+      <Value xsi:type="xsd:string">Visible</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FishEntryInstance11.Parent</Name>
+      <Value xsi:type="xsd:string">RightPage</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>FoundItemsState</Type>
+      <Name>FishEntryInstance12.FoundItemsState</Name>
+      <Value xsi:type="xsd:string">Item3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>LeftDividerState</Type>
+      <Name>FishEntryInstance12.LeftDividerState</Name>
+      <Value xsi:type="xsd:string">Visible</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FishEntryInstance12.Parent</Name>
+      <Value xsi:type="xsd:string">RightPage</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>FoundItemsState</Type>
       <Name>FishEntryInstance2.FoundItemsState</Name>
       <Value xsi:type="xsd:string">Item4</Value>
       <SetsValue>true</SetsValue>
@@ -402,6 +456,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>FoundItemsState</Type>
+      <Name>FishEntryInstance4.FoundItemsState</Name>
+      <Value xsi:type="xsd:string">Item3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>LeftDividerState</Type>
       <Name>FishEntryInstance4.LeftDividerState</Name>
       <Value xsi:type="xsd:string">Visible</Value>
@@ -411,6 +471,72 @@
       <Type>string</Type>
       <Name>FishEntryInstance4.Parent</Name>
       <Value xsi:type="xsd:string">LeftPage</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>FoundItemsState</Type>
+      <Name>FishEntryInstance5.FoundItemsState</Name>
+      <Value xsi:type="xsd:string">Item3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FishEntryInstance5.Parent</Name>
+      <Value xsi:type="xsd:string">LeftPage</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>FoundItemsState</Type>
+      <Name>FishEntryInstance6.FoundItemsState</Name>
+      <Value xsi:type="xsd:string">Item3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>LeftDividerState</Type>
+      <Name>FishEntryInstance6.LeftDividerState</Name>
+      <Value xsi:type="xsd:string">Hidden</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FishEntryInstance6.Parent</Name>
+      <Value xsi:type="xsd:string">RightPage</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>FoundItemsState</Type>
+      <Name>FishEntryInstance8.FoundItemsState</Name>
+      <Value xsi:type="xsd:string">Item3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>LeftDividerState</Type>
+      <Name>FishEntryInstance8.LeftDividerState</Name>
+      <Value xsi:type="xsd:string">Visible</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FishEntryInstance8.Parent</Name>
+      <Value xsi:type="xsd:string">RightPage</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>FoundItemsState</Type>
+      <Name>FishEntryInstance9.FoundItemsState</Name>
+      <Value xsi:type="xsd:string">Item3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>LeftDividerState</Type>
+      <Name>FishEntryInstance9.LeftDividerState</Name>
+      <Value xsi:type="xsd:string">Visible</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FishEntryInstance9.Parent</Name>
+      <Value xsi:type="xsd:string">RightPage</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -742,8 +868,14 @@
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>PageDividerInstance.Parent</Name>
+      <Name>LeftPageDivider.Parent</Name>
       <Value xsi:type="xsd:string">LeftPage</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>RightPageDivider.Parent</Name>
+      <Value xsi:type="xsd:string">RightPage</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1185,7 +1317,7 @@
     <BaseType>subcomponent\FishEntry</BaseType>
   </Instance>
   <Instance>
-    <Name>PageDividerInstance</Name>
+    <Name>LeftPageDivider</Name>
     <BaseType>subcomponent\PageDivider</BaseType>
   </Instance>
   <Instance>
@@ -1198,6 +1330,38 @@
   </Instance>
   <Instance>
     <Name>FishEntryInstance4</Name>
+    <BaseType>subcomponent\FishEntry</BaseType>
+  </Instance>
+  <Instance>
+    <Name>FishEntryInstance5</Name>
+    <BaseType>subcomponent\FishEntry</BaseType>
+  </Instance>
+  <Instance>
+    <Name>FishEntryInstance6</Name>
+    <BaseType>subcomponent\FishEntry</BaseType>
+  </Instance>
+  <Instance>
+    <Name>FishEntryInstance8</Name>
+    <BaseType>subcomponent\FishEntry</BaseType>
+  </Instance>
+  <Instance>
+    <Name>FishEntryInstance9</Name>
+    <BaseType>subcomponent\FishEntry</BaseType>
+  </Instance>
+  <Instance>
+    <Name>RightPageDivider</Name>
+    <BaseType>subcomponent\PageDivider</BaseType>
+  </Instance>
+  <Instance>
+    <Name>FishEntryInstance10</Name>
+    <BaseType>subcomponent\FishEntry</BaseType>
+  </Instance>
+  <Instance>
+    <Name>FishEntryInstance11</Name>
+    <BaseType>subcomponent\FishEntry</BaseType>
+  </Instance>
+  <Instance>
+    <Name>FishEntryInstance12</Name>
     <BaseType>subcomponent\FishEntry</BaseType>
   </Instance>
   <Behaviors />
