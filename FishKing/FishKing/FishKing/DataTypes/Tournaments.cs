@@ -12,9 +12,9 @@ namespace FishKing.DataTypes
         {
             get
             {
-                foreach (var fishtype in FishReq)
+                foreach (var fishtype in FishReq.SelectMany(fr => fr.Split(',')))
                 {
-                    yield return GlobalContent.Fish_Types[fishtype];
+                    yield return GlobalContent.Fish_Types[fishtype.Trim()];
                 }
             }
         }

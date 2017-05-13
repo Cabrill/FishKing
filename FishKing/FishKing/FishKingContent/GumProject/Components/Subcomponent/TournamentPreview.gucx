@@ -1357,7 +1357,7 @@
     <Variable>
       <Type>float</Type>
       <Name>RulesValue.Font Scale</Name>
-      <Value xsi:type="xsd:float">0.5</Value>
+      <Value xsi:type="xsd:float">0.45</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
