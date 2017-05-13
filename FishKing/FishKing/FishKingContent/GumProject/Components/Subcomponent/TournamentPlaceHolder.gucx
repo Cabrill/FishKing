@@ -87,13 +87,14 @@
     <Variable>
       <Type>float</Type>
       <Name>PlaceHolderContainer.X</Name>
+      <Value xsi:type="xsd:float">-2.5</Value>
       <ExposedAsName>TournamentPlaceHolderProgress</ExposedAsName>
-      <SetsValue>false</SetsValue>
+      <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>HorizontalAlignment</Type>
       <Name>PlaceHolderContainer.X Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -363,6 +364,24 @@
       <Name>Y Units</Name>
       <Value xsi:type="xsd:int">1</Value>
       <Category>Position</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>SpriteInstance.Red</Name>
+      <Value xsi:type="xsd:int">255</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>SpriteInstance.Green</Name>
+      <Value xsi:type="xsd:int">215</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>SpriteInstance.Blue</Name>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <VariableList xsi:type="VariableListSaveOfString">

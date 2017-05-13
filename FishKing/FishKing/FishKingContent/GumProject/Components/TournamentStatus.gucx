@@ -55,7 +55,7 @@
     <Variable>
       <Type>FishTypeState</Type>
       <Name>BottomFishInstance.FishTypeState</Name>
-      <Value xsi:type="xsd:string">FishType3</Value>
+      <Value xsi:type="xsd:string">FishType2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -71,8 +71,20 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>PlayerTypeState</Type>
+      <Name>BottomFishInstance.PlayerTypeState</Name>
+      <Value xsi:type="xsd:string">NonPlayer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>BottomFishInstance.TournamentFishProgress</Name>
+      <Value xsi:type="xsd:float">20</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>BottomFishInstance.TournamentFishSpriteProgress</Name>
       <Value xsi:type="xsd:float">20</Value>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -97,7 +109,7 @@
     <Variable>
       <Type>float</Type>
       <Name>BottomFishInstance.Y</Name>
-      <Value xsi:type="xsd:float">28</Value>
+      <Value xsi:type="xsd:float">26</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -498,13 +510,13 @@
     <Variable>
       <Type>float</Type>
       <Name>PlaceHolder1.TournamentPlaceHolderProgress</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>bool</Type>
       <Name>PlaceHolder1.Visible</Name>
-      <Value xsi:type="xsd:boolean">false</Value>
+      <Value xsi:type="xsd:boolean">true</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -520,6 +532,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>PlaceState</Type>
+      <Name>PlaceHolder2.PlaceState</Name>
+      <Value xsi:type="xsd:string">Eighth</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>PlaceHolder2.TournamentPlaceHolderProgress</Name>
       <Value xsi:type="xsd:float">0</Value>
@@ -528,7 +546,7 @@
     <Variable>
       <Type>bool</Type>
       <Name>PlaceHolder2.Visible</Name>
-      <Value xsi:type="xsd:boolean">false</Value>
+      <Value xsi:type="xsd:boolean">true</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -539,7 +557,7 @@
     <Variable>
       <Type>FishTypeState</Type>
       <Name>PlayerFishInstance.FishTypeState</Name>
-      <Value xsi:type="xsd:string">FishType2</Value>
+      <Value xsi:type="xsd:string">FishType3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -555,15 +573,15 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
-      <Type>float</Type>
-      <Name>PlayerFishInstance.TournamentFishProgress</Name>
-      <Value xsi:type="xsd:float">45</Value>
+      <Type>PlayerTypeState</Type>
+      <Name>PlayerFishInstance.PlayerTypeState</Name>
+      <Value xsi:type="xsd:string">Player</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
-      <Name>PlayerFishInstance.TournamentFishSpriteProgress</Name>
-      <Value xsi:type="xsd:float">20</Value>
+      <Name>PlayerFishInstance.TournamentFishProgress</Name>
+      <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -587,7 +605,7 @@
     <Variable>
       <Type>float</Type>
       <Name>PlayerFishInstance.Y</Name>
-      <Value xsi:type="xsd:float">26</Value>
+      <Value xsi:type="xsd:float">28</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -935,7 +953,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TopFishInstance.TournamentFishProgress</Name>
-      <Value xsi:type="xsd:float">50</Value>
+      <Value xsi:type="xsd:float">10</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -947,7 +965,7 @@
     <Variable>
       <Type>TournamentPlaceState</Type>
       <Name>TopFishInstance.TournamentPlaceState</Name>
-      <Value xsi:type="xsd:string">FirstPlace</Value>
+      <Value xsi:type="xsd:string">FourthPlace</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -2425,7 +2443,7 @@
     <BaseType>Container</BaseType>
   </Instance>
   <Instance>
-    <Name>PlayerFishInstance</Name>
+    <Name>BottomFishInstance</Name>
     <BaseType>subcomponent\TournamentFish</BaseType>
   </Instance>
   <Instance>
@@ -2445,7 +2463,7 @@
     <BaseType>Sprite</BaseType>
   </Instance>
   <Instance>
-    <Name>BottomFishInstance</Name>
+    <Name>PlayerFishInstance</Name>
     <BaseType>subcomponent\TournamentFish</BaseType>
   </Instance>
   <Instance>

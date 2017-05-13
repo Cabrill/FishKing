@@ -81,6 +81,11 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>PlayerTypeState</Type>
+      <Name>PlayerTypeState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>State</Type>
       <Name>State</Name>
       <SetsValue>true</SetsValue>
@@ -1178,6 +1183,51 @@
         <Type>float</Type>
         <Name>TournamentFishSprite.X</Name>
         <Value xsi:type="xsd:float">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
+  <Category>
+    <Name>PlayerType</Name>
+    <State>
+      <Name>Player</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentPlaceSprite.Red</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentPlaceSprite.Green</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentPlaceSprite.Blue</Name>
+        <Value xsi:type="xsd:int">127</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>NonPlayer</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentPlaceSprite.Blue</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentPlaceSprite.Green</Name>
+        <Value xsi:type="xsd:int">215</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>TournamentPlaceSprite.Red</Name>
+        <Value xsi:type="xsd:int">255</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

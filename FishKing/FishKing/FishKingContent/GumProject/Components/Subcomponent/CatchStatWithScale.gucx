@@ -666,6 +666,24 @@
         <Value xsi:type="xsd:boolean">true</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TextStatValue.Width</Name>
+        <Value xsi:type="xsd:float">40</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TextStatValue.X</Name>
+        <Value xsi:type="xsd:float">7</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>HorizontalAlignment</Type>
+        <Name>TextStatValue.X Origin</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
     </State>
     <State>
       <Name>NotAwarded</Name>
@@ -673,12 +691,6 @@
         <Type>bool</Type>
         <Name>LinearScaleContainerInstance.Visible</Name>
         <Value xsi:type="xsd:boolean">false</Value>
-        <SetsValue>true</SetsValue>
-      </Variable>
-      <Variable>
-        <Type>HorizontalAlignment</Type>
-        <Name>TextStatValue.HorizontalAlignment</Name>
-        <Value xsi:type="xsd:int">2</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
