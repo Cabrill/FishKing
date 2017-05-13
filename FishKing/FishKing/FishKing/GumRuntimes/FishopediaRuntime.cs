@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using FishKing.Entities;
 
 namespace FishKing.GumRuntimes
 {
@@ -61,8 +62,13 @@ namespace FishKing.GumRuntimes
 
         private void RightPageCorner_Click(FlatRedBall.Gui.IWindow window)
         {
+            NextPage();
+        }
+
+        public void NextPage()
+        {
             int maxPage;
-            switch(currentlyDisplaying)
+            switch (currentlyDisplaying)
             {
                 case FishTypeDisplay.All:
                     maxPage = GlobalContent.Fish_Types.Keys.Count / 12;
@@ -84,6 +90,11 @@ namespace FishKing.GumRuntimes
         }
 
         private void LeftPageCorner_Click(FlatRedBall.Gui.IWindow window)
+        {
+            PreviousPage();
+        }
+
+        public void PreviousPage()
         {
             if (pageIndex > 0)
             {
@@ -153,6 +164,78 @@ namespace FishKing.GumRuntimes
             SetPageNumbers(pageIndex, hasRightPage);
 
             SelectBookmark(BookmarkAll);
+        }
+
+        internal void HandleExit()
+        {
+            BookmarkClose.CallClick();
+        }
+
+        internal void HandleSelection()
+        {
+            if (LeftPageCorner.IsHighlighted)
+            {
+                LeftPageCorner.CallClick();
+            }
+            else if (RightPageCorner.IsHighlighted)
+            {
+                RightPageCorner.CallClick();
+            }
+            else if (BookmarkAll.IsHighlighted)
+            {
+                BookmarkAll.CallClick();
+            }
+            else if (BookmarkCaught.IsHighlighted)
+            {
+                BookmarkCaught.CallClick();
+            }
+            else if (BookmarkClose.IsHighlighted)
+            {
+                BookmarkClose.CallClick();
+            }
+        }
+
+        internal void HandleMovement(Direction desiredDirection)
+        {
+            switch (desiredDirection)
+            {
+                case Direction.Up:
+                    if (BookmarkClose.IsHighlighted) RightPageCorner.HighlightButton();
+                    if (BookmarkAll.IsHighlighted || BookmarkCaught.IsHighlighted) LeftPageCorner.HighlightButton();
+                    BookmarkAll.UnhighlightButton();
+                    BookmarkCaught.UnhighlightButton();
+                    BookmarkClose.UnhighlightButton();
+                    break;
+                case Direction.Down:
+                    if (LeftPageCorner.IsHighlighted) BookmarkAll.HighlightButton();
+                    if (RightPageCorner.IsHighlighted) BookmarkClose.HighlightButton();
+                    LeftPageCorner.UnhighlightButton();
+                    RightPageCorner.UnhighlightButton();
+                    break;
+                case Direction.Left:
+                    if (RightPageCorner.IsHighlighted) LeftPageCorner.HighlightButton();
+                    if (BookmarkClose.IsHighlighted) BookmarkCaught.HighlightButton();
+                    if (BookmarkCaught.IsHighlighted)
+                    {
+                        BookmarkCaught.UnhighlightButton();
+                        BookmarkAll.HighlightButton();
+                    }
+
+                    RightPageCorner.UnhighlightButton();
+                    BookmarkClose.UnhighlightButton();
+                    break;
+                case Direction.Right:
+                    if (LeftPageCorner.IsHighlighted) RightPageCorner.HighlightButton();
+                    if (BookmarkAll.IsHighlighted) BookmarkCaught.HighlightButton();
+                    if (BookmarkCaught.IsHighlighted)
+                    {
+                        BookmarkCaught.UnhighlightButton();
+                        BookmarkClose.HighlightButton();
+                    }
+                    BookmarkAll.UnhighlightButton();
+                    LeftPageCorner.UnhighlightButton();
+                    break;
+            }
         }
 
         private void LoadCaughtFish(int atPageIndex = 0)
