@@ -170,6 +170,11 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>PointsState</Type>
+      <Name>PointsState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>SingleBarFrameInstance.Height</Name>
       <Value xsi:type="xsd:float">100</Value>
@@ -300,6 +305,12 @@
       <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
+      <Type>int</Type>
+      <Name>TextStatValue.Blue</Name>
+      <ExposedAsName>TextStatValueBlue</ExposedAsName>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>TextStatValue.Font</Name>
       <Value xsi:type="xsd:string">Britannic Bold</Value>
@@ -317,6 +328,12 @@
       <Value xsi:type="xsd:int">24</Value>
       <ExposedAsName>TextStatValueFontSize</ExposedAsName>
       <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextStatValue.Green</Name>
+      <ExposedAsName>TextStatValueGreen</ExposedAsName>
+      <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
@@ -347,6 +364,12 @@
       <Name>TextStatValue.Parent</Name>
       <Value xsi:type="xsd:string">ColoredRectangleInstance</Value>
       <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>TextStatValue.Red</Name>
+      <ExposedAsName>TextStatValueRed</ExposedAsName>
+      <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
       <Type>string</Type>
@@ -629,6 +652,51 @@
         <Type>int</Type>
         <Name>TextStatValue.Red</Name>
         <Value xsi:type="xsd:int">127</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
+  <Category>
+    <Name>Points</Name>
+    <State>
+      <Name>Awarded</Name>
+      <Variable>
+        <Type>bool</Type>
+        <Name>LinearScaleContainerInstance.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>NotAwarded</Name>
+      <Variable>
+        <Type>bool</Type>
+        <Name>LinearScaleContainerInstance.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>HorizontalAlignment</Type>
+        <Name>TextStatValue.HorizontalAlignment</Name>
+        <Value xsi:type="xsd:int">2</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TextStatValue.Width</Name>
+        <Value xsi:type="xsd:float">85</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TextStatValue.X</Name>
+        <Value xsi:type="xsd:float">99</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>HorizontalAlignment</Type>
+        <Name>TextStatValue.X Origin</Name>
+        <Value xsi:type="xsd:int">2</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

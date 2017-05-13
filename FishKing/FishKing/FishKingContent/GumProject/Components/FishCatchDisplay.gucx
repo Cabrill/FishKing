@@ -365,6 +365,11 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>RequirementsState</Type>
+      <Name>RequirementsState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>SingleBarFrameInstance.Height</Name>
       <Value xsi:type="xsd:float">100</Value>
@@ -761,6 +766,135 @@
         <Type>StatQualityState</Type>
         <Name>WeightWithScale.StatQualityState</Name>
         <Value xsi:type="xsd:string">Best</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
+  <Category>
+    <Name>Requirements</Name>
+    <State>
+      <Name>Met</Name>
+      <Variable>
+        <Type>PointsState</Type>
+        <Name>StarWithScale.PointsState</Name>
+        <Value xsi:type="xsd:string">Awarded</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>StarWithScale.TextStatValueBlue</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>StarWithScale.TextStatValueGreen</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>StarWithScale.TextStatValueRed</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>WeightNotMet</Name>
+      <Variable>
+        <Type>PointsState</Type>
+        <Name>StarWithScale.PointsState</Name>
+        <Value xsi:type="xsd:string">NotAwarded</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>string</Type>
+        <Name>StarWithScale.StatValueText</Name>
+        <Value xsi:type="xsd:string">0 Too Small</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>StarWithScale.TextStatValueBlue</Name>
+        <Value xsi:type="xsd:int">60</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>StarWithScale.TextStatValueGreen</Name>
+        <Value xsi:type="xsd:int">60</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>StarWithScale.TextStatValueRed</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>LengthNotMet</Name>
+      <Variable>
+        <Type>PointsState</Type>
+        <Name>StarWithScale.PointsState</Name>
+        <Value xsi:type="xsd:string">NotAwarded</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>string</Type>
+        <Name>StarWithScale.StatValueText</Name>
+        <Value xsi:type="xsd:string">0 Too Small</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>StarWithScale.TextStatValueBlue</Name>
+        <Value xsi:type="xsd:int">60</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>StarWithScale.TextStatValueGreen</Name>
+        <Value xsi:type="xsd:int">60</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>StarWithScale.TextStatValueRed</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>TypeNotMet</Name>
+      <Variable>
+        <Type>PointsState</Type>
+        <Name>StarWithScale.PointsState</Name>
+        <Value xsi:type="xsd:string">NotAwarded</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>string</Type>
+        <Name>StarWithScale.StatValueText</Name>
+        <Value xsi:type="xsd:string">0 Wrong type</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>StarWithScale.TextStatValueBlue</Name>
+        <Value xsi:type="xsd:int">60</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>StarWithScale.TextStatValueGreen</Name>
+        <Value xsi:type="xsd:int">60</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>StarWithScale.TextStatValueRed</Name>
+        <Value xsi:type="xsd:int">255</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

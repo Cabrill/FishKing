@@ -1,4 +1,5 @@
-﻿using FishKing.UtilityClasses;
+﻿using FishKing.Entities;
+using FishKing.UtilityClasses;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -29,6 +30,11 @@ namespace FishKing.GameClasses
             MapName = map;
             TournamentRules = rules;
             TrophyRequirements = requirements;
+        }
+
+        public bool DoesFishMeetRequirements(Fish fish)
+        {
+            return TournamentRules.DoesFishMeetRequirements(fish);
         }
 
         public static bool operator ==(TournamentStructure a, TournamentStructure b)

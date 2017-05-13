@@ -58,6 +58,26 @@ namespace FishKing.GameClasses
             }
         }
 
+        internal bool DoesFishMeetRequirements(Fish fish)
+        {
+            return IsFishHeavyEnough(fish) && IsFishLongEnough(fish) && IsFishRightType(fish);
+        }
+
+        public bool IsFishHeavyEnough(Fish fish)
+        {
+            return fish.Grams >= MinimumWeight;
+        }
+
+        public bool IsFishLongEnough(Fish fish)
+        {
+            return fish.LengthMM >= MinimumLength;
+        }
+
+        public bool IsFishRightType(Fish fish)
+        {
+            return FishTypesAllowed.Contains(fish.FishType);
+        }
+
         public TournamentRules()
         {
             FishTypesAllowed = new List<Fish_Types>();

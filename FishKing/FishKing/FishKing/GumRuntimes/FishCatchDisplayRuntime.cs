@@ -1,4 +1,5 @@
 ﻿using FishKing.Entities;
+using FishKing.Managers;
 using FlatRedBall;
 using RenderingLibrary;
 using System;
@@ -18,34 +19,20 @@ namespace FishKing.GumRuntimes
 
             int maxFishTypeLength = GlobalContent.Fish_Types[fish.FishType.Name].MaxMM;
             int maxFishTypeGrams = GlobalContent.Fish_Types[fish.FishType.Name].MaxGrams;
-            int maxFishTypePoints = GlobalContent.Fish_Types[fish.FishType.Name].MaxPoints;
 
             float lengthScale = (float)decimal.Divide(fish.LengthMM, maxFishTypeLength);
             float weightScale = (float)decimal.Divide(fish.Grams, maxFishTypeGrams);
-            float pointScale = (float)decimal.Divide(fish.Points, maxFishTypePoints);
-
-            //int fontSize = 18;
-            //fontSize = (int)(decimal.Divide(FlatRedBallServices.GraphicsOptions.ResolutionHeight, 1280) * fontSize);
-
-            //LengthWithScale.TextStatValueFontSize = fontSize;
-            //WeightWithScale.TextStatValueFontSize = fontSize;
-            //StarWithScale.TextStatValueFontSize = fontSize;
-            //TextFishNameFontSize = fontSize;
-            //FontSize = fontSize;
 
             LengthWithScale.InterpolateBetween(CatchStatWithScaleRuntime.StatQuality.Poor, CatchStatWithScaleRuntime.StatQuality.Best, lengthScale);
             WeightWithScale.InterpolateBetween(CatchStatWithScaleRuntime.StatQuality.Poor, CatchStatWithScaleRuntime.StatQuality.Best, weightScale);
-            StarWithScale.InterpolateBetween(CatchStatWithScaleRuntime.StatQuality.Poor, CatchStatWithScaleRuntime.StatQuality.Best, pointScale);
 
             LengthWithScale.StatValueText = fish.LengthDisplay;
             WeightWithScale.StatValueText = fish.WeightDisplay;
-            StarWithScale.StatValueText = fish.Points.ToString();
+
             TextFishName.Text = fish.Name;
 
-            var fishType = fish.FishType;
-
-            var textureRow = fishType.Row;
-            var textureCol = fishType.Col;
+            var textureRow = fish.FishType.Row;
+            var textureCol = fish.FishType.Col;
             var textureHeight = 64;
             var textureWidth = 128;
             FishSprite.TextureLeft = textureCol * textureWidth;
@@ -53,8 +40,31 @@ namespace FishKing.GumRuntimes
             FishSprite.TextureWidth = textureWidth;
             FishSprite.TextureHeight = textureHeight;
 
+            if (TournamentManager.CurrentTournament.DoesFishMeetRequirements(fish))
+            {
+                CurrentRequirementsState = Requirements.Met;
+
+                int maxFishTypePoints = GlobalContent.Fish_Types[fish.FishType.Name].MaxPoints;
+                float pointScale = (float)decimal.Divide(fish.Points, maxFishTypePoints);
+
+                StarWithScale.InterpolateBetween(CatchStatWithScaleRuntime.StatQuality.Poor, CatchStatWithScaleRuntime.StatQuality.Best, pointScale);
+                StarWithScale.StatValueText = fish.Points.ToString();
+            }
+            else
+            {
+                if (!TournamentManager.CurrentTournament.TournamentRules.IsFishRightType(fish))
+                {
+                    CurrentRequirementsState = Requirements.TypeNotMet;
+                }
+                else if (!TournamentManager.CurrentTournament.TournamentRules.IsFishHeavyEnough(fish))
+                {
+                    CurrentRequirementsState = Requirements.WeightNotMet;
+                }
+                else if (!TournamentManager.CurrentTournament.TournamentRules.IsFishLongEnough(fish))
+                {
+                    CurrentRequirementsState = Requirements.LengthNotMet;
+                }
+            }
         }
-
-
     }
 }

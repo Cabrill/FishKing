@@ -575,9 +575,14 @@ namespace FishKing.Screens
                                 CharacterInstance.HandleFishCaught();
                             } else if(CharacterInstance.IsDisplayingCatch && CharacterInstance.IsOnFinalFrameOfAnimationChain && !FishCatchDisplayInstance.Visible)
                             {
-                                FishCatchDisplayInstance.ShowFish(CharacterInstance.FishOnTheLine);
-                                TournamentManager.CurrentScores.AddToPlayerScore(CharacterInstance.FishOnTheLine.Points);
-                                SaveGameManager.CurrentSaveData.AddCaughtFish(CharacterInstance.FishOnTheLine);
+                                var fish = CharacterInstance.FishOnTheLine;
+                                FishCatchDisplayInstance.ShowFish(fish);
+                                SaveGameManager.CurrentSaveData.AddCaughtFish(fish);
+
+                                if (TournamentManager.CurrentTournament.DoesFishMeetRequirements(fish))
+                                {
+                                    TournamentManager.CurrentScores.AddToPlayerScore(fish.Points);
+                                }
                             }
                         }
                         else
