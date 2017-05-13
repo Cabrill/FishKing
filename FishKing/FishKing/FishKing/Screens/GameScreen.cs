@@ -102,9 +102,17 @@ namespace FishKing.Screens
             PauseMenuInstance.ResumeGameButtonClick += (IWindow window) => { UnpauseThisScreen(); PauseMenuInstance.Visible = false; };
             PauseMenuInstance.HelpButtonClick += (IWindow window) => { HelpScreenInstance.Visible = true; };
             PauseMenuInstance.ExitButtonClick += (IWindow window) => {
-                SaveGameManager.CurrentSaveData.StopPlaySession();
-                SaveGameManager.SaveCurrentData();
-                FlatRedBallServices.Game.Exit();
+                PopupMessageInstance.CurrentPopupDisplayState = GumRuntimes.PopupMessageRuntime.PopupDisplay.OKCancel;
+                PopupMessageInstance.TitleText = "Confirm Quit";
+                PopupMessageInstance.PopupText = "Return to the main menu and abandon this tournament?";
+                PopupMessageInstance.CancelButtonClick += (IWindow win) => { PopupMessageInstance.Visible = false; };
+                PopupMessageInstance.OKButtonClick += (IWindow win) =>
+                {
+                    SaveGameManager.CurrentSaveData.StopPlaySession();
+                    SaveGameManager.SaveCurrentData();
+                    LoadingScreen.TransitionToScreen(typeof(MainMenu).FullName);
+                };
+                PopupMessageInstance.Visible = true;
             };
         }
 
@@ -425,8 +433,23 @@ namespace FishKing.Screens
 
         private void HandlePauseInput()
         {
-            PauseMenuInstance.HandleMovement(CharacterInstance.MovementInput);
-            PauseMenuInstance.HandleSelection(CharacterInstance.ActionInput);
+            if (PopupMessageInstance.Visible)
+            {
+
+                if (CharacterInstance.ActionInput.WasJustPressed)
+                {
+                    PopupMessageInstance.HandleSelection();
+                }
+                else
+                {
+                    PopupMessageInstance.HandleMovement(CardinalTimedDirection.GetDesiredDirection(CharacterInstance.MovementInput));
+                }
+            }
+            else
+            {
+                PauseMenuInstance.HandleMovement(CharacterInstance.MovementInput);
+                PauseMenuInstance.HandleSelection(CharacterInstance.ActionInput);
+            }
         }
         
 

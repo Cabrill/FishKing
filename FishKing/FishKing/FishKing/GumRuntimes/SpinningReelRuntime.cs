@@ -1,4 +1,5 @@
-﻿using FlatRedBall.Audio;
+﻿using FishKing.Managers;
+using FlatRedBall.Audio;
 using Microsoft.Xna.Framework.Audio;
 using RenderingLibrary;
 using System;
@@ -35,6 +36,9 @@ namespace FishKing.GumRuntimes
             reelSlowClick.IsLooped = true;
             reelMediumClick.IsLooped = true;
             reelFastClick.IsLooped = true;
+            reelSlowClick.Volume = OptionsManager.Options.SoundEffectsVolume;
+            reelMediumClick.Volume = OptionsManager.Options.SoundEffectsVolume;
+            reelFastClick.Volume = OptionsManager.Options.SoundEffectsVolume;
         }
 
         

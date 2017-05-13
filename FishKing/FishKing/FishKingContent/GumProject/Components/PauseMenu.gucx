@@ -11,9 +11,15 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>ButtonContainer.HasEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>ButtonContainer.Height</Name>
-      <Value xsi:type="xsd:float">90</Value>
+      <Value xsi:type="xsd:float">85</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -25,7 +31,7 @@
     <Variable>
       <Type>float</Type>
       <Name>ButtonContainer.Width</Name>
-      <Value xsi:type="xsd:float">90</Value>
+      <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -37,7 +43,13 @@
     <Variable>
       <Type>float</Type>
       <Name>ButtonContainer.X</Name>
-      <Value xsi:type="xsd:float">5</Value>
+      <Value xsi:type="xsd:float">50</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>ButtonContainer.X Origin</Name>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -135,7 +147,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Height</Name>
-      <Value xsi:type="xsd:float">90</Value>
+      <Value xsi:type="xsd:float">100</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -284,9 +296,21 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>SettingsMenuInstance.HasEvents</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>SettingsMenuInstance.Visible</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>SingleBarFrameInstance.Height</Name>
-      <Value xsi:type="xsd:float">100</Value>
+      <Value xsi:type="xsd:float">90</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -334,13 +358,43 @@
     <Variable>
       <Type>float</Type>
       <Name>SingleBarFrameInstance.Width</Name>
-      <Value xsi:type="xsd:float">100</Value>
+      <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>SingleBarFrameInstance.Width Units</Name>
       <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>SingleBarFrameInstance.X</Name>
+      <Value xsi:type="xsd:float">50</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>SingleBarFrameInstance.X Origin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>SingleBarFrameInstance.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>SingleBarFrameInstance.Y</Name>
+      <Value xsi:type="xsd:float">5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>SingleBarFrameInstance.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -357,7 +411,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Width</Name>
-      <Value xsi:type="xsd:float">50</Value>
+      <Value xsi:type="xsd:float">100</Value>
       <Category>Dimensions</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -377,14 +431,14 @@
     <Variable>
       <Type>float</Type>
       <Name>X</Name>
-      <Value xsi:type="xsd:float">50</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <Category>Position</Category>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>HorizontalAlignment</Type>
       <Name>X Origin</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">0</Value>
       <Category>Position</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -398,7 +452,7 @@
     <Variable>
       <Type>float</Type>
       <Name>Y</Name>
-      <Value xsi:type="xsd:float">5</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <Category>Position</Category>
       <SetsValue>true</SetsValue>
     </Variable>
@@ -440,6 +494,10 @@
   <Instance>
     <Name>ExitButton</Name>
     <BaseType>subcomponent\MainMenuButton</BaseType>
+  </Instance>
+  <Instance>
+    <Name>SettingsMenuInstance</Name>
+    <BaseType>SettingsMenu</BaseType>
   </Instance>
   <Behaviors />
 </ComponentSave>

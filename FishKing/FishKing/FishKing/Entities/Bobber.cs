@@ -15,6 +15,7 @@ using FlatRedBall.Glue.StateInterpolation;
 using FlatRedBall.Math.Splines;
 using FlatRedBall.Math;
 using FishKing.Extensions;
+using FishKing.Managers;
 
 namespace FishKing.Entities
 {
@@ -195,6 +196,7 @@ namespace FishKing.Entities
             if (Visible)
             {
                 WaterSplashInstance.Play();
+                bobberSoundInstance.Volume = OptionsManager.Options.SoundEffectsVolume;
                 bobberSoundInstance.Play();
                 IsMoving = false;
                 CurrentState = VariableState.BobInWater;

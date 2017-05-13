@@ -145,15 +145,21 @@
   <ItemGroup>
     <Compile Include="DataTypes\Fish_Types.cs" />
     <Compile Include="Extensions\TournamentExtensions.cs" />
+    <Compile Include="GameClasses\GameOptions.cs" />
     <Compile Include="GameClasses\MasterTournamentList.cs" />
     <Compile Include="GumRuntimes\FishopediaRuntime.cs" />
     <Compile Include="GumRuntimes\FishopediaRuntime.Generated.cs">
       <DependentUpon>FishopediaRuntime.cs</DependentUpon>
     </Compile>
+    <Compile Include="GumRuntimes\LinearScaleContainerRuntime.cs" />
     <Compile Include="GumRuntimes\MainMenuGumRuntime.cs" />
     <Compile Include="GumRuntimes\ResultsDisplayRuntime.cs" />
     <Compile Include="GumRuntimes\ResultsDisplayRuntime.Generated.cs">
       <DependentUpon>ResultsDisplayRuntime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="GumRuntimes\SettingsMenuRuntime.cs" />
+    <Compile Include="GumRuntimes\SettingsMenuRuntime.Generated.cs">
+      <DependentUpon>SettingsMenuRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\StoreScreenRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\BlueScreenBackgroundRuntime.Generated.cs" />
@@ -186,6 +192,10 @@
     </Compile>
     <Compile Include="GumRuntimes\subcomponent\PageDividerRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\ScrollingBackgroundRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\subcomponent\SettingsSliderRuntime.cs" />
+    <Compile Include="GumRuntimes\subcomponent\SettingsSliderRuntime.Generated.cs">
+      <DependentUpon>SettingsSliderRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\subcomponent\StoreItemListingRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\StoreItemPreviewRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\subcomponent\TextEntryBoxRuntime.cs" />
@@ -386,7 +396,9 @@
     <Compile Include="GumRuntimes\icons\GoldMeasureSpriteRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\icons\GoldScaleSpriteRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\icons\GoldStarSpriteRuntime.Generated.cs" />
-    <Compile Include="GumRuntimes\LinearScaleContainerRuntime.Generated.cs" />
+    <Compile Include="GumRuntimes\LinearScaleContainerRuntime.Generated.cs">
+      <DependentUpon>LinearScaleContainerRuntime.cs</DependentUpon>
+    </Compile>
     <Compile Include="GumRuntimes\LoadingScreenGumRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\LoadingScreenRuntime.Generated.cs" />
     <Compile Include="GumRuntimes\MainMenuGumRuntime.Generated.cs">
@@ -450,6 +462,7 @@
     </Compile>
     <Compile Include="GumRuntimes\UnknownFishRuntime.Generated.cs" />
     <Compile Include="Managers\MusicManager.cs" />
+    <Compile Include="Managers\OptionsManager.cs" />
     <Compile Include="Managers\SaveGameManager.cs" />
     <Compile Include="Managers\TournamentManager.cs" />
     <Compile Include="OcularPlaneRuntime\OcularPlaneManager.cs" />

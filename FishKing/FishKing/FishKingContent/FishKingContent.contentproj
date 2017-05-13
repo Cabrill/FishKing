@@ -173,6 +173,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>ResultsDisplay</Name>
     </None>
+    <None Include="GumProject\Components\SettingsMenu.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>SettingsMenu</Name>
+    </None>
     <None Include="GumProject\Components\SingleBarFrame.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>SingleBarFrame</Name>
@@ -244,6 +248,10 @@
     <None Include="GumProject\Components\subcomponent\PageDivider.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>PageDivider</Name>
+    </None>
+    <None Include="GumProject\Components\subcomponent\SettingsSlider.gucx">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>SettingsSlider</Name>
     </None>
     <None Include="GumProject\Components\subcomponent\StoreItemListing.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
@@ -400,6 +408,14 @@
     <None Include="GumProject\FontCache\Font36MV Boli_0.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font36MV Boli_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font36MV Boli_o1.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font36MV Boli_o1</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font36MV Boli_o1_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font36MV Boli_o1_0</Name>
     </None>
     <None Include="GumProject\FontCache\Font36Rockwell Extra Bold_o1.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

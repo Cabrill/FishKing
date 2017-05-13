@@ -46,6 +46,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>bool</Type>
+      <Name>PopupMessageInstance.Visible</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>int</Type>
       <Name>ProgressBarInstance.BarFillTextureWidth</Name>
       <Value xsi:type="xsd:int">457</Value>
@@ -144,5 +150,9 @@
   <Instance>
     <Name>ResultsDisplayInstance</Name>
     <BaseType>ResultsDisplay</BaseType>
+  </Instance>
+  <Instance>
+    <Name>PopupMessageInstance</Name>
+    <BaseType>PopupMessage</BaseType>
   </Instance>
 </ScreenSave>

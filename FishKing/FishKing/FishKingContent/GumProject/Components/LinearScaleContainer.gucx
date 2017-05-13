@@ -189,12 +189,14 @@
       <Type>int</Type>
       <Name>ColoredArrow.Blue</Name>
       <Value xsi:type="xsd:int">0</Value>
+      <ExposedAsName>ArrowBlue</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>ColoredArrow.Green</Name>
       <Value xsi:type="xsd:int">0</Value>
+      <ExposedAsName>ArrowGreen</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -213,6 +215,7 @@
       <Type>int</Type>
       <Name>ColoredArrow.Red</Name>
       <Value xsi:type="xsd:int">255</Value>
+      <ExposedAsName>ArrowRed</ExposedAsName>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

@@ -1,4 +1,5 @@
 ﻿using FishKing.Entities;
+using FishKing.Managers;
 using Microsoft.Xna.Framework.Audio;
 using RenderingLibrary;
 using System;
@@ -80,6 +81,7 @@ namespace FishKing.GumRuntimes
         {
             if (!LineSnapAnimation.IsPlaying() && CurrentLineStatusState != LineStatus.LineSnapped)
             {
+                lineSnapSound.Volume = OptionsManager.Options.SoundEffectsVolume;
                 lineSnapSound.Play();
                 LineSnapAnimation.Play();
             }

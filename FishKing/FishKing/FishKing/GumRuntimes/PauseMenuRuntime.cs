@@ -13,11 +13,22 @@ namespace FishKing.GumRuntimes
     {
         partial void CustomInitialize()
         {
-            
+            SettingsButton.Click += SettingsButton_Click;
+        }
+
+        private void SettingsButton_Click(FlatRedBall.Gui.IWindow window)
+        {
+            SettingsMenuInstance.Visible = true;
         }
 
         public void HandleMovement(I2DInput input)
         {
+            if (SettingsMenuInstance.Visible)
+            {
+                SettingsMenuInstance.HandleMovement(input);
+                return;
+            }
+
             var desiredDirection = CardinalTimedDirection.GetDesiredDirection(input);
 
             if (desiredDirection == Direction.None) return;
@@ -66,7 +77,11 @@ namespace FishKing.GumRuntimes
         {
             if (input.WasJustPressed)
             {
-                if (ResumeGameButton.IsHighlighted)
+                if (SettingsMenuInstance.Visible)
+                {
+                    SettingsMenuInstance.HandleSelect();
+                }
+                else if (ResumeGameButton.IsHighlighted)
                 {
                     ResumeGameButton.CallClick();
                 }

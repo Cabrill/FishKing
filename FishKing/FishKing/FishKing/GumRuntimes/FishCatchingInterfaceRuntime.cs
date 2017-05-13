@@ -1,4 +1,5 @@
 ﻿using FishKing.Entities;
+using FishKing.Managers;
 using FlatRedBall.Glue.StateInterpolation;
 using Microsoft.Xna.Framework.Audio;
 using StateInterpolationPlugin;
@@ -28,7 +29,7 @@ namespace FishKing.GumRuntimes
         {
             underwaterSound = GlobalContent.UnderwaterSound.CreateInstance();
             underwaterSound.IsLooped = true;
-            underwaterSound.Volume = 0.25f;
+            underwaterSound.Volume = 0.25f * OptionsManager.Options.SoundEffectsVolume;
         }
 
         public void AttachFish(Fish fish, WaterType waterType)

@@ -481,6 +481,16 @@
           <IndependentOfCamera>true</IndependentOfCamera>
           <LayerOn>HudLayer</LayerOn>
         </NamedObjectSave>
+        <NamedObjectSave>
+          <SourceType>File</SourceType>
+          <SourceFile>GumProject/Screens/GameScreenGum.gusx</SourceFile>
+          <SourceName>PopupMessageInstance (FishKing.GumRuntimes.PopupMessageRuntime)</SourceName>
+          <InstanceName>PopupMessageInstance</InstanceName>
+          <AttachToContainer>true</AttachToContainer>
+          <GenerateTimedEmit>true</GenerateTimedEmit>
+          <IndependentOfCamera>true</IndependentOfCamera>
+          <LayerOn>HudLayer</LayerOn>
+        </NamedObjectSave>
       </NamedObjects>
       <UseGlobalContent>true</UseGlobalContent>
     </ScreenSave>

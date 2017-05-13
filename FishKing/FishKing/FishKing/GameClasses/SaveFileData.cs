@@ -17,6 +17,8 @@ namespace FishKing.GameClasses
 
         public int SaveSlotNumber { get; set; }
 
+        public GameOptions Options { get; set; }
+
         public DateTime DateCreated { get; set; }
         public DateTime LastPlayed { get; set; }
 
@@ -130,10 +132,18 @@ namespace FishKing.GameClasses
             }
         }
 
-        public SaveFileData() { }
+        public SaveFileData() {
+            Options = new GameOptions();
+            DateCreated = DateTime.Now;
+            LastPlayed = DateTime.Now;
+            TimePlayed = new TimeSpan(0);
+            FishCaught = new SerializableDictionary<Fish_Types, FishRecord>();
+            ParticipatedTournaments = new List<TournamentResults>();
+        }
 
         public SaveFileData(int saveSlot, int playerFishNumber)
         {
+            Options = new GameOptions();
             SaveSlotNumber = saveSlot;
             PlayerFishNumber = playerFishNumber;
             DateCreated = DateTime.Now;

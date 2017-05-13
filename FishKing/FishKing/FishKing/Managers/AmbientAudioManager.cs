@@ -11,6 +11,22 @@ namespace FishKing
 {
     public static class AmbientAudioManager
     {
+        private static bool volumeHasChanged = false;
+        private static float _volume = 1f;
+        public static float Volume
+        {
+            get
+            {
+                return _volume;
+            }
+            set
+            {
+                _volume = value;
+                volumeHasChanged = true;
+                UpdateAmbientSoundSources();
+            }
+        }
+
         public static FlatRedBall.TileGraphics.LayeredTileMap CurrentTileMap;
         public static Entities.Character CharacterInstance;
 
@@ -30,6 +46,9 @@ namespace FishKing
 
         public static void UpdateAmbientSoundSources()
         {
+            //EARLY OUT
+            if (CurrentTileMap == null) return;
+
             listener.Position = Vector3.Zero;
             Point3D charPosition = new Point3D(CharacterInstance.Position);
 
@@ -43,7 +62,7 @@ namespace FishKing
                 }
 
                 waterfallEmitter.Position = FindClosestPolygonPointOnLayer("WaterfallLines", charPosition);
-                waterFallAmbientSound.Volume = Math.Max(0, 1 - (waterfallEmitter.Position.Length() / 10));
+                waterFallAmbientSound.Volume = Volume * Math.Max(0, 1 - (waterfallEmitter.Position.Length() / 10));
 
                 waterFallAmbientSound.Apply3D(listener, waterfallEmitter);
 
@@ -78,7 +97,7 @@ namespace FishKing
                 float positionZ = CharacterInstance.Position.Z;
 
                 oceanEmitter.Position = new Vector3(positionX, positionY, positionZ);
-                oceanAmbientSound.Volume = MathHelper.Clamp(1f - (2.5f * minDist / sumDist), 0, 1);
+                oceanAmbientSound.Volume = Volume *  MathHelper.Clamp(1f - (2.5f * minDist / sumDist), 0, 1);
 
                 oceanAmbientSound.Apply3D(listener, oceanEmitter);
 
@@ -113,7 +132,7 @@ namespace FishKing
                 float positionZ = CharacterInstance.Position.Z;
 
                 riverEmitter.Position = new Vector3(positionX, positionY, positionZ);
-                riverAmbientSound.Volume = MathHelper.Clamp(1f - (2.5f * minDist / sumDist), 0, 1);
+                riverAmbientSound.Volume = Volume *  MathHelper.Clamp(1f - (2.5f * minDist / sumDist), 0, 1);
 
                 riverAmbientSound.Apply3D(listener, riverEmitter);
 
@@ -132,8 +151,14 @@ namespace FishKing
                     caveAmbientSound.IsLooped = true;
                 }
 
+                if (volumeHasChanged)
+                {
+                    caveAmbientSound.Volume = Volume;
+                }
+
                 if (caveAmbientSound.State != SoundState.Playing)
                 {
+                    caveAmbientSound.Volume = Volume;
                     caveAmbientSound.Play();
                 }
             }
@@ -146,8 +171,14 @@ namespace FishKing
                     deepOceanAmbientSound.IsLooped = true;
                 }
 
+                if (volumeHasChanged)
+                {
+                    deepOceanAmbientSound.Volume = Volume;
+                }
+
                 if (deepOceanAmbientSound.State != SoundState.Playing)
                 {
+                    deepOceanAmbientSound.Volume = Volume;
                     deepOceanAmbientSound.Play();
                 }
             }
@@ -162,15 +193,17 @@ namespace FishKing
                 }
 
                 forestEmitter.Position = FindClosestPolygonPointOnLayer("ForestLines", charPosition);
-                forestAmbientSound.Volume = Math.Max(0, 1 - (forestEmitter.Position.Length() / 10));
+                forestAmbientSound.Volume = Volume * Math.Max(0, 1 - (forestEmitter.Position.Length() / 10));
 
-                forestAmbientSound.Apply3D(listener, waterfallEmitter);
+                forestAmbientSound.Apply3D(listener, forestEmitter);
 
                 if (forestAmbientSound.State != SoundState.Playing)
                 {
                     forestAmbientSound.Play();
                 }
             }
+
+            volumeHasChanged = false;
         }
 
         private static Vector3 FindClosestPolygonPointOnLayer(string layerName, Point3D fromPoint)
@@ -221,10 +254,13 @@ namespace FishKing
             {
                 oceanAmbientSound.Stop();
             }
-
             if (caveAmbientSound != null)
             {
                 caveAmbientSound.Stop();
+            }
+            if (forestAmbientSound != null)
+            {
+                forestAmbientSound.Stop();
             }
         }
 

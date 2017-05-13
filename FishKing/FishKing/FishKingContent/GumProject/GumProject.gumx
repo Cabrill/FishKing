@@ -101,6 +101,10 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
+    <Name>SettingsMenu</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
     <Name>SingleBarFrame</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
@@ -170,6 +174,10 @@
   </ComponentReference>
   <ComponentReference>
     <Name>subcomponent\PageDivider</Name>
+    <ElementType>Component</ElementType>
+  </ComponentReference>
+  <ComponentReference>
+    <Name>subcomponent\SettingsSlider</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>

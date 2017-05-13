@@ -15,10 +15,11 @@ namespace FishKing
             get { return playingSong; }
         }
 
+        private static float volumeModifier = 0.35f;
         public static float Volume
         {
             get { return Microsoft.Xna.Framework.Media.MediaPlayer.Volume; }
-            set { Microsoft.Xna.Framework.Media.MediaPlayer.Volume = value; }
+            set { Microsoft.Xna.Framework.Media.MediaPlayer.Volume = (value* volumeModifier); }
         }
 
         private static List<Song> playList;

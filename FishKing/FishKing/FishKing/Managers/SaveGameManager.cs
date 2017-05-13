@@ -66,6 +66,7 @@ namespace FishKing.Managers
         public static void SetCurrentData(SaveFileData data)
         {
             CurrentSaveData = data;
+            OptionsManager.Options = data.Options;
         }
     }
 }
