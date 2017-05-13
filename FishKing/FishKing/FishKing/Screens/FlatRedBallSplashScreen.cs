@@ -11,8 +11,7 @@ using FlatRedBall.Graphics.Animation;
 using FlatRedBall.Graphics.Particle;
 using FlatRedBall.Math.Geometry;
 using FlatRedBall.Localization;
-
-
+using FishKing.Managers;
 
 namespace FishKing.Screens
 {
@@ -24,6 +23,7 @@ namespace FishKing.Screens
 		void CustomInitialize()
 		{
             startTime = FlatRedBall.TimeManager.CurrentTime;
+            SetOptions();
 		}
 
 		void CustomActivity(bool firstTimeCalled)
@@ -42,6 +42,16 @@ namespace FishKing.Screens
                 }
             }
 		}
+
+        private async void SetOptions()
+        {
+            var saves = await SaveGameManager.GetAllSaves();
+            var mostRecentSave = saves?.OrderBy(s => s.LastPlayed).FirstOrDefault();
+            if (mostRecentSave != null)
+            {
+                OptionsManager.Options = mostRecentSave.Options;
+            }
+        }
 
 		void CustomDestroy()
 		{

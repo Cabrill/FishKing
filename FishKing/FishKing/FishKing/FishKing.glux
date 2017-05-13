@@ -3011,7 +3011,7 @@
     <RecordLockContention>false</RecordLockContention>
   </GlobalContentSettingsSave>
   <SyncedProjects />
-  <StartUpScreen>Screens\TitleScreen</StartUpScreen>
+  <StartUpScreen>Screens\FlatRedBallSplashScreen</StartUpScreen>
   <ResolutionPresets>
     <ResolutionValues>
       <Name>720p</Name>
