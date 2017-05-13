@@ -26,5 +26,10 @@ namespace FishKing.Extensions
             fishType = (Fish_Types)ftdrng.GetDistributedRandomValue(RandomNumbers.Random.NextDouble());
             return fishType;
         }
+
+        public static DataTypes.Fish_Types GetValue<Fish_Types>(string value)
+        {
+            return GlobalContent.Fish_Types[value];
+        }
     }
 }

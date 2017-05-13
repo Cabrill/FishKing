@@ -145,6 +145,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DataTypes\Fish_Types.cs" />
+    <Compile Include="DataTypes\Tournaments.cs" />
+    <Compile Include="DataTypes\Tournaments.Generated.cs">
+      <DependentUpon>Tournaments.cs</DependentUpon>
+    </Compile>
     <Compile Include="Extensions\TournamentExtensions.cs" />
     <Compile Include="GameClasses\GameOptions.cs" />
     <Compile Include="GameClasses\MasterTournamentList.cs" />

@@ -3012,6 +3012,13 @@
       <HasPublicProperty>true</HasPublicProperty>
       <ProjectsToExcludeFrom />
     </ReferencedFileSave>
+    <ReferencedFileSave>
+      <Name>GlobalContent/Tournaments.csv</Name>
+      <IsSharedStatic>true</IsSharedStatic>
+      <HasPublicProperty>true</HasPublicProperty>
+      <CreatesDictionary>true</CreatesDictionary>
+      <ProjectsToExcludeFrom />
+    </ReferencedFileSave>
   </GlobalFiles>
   <GlobalContentSettingsSave>
     <LoadAsynchronously>false</LoadAsynchronously>

@@ -2158,7 +2158,7 @@
  </layer>
  <layer name="Ground" width="30" height="17">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC+2RWw6CMBBFx6JffezEuAeNui4BcV+gsbIqZ2wbCRRLy5cJk9xM0sztmQeAiZwDMAWQSYA7N5nJb96tYFJssa5Bv+bGR2rsfw8+rK8tl5gvVIEqrZf+iOHqjq+0PRA3U8N6JvBdmEx8UrfvWK7zud6JuRFhv+NnCfMS63Mr9LeY12Ia08UefQdl9hDDpfox1hHnOFmdpf+PHJmF5yapQcwn9lJJIy2GPVzwraYbz+RWws/sy/UwtoOY6O70F7PPn8MOzRdip0Yq0+mWMPN1Bm/hLtx/5L4B90ON8fgHAAA=
+   H4sIAAAAAAAAC+2Qbw6CMAzFq6hf6LiJ8Q4S9VziwHsJRvRUtukWCH8cG59MeMnLGOnery2AKIsB1gogMk5Vc+fzsIJJ2lNdSVm1yWPzvSI/4379o8V90/eHrM0/zvDh1q132vQwxl0jMVHODXmLsgOb4cu1rMrOk0imSzuUHUQB82rDY1ammjlc0lSTk4/0Lk1kDz7cCMdZJ+rjbHxRwxkZMW/JNN4UMfNFvRRKXGO/hyvvmZjlTG6Bw8yubQ9jO/BRe6e/mF3+HLZrPhc7VKFM63vAzPkM3sJduP/I/QLqAazh+AcAAA==
   </data>
  </layer>
  <layer name="Detail" width="30" height="17">
@@ -2168,17 +2168,17 @@
  </layer>
  <layer name="Walls" width="30" height="17">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC2NgYGBo5GZgOMvHgBV0AMU7cciRCkB2HONG8A9yo8ozIdlzAsg+Saa92PQi28vIg2D3AtU5ATEzUOwUkD5NRTvR7XUE2uEExc5A3AxU38gLkQP5nYlEu98jsXuR9LoCzWZD8mMjkN0Exc1AfBio9iDUXpC/zwH5+YzE2ZnLCFHPAjWfC0i78EDsbAViN6i4Ozt2/Y18CP+78JDOhtnlBcQtUDuP8CHsxGUvCMD838JDOhtmFzZAyF5agVF7B5+9BWyk8all7wY20vjUspeagJ72zgOWGfOJLDeoCe4B7byPZi8+TC4gZC4AvC2HyvgHAAA=
+   H4sIAAAAAAAAC2NgYGBo5GZgOMvHgBV0AMU7cciRCkB2tHEj+Ae5cas9AVR7kkx7sek9hmQXIw+C3Yuk7hSQfZqKdoIAG5JdjkC2ExQ7A7ELELtC5Zn4IJgU8B6JjewPkJluSPY2AtlNSBgEWqE0M5A+B9Sbz0icnbmMEPUsUP1cSP4AmdkGFXdnx66/kQ/V/6SyYXZ5AXEL1M4jfAg7cdkLAiC/N0P1kcqG2YUNELKXVmDU3sFlrwGSGiN2hBhMXI8du1pK7S1AUlPEjhCDieexY1dLqb3UBvS0dx6wzJhPZLlBTXAPaOd9NHvxYXIBIXMBDrFv9/gHAAA=
   </data>
  </layer>
  <layer name="Bridge" width="30" height="17">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC2NgGAWjYBSMgqEPxHkgWAKIJYlkw2gQpgSEA/VHkIgjKbRzFIwCcgEAILX8efgHAAA=
+   H4sIAAAAAAAAC2NgGAWjYBSMgqEPxHkgWAKIJYlkw2gQJhdE8FCGR8EooDcAADGdMDb4BwAA
   </data>
  </layer>
  <layer name="Overlay" width="30" height="17">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC2NgwA28+BgYvPnwKMADPID6OoC4k0j9vkjquoDsbjLtJcVOTy6gH4HYm4s8u7ABZH944jC3EyjeBcTdaPJ9JPoZph7ZHyB2Jw57TwLFTwHxaTT5diBfn5E4Ozk5gXELxJ6cqP4AsU+SGI7sQDNmAenZROA5UPXo/iDVThBwB5pzC0jfJgLfgaqnFpAChrM0EViGyPgYBcMH3OVlYLgHxPeB+AEv/eyVBZYjckAsD8QKZJa75IBYoF1xQBwPxAl0tBcZLBggewcaAAAU7h7k+AcAAA==
+   H4sIAAAAAAAAC+2USw6CMBRFy8ggwgL878A1OFIkbMD/VhwpkLgAdeBWHKI78L8UbxOMlVjyaAhMvMlJS/Pak0eTMibPwGLMsRIKEtLHvhXwiPvdqK5rMOZjHih60zjtMnoEDlgYar54XMHNz/8VD+s+CMBB8K5T9vyuF/vgc0/iDbF+BCegVT7rS3x3NJpT13G3wNa/++DzUOKVpYQzNhi3BHZRfbyPtE6eHs45Y7wQuEb1WaWK/1wjUCfeBzVDnDciMM7Y+w89N5OxO3iAp5mft4F3pAlaoK347qpkAtcUzMA8R6+YfUHeovMCJFyKBvgHAAA=
   </data>
  </layer>
  <layer name="Overlay2" width="30" height="17">

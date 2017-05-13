@@ -97,6 +97,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>GameText</Name>
     </None>
+    <None Include="GlobalContent\Tournaments.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Tournaments</Name>
+    </None>
     <None Include="GumProject\allfish.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>allfish</Name>
