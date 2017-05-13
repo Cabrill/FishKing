@@ -135,6 +135,10 @@ namespace FishKing.GumRuntimes
             {
                 CloseButton.CallClick();
             }
+            else if (FullScreenButton.IsHighlighted)
+            {
+                FullScreenButton.CallClick();
+            }
         }
     }
 }

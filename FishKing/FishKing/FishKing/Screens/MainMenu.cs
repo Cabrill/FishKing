@@ -25,6 +25,8 @@ namespace FishKing.Screens
         MultiplePressableInputs SelectionInput;
         MultiplePressableInputs ExitInput;
         I1DInput ScrollInput;
+        MultiplePressableInputs leftShoulder;
+        MultiplePressableInputs rightShoulder;
 
         void CustomInitialize()
         {
@@ -38,6 +40,17 @@ namespace FishKing.Screens
             BackgroundSprite.Enabled = false;
             
             var gamePad = InputManager.Xbox360GamePads[0];
+
+            if (gamePad != null)
+            {
+                leftShoulder = new MultiplePressableInputs();
+                leftShoulder.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.LeftShoulder));
+                leftShoulder.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.LeftTrigger));
+
+                rightShoulder = new MultiplePressableInputs();
+                rightShoulder.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.RightShoulder));
+                rightShoulder.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.RightTrigger));
+            }
 
             var movementInputs = new Multiple2DInputs();
             movementInputs.Inputs.Add(InputManager.Keyboard.Get2DInput(
@@ -78,11 +91,21 @@ namespace FishKing.Screens
             HandleMenuSelection();
             HandleExitInput();
             HandleScrollInput();
+            if (FishopediaInstance.Visible) HandlePageFlipping();
             GoFishButton.Visible = MainMenuGumRuntime.AnyTournamentIsSelected;
 
             if (FlatRedBall.Audio.AudioManager.CurrentlyPlayingSong == null)
             {
                 //FlatRedBall.Audio.AudioManager.PlaySong(The_Low_Seas, true, false);
+            }
+        }
+
+        private void HandlePageFlipping()
+        {
+            if (leftShoulder != null && rightShoulder != null)
+            {
+                if (leftShoulder.WasJustPressed) FishopediaInstance.PreviousPage();
+                else if (rightShoulder.WasJustPressed) FishopediaInstance.NextPage();
             }
         }
 
@@ -98,14 +121,14 @@ namespace FishKing.Screens
         {
             if (ExitInput.WasJustPressed)
             {
-                //if (aboutpopup.visible)
-                //{
-                //    aboutpopup.handleexit();
-                //}
-                //else
-                //{
+                if (FishopediaInstance.Visible)
+                {
+                    FishopediaInstance.HandleExit();
+                }
+                else
+                {
                     BackButton.CallClick();
-                //}
+                }
             }
         }
 
@@ -113,22 +136,18 @@ namespace FishKing.Screens
         {
             if (SelectionInput.WasJustPressed)
             {
-                //if (AboutPopup.Visible)
-                //{
-                //    AboutPopup.HandleSelection();
-                //}
-                //else if (screen.CurrentMenuScreenButtonsState == TitleScreenGumRuntime.MenuScreenButtons.InitialButtons)
-                //{
-                    HandleInitialScreenSelection();
-                //}
-                //else if (TitleScreenGumRuntime.CurrentMenuScreenButtonsState == TitleScreenGumRuntime.MenuScreenButtons.PlayButtons)
-                //{
-                //    //TODO:  Add new game/continue
-                //}
+                if (FishopediaInstance.Visible)
+                {
+                    FishopediaInstance.HandleSelection();
+                }
+                else
+                {
+                    HandleMenuScreenSelection();
+                }
             }
         }
 
-        private void HandleInitialScreenSelection()
+        private void HandleMenuScreenSelection()
         {
             if (GoFishButton.IsHighlighted)
             {
@@ -153,21 +172,18 @@ namespace FishKing.Screens
                 return;
             }
 
-            //if (AboutPopup.Visible)
-            //{
-            //    AboutPopup.HandleMovement(desiredDirection);
-            //}
-            //else if (screen.CurrentMenuScreenButtonsState == TitleScreenGumRuntime.MenuScreenButtons.InitialButtons)
-            //{
-                HandleInitialScreenMovement(desiredDirection);
-            //}
-            //else if (TitleScreenGumRuntime.CurrentMenuScreenButtonsState == TitleScreenGumRuntime.MenuScreenButtons.PlayButtons)
-            //{
-            //    //TODO:  Add new game/continue
-            //}
+            if (FishopediaInstance.Visible)
+            {
+                FishopediaInstance.HandleMovement(desiredDirection);
+            }
+            else
+            {
+                HandleMenuScreenMovement(desiredDirection);
+            }
+            
         }
 
-        private void HandleInitialScreenMovement(Direction desiredDirection)
+        private void HandleMenuScreenMovement(Direction desiredDirection)
         {
             switch (desiredDirection)
             {
