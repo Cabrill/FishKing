@@ -5,6 +5,18 @@
   <State>
     <Name>Default</Name>
     <Variable>
+      <Type>string</Type>
+      <Name>AmbientSettingSlider.Parent</Name>
+      <Value xsi:type="xsd:string">SettingsContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>AmbientSettingSlider.SettingNameText</Name>
+      <Value xsi:type="xsd:string">Ambient Sound</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>ChildrenLayout</Type>
       <Name>Children Layout</Name>
       <Value xsi:type="xsd:int">0</Value>
@@ -127,6 +139,48 @@
       <Name>ExposeChildrenEvents</Name>
       <Value xsi:type="xsd:boolean">true</Value>
       <Category>Behavior</Category>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>FullScreenButton.ButtonBlue</Name>
+      <Value xsi:type="xsd:int">255</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>FullScreenButton.ButtonGreen</Name>
+      <Value xsi:type="xsd:int">150</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>FullScreenButton.ButtonRed</Name>
+      <Value xsi:type="xsd:int">75</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>FullScreenButton.ButtonText</Name>
+      <Value xsi:type="xsd:string">Fullscreen</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FullScreenButton.Width</Name>
+      <Value xsi:type="xsd:float">30</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FullScreenButton.X</Name>
+      <Value xsi:type="xsd:float">29</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>FullScreenButton.Y</Name>
+      <Value xsi:type="xsd:float">414</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -253,18 +307,6 @@
     </Variable>
     <Variable>
       <Type>string</Type>
-      <Name>AmbientSettingSlider.Parent</Name>
-      <Value xsi:type="xsd:string">SettingsContainer</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>AmbientSettingSlider.SettingNameText</Name>
-      <Value xsi:type="xsd:string">Ambient Sound</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
       <Name>SoundSettingSlider.Parent</Name>
       <Value xsi:type="xsd:string">SettingsContainer</Value>
       <SetsValue>true</SetsValue>
@@ -376,6 +418,10 @@
   <Instance>
     <Name>DifficultySettingSlider</Name>
     <BaseType>subcomponent\SettingsSlider</BaseType>
+  </Instance>
+  <Instance>
+    <Name>FullScreenButton</Name>
+    <BaseType>subcomponent\SubmenuButton</BaseType>
   </Instance>
   <Behaviors />
 </ComponentSave>

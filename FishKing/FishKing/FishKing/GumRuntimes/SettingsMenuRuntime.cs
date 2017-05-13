@@ -33,6 +33,37 @@ namespace FishKing.GumRuntimes
             MusicSettingSlider.OnSettingChanged = (float newValue) => { OptionsManager.Options.MusicVolume = newValue; };
             AmbientSettingSlider.OnSettingChanged = (float newValue) => { OptionsManager.Options.AmbientVolume = newValue; };
             DifficultySettingSlider.OnSettingChanged = (float newValue) => { OptionsManager.Options.Difficulty = newValue; };
+
+#if WINDOWS
+            FullScreenButton.Click += FullScreenButton_Click;
+            FullScreenButton.ButtonText = "Windowed";
+#else
+            FullScreenButton.Visible = false;
+#endif
+        }
+
+        private void FullScreenButton_Click(FlatRedBall.Gui.IWindow window)
+        {
+#if WINDOWS
+            System.IntPtr hWnd = FlatRedBall.FlatRedBallServices.Game.Window.Handle;
+            var control = System.Windows.Forms.Control.FromHandle(hWnd);
+            var form = control.FindForm();
+
+            if (form.WindowState == System.Windows.Forms.FormWindowState.Maximized)
+            {
+                form.WindowState = System.Windows.Forms.FormWindowState.Normal;
+                form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+                form.SetBounds(0, 0, 1280, 720);
+                FullScreenButton.ButtonText = "Full Screen";
+            } else
+            {
+                var graphics = FlatRedBall.FlatRedBallServices.GraphicsOptions;
+                form.SetDesktopBounds(0, 0, graphics.ResolutionWidth, graphics.ResolutionHeight);
+                form.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+                form.WindowState = System.Windows.Forms.FormWindowState.Maximized;
+                FullScreenButton.ButtonText = "Windowed";
+            }
+#endif
         }
 
         private void CloseButton_Click(FlatRedBall.Gui.IWindow window)
@@ -47,8 +78,21 @@ namespace FishKing.GumRuntimes
 
             if (direction == Entities.Direction.Left || direction == Entities.Direction.Right)
             {
-                var settingSlider = sliders.Where(slider => slider.IsHighlighted).FirstOrDefault();
-                settingSlider?.HandleDirection(direction);
+                if (CloseButton.IsHighlighted && direction == Entities.Direction.Left)
+                {
+                    CloseButton.UnhighlightButton();
+                    FullScreenButton.HighlightButton();
+                }
+                else if (FullScreenButton.IsHighlighted && direction == Entities.Direction.Right)
+                {
+                    FullScreenButton.UnhighlightButton();
+                    CloseButton.HighlightButton();
+                }
+                else if (!FullScreenButton.IsHighlighted && !CloseButton.IsHighlighted)
+                {
+                    var settingSlider = sliders.Where(slider => slider.IsHighlighted).FirstOrDefault();
+                    settingSlider?.HandleDirection(direction);
+                }
             }
             else if (direction != Entities.Direction.None)
             {
