@@ -72,10 +72,11 @@ namespace FishKing.GumRuntimes
 
         public void Reset()
         {
-            var difficulty = OptionsManager.Options.Difficulty;
+            var difficulty = 1 + OptionsManager.Options.Difficulty;
             LineStress = 0;
             MaxStress = (int)LeftStressBracket.Height;
             riseRate = 2f * difficulty;
+            fallRate = 0.1f / difficulty;
             CurrentLineStatusState = LineStatus.LineWhole;
         }
 

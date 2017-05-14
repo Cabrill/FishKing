@@ -48,7 +48,7 @@ namespace FishKing.Screens
         private bool wasFishing = false;
         private bool shouldUpdateCamera;
         private SoundEffectInstance fishCaughtSound;
-        private SoundEffectInstance tournamentWinSound;
+        private SoundEffectInstance tournamentEndSound;
 
         bool CanMoveCharacter
         {
@@ -383,9 +383,15 @@ namespace FishKing.Screens
                             TournamentStatusInstance.UpdateFishPlaceMarkers(TournamentManager.CurrentScores.AsArray);
                             TournamentManager.EndTournament();
 
-                            tournamentWinSound = GlobalContent.TournamentWin.CreateInstance();
-                            tournamentWinSound.Volume = OptionsManager.Options.SoundEffectsVolume;
-                            tournamentWinSound.Play();
+                            if (TournamentManager.CurrentScores.PlayerPlace <= 3)
+                            {
+                                tournamentEndSound = GlobalContent.TournamentWin.CreateInstance();
+                            } else
+                            {
+                                tournamentEndSound = GlobalContent.TournamentLose.CreateInstance();
+                            }
+                            tournamentEndSound.Volume = OptionsManager.Options.SoundEffectsVolume;
+                            tournamentEndSound.Play();
 
                             ResultsDisplayInstance.DisplayResults(TournamentManager.CurrentTournamentResults);
                             ResultsDisplayInstance.OKButtonClick += ResultsDisplayOkClick;
@@ -597,6 +603,7 @@ namespace FishKing.Screens
                             {
                                 var fish = CharacterInstance.FishOnTheLine;
                                 var newCatch = SaveGameManager.CurrentSaveData.AddCaughtFish(fish);
+                                var fishMeetsReq = TournamentManager.CurrentTournament.DoesFishMeetRequirements(fish);
 
                                 FishCatchDisplayInstance.ShowFish(fish, newCatch);
 
@@ -605,18 +612,32 @@ namespace FishKing.Screens
                                     fishCaughtSound.Dispose();
                                 }
 
-                                if (newCatch)
+                                if (fishMeetsReq)
                                 {
-                                    fishCaughtSound = GlobalContent.NewFishCaught.CreateInstance();
+                                    if (newCatch)
+                                    {
+                                        fishCaughtSound = GlobalContent.NewFishCaught.CreateInstance();
+                                    }
+                                    else
+                                    {
+                                        fishCaughtSound = GlobalContent.FishCaught.CreateInstance();
+                                    }
                                 }
                                 else
                                 {
-                                    fishCaughtSound = GlobalContent.FishCaught.CreateInstance();
+                                    if (newCatch)
+                                    {
+                                        fishCaughtSound = GlobalContent.IneligibleNewFishCatch.CreateInstance();
+                                    }
+                                    else
+                                    {
+                                        fishCaughtSound = GlobalContent.IneligibleFishCatch.CreateInstance();
+                                    }
                                 }
                                 fishCaughtSound.Volume = OptionsManager.Options.SoundEffectsVolume;
                                 fishCaughtSound.Play();
 
-                                if (TournamentManager.CurrentTournament.DoesFishMeetRequirements(fish))
+                                if (fishMeetsReq)
                                 {
                                     TournamentManager.CurrentScores.AddToPlayerScore(fish.Points);
                                 }
@@ -753,9 +774,9 @@ namespace FishKing.Screens
         void CustomDestroy()
         {
             AmbientAudioManager.RemoveAmbientAudioSources();
-            if (tournamentWinSound != null && !tournamentWinSound.IsDisposed)
+            if (tournamentEndSound != null && !tournamentEndSound.IsDisposed)
             {
-                tournamentWinSound.Dispose();
+                tournamentEndSound.Dispose();
             }
             if (fishCaughtSound != null && !fishCaughtSound.IsDisposed)
             {

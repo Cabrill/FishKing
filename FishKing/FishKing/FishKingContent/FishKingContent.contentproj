@@ -849,6 +849,16 @@
       <Processor>SoundEffectProcessor</Processor>
       <Name>WhooshRod</Name>
     </Compile>
+    <Compile Include="GlobalContent\SoundEffects\BookClose.wav">
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Name>BookClose</Name>
+    </Compile>
+    <Compile Include="GlobalContent\SoundEffects\BookOpen.wav">
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Name>BookOpen</Name>
+    </Compile>
     <Compile Include="GlobalContent\SoundEffects\CaveAmbient.wav">
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
@@ -863,6 +873,16 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Name>ForestAmbient</Name>
+    </Compile>
+    <Compile Include="GlobalContent\SoundEffects\IneligibleFishCatch.wav">
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Name>IneligibleFishCatch</Name>
+    </Compile>
+    <Compile Include="GlobalContent\SoundEffects\IneligibleNewFishCatch.wav">
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Name>IneligibleNewFishCatch</Name>
     </Compile>
     <Compile Include="GlobalContent\SoundEffects\LakeAmbient.wav">
       <Importer>WavImporter</Importer>
@@ -913,6 +933,11 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Name>SplashOut</Name>
+    </Compile>
+    <Compile Include="GlobalContent\SoundEffects\TournamentLose.wav">
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Name>TournamentLose</Name>
     </Compile>
     <Compile Include="GlobalContent\SoundEffects\TournamentWin.wav">
       <Importer>WavImporter</Importer>

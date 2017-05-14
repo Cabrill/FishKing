@@ -31,13 +31,18 @@ namespace FishKing.Screens
         MultiplePressableInputs rightShoulder;
 
         private SoundEffectInstance pageTurnSound;
+        private SoundEffectInstance bookOpenSound;
+        private SoundEffectInstance bookCloseSound;
 
         void CustomInitialize()
         {
             InitializeInput();
             FlatRedBallServices.Game.IsMouseVisible = true;
             pageTurnSound = GlobalContent.PageTurn.CreateInstance();
-            FishopediaInstance.pageTurnSound = pageTurnSound;
+            bookOpenSound = GlobalContent.BookOpen.CreateInstance();
+            bookCloseSound = GlobalContent.BookClose.CreateInstance();
+            FishopediaInstance.PageTurnSound = pageTurnSound;
+            FishopediaInstance.BookCloseSound = bookCloseSound;
         }
 
         private void InitializeInput()
@@ -247,6 +252,14 @@ namespace FishKing.Screens
             if (pageTurnSound != null && !pageTurnSound.IsDisposed)
             {
                 pageTurnSound.Dispose();
+            }
+            if (bookOpenSound != null && !bookOpenSound.IsDisposed)
+            {
+                bookOpenSound.Dispose();
+            }
+            if (bookCloseSound != null && !bookCloseSound.IsDisposed)
+            {
+                bookCloseSound.Dispose();
             }
         }
 

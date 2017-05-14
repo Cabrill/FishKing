@@ -41,6 +41,8 @@ namespace FishKing.Screens
             FishopediaInstance.CaughtFish = SaveGameManager.CurrentSaveData.FishCaught;
             FishopediaInstance.LoadAllFish();
             FishopediaInstance.Visible = true;
+            bookOpenSound.Volume = OptionsManager.Options.SoundEffectsVolume;
+            bookOpenSound.Play();
         }
 		
 	}

@@ -13,7 +13,8 @@ namespace FishKing.GumRuntimes
 {
     partial class FishopediaRuntime
     {
-        public SoundEffectInstance pageTurnSound;
+        public SoundEffectInstance PageTurnSound;
+        public SoundEffectInstance BookCloseSound;
 
         private enum FishTypeDisplay { All, Caught};
         private FishTypeDisplay currentlyDisplaying;
@@ -27,7 +28,7 @@ namespace FishKing.GumRuntimes
 
         partial void CustomInitialize()
         {
-            pageTurnSound = GlobalContent.PageTurn.CreateInstance();
+            PageTurnSound = GlobalContent.PageTurn.CreateInstance();
             pageIndex = 0;
             LeftPageCorner.Click += LeftPageCorner_Click;
             RightPageCorner.Click += RightPageCorner_Click;
@@ -44,6 +45,8 @@ namespace FishKing.GumRuntimes
             BookmarkClose.Unselect();
             pageIndex = 0;
             this.Visible = false;
+            BookCloseSound.Volume = OptionsManager.Options.SoundEffectsVolume;
+            BookCloseSound.Play();
         }
 
         private void BookmarkCaught_Click(FlatRedBall.Gui.IWindow window)
@@ -314,8 +317,8 @@ namespace FishKing.GumRuntimes
 
         private void PlayPageTurnSound()
         {
-            pageTurnSound.Volume = OptionsManager.Options.SoundEffectsVolume;
-            pageTurnSound.Play();
+            PageTurnSound.Volume = OptionsManager.Options.SoundEffectsVolume;
+            PageTurnSound.Play();
         }
     }
 }
