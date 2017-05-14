@@ -660,9 +660,6 @@ namespace FishKing.GumRuntimes
 
         public void StartCelebration()
         {
-            var winSound = GlobalContent.TournamentWin.CreateInstance();
-            winSound.Volume = OptionsManager.Options.SoundEffectsVolume;
-            winSound.Play();
             hasStartedCelebration = true;
             ThrowConfettiAnimation.Play();
         }

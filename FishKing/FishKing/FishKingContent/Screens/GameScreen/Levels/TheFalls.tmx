@@ -1347,7 +1347,6 @@
   </tile>
   <tile id="1797">
    <properties>
-    <property name="IsOcean" type="bool" value="true"/>
     <property name="IsRiver" type="bool" value="true"/>
    </properties>
    <animation>
@@ -1796,7 +1795,7 @@
  </tileset>
  <layer name="Water" width="30" height="17">
   <data encoding="base64" compression="gzip">
-   H4sIAAAAAAAAC2NgYGBgY6cvHokggpGBYQYjggbhG1AME7+BJIcshowjkOgZaDQ2eUmg3ZEMmPRMKBudjkTCkmgYXR86G11PJBb5mTjsQDcPl7sjcdgHE7vBNDBYmAGC6ZWHghkgGAYGKu+O6h3VO9DpatRe0u0FAGnjHrz4BwAA
+   H4sIAAAAAAAAC2NgYGBgY6cvHokggpGBYQYjggbhG1AME7+BJIcshowjkOgZaDQ2eUmg3ZEMmPRMKBudjkTCkmgYXR86G11PJBb5mTjsQDcPl7sj0cxDF7vBNDBYmAGC6ZWHghkgGAYGKu+O6h3VO9DpatRe0u0FAA3G7bX4BwAA
   </data>
  </layer>
  <layer name="Ground" width="30" height="17">
