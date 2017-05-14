@@ -171,6 +171,7 @@ namespace FishKing.GumRuntimes
         public void ScrollToAndHighlightLastEligibleTournament()
         {
             var lastTournament = GetLastEligibleTournament();
+
             lastTournament.HighlightButton();
             ScrollTo(lastTournament);
         }
@@ -252,8 +253,12 @@ namespace FishKing.GumRuntimes
         private TournamentPreviewRuntime GetLastEligibleTournament()
         {
             var previews = TournamentPreviews.Where(tp => tp.RequirementsMet);
-
-            return previews.Last();
+            var result = previews.Where(tp => tp.CurrentPlayedState == TournamentPreviewRuntime.Played.Unplayed).FirstOrDefault();
+            if (result == null)
+            {
+                result = previews.FirstOrDefault();
+            }
+            return result;
         }
     }
 }

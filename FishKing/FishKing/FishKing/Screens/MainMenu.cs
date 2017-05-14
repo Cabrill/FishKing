@@ -26,7 +26,7 @@ namespace FishKing.Screens
         Multiple2DInputs MovementInput;
         MultiplePressableInputs SelectionInput;
         MultiplePressableInputs ExitInput;
-        I1DInput ScrollInput;
+        Multiple1DInputs ScrollInput;
         MultiplePressableInputs leftShoulder;
         MultiplePressableInputs rightShoulder;
 
@@ -86,7 +86,13 @@ namespace FishKing.Screens
             exitInputs.Inputs.Add(InputManager.Keyboard.GetKey(Keys.Escape));
             ExitInput = exitInputs;
 
-            ScrollInput = InputManager.Mouse.ScrollWheel;
+            var scrollInput = new Multiple1DInputs();
+            if (gamePad != null)
+            {
+                scrollInput.Inputs.Add(new AnalogStickTo1DInput(gamePad.RightStick));
+            }
+            scrollInput.Inputs.Add(InputManager.Mouse.ScrollWheel);
+            ScrollInput = scrollInput;
 
             SaveGameManager.CurrentSaveData.StartPlaySession();
         }

@@ -1191,6 +1191,11 @@
     <property name="HasCollision" type="bool" value="true"/>
    </properties>
   </tile>
+  <tile id="3796">
+   <properties>
+    <property name="HasCollision" type="bool" value="true"/>
+   </properties>
+  </tile>
  </tileset>
  <layer name="Water" width="30" height="17">
   <data encoding="base64" compression="gzip">
