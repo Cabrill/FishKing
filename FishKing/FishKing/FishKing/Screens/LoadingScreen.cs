@@ -21,8 +21,6 @@ namespace FishKing.Screens
 
 		void CustomInitialize()
 		{
-            LoadingScreenInstance.CurrentVariableState = GumRuntimes.LoadingScreenRuntime.VariableState.Default;
-            LoadingScreenInstance.CurrentFishSpinState = GumRuntimes.LoadingScreenRuntime.FishSpin.Start;
             LoadingScreenInstance.FishSpinningAnimation.Play();
 		}
 

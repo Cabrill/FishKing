@@ -43,6 +43,7 @@ namespace FishKing
         private static AudioEmitter oceanEmitter;
         private static AudioEmitter riverEmitter;
         private static AudioEmitter forestEmitter;
+        private static AudioEmitter lakeEmitter;
 
         public static void UpdateAmbientSoundSources()
         {
@@ -90,8 +91,6 @@ namespace FishKing
                 p.Y * Math.Min(1, Math.Pow((1 / p.Length()), 3))
                 ) / allCloseOceanPoints.Count();
 
-
-                //var combineDistance = 5;
                 float positionX = xSum;
                 float positionY = ySum;
                 float positionZ = CharacterInstance.Position.Z;
@@ -125,8 +124,6 @@ namespace FishKing
                 p.Y * Math.Min(1, Math.Pow((1 / p.Length()), 3))
                 ) / allCloseRiverPoints.Count();
 
-
-                //var combineDistance = 5;
                 float positionX = xSum;
                 float positionY = ySum;
                 float positionZ = CharacterInstance.Position.Z;
@@ -203,6 +200,26 @@ namespace FishKing
                 }
             }
 
+            if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "LakeLines") != null)
+            {
+                if (lakeAmbientSound == null)
+                {
+                    lakeAmbientSound = GlobalContent.LakeAmbient.CreateInstance();
+                    lakeAmbientSound.IsLooped = true;
+                    lakeEmitter = new AudioEmitter();
+                }
+
+                lakeEmitter.Position = FindClosestPolygonPointOnLayer("LakeLines", charPosition);
+                lakeAmbientSound.Volume = Volume * Math.Max(0, 1 - (lakeEmitter.Position.Length() / 10));
+
+                lakeAmbientSound.Apply3D(listener, lakeEmitter);
+
+                if (lakeAmbientSound.State != SoundState.Playing)
+                {
+                    lakeAmbientSound.Play();
+                }
+            }
+
             volumeHasChanged = false;
         }
 
@@ -243,6 +260,7 @@ namespace FishKing
             if (waterFallAmbientSound != null)
             {
                 waterFallAmbientSound.Stop();
+                waterfallEmitter = null;
             }
             if (deepOceanAmbientSound != null)
             {
@@ -251,10 +269,12 @@ namespace FishKing
             if (riverAmbientSound != null)
             {
                 riverAmbientSound.Stop();
+                riverEmitter = null;
             }
             if (oceanAmbientSound != null)
             {
                 oceanAmbientSound.Stop();
+                oceanEmitter = null;
             }
             if (caveAmbientSound != null)
             {
@@ -263,6 +283,12 @@ namespace FishKing
             if (forestAmbientSound != null)
             {
                 forestAmbientSound.Stop();
+                forestEmitter = null;
+            }
+            if (lakeAmbientSound != null)
+            {
+                lakeAmbientSound.Stop();
+                lakeEmitter = null;
             }
         }
 

@@ -16,8 +16,8 @@ namespace FishKing.Screens
 	{
         void OnBackButtonClick (FlatRedBall.Gui.IWindow window)
         {
-            //this.IsActivityFinished = true;
-            //this.IsMovingBack = true;
+            SaveGameManager.CurrentSaveData.StopPlaySession ();
+            SaveGameManager.SaveCurrentData();
             MoveToScreen(typeof(TitleScreen));
         }
         void OnGoFishButtonClick (FlatRedBall.Gui.IWindow window)

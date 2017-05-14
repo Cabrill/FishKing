@@ -16,6 +16,7 @@ using Microsoft.Xna.Framework.Input;
 using FishKing.Entities;
 using FishKing.UtilityClasses;
 using FishKing.GameClasses;
+using FishKing.Managers;
 
 namespace FishKing.Screens
 {
@@ -32,7 +33,6 @@ namespace FishKing.Screens
         {
             InitializeInput();
             FlatRedBallServices.Game.IsMouseVisible = true;
-            //FlatRedBall.Audio.AudioManager.PlaySong(Echinoderm_Regeneration_Sting, true, false);
         }
 
         private void InitializeInput()
@@ -77,6 +77,8 @@ namespace FishKing.Screens
             ExitInput = exitInputs;
 
             ScrollInput = InputManager.Mouse.ScrollWheel;
+
+            SaveGameManager.CurrentSaveData.StartPlaySession();
         }
 
         void CustomActivity(bool firstTimeCalled)
@@ -86,18 +88,12 @@ namespace FishKing.Screens
                 MainMenuGumRuntime.ScrollToAndHighlightLastEligibleTournament();
             }
 
-            //FlatRedBall.Debugging.Debugger.Write(FlatRedBall.Gui.GuiManager.Cursor.WindowOver);
             HandleMenuMovement();
             HandleMenuSelection();
             HandleExitInput();
             HandleScrollInput();
             if (FishopediaInstance.Visible) HandlePageFlipping();
             GoFishButton.Visible = MainMenuGumRuntime.AnyTournamentIsSelected;
-
-            if (FlatRedBall.Audio.AudioManager.CurrentlyPlayingSong == null)
-            {
-                //FlatRedBall.Audio.AudioManager.PlaySong(The_Low_Seas, true, false);
-            }
         }
 
         private void HandlePageFlipping()

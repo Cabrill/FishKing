@@ -120,7 +120,7 @@ namespace FishKing.Screens
         private void startGame()
         {
             FlatRedBallServices.Game.IsMouseVisible = false;
-            this.MoveToScreen(NextScreen);
+            LoadingScreen.TransitionToScreen(NextScreen);
         }
 
         private void ConfirmChoice()

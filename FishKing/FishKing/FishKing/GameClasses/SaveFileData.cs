@@ -139,6 +139,7 @@ namespace FishKing.GameClasses
             TimePlayed = new TimeSpan(0);
             FishCaught = new SerializableDictionary<Fish_Types, FishRecord>();
             ParticipatedTournaments = new List<TournamentResults>();
+            recentStartTime = DateTime.MinValue;
         }
 
         public SaveFileData(int saveSlot, int playerFishNumber)
@@ -151,11 +152,15 @@ namespace FishKing.GameClasses
             TimePlayed = new TimeSpan(0);
             FishCaught = new SerializableDictionary<Fish_Types, FishRecord>();
             ParticipatedTournaments = new List<TournamentResults>();
+            recentStartTime = DateTime.MinValue;
         }
 
         public void StartPlaySession()
         {
-            recentStartTime = DateTime.Now;
+            if (recentStartTime == DateTime.MinValue)
+            {
+                recentStartTime = DateTime.Now;
+            }
         }
 
         public void StopPlaySession()
@@ -163,6 +168,7 @@ namespace FishKing.GameClasses
             var newTime = DateTime.Now - recentStartTime;
             TimePlayed += newTime;
             LastPlayed = DateTime.Now;
+            recentStartTime = DateTime.MinValue;
         }
 
         public void AddTournamentResult(TournamentResults result)

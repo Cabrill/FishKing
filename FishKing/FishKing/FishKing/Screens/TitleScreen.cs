@@ -117,7 +117,7 @@ namespace FishKing.Screens
             HandleMenuSelection();
             HandleExitInput();
 
-            FlatRedBall.Debugging.Debugger.Write(FlatRedBall.Gui.GuiManager.Cursor.WindowOver);
+            //FlatRedBall.Debugging.Debugger.Write(FlatRedBall.Gui.GuiManager.Cursor.WindowOver);
         }
 
         private void HandleMenuSelection()

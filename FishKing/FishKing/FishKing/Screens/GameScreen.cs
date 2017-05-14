@@ -81,7 +81,7 @@ namespace FishKing.Screens
                 TournamentManager.StartTournament();
                 levelToLoad = TournamentManager.CurrentTournament.MapName;
                 shouldInitializeSimulator = true;
-                
+                SaveGameManager.CurrentSaveData.StartPlaySession();
             }
 
             LoadLevel(levelToLoad);
@@ -116,9 +116,7 @@ namespace FishKing.Screens
                 PopupMessageInstance.CancelButtonClick += (IWindow win) => { PopupMessageInstance.Visible = false; };
                 PopupMessageInstance.OKButtonClick += (IWindow win) =>
                 {
-                    SaveGameManager.CurrentSaveData.StopPlaySession();
-                    SaveGameManager.SaveCurrentData();
-                    LoadingScreen.TransitionToScreen(typeof(MainMenu).FullName);
+                    SaveAndReturnToMainMenu();
                 };
                 PopupMessageInstance.Visible = true;
             };
@@ -436,7 +434,14 @@ namespace FishKing.Screens
         private void ResultsDisplayOkClick(IWindow window)
         {
             SaveGameManager.CurrentSaveData.AddTournamentResult(TournamentManager.CurrentTournamentResults);
+            SaveAndReturnToMainMenu();
+        }
+
+        private void SaveAndReturnToMainMenu()
+        {
+            SaveGameManager.CurrentSaveData.StopPlaySession();
             SaveGameManager.SaveCurrentData();
+            MusicManager.Stop();
             LoadingScreen.TransitionToScreen(typeof(MainMenu).FullName);
         }
 

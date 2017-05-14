@@ -46,6 +46,8 @@ namespace FishKing
         {
             if (PlayList.Count > 0)
             {
+                if (currentTrackNumber > PlayList.Count - 1) currentTrackNumber = 0;
+
                 var nextSong = PlayList.ElementAt(currentTrackNumber++);
                 if (!nextSong.IsDisposed)
                 {
@@ -57,6 +59,14 @@ namespace FishKing
                         NumberOfPlayListLoops++;
                     }
                 }
+            }
+        }
+
+        public static void Stop()
+        {
+            if (FlatRedBall.Audio.AudioManager.CurrentlyPlayingSong != null)
+            {
+                FlatRedBall.Audio.AudioManager.StopSong();
             }
         }
 
