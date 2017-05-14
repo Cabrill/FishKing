@@ -1,0 +1,86 @@
+Tools
+FlatRedBall engine, Glue code generator, and Gum UI designer
+Vic Chelaru (flatredball.com)
+Licensed under the MIT License
+---
+Tiled Map Editor
+Thorbjørn Lindeijer(mapeditor.org)
+Licensed under GPL: GNU General Public License 3.0
+
+Music:
+“Unsung”, “Tide Will Take Us Home”, “Illuminated Path”, “No Fix”, “Angel Falling”, “Parallel parable (coming change)”
+Ketsa (ketsamusic.com)
+Licensed under Creative Commons: Attribution-NonCommercial-NoDerivatives 4.0 International
+Explicit permission was requested and granted for commercial usage.
+https://creativecommons.org/licenses/by-nc-nd/4.0/
+---
+“Acoustic Guitar #1”, “One Fine Day”, “Solo Acoustic #3”, “12 Mornings”, “Green Leaves”, “Serenity”
+Audionautix(audionautix.com)
+Licensed under Creative Commons: By Attribution 3.0
+http://creativecommons.org/licenses/by/3.0/
+---
+“Adventures”
+A Himitsu (facebook.com/ahimitsu)
+Licensed under Creative Commons: By Attribution 3.0
+http://creativecommons.org/licenses/by/3.0/
+
+---
+"Clean Soul"
+Kevin MacLeod (incompetech.com)
+Licensed under Creative Commons: By Attribution 3.0
+http://creativecommons.org/licenses/by/3.0/
+---
+“The Dweller on Coyote Hill”
+Little Glass Men (clauscreative.com)
+Licensed under Creative Commons: By Attribution 3.0
+http://creativecommons.org/licenses/by/3.0/
+---
+
+Graphics:
+Universal Liberated Pixel Cup Sprite Sheet
+Licensed under Creative Commons: Attribution-ShareAlike 3.0 Unported
+---
+Beach sand, ocean waves, cliffs, grasslands and trees tileset
+Leonard Pabin
+Licensed under Creative Commons: Attribution-ShareAlike 3.0 
+---
+RPG Tiles Cobble Stone Paths And Town Objects and Lost Garden tilesets
+Zabin, Daneeklu, Jetrel, Hyptosis, Redshrike, Bertram
+Licensed under Creative Commons: Attribution-ShareAlike 3.0 
+---
+Cave and desert tilesets 
+MrBeast.
+Commissioned by OpenGameArt.org (http://opengameart.org)
+Licensed under Creative Commons: By Attribution 3.0 Unported (CC BY 3.0)
+---
+
+LPC Animated Water and waterfalls
+ZaPaper (peterlzy.wix.com/rpgaction)
+Licensed under Creative Commons: Attribution-ShareAlike 3.0 
+---
+Splash animation
+Julien Jorge
+Licensed under Creative Commons: Attribution-ShareAlike 3.0 
+---
+Farming Tileset
+Daniel Eddeland
+Licensed under Creative Commons: Attribution-ShareAlike 3.0 
+---
+Fishing rod sprite
+soreCactus
+Licensed under Creative Commons: By Attribution 3.0 Unported (CC BY 3.0)
+---
+Sound Effects:
+8-Bit Sound Effects Library
+Little Robot Sound Factory(littlerobotsoundfactory.com)
+Licensed under Creative Commons: By Attribution 3.0 Unported (CC BY 3.0)
+---
+RPG and UI Sound Effects
+Kenney Vleugels (kenney.nl)
+Licensed under Creative Commons: Creative Commons Zero – Public Domain
+
+---
+RPG GUI contruction kit
+Lamoot
+Licensed under Creative Commons: By Attribution 3.0 Unported (CC BY 3.0)
+

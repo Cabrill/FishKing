@@ -378,6 +378,48 @@
       <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
+      <Type>float</Type>
+      <Name>PopupTextContainer.Height</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>PopupTextContainer.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>PopupTextContainer.Parent</Name>
+      <Value xsi:type="xsd:string">TopTextContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>PopupTextContainer.Width</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>PopupTextContainer.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>PopupTextContainer.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>PopupTextContainer.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>int</Type>
       <Name>PopupTextInstance.Blue</Name>
       <Value xsi:type="xsd:int">0</Value>
@@ -410,13 +452,19 @@
     <Variable>
       <Type>float</Type>
       <Name>PopupTextInstance.Height</Name>
-      <Value xsi:type="xsd:float">75</Value>
+      <Value xsi:type="xsd:float">100</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>PopupTextInstance.Height Units</Name>
       <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>PopupTextInstance.Parent</Name>
+      <Value xsi:type="xsd:string">PopupTextContainer</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -435,25 +483,37 @@
     <Variable>
       <Type>float</Type>
       <Name>PopupTextInstance.Width</Name>
-      <Value xsi:type="xsd:float">-40</Value>
+      <Value xsi:type="xsd:float">93.4920654</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>PopupTextInstance.Width Units</Name>
-      <Value xsi:type="xsd:int">2</Value>
+      <Value xsi:type="xsd:int">1</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>PopupTextInstance.X</Name>
-      <Value xsi:type="xsd:float">20</Value>
+      <Value xsi:type="xsd:float">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>PopupTextInstance.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>float</Type>
       <Name>PopupTextInstance.Y</Name>
-      <Value xsi:type="xsd:float">20</Value>
+      <Value xsi:type="xsd:float">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>PopupTextInstance.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -579,6 +639,48 @@
       <Type>VerticalAlignment</Type>
       <Name>TitleTextInstance.Y Origin</Name>
       <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>TopTextContainer.Clips Children</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TopTextContainer.Height</Name>
+      <Value xsi:type="xsd:float">80</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>TopTextContainer.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>TopTextContainer.Width</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>TopTextContainer.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>TopTextContainer.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>TopTextContainer.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -947,8 +1049,14 @@
       <Name>TitlePresent</Name>
       <Variable>
         <Type>float</Type>
+        <Name>PopupTextInstance.Height</Name>
+        <Value xsi:type="xsd:float">86.33155</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
         <Name>PopupTextInstance.Y</Name>
-        <Value xsi:type="xsd:float">75</Value>
+        <Value xsi:type="xsd:float">15</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -963,7 +1071,7 @@
       <Variable>
         <Type>float</Type>
         <Name>PopupTextInstance.Y</Name>
-        <Value xsi:type="xsd:float">20</Value>
+        <Value xsi:type="xsd:float">3</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -1001,6 +1109,14 @@
   <Instance>
     <Name>TitleTextInstance</Name>
     <BaseType>Text</BaseType>
+  </Instance>
+  <Instance>
+    <Name>TopTextContainer</Name>
+    <BaseType>Container</BaseType>
+  </Instance>
+  <Instance>
+    <Name>PopupTextContainer</Name>
+    <BaseType>Container</BaseType>
   </Instance>
   <Behaviors />
 </ComponentSave>

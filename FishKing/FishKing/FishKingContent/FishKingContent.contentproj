@@ -1004,7 +1004,6 @@
       <Name>FishSplat</Name>
     </Compile>
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <Compile Include="Screens\MainMenu\A_Himitsu_Adventures.mp3">
       <Importer>Mp3Importer</Importer>

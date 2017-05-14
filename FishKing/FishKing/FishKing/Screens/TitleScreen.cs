@@ -19,6 +19,7 @@ using FishKing.UtilityClasses;
 using System.Threading.Tasks;
 using FishKing.Managers;
 using FishKing.GameClasses;
+using System.IO;
 
 namespace FishKing.Screens
 {
@@ -27,6 +28,7 @@ namespace FishKing.Screens
         Multiple2DInputs MovementInput;
         MultiplePressableInputs SelectionInput;
         MultiplePressableInputs ExitInput;
+        Multiple1DInputs ScrollInput;
         TitleScreenGumRuntime screen;
 
         private enum PlayType { None, Continue, NewGame };
@@ -36,13 +38,15 @@ namespace FishKing.Screens
         void CustomInitialize()
 		{
             InitializeInput();
+            LoadSaveData();
             currentPlayType = PlayType.None;
             screen = TitleScreenGumRuntime;
             screen.IntroAnimation.Play();
             FlatRedBallServices.Game.IsMouseVisible = false;
-            Microsoft.Xna.Framework.Media.MediaPlayer.Volume = 0.3f;
+            Microsoft.Xna.Framework.Media.MediaPlayer.Volume = OptionsManager.Options.MusicVolume;
             FlatRedBall.Audio.AudioManager.PlaySong(Echinoderm_Regeneration_Sting, true, false);
-            LoadSaveData();
+            AboutPopup.PopupText = Attributions.Text;
+            this.Call(startMusic).After(3);
         }
 
         private void InitializeInput()
@@ -72,7 +76,14 @@ namespace FishKing.Screens
             var exitInputs = new MultiplePressableInputs();
             exitInputs.Inputs.Add(InputManager.Keyboard.GetKey(Keys.Escape));
             ExitInput = exitInputs;
-            this.Call(startMusic).After(3);
+
+            var scrollInput = new Multiple1DInputs();
+            if (gamePad != null)
+            {
+                scrollInput.Inputs.Add(new AnalogStickTo1DInput(gamePad.RightStick));
+            }
+            scrollInput.Inputs.Add(InputManager.Mouse.ScrollWheel);
+            ScrollInput = scrollInput;
         }
 
         private async void LoadSaveData()
@@ -108,6 +119,11 @@ namespace FishKing.Screens
 
         void CustomActivity(bool firstTimeCalled)
 		{
+            if (firstTimeCalled)
+            {
+                PopupMessageInstance.MeasureComponents();
+            }
+
             if (InputManager.Mouse.AnyButtonPushed())
             {
                 NewGameDisplayInstance.TestCollision(GuiManager.Cursor);
@@ -118,8 +134,17 @@ namespace FishKing.Screens
             HandleMenuMovement();
             HandleMenuSelection();
             HandleExitInput();
+            HandleScrollInput();
 
             //FlatRedBall.Debugging.Debugger.Write(FlatRedBall.Gui.GuiManager.Cursor.WindowOver);
+        }
+
+        private void HandleScrollInput()
+        {
+            if (ScrollInput.Velocity != 0)
+            {
+                PopupMessageInstance.HandleScrollInput(ScrollInput.Velocity);
+            }
         }
 
         private void HandleMenuSelection()

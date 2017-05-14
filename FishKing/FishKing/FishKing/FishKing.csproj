@@ -468,6 +468,7 @@
       <DependentUpon>TournamentStatusRuntime.cs</DependentUpon>
     </Compile>
     <Compile Include="GumRuntimes\UnknownFishRuntime.Generated.cs" />
+    <Compile Include="Managers\Attributions.cs" />
     <Compile Include="Managers\MusicManager.cs" />
     <Compile Include="Managers\OptionsManager.cs" />
     <Compile Include="Managers\SaveGameManager.cs" />
@@ -568,6 +569,9 @@
     <Compile Include="UtilityClasses\TournamentSorter.cs" />
   </ItemGroup>
   <ItemGroup>
+    <EmbeddedResource Include="attributions.txt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </EmbeddedResource>
     <Content Include="FishKing.ico" />
     <Content Include="FishKing_Win32.ico" />
     <Content Include="Game.ico" />

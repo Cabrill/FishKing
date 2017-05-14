@@ -1,4 +1,6 @@
 ﻿using FishKing.Entities;
+using Microsoft.Xna.Framework;
+using RenderingLibrary;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -9,6 +11,10 @@ namespace FishKing.GumRuntimes
 {
     partial class PopupMessageRuntime
     {
+        private float scrollAmount;
+        private float messageHeight;
+        private float containerHeight;
+
         partial void CustomInitialize()
         {
             if (CurrentPopupDisplayState == PopupDisplay.JustOK)
@@ -108,6 +114,24 @@ namespace FishKing.GumRuntimes
                     break;
                 default: break;
             }
+        }
+
+        public void HandleScrollInput(float scrollWheel)
+        {
+            SetScrollAmount(scrollAmount + (scrollWheel * 10));
+        }
+
+        public void MeasureComponents()
+        {
+            scrollAmount = 0;
+            messageHeight = (PopupTextInstance as IPositionedSizedObject).Height;
+            containerHeight = (TopTextContainer as IPositionedSizedObject).Height;
+        }
+
+        private void SetScrollAmount(float scroll)
+        {
+            scrollAmount = MathHelper.Clamp(scroll, -containerHeight*3, 0);
+            PopupTextContainer.Y = 100 * scrollAmount / containerHeight;
         }
 
         public void HandleExit()

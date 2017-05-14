@@ -24,6 +24,7 @@ namespace FishKing.Screens
 		{
             startTime = FlatRedBall.TimeManager.CurrentTime;
             SetOptions();
+            Attributions.LoadText();
 		}
 
 		void CustomActivity(bool firstTimeCalled)
