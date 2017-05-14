@@ -118,6 +118,7 @@ namespace FishKing.GumRuntimes
 
         public void HandleScrollInput(float scrollWheel)
         {
+            if (containerHeight == 0) MeasureComponents();
             SetScrollAmount(scrollAmount + (scrollWheel * 10));
         }
 
@@ -125,13 +126,16 @@ namespace FishKing.GumRuntimes
         {
             scrollAmount = 0;
             messageHeight = (PopupTextInstance as IPositionedSizedObject).Height;
-            containerHeight = (TopTextContainer as IPositionedSizedObject).Height;
+            containerHeight = (TextContainer as IPositionedSizedObject).Height;
         }
 
         private void SetScrollAmount(float scroll)
         {
-            scrollAmount = MathHelper.Clamp(scroll, -containerHeight*3, 0);
-            PopupTextContainer.Y = 100 * scrollAmount / containerHeight;
+            if (containerHeight > 0)
+            {
+                scrollAmount = MathHelper.Clamp(scroll, -containerHeight * 5, 0);
+                SlidingTextContainer.Y = 100 * scrollAmount / containerHeight;
+            }
         }
 
         public void HandleExit()

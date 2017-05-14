@@ -119,11 +119,6 @@ namespace FishKing.Screens
 
         void CustomActivity(bool firstTimeCalled)
 		{
-            if (firstTimeCalled)
-            {
-                PopupMessageInstance.MeasureComponents();
-            }
-
             if (InputManager.Mouse.AnyButtonPushed())
             {
                 NewGameDisplayInstance.TestCollision(GuiManager.Cursor);
@@ -143,7 +138,7 @@ namespace FishKing.Screens
         {
             if (ScrollInput.Velocity != 0)
             {
-                PopupMessageInstance.HandleScrollInput(ScrollInput.Velocity);
+                AboutPopup.HandleScrollInput(ScrollInput.Velocity);
             }
         }
 
