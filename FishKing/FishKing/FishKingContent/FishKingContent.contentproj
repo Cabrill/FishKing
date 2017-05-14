@@ -153,9 +153,9 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>LinearScaleContainer</Name>
     </None>
-    <None Include="GumProject\Components\LoadingScreen.gucx">
+    <None Include="GumProject\Components\LoadingScreenComponent.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-      <Name>LoadingScreen</Name>
+      <Name>LoadingScreenComponent</Name>
     </None>
     <None Include="GumProject\Components\PaperFrame.gucx">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

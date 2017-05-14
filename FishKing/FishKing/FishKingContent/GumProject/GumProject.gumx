@@ -77,7 +77,7 @@
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>
-    <Name>LoadingScreen</Name>
+    <Name>LoadingScreenComponent</Name>
     <ElementType>Component</ElementType>
   </ComponentReference>
   <ComponentReference>

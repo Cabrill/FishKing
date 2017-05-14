@@ -3,7 +3,7 @@
   <Animations>
     <AnimationSave>
       <Loops>true</Loops>
-      <Name>SpinningFish</Name>
+      <Name>SpinFish</Name>
       <States>
         <AnimatedStateSave>
           <StateName>SpinState/Start</StateName>
