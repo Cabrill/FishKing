@@ -30,7 +30,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>10</ApplicationRevision>
+    <ApplicationRevision>11</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -554,6 +554,7 @@
     <Compile Include="TileGraphics\Tileset.cs" />
     <Compile Include="TileGraphics\TilesetExtensionMethods.cs" />
     <Compile Include="UtilityClasses\AnalogButtonTo1DInput.cs" />
+    <Compile Include="UtilityClasses\AnalogStickTo1DInput.cs" />
     <Compile Include="UtilityClasses\CardinalTimedDirection.cs" />
     <Compile Include="UtilityClasses\DistributedRandomGenerator.cs" />
     <Compile Include="UtilityClasses\InfoToString.cs" />

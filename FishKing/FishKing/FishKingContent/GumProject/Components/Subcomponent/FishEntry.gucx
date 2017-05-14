@@ -1129,7 +1129,7 @@
     <Variable>
       <Type>float</Type>
       <Name>WaveBackdrop.Height</Name>
-      <Value xsi:type="xsd:float">100</Value>
+      <Value xsi:type="xsd:float">95</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1196,13 +1196,19 @@
     <Variable>
       <Type>float</Type>
       <Name>WaveBackdrop.Width</Name>
-      <Value xsi:type="xsd:float">100</Value>
+      <Value xsi:type="xsd:float">97</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>DimensionUnitType</Type>
       <Name>WaveBackdrop.Width Units</Name>
       <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>WaveBackdrop.X</Name>
+      <Value xsi:type="xsd:float">1.5</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1214,7 +1220,7 @@
     <Variable>
       <Type>float</Type>
       <Name>WaveBackdrop.Y</Name>
-      <Value xsi:type="xsd:float">0</Value>
+      <Value xsi:type="xsd:float">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
