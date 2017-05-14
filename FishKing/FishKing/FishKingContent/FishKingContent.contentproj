@@ -849,6 +849,41 @@
       <Processor>SoundEffectProcessor</Processor>
       <Name>WhooshRod</Name>
     </Compile>
+    <Compile Include="GlobalContent\Music\Audionautix_AcousticGuitar1.mp3">
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Name>Audionautix_AcousticGuitar1</Name>
+    </Compile>
+    <Compile Include="GlobalContent\Music\Audionautix_OneFineDay.mp3">
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Name>Audionautix_OneFineDay</Name>
+    </Compile>
+    <Compile Include="GlobalContent\Music\Audionautix_Serenity.mp3">
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Name>Audionautix_Serenity</Name>
+    </Compile>
+    <Compile Include="GlobalContent\Music\A_Himitsu_Adventures.mp3">
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Name>A_Himitsu_Adventures</Name>
+    </Compile>
+    <Compile Include="GlobalContent\Music\Clean_Soul_Calming_Kevin_MacLeod.mp3">
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Name>Clean_Soul_Calming_Kevin_MacLeod</Name>
+    </Compile>
+    <Compile Include="GlobalContent\Music\Ketsa_tide_will_take_us_home.mp3">
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Name>Ketsa_tide_will_take_us_home</Name>
+    </Compile>
+    <Compile Include="GlobalContent\Music\Little_Glass_Men_The_Dweller_on_Coyote_Hill.mp3">
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Name>Little_Glass_Men_The_Dweller_on_Coyote_Hill</Name>
+    </Compile>
     <Compile Include="GlobalContent\SoundEffects\BookClose.wav">
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
@@ -953,21 +988,6 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Name>WaterfallAmbient</Name>
-    </Compile>
-    <Compile Include="Screens\GameScreen\Audio\Audionautix_AcousticGuitar1.mp3">
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Name>Audionautix_AcousticGuitar1</Name>
-    </Compile>
-    <Compile Include="Screens\GameScreen\Audio\Audionautix_OneFineDay.mp3">
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Name>Audionautix_OneFineDay</Name>
-    </Compile>
-    <Compile Include="Screens\GameScreen\Audio\Audionautix_Serenity.mp3">
-      <Importer>Mp3Importer</Importer>
-      <Processor>SongProcessor</Processor>
-      <Name>Audionautix_Serenity</Name>
     </Compile>
     <Compile Include="Screens\GameScreen\Audio\FishCaught.wav">
       <Importer>WavImporter</Importer>

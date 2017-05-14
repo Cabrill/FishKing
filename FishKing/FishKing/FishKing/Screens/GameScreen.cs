@@ -65,13 +65,13 @@ namespace FishKing.Screens
         {
             InitializePauseMenuButtons();
 
-            if (!MusicManager.PlayingSong)
-            {
-                List<Song> playList = new List<Song>() { Audionautix_AcousticGuitar1, Audionautix_OneFineDay, Audionautix_Serenity };
-                MusicManager.PlayList = playList;
-                MusicManager.Volume = 0.15f;
-                MusicManager.PlaySong();
-            }
+            //if (!MusicManager.PlayingSong)
+            //{
+            //    List<Song> playList = new List<Song>() { Audionautix_AcousticGuitar1, Audionautix_OneFineDay, Audionautix_Serenity };
+            //    MusicManager.PlayList = playList;
+            //    MusicManager.Volume = 0.15f;
+            //    MusicManager.PlaySong();
+            //}
 
             bool shouldInitializeSimulator = false;
             if (!TournamentManager.TournamentHasStarted

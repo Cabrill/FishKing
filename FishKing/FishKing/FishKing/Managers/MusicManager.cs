@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,9 +26,17 @@ namespace FishKing
         private static List<Song> playList;
         public static List<Song> PlayList
         {
-            get { return playList; }
+            get
+            {
+                if (playList == null)
+                {
+                    playList = LoadAllSongs();
+                }
+                return playList;
+            }
             set { playList = value;  currentTrackNumber = 0; NumberOfPlayListLoops = 0; }
         }
+
         public static int TrackCount
         {
             get { return PlayList.Count; }
@@ -40,6 +49,20 @@ namespace FishKing
         public static int NumberOfPlayListLoops
         {
             get; set;
+        }
+
+        private static List<Song> LoadAllSongs()
+        {
+            var songList = new List<Song>();
+
+            songList.Add(GlobalContent.Audionautix_AcousticGuitar1);
+            songList.Add(GlobalContent.Audionautix_OneFineDay);
+            songList.Add(GlobalContent.Audionautix_Serenity);
+            songList.Add(GlobalContent.Clean_Soul_Calming_Kevin_MacLeod);
+            songList.Add(GlobalContent.Ketsa_tide_will_take_us_home);
+            songList.Add(GlobalContent.Little_Glass_Men_The_Dweller_on_Coyote_Hill);
+
+            return songList;
         }
 
         public static void PlaySong()

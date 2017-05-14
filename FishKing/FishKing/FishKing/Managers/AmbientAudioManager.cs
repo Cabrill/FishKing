@@ -59,6 +59,9 @@ namespace FishKing
                 {
                     waterFallAmbientSound = GlobalContent.WaterfallAmbient.CreateInstance();
                     waterFallAmbientSound.IsLooped = true;
+                }
+                if (waterfallEmitter == null)
+                {
                     waterfallEmitter = new AudioEmitter();
                 }
 
@@ -79,6 +82,9 @@ namespace FishKing
                 {
                     oceanAmbientSound = GlobalContent.OceanAmbient.CreateInstance();
                     oceanAmbientSound.IsLooped = true;
+                }
+                if (oceanEmitter == null)
+                {
                     oceanEmitter = new AudioEmitter();
                 }
                 var allCloseOceanPoints = FindClosestPointsOnAllPolygonsOnLayer("OceanLines", charPosition);
@@ -112,6 +118,9 @@ namespace FishKing
                 {
                     riverAmbientSound = GlobalContent.RiverAmbient.CreateInstance();
                     riverAmbientSound.IsLooped = true;
+                }
+                if (riverEmitter == null)
+                {
                     riverEmitter = new AudioEmitter();
                 }
                 var allCloseRiverPoints = FindClosestPointsOnAllPolygonsOnLayer("RiverLines", charPosition);
@@ -186,6 +195,9 @@ namespace FishKing
                 {
                     forestAmbientSound = GlobalContent.ForestAmbient.CreateInstance();
                     forestAmbientSound.IsLooped = true;
+                }
+                if (forestEmitter == null)
+                {
                     forestEmitter = new AudioEmitter();
                 }
 
@@ -206,6 +218,9 @@ namespace FishKing
                 {
                     lakeAmbientSound = GlobalContent.LakeAmbient.CreateInstance();
                     lakeAmbientSound.IsLooped = true;
+                }
+                if (lakeEmitter == null)
+                {
                     lakeEmitter = new AudioEmitter();
                 }
 
