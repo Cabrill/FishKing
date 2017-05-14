@@ -9,6 +9,7 @@ using FlatRedBall.Screens;
 using FishKing.Entities;
 using FishKing.Screens;
 using FishKing.Managers;
+using FishKing.GameClasses;
 
 namespace FishKing.Screens
 {
@@ -24,8 +25,7 @@ namespace FishKing.Screens
         {
             if (MainMenuGumRuntime.AnyTournamentIsSelected)
             {
-                TournamentManager.SetCurrentTournament(MainMenuGumRuntime.CurrentlySelectedTournament.Tournament);
-                LoadingScreen.TransitionToScreen(typeof(GameScreen).FullName);
+                StartTournament(MainMenuGumRuntime.CurrentlySelectedTournament.Tournament);               
             }
         }
         void OnGearButtonClick (FlatRedBall.Gui.IWindow window)
@@ -43,6 +43,14 @@ namespace FishKing.Screens
             FishopediaInstance.Visible = true;
             bookOpenSound.Volume = OptionsManager.Options.SoundEffectsVolume;
             bookOpenSound.Play();
+        }
+
+        private void StartTournament(TournamentStructure tournament)
+        {
+            TournamentManager.SetCurrentTournament(tournament);
+            MusicManager.Volume = OptionsManager.Options.MusicVolume;
+            MusicManager.LoadPlayListByMapName(tournament.MapName);
+            LoadingScreen.TransitionToScreen(typeof(GameScreen).FullName);
         }
 		
 	}

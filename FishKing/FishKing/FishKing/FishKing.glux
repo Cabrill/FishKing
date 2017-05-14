@@ -3076,45 +3076,101 @@
       <ProjectsToExcludeFrom />
     </ReferencedFileSave>
     <ReferencedFileSave>
+      <Properties>
+        <PropertySave>
+          <Name>UseContentPipeline</Name>
+          <ValueAsBool>true</ValueAsBool>
+        </PropertySave>
+      </Properties>
       <Name>GlobalContent/Music/A_Himitsu_Adventures.mp3</Name>
       <IsSharedStatic>true</IsSharedStatic>
+      <LoadedOnlyWhenReferenced>true</LoadedOnlyWhenReferenced>
       <HasPublicProperty>true</HasPublicProperty>
       <ProjectsToExcludeFrom />
     </ReferencedFileSave>
     <ReferencedFileSave>
+      <Properties>
+        <PropertySave>
+          <Name>UseContentPipeline</Name>
+          <ValueAsBool>true</ValueAsBool>
+        </PropertySave>
+      </Properties>
       <Name>GlobalContent/Music/Audionautix_AcousticGuitar1.mp3</Name>
       <IsSharedStatic>true</IsSharedStatic>
+      <LoadedOnlyWhenReferenced>true</LoadedOnlyWhenReferenced>
       <HasPublicProperty>true</HasPublicProperty>
       <ProjectsToExcludeFrom />
     </ReferencedFileSave>
     <ReferencedFileSave>
+      <Properties>
+        <PropertySave>
+          <Name>UseContentPipeline</Name>
+          <ValueAsBool>true</ValueAsBool>
+        </PropertySave>
+      </Properties>
       <Name>GlobalContent/Music/Audionautix_OneFineDay.mp3</Name>
       <IsSharedStatic>true</IsSharedStatic>
+      <LoadedOnlyWhenReferenced>true</LoadedOnlyWhenReferenced>
       <HasPublicProperty>true</HasPublicProperty>
       <ProjectsToExcludeFrom />
     </ReferencedFileSave>
     <ReferencedFileSave>
+      <Properties>
+        <PropertySave>
+          <Name>UseContentPipeline</Name>
+          <ValueAsBool>true</ValueAsBool>
+        </PropertySave>
+      </Properties>
       <Name>GlobalContent/Music/Audionautix_Serenity.mp3</Name>
       <IsSharedStatic>true</IsSharedStatic>
+      <LoadedOnlyWhenReferenced>true</LoadedOnlyWhenReferenced>
       <HasPublicProperty>true</HasPublicProperty>
       <ProjectsToExcludeFrom />
     </ReferencedFileSave>
     <ReferencedFileSave>
+      <Properties>
+        <PropertySave>
+          <Name>UseContentPipeline</Name>
+          <ValueAsBool>true</ValueAsBool>
+        </PropertySave>
+      </Properties>
       <Name>GlobalContent/Music/Ketsa_tide_will_take_us_home.mp3</Name>
       <IsSharedStatic>true</IsSharedStatic>
+      <LoadedOnlyWhenReferenced>true</LoadedOnlyWhenReferenced>
       <HasPublicProperty>true</HasPublicProperty>
       <ProjectsToExcludeFrom />
     </ReferencedFileSave>
     <ReferencedFileSave>
+      <Properties>
+        <PropertySave>
+          <Name>UseContentPipeline</Name>
+          <ValueAsBool>true</ValueAsBool>
+        </PropertySave>
+      </Properties>
       <Name>GlobalContent/Music/Little_Glass_Men_The_Dweller_on_Coyote_Hill.mp3</Name>
       <IsSharedStatic>true</IsSharedStatic>
+      <LoadedOnlyWhenReferenced>true</LoadedOnlyWhenReferenced>
       <HasPublicProperty>true</HasPublicProperty>
       <ProjectsToExcludeFrom />
     </ReferencedFileSave>
     <ReferencedFileSave>
+      <Properties>
+        <PropertySave>
+          <Name>UseContentPipeline</Name>
+          <ValueAsBool>true</ValueAsBool>
+        </PropertySave>
+      </Properties>
       <Name>GlobalContent/Music/Clean_Soul_Calming_Kevin_MacLeod.mp3</Name>
       <IsSharedStatic>true</IsSharedStatic>
+      <LoadedOnlyWhenReferenced>true</LoadedOnlyWhenReferenced>
       <HasPublicProperty>true</HasPublicProperty>
+      <ProjectsToExcludeFrom />
+    </ReferencedFileSave>
+    <ReferencedFileSave>
+      <Name>GlobalContent/MapMusic.csv</Name>
+      <IsSharedStatic>true</IsSharedStatic>
+      <HasPublicProperty>true</HasPublicProperty>
+      <CreatesDictionary>true</CreatesDictionary>
       <ProjectsToExcludeFrom />
     </ReferencedFileSave>
   </GlobalFiles>

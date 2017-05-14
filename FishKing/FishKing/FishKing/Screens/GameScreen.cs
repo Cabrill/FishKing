@@ -65,14 +65,6 @@ namespace FishKing.Screens
         {
             InitializePauseMenuButtons();
 
-            //if (!MusicManager.PlayingSong)
-            //{
-            //    List<Song> playList = new List<Song>() { Audionautix_AcousticGuitar1, Audionautix_OneFineDay, Audionautix_Serenity };
-            //    MusicManager.PlayList = playList;
-            //    MusicManager.Volume = 0.15f;
-            //    MusicManager.PlaySong();
-            //}
-
             bool shouldInitializeSimulator = false;
             if (!TournamentManager.TournamentHasStarted
 #if DEBUG
@@ -222,6 +214,7 @@ namespace FishKing.Screens
 
             var actionInputs = new MultiplePressableInputs();
             actionInputs.Inputs.Add(InputManager.Keyboard.GetKey(Keys.Space));
+            actionInputs.Inputs.Add(InputManager.Keyboard.GetKey(Keys.Enter));
             if (InputManager.NumberOfConnectedGamePads > 0)
             {
                 actionInputs.Inputs.Add(InputManager.Xbox360GamePads[0].GetButton(Xbox360GamePad.Button.A));

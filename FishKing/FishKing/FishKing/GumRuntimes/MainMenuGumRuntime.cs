@@ -168,12 +168,20 @@ namespace FishKing.GumRuntimes
             }
         }
 
-        public void ScrollToAndHighlightLastEligibleTournament()
+        private void ScrollToAndHighlightLastEligibleTournament()
         {
             var lastTournament = GetLastEligibleTournament();
 
             lastTournament.HighlightButton();
             ScrollTo(lastTournament);
+        }
+
+        public void ScrollToAndHighlightFirstEligibleUnplayedTournament()
+        {
+            var firstTourmament = GetFirstEligibleUnplayedTournament();
+
+            firstTourmament.HighlightButton();
+            ScrollTo(firstTourmament);
         }
 
         public void HandleScrollInput(float scrollWheel)
@@ -251,6 +259,12 @@ namespace FishKing.GumRuntimes
         }
 
         private TournamentPreviewRuntime GetLastEligibleTournament()
+        {
+            var previews = TournamentPreviews.Where(tp => tp.RequirementsMet);
+            return previews.LastOrDefault();
+        }
+
+        private TournamentPreviewRuntime GetFirstEligibleUnplayedTournament()
         {
             var previews = TournamentPreviews.Where(tp => tp.RequirementsMet);
             var result = previews.Where(tp => tp.CurrentPlayedState == TournamentPreviewRuntime.Played.Unplayed).FirstOrDefault();

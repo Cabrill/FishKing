@@ -26,14 +26,7 @@ namespace FishKing
         private static List<Song> playList;
         public static List<Song> PlayList
         {
-            get
-            {
-                if (playList == null)
-                {
-                    playList = LoadAllSongs();
-                }
-                return playList;
-            }
+            get { return playList; }
             set { playList = value;  currentTrackNumber = 0; NumberOfPlayListLoops = 0; }
         }
 
@@ -51,18 +44,18 @@ namespace FishKing
             get; set;
         }
 
-        private static List<Song> LoadAllSongs()
+        internal static void LoadPlayListByMapName(string mapName)
         {
-            var songList = new List<Song>();
+            var newPlaylist = new List<Song>();
+            var songStringList = GlobalContent.MapMusic[mapName].Songs;
+            
+            foreach (string songName in songStringList)
+            {
+                newPlaylist.Add((Song)GlobalContent.GetFile(songName));
+            }
 
-            songList.Add(GlobalContent.Audionautix_AcousticGuitar1);
-            songList.Add(GlobalContent.Audionautix_OneFineDay);
-            songList.Add(GlobalContent.Audionautix_Serenity);
-            songList.Add(GlobalContent.Clean_Soul_Calming_Kevin_MacLeod);
-            songList.Add(GlobalContent.Ketsa_tide_will_take_us_home);
-            songList.Add(GlobalContent.Little_Glass_Men_The_Dweller_on_Coyote_Hill);
-
-            return songList;
+            playList = newPlaylist;
+            PlaySong();
         }
 
         public static void PlaySong()

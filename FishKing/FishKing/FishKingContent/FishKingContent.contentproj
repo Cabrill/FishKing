@@ -97,6 +97,10 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>GameText</Name>
     </None>
+    <None Include="GlobalContent\MapMusic.csv">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>MapMusic</Name>
+    </None>
     <None Include="GlobalContent\Tournaments.csv">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Tournaments</Name>
