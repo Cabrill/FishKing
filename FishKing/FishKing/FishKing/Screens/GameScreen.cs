@@ -442,7 +442,7 @@ namespace FishKing.Screens
             SaveGameManager.CurrentSaveData.StopPlaySession();
             SaveGameManager.SaveCurrentData();
             MusicManager.Stop();
-            LoadingScreen.TransitionToScreen(typeof(MainMenu).FullName);
+            LoadingScreen.TransitionToScreen(typeof(MainMenu));
         }
 
         private void HandlePauseInput()

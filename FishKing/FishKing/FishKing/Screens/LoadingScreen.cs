@@ -26,13 +26,16 @@ namespace FishKing.Screens
 
 		void CustomActivity(bool firstTimeCalled)
 		{
-            if (this.AsyncLoadingState == FlatRedBall.Screens.AsyncLoadingState.NotStarted)
+            if (this.NextScreen != null)
             {
-                StartAsyncLoad(typeof(GameScreen).FullName);
-            }
-            else if (this.AsyncLoadingState == FlatRedBall.Screens.AsyncLoadingState.Done)
-            {
-                IsActivityFinished = true;
+                if (this.AsyncLoadingState == FlatRedBall.Screens.AsyncLoadingState.NotStarted)
+                {
+                    StartAsyncLoad(NextScreen);
+                }
+                else if (this.AsyncLoadingState == FlatRedBall.Screens.AsyncLoadingState.Done)
+                {
+                    IsActivityFinished = true;
+                }
             }
         }
 

@@ -512,6 +512,7 @@
         <string>GLUE</string>
       </Tags>
       <Source>GLUE</Source>
+      <NextScreen />
       <Name>Screens\LoadingScreen</Name>
       <ReferencedFiles>
         <ReferencedFileSave>
@@ -532,6 +533,7 @@
           <IndependentOfCamera>true</IndependentOfCamera>
         </NamedObjectSave>
       </NamedObjects>
+      <UseGlobalContent>true</UseGlobalContent>
     </ScreenSave>
     <ScreenSave>
       <Tags>
@@ -1043,6 +1045,7 @@
           <IndependentOfCamera>true</IndependentOfCamera>
         </NamedObjectSave>
       </NamedObjects>
+      <UseGlobalContent>true</UseGlobalContent>
     </ScreenSave>
   </Screens>
   <Entities>

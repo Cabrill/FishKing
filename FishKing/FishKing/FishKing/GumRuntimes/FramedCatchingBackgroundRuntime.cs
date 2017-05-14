@@ -16,6 +16,8 @@ namespace FishKing.GumRuntimes
 {
     partial class FramedCatchingBackgroundRuntime : IInstructable
     {
+        private float Difficulty;
+
         private const int MaxUnknownFishSpriteWidth = 70;
         private const int MinUnknownFishSpriteWidth = 15;
         private const float UnknownFishWidthHeightRatio = 1f / 3.5f;
@@ -28,6 +30,11 @@ namespace FishKing.GumRuntimes
         private float alignmentVelocityIncrementRate = 0.05f;
         private float maxAlignmentVelocity = 0.5f;
         private float minAlignmentVelocity = -0.3f;
+
+        private float AlignmentVelocityAttritionRate { get { return alignmentVelocityAttritionRate * Difficulty; } }
+        private float AlignmentVelocityIncrementRate { get { return alignmentVelocityIncrementRate * Difficulty; } }
+        private float MaxAlignmentVelocity { get { return maxAlignmentVelocity * Difficulty; } }
+        private float MinAlignmentVelocity { get { return minAlignmentVelocity * Difficulty; } }
 
         private float ChanceOfFightBoost;
         private bool fightBoosted = false;
@@ -128,17 +135,17 @@ namespace FishKing.GumRuntimes
 
         private void SetLocalVariables()
         {
-            var difficulty = 1 + OptionsManager.Options.Difficulty;
+            Difficulty = 1 + OptionsManager.Options.Difficulty;
 
             FishFight = GlobalContent.Fish_Types[AttachedFish.FishType.Name].Fight;
             FishSpeed = GlobalContent.Fish_Types[AttachedFish.FishType.Name].Speed;
 
-            SpeedModifier = 0.25f + (((float)FishSpeed / 50) * difficulty);
-            FightModifier = 1f + (((float)FishFight / 50) * difficulty);
+            SpeedModifier = 0.25f + (((float)FishSpeed / 50) * Difficulty);
+            FightModifier = 1f + (((float)FishFight / 50) * Difficulty);
 
             
-            fightBoostMaxVelocity = difficulty * (fightOrLuckMaxVelocity + ((FishSpeed + FishFight) / 800));
-            ChanceOfFight = 0.01f + (difficulty * (FishFight / 6000));
+            fightBoostMaxVelocity = Difficulty * (fightOrLuckMaxVelocity + ((FishSpeed + FishFight) / 800));
+            ChanceOfFight = 0.01f + (FishFight / 6000);
             ChanceOfLuck = 0.001f;
             ChanceOfFightBoost = 0.001f + (ChanceOfFight/10);
 
@@ -147,7 +154,7 @@ namespace FishKing.GumRuntimes
             UnknownFishInstance.XOrigin = RenderingLibrary.Graphics.HorizontalAlignment.Left;
             UnknownFishInstance.YOrigin = RenderingLibrary.Graphics.VerticalAlignment.Center;
 
-            AlignmentBarInstance.Height = 15f / difficulty;
+            AlignmentBarInstance.Height = 15f / Difficulty;
 
             MaxAlignmentY = 100 - AlignmentBarInstance.Height;
 
@@ -408,27 +415,27 @@ namespace FishKing.GumRuntimes
 
         public void RaiseAlignmentBar(float percent)
         {
-            alignmentVelocity = Math.Min(maxAlignmentVelocity, alignmentVelocity + (alignmentVelocityIncrementRate * percent));
+            alignmentVelocity = Math.Min(MaxAlignmentVelocity, alignmentVelocity + (AlignmentVelocityIncrementRate * percent));
         }
 
         private void UpdateAlignmentBarStatus()
         {
-            var newAlignementY = AlignmentBarInstance.Y - alignmentVelocity;
-            newAlignementY = Math.Max(0, newAlignementY);
-            newAlignementY = Math.Min(MaxAlignmentY, newAlignementY);
+            var newAlignmentY = AlignmentBarInstance.Y - alignmentVelocity;
+            newAlignmentY = Math.Max(0, newAlignmentY);
+            newAlignmentY = Math.Min(MaxAlignmentY, newAlignmentY);
 
-            AlignmentBarInstance.Y = newAlignementY;
+            AlignmentBarInstance.Y = newAlignmentY;
             if (AlignmentBarInstance.Y == MaxAlignmentY)
             {
                 alignmentVelocity = 0;
             }
             else if (AlignmentBarInstance.Y == MinAlignmentY)
             {
-                alignmentVelocity = -alignmentVelocityIncrementRate;
+                alignmentVelocity = -AlignmentVelocityIncrementRate;
             }
             else
             {
-                alignmentVelocity = Math.Max(minAlignmentVelocity, alignmentVelocity - alignmentVelocityAttritionRate);
+                alignmentVelocity = Math.Max(MinAlignmentVelocity, alignmentVelocity - AlignmentVelocityAttritionRate);
             }
 
             if (AlignmentTop < FishMiddle && AlignmentBottom > FishMiddle)
