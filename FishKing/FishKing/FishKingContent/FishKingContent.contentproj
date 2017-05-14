@@ -589,6 +589,18 @@
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font60Touch Of Nature_o2_1</Name>
     </None>
+    <None Include="GumProject\FontCache\Font60Touch Of Nature_o3.fnt">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Touch Of Nature_o3</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font60Touch Of Nature_o3_0.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Touch Of Nature_o3_0</Name>
+    </None>
+    <None Include="GumProject\FontCache\Font60Touch Of Nature_o3_1.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+      <Name>Font60Touch Of Nature_o3_1</Name>
+    </None>
     <None Include="GumProject\FontCache\Font62Touch Of Nature_o2.fnt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <Name>Font62Touch Of Nature_o2</Name>
@@ -862,6 +874,11 @@
       <Processor>SoundEffectProcessor</Processor>
       <Name>LineSnap</Name>
     </Compile>
+    <Compile Include="GlobalContent\SoundEffects\NewFishCaught.wav">
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Name>NewFishCaught</Name>
+    </Compile>
     <Compile Include="GlobalContent\SoundEffects\OceanAmbient.wav">
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
@@ -891,6 +908,11 @@
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>
       <Name>SplashOut</Name>
+    </Compile>
+    <Compile Include="GlobalContent\SoundEffects\TournamentWin.wav">
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Name>TournamentWin</Name>
     </Compile>
     <Compile Include="GlobalContent\SoundEffects\UnderwaterSound.wav">
       <Importer>WavImporter</Importer>

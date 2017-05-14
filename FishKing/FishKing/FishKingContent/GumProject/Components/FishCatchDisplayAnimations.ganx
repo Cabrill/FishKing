@@ -21,5 +21,31 @@
       <Animations />
       <Events />
     </AnimationSave>
+    <AnimationSave>
+      <Loops>true</Loops>
+      <Name>NewCatch</Name>
+      <States>
+        <AnimatedStateSave>
+          <StateName>NewCatchStates/Yellow</StateName>
+          <Time>0</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>NewCatchStates/Purple</StateName>
+          <Time>0.5</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+        <AnimatedStateSave>
+          <StateName>NewCatchStates/Yellow</StateName>
+          <Time>1</Time>
+          <InterpolationType>Linear</InterpolationType>
+          <Easing>Out</Easing>
+        </AnimatedStateSave>
+      </States>
+      <Animations />
+      <Events />
+    </AnimationSave>
   </Animations>
 </ElementAnimationsSave>

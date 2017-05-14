@@ -188,22 +188,27 @@ namespace FishKing.GameClasses
             }
         }
 
-        public void AddCaughtFish(Fish fish)
+        public bool AddCaughtFish(Fish fish)
         {
+            bool isNewCatch;
             FishRecord fishRecord;
 
             if (FishCaught.ContainsKey(fish.FishType))
             {
+                isNewCatch = false;
                 fishRecord = FishCaught[fish.FishType];
                 FishCaught.Remove(fish.FishType);
                 fishRecord.AddFish(fish);
             }
             else
             {
+                isNewCatch = true;
                 fishRecord = new FishRecord(fish.Name, fish.Grams, fish.LengthMM);
             }
             
             FishCaught.Add(fish.FishType, fishRecord);
+
+            return isNewCatch;
         }
     }
 }

@@ -434,7 +434,6 @@ namespace FishKing.Entities
                 {
                     SpriteInstance.Animate = false;
                     HasFinishedDisplayingCatch = true;
-                    GlobalContent.FishCaught.Play();
                 }
             }
         }

@@ -104,7 +104,7 @@
     <Variable>
       <Type>int</Type>
       <Name>FishNameValue.OutlineThickness</Name>
-      <Value xsi:type="xsd:int">1</Value>
+      <Value xsi:type="xsd:int">3</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -123,6 +123,12 @@
       <Type>string</Type>
       <Name>FishNameValue.Text</Name>
       <Value xsi:type="xsd:string">Coho Salmon</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>VerticalAlignment</Type>
+      <Name>FishNameValue.VerticalAlignment</Name>
+      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1104,6 +1110,121 @@
     </Variable>
     <Variable>
       <Type>int</Type>
+      <Name>WaveBackdrop.Alpha</Name>
+      <Value xsi:type="xsd:int">200</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>WaveBackdrop.Blue</Name>
+      <Value xsi:type="xsd:int">235</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>WaveBackdrop.Green</Name>
+      <Value xsi:type="xsd:int">200</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>WaveBackdrop.Height</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>WaveBackdrop.Height Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>WaveBackdrop.Parent</Name>
+      <Value xsi:type="xsd:string">SpriteContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>WaveBackdrop.Red</Name>
+      <Value xsi:type="xsd:int">130</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <IsFile>true</IsFile>
+      <Type>string</Type>
+      <Name>WaveBackdrop.SourceFile</Name>
+      <Value xsi:type="xsd:string">FishBook.png</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>TextureAddress</Type>
+      <Name>WaveBackdrop.Texture Address</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>WaveBackdrop.Texture Height</Name>
+      <Value xsi:type="xsd:int">292</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>WaveBackdrop.Texture Left</Name>
+      <Value xsi:type="xsd:int">768</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>WaveBackdrop.Texture Top</Name>
+      <Value xsi:type="xsd:int">1667</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>WaveBackdrop.Texture Width</Name>
+      <Value xsi:type="xsd:int">389</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>WaveBackdrop.Visible</Name>
+      <Value xsi:type="xsd:boolean">true</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>WaveBackdrop.Width</Name>
+      <Value xsi:type="xsd:float">100</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>WaveBackdrop.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>WaveBackdrop.X Units</Name>
+      <Value xsi:type="xsd:int">2</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>WaveBackdrop.Y</Name>
+      <Value xsi:type="xsd:float">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>WaveBackdrop.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
       <Name>WaveBorder.Alpha</Name>
       <Value xsi:type="xsd:int">200</Value>
       <SetsValue>true</SetsValue>
@@ -1391,8 +1512,8 @@
       </Variable>
       <Variable>
         <Type>bool</Type>
-        <Name>TextContainer.Clips Children</Name>
-        <Value xsi:type="xsd:boolean">false</Value>
+        <Name>WaveBackdrop.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -1470,6 +1591,12 @@
         <Value xsi:type="xsd:int">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>WaveBackdrop.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
     </State>
   </Category>
   <Category>
@@ -1493,6 +1620,10 @@
       </Variable>
     </State>
   </Category>
+  <Instance>
+    <Name>WaveBackdrop</Name>
+    <BaseType>Sprite</BaseType>
+  </Instance>
   <Instance>
     <Name>WaveBorder</Name>
     <BaseType>Sprite</BaseType>

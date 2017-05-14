@@ -1193,8 +1193,8 @@
       <Name>Player</Name>
       <Variable>
         <Type>int</Type>
-        <Name>TournamentPlaceSprite.Red</Name>
-        <Value xsi:type="xsd:int">0</Value>
+        <Name>TournamentPlaceSprite.Blue</Name>
+        <Value xsi:type="xsd:int">127</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -1205,8 +1205,8 @@
       </Variable>
       <Variable>
         <Type>int</Type>
-        <Name>TournamentPlaceSprite.Blue</Name>
-        <Value xsi:type="xsd:int">127</Value>
+        <Name>TournamentPlaceSprite.Red</Name>
+        <Value xsi:type="xsd:int">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

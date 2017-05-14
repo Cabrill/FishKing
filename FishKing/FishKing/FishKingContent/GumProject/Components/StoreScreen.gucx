@@ -301,6 +301,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>string</Type>
+      <Name>StoreItemPreviewInstance.Parent</Name>
+      <Value xsi:type="xsd:string">ItemContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>bool</Type>
       <Name>Visible</Name>
       <Value xsi:type="xsd:boolean">true</Value>
@@ -364,12 +370,6 @@
       <Name>Y Units</Name>
       <Value xsi:type="xsd:int">1</Value>
       <Category>Position</Category>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>StoreItemPreviewInstance.Parent</Name>
-      <Value xsi:type="xsd:string">ItemContainer</Value>
       <SetsValue>true</SetsValue>
     </Variable>
   </State>

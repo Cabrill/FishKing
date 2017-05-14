@@ -65,6 +65,11 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>CatchStatusState</Type>
+      <Name>CatchStatusState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
       <Type>ChildrenLayout</Type>
       <Name>Children Layout</Name>
       <Value xsi:type="xsd:int">0</Value>
@@ -97,13 +102,13 @@
     <Variable>
       <Type>int</Type>
       <Name>FishFrameRectangle.Blue</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>int</Type>
       <Name>FishFrameRectangle.Green</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">144</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -127,7 +132,7 @@
     <Variable>
       <Type>int</Type>
       <Name>FishFrameRectangle.Red</Name>
-      <Value xsi:type="xsd:int">0</Value>
+      <Value xsi:type="xsd:int">30</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -360,9 +365,97 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>NewCatchStatesState</Type>
+      <Name>NewCatchStatesState</Name>
+      <SetsValue>false</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>NewCatchText.Font</Name>
+      <Value xsi:type="xsd:string">MV Boli</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>NewCatchText.Font Scale</Name>
+      <Value xsi:type="xsd:float">0.5</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>NewCatchText.FontSize</Name>
+      <Value xsi:type="xsd:int">36</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>NewCatchText.HorizontalAlignment</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>NewCatchText.OutlineThickness</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>NewCatchText.Parent</Name>
+      <Value xsi:type="xsd:string">FishFrameRectangle</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>NewCatchText.Text</Name>
+      <Value xsi:type="xsd:string">New catch!!!</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>bool</Type>
+      <Name>NewCatchText.Visible</Name>
+      <Value xsi:type="xsd:boolean">false</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>DimensionUnitType</Type>
+      <Name>NewCatchText.Width Units</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>HorizontalAlignment</Type>
+      <Name>NewCatchText.X Origin</Name>
+      <Value xsi:type="xsd:int">1</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>NewCatchText.X Units</Name>
+      <Value xsi:type="xsd:int">6</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
+      <Name>NewCatchText.Y</Name>
+      <Value xsi:type="xsd:float">-6</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PositionUnitType</Type>
+      <Name>NewCatchText.Y Units</Name>
+      <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>string</Type>
       <Name>Parent</Name>
       <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PriorCatch</Type>
+      <Name>PriorCatchState</Name>
+      <SetsValue>false</SetsValue>
     </Variable>
     <Variable>
       <Type>RequirementsState</Type>
@@ -899,6 +992,150 @@
       </Variable>
     </State>
   </Category>
+  <Category>
+    <Name>PriorCatch</Name>
+    <State>
+      <Name>New</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>FishFrameRectangle.Blue</Name>
+        <Value xsi:type="xsd:int">250</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>FishFrameRectangle.Green</Name>
+        <Value xsi:type="xsd:int">206</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>FishFrameRectangle.Red</Name>
+        <Value xsi:type="xsd:int">135</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>NewCatchText.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>NotNew</Name>
+      <Variable>
+        <Type>bool</Type>
+        <Name>NewCatchText.Visible</Name>
+        <Value xsi:type="xsd:boolean">false</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
+  <Category>
+    <Name>NewCatchStates</Name>
+    <State>
+      <Name>Yellow</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>FishFrameRectangle.Blue</Name>
+        <Value xsi:type="xsd:int">230</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>FishFrameRectangle.Green</Name>
+        <Value xsi:type="xsd:int">216</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>FishFrameRectangle.Red</Name>
+        <Value xsi:type="xsd:int">173</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>NewCatchText.Blue</Name>
+        <Value xsi:type="xsd:int">140</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>NewCatchText.Font Scale</Name>
+        <Value xsi:type="xsd:float">0.4</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>NewCatchText.Green</Name>
+        <Value xsi:type="xsd:int">230</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>NewCatchText.Red</Name>
+        <Value xsi:type="xsd:int">240</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>NewCatchText.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+    <State>
+      <Name>Purple</Name>
+      <Variable>
+        <Type>int</Type>
+        <Name>FishFrameRectangle.Blue</Name>
+        <Value xsi:type="xsd:int">237</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>FishFrameRectangle.Green</Name>
+        <Value xsi:type="xsd:int">149</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>FishFrameRectangle.Red</Name>
+        <Value xsi:type="xsd:int">100</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>NewCatchText.Blue</Name>
+        <Value xsi:type="xsd:int">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>NewCatchText.Font Scale</Name>
+        <Value xsi:type="xsd:float">0.5</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>NewCatchText.Green</Name>
+        <Value xsi:type="xsd:int">215</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>int</Type>
+        <Name>NewCatchText.Red</Name>
+        <Value xsi:type="xsd:int">255</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>bool</Type>
+        <Name>NewCatchText.Visible</Name>
+        <Value xsi:type="xsd:boolean">true</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+    </State>
+  </Category>
   <Instance>
     <Name>LengthWithScale</Name>
     <BaseType>subcomponent\CatchStatWithScale</BaseType>
@@ -930,6 +1167,10 @@
   <Instance>
     <Name>StarWithScale</Name>
     <BaseType>subcomponent\CatchStatWithScale</BaseType>
+  </Instance>
+  <Instance>
+    <Name>NewCatchText</Name>
+    <BaseType>Text</BaseType>
   </Instance>
   <Behaviors />
 </ComponentSave>

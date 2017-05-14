@@ -336,6 +336,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>PreviouslyCaught</Type>
+      <Name>FishEntryInstance.PreviouslyCaughtState</Name>
+      <Value xsi:type="xsd:string">NotCaught</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>FoundItemsState</Type>
       <Name>FishEntryInstance1.FoundItemsState</Name>
       <Value xsi:type="xsd:string">Item4</Value>
@@ -375,6 +381,12 @@
       <Type>string</Type>
       <Name>FishEntryInstance10.Parent</Name>
       <Value xsi:type="xsd:string">RightPage</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PreviouslyCaught</Type>
+      <Name>FishEntryInstance10.PreviouslyCaughtState</Name>
+      <Value xsi:type="xsd:string">NotCaught</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -483,6 +495,12 @@
       <Type>string</Type>
       <Name>FishEntryInstance5.Parent</Name>
       <Value xsi:type="xsd:string">LeftPage</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>PreviouslyCaught</Type>
+      <Name>FishEntryInstance5.PreviouslyCaughtState</Name>
+      <Value xsi:type="xsd:string">NotCaught</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -765,6 +783,12 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>string</Type>
+      <Name>LeftPageDivider.Parent</Name>
+      <Value xsi:type="xsd:string">LeftPage</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>int</Type>
       <Name>LeftPageNumber.Blue</Name>
       <Value xsi:type="xsd:int">32</Value>
@@ -864,18 +888,6 @@
       <Type>PositionUnitType</Type>
       <Name>LeftPageNumber.Y Units</Name>
       <Value xsi:type="xsd:int">3</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>LeftPageDivider.Parent</Name>
-      <Value xsi:type="xsd:string">LeftPage</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>string</Type>
-      <Name>RightPageDivider.Parent</Name>
-      <Value xsi:type="xsd:string">RightPage</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -1061,6 +1073,12 @@
       <Type>PositionUnitType</Type>
       <Name>RightPageCorner.Y Units</Name>
       <Value xsi:type="xsd:int">3</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>string</Type>
+      <Name>RightPageDivider.Parent</Name>
+      <Value xsi:type="xsd:string">RightPage</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

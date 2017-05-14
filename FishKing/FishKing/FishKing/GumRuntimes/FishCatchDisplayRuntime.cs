@@ -12,7 +12,7 @@ namespace FishKing.GumRuntimes
 {
     partial class FishCatchDisplayRuntime
     {
-        public void ShowFish(Fish fish)
+        public void ShowFish(Fish fish, bool newCatch)
         {
             var ipso = this as IPositionedSizedObject;
             this.Height = 1.2f * ipso.Width;
@@ -64,6 +64,17 @@ namespace FishKing.GumRuntimes
                 {
                     CurrentRequirementsState = Requirements.LengthNotMet;
                 }
+            }
+
+            if (newCatch)
+            {
+                CurrentPriorCatchState = PriorCatch.New;
+                NewCatchAnimation.Play();
+            }
+            else
+            {
+                CurrentPriorCatchState = PriorCatch.NotNew;
+                NewCatchAnimation.Stop();
             }
         }
     }

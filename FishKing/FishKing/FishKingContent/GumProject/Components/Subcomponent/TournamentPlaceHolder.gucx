@@ -205,6 +205,18 @@
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
+      <Type>int</Type>
+      <Name>SpriteInstance.Blue</Name>
+      <Value xsi:type="xsd:int">0</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>SpriteInstance.Green</Name>
+      <Value xsi:type="xsd:int">215</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
       <Type>float</Type>
       <Name>SpriteInstance.Height</Name>
       <Value xsi:type="xsd:float">50</Value>
@@ -220,6 +232,12 @@
       <Type>string</Type>
       <Name>SpriteInstance.Parent</Name>
       <Value xsi:type="xsd:string">PlaceHolderContainer</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>int</Type>
+      <Name>SpriteInstance.Red</Name>
+      <Value xsi:type="xsd:int">255</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -364,24 +382,6 @@
       <Name>Y Units</Name>
       <Value xsi:type="xsd:int">1</Value>
       <Category>Position</Category>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>SpriteInstance.Red</Name>
-      <Value xsi:type="xsd:int">255</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>SpriteInstance.Green</Name>
-      <Value xsi:type="xsd:int">215</Value>
-      <SetsValue>true</SetsValue>
-    </Variable>
-    <Variable>
-      <Type>int</Type>
-      <Name>SpriteInstance.Blue</Name>
-      <Value xsi:type="xsd:int">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <VariableList xsi:type="VariableListSaveOfString">

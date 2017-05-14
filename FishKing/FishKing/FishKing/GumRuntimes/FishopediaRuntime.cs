@@ -37,8 +37,9 @@ namespace FishKing.GumRuntimes
 
         private void BookmarkClose_Click(FlatRedBall.Gui.IWindow window)
         {
-            LeftPage.Children.Clear();
-            RightPage.Children.Clear();
+            currentlyDisplaying = FishTypeDisplay.All;
+            BookmarkClose.Unselect();
+            pageIndex = 0;
             this.Visible = false;
         }
 
