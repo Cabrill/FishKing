@@ -6,12 +6,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using FishKing.Entities;
+using Microsoft.Xna.Framework.Audio;
+using FishKing.Managers;
 
 namespace FishKing.GumRuntimes
 {
     partial class FishopediaRuntime
     {
-
+        public SoundEffectInstance pageTurnSound;
 
         private enum FishTypeDisplay { All, Caught};
         private FishTypeDisplay currentlyDisplaying;
@@ -25,6 +27,7 @@ namespace FishKing.GumRuntimes
 
         partial void CustomInitialize()
         {
+            pageTurnSound = GlobalContent.PageTurn.CreateInstance();
             pageIndex = 0;
             LeftPageCorner.Click += LeftPageCorner_Click;
             RightPageCorner.Click += RightPageCorner_Click;
@@ -77,6 +80,7 @@ namespace FishKing.GumRuntimes
                     {
                         pageIndex++;
                         LoadAllFish();
+                        PlayPageTurnSound();
                     }
                     break;
                 case FishTypeDisplay.Caught:
@@ -85,6 +89,7 @@ namespace FishKing.GumRuntimes
                     {
                         pageIndex++;
                         LoadCaughtFish();
+                        PlayPageTurnSound();
                     }
                     break;
             }
@@ -105,6 +110,7 @@ namespace FishKing.GumRuntimes
                     case FishTypeDisplay.All: LoadAllFish(); break;
                     case FishTypeDisplay.Caught: LoadCaughtFish(); break;
                 }
+                PlayPageTurnSound();
             }
         }
 
@@ -304,6 +310,12 @@ namespace FishKing.GumRuntimes
             BookmarkCaught.Unselect();
 
             bookmark.Select();
+        }
+
+        private void PlayPageTurnSound()
+        {
+            pageTurnSound.Volume = OptionsManager.Options.SoundEffectsVolume;
+            pageTurnSound.Play();
         }
     }
 }

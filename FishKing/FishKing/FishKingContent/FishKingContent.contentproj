@@ -884,6 +884,11 @@
       <Processor>SoundEffectProcessor</Processor>
       <Name>OceanAmbient</Name>
     </Compile>
+    <Compile Include="GlobalContent\SoundEffects\PageTurn.wav">
+      <Importer>WavImporter</Importer>
+      <Processor>SoundEffectProcessor</Processor>
+      <Name>PageTurn</Name>
+    </Compile>
     <Compile Include="GlobalContent\SoundEffects\ReelFastClick.wav">
       <Importer>WavImporter</Importer>
       <Processor>SoundEffectProcessor</Processor>

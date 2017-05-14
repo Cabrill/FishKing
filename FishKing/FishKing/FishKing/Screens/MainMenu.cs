@@ -17,6 +17,7 @@ using FishKing.Entities;
 using FishKing.UtilityClasses;
 using FishKing.GameClasses;
 using FishKing.Managers;
+using Microsoft.Xna.Framework.Audio;
 
 namespace FishKing.Screens
 {
@@ -29,10 +30,14 @@ namespace FishKing.Screens
         MultiplePressableInputs leftShoulder;
         MultiplePressableInputs rightShoulder;
 
+        private SoundEffectInstance pageTurnSound;
+
         void CustomInitialize()
         {
             InitializeInput();
             FlatRedBallServices.Game.IsMouseVisible = true;
+            pageTurnSound = GlobalContent.PageTurn.CreateInstance();
+            FishopediaInstance.pageTurnSound = pageTurnSound;
         }
 
         private void InitializeInput()
@@ -239,7 +244,10 @@ namespace FishKing.Screens
         
         void CustomDestroy()
         {
-
+            if (pageTurnSound != null && !pageTurnSound.IsDisposed)
+            {
+                pageTurnSound.Dispose();
+            }
         }
 
         static void CustomLoadStaticContent(string contentManagerName)
