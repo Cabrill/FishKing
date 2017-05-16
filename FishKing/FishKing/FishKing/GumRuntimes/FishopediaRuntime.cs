@@ -19,7 +19,7 @@ namespace FishKing.GumRuntimes
         private enum FishTypeDisplay { All, Caught};
         private FishTypeDisplay currentlyDisplaying;
         private int pageIndex;
-        public SerializableDictionary<Fish_Types, FishRecord> CaughtFish
+        public SerializableDictionary<string, FishRecord> CaughtFish
         {
             get; set;
         }
@@ -139,14 +139,7 @@ namespace FishKing.GumRuntimes
                 if (i < allFish.Count)
                 {
                     fishType = allFish.Values.ElementAt(i);
-                    if (CaughtFish.ContainsKey(fishType))
-                    {
-                        fishRecord = CaughtFish[fishType];
-                    }
-                    else
-                    {
-                        fishRecord = null;
-                    }
+                    fishRecord = CaughtFish.ContainsKey(fishType.Name) ? CaughtFish[fishType.Name] : null;
                     fishEntry.AssociateWithFish(fishType, fishRecord);
                     fishEntry.Visible = true;
 
@@ -269,8 +262,8 @@ namespace FishKing.GumRuntimes
 
                 if (i < allFish.Count)
                 {
-                    fishType = allFish.ElementAt(i);
-                    fishRecord = CaughtFish[fishType];
+                    fishType = GlobalContent.Fish_Types[allFish.ElementAt(i)];
+                    fishRecord = CaughtFish[fishType.Name];
 
                     fishEntry.AssociateWithFish(fishType, fishRecord);
                     fishEntry.Visible = true;

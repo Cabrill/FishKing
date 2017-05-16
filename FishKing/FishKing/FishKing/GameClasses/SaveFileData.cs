@@ -22,23 +22,23 @@ namespace FishKing.GameClasses
         public DateTime DateCreated { get; set; }
         public DateTime LastPlayed { get; set; }
 
-        private DateTime recentStartTime;
+        private DateTime _recentStartTime;
 
-        private TimeSpan m_TimePlayed;
+        private TimeSpan _mTimePlayed;
 
         [XmlIgnore]
         public TimeSpan TimePlayed
         {
-            get { return m_TimePlayed; }
-            set { m_TimePlayed = value; }
+            get { return _mTimePlayed; }
+            set { _mTimePlayed = value; }
         }
 
         // Pretend property for serialization
         [XmlElement("TimePlayed")]
         public long TimeSinceLastEventTicks
         {
-            get { return m_TimePlayed.Ticks; }
-            set { m_TimePlayed = new TimeSpan(value); }
+            get { return _mTimePlayed.Ticks; }
+            set { _mTimePlayed = new TimeSpan(value); }
         }
 
         public int MoneySpent { get; set; }
@@ -64,7 +64,7 @@ namespace FishKing.GameClasses
         {
             get
             {
-                return ParticipatedTournaments.Where(tr => tr.PlaceTaken == 1).Count();
+                return ParticipatedTournaments.Count(tr => tr.PlaceTaken == 1);
             }
         }
 
@@ -73,7 +73,7 @@ namespace FishKing.GameClasses
         {
             get
             {
-                return ParticipatedTournaments.Where(tr => tr.PlaceTaken == 2).Count();
+                return ParticipatedTournaments.Count(tr => tr.PlaceTaken == 2);
             }
         }
 
@@ -82,7 +82,7 @@ namespace FishKing.GameClasses
         {
             get
             {
-                return ParticipatedTournaments.Where(tr => tr.PlaceTaken == 3).Count();
+                return ParticipatedTournaments.Count(tr => tr.PlaceTaken == 3);
             }
         }
 
@@ -91,45 +91,25 @@ namespace FishKing.GameClasses
         {
             get
             {
-                return ParticipatedTournaments.Where(tr => tr.PlaceTaken <= 3).Count();
+                return ParticipatedTournaments.Count(tr => tr.PlaceTaken <= 3);
             }
         }
 
-        public SerializableDictionary<Fish_Types, FishRecord> FishCaught;
+        public SerializableDictionary<string, FishRecord> FishCaught;
 
         [XmlIgnore]
-        public int NumberOfFishCaught { get { return FishCaught.Keys.Count; } }
+        public int NumberOfFishCaught => FishCaught.Keys.Count;
 
         [XmlIgnore]
         public int HeaviestFish
         {
-            get
-            {
-                if (FishCaught.Count == 0)
-                {
-                    return 0;
-                }
-                else
-                {
-                   return FishCaught.Values.Max(f => f.HeaviestCaught);
-                }
-            }
+            get { return FishCaught.Count == 0 ? 0 : FishCaught.Values.Max(f => f.HeaviestCaught); }
         }
 
         [XmlIgnore]
         public int LongestFish
         {
-            get
-            {
-                if (FishCaught.Count == 0)
-                {
-                    return 0;
-                }
-                else
-                {
-                    return FishCaught.Values.Max(f => f.LongestCaught);
-                }
-            }
+            get { return FishCaught.Count == 0 ? 0 : FishCaught.Values.Max(f => f.LongestCaught); }
         }
 
         public SaveFileData() {
@@ -137,9 +117,9 @@ namespace FishKing.GameClasses
             DateCreated = DateTime.Now;
             LastPlayed = DateTime.Now;
             TimePlayed = new TimeSpan(0);
-            FishCaught = new SerializableDictionary<Fish_Types, FishRecord>();
+            FishCaught = new SerializableDictionary<string, FishRecord>();
             ParticipatedTournaments = new List<TournamentResults>();
-            recentStartTime = DateTime.MinValue;
+            _recentStartTime = DateTime.MinValue;
         }
 
         public SaveFileData(int saveSlot, int playerFishNumber)
@@ -150,37 +130,36 @@ namespace FishKing.GameClasses
             DateCreated = DateTime.Now;
             LastPlayed = DateTime.Now;
             TimePlayed = new TimeSpan(0);
-            FishCaught = new SerializableDictionary<Fish_Types, FishRecord>();
+            FishCaught = new SerializableDictionary<string, FishRecord>();
             ParticipatedTournaments = new List<TournamentResults>();
-            recentStartTime = DateTime.MinValue;
+            _recentStartTime = DateTime.MinValue;
         }
 
         public void StartPlaySession()
         {
-            if (recentStartTime == DateTime.MinValue)
+            if (_recentStartTime == DateTime.MinValue)
             {
-                recentStartTime = DateTime.Now;
+                _recentStartTime = DateTime.Now;
             }
         }
 
         public void StopPlaySession()
         {
-            var newTime = DateTime.Now - recentStartTime;
+            var newTime = DateTime.Now - _recentStartTime;
             TimePlayed += newTime;
             LastPlayed = DateTime.Now;
-            recentStartTime = DateTime.MinValue;
+            _recentStartTime = DateTime.MinValue;
         }
 
         public void AddTournamentResult(TournamentResults result)
         {
-            var existingResult = ParticipatedTournaments.Where(tr => tr.Tournament.TournamentName == result.Tournament.TournamentName).FirstOrDefault();
+            var existingResult = ParticipatedTournaments.FirstOrDefault(tr => tr.TournamentName == result.TournamentName);
             if (existingResult != null)
             {
-                if (existingResult.PlaceTaken > result.PlaceTaken)
-                {
-                    ParticipatedTournaments.Remove(existingResult);
-                    ParticipatedTournaments.Add(result);
-                }
+                if (existingResult.PlaceTaken <= result.PlaceTaken) return;
+
+                ParticipatedTournaments.Remove(existingResult);
+                ParticipatedTournaments.Add(result);
             }
             else
             {
@@ -193,11 +172,11 @@ namespace FishKing.GameClasses
             bool isNewCatch;
             FishRecord fishRecord;
 
-            if (FishCaught.ContainsKey(fish.FishType))
+            if (FishCaught.ContainsKey(fish.Name))
             {
                 isNewCatch = false;
-                fishRecord = FishCaught[fish.FishType];
-                FishCaught.Remove(fish.FishType);
+                fishRecord = FishCaught[fish.Name];
+                FishCaught.Remove(fish.Name);
                 fishRecord.AddFish(fish);
             }
             else
@@ -206,7 +185,7 @@ namespace FishKing.GameClasses
                 fishRecord = new FishRecord(fish.Name, fish.Grams, fish.LengthMM);
             }
             
-            FishCaught.Add(fish.FishType, fishRecord);
+            FishCaught.Add(fish.Name, fishRecord);
 
             return isNewCatch;
         }

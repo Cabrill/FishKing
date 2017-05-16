@@ -9,7 +9,7 @@ namespace FishKing.GameClasses
 {
     public class TournamentResults
     {
-        public TournamentStructure Tournament
+        public string TournamentName
         {
             get; set;
         }
@@ -26,7 +26,7 @@ namespace FishKing.GameClasses
 
         public TournamentResults(TournamentStructure tournament, int place)
         {
-            Tournament = tournament;
+            TournamentName = tournament.TournamentName;
             PlaceTaken = place;
             RewardEarned = tournament.DetermineRewardAmount(place);
         }

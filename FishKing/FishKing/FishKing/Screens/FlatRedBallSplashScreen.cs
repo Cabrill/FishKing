@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using System.Text;
 using System.Linq;
-
+using FishKing.GameClasses;
 using FlatRedBall;
 using FlatRedBall.Input;
 using FlatRedBall.Instructions;
@@ -48,10 +48,7 @@ namespace FishKing.Screens
         {
             var saves = await SaveGameManager.GetAllSaves();
             var mostRecentSave = saves?.OrderBy(s => s.LastPlayed).FirstOrDefault();
-            if (mostRecentSave != null)
-            {
-                OptionsManager.Options = mostRecentSave.Options;
-            }
+            OptionsManager.Options = mostRecentSave != null ? mostRecentSave.Options : new GameOptions();
         }
 
 		void CustomDestroy()

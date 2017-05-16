@@ -93,7 +93,7 @@ namespace FishKing.Screens
             SaveGamePreview3.CurrentFilledState = GameSelectPreviewRuntime.Filled.Empty;
 
             var saveGames = await SaveGameManager.GetAllSaves();
-            foreach (SaveFileData save in saveGames)
+            foreach (var save in saveGames)
             {
                 switch (save.SaveSlotNumber)
                 {
@@ -102,14 +102,7 @@ namespace FishKing.Screens
                     case 3: SaveGamePreview3.AssociatedWithSaveGame(save); break;
                 }
             }
-            if (saveGames.Count == 0)
-            {
-                ContinueButton.CurrentEnabledState = MainMenuButtonRuntime.Enabled.IsDisabled;
-            }
-            else
-            {
-                ContinueButton.CurrentEnabledState = MainMenuButtonRuntime.Enabled.IsEnabled;
-            }
+            ContinueButton.CurrentEnabledState = saveGames.Count == 0 ? MainMenuButtonRuntime.Enabled.IsDisabled : MainMenuButtonRuntime.Enabled.IsEnabled;
         }
 
         void startMusic()

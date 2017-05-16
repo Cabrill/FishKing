@@ -89,7 +89,7 @@ namespace FishKing.GumRuntimes
                     RequirementTrophyCount = tournament.TrophyRequirements.Item2.ToString();
                 }
 
-            var previousPlay = saveData?.ParticipatedTournaments?.Where(pt => pt.Tournament == tournament)
+            var previousPlay = saveData?.ParticipatedTournaments?.Where(pt => pt.TournamentName == tournament.TournamentName)
                 .FirstOrDefault();
             if (previousPlay != null)
             {
