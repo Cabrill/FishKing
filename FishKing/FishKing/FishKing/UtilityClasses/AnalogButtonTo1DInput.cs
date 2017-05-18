@@ -9,27 +9,15 @@ namespace FishKing.UtilityClasses
 {
     class AnalogButtonTo1DInput : I1DInput
     {
-        private AnalogButton button;
+        private readonly AnalogButton _button;
 
         public AnalogButtonTo1DInput(AnalogButton b)
         {
-            button = b;
+            _button = b;
         }
 
-        public float Value
-        {
-            get
-            {
-                return button.Position;
-            }
-        }
+        public float Value => _button.Position;
 
-        public float Velocity
-        {
-            get
-            {
-                return button.Velocity;
-            }
-        }
+        public float Velocity => _button.Velocity;
     }
 }

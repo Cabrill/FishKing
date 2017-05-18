@@ -9,27 +9,15 @@ namespace FishKing.UtilityClasses
 {
     public class AnalogStickTo1DInput : I1DInput
     {
-        private AnalogStick analogStick;
+        private readonly AnalogStick _analogStick;
 
         public AnalogStickTo1DInput(AnalogStick stick)
         {
-            analogStick = stick;
+            _analogStick = stick;
         }
 
-        public float Value
-        {
-            get
-            {
-                return (float)analogStick.Magnitude;
-            }
-        }
+        public float Value => _analogStick.Velocity.Y != 0 ? (float)_analogStick.Magnitude : 0;
 
-        public float Velocity
-        {
-            get
-            {
-                return analogStick.Velocity.Y;
-            }
-        }
+        public float Velocity => _analogStick.Position.Y;
     }
 }

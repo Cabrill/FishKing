@@ -41,8 +41,8 @@ namespace FishKing.Screens
             FishopediaInstance.CaughtFish = SaveGameManager.CurrentSaveData.FishCaught;
             FishopediaInstance.LoadAllFish();
             FishopediaInstance.Visible = true;
-            bookOpenSound.Volume = OptionsManager.Options.SoundEffectsVolume;
-            bookOpenSound.Play();
+            _bookOpenSound.Volume = OptionsManager.Options.SoundEffectsVolume;
+            _bookOpenSound.Play();
         }
 
         private void StartTournament(TournamentStructure tournament)

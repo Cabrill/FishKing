@@ -11,9 +11,9 @@ namespace FishKing.GumRuntimes
 {
     partial class PopupMessageRuntime
     {
-        private float scrollAmount;
-        private float messageHeight;
-        private float containerHeight;
+        private float _scrollAmount;
+        private float _messageHeight;
+        private float _containerHeight;
 
         partial void CustomInitialize()
         {
@@ -118,23 +118,23 @@ namespace FishKing.GumRuntimes
 
         public void HandleScrollInput(float scrollWheel)
         {
-            if (containerHeight == 0) MeasureComponents();
-            SetScrollAmount(scrollAmount + (scrollWheel * 10));
+            if (_containerHeight == 0) MeasureComponents();
+            SetScrollAmount(_scrollAmount + (scrollWheel * 10));
         }
 
-        public void MeasureComponents()
+        private void MeasureComponents()
         {
-            scrollAmount = 0;
-            messageHeight = (PopupTextInstance as IPositionedSizedObject).Height;
-            containerHeight = (TextContainer as IPositionedSizedObject).Height;
+            _scrollAmount = 0;
+            _messageHeight = (PopupTextInstance as IPositionedSizedObject).Height;
+            _containerHeight = (TextContainer as IPositionedSizedObject).Height;
         }
 
         private void SetScrollAmount(float scroll)
         {
-            if (containerHeight > 0)
+            if (_containerHeight > 0)
             {
-                scrollAmount = MathHelper.Clamp(scroll, -containerHeight * 5, 0);
-                SlidingTextContainer.Y = 100 * scrollAmount / containerHeight;
+                _scrollAmount = MathHelper.Clamp(scroll, -2000, 0);
+                SlidingTextContainer.Y = 100 * _scrollAmount / _containerHeight;
             }
         }
 

@@ -23,26 +23,26 @@ namespace FishKing.Screens
 {
 	public partial class MainMenu
 	{
-        Multiple2DInputs MovementInput;
-        MultiplePressableInputs SelectionInput;
-        MultiplePressableInputs ExitInput;
-        Multiple1DInputs ScrollInput;
-        MultiplePressableInputs leftShoulder;
-        MultiplePressableInputs rightShoulder;
+        Multiple2DInputs _movementInput;
+        MultiplePressableInputs _selectionInput;
+        MultiplePressableInputs _exitInput;
+        Multiple1DInputs _scrollInput;
+        MultiplePressableInputs _leftShoulder;
+        MultiplePressableInputs _rightShoulder;
 
-        private SoundEffectInstance pageTurnSound;
-        private SoundEffectInstance bookOpenSound;
-        private SoundEffectInstance bookCloseSound;
+        private SoundEffectInstance _pageTurnSound;
+        private SoundEffectInstance _bookOpenSound;
+        private SoundEffectInstance _bookCloseSound;
 
         void CustomInitialize()
         {
             InitializeInput();
             FlatRedBallServices.Game.IsMouseVisible = true;
-            pageTurnSound = GlobalContent.PageTurn.CreateInstance();
-            bookOpenSound = GlobalContent.BookOpen.CreateInstance();
-            bookCloseSound = GlobalContent.BookClose.CreateInstance();
-            FishopediaInstance.PageTurnSound = pageTurnSound;
-            FishopediaInstance.BookCloseSound = bookCloseSound;
+            _pageTurnSound = GlobalContent.PageTurn.CreateInstance();
+            _bookOpenSound = GlobalContent.BookOpen.CreateInstance();
+            _bookCloseSound = GlobalContent.BookClose.CreateInstance();
+            FishopediaInstance.PageTurnSound = _pageTurnSound;
+            FishopediaInstance.BookCloseSound = _bookCloseSound;
         }
 
         private void InitializeInput()
@@ -53,13 +53,11 @@ namespace FishKing.Screens
 
             if (gamePad != null)
             {
-                leftShoulder = new MultiplePressableInputs();
-                leftShoulder.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.LeftShoulder));
-                leftShoulder.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.LeftTrigger));
+                _leftShoulder = new MultiplePressableInputs();
+                _leftShoulder.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.LeftTrigger));
 
-                rightShoulder = new MultiplePressableInputs();
-                rightShoulder.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.RightShoulder));
-                rightShoulder.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.RightTrigger));
+                _rightShoulder = new MultiplePressableInputs();
+                _rightShoulder.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.RightTrigger));
             }
 
             var movementInputs = new Multiple2DInputs();
@@ -71,7 +69,7 @@ namespace FishKing.Screens
                 movementInputs.Inputs.Add(gamePad.DPad);
                 movementInputs.Inputs.Add(gamePad.LeftStick);
             }
-            MovementInput = movementInputs;
+            _movementInput = movementInputs;
 
             var selectionInputs = new MultiplePressableInputs();
             selectionInputs.Inputs.Add(InputManager.Keyboard.GetKey(Keys.Space));
@@ -80,11 +78,16 @@ namespace FishKing.Screens
             {
                 selectionInputs.Inputs.Add(InputManager.Xbox360GamePads[0].GetButton(Xbox360GamePad.Button.A));
             }
-            SelectionInput = selectionInputs;
+            _selectionInput = selectionInputs;
 
             var exitInputs = new MultiplePressableInputs();
             exitInputs.Inputs.Add(InputManager.Keyboard.GetKey(Keys.Escape));
-            ExitInput = exitInputs;
+            if (gamePad != null)
+            {
+                exitInputs.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.B));
+                exitInputs.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.Back));
+            }
+            _exitInput = exitInputs;
 
             var scrollInput = new Multiple1DInputs();
             if (gamePad != null)
@@ -92,7 +95,7 @@ namespace FishKing.Screens
                 scrollInput.Inputs.Add(new AnalogStickTo1DInput(gamePad.RightStick));
             }
             scrollInput.Inputs.Add(InputManager.Mouse.ScrollWheel);
-            ScrollInput = scrollInput;
+            _scrollInput = scrollInput;
 
             SaveGameManager.CurrentSaveData.StartPlaySession();
         }
@@ -109,30 +112,48 @@ namespace FishKing.Screens
             HandleMenuSelection();
             HandleExitInput();
             HandleScrollInput();
+            HandleBumpers();
             if (FishopediaInstance.Visible) HandlePageFlipping();
             GoFishButton.Visible = MainMenuGumRuntime.AnyTournamentIsSelected;
         }
 
-        private void HandlePageFlipping()
+	    private void HandleBumpers()
+	    {
+	        var gamePad = InputManager.Xbox360GamePads[0];
+	        if (gamePad != null && FishopediaInstance.Visible)
+	        {
+                if (gamePad.ButtonPushed(Xbox360GamePad.Button.RightShoulder))
+                {
+                    FishopediaInstance.SelectNextBookmark();
+                }
+                else if (gamePad.ButtonPushed((Xbox360GamePad.Button.LeftShoulder)))
+                {
+                    FishopediaInstance.SelectPreviousBookmark();
+
+                }
+	        }
+	    }
+
+	    private void HandlePageFlipping()
         {
-            if (leftShoulder != null && rightShoulder != null)
+            if (_leftShoulder != null && _rightShoulder != null)
             {
-                if (leftShoulder.WasJustPressed) FishopediaInstance.PreviousPage();
-                else if (rightShoulder.WasJustPressed) FishopediaInstance.NextPage();
+                if (_leftShoulder.WasJustPressed) FishopediaInstance.PreviousPage();
+                else if (_rightShoulder.WasJustPressed) FishopediaInstance.NextPage();
             }
         }
 
         private void HandleScrollInput()
         {
-            if (ScrollInput.Value != 0)
+            if (_scrollInput.Velocity != 0)
             {
-                MainMenuGumRuntime.HandleScrollInput(ScrollInput.Velocity);
+                MainMenuGumRuntime.HandleScrollInput(_scrollInput.Velocity);
             }
         }
 
         private void HandleExitInput()
         {
-            if (ExitInput.WasJustPressed)
+            if (_exitInput.WasJustPressed)
             {
                 if (FishopediaInstance.Visible)
                 {
@@ -147,7 +168,7 @@ namespace FishKing.Screens
 
         private void HandleMenuSelection()
         {
-            if (SelectionInput.WasJustPressed)
+            if (_selectionInput.WasJustPressed)
             {
                 if (FishopediaInstance.Visible)
                 {
@@ -166,6 +187,10 @@ namespace FishKing.Screens
             {
                 GoFishButton.CallClick();
             }
+            else if (FishopediaButton.IsHighlighted)
+            {
+                FishopediaButton.CallClick();
+            }
             else if (BackButton.IsHighlighted)
             {
                 BackButton.CallClick();
@@ -178,7 +203,7 @@ namespace FishKing.Screens
 
         private void HandleMenuMovement()
         {
-            var desiredDirection = CardinalTimedDirection.GetDesiredDirection(MovementInput);
+            var desiredDirection = CardinalTimedDirection.GetDesiredDirection(_movementInput);
 
             if (desiredDirection == Direction.None)
             {
@@ -206,6 +231,11 @@ namespace FishKing.Screens
                         GoFishButton.UnhighlightButton();
                         BackButton.HighlightButton();
                     }
+                    else if (FishopediaButton.IsHighlighted)
+                    {
+                        FishopediaButton.UnhighlightButton();
+                        MainMenuGumRuntime.ScrollToAndHighlightFirstEligibleUnplayedTournament();
+                    }
                     else if (MainMenuGumRuntime.AnyTournamentIsHighlighted)
                     {
                         MainMenuGumRuntime.UnhighlightAllTournaments();
@@ -218,10 +248,11 @@ namespace FishKing.Screens
                         BackButton.UnhighlightButton();
                         GoFishButton.HighlightButton();
                     }
-                    else if (MainMenuGumRuntime.AnyTournamentIsHighlighted && GoFishButton.Visible)
+                    else if (MainMenuGumRuntime.AnyTournamentIsHighlighted || GoFishButton.IsHighlighted)
                     {
+                        GoFishButton.UnhighlightButton();
                         MainMenuGumRuntime.UnhighlightAllTournaments();
-                        GoFishButton.HighlightButton();
+                        FishopediaButton.HighlightButton();
                     }
                     break;
                 case Direction.Down:
@@ -229,7 +260,7 @@ namespace FishKing.Screens
                     {
                         MainMenuGumRuntime.UnhighlightAllTournaments();
                         
-                        if (MovementInput.X > 0)
+                        if (_movementInput.X > 0)
                         {
                             GoFishButton.HighlightButton();
                         }
@@ -238,35 +269,48 @@ namespace FishKing.Screens
                             BackButton.HighlightButton();
                         }
                     }
+                    else if (FishopediaButton.IsHighlighted)
+                    {
+                        FishopediaButton.UnhighlightButton();
+                        GoFishButton.HighlightButton();
+                    }
                     else if (!GoFishButton.IsHighlighted && !BackButton.IsHighlighted)
                     {
                         MainMenuGumRuntime.HandleTournamentPreviewMovement(desiredDirection);
                     }
                     break;
                 case Direction.Up:
-                    if (GoFishButton.IsHighlighted || BackButton.IsHighlighted)
+                    if (MainMenuGumRuntime.FirstTournamentPreviewIsHighlighted)
                     {
-                        GoFishButton.UnhighlightButton();
-                        BackButton.UnhighlightButton();
+                        MainMenuGumRuntime.UnhighlightAllTournaments();
+                        FishopediaButton.HighlightButton();
                     }
-                    MainMenuGumRuntime.HandleTournamentPreviewMovement(desiredDirection);
+                    else if (!FishopediaButton.IsHighlighted)
+                    {
+                        if (GoFishButton.IsHighlighted || BackButton.IsHighlighted)
+                        {
+                            GoFishButton.UnhighlightButton();
+                            BackButton.UnhighlightButton();
+                        }
+                        MainMenuGumRuntime.HandleTournamentPreviewMovement(desiredDirection);
+                    }
                     break;
             }
         }
         
         void CustomDestroy()
         {
-            if (pageTurnSound != null && !pageTurnSound.IsDisposed)
+            if (_pageTurnSound != null && !_pageTurnSound.IsDisposed)
             {
-                pageTurnSound.Dispose();
+                _pageTurnSound.Dispose();
             }
-            if (bookOpenSound != null && !bookOpenSound.IsDisposed)
+            if (_bookOpenSound != null && !_bookOpenSound.IsDisposed)
             {
-                bookOpenSound.Dispose();
+                _bookOpenSound.Dispose();
             }
-            if (bookCloseSound != null && !bookCloseSound.IsDisposed)
+            if (_bookCloseSound != null && !_bookCloseSound.IsDisposed)
             {
-                bookCloseSound.Dispose();
+                _bookCloseSound.Dispose();
             }
         }
 

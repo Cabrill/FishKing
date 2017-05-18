@@ -17,33 +17,35 @@ namespace FishKing.GumRuntimes
         public SoundEffectInstance BookCloseSound;
 
         private enum FishTypeDisplay { All, Caught};
-        private FishTypeDisplay currentlyDisplaying;
-        private int pageIndex;
+        private FishTypeDisplay _currentlyDisplaying;
+        private int _pageIndex;
         public SerializableDictionary<string, FishRecord> CaughtFish
         {
-            get; set;
+            private get; set;
         }
 
-        private List<FishEntryRuntime> fishEntries;
+        private List<FishEntryRuntime> _fishEntries;
+        private List<BookMarkRuntime> _bookmarks;
 
         partial void CustomInitialize()
         {
             PageTurnSound = GlobalContent.PageTurn.CreateInstance();
-            pageIndex = 0;
+            _pageIndex = 0;
             LeftPageCorner.Click += LeftPageCorner_Click;
             RightPageCorner.Click += RightPageCorner_Click;
             BookmarkAll.Click += BookmarkAll_Click;
             BookmarkCaught.Click += BookmarkCaught_Click;
             BookmarkClose.Click += BookmarkClose_Click;
             BookmarkClose.Unselect();
-            fishEntries = LeftPage.Children.Union(RightPage.Children).Where(c => c is FishEntryRuntime).Cast<FishEntryRuntime>().ToList();
+            _fishEntries = LeftPage.Children.Union(RightPage.Children).Where(c => c is FishEntryRuntime).Cast<FishEntryRuntime>().ToList();
+            _bookmarks = LeftBookmarkContainer.Children.Union(RightBookmarkContainer.Children).Where(bm => bm is BookMarkRuntime).Cast<BookMarkRuntime>().ToList();
         }
 
         private void BookmarkClose_Click(FlatRedBall.Gui.IWindow window)
         {
-            currentlyDisplaying = FishTypeDisplay.All;
+            _currentlyDisplaying = FishTypeDisplay.All;
             BookmarkClose.Unselect();
-            pageIndex = 0;
+            _pageIndex = 0;
             this.Visible = false;
             BookCloseSound.Volume = OptionsManager.Options.SoundEffectsVolume;
             BookCloseSound.Play();
@@ -51,18 +53,18 @@ namespace FishKing.GumRuntimes
 
         private void BookmarkCaught_Click(FlatRedBall.Gui.IWindow window)
         {
-            if (currentlyDisplaying != FishTypeDisplay.Caught)
+            if (_currentlyDisplaying != FishTypeDisplay.Caught)
             {
-                pageIndex = 0;
+                _pageIndex = 0;
                 LoadCaughtFish();
             }
         }
 
         private void BookmarkAll_Click(FlatRedBall.Gui.IWindow window)
         {
-            if (currentlyDisplaying != FishTypeDisplay.All)
+            if (_currentlyDisplaying != FishTypeDisplay.All)
             {
-                pageIndex = 0;
+                _pageIndex = 0;
                 LoadAllFish();
             }
         }
@@ -75,22 +77,22 @@ namespace FishKing.GumRuntimes
         public void NextPage()
         {
             int maxPage;
-            switch (currentlyDisplaying)
+            switch (_currentlyDisplaying)
             {
                 case FishTypeDisplay.All:
                     maxPage = GlobalContent.Fish_Types.Keys.Count / 12;
-                    if (pageIndex < maxPage)
+                    if (_pageIndex < maxPage)
                     {
-                        pageIndex++;
+                        _pageIndex++;
                         LoadAllFish();
                         PlayPageTurnSound();
                     }
                     break;
                 case FishTypeDisplay.Caught:
                     maxPage = CaughtFish.Keys.Count / 12;
-                    if (pageIndex < maxPage)
+                    if (_pageIndex < maxPage)
                     {
-                        pageIndex++;
+                        _pageIndex++;
                         LoadCaughtFish();
                         PlayPageTurnSound();
                     }
@@ -105,10 +107,10 @@ namespace FishKing.GumRuntimes
 
         public void PreviousPage()
         {
-            if (pageIndex > 0)
+            if (_pageIndex > 0)
             {
-                pageIndex--;
-                switch (currentlyDisplaying)
+                _pageIndex--;
+                switch (_currentlyDisplaying)
                 {
                     case FishTypeDisplay.All: LoadAllFish(); break;
                     case FishTypeDisplay.Caught: LoadCaughtFish(); break;
@@ -119,7 +121,7 @@ namespace FishKing.GumRuntimes
 
         public void LoadAllFish()
         {
-            currentlyDisplaying = FishTypeDisplay.All;
+            _currentlyDisplaying = FishTypeDisplay.All;
             LeftPageDivider.Visible = false;
             RightPageDivider.Visible = false;
 
@@ -129,12 +131,12 @@ namespace FishKing.GumRuntimes
             FishEntryRuntime fishEntry;
             bool hasRightPage = false;
 
-            var untilItem = (1 + pageIndex) * 12;
+            var untilItem = (1 + _pageIndex) * 12;
             untilItem = (int)(Math.Round(untilItem / 12.0) * 12);
 
-            for (int i = pageIndex*12;i < untilItem; i++)
+            for (int i = _pageIndex*12;i < untilItem; i++)
             {
-                fishEntry = fishEntries.ElementAt(i % 12);
+                fishEntry = _fishEntries.ElementAt(i % 12);
 
                 if (i < allFish.Count)
                 {
@@ -162,9 +164,9 @@ namespace FishKing.GumRuntimes
 
             var maxPage = GlobalContent.Fish_Types.Keys.Count / 12;
 
-            RightPageCorner.Visible = maxPage > pageIndex;
-            LeftPageCorner.Visible = pageIndex > 0;
-            SetPageNumbers(pageIndex, hasRightPage);
+            RightPageCorner.Visible = maxPage > _pageIndex;
+            LeftPageCorner.Visible = _pageIndex > 0;
+            SetPageNumbers(_pageIndex, hasRightPage);
 
             SelectBookmark(BookmarkAll);
         }
@@ -243,7 +245,7 @@ namespace FishKing.GumRuntimes
 
         private void LoadCaughtFish(int atPageIndex = 0)
         {
-            currentlyDisplaying = FishTypeDisplay.Caught;
+            _currentlyDisplaying = FishTypeDisplay.Caught;
             LeftPageDivider.Visible = false;
             RightPageDivider.Visible = false;
 
@@ -253,12 +255,12 @@ namespace FishKing.GumRuntimes
             FishEntryRuntime fishEntry;
             bool hasRightPage = false;
 
-            var untilItem = (1 + pageIndex) * 12;
+            var untilItem = (1 + _pageIndex) * 12;
             untilItem = (int)(Math.Round(untilItem / 12.0) * 12);
 
-            for (int i = pageIndex * 12; i < untilItem; i++)
+            for (int i = _pageIndex * 12; i < untilItem; i++)
             {
-                fishEntry = fishEntries.ElementAt(i % 12);
+                fishEntry = _fishEntries.ElementAt(i % 12);
 
                 if (i < allFish.Count)
                 {
@@ -287,9 +289,9 @@ namespace FishKing.GumRuntimes
 
             var maxPage = CaughtFish.Keys.Count / 12;
 
-            RightPageCorner.Visible = maxPage > pageIndex;
-            LeftPageCorner.Visible = pageIndex > 0;
-            SetPageNumbers(pageIndex, hasRightPage);
+            RightPageCorner.Visible = maxPage > _pageIndex;
+            LeftPageCorner.Visible = _pageIndex > 0;
+            SetPageNumbers(_pageIndex, hasRightPage);
             SelectBookmark(BookmarkCaught);
         }
 
@@ -312,6 +314,26 @@ namespace FishKing.GumRuntimes
         {
             PageTurnSound.Volume = OptionsManager.Options.SoundEffectsVolume;
             PageTurnSound.Play();
+        }
+
+        public void SelectNextBookmark()
+        {
+            var currentBookmark = _bookmarks.FirstOrDefault(bm => bm.IsHighlighted);
+            if (currentBookmark != null)
+            {
+                currentBookmark.Unselect();
+                _bookmarks.SkipWhile(bm => bm != currentBookmark).Skip(1).FirstOrDefault()?.CallClick();
+            }
+        }
+
+        public void SelectPreviousBookmark()
+        {
+            var currentBookmark = _bookmarks.FirstOrDefault(bm => bm.IsHighlighted);
+            if (currentBookmark != null)
+            {
+                currentBookmark.Unselect();
+                _bookmarks.SkipWhile(bm => bm != currentBookmark).Skip(-1).FirstOrDefault()?.CallClick();
+            }
         }
     }
 }

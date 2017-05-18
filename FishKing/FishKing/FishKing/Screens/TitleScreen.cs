@@ -25,23 +25,23 @@ namespace FishKing.Screens
 {
 	public partial class TitleScreen
 	{
-        Multiple2DInputs MovementInput;
-        MultiplePressableInputs SelectionInput;
-        MultiplePressableInputs ExitInput;
-        Multiple1DInputs ScrollInput;
-        TitleScreenGumRuntime screen;
+        Multiple2DInputs _movementInput;
+        MultiplePressableInputs _selectionInput;
+        MultiplePressableInputs _exitInput;
+        Multiple1DInputs _scrollInput;
+        TitleScreenGumRuntime _screen;
 
         private enum PlayType { None, Continue, NewGame };
-        PlayType currentPlayType;
-        int currentSaveSlot = 0;
+        PlayType _currentPlayType;
+        int _currentSaveSlot = 0;
 
         void CustomInitialize()
 		{
             InitializeInput();
             LoadSaveData();
-            currentPlayType = PlayType.None;
-            screen = TitleScreenGumRuntime;
-            screen.IntroAnimation.Play();
+            _currentPlayType = PlayType.None;
+            _screen = TitleScreenGumRuntime;
+            _screen.IntroAnimation.Play();
             FlatRedBallServices.Game.IsMouseVisible = false;
             Microsoft.Xna.Framework.Media.MediaPlayer.Volume = OptionsManager.Options.MusicVolume;
             FlatRedBall.Audio.AudioManager.PlaySong(Echinoderm_Regeneration_Sting, true, false);
@@ -62,20 +62,26 @@ namespace FishKing.Screens
                 movementInputs.Inputs.Add(gamePad.DPad);
                 movementInputs.Inputs.Add(gamePad.LeftStick);
             }
-            MovementInput = movementInputs;
+            _movementInput = movementInputs;
 
             var selectionInputs = new MultiplePressableInputs();
             selectionInputs.Inputs.Add(InputManager.Keyboard.GetKey(Keys.Space));
             selectionInputs.Inputs.Add(InputManager.Keyboard.GetKey(Keys.Enter));
-            if (InputManager.NumberOfConnectedGamePads > 0)
+            if (gamePad != null)
             {
-                selectionInputs.Inputs.Add(InputManager.Xbox360GamePads[0].GetButton(Xbox360GamePad.Button.A));
+                selectionInputs.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.A));
+                selectionInputs.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.Start));
             }
-            SelectionInput = selectionInputs;
+            _selectionInput = selectionInputs;
 
             var exitInputs = new MultiplePressableInputs();
             exitInputs.Inputs.Add(InputManager.Keyboard.GetKey(Keys.Escape));
-            ExitInput = exitInputs;
+            if (gamePad != null)
+            {
+                exitInputs.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.B));
+                exitInputs.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.Back));
+            }
+            _exitInput = exitInputs;
 
             var scrollInput = new Multiple1DInputs();
             if (gamePad != null)
@@ -83,7 +89,7 @@ namespace FishKing.Screens
                 scrollInput.Inputs.Add(new AnalogStickTo1DInput(gamePad.RightStick));
             }
             scrollInput.Inputs.Add(InputManager.Mouse.ScrollWheel);
-            ScrollInput = scrollInput;
+            _scrollInput = scrollInput;
         }
 
         private async void LoadSaveData()
@@ -92,7 +98,7 @@ namespace FishKing.Screens
             SaveGamePreview2.CurrentFilledState = GameSelectPreviewRuntime.Filled.Empty;
             SaveGamePreview3.CurrentFilledState = GameSelectPreviewRuntime.Filled.Empty;
 
-            var saveGames = await SaveGameManager.GetAllSaves();
+            var saveGames = await SaveGameManager.GetAllSaves().ConfigureAwait(false);
             foreach (var save in saveGames)
             {
                 switch (save.SaveSlotNumber)
@@ -117,7 +123,7 @@ namespace FishKing.Screens
                 NewGameDisplayInstance.TestCollision(GuiManager.Cursor);
             }
 
-            FlatRedBallServices.Game.IsMouseVisible = !screen.IntroAnimation.IsPlaying();
+            FlatRedBallServices.Game.IsMouseVisible = !_screen.IntroAnimation.IsPlaying();
 
             HandleMenuMovement();
             HandleMenuSelection();
@@ -129,15 +135,15 @@ namespace FishKing.Screens
 
         private void HandleScrollInput()
         {
-            if (ScrollInput.Velocity != 0)
+            if (_scrollInput.Velocity != 0)
             {
-                AboutPopup.HandleScrollInput(ScrollInput.Velocity);
+                AboutPopup.HandleScrollInput(_scrollInput.Velocity);
             }
         }
 
         private void HandleMenuSelection()
         {
-            if (SelectionInput.WasJustPressed)
+            if (_selectionInput.WasJustPressed)
             {
                 if (AboutPopup.Visible)
                 {
@@ -147,7 +153,7 @@ namespace FishKing.Screens
                 {
                     PopupMessageInstance.HandleSelection();
                 }
-                else if (screen.CurrentMenuScreenButtonsState == TitleScreenGumRuntime.MenuScreenButtons.InitialButtons)
+                else if (_screen.CurrentMenuScreenButtonsState == TitleScreenGumRuntime.MenuScreenButtons.InitialButtons)
                 {
                     HandleInitialScreenSelection();
                 }
@@ -168,7 +174,7 @@ namespace FishKing.Screens
 
         private void HandleMenuMovement()
         {
-            var desiredDirection = CardinalTimedDirection.GetDesiredDirection(MovementInput);
+            var desiredDirection = CardinalTimedDirection.GetDesiredDirection(_movementInput);
 
             if (desiredDirection == Direction.None)
             {
@@ -183,7 +189,7 @@ namespace FishKing.Screens
             {
                 PopupMessageInstance.HandleMovement(desiredDirection);
             }
-            else if (screen.CurrentMenuScreenButtonsState == TitleScreenGumRuntime.MenuScreenButtons.InitialButtons)
+            else if (_screen.CurrentMenuScreenButtonsState == TitleScreenGumRuntime.MenuScreenButtons.InitialButtons)
             {
                 HandleInitialScreenMovement(desiredDirection);
             }
@@ -202,7 +208,7 @@ namespace FishKing.Screens
 
         private void HandleExitInput()
         {
-            if (ExitInput.WasJustPressed)
+            if (_exitInput.WasJustPressed)
             {
                 if (AboutPopup.Visible)
                 {
@@ -214,15 +220,15 @@ namespace FishKing.Screens
                 }
                 else
                 {
-                    if (screen.CurrentMenuScreenButtonsState == TitleScreenGumRuntime.MenuScreenButtons.InitialButtons)
+                    if (_screen.CurrentMenuScreenButtonsState == TitleScreenGumRuntime.MenuScreenButtons.InitialButtons)
                     {
                         ExitButton.CallClick();
                     }
-                    else if (screen.CurrentMenuScreenButtonsState == TitleScreenGumRuntime.MenuScreenButtons.SaveGameButtons)
+                    else if (_screen.CurrentMenuScreenButtonsState == TitleScreenGumRuntime.MenuScreenButtons.SaveGameButtons)
                     {
                         SaveGameBackButton.CallClick();
                     }
-                    else if (screen.CurrentMenuScreenButtonsState == TitleScreenGumRuntime.MenuScreenButtons.NewGameButtons)
+                    else if (_screen.CurrentMenuScreenButtonsState == TitleScreenGumRuntime.MenuScreenButtons.NewGameButtons)
                     {
                         if (NewGameDisplayInstance.CurrentConfirmationState == NewGameDisplayRuntime.Confirmation.Confirming)
                         {
@@ -357,7 +363,7 @@ namespace FishKing.Screens
                     if (NewGameButton.IsHighlighted)
                     {
                         NewGameButton.UnhighlightButton();
-                        if (MovementInput.X > 0 && ContinueButton.CurrentEnabledState != MainMenuButtonRuntime.Enabled.IsDisabled)
+                        if (_movementInput.X > 0 && ContinueButton.CurrentEnabledState != MainMenuButtonRuntime.Enabled.IsDisabled)
                         {
                             ContinueButton.HighlightButton();
                         }
@@ -393,6 +399,10 @@ namespace FishKing.Screens
                         PlayButton.UnhighlightButton();
                         ExitButton.HighlightButton();
                     }
+                    else
+                    {
+                        ExitButton.HighlightButton();
+                    }
                     break;
                 case Direction.Right:
                     if (ExitButton.IsHighlighted)
@@ -405,12 +415,27 @@ namespace FishKing.Screens
                         PlayButton.UnhighlightButton();
                         AboutButton.HighlightButton();
                     }
+                    else
+                    {
+                        AboutButton.HighlightButton();
+                    }
                     break;
                 case Direction.Down:
                     if (PlayButton.IsHighlighted)
                     {
                         PlayButton.UnhighlightButton();
-                        if (MovementInput.X > 0)
+                        if (_movementInput.X > 0)
+                        {
+                            AboutButton.HighlightButton();
+                        }
+                        else
+                        {
+                            ExitButton.HighlightButton();
+                        }
+                    }
+                    else if (!ExitButton.IsHighlighted && !AboutButton.IsHighlighted)
+                    {
+                        if (_movementInput.X > 0)
                         {
                             AboutButton.HighlightButton();
                         }
@@ -421,12 +446,7 @@ namespace FishKing.Screens
                     }
                     break;
                 case Direction.Up:
-                    if (ExitButton.IsHighlighted || AboutButton.IsHighlighted)
-                    {
-                        ExitButton.UnhighlightButton();
-                        AboutButton.UnhighlightButton();
-                        PlayButton.HighlightButton();
-                    }
+                    PlayBackButton.HighlightButton();
                     break;
             }
         }
