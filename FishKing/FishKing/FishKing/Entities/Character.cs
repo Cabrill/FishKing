@@ -44,7 +44,7 @@ namespace FishKing.Entities
 
     public partial class Character
     {
-        const int tileSize = 32;
+        const int TileSize = 32;
         public Direction DirectionFacing { get; private set; }
         public int MaxDistanceTileCast { get; set; }
         
@@ -63,12 +63,11 @@ namespace FishKing.Entities
         public float ReelAmount { get; private set; }
         public float AlignAmount { get; private set; }
 
-        private bool isMovingToTile = false;
-        public bool IsMoving { get { return SpriteInstance.CurrentChainName.Substring(0, 4) == "Walk"; } }
+        private bool _isMovingToTile = false;
+        public bool IsMoving => SpriteInstance.CurrentChainName.Substring(0, 4) == "Walk";
 
-        public bool IsAttemptingMovement { get { return MovementInput != null && (MovementInput.X != 0 || MovementInput.Y != 0 || MovementInput.XVelocity != 0 || MovementInput.YVelocity != 0); } }
+        public bool IsAttemptingMovement => MovementInput != null && (MovementInput.X != 0 || MovementInput.Y != 0 || MovementInput.XVelocity != 0 || MovementInput.YVelocity != 0);
         public bool IsAttemptingAction { get; private set; }
-        public bool IsAttemptingReelIn { get; private set; }
         public bool IsInDialog { get; set; }
 
         public Vector3 TargetPosition { get; set; } 
@@ -86,7 +85,6 @@ namespace FishKing.Entities
         public bool IsCastingRod { get; set; } = false;
         public bool JustReleasedCast { get; set; } = false;
         public bool IsOnWindUp { get { return (IsCastingRod && IsHoldingAction && SpriteInstance.CurrentFrameIndex == WindUpAnimationFrame); } }
-        public bool IsBeforeWindUp { get { return IsCastingRod && (SpriteInstance.CurrentFrameIndex < WindUpAnimationFrame); } }
         public bool IsAfterWindUp { get { return (IsCastingRod && SpriteInstance.CurrentFrameIndex > WindUpAnimationFrame); } }
         public bool IsTuggingLine { get { return SpriteInstance.CurrentChainName.Contains("Tug") && SpriteInstance.CurrentFrameIndex <= 3 && FishOnTheLine.Visible == false; } }
         
@@ -154,7 +152,7 @@ namespace FishKing.Entities
         
         private void CustomActivity()
 		{
-            IsAttemptingAction = ActionInput != null && ActionInput.WasJustPressed && isMovingToTile == false;
+            IsAttemptingAction = ActionInput != null && ActionInput.WasJustPressed && _isMovingToTile == false;
             IsHoldingAction = ActionInput != null && ActionInput.IsDown;
 
             if (IsAttemptingAction && !HasFishOnTheLine)
@@ -162,17 +160,17 @@ namespace FishKing.Entities
                 ResetFishingStatus();
             }
             IsHoldingAlignButton = FishingAlignmentInput != null && FishingAlignmentInput.Value > 0;
-            AlignAmount = FishingAlignmentInput.Value;
-            IsHoldingReelButton = ReelingInput != null && ReelingInput.Value > 0;
-            ReelAmount = ReelingInput.Value;
-        }
+		    if (FishingAlignmentInput != null) AlignAmount = FishingAlignmentInput.Value;
+		    IsHoldingReelButton = ReelingInput != null && ReelingInput.Value > 0;
+		    if (ReelingInput != null) ReelAmount = ReelingInput.Value;
+		}
 
 
         public bool PerformMovementActivity(TileShapeCollection collision, PositionedObjectList<Character> characters)
         {
             var desiredDirection = GetDesiredDirection();
 
-            if(desiredDirection == Direction.None && !isMovingToTile && SpriteInstance.CurrentChainName.Contains("Walk"))
+            if(desiredDirection == Direction.None && !_isMovingToTile && SpriteInstance.CurrentChainName.Contains("Walk"))
             {
                 SpriteInstance.CurrentFrameIndex = 0;
                 SpriteInstance.CurrentChainName = SpriteInstance.CurrentChainName.Replace("Walk", "Stand");
@@ -195,7 +193,7 @@ namespace FishKing.Entities
         {
             bool shouldUpdateCollision = 
                 // This means the user is facing a collision area
-                (desiredDirection != Direction.None && this.isMovingToTile == false);
+                (desiredDirection != Direction.None && this._isMovingToTile == false);
 
             if(shouldUpdateCollision)
             {
@@ -207,7 +205,7 @@ namespace FishKing.Entities
         {
             bool shouldFaceDirection = startedMoving ||
                 // This means the user is facing a collision area
-                (desiredDirection != Direction.None && this.isMovingToTile == false);
+                (desiredDirection != Direction.None && this._isMovingToTile == false);
             if (shouldFaceDirection)
             {
                 switch (desiredDirection)
@@ -217,17 +215,17 @@ namespace FishKing.Entities
                     case Direction.Up: SpriteInstance.CurrentChainName = "WalkUp"; break;
                     case Direction.Down: SpriteInstance.CurrentChainName = "WalkDown"; break;
                 }
-                this.SpriteInstance.Animate = isMovingToTile;
+                this.SpriteInstance.Animate = _isMovingToTile;
             }
             else if (!IsCastingRod && !IsFishing)
             {
-                this.SpriteInstance.Animate = isMovingToTile;
+                this.SpriteInstance.Animate = _isMovingToTile;
             }
         }
 
         public void UpdateFishingStatus(bool characterMoved)
         {
-            if (IsAttemptingMovement && !IsPullingInCatch && (!IsDisplayingCatch || HasFinishedDisplayingCatch))
+            if (IsAttemptingMovement && !HasInitiatedCatching && !IsPullingInCatch && (!IsDisplayingCatch || HasFinishedDisplayingCatch))
             {
                 ResetFishingStatus();
             }
@@ -265,7 +263,7 @@ namespace FishKing.Entities
                     {
                         BobberInstance.Position = RodLineOriginationPosition;
                         var relativeTargetPosition = new Vector3(TargetPosition.X - Position.X, TargetPosition.Y - Position.Y, 1);
-                        BobberInstance.TraverseTo(relativeTargetPosition, tileSize);
+                        BobberInstance.TraverseTo(relativeTargetPosition, TileSize);
 
                         FishingLineInstance.StartCasting(DirectionFacing, RodLineOriginationPosition);
                         WhooshRod.Play();
@@ -444,7 +442,7 @@ namespace FishKing.Entities
         {
             bool movedNewDirection = false;
 
-            if(isMovingToTile == false && desiredDirection != Direction.None)
+            if(_isMovingToTile == false && desiredDirection != Direction.None)
             {
                 float desiredX = this.X;
                 float desiredY = this.Y;
@@ -462,14 +460,14 @@ namespace FishKing.Entities
                 }
                 else
                 {
-                    float timeToTake = tileSize / MovementSpeed;
+                    float timeToTake = TileSize / MovementSpeed;
 
                     InstructionManager.MoveToAccurate(this, desiredX, desiredY, this.Z, timeToTake);
-                    isMovingToTile = true;
+                    _isMovingToTile = true;
 
                     this.Call(() =>
                     {
-                        this.isMovingToTile = false;
+                        this._isMovingToTile = false;
                         BackwardCollision.Position = this.Position;
                         UpdateActionCollision();
                     }).After(timeToTake);
@@ -510,10 +508,10 @@ namespace FishKing.Entities
         {
             switch (directionToMove)
             {
-                case Direction.Left: x -= tileSize; break;
-                case Direction.Right: x += tileSize; break;
-                case Direction.Up: y += tileSize; break;
-                case Direction.Down: y -= tileSize; break;
+                case Direction.Left: x -= TileSize; break;
+                case Direction.Right: x += TileSize; break;
+                case Direction.Up: y += TileSize; break;
+                case Direction.Down: y -= TileSize; break;
             }
         }
 
