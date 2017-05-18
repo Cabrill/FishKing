@@ -9,10 +9,7 @@ namespace FishKing.GumRuntimes
 {
     partial class MainMenuButtonRuntime
     {
-        public bool IsHighlighted
-        {
-            get { return CurrentHighlightState == Highlight.Highlighted; }
-        }
+        public bool IsHighlighted => CurrentHighlightState == Highlight.Highlighted;
 
         partial void CustomInitialize()
         {

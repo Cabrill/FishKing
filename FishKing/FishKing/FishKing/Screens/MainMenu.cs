@@ -105,7 +105,6 @@ namespace FishKing.Screens
         {
             if (firstTimeCalled)
             {
-
                 MainMenuGumRuntime.ScrollToAndHighlightFirstEligibleUnplayedTournament();
             }
 

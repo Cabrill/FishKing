@@ -13,12 +13,10 @@ namespace FishKing
     {
         private static bool volumeHasChanged = false;
         private static float _volume = 1f;
+
         public static float Volume
         {
-            get
-            {
-                return _volume;
-            }
+            get { return _volume; }
             set
             {
                 _volume = value;
@@ -30,208 +28,209 @@ namespace FishKing
         public static FlatRedBall.TileGraphics.LayeredTileMap CurrentTileMap;
         public static Entities.Character CharacterInstance;
 
-        private static SoundEffectInstance waterFallAmbientSound;
-        private static SoundEffectInstance riverAmbientSound;
-        private static SoundEffectInstance oceanAmbientSound;
-        private static SoundEffectInstance deepOceanAmbientSound;
-        private static SoundEffectInstance lakeAmbientSound;
-        private static SoundEffectInstance caveAmbientSound;
-        private static SoundEffectInstance forestAmbientSound;
+        private static SoundEffectInstance _waterFallAmbientSound;
+        private static SoundEffectInstance _riverAmbientSound;
+        private static SoundEffectInstance _oceanAmbientSound;
+        private static SoundEffectInstance _deepOceanAmbientSound;
+        private static SoundEffectInstance _lakeAmbientSound;
+        private static SoundEffectInstance _caveAmbientSound;
+        private static SoundEffectInstance _forestAmbientSound;
 
-        private static AudioListener listener = new AudioListener();
-        private static AudioEmitter waterfallEmitter;
-        private static AudioEmitter oceanEmitter;
-        private static AudioEmitter riverEmitter;
-        private static AudioEmitter forestEmitter;
-        private static AudioEmitter lakeEmitter;
+        private static readonly AudioListener Listener = new AudioListener();
+        private static AudioEmitter _waterfallEmitter;
+        private static AudioEmitter _oceanEmitter;
+        private static AudioEmitter _riverEmitter;
+        private static AudioEmitter _forestEmitter;
+        private static AudioEmitter _lakeEmitter;
 
         public static void UpdateAmbientSoundSources()
         {
             //EARLY OUT
             if (CurrentTileMap == null) return;
 
-            listener.Position = Vector3.Zero;
-            Point3D charPosition = new Point3D(CharacterInstance.Position);
+            Listener.Position = Vector3.Zero;
+            var charPosition = new Point3D(CharacterInstance.Position);
 
             if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "WaterfallLines") != null)
             {
-                if (waterFallAmbientSound == null)
+                if (_waterFallAmbientSound == null)
                 {
-                    waterFallAmbientSound = GlobalContent.WaterfallAmbient.CreateInstance();
-                    waterFallAmbientSound.IsLooped = true;
+                    _waterFallAmbientSound = GlobalContent.WaterfallAmbient.CreateInstance();
+                    _waterFallAmbientSound.IsLooped = true;
                 }
-                if (waterfallEmitter == null)
+                if (_waterfallEmitter == null)
                 {
-                    waterfallEmitter = new AudioEmitter();
+                    _waterfallEmitter = new AudioEmitter();
                 }
 
-                waterfallEmitter.Position = FindClosestPolygonPointOnLayer("WaterfallLines", charPosition);
-                waterFallAmbientSound.Volume = Volume * Math.Max(0, 1 - (waterfallEmitter.Position.Length() / 10));
+                _waterfallEmitter.Position = FindClosestPolygonPointOnLayer("WaterfallLines", charPosition);
+                _waterFallAmbientSound.Volume = Volume * Math.Max(0, 1 - (_waterfallEmitter.Position.Length() / 10));
 
-                waterFallAmbientSound.Apply3D(listener, waterfallEmitter);
+                _waterFallAmbientSound.Apply3D(Listener, _waterfallEmitter);
 
-                if (waterFallAmbientSound.State != SoundState.Playing)
+                if (_waterFallAmbientSound.State != SoundState.Playing)
                 {
-                    waterFallAmbientSound.Play();
+                    _waterFallAmbientSound.Play();
                 }
             }
 
             if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "OceanLines") != null)
             {
-                if (oceanAmbientSound == null)
+                if (_oceanAmbientSound == null)
                 {
-                    oceanAmbientSound = GlobalContent.OceanAmbient.CreateInstance();
-                    oceanAmbientSound.IsLooped = true;
+                    _oceanAmbientSound = GlobalContent.OceanAmbient.CreateInstance();
+                    _oceanAmbientSound.IsLooped = true;
                 }
-                if (oceanEmitter == null)
+                if (_oceanEmitter == null)
                 {
-                    oceanEmitter = new AudioEmitter();
+                    _oceanEmitter = new AudioEmitter();
                 }
                 var allCloseOceanPoints = FindClosestPointsOnAllPolygonsOnLayer("OceanLines", charPosition);
-                var sumDist = (float)allCloseOceanPoints.Sum(p => p.Length());
-                var minDist = (float)allCloseOceanPoints.Min(p => p.Length());
-                var xSum = (float)allCloseOceanPoints.Sum(p =>
-                p.X * Math.Min(1, Math.Pow((1 / p.Length()), 3))
-                ) / allCloseOceanPoints.Count();
-                var ySum = (float)allCloseOceanPoints.Sum(p =>
-                p.Y * Math.Min(1, Math.Pow((1 / p.Length()), 3))
-                ) / allCloseOceanPoints.Count();
+                var closeOceanPoints = allCloseOceanPoints as Point3D[] ?? allCloseOceanPoints.ToArray();
+                var sumDist = (float) closeOceanPoints.Sum(p => p.Length());
+                var minDist = (float) closeOceanPoints.Min(p => p.Length());
+                var xSum = (float) closeOceanPoints.Sum(p =>
+                               p.X * Math.Min(1, Math.Pow((1 / p.Length()), 3))
+                           ) / closeOceanPoints.Count();
+                var ySum = (float) closeOceanPoints.Sum(p =>
+                               p.Y * Math.Min(1, Math.Pow((1 / p.Length()), 3))
+                           ) / closeOceanPoints.Count();
 
-                float positionX = xSum;
-                float positionY = ySum;
-                float positionZ = CharacterInstance.Position.Z;
+                var positionX = xSum;
+                var positionY = ySum;
+                var positionZ = CharacterInstance.Position.Z;
 
-                oceanEmitter.Position = new Vector3(positionX, positionY, positionZ);
-                oceanAmbientSound.Volume = Volume *  MathHelper.Clamp(1f - (2.5f * minDist / sumDist), 0, 1);
+                _oceanEmitter.Position = new Vector3(positionX, positionY, positionZ);
+                _oceanAmbientSound.Volume = Volume * MathHelper.Clamp(1f - (2.5f * minDist / sumDist), 0, 1);
 
-                oceanAmbientSound.Apply3D(listener, oceanEmitter);
+                _oceanAmbientSound.Apply3D(Listener, _oceanEmitter);
 
-                if (oceanAmbientSound.State != SoundState.Playing)
+                if (_oceanAmbientSound.State != SoundState.Playing)
                 {
-                    oceanAmbientSound.Play();
+                    _oceanAmbientSound.Play();
                 }
             }
 
             if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "RiverLines") != null)
             {
-                if (riverAmbientSound == null)
+                if (_riverAmbientSound == null)
                 {
-                    riverAmbientSound = GlobalContent.RiverAmbient.CreateInstance();
-                    riverAmbientSound.IsLooped = true;
+                    _riverAmbientSound = GlobalContent.RiverAmbient.CreateInstance();
+                    _riverAmbientSound.IsLooped = true;
                 }
-                if (riverEmitter == null)
+                if (_riverEmitter == null)
                 {
-                    riverEmitter = new AudioEmitter();
+                    _riverEmitter = new AudioEmitter();
                 }
                 var allCloseRiverPoints = FindClosestPointsOnAllPolygonsOnLayer("RiverLines", charPosition);
-                var sumDist = (float)allCloseRiverPoints.Sum(p => p.Length());
-                var minDist = (float)allCloseRiverPoints.Min(p => p.Length());
-                var xSum = (float)allCloseRiverPoints.Sum(p =>
-                p.X * Math.Min(1, Math.Pow((1 / p.Length()), 3))
-                ) / allCloseRiverPoints.Count();
-                var ySum = (float)allCloseRiverPoints.Sum(p =>
-                p.Y * Math.Min(1, Math.Pow((1 / p.Length()), 3))
-                ) / allCloseRiverPoints.Count();
+                var sumDist = (float) allCloseRiverPoints.Sum(p => p.Length());
+                var minDist = (float) allCloseRiverPoints.Min(p => p.Length());
+                var xSum = (float) allCloseRiverPoints.Sum(p =>
+                               p.X * Math.Min(1, Math.Pow((1 / p.Length()), 3))
+                           ) / allCloseRiverPoints.Count();
+                var ySum = (float) allCloseRiverPoints.Sum(p =>
+                               p.Y * Math.Min(1, Math.Pow((1 / p.Length()), 3))
+                           ) / allCloseRiverPoints.Count();
 
-                float positionX = xSum;
-                float positionY = ySum;
-                float positionZ = CharacterInstance.Position.Z;
+                var positionX = xSum;
+                var positionY = ySum;
+                var positionZ = CharacterInstance.Position.Z;
 
-                riverEmitter.Position = new Vector3(positionX, positionY, positionZ);
-                riverAmbientSound.Volume = Volume *  MathHelper.Clamp(1f - (2.5f * minDist / sumDist), 0, 1);
+                _riverEmitter.Position = new Vector3(positionX, positionY, positionZ);
+                _riverAmbientSound.Volume = Volume * MathHelper.Clamp(1f - (2.5f * minDist / sumDist), 0, 1);
 
-                riverAmbientSound.Apply3D(listener, riverEmitter);
+                _riverAmbientSound.Apply3D(Listener, _riverEmitter);
 
-                if (riverAmbientSound.State != SoundState.Playing)
+                if (_riverAmbientSound.State != SoundState.Playing)
                 {
-                    riverAmbientSound.Play();
+                    _riverAmbientSound.Play();
                 }
             }
 
 
             if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "CaveAmbient") != null)
             {
-                if (caveAmbientSound == null)
+                if (_caveAmbientSound == null)
                 {
-                    caveAmbientSound = GlobalContent.CaveAmbient.CreateInstance();
-                    caveAmbientSound.IsLooped = true;
+                    _caveAmbientSound = GlobalContent.CaveAmbient.CreateInstance();
+                    _caveAmbientSound.IsLooped = true;
                 }
 
                 if (volumeHasChanged)
                 {
-                    caveAmbientSound.Volume = Volume;
+                    _caveAmbientSound.Volume = Volume;
                 }
 
-                if (caveAmbientSound.State != SoundState.Playing)
+                if (_caveAmbientSound.State != SoundState.Playing)
                 {
-                    caveAmbientSound.Volume = Volume;
-                    caveAmbientSound.Play();
+                    _caveAmbientSound.Volume = Volume;
+                    _caveAmbientSound.Play();
                 }
             }
 
             if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "DeepOceanAmbient") != null)
             {
-                if (deepOceanAmbientSound == null)
+                if (_deepOceanAmbientSound == null)
                 {
-                    deepOceanAmbientSound = GlobalContent.DeepOceanAmbient.CreateInstance();
-                    deepOceanAmbientSound.IsLooped = true;
+                    _deepOceanAmbientSound = GlobalContent.DeepOceanAmbient.CreateInstance();
+                    _deepOceanAmbientSound.IsLooped = true;
                 }
 
                 if (volumeHasChanged)
                 {
-                    deepOceanAmbientSound.Volume = Volume;
+                    _deepOceanAmbientSound.Volume = Volume;
                 }
 
-                if (deepOceanAmbientSound.State != SoundState.Playing)
+                if (_deepOceanAmbientSound.State != SoundState.Playing)
                 {
-                    deepOceanAmbientSound.Volume = Volume;
-                    deepOceanAmbientSound.Play();
+                    _deepOceanAmbientSound.Volume = Volume;
+                    _deepOceanAmbientSound.Play();
                 }
             }
 
             if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "ForestLines") != null)
             {
-                if (forestAmbientSound == null)
+                if (_forestAmbientSound == null)
                 {
-                    forestAmbientSound = GlobalContent.ForestAmbient.CreateInstance();
-                    forestAmbientSound.IsLooped = true;
+                    _forestAmbientSound = GlobalContent.ForestAmbient.CreateInstance();
+                    _forestAmbientSound.IsLooped = true;
                 }
-                if (forestEmitter == null)
+                if (_forestEmitter == null)
                 {
-                    forestEmitter = new AudioEmitter();
+                    _forestEmitter = new AudioEmitter();
                 }
 
-                forestEmitter.Position = FindClosestPolygonPointOnLayer("ForestLines", charPosition);
-                forestAmbientSound.Volume = Volume * Math.Max(0, 1 - (forestEmitter.Position.Length() / 10));
+                _forestEmitter.Position = FindClosestPolygonPointOnLayer("ForestLines", charPosition);
+                _forestAmbientSound.Volume = Volume * Math.Max(0, 1 - (_forestEmitter.Position.Length() / 10));
 
-                forestAmbientSound.Apply3D(listener, forestEmitter);
+                _forestAmbientSound.Apply3D(Listener, _forestEmitter);
 
-                if (forestAmbientSound.State != SoundState.Playing)
+                if (_forestAmbientSound.State != SoundState.Playing)
                 {
-                    forestAmbientSound.Play();
+                    _forestAmbientSound.Play();
                 }
             }
 
             if (CurrentTileMap.ShapeCollections.Find(s => s.Name == "LakeLines") != null)
             {
-                if (lakeAmbientSound == null)
+                if (_lakeAmbientSound == null)
                 {
-                    lakeAmbientSound = GlobalContent.LakeAmbient.CreateInstance();
-                    lakeAmbientSound.IsLooped = true;
+                    _lakeAmbientSound = GlobalContent.LakeAmbient.CreateInstance();
+                    _lakeAmbientSound.IsLooped = true;
                 }
-                if (lakeEmitter == null)
+                if (_lakeEmitter == null)
                 {
-                    lakeEmitter = new AudioEmitter();
+                    _lakeEmitter = new AudioEmitter();
                 }
 
-                lakeEmitter.Position = FindClosestPolygonPointOnLayer("LakeLines", charPosition);
-                lakeAmbientSound.Volume = Volume * Math.Max(0, 1 - (lakeEmitter.Position.Length() / 10));
+                _lakeEmitter.Position = FindClosestPolygonPointOnLayer("LakeLines", charPosition);
+                _lakeAmbientSound.Volume = Volume * Math.Max(0, 1 - (_lakeEmitter.Position.Length() / 10));
 
-                lakeAmbientSound.Apply3D(listener, lakeEmitter);
+                _lakeAmbientSound.Apply3D(Listener, _lakeEmitter);
 
-                if (lakeAmbientSound.State != SoundState.Playing)
+                if (_lakeAmbientSound.State != SoundState.Playing)
                 {
-                    lakeAmbientSound.Play();
+                    _lakeAmbientSound.Play();
                 }
             }
 
@@ -242,10 +241,12 @@ namespace FishKing
         {
             var lines = CurrentTileMap.ShapeCollections.Find(s => s.Name == layerName).Polygons;
 
-            var closestLine = lines.Aggregate((x, y) => x.VectorFrom(fromPoint).Length() < y.VectorFrom(fromPoint).Length() ? x : y);
+            var closestLine =
+                lines.Aggregate((x, y) => x.VectorFrom(fromPoint).Length() < y.VectorFrom(fromPoint).Length() ? x : y);
             var closestPoint = closestLine.VectorFrom(fromPoint);
 
-            return new Vector3((float)(closestPoint.X / CurrentTileMap.WidthPerTile), (float)(closestPoint.Y / CurrentTileMap.HeightPerTile), listener.Position.Z);
+            return new Vector3((float) (closestPoint.X / CurrentTileMap.WidthPerTile),
+                (float) (closestPoint.Y / CurrentTileMap.HeightPerTile), Listener.Position.Z);
         }
 
         private static IEnumerable<Point3D> FindClosestPointsOnAllPolygonsOnLayer(string layerName, Point3D fromPoint)
@@ -271,41 +272,35 @@ namespace FishKing
         public static void RemoveAmbientAudioSources()
         {
             CurrentTileMap = null;
+            CharacterInstance = null;
 
-            if (waterFallAmbientSound != null)
+            if (_waterFallAmbientSound != null)
             {
-                waterFallAmbientSound.Stop();
-                waterfallEmitter = null;
+                _waterFallAmbientSound.Stop();
+                _waterfallEmitter = null;
             }
-            if (deepOceanAmbientSound != null)
+            _deepOceanAmbientSound?.Stop();
+            if (_riverAmbientSound != null)
             {
-                deepOceanAmbientSound.Stop();
+                _riverAmbientSound.Stop();
+                _riverEmitter = null;
             }
-            if (riverAmbientSound != null)
+            if (_oceanAmbientSound != null)
             {
-                riverAmbientSound.Stop();
-                riverEmitter = null;
+                _oceanAmbientSound.Stop();
+                _oceanEmitter = null;
             }
-            if (oceanAmbientSound != null)
+            _caveAmbientSound?.Stop();
+            if (_forestAmbientSound != null)
             {
-                oceanAmbientSound.Stop();
-                oceanEmitter = null;
+                _forestAmbientSound.Stop();
+                _forestEmitter = null;
             }
-            if (caveAmbientSound != null)
+            if (_lakeAmbientSound != null)
             {
-                caveAmbientSound.Stop();
-            }
-            if (forestAmbientSound != null)
-            {
-                forestAmbientSound.Stop();
-                forestEmitter = null;
-            }
-            if (lakeAmbientSound != null)
-            {
-                lakeAmbientSound.Stop();
-                lakeEmitter = null;
+                _lakeAmbientSound.Stop();
+                _lakeEmitter = null;
             }
         }
-
     }
 }

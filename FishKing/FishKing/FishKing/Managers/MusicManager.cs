@@ -11,10 +11,7 @@ namespace FishKing
     static class MusicManager
     {
         private static bool playingSong;
-        public static bool PlayingSong
-        {
-            get { return playingSong; }
-        }
+        public static bool PlayingSong => playingSong;
 
         private static float volumeModifier = 0.35f;
         public static float Volume
@@ -23,55 +20,49 @@ namespace FishKing
             set { Microsoft.Xna.Framework.Media.MediaPlayer.Volume = (value* volumeModifier); }
         }
 
-        private static List<Song> playList;
+        private static List<Song> _playList;
         public static List<Song> PlayList
         {
-            get { return playList; }
-            set { playList = value;  currentTrackNumber = 0; NumberOfPlayListLoops = 0; }
+            get { return _playList; }
+            set { _playList = value;  _currentTrackNumber = 0; NumberOfPlayListLoops = 0; }
         }
 
-        public static int TrackCount
-        {
-            get { return PlayList.Count; }
-        }
-        private static int currentTrackNumber = 0;
-        public static int CurrenTrackNumber
-        {
-            get { return currentTrackNumber; }
-        }
+        public static int TrackCount => PlayList.Count;
+        private static int _currentTrackNumber = 0;
+
         public static int NumberOfPlayListLoops
         {
             get; set;
         }
 
-        internal static void LoadPlayListByMapName(string mapName)
+        internal static void LoadPlayListByMapName(string mapName, bool playImmediately = true)
         {
             var newPlaylist = new List<Song>();
             var songStringList = GlobalContent.MapMusic[mapName].Songs;
             
-            foreach (string songName in songStringList)
+            foreach (var songName in songStringList)
             {
                 newPlaylist.Add((Song)GlobalContent.GetFile(songName));
             }
 
-            playList = newPlaylist;
-            PlaySong();
+            _playList = newPlaylist;
+            if (playImmediately) PlaySong();
         }
 
         public static void PlaySong()
         {
             if (PlayList.Count > 0)
             {
-                if (currentTrackNumber > PlayList.Count - 1) currentTrackNumber = 0;
+                if (_currentTrackNumber > PlayList.Count - 1) _currentTrackNumber = 0;
 
-                var nextSong = PlayList.ElementAt(currentTrackNumber++);
+                var nextSong = PlayList.ElementAt(_currentTrackNumber++);
                 if (!nextSong.IsDisposed)
                 {
                     FlatRedBall.Audio.AudioManager.PlaySong(nextSong, true, false);
                     playingSong = true;
-                    if (currentTrackNumber > TrackCount - 1)
+                    if (_currentTrackNumber > TrackCount - 1)
                     {
-                        currentTrackNumber = 0;
+                        _currentTrackNumber = 0;
                         NumberOfPlayListLoops++;
                     }
                 }

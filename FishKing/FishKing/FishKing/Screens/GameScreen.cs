@@ -43,25 +43,18 @@ namespace FishKing.Screens
 {
 	public partial class GameScreen
 	{
-        static string levelToLoad = "WaterfallPool";
-        static string startPointName = "FirstSpawn";
-        private bool wasFishing = false;
-        private bool shouldUpdateCamera;
-        private SoundEffectInstance fishCaughtSound;
-        private SoundEffectInstance tournamentEndSound;
+        static string _levelToLoad = "WaterfallPool";
+        static string _startPointName = "FirstSpawn";
+        private bool _wasFishing = false;
+        private bool _shouldUpdateCamera;
+        private SoundEffectInstance _fishCaughtSound;
+        private SoundEffectInstance _tournamentEndSound;
 
-        bool CanMoveCharacter
-        {
-            get
-            {
-                return DialogDisplayInstance.Visible == false &&
-                    !CharacterInstance.IsPullingInCatch &&
-                    (!CharacterInstance.IsDisplayingCatch || CharacterInstance.HasFinishedDisplayingCatch) &&
-                    (!FishCatchingInterfaceInstance.LineHasSnapped || FishCatchingInterfaceInstance.FishHasEscaped);
-            }
-        }
+        bool CanMoveCharacter => !DialogDisplayInstance.Visible && !FishCatchingInterfaceInstance.Visible && 
+                                 !CharacterInstance.IsPullingInCatch &&
+                                 (!CharacterInstance.IsDisplayingCatch || CharacterInstance.HasFinishedDisplayingCatch);
 
-		void CustomInitialize()
+	    void CustomInitialize()
         {
             InitializePauseMenuButtons();
 
@@ -73,12 +66,12 @@ namespace FishKing.Screens
                 )
             {
                 TournamentManager.StartTournament();
-                levelToLoad = TournamentManager.CurrentTournament.MapName;
+                _levelToLoad = TournamentManager.CurrentTournament.MapName;
                 shouldInitializeSimulator = true;
                 SaveGameManager.CurrentSaveData.StartPlaySession();
             }
 
-            LoadLevel(levelToLoad);
+            LoadLevel(_levelToLoad);
             
             InitializeCharacter();
 
@@ -124,7 +117,7 @@ namespace FishKing.Screens
             camera.ClearMinimumsAndMaximums();
             if (CurrentTileMap.Width > camera.OrthogonalWidth || CurrentTileMap.Height > camera.OrthogonalHeight)
             {
-                shouldUpdateCamera = true;
+                _shouldUpdateCamera = true;
 
                 camera.MinimumX = (camera.OrthogonalWidth / 2);
                 camera.MaximumX = (CurrentTileMap.Width) - (camera.OrthogonalWidth / 2);
@@ -135,7 +128,7 @@ namespace FishKing.Screens
             }
             else
             {
-                shouldUpdateCamera = false;
+                _shouldUpdateCamera = false;
                 camera.X = CurrentTileMap.Width / 2;
                 camera.Y = -CurrentTileMap.Height / 2;
             }
@@ -189,10 +182,10 @@ namespace FishKing.Screens
         
         private void InitializeCharacter()
         {
-            var foundStartPoint = this.StartPointList.FirstOrDefault(item => item.Name == startPointName);
+            var foundStartPoint = this.StartPointList.FirstOrDefault(item => item.Name == _startPointName);
             if(foundStartPoint == null)
             {
-                throw new Exception($"Could not find start point with a name of {startPointName}");
+                throw new Exception($"Could not find start point with a name of {_startPointName}");
             }
             this.CharacterInstance.X = foundStartPoint.X;
             this.CharacterInstance.Y = foundStartPoint.Y;
@@ -348,7 +341,7 @@ namespace FishKing.Screens
 #if DEBUG
                 if (DebuggingVariables.MapDebugMode)
                 {
-                    if (shouldUpdateCamera) UpdateCamera();
+                    if (_shouldUpdateCamera) UpdateCamera();
                     DialogActivity();
                     FishingActivity();
 
@@ -379,13 +372,13 @@ namespace FishKing.Screens
 
                             if (TournamentManager.CurrentScores.PlayerPlace <= 3)
                             {
-                                tournamentEndSound = GlobalContent.TournamentWin.CreateInstance();
+                                _tournamentEndSound = GlobalContent.TournamentWin.CreateInstance();
                             } else
                             {
-                                tournamentEndSound = GlobalContent.TournamentLose.CreateInstance();
+                                _tournamentEndSound = GlobalContent.TournamentLose.CreateInstance();
                             }
-                            tournamentEndSound.Volume = OptionsManager.Options.SoundEffectsVolume;
-                            tournamentEndSound.Play();
+                            _tournamentEndSound.Volume = OptionsManager.Options.SoundEffectsVolume;
+                            _tournamentEndSound.Play();
 
                             ResultsDisplayInstance.DisplayResults(TournamentManager.CurrentTournamentResults);
                             ResultsDisplayInstance.OKButtonClick += ResultsDisplayOkClick;
@@ -412,7 +405,7 @@ namespace FishKing.Screens
                             TournamentStatusInstance.UpdateFishPlaceMarkers(TournamentManager.CurrentScores.AsArray);
                             TournamentManager.CurrentScores.MarkScoreReviewed();
                         }
-                        if (shouldUpdateCamera) UpdateCamera();
+                        if (_shouldUpdateCamera) UpdateCamera();
                         DialogActivity();
                         FishingActivity();
 
@@ -619,35 +612,35 @@ namespace FishKing.Screens
 
                                 FishCatchDisplayInstance.ShowFish(fish, newCatch);
 
-                                if (fishCaughtSound != null && !fishCaughtSound.IsDisposed)
+                                if (_fishCaughtSound != null && !_fishCaughtSound.IsDisposed)
                                 {
-                                    fishCaughtSound.Dispose();
+                                    _fishCaughtSound.Dispose();
                                 }
 
                                 if (fishMeetsReq)
                                 {
                                     if (newCatch)
                                     {
-                                        fishCaughtSound = GlobalContent.NewFishCaught.CreateInstance();
+                                        _fishCaughtSound = GlobalContent.NewFishCaught.CreateInstance();
                                     }
                                     else
                                     {
-                                        fishCaughtSound = GlobalContent.FishCaught.CreateInstance();
+                                        _fishCaughtSound = GlobalContent.FishCaught.CreateInstance();
                                     }
                                 }
                                 else
                                 {
                                     if (newCatch)
                                     {
-                                        fishCaughtSound = GlobalContent.IneligibleNewFishCatch.CreateInstance();
+                                        _fishCaughtSound = GlobalContent.IneligibleNewFishCatch.CreateInstance();
                                     }
                                     else
                                     {
-                                        fishCaughtSound = GlobalContent.IneligibleFishCatch.CreateInstance();
+                                        _fishCaughtSound = GlobalContent.IneligibleFishCatch.CreateInstance();
                                     }
                                 }
-                                fishCaughtSound.Volume = OptionsManager.Options.SoundEffectsVolume;
-                                fishCaughtSound.Play();
+                                _fishCaughtSound.Volume = OptionsManager.Options.SoundEffectsVolume;
+                                _fishCaughtSound.Play();
 
                                 if (fishMeetsReq)
                                 {
@@ -705,12 +698,12 @@ namespace FishKing.Screens
             TargetingSpriteInstance.Visible = CharacterInstance.IsOnWindUp;
             FishCatchDisplayInstance.Visible = (CharacterInstance.IsDisplayingCatch && CharacterInstance.IsOnFinalFrameOfAnimationChain);
 
-            if (wasFishing  && !CharacterInstance.IsFishing)
+            if (_wasFishing  && !CharacterInstance.IsFishing)
             {
                 FishCatchingInterfaceInstance.Stop();
             }
 
-            wasFishing = CharacterInstance.IsFishing;
+            _wasFishing = CharacterInstance.IsFishing;
         }
 
         private void ShowDialog(string stringId)
@@ -725,10 +718,10 @@ namespace FishKing.Screens
             {
                 if(CharacterInstance.BackwardCollision.CollideAgainst(trigger.Collision))
                 {
-                    levelToLoad = trigger.TargetMap;
-                    startPointName = trigger.StartPointName;
+                    _levelToLoad = trigger.TargetMap;
+                    _startPointName = trigger.StartPointName;
 
-                    if(string.IsNullOrEmpty(startPointName))
+                    if(string.IsNullOrEmpty(_startPointName))
                     {
                         throw new Exception("Trigger has an empty StartPointName");
                     }
@@ -786,13 +779,13 @@ namespace FishKing.Screens
         void CustomDestroy()
         {
             AmbientAudioManager.RemoveAmbientAudioSources();
-            if (tournamentEndSound != null && !tournamentEndSound.IsDisposed)
+            if (_tournamentEndSound != null && !_tournamentEndSound.IsDisposed)
             {
-                tournamentEndSound.Dispose();
+                _tournamentEndSound.Dispose();
             }
-            if (fishCaughtSound != null && !fishCaughtSound.IsDisposed)
+            if (_fishCaughtSound != null && !_fishCaughtSound.IsDisposed)
             {
-                fishCaughtSound.Dispose();
+                _fishCaughtSound.Dispose();
             }
         }
 

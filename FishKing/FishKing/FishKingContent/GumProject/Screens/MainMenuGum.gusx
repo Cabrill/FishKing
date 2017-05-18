@@ -557,8 +557,14 @@
     </Variable>
     <Variable>
       <Type>float</Type>
+      <Name>GoFishButton.Width</Name>
+      <Value xsi:type="xsd:float">17.166666</Value>
+      <SetsValue>true</SetsValue>
+    </Variable>
+    <Variable>
+      <Type>float</Type>
       <Name>GoFishButton.X</Name>
-      <Value xsi:type="xsd:float">29</Value>
+      <Value xsi:type="xsd:float">26.833334</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

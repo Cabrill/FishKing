@@ -25,9 +25,25 @@ namespace FishKing.Screens
             startTime = FlatRedBall.TimeManager.CurrentTime;
             SetOptions();
             Attributions.LoadText();
-		}
+#if DEBUG
+		    TestAllTournamentsMapsAndSongs();
 
-		void CustomActivity(bool firstTimeCalled)
+        }
+
+	    private void TestAllTournamentsMapsAndSongs()
+	    {
+	        var allTournaments = MasterTournamentList.AllTournaments;
+
+	        foreach (TournamentStructure tournament in allTournaments)
+	        {
+                MusicManager.LoadPlayListByMapName(tournament.MapName, false);
+            }
+        }
+#else
+        }
+#endif
+
+        void CustomActivity(bool firstTimeCalled)
 		{
             if (FlatRedBall.TimeManager.CurrentTime - startTime > displaySeconds ||
                 InputManager.Keyboard.AnyKeyPushed() ||

@@ -853,10 +853,20 @@
       <Processor>SoundEffectProcessor</Processor>
       <Name>WhooshRod</Name>
     </Compile>
+    <Compile Include="GlobalContent\Music\Audionautix_12Mornings.mp3">
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Name>Audionautix_12Mornings</Name>
+    </Compile>
     <Compile Include="GlobalContent\Music\Audionautix_AcousticGuitar1.mp3">
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Name>Audionautix_AcousticGuitar1</Name>
+    </Compile>
+    <Compile Include="GlobalContent\Music\Audionautix_GreenLeaves.mp3">
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Name>Audionautix_GreenLeaves</Name>
     </Compile>
     <Compile Include="GlobalContent\Music\Audionautix_OneFineDay.mp3">
       <Importer>Mp3Importer</Importer>
@@ -868,6 +878,11 @@
       <Processor>SongProcessor</Processor>
       <Name>Audionautix_Serenity</Name>
     </Compile>
+    <Compile Include="GlobalContent\Music\Audionautix_SoloAcoustic3.mp3">
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Name>Audionautix_SoloAcoustic3</Name>
+    </Compile>
     <Compile Include="GlobalContent\Music\A_Himitsu_Adventures.mp3">
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
@@ -878,10 +893,40 @@
       <Processor>SongProcessor</Processor>
       <Name>Clean_Soul_Calming_Kevin_MacLeod</Name>
     </Compile>
+    <Compile Include="GlobalContent\Music\Ketsa_Angel_falling.mp3">
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Name>Ketsa_Angel_falling</Name>
+    </Compile>
+    <Compile Include="GlobalContent\Music\Ketsa_illuminated_path.mp3">
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Name>Ketsa_illuminated_path</Name>
+    </Compile>
+    <Compile Include="GlobalContent\Music\Ketsa_no_fix.mp3">
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Name>Ketsa_no_fix</Name>
+    </Compile>
+    <Compile Include="GlobalContent\Music\Ketsa_Parallel_parable_coming_change.mp3">
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Name>Ketsa_Parallel_parable_coming_change</Name>
+    </Compile>
     <Compile Include="GlobalContent\Music\Ketsa_tide_will_take_us_home.mp3">
       <Importer>Mp3Importer</Importer>
       <Processor>SongProcessor</Processor>
       <Name>Ketsa_tide_will_take_us_home</Name>
+    </Compile>
+    <Compile Include="GlobalContent\Music\Ketsa_unsung.mp3">
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Name>Ketsa_unsung</Name>
+    </Compile>
+    <Compile Include="GlobalContent\Music\Little_Glass_Men_Modulation_of_the_Spirit.mp3">
+      <Importer>Mp3Importer</Importer>
+      <Processor>SongProcessor</Processor>
+      <Name>Little_Glass_Men_Modulation_of_the_Spirit</Name>
     </Compile>
     <Compile Include="GlobalContent\Music\Little_Glass_Men_The_Dweller_on_Coyote_Hill.mp3">
       <Importer>Mp3Importer</Importer>
