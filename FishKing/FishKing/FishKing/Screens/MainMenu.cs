@@ -43,6 +43,7 @@ namespace FishKing.Screens
             _bookCloseSound = GlobalContent.BookClose.CreateInstance();
             FishopediaInstance.PageTurnSound = _pageTurnSound;
             FishopediaInstance.BookCloseSound = _bookCloseSound;
+            GoFishButton.UnhighlightButton();
         }
 
         private void InitializeInput()

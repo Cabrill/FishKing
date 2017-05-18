@@ -99,5 +99,10 @@ namespace FishKing.GumRuntimes
                 }
             }
         }
+
+        public void ShowHelp()
+        {
+            HelpButton.CallClick();
+        }
     }
 }

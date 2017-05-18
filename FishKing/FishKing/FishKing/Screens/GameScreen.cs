@@ -248,6 +248,7 @@ namespace FishKing.Screens
             if (InputManager.NumberOfConnectedGamePads > 0)
             {
                 escapeInputs.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.Start));
+                escapeInputs.Inputs.Add(gamePad.GetButton(Xbox360GamePad.Button.B));
             }
 
             var helpInputs = new MultiplePressableInputs();
@@ -429,6 +430,13 @@ namespace FishKing.Screens
                         {
                             AmbientAudioManager.UpdateAmbientSoundSources();
                         }
+
+                        if (CharacterInstance.HelpInput.WasJustPressed)
+                        {
+                            PauseThisScreen();
+                            PauseMenuInstance.Visible = true;
+                            PauseMenuInstance.ShowHelp();
+                        }
                     }
 #if DEBUG
                 }
@@ -454,7 +462,6 @@ namespace FishKing.Screens
         {
             if (PopupMessageInstance.Visible)
             {
-
                 if (CharacterInstance.ActionInput.WasJustPressed)
                 {
                     PopupMessageInstance.HandleSelection();
@@ -466,18 +473,30 @@ namespace FishKing.Screens
             }
             else
             {
-                PauseMenuInstance.HandleMovement(CharacterInstance.MovementInput);
-                PauseMenuInstance.HandleSelection(CharacterInstance.ActionInput);
+                if (CharacterInstance.HelpInput.WasJustPressed)
+                {
+                    HelpScreenInstance.Visible = false;
+                    PauseMenuInstance.Visible = false;
+                    UnpauseThisScreen();
+                }
+                else
+                {
+                    PauseMenuInstance.HandleMovement(CharacterInstance.MovementInput);
+                    PauseMenuInstance.HandleSelection(CharacterInstance.ActionInput);
+                    if (HelpScreenInstance.Visible && CharacterInstance.EscapeInput.WasJustPressed)
+                    {
+                        HelpScreenInstance.Visible = false;
+                    }
+                }
             }
         }
         
 
-        const float offset = .5f;
-        const float roundingValue = 1;
+
         private void UpdateCamera()
         {
-            Camera.Main.X = MathFunctions.RoundFloat(this.CharacterInstance.X, roundingValue, offset);
-            Camera.Main.Y = MathFunctions.RoundFloat(this.CharacterInstance.Y, roundingValue, offset);
+            Camera.Main.X = this.CharacterInstance.X;
+            Camera.Main.Y = this.CharacterInstance.Y;
         }
 
         private void DialogActivity()

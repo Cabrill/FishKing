@@ -1,8 +1,10 @@
 "Name (string, required)",Goal(int),Participants (int),TrophyReq (FishKing.Enums.TrophyTypes.TrophyType),TrophyNumRequired (int),WeightReq (int),LengthReq (int),FishReq (List<string>),Map (string),Reward (int)
-Fun In The Park,150,4,None,0,,,,ThePond,25
-Angler's Retreat,200,8,None,0,,,,SmallForest,25
-Swamp Thing,250,6,Bronze,1,,,,ForestPond,50
-Lost At Sea,250,4,Bronze,2,,,,TheRaft,50
+Paradise,100,4,None,0,,,,DesertIsland,10
+Chilling,100,4,None,0,,,,WaterfallPool,20
+Fun In The Park,150,4,Bronze,1,,,,ThePond,25
+Angler's Retreat,200,8,Bronze,1,,,,SmallForest,25
+Swamp Thing,250,6,Bronze,2,,,,ForestPond,50
+Lost At Sea,250,4,Gold,2,,,,TheRaft,50
 Soggy Seconds,100,8,Silver,1,,,Redear Sunfish,ThePond,50
 Gone Spelunkin',300,6,Silver,2,,,,TheUnderground,100
 Epic Fall,500,8,Gold,3,500,,,TheFalls,200

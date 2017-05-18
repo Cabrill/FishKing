@@ -9,15 +9,13 @@ namespace FishKing.GumRuntimes
 {
     partial class SubmenuButtonRuntime
     {
-        public bool IsHighlighted
-        {
-            get { return CurrentHighlightState == Highlight.Highlighted; }
-        }
+        public bool IsHighlighted => CurrentHighlightState == Highlight.Highlighted;
 
         partial void CustomInitialize()
         {
             this.RollOn += HighlightButton;
             this.RollOff += UnhighlightButton;
+            this.CurrentHighlightState = Highlight.NotHighlighted;
         }
 
         private void UnhighlightButton(IWindow window)
