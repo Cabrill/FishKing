@@ -4,6 +4,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 
 namespace FishKing.Managers
 {
@@ -13,7 +14,11 @@ namespace FishKing.Managers
 
         public static async void LoadText()
         {
-            using (var reader = File.OpenText("attributions.txt"))
+            var resourceName = "FishKing.attributions.txt";
+
+            var assembly = Assembly.GetExecutingAssembly();
+            using (Stream stream = assembly.GetManifestResourceStream(resourceName))
+            using (StreamReader reader = new StreamReader(stream))
             {
                 Text = await reader.ReadToEndAsync();
             }

@@ -133,7 +133,7 @@
     <Variable>
       <Type>float</Type>
       <Name>CountText.Y</Name>
-      <Value xsi:type="xsd:float">30</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -594,6 +594,19 @@
         <Value xsi:type="xsd:float">50</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>CountText.Y</Name>
+        <Value xsi:type="xsd:float">0</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>CountText.Height</Name>
+        <Value xsi:type="xsd:float">50</Value>
+        <Category>Dimensions</Category>
+        <SetsValue>true</SetsValue>
+      </Variable>
     </State>
     <State>
       <Name>Below</Name>
@@ -606,7 +619,7 @@
       <Variable>
         <Type>float</Type>
         <Name>CountText.Height</Name>
-        <Value xsi:type="xsd:float">100</Value>
+        <Value xsi:type="xsd:float">60</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>
@@ -630,7 +643,7 @@
       <Variable>
         <Type>float</Type>
         <Name>CountText.Y</Name>
-        <Value xsi:type="xsd:float">5</Value>
+        <Value xsi:type="xsd:float">0</Value>
         <SetsValue>true</SetsValue>
       </Variable>
       <Variable>

@@ -18,7 +18,8 @@
     <XnaCrossPlatformGroupID>6e8472f3-363d-4b52-a484-aa934eebcf1f</XnaCrossPlatformGroupID>
     <XnaOutputType>Game</XnaOutputType>
     <ApplicationIcon>FishKing_Win32.ico</ApplicationIcon>
-    <Thumbnail>thumbnail173.png</Thumbnail>
+    <Thumbnail>
+    </Thumbnail>
     <IsWebBootstrapper>false</IsWebBootstrapper>
     <PublishUrl>D:\GameDev\Projects\FishKingPublish\</PublishUrl>
     <Install>true</Install>
@@ -30,7 +31,7 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <ApplicationRevision>11</ApplicationRevision>
+    <ApplicationRevision>12</ApplicationRevision>
     <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -572,12 +573,8 @@
     <EmbeddedResource Include="attributions.txt">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </EmbeddedResource>
-    <Content Include="FishKing.ico" />
     <Content Include="FishKing_Win32.ico" />
-    <Content Include="Game.ico" />
-    <Content Include="GameThumbnail.png" />
     <Content Include="Libraries\Xna4Pc\Debug\FlatRedBall.Content.dll" />
-    <Content Include="thumbnail173.png" />
     <None Include="app.config" />
     <None Include="FishKing_TemporaryKey.pfx" />
     <None Include="packages.config" />

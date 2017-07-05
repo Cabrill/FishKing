@@ -92,7 +92,7 @@
     <Variable>
       <Type>float</Type>
       <Name>ButtonText.Y</Name>
-      <Value xsi:type="xsd:float">15</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -335,8 +335,9 @@
     <Variable>
       <Type>float</Type>
       <Name>Y</Name>
+      <Value xsi:type="xsd:float">0</Value>
       <Category>Position</Category>
-      <SetsValue>false</SetsValue>
+      <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
       <Type>VerticalAlignment</Type>

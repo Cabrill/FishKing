@@ -418,7 +418,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TextStatValue.Y</Name>
-      <Value xsi:type="xsd:float">65</Value>
+      <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
@@ -537,6 +537,12 @@
         <Value xsi:type="xsd:int">128</Value>
         <SetsValue>true</SetsValue>
       </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TextStatValue.Y</Name>
+        <Value xsi:type="xsd:float">50</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
     </State>
     <State>
       <Name>Star</Name>
@@ -567,7 +573,7 @@
       <Variable>
         <Type>float</Type>
         <Name>TextStatValue.Y</Name>
-        <Value xsi:type="xsd:float">85</Value>
+        <Value xsi:type="xsd:float">50</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>
@@ -583,6 +589,12 @@
         <Type>int</Type>
         <Name>SpriteInstance.Texture Top</Name>
         <Value xsi:type="xsd:int">856</Value>
+        <SetsValue>true</SetsValue>
+      </Variable>
+      <Variable>
+        <Type>float</Type>
+        <Name>TextStatValue.Y</Name>
+        <Value xsi:type="xsd:float">50</Value>
         <SetsValue>true</SetsValue>
       </Variable>
     </State>

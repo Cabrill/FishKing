@@ -419,7 +419,7 @@
     <Variable>
       <Type>float</Type>
       <Name>GoalScoreText.Y</Name>
-      <Value xsi:type="xsd:float">54</Value>
+      <Value xsi:type="xsd:float">0</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

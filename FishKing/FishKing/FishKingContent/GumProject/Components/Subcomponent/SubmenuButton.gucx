@@ -273,7 +273,7 @@
     <Variable>
       <Type>float</Type>
       <Name>TextInstance.Y</Name>
-      <Value xsi:type="xsd:float">95</Value>
+      <Value xsi:type="xsd:float">55</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>

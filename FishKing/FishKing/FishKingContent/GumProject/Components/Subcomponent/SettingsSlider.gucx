@@ -166,7 +166,7 @@
     <Variable>
       <Type>float</Type>
       <Name>SettingName.Y</Name>
-      <Value xsi:type="xsd:float">64.67488</Value>
+      <Value xsi:type="xsd:float">50</Value>
       <SetsValue>true</SetsValue>
     </Variable>
     <Variable>
